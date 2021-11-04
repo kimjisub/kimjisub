@@ -1,4 +1,3 @@
-console.log('fix-location');
 if (
 	window &&
 	window.location &&
