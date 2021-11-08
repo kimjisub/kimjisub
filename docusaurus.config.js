@@ -16,6 +16,14 @@ const config = {
 	organizationName: 'kimjisub', // Usually your GitHub org/user name.
 	projectName: 'kimjisub.me', // Usually your repo name.
 
+	scripts: [
+		{
+			src: 'https://static.cloudflareinsights.com/beacon.min.js',
+			defer: true,
+			'data-cf-beacon': '{"token": "ed69c5f7ff614a9aa758095b2419b569"}',
+		},
+	],
+
 	presets: [
 		[
 			'@docusaurus/preset-classic',
