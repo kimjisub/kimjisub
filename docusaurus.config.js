@@ -107,16 +107,6 @@ const config = {
 				darkTheme: darkCodeTheme,
 			},
 		}),
-
-	i18n: {
-		defaultLocale: 'ko',
-		locales: ['ko'],
-		localeConfigs: {
-			ko: {
-				label: '한국어',
-			},
-		},
-	},
 };
 
 module.exports = config;
