@@ -5,36 +5,55 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
+import ReactTypingEffect from 'react-typing-effect';
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
+	const { siteConfig } = useDocusaurusContext();
+	return (
+		<header className={clsx('hero hero--primary', styles.heroBanner)}>
+			<div className="container">
+				<h1 className="hero__title">{siteConfig.title}</h1>
+				<p className="hero__subtitle">
+					<ReactTypingEffect
+						text={['개발자', '기획자']}
+						speed="300"
+						cursor=" "
+						typingDelay="0"
+					/>
+					{' 김지섭입니다.'}
+				</p>
+
+				<div className={styles.buttons}>
+					<Link
+						className="button button--secondary button--lg"
+						to="/docs/intro"
+					>
+						포트폴리오
+					</Link>
+
+					<Link
+						className="button button--secondary button--lg"
+						to="/docs/intro"
+					>
+						블로그
+					</Link>
+				</div>
+			</div>
+		</header>
+	);
 }
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
-    </Layout>
-  );
+	const { siteConfig } = useDocusaurusContext();
+	return (
+		<Layout
+			title={`Hello from ${siteConfig.title}`}
+			description="Description will go into a meta tag in <head />"
+		>
+			<HomepageHeader />
+			<main>
+				<HomepageFeatures />
+			</main>
+		</Layout>
+	);
 }
