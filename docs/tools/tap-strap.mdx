@@ -5,6 +5,9 @@ tags: [tool]
 sidebar_position: 2
 ---
 
+import BrowserOnly from '@docusaurus/BrowserOnly'
 import App from './tap-strap/index.js'
 
-<App></App>
+<BrowserOnly>
+	<App></App>
+</BrowserOnly>
