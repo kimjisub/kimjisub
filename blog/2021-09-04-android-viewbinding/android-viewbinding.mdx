@@ -11,8 +11,7 @@ tags: [android, viewBinding]
 
 ## 프로젝트에 viewBinding 적용하기
 
-
-``` kotlin title="build.gradle (Module)"
+```kotlin title="build.gradle (Module)"
 android{
 	buildFeatures {
 		viewBinding true
@@ -25,10 +24,10 @@ android{
 
 Activity의 경우 다음과 같다
 
-``` kotlin title="MainActivity.kt"
+```kotlin title="MainActivity.kt"
 class MainActivity : Activity() {
 	private lateinit var b: ActivityMainBinding
-    
+
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		b = ActivityMainBinding.inflate(layoutInflater)
@@ -39,7 +38,7 @@ class MainActivity : Activity() {
 
 ## Custom View
 
-직접 만든 레이아웃과 뷰는 다음과 같다. xml 파일의 이름은  `view_custom.xml`이라고 가정한다.
+직접 만든 레이아웃과 뷰는 다음과 같다. xml 파일의 이름은 `view_custom.xml`이라고 가정한다.
 
 ```kotlin title="CustomView.kt"
 class CustomView
@@ -48,7 +47,7 @@ class CustomView
 	attrs: AttributeSet? = null,
 	defStyleAttr: Int = 0
 ) : RelativeLayout(context, attrs, defStyleAttr) {
-	private val b: ViewCustomBinding = 
+	private val b: ViewCustomBinding =
 		ViewCustomBinding.inflate(LayoutInflater.from(context), this, true)
 }
 ```

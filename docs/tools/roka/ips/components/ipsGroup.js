@@ -1,10 +1,10 @@
-import React from 'react';
-import { TextField, IconButton } from '@material-ui/core';
-import dateformat from 'dateformat';
-import { Delete } from '@material-ui/icons';
+import React from 'react'
+import { TextField, IconButton } from '@material-ui/core'
+import dateformat from 'dateformat'
+import { Delete } from '@material-ui/icons'
 
 export default function App(props) {
-	const { date, ips } = props.data;
+	const { date, ips } = props.data
 
 	return (
 		<div className="ipGroup">
@@ -13,8 +13,8 @@ export default function App(props) {
 				value={date}
 				placeholder={dateformat(new Date(), 'yyyymmdd')}
 				onChange={(e) => {
-					const newDate = e.target.value;
-					props.onChange({ date: newDate, ips });
+					const newDate = e.target.value
+					props.onChange({ date: newDate, ips })
 				}}
 			/>
 			<TextField
@@ -24,18 +24,18 @@ export default function App(props) {
 				value={ips.join('\n')}
 				variant="outlined"
 				onChange={(e) => {
-					const newIps = e.target.value.split('\n');
-					props.onChange({ date, ips: newIps });
+					const newIps = e.target.value.split('\n')
+					props.onChange({ date, ips: newIps })
 				}}
 				helperText={`${ips.filter((ip) => ip.length > 0).length}개`}
 			/>
 			<IconButton
 				onClick={() => {
-					props.onDelete();
+					props.onDelete()
 				}}
 			>
 				<Delete />
 			</IconButton>
 		</div>
-	);
+	)
 }

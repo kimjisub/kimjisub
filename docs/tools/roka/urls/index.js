@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import { IconButton, TextField } from '@material-ui/core';
-import { Add, GetApp } from '@material-ui/icons';
+import React, { useState } from 'react'
+import { IconButton, TextField } from '@material-ui/core'
+import { Add, GetApp } from '@material-ui/icons'
 
-import './index.scss';
-import UrlsView from './components/urlsGroup';
+import './index.scss'
+import UrlsView from './components/urlsGroup'
 
 export default function App() {
-	const [groupName, setGroupName] = useState('주간차단-url');
+	const [groupName, setGroupName] = useState('주간차단-url')
 	const [urlsGroups, setUrlsGroups] = useState([
 		{
 			date: '',
 			urls: [],
 		},
-	]);
+	])
 
 	function addGroup() {
 		setUrlsGroups((data) => [
@@ -21,13 +21,13 @@ export default function App() {
 				date: '',
 				urls: [],
 			},
-		]);
+		])
 	}
 
 	function download() {
-		const result = ['NAME,INCLUSION,WHITE IP,GROUP DESC,URL,DESC'];
+		const result = ['NAME,INCLUSION,WHITE IP,GROUP DESC,URL,DESC']
 
-		let count = 0;
+		let count = 0
 		urlsGroups.forEach((urlsGroup, i) => {
 			urlsGroup.urls
 				.filter((url) => url.length > 0)
@@ -36,21 +36,21 @@ export default function App() {
 						`${count === 0 ? groupName : ''},>,,,${url},유해사이트_${
 							urlsGroup.date
 						}`
-					);
+					)
 
-					count++;
-				});
-		});
+					count++
+				})
+		})
 
-		const element = document.createElement('a');
+		const element = document.createElement('a')
 		const file = new Blob([result.join('\n')], {
 			type: 'text/plaincharset=utf-8',
-		});
-		element.href = URL.createObjectURL(file);
-		element.download = 'urls.csv';
-		document.body.appendChild(element);
-		element.click();
-		console.log(result.join('\n'));
+		})
+		element.href = URL.createObjectURL(file)
+		element.download = 'urls.csv'
+		document.body.appendChild(element)
+		element.click()
+		console.log(result.join('\n'))
 	}
 
 	return (
@@ -61,7 +61,7 @@ export default function App() {
 					<TextField
 						label="그룹 이름"
 						onChange={(e) => {
-							setGroupName(e.target.value);
+							setGroupName(e.target.value)
 						}}
 						defaultValue={groupName}
 					/>
@@ -82,20 +82,20 @@ export default function App() {
 							data={item}
 							onChange={(data) => {
 								setUrlsGroups((urlsGroup_) => {
-									const urlsGroup = [...urlsGroup_];
-									urlsGroup[i] = data;
-									return urlsGroup;
-								});
+									const urlsGroup = [...urlsGroup_]
+									urlsGroup[i] = data
+									return urlsGroup
+								})
 							}}
 							onDelete={() => {
 								setUrlsGroups((urlsGroup_) => {
-									const urlsGroup = [...urlsGroup_];
-									urlsGroup.splice(i, 1);
-									return urlsGroup;
-								});
+									const urlsGroup = [...urlsGroup_]
+									urlsGroup.splice(i, 1)
+									return urlsGroup
+								})
 							}}
 						/>
-					);
+					)
 				})}
 
 				<IconButton onClick={addGroup}>
@@ -103,5 +103,5 @@ export default function App() {
 				</IconButton>
 			</div>
 		</div>
-	);
+	)
 }
