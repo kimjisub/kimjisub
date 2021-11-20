@@ -5,12 +5,13 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
+import IconView from '../components/IconView';
 import ReactTypingEffect from 'react-typing-effect';
 
 function HomepageHeader() {
 	const { siteConfig } = useDocusaurusContext();
 	return (
-		<header className={clsx('hero hero--primary', styles.heroBanner)}>
+		<header className={clsx('hero ', styles.heroBanner, styles.fullheight)}>
 			<div className="container">
 				<h1 className="hero__title">{siteConfig.title}</h1>
 				<p className="hero__subtitle">
@@ -22,7 +23,7 @@ function HomepageHeader() {
 					/>
 					{' 김지섭입니다.'}
 				</p>
-
+				<IconView slug="android" />
 				<div className={styles.buttons}>
 					<Link
 						className="button button--secondary button--lg"

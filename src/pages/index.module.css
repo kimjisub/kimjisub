@@ -21,3 +21,7 @@
   align-items: center;
   justify-content: center;
 }
+
+.fullheight{
+  height: calc(100vh - 60px);
+}
