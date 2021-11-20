@@ -24,6 +24,8 @@ const config = {
 		},
 	],
 
+	plugins: ['docusaurus-plugin-sass'],
+
 	presets: [
 		[
 			'@docusaurus/preset-classic',
