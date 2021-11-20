@@ -1,0 +1,35 @@
+.FingerView {
+	display: inline-block;
+	text-align: center;
+	width: fit-content;
+	margin: 3px 20px;
+	&.disabled {
+		opacity: 0.3;
+	}
+	p {
+		display: inline-block;
+		margin: 0px;
+		vertical-align: middle;
+		&.actionName {
+			min-width: 25px;
+			//width: 25px;
+			height: 25px;
+			text-align: center;
+			border: 1px solid gray;
+			background: #30c2bf;
+			color: white;
+			border-radius: 5px;
+			margin-right: 5px;
+		}
+		&.dot {
+			width: 15px;
+			height: 15px;
+			margin: 1px;
+			border: 1px solid gray;
+			border-radius: 100px;
+			&.check {
+				background: #30c2bf;
+			}
+		}
+	}
+}
