@@ -16,7 +16,7 @@ class App extends Component {
 			showGlossary: true,
 			showFingerCode: '',
 			showActionCode: '',
-			kpm: 0
+			kpm: 0,
 		}
 		this.singleTouchTimerId = -1
 		this.pressed = []
@@ -35,16 +35,16 @@ class App extends Component {
 			k: 2,
 			l: 3,
 			';': 4,
-			'1': 0,
-			'4': 1,
-			'8': 2,
-			'9': 3,
-			'-': 4
+			1: 0,
+			4: 1,
+			8: 2,
+			9: 3,
+			'-': 4,
 		}
 
 		this.fingerMapSystem = [
 			{ fingerCode: '345', actionCodes: ['ChangeKeyboard'] },
-			{ fingerCode: '123', actionCodes: ['Shift'] }
+			{ fingerCode: '123', actionCodes: ['Shift'] },
 		]
 		this.fingerMaps = [
 			[
@@ -76,7 +76,7 @@ class App extends Component {
 				{ fingerCode: '35', actionCodes: ['z'] },
 				{ fingerCode: '12345', actionCodes: ['Space', '.'] },
 				{ fingerCode: '234', actionCodes: ['BackSpace'] },
-				{ fingerCode: '145', actionCodes: ['Enter'] }
+				{ fingerCode: '145', actionCodes: ['Enter'] },
 			],
 			[
 				{ fingerCode: '2345', actionCodes: ['0'] },
@@ -88,11 +88,11 @@ class App extends Component {
 				{ fingerCode: '15', actionCodes: ['6'] },
 				{ fingerCode: '25', actionCodes: ['7'] },
 				{ fingerCode: '35', actionCodes: ['8'] },
-				{ fingerCode: '45', actionCodes: ['9'] }
-			]
+				{ fingerCode: '45', actionCodes: ['9'] },
+			],
 		]
 
-		midi.setOnFingerTouch(fingerNumber => {
+		midi.setOnFingerTouch((fingerNumber) => {
 			this.fingerTouch(fingerNumber)
 		})
 		midi.initMidi()
@@ -111,10 +111,13 @@ class App extends Component {
 	}
 	fingerTouch(fingerNumber) {
 		if (fingerNumber !== undefined) {
-			if (fingerNumber > 0 && !this.state.rightHand) this.setState({ rightHand: true })
-			if (fingerNumber < 0 && this.state.rightHand) this.setState({ rightHand: false })
+			if (fingerNumber > 0 && !this.state.rightHand)
+				this.setState({ rightHand: true })
+			if (fingerNumber < 0 && this.state.rightHand)
+				this.setState({ rightHand: false })
 			let fingerCodeNumber = Math.abs(fingerNumber) + 1
-			if (!this.pressed.includes(fingerCodeNumber)) this.pressed.push(fingerCodeNumber)
+			if (!this.pressed.includes(fingerCodeNumber))
+				this.pressed.push(fingerCodeNumber)
 		}
 		clearTimeout(this.singleTouchTimerId)
 		this.singleTouchTimerId = setTimeout(() => this.recognized(), 100)
@@ -138,12 +141,16 @@ class App extends Component {
 		this.setState({ kpm: kpm.type() })
 
 		let actionCodes = '?'
-		if (this.fingerMapSystem.find(item => item.fingerCode === fingerCode)) {
+		if (this.fingerMapSystem.find((item) => item.fingerCode === fingerCode)) {
 			//시스템 키인 경우
-			actionCodes = this.fingerMapSystem.find(item => item.fingerCode === fingerCode).actionCodes
+			actionCodes = this.fingerMapSystem.find(
+				(item) => item.fingerCode === fingerCode
+			).actionCodes
 		} else {
 			//키보드 키인 경우
-			actionCodes = this.fingerMaps[this.state.keyboardMode].find(item => item.fingerCode === fingerCode)?.actionCodes || ['?']
+			actionCodes = this.fingerMaps[this.state.keyboardMode].find(
+				(item) => item.fingerCode === fingerCode
+			)?.actionCodes || ['?']
 		}
 		// 이전 키와 다른 경우 더블터치 프로세스 초기화
 		if (this.lastTypeFingerCode !== fingerCode) this.clearDoubleTouch()
@@ -173,7 +180,9 @@ class App extends Component {
 				this.setState({ shift: !this.state.shift })
 				break
 			case 'ChangeKeyboard':
-				this.setState({ keyboardMode: (this.state.keyboardMode + 1) % this.fingerMaps.length })
+				this.setState({
+					keyboardMode: (this.state.keyboardMode + 1) % this.fingerMaps.length,
+				})
 				break
 			case undefined:
 				break
@@ -189,11 +198,16 @@ class App extends Component {
 		this.pressed = []
 
 		clearTimeout(this.doubleTouchTimerId)
-		this.doubleTouchTimerId = setTimeout(() => this.clearDoubleTouch(), actionCodes.length > this.doubleTouchIndex ? 200 : 1)
+		this.doubleTouchTimerId = setTimeout(
+			() => this.clearDoubleTouch(),
+			actionCodes.length > this.doubleTouchIndex ? 200 : 1
+		)
 	}
 
 	typeBackspace() {
-		document.getElementById('textarea').value = document.getElementById('textarea').value.slice(0, document.getElementById('textarea').value.length - 1)
+		document.getElementById('textarea').value = document
+			.getElementById('textarea')
+			.value.slice(0, document.getElementById('textarea').value.length - 1)
 	}
 	typeChar(c) {
 		document.getElementById('textarea').value += c
@@ -203,9 +217,15 @@ class App extends Component {
 			<div className="Practice-Tap">
 				<div className="explanation">
 					<p>왼손: asdf_ 오른손: _jkl; (_는 띄어쓰기)</p>
-					<p>연습하고 싶은 손의 검지손가락을 키보드의 돌기에 자연스럽게 올려놓아주세요.</p>
+					<p>
+						연습하고 싶은 손의 검지손가락을 키보드의 돌기에 자연스럽게
+						올려놓아주세요.
+					</p>
 					<p>다중키 입력이 되지 않는 키보드는 사용이 불가능합니다.</p>
-					<p>아래 표를 참고하여 연습해주세요. 왼손 오른손 모드는 자동으로 바뀝니다.</p>
+					<p>
+						아래 표를 참고하여 연습해주세요. 왼손 오른손 모드는 자동으로
+						바뀝니다.
+					</p>
 				</div>
 
 				<div className="wrap-textarea">
@@ -217,23 +237,36 @@ class App extends Component {
 				</div>
 
 				<div className="fingerView">
-					<FingerView rightHand={this.state.rightHand} actionName={this.state.showActionCode} fingerCode={this.state.showFingerCode}></FingerView>
+					<FingerView
+						rightHand={this.state.rightHand}
+						actionName={this.state.showActionCode}
+						fingerCode={this.state.showFingerCode}
+					></FingerView>
 				</div>
 
 				<div className="glossary">
-					<Glossary rightHand={this.state.rightHand} fingerMap={this.fingerMaps[this.state.keyboardMode].concat(this.fingerMapSystem)} />
+					<Glossary
+						rightHand={this.state.rightHand}
+						fingerMap={this.fingerMaps[this.state.keyboardMode].concat(
+							this.fingerMapSystem
+						)}
+					/>
 				</div>
 			</div>
 		)
 	}
 
 	componentDidMount() {
-		document.getElementById('textarea').addEventListener('keydown', e => this.onKeyEvent(e), false)
+		document
+			.getElementById('textarea')
+			.addEventListener('keydown', (e) => this.onKeyEvent(e), false)
 		//document.getElementById('textarea').addEventListener('keypress', e => this.onKeyEvent(e), false)
 		//document.getElementById('textarea').addEventListener('keyup', e => this.onKeyEvent(e), false)
 	}
 	componentWillUnmount() {
-		document.getElementById('textarea').removeEventListener('keydown', e => this.onKeyEvent(e), false)
+		document
+			.getElementById('textarea')
+			.removeEventListener('keydown', (e) => this.onKeyEvent(e), false)
 		//document.getElementById('textarea').removeEventListener('keypress', e => this.onKeyEvent(e), false)
 		//document.getElementById('textarea').removeEventListener('keyup', e => this.onKeyEvent(e), false)
 	}

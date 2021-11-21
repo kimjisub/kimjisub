@@ -1,7 +1,7 @@
 import React from 'react'
-import { TextField, IconButton } from '@material-ui/core'
+import { TextField, IconButton } from '@mui/material'
 import dateformat from 'dateformat'
-import { Delete } from '@material-ui/icons'
+import { Delete } from '@mui/icons-material'
 
 export default function App(props) {
 	const { date, urls } = props.data

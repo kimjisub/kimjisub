@@ -8,6 +8,4 @@ sidebar_position: 2
 import BrowserOnly from '@docusaurus/BrowserOnly'
 import App from './tap-strap/index.js'
 
-<BrowserOnly>
-	<App></App>
-</BrowserOnly>
+<BrowserOnly>{() => <App></App>}</BrowserOnly>

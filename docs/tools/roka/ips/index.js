@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { IconButton, TextField } from '@material-ui/core'
-import { Add, GetApp } from '@material-ui/icons'
+import { IconButton, TextField } from '@mui/material'
+import { Add, GetApp } from '@mui/icons-material'
 
 import './index.scss'
 import IpsGroupView from './components/ipsGroup'
