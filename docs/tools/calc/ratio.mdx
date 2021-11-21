@@ -5,6 +5,7 @@ tags: [tool]
 sidebar_position: 1
 ---
 
+import BrowserOnly from '@docusaurus/BrowserOnly'
 import App from './ratio/index.js'
 
-<App></App>
+<BrowserOnly>{() => <App></App>}</BrowserOnly>
