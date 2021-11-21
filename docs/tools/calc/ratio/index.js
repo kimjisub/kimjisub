@@ -1,28 +1,60 @@
 import React, { useState } from 'react'
-import func from './func.js'
 import { TextField } from '@mui/material'
-import { gcd, lcm } from 'mathjs'
+import { gcd, add, bignumber, divide, multiply } from 'mathjs'
+
+function calcRatio(a, b, c) {
+	const bigA = bignumber(a)
+	const bigB = bignumber(b)
+	const bigC = bignumber(c)
+	return divide(multiply(b, c), a)
+}
+
+function intRatio(a, b) {
+	const mul = Math.max(multNumToInteger(a), multNumToInteger(b))
+	const inta = a * mul
+	const intb = b * mul
+
+	const g = gcd(inta, intb)
+	return [inta / g || 0, intb / g || 0]
+}
+
+function multNumToInteger(num) {
+	let reg = /\.[0-9]*/g.exec(`${num}`)
+	let point = reg ? reg[0].length - 1 : 0
+	return Math.pow(10, point)
+}
 
 export default function App() {
 	const [a, setA] = useState(0)
 	const [b, setB] = useState(0)
 	const [c, setC] = useState(0)
 	const [d, setD] = useState(0)
-	const [intRatio, setIntRatio] = useState('')
+	const [lastChange, setLastChange] = useState('c')
 
-	//console.log(lcm(1, 1.1))
+	console.log(a, b, c, d)
+	const intRatioResult = intRatio(a, b)
 	return (
 		<div className="Calculator-Ratio">
 			<TextField
 				id="outlined-number"
 				label="A"
 				type="number"
-				defaultValue={a}
+				size="small"
+				value={a.toString()}
 				InputLabelProps={{
 					shrink: true,
 				}}
-				onKeyDown={(e) => {
-					if (e.code == 'Enter') fun.check(input_num)
+				onChange={(e) => {
+					const a = e.target.valueAsNumber || 0
+					setA(a)
+					switch (lastChange) {
+						case 'c':
+							setD(calcRatio(a, b, c))
+							break
+						case 'd':
+							setC(calcRatio(b, a, d))
+							break
+					}
 				}}
 			/>
 			:
@@ -30,19 +62,40 @@ export default function App() {
 				id="outlined-number"
 				label="B"
 				type="number"
-				defaultValue={b}
+				size="small"
+				value={b.toString()}
 				InputLabelProps={{
 					shrink: true,
 				}}
+				onChange={(e) => {
+					const b = e.target.valueAsNumber || 0
+					setB(b)
+					switch (lastChange) {
+						case 'c':
+							setD(calcRatio(a, b, c))
+							break
+						case 'd':
+							setC(calcRatio(b, a, d))
+							break
+					}
+				}}
 			/>
-			=
+			<br />
+			<br />
 			<TextField
 				id="outlined-number"
 				label="C"
 				type="number"
-				defaultValue={c}
+				size="small"
+				value={c.toString()}
 				InputLabelProps={{
 					shrink: true,
+				}}
+				onChange={(e) => {
+					const c = e.target.valueAsNumber || 0
+					setC(c)
+					setLastChange('c')
+					setD(calcRatio(a, b, c))
 				}}
 			/>
 			:
@@ -50,53 +103,45 @@ export default function App() {
 				id="outlined-number"
 				label="D"
 				type="number"
-				defaultValue={d}
+				size="small"
+				value={d.toString()}
 				InputLabelProps={{
 					shrink: true,
 				}}
+				onChange={(e) => {
+					const d = e.target.valueAsNumber || 0
+					setD(d)
+					setLastChange('d')
+					setC(calcRatio(b, a, d))
+				}}
 			/>
 			<br />
-			<input
-				type="number"
-				step="any"
-				id="a"
-				onKeyDown={(e) => {
-					func.keydown(e, 1)
-				}}
-				className="input"
-			/>
-			:
-			<input
-				type="number"
-				step="any"
-				id="b"
-				onKeyDown={(e) => {
-					func.keydown(e, 2)
-				}}
-				className="input"
-			/>
-			=
-			<input
-				type="number"
-				step="any"
-				id="c"
-				onKeyDown={(e) => {
-					func.keydown(e, 3)
-				}}
-				className="input"
-			/>
-			:
-			<input
-				type="number"
-				step="any"
-				id="d"
-				onKeyDown={(e) => {
-					func.keydown(e, 4)
-				}}
-				className="input"
-			/>
 			<br />
-			<p id="integerRatio"></p>
+			<TextField
+				id="outlined-number"
+				label="Int A"
+				type="number"
+				size="small"
+				value={intRatioResult[0]}
+				InputLabelProps={{
+					shrink: true,
+				}}
+				disabled
+				onChange={(e) => {}}
+			/>
+			:
+			<TextField
+				id="outlined-number"
+				label="Int B"
+				type="number"
+				size="small"
+				value={intRatioResult[1]}
+				InputLabelProps={{
+					shrink: true,
+				}}
+				disabled
+				onChange={(e) => {}}
+			/>
 		</div>
 	)
 }
