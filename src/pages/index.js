@@ -1,55 +1,16 @@
 import React from 'react'
 import clsx from 'clsx'
 import Layout from '@theme/Layout'
-import Link from '@docusaurus/Link'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
-import styles from './index.module.css'
-import ReactTypingEffect from 'react-typing-effect'
-import { Typography } from '@mui/material'
+import styles from './index.module.scss'
 import TimeLine from '../components/TimeLine'
+import Introduce from './Introduce'
 import Skills from './Skills'
 
 import '@fontsource/roboto/300.css'
 import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
-
-function Introduce() {
-	const { siteConfig } = useDocusaurusContext()
-	return (
-		<header className={clsx('hero ', styles.heroBanner, styles.fullheight)}>
-			<div className="container">
-				<div className="hero__subtitle">
-					<Typography variant="subtitle1" gutterBottom component="span">
-						Developer
-					</Typography>
-					<br />
-					<Typography variant="h2" component="span" gutterBottom>
-						김지섭
-					</Typography>
-					<Typography variant="body1" component="span" gutterBottom>
-						을 소개할게요
-					</Typography>
-				</div>
-				<div className={styles.buttons}>
-					<Link
-						className="button button--secondary button--lg"
-						to="/docs/intro"
-					>
-						포트폴리오
-					</Link>
-
-					<Link
-						className="button button--secondary button--lg"
-						to="/docs/intro"
-					>
-						블로그
-					</Link>
-				</div>
-			</div>
-		</header>
-	)
-}
 
 export default function Home() {
 	const { siteConfig } = useDocusaurusContext()

@@ -3,9 +3,7 @@ import clsx from 'clsx'
 import styles from './index.module.scss'
 import IconView from '../../components/IconView'
 
-import { Year, Title, Content } from '../../typography'
-
-export default function TimeLine({ list }) {
+export default function Skills() {
 	return (
 		<div>
 			<div className={clsx(styles.row)}>

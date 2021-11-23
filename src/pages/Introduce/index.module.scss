@@ -1,0 +1,10 @@
+.row {
+	display: flex;
+	> * {
+		margin: 10px;
+	}
+}
+
+.fullheight {
+	height: calc(100vh - 60px);
+}

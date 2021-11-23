@@ -8,9 +8,9 @@ const simpleIcons = require('simple-icons')
 
 export default function IconView({ slug }) {
 	const icon = simpleIcons.Get(slug)
-	console.log(slug, icon)
 
 	const [anchorEl, setAnchorEl] = React.useState(null)
+	const open = Boolean(anchorEl)
 	const handlePopoverOpen = (event) => {
 		setAnchorEl(event.currentTarget)
 	}
@@ -18,7 +18,6 @@ export default function IconView({ slug }) {
 	const handlePopoverClose = () => {
 		setAnchorEl(null)
 	}
-	const open = Boolean(anchorEl)
 
 	return (
 		<div className={clsx(styles.root)}>
