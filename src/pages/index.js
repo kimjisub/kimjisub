@@ -4,11 +4,10 @@ import Layout from '@theme/Layout'
 import Link from '@docusaurus/Link'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import styles from './index.module.css'
-import HomepageFeatures from '../components/HomepageFeatures'
-import IconView from '../components/IconView'
 import ReactTypingEffect from 'react-typing-effect'
 import { Typography } from '@mui/material'
-import MyTimeLine from '../components/TimeLine'
+import TimeLine from '../components/TimeLine'
+import Skills from '../components/Skills'
 
 import '@fontsource/roboto/300.css'
 import '@fontsource/roboto/400.css'
@@ -31,7 +30,6 @@ function Introduce() {
 						을 소개할게요
 					</Typography>
 				</p>
-				<IconView slug="android" />
 				<div className={styles.buttons}>
 					<Link
 						className="button button--secondary button--lg"
@@ -125,7 +123,8 @@ export default function Home() {
 		>
 			<Introduce />
 			<main>
-				<MyTimeLine list={list}></MyTimeLine>
+				<TimeLine list={list}></TimeLine>
+				<Skills />
 			</main>
 		</Layout>
 	)

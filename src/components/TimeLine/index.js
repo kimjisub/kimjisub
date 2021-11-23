@@ -1,11 +1,9 @@
 import React from 'react'
 import clsx from 'clsx'
-import styles from './TimeLine.module.scss'
-import { styled, Typography } from '@mui/material'
-import { Year, Title, Content } from '../typography'
+import styles from './index.module.scss'
+import { Year, Title, Content } from '../../typography'
 
 export default function TimeLine({ list }) {
-	console.log('hi', styles)
 	return (
 		<div className={clsx(styles.root)}>
 			{list.map((data, i) => (

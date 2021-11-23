@@ -1,0 +1,62 @@
+import React from 'react'
+import clsx from 'clsx'
+import styles from './index.module.scss'
+import Popover from '@mui/material/Popover'
+import { IconDescription } from '../../typography'
+
+const simpleIcons = require('simple-icons')
+
+export default function IconView({ slug }) {
+	const icon = simpleIcons.Get(slug)
+	console.log(slug, icon)
+
+	const [anchorEl, setAnchorEl] = React.useState(null)
+	const handlePopoverOpen = (event) => {
+		setAnchorEl(event.currentTarget)
+	}
+
+	const handlePopoverClose = () => {
+		setAnchorEl(null)
+	}
+	const open = Boolean(anchorEl)
+
+	return (
+		<div className={clsx(styles.root)}>
+			<div
+				className={clsx(styles.box)}
+				style={{ background: `#${icon.hex}` }}
+				onMouseEnter={handlePopoverOpen}
+				onMouseLeave={handlePopoverClose}
+			>
+				<svg
+					role="img"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+					className={clsx(styles.icon)}
+				>
+					<path d={icon.path} style={{ fill: '#fff' }} />
+				</svg>
+			</div>
+			<Popover
+				id="mouse-over-popover"
+				sx={{
+					pointerEvents: 'none',
+				}}
+				open={open}
+				anchorEl={anchorEl}
+				anchorOrigin={{
+					vertical: 'bottom',
+					horizontal: 'center',
+				}}
+				transformOrigin={{
+					vertical: 'top',
+					horizontal: 'center',
+				}}
+				onClose={handlePopoverClose}
+				disableRestoreFocus
+			>
+				<IconDescription>{icon.title}</IconDescription>
+			</Popover>
+		</div>
+	)
+}
