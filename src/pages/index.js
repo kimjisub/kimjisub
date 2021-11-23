@@ -15,16 +15,6 @@ import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
 
-import {
-	Timeline,
-	TimelineItem,
-	TimelineSeparator,
-	TimelineConnector,
-	TimelineContent,
-	TimelineOppositeContent,
-	TimelineDot,
-} from '@mui/lab'
-
 function Introduce() {
 	const { siteConfig } = useDocusaurusContext()
 	return (
