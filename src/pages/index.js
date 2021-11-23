@@ -7,7 +7,7 @@ import styles from './index.module.css'
 import ReactTypingEffect from 'react-typing-effect'
 import { Typography } from '@mui/material'
 import TimeLine from '../components/TimeLine'
-import Skills from '../components/Skills'
+import Skills from './Skills'
 
 import '@fontsource/roboto/300.css'
 import '@fontsource/roboto/400.css'
@@ -19,17 +19,18 @@ function Introduce() {
 	return (
 		<header className={clsx('hero ', styles.heroBanner, styles.fullheight)}>
 			<div className="container">
-				<p className="hero__subtitle">
+				<div className="hero__subtitle">
 					<Typography variant="subtitle1" gutterBottom component="span">
-						개발자
+						Developer
 					</Typography>
+					<br />
 					<Typography variant="h2" component="span" gutterBottom>
 						김지섭
 					</Typography>
 					<Typography variant="body1" component="span" gutterBottom>
 						을 소개할게요
 					</Typography>
-				</p>
+				</div>
 				<div className={styles.buttons}>
 					<Link
 						className="button button--secondary button--lg"
