@@ -4,6 +4,10 @@
  */
 .root {
 	font-family: 'Roboto';
+	> * {
+		margin: 0 auto;
+		//background: green;
+	}
 }
 
 .heroBanner {
@@ -17,10 +21,4 @@
 	.heroBanner {
 		padding: 2rem;
 	}
-}
-
-.buttons {
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }

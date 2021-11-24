@@ -1,14 +1,21 @@
 .root {
 	font-family: 'Roboto';
 	font-weight: 600;
+	max-width: 1000px;
+
+	.center {
+		margin: 0 auto;
+		width: fit-content;
+	}
+
 	.item {
 		display: flex;
 		.left {
-			width: 30%;
+			width: 60px;
 			text-align: end;
 		}
 		.right {
-			width: 70%;
+			//width: 70%;
 		}
 		.divider {
 			$offset: 21px;

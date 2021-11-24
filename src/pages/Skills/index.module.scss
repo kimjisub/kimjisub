@@ -1,6 +1,13 @@
-.row {
-	display: flex;
-	> * {
-		margin: 10px;
+.root {
+	max-width: 1000px;
+	.row {
+		display: flex;
+		> * {
+			margin: 10px;
+		}
+		.text {
+			width: 100px;
+			text-align: end;
+		}
 	}
 }

@@ -6,7 +6,14 @@ import Link from '@docusaurus/Link'
 
 export default function Introduce() {
 	return (
-		<div className={clsx('hero ', styles.heroBanner, styles.fullheight)}>
+		<div
+			className={clsx(
+				'hero ',
+				styles.root,
+				styles.heroBanner,
+				styles.fullheight
+			)}
+		>
 			<div className="container">
 				<div className="hero__subtitle">
 					<Typography variant="subtitle1" gutterBottom component="span">
