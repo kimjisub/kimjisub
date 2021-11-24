@@ -1,11 +1,13 @@
 .root {
 	max-width: 1000px;
+	min-height: 1080px;
 	.row {
 		display: flex;
 		> * {
 			margin: 10px;
 		}
 		.text {
+			min-width: 100px;
 			width: 100px;
 			text-align: end;
 		}

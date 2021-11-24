@@ -2,6 +2,7 @@
 	font-family: 'Roboto';
 	font-weight: 600;
 	max-width: 1000px;
+	min-height: 1080px;
 
 	.center {
 		margin: 0 auto;
@@ -11,11 +12,12 @@
 	.item {
 		display: flex;
 		.left {
+			min-width: 60px;
 			width: 60px;
 			text-align: end;
 		}
 		.right {
-			//width: 70%;
+			padding-bottom: 16px;
 		}
 		.divider {
 			$offset: 21px;
@@ -39,9 +41,9 @@
 				margin-left: calc(
 					$linewidth / 2 - ($realsize / 2)
 				); //($linewidth - ($size/2));
-				background-color: #5581fa;
+				background-color: #f8b249;
 				border-radius: $size;
-				border: $border solid #5581fa;
+				border: $border solid #f8b249;
 
 				opacity: 0.25;
 				z-index: 0;
@@ -61,7 +63,7 @@
 				//($linewidth - ($size/2));
 				background-color: #fff;
 				border-radius: $size;
-				border: $border solid #5581fa;
+				border: $border solid #f8b249;
 				z-index: 1;
 			}
 		}
