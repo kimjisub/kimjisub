@@ -1,15 +1,39 @@
 .root {
 	max-width: 1000px;
 	min-height: 1080px;
-	.row {
-		display: flex;
+	.text {
+		text-align: end;
+		align-self: center;
+		padding: 0;
+		padding-right: 10px;
+	}
+	.icons {
 		> * {
+			float: left;
 			margin: 10px;
 		}
-		.text {
-			min-width: 100px;
-			width: 100px;
-			text-align: end;
+		padding: 0;
+	}
+	.table {
+		width: fit-content;
+		margin: auto;
+		tr {
+			border: none;
+
+			&:nth-child(2n) {
+				background-color: #0000;
+			}
+
+			td {
+				border: none;
+			}
 		}
 	}
+	// table {
+	// 	tr {
+	// 		td {
+	// 			margin: 0;
+	// 		}
+	// 	}
+	// }
 }
