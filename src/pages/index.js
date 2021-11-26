@@ -7,11 +7,6 @@ import TimeLine from './TimeLine'
 import Introduce from './Introduce'
 import Skills from './Skills'
 
-import '@fontsource/roboto/300.css'
-import '@fontsource/roboto/400.css'
-import '@fontsource/roboto/500.css'
-import '@fontsource/roboto/700.css'
-
 export default function Home() {
 	const { siteConfig } = useDocusaurusContext()
 
