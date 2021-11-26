@@ -1,5 +1,4 @@
 .root {
-	font-family: 'Roboto';
 	font-weight: 600;
 	max-width: 1000px;
 	min-height: 1080px;
@@ -20,7 +19,7 @@
 			padding-bottom: 16px;
 		}
 		.divider {
-			$offset: 21px;
+			$offset: 14px;
 			$linewidth: 2px;
 
 			margin: 0 30px 0 30px;

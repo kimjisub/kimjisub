@@ -55,6 +55,7 @@ export default function IconView({ slug }) {
 				disableRestoreFocus
 			>
 				<IconDescription>{icon.title}</IconDescription>
+				<IconDescription>설명</IconDescription>
 			</Popover>
 		</div>
 	)
