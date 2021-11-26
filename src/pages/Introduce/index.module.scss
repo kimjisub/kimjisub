@@ -1,11 +1,5 @@
 .root {
 	max-width: 1000px;
-	.row {
-		display: flex;
-		> * {
-			margin: 10px;
-		}
-	}
 }
 
 .fullheight {
@@ -13,7 +7,7 @@
 }
 
 .buttons {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	> * {
+		margin-right: 1rem;
+	}
 }
