@@ -1,25 +1,61 @@
 import { styled } from '@mui/material'
 
-export const Year = styled('div')(({ theme }) => ({
-	fontSize: '18px',
-	color: '#000',
-	padding: theme.spacing(1),
+import '@fontsource/roboto/300.css'
+import '@fontsource/roboto/400.css'
+import '@fontsource/roboto/500.css'
+import '@fontsource/roboto/700.css'
+import '@fontsource/montserrat/300.css'
+import '@fontsource/montserrat/400.css'
+import '@fontsource/montserrat/500.css'
+import 'font-kopub'
+
+export const IntroSubtitleTypo = styled('span')(({ theme }) => ({
+	fontSize: '2rem',
+	fontWeight: 700,
+	color: '#8187A8',
+	padding: theme.spacing(0),
+	// fontFamily: 'KoPub Dotum',
 }))
-export const Title = styled('div')(({ theme }) => ({
-	fontSize: '18px',
-	color: '#000',
-	padding: theme.spacing(1),
+
+export const IntroTitleTypo = styled('span')(({ theme }) => ({
+	fontSize: '4rem',
+	fontWeight: 700,
+	color: '#545971',
+	padding: theme.spacing(0),
+	lineHeight: '100%',
 }))
-export const Content = styled('div')(({ theme }) => ({
-	fontSize: '14px',
+
+export const IntroSmallTitleTypo = styled('span')(({ theme }) => ({
+	fontSize: '2rem',
 	fontWeight: 500,
-	color: '#aaa',
+	color: '#545971',
 	padding: theme.spacing(1),
 }))
 
-export const IconDescription = styled('div')(({ theme }) => ({
-	fontSize: '14px',
+// ======================
+
+export const Year = styled('p')(({ theme }) => ({
+	fontSize: '1rem',
+	color: '#000',
+	padding: theme.spacing(0),
+}))
+export const Title = styled('p')(({ theme }) => ({
+	fontSize: '1rem',
+	color: '#000',
+	padding: theme.spacing(0),
+}))
+export const Content = styled('p')(({ theme }) => ({
+	fontSize: '1rem',
+	fontWeight: 400,
+	color: '#545971',
+	padding: theme.spacing(0),
+	margin: 0,
+}))
+
+export const IconDescription = styled('p')(({ theme }) => ({
+	fontSize: '0.75rem',
 	fontWeight: 500,
-	color: '#aaa',
+	color: '#000',
 	padding: theme.spacing(1),
+	lineHeight: '100%',
 }))
