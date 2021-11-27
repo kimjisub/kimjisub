@@ -31,6 +31,7 @@
 		"docusaurus-plugin-sass": "^0.2.1",
 		"file-loader": "^6.2.0",
 		"font-kopub": "^1.0.2",
+		"framer-motion": "^5.3.3",
 		"mathjs": "^10.0.0",
 		"prism-react-renderer": "^1.2.1",
 		"react": "^17.0.1",

@@ -3,9 +3,10 @@ import clsx from 'clsx'
 import Layout from '@theme/Layout'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import styles from './index.module.scss'
-import TimeLine from './TimeLine'
-import Introduce from './Introduce'
-import Skills from './Skills'
+import TimeLine from '../components/TimeLine'
+import Introduce from '../components/Introduce'
+import Skills from '../components/Skills'
+import Projects from '../components/Projects'
 
 export default function Home() {
 	const { siteConfig } = useDocusaurusContext()
@@ -71,7 +72,6 @@ export default function Home() {
 				'네트워크 운용/정비병으로 지원해 각종 체계 업무를 맡으며 효율적인 일 처리를 위해 힘쓰고 있어요.',
 		},
 	]
-	console.log('styles', styles)
 
 	return (
 		<Layout
@@ -82,6 +82,7 @@ export default function Home() {
 				<Introduce className={clsx(styles.content)} />
 				<TimeLine list={list}></TimeLine>
 				<Skills />
+				<Projects />
 			</div>
 		</Layout>
 	)
