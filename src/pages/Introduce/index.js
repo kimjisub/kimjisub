@@ -22,6 +22,9 @@ export default function Introduce() {
 		>
 			<div className="container">
 				<div className="hero__subtitle">
+					<div className={clsx(styles.decorations)}>
+						<div className={clsx(styles.decoration1)}></div>
+					</div>
 					<p>
 						<IntroSubtitleTypo>Developer</IntroSubtitleTypo>
 						<br />

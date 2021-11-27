@@ -2,11 +2,17 @@ import React from 'react'
 import clsx from 'clsx'
 import styles from './index.module.scss'
 import IconView from '../../components/IconView'
-import { Content } from '../../typography'
+import { Content, Title, Title2 } from '../../typography'
+import { Build } from '@mui/icons-material'
 
 export default function Skills() {
 	return (
 		<div className={clsx(styles.root)}>
+			<Title>
+				<Build />
+				Skills
+			</Title>
+			<Title2>제가 구사할 수 있는 능력들이에요</Title2>
 			<table className={clsx(styles.table)}>
 				<tbody>
 					<tr>

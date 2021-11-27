@@ -39,17 +39,26 @@ export const Year = styled('p')(({ theme }) => ({
 	color: '#000',
 	padding: theme.spacing(0),
 }))
-export const Title = styled('p')(({ theme }) => ({
-	fontSize: '1rem',
-	color: '#000',
-	padding: theme.spacing(0),
-}))
 export const Content = styled('p')(({ theme }) => ({
 	fontSize: '1rem',
 	fontWeight: 400,
 	color: '#545971',
 	padding: theme.spacing(0),
 	margin: 0,
+}))
+export const Title = styled('p')(({ theme }) => ({
+	fontSize: '1.5rem',
+	fontWeight: 700,
+	color: '#F68736',
+	padding: theme.spacing(0),
+	alignItems: 'center',
+	margin: 0,
+	display: 'flex',
+}))
+export const Title2 = styled('p')(({ theme }) => ({
+	fontSize: '1rem',
+	fontWeight: 700,
+	padding: theme.spacing(1),
 }))
 
 export const IconDescription = styled('p')(({ theme }) => ({
