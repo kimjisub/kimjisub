@@ -7,13 +7,18 @@ import { Build } from '@mui/icons-material'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Projectes() {
-	const [selectedId, setSelectedId] = useState(null)
+	const [selected, setSelected] = useState(null)
 
 	const items = [
 		{
 			id: 'UniPad',
 			title: 'UniPad',
 			subtitle: '리듬게임',
+		},
+		{
+			id: 'asdf',
+			title: 'asdf',
+			subtitle: 'asdf',
 		},
 	]
 
@@ -24,21 +29,21 @@ export default function Projectes() {
 				Projectes
 			</Title>
 			<Title2>그동안 진행해왔던 프로젝트들이에요.</Title2>
-			{/* {items.map((item) => (
-				<motion.div layoutId={item.id} onClick={() => setSelectedId(item.id)}>
+			{items.map((item) => (
+				<motion.div layoutId={item.id} onClick={() => setSelected(item)}>
 					<motion.h5>{item.subtitle}</motion.h5>
 					<motion.h2>{item.title}</motion.h2>
 				</motion.div>
 			))}
 			<AnimatePresence>
-				{selectedId && (
-					<motion.div layoutId={selectedId}>
-						<motion.h5>{item.subtitle}</motion.h5>
-						<motion.h2>{item.title}</motion.h2>
-						<motion.button onClick={() => setSelectedId(null)} />
+				{selected && (
+					<motion.div layoutId={selected}>
+						<motion.h5>{selected.subtitle}</motion.h5>
+						<motion.h2>{selected.title}</motion.h2>
+						<motion.button onClick={() => setSelected(null)} />
 					</motion.div>
 				)}
-			</AnimatePresence> */}
+			</AnimatePresence>
 		</div>
 	)
 }

@@ -82,7 +82,7 @@ export default function Home() {
 				<Introduce className={clsx(styles.content)} />
 				<TimeLine list={list}></TimeLine>
 				<Skills />
-				<Projects />
+				{/* <Projects /> */}
 			</div>
 		</Layout>
 	)
