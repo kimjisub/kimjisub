@@ -41,15 +41,12 @@ export default function Introduce() {
 					<div className={styles.buttons}>
 						<Link
 							className="button button--secondary button--lg"
-							to="/docs/intro"
+							to="/projects/intro"
 						>
 							포트폴리오
 						</Link>
 
-						<Link
-							className="button button--secondary button--lg"
-							to="/docs/intro"
-						>
+						<Link className="button button--secondary button--lg" to="/blog">
 							블로그
 						</Link>
 					</div>
