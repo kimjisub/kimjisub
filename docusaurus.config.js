@@ -24,27 +24,41 @@ const config = {
 		},
 	],
 
-	plugins: ['docusaurus-plugin-sass'],
-
 	presets: [
 		[
 			'@docusaurus/preset-classic',
 			/** @type {import('@docusaurus/preset-classic').Options} */
 			({
 				docs: {
+					path: 'projects',
+					routeBasePath: 'projects',
 					sidebarPath: require.resolve('./sidebars.js'),
-					// Please change this to your repo.
-					editUrl: 'https://github.com/kimjisub/kimjisub.me/edit/main/',
+					editUrl: 'https://github.com/kimjisub/kimjisub.me/edit/projects/',
+					editCurrentVersion: true,
 				},
 				blog: {
 					showReadingTime: true,
-					// Please change this to your repo.
 					editUrl: 'https://github.com/kimjisub/kimjisub.me/edit/main/blog/',
 				},
 				theme: {
 					customCss: require.resolve('./src/css/custom.css'),
 				},
 			}),
+		],
+	],
+
+	plugins: [
+		'docusaurus-plugin-sass',
+		[
+			'@docusaurus/plugin-content-docs',
+			{
+				id: 'tools',
+				path: 'tools',
+				routeBasePath: 'tools',
+				sidebarPath: require.resolve('./sidebarsTools.js'),
+				editUrl: 'https://github.com/kimjisub/kimjisub.me/edit/tools/',
+				// ... other options
+			},
 		],
 	],
 
@@ -59,10 +73,16 @@ const config = {
 				},
 				items: [
 					{
-						type: 'doc',
-						docId: 'intro',
+						to: '/projects/intro',
+						label: '프로젝트',
 						position: 'left',
-						label: '포트폴리오',
+						activeBaseRegex: `/projects/`,
+					},
+					{
+						to: '/tools/intro',
+						label: '도구',
+						position: 'left',
+						activeBaseRegex: `/tools/`,
 					},
 					{ to: '/blog', label: '블로그', position: 'left' },
 				],
