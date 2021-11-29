@@ -39,7 +39,7 @@ export const Year = styled('p')(({ theme }) => ({
 	color: '#000',
 	padding: theme.spacing(0),
 }))
-export const Content = styled('span')(({ theme }) => ({
+export const Content = styled('p')(({ theme }) => ({
 	fontSize: '1rem',
 	fontWeight: 400,
 	color: '#545971',

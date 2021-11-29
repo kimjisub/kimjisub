@@ -25,19 +25,19 @@ export default function Introduce() {
 					<div className={clsx(styles.decorations)}>
 						<div className={clsx(styles.decoration1)}></div>
 					</div>
-					<p>
+					<div>
 						<IntroSubtitleTypo>Developer</IntroSubtitleTypo>
 						<br />
 						<IntroTitleTypo>김지섭</IntroTitleTypo>
 						<IntroSmallTitleTypo>을 소개할게요</IntroSmallTitleTypo>
-					</p>
-					<p>
+					</div>
+					<div>
 						<Content>
 							안드로이드 개발을 주력으로 하고 있으며 다양한 프로젝트에서
 							<br />웹 백엔드와 프론트엔드 파트를 맡아본 경험이 있는 풀스택 지망
 							개발자에요.
 						</Content>
-					</p>
+					</div>
 					<div className={styles.buttons}>
 						<Link
 							className="button button--secondary button--lg"
