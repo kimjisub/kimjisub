@@ -75,8 +75,8 @@ export default function Home() {
 
 	return (
 		<Layout
-			title={`Hello from ${siteConfig.title}`}
-			description="Description will go into a meta tag in <head />"
+			title={`개발자 김지섭 포트폴리오`}
+			description="안드로이드 개발을 주력으로 하고 있으며 다양한 프로젝트에서 웹 백엔드와 프론트엔드 파트를 맡아본 경험이 있는 풀스택 지망 개발자에요."
 		>
 			<div className={clsx(styles.root)}>
 				<Introduce className={clsx(styles.content)} />
