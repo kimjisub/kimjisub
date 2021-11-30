@@ -6,7 +6,7 @@ import { IconDescription } from '../../typography'
 
 const simpleIcons = require('simple-icons')
 
-export default function IconView({ slug }) {
+export default function IconView({ slug, description }) {
 	const icon = simpleIcons.Get(slug)
 
 	const [anchorEl, setAnchorEl] = React.useState(null)
@@ -55,7 +55,7 @@ export default function IconView({ slug }) {
 				disableRestoreFocus
 			>
 				<IconDescription>{icon.title}</IconDescription>
-				<IconDescription>설명</IconDescription>
+				<IconDescription>{description}</IconDescription>
 			</Popover>
 		</div>
 	)
