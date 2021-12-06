@@ -33,12 +33,12 @@ const config = {
 					path: 'projects',
 					routeBasePath: 'projects',
 					sidebarPath: require.resolve('./sidebars.js'),
-					editUrl: 'https://github.com/kimjisub/kimjisub.me/edit/projects/',
-					editCurrentVersion: true,
+					// editUrl: 'https://github.com/kimjisub/kimjisub.me/edit/projects/',
+					// editCurrentVersion: true,
 				},
 				blog: {
 					showReadingTime: true,
-					editUrl: 'https://github.com/kimjisub/kimjisub.me/edit/main/blog/',
+					// editUrl: 'https://github.com/kimjisub/kimjisub.me/edit/main/blog/',
 				},
 				theme: {
 					customCss: require.resolve('./src/css/custom.css'),
@@ -56,7 +56,7 @@ const config = {
 				path: 'tools',
 				routeBasePath: 'tools',
 				sidebarPath: require.resolve('./sidebarsTools.js'),
-				editUrl: 'https://github.com/kimjisub/kimjisub.me/edit/tools/',
+				// editUrl: 'https://github.com/kimjisub/kimjisub.me/edit/tools/',
 				// ... other options
 			},
 		],
