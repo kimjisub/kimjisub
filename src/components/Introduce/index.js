@@ -12,14 +12,7 @@ import {
 
 export default function Introduce() {
 	return (
-		<div
-			className={clsx(
-				'hero',
-				styles.root,
-				styles.heroBanner,
-				styles.fullheight
-			)}
-		>
+		<div className={clsx('hero', styles.root, styles.heroBanner)}>
 			<div className="container">
 				<div className="hero__subtitle">
 					<div className={clsx(styles.decorations)}>

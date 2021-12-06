@@ -1,11 +1,7 @@
 .root {
 	max-width: 1000px;
+	height: 600px;
 }
-
-.fullheight {
-	height: calc(100vh - 60px);
-}
-
 .buttons {
 	> * {
 		margin-right: 1rem;
