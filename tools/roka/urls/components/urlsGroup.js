@@ -20,9 +20,9 @@ export default function App(props) {
 			<TextField
 				label={`urls`}
 				multiline
-				rowsMax={4}
-				value={urls.join('\n')}
 				variant="outlined"
+				rows={4}
+				value={urls.join('\n')}
 				onChange={(e) => {
 					const newUrls = e.target.value.split('\n')
 					props.onChange({ date, urls: newUrls })

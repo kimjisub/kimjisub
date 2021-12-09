@@ -20,9 +20,9 @@ export default function App(props) {
 			<TextField
 				label={`ips`}
 				multiline
-				rowsMax={4}
-				value={ips.join('\n')}
 				variant="outlined"
+				rows={4}
+				value={ips.join('\n')}
 				onChange={(e) => {
 					const newIps = e.target.value.split('\n')
 					props.onChange({ date, ips: newIps })
