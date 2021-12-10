@@ -1,0 +1,29 @@
+---
+slug: react-use-local-storage
+title: React 에서 Local Storage 사용하기
+authors: [김지섭]
+tags: [react]
+---
+
+React에서 Local Storage를 useState와 같은 방식으로 사용하는 방식이다.
+
+<!--truncate-->
+
+```js
+import { useState, useEffect } from 'react'
+
+function useLocalStorage(key, initialState) {
+	const [state, setState] = useState(() => {
+		const data = window.localStorage.getItem(key)
+		return data ? JSON.parse(data) : initialState
+	})
+
+	useEffect(() => {
+		window.localStorage.setItem(key, JSON.stringify(state))
+	}, [key, state])
+
+	return [state, setState]
+}
+
+export default useLocalStorage
+```
