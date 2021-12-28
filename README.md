@@ -1,15 +1,14 @@
 <div align="center">
-  
-![](https://komarev.com/ghpvc/?username=kimjisub)
-  
-<a href="https://kimjisub.me"><img src="https://github.com/kimjisub.png" height="40px"/></a>
-<a href="https://www.notion.so/kimjisub/b47d075874e9420cb9804c4bd4f78691"><img src="https://simpleicons.org/icons/notion.svg" height="40px"/></a>
+<a href="https://kimjisub.me">포트폴리오 웹사이트 바로가기</a>
 
 # 배움을 좋아하는 개발자 김지섭입니다 👋
-
-![Kimjisub stats](https://github-readme-stats.vercel.app/api?username=kimjisub&show_icons=true&theme=dracula&count_private=true)
-
   
+![](https://komarev.com/ghpvc/?username=kimjisub)
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=kimjisub&layout=compact&langs_count=8)
+
+![Kimjisub's GitHub stats](https://github-readme-stats.vercel.app/api?username=kimjisub&show_icons=true&count_private=true)
+
 ### 🔥 Experience
 
 1000만+ 다운로드 *UniPad* 대표<br/>
