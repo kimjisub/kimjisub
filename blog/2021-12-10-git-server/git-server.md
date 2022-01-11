@@ -25,9 +25,30 @@ git init --bare
 
 #### Path 등록
 
+`sysdm.cpl`에 들어가서 아래 내용 path에 등록하기
+
+```
+C:\git\bin
+C:\git\usr\bin
+```
+
 #### sshd 실행
 
 윈도우 추가 기능 설치를 통하여 ssh 서버인 sshd를 실행할 수 있지만, git에서 제공하는 sshd를 사용하여 서버를 열어보겠다.
+
+```shell title="ssh 키 설정"
+ssh-keygen -t rsa -f C:\git\etc\ssh\ssh_host_rsa_key
+ssh-keygen -t ecdsa -f C:\git\etc\ssh\ssh_host_ecdsa_key
+ssh-keygen -t ed25519 -f C:\git\etc\ssh\ssh_host_ed25519_key
+```
+
+```text title="C:\user\User.bashrc"
+export PATH="/mingw64/bin"
+```
+
+```text title="sshd 실행"
+C:\git\usr\bin\sshd.exe
+```
 
 ## 클라이언트 설정
 
