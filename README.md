@@ -1,8 +1,8 @@
 <div align="center">
-<a href="https://kimjisub.me">포트폴리오 웹사이트 바로가기</a>
+<a href="https://jisub.kim">포트폴리오 웹사이트 바로가기</a>
 
 # 배움을 좋아하는 개발자 김지섭입니다 👋
-  
+
 ![](https://komarev.com/ghpvc/?username=kimjisub)
 
 <!--![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=kimjisub&layout=compact&langs_count=8)-->
@@ -17,7 +17,6 @@ IT 창업 관련 대회 **23회** 수상<br/>
 여러 번의 **코딩 교육 봉사**<br/>
 스타트업 Vplate **풀스택 개발자**로 근무함<br/>
 2021.02.01 ~ 2022.07.31 **군 복무**중<br/>
-
 
 ### 🎓 Education
 
@@ -43,7 +42,6 @@ IT 창업 관련 대회 **23회** 수상<br/>
 <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=Docker&logoColor=white"/>
 <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=Firebase&logoColor=white"/>
 <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=AmazonAWS&logoColor=white"/>
-
 
 </div>
 

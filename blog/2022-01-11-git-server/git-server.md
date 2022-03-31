@@ -59,5 +59,5 @@ C:\git\usr\bin\sshd.exe
 ```shell
 git clone <사용자>@<서버 주소>:<경로>/<이름>.git
 
-git clone User@git.kimjisub.me:kimjisub/test.git
+git clone User@git.jisub.kim:kimjisub/test.git
 ```

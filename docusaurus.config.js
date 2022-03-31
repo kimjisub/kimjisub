@@ -8,13 +8,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 const config = {
 	title: 'Kimjisub',
 	tagline: '개발자 김지섭입니다.',
-	url: 'https://kimjisub.me',
+	url: 'https://jisub.kim',
 	baseUrl: '/',
 	onBrokenLinks: 'throw',
 	onBrokenMarkdownLinks: 'warn',
 	favicon: 'img/favicon.ico',
 	organizationName: 'kimjisub', // Usually your GitHub org/user name.
-	projectName: 'kimjisub.me', // Usually your repo name.
+	projectName: 'jisub.kim', // Usually your repo name.
 
 	scripts: [
 		{
@@ -33,12 +33,12 @@ const config = {
 					path: 'projects',
 					routeBasePath: 'projects',
 					sidebarPath: require.resolve('./sidebars.js'),
-					// editUrl: 'https://github.com/kimjisub/kimjisub.me/edit/projects/',
+					// editUrl: 'https://github.com/kimjisub/kimjisub/edit/projects/',
 					// editCurrentVersion: true,
 				},
 				blog: {
 					showReadingTime: true,
-					// editUrl: 'https://github.com/kimjisub/kimjisub.me/edit/main/blog/',
+					// editUrl: 'https://github.com/kimjisub/kimjisub/edit/main/blog/',
 				},
 				theme: {
 					customCss: require.resolve('./src/css/custom.css'),
@@ -56,7 +56,7 @@ const config = {
 				path: 'tools',
 				routeBasePath: 'tools',
 				sidebarPath: require.resolve('./sidebarsTools.js'),
-				// editUrl: 'https://github.com/kimjisub/kimjisub.me/edit/tools/',
+				// editUrl: 'https://github.com/kimjisub/kimjisub/edit/tools/',
 				// ... other options
 			},
 		],
@@ -66,7 +66,7 @@ const config = {
 		/** @type {import('@docusaurus/preset-classic').ThemeConfig} */
 		({
 			navbar: {
-				title: 'kimjisub.me',
+				title: 'jisub.kim',
 				logo: {
 					alt: 'kimjisub',
 					src: 'img/logo.svg',
