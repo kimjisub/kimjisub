@@ -20,7 +20,7 @@ export default function Skills() {
 							<Content>Language</Content>
 						</td>
 						<td className={clsx(styles.icons)}>
-							<IconView slug="html5" />
+							<IconView slug="html5" description="asdf" />
 							<IconView slug="css3" />
 							<IconView slug="javascript" />
 							<IconView slug="typescript" />
@@ -30,6 +30,17 @@ export default function Skills() {
 							<IconView slug="dart" />
 							<IconView slug="cplusplus" />
 							<IconView slug="csharp" />
+						</td>
+					</tr>
+					<tr>
+						<td className={clsx(styles.text)}>
+							<Content>Protocol</Content>
+						</td>
+						<td className={clsx(styles.icons)}>
+							<IconView slug="midi" />
+							<IconView slug="socketdotio" />
+							<IconView slug="openssl" />
+							<IconView slug="markdown" />
 						</td>
 					</tr>
 					<tr>
