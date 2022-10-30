@@ -3,12 +3,15 @@ import clsx from 'clsx'
 import styles from './index.module.scss'
 import Popover from '@mui/material/Popover'
 import { IconDescription } from '../../typography'
+import { SimpleIcon } from 'simple-icons'
 
-const simpleIcons = require('simple-icons')
-
-export default function IconView({ slug, description }) {
-	const icon = simpleIcons.Get(slug)
-
+export default function IconView({
+	icon,
+	description,
+}: {
+	icon: SimpleIcon
+	description?: string
+}) {
 	const [anchorEl, setAnchorEl] = React.useState(null)
 	const open = Boolean(anchorEl)
 	const handlePopoverOpen = (event) => {

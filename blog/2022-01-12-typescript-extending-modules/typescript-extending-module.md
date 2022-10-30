@@ -12,12 +12,12 @@ Typescript에서 이미 존재하는 모듈에 함수를 추가하는 방법이�
 ```typescript
 declare global {
 	interface Array<T> {
-		randomOne(): T
+		randomOne(): T;
 	}
 }
 
 Array.prototype.randomOne = function randomOne() {
-	const randomIndex = Math.floor(Math.random() * this.length)
-	return this[randomIndex]
-}
+	const randomIndex = Math.floor(Math.random() * this.length);
+	return this[randomIndex];
+};
 ```

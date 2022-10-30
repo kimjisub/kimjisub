@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github')
-const darkCodeTheme = require('prism-react-renderer/themes/dracula')
+const lightCodeTheme = require('prism-react-renderer/themes/github');
+const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -13,8 +13,19 @@ const config = {
 	onBrokenLinks: 'throw',
 	onBrokenMarkdownLinks: 'warn',
 	favicon: 'img/favicon.ico',
+
+	// GitHub pages deployment config.
+	// If you aren't using GitHub pages, you don't need these.
 	organizationName: 'kimjisub', // Usually your GitHub org/user name.
 	projectName: 'jisub.kim', // Usually your repo name.
+
+	// Even if you don't use internalization, you can use this field to set useful
+	// metadata like html lang. For example, if your site is Chinese, you may want
+	// to replace "en" with "zh-Hans".
+	// i18n: {
+	// 	defaultLocale: 'en',
+	// 	locales: ['en'],
+	// },
 
 	scripts: [
 		{
@@ -33,12 +44,17 @@ const config = {
 					path: 'projects',
 					routeBasePath: 'projects',
 					sidebarPath: require.resolve('./sidebars.js'),
-					// editUrl: 'https://github.com/kimjisub/kimjisub/edit/projects/',
-					// editCurrentVersion: true,
+					// Please change this to your repo.
+					// Remove this to remove the "edit this page" links.
+					// editUrl:
+					// 	'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
 				},
 				blog: {
 					showReadingTime: true,
-					// editUrl: 'https://github.com/kimjisub/kimjisub/edit/main/blog/',
+					// Please change this to your repo.
+					// Remove this to remove the "edit this page" links.
+					// editUrl:
+					// 	'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
 				},
 				theme: {
 					customCss: require.resolve('./src/css/custom.css'),
@@ -133,6 +149,6 @@ const config = {
 				darkTheme: darkCodeTheme,
 			},
 		}),
-}
+};
 
-module.exports = config
+module.exports = config;
