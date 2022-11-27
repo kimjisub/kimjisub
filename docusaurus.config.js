@@ -111,7 +111,7 @@ const config = {
             items: [
               {
                 label: 'Document',
-                to: '/projects/intro',
+                to: '/portfolio/intro',
               },
               {
                 label: 'Blog',
