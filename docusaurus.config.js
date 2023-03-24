@@ -10,14 +10,15 @@ const config = {
   tagline: '개발자 김지섭입니다.',
   url: 'https://jisub.kim',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'kimjisub', // Usually your GitHub org/user name.
   projectName: 'jisub.kim', // Usually your repo name.
+
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -37,7 +38,7 @@ const config = {
 
   presets: [
     [
-      '@docusaurus/preset-classic',
+      'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
@@ -147,6 +148,11 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
       },
     }),
 };
