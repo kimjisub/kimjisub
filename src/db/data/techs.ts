@@ -67,541 +67,541 @@ import {
   siPrisma,
   siLinear,
 } from 'simple-icons/icons';
-import { Skill, SkillLevel, SkillType } from '../model/skill';
+import { Tech, TechLevel, TechType } from '../models/Tech';
 
-export const skills = {
-  HTML: {
+export const techs = {
+  HTML: new Tech({
     name: 'HTML',
     icon: siHtml5,
     description: 'Markup language used for creating web pages and applications',
-    level: SkillLevel.Expert,
-    type: SkillType.Language,
-  } as Skill,
-  CSS: {
+    level: TechLevel.Expert,
+    type: TechType.Language,
+  }),
+  CSS: new Tech({
     name: 'CSS',
     icon: siCss3,
     description:
       'Style sheet language used for describing the presentation of a document written in HTML',
-    level: SkillLevel.Expert,
-    type: SkillType.Language,
-  } as Skill,
-  JavaScript: {
+    level: TechLevel.Expert,
+    type: TechType.Language,
+  }),
+  JavaScript: new Tech({
     name: 'JavaScript',
     icon: siJavascript,
     description:
       'High-level, interpreted programming language used for creating interactive web pages and applications',
-    level: SkillLevel.Expert,
-    type: SkillType.Language,
-  } as Skill,
-  TypeScript: {
+    level: TechLevel.Expert,
+    type: TechType.Language,
+  }),
+  TypeScript: new Tech({
     name: 'TypeScript',
     icon: siTypescript,
     description: 'Open-source language which is a superset of JavaScript',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Language,
-  } as Skill,
-  Kotlin: {
+    level: TechLevel.Intermediate,
+    type: TechType.Language,
+  }),
+  Kotlin: new Tech({
     name: 'Kotlin',
     icon: siKotlin,
     description:
       'Cross-platform, statically typed programming language used for creating mobile and web applications',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Language,
-  } as Skill,
-  Python: {
+    level: TechLevel.Intermediate,
+    type: TechType.Language,
+  }),
+  Python: new Tech({
     name: 'Python',
     icon: siPython,
     description:
       'High-level, interpreted programming language used for web development, scientific computing, data analysis, artificial intelligence, and more',
-    level: SkillLevel.Advanced,
-    type: SkillType.Language,
-  } as Skill,
-  Dart: {
+    level: TechLevel.Advanced,
+    type: TechType.Language,
+  }),
+  Dart: new Tech({
     name: 'Dart',
     icon: siDart,
     description:
       'Client-optimized language used for creating mobile, web, and desktop applications',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Language,
-  } as Skill,
-  'C++': {
+    level: TechLevel.Intermediate,
+    type: TechType.Language,
+  }),
+  'C++': new Tech({
     name: 'C++',
     icon: siCplusplus,
     description:
       'General-purpose programming language with a bias toward systems programming that is widely used in application software, game development, drivers, and more',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Language,
-  } as Skill,
-  'C#': {
+    level: TechLevel.Intermediate,
+    type: TechType.Language,
+  }),
+  'C#': new Tech({
     name: 'C#',
     icon: siCsharp,
     description:
       'Simple, modern, object-oriented, and type-safe programming language that is widely used for creating Windows desktop applications, video games, and more',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Language,
-  } as Skill,
-  MIDI: {
+    level: TechLevel.Intermediate,
+    type: TechType.Language,
+  }),
+  MIDI: new Tech({
     name: 'MIDI',
     icon: siMidi,
     description:
       'Protocol used for communicating musical information between digital devices',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Protocol,
-  } as Skill,
-  'Socket.IO': {
+    level: TechLevel.Intermediate,
+    type: TechType.Protocol,
+  }),
+  'Socket.IO': new Tech({
     name: 'Socket.IO',
     icon: siSocketdotio,
     description:
       'Real-time event-based communication framework for web applications',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Protocol,
-  } as Skill,
-  OpenSSL: {
+    level: TechLevel.Intermediate,
+    type: TechType.Protocol,
+  }),
+  OpenSSL: new Tech({
     name: 'OpenSSL',
     icon: siOpenssl,
     description:
       'Robust, full-featured open source toolkit implementing the Secure Sockets Layer (SSL) and Transport Layer Security (TLS) protocols',
-    level: SkillLevel.Beginner,
-    type: SkillType.Protocol,
-  } as Skill,
-  Markdown: {
+    level: TechLevel.Beginner,
+    type: TechType.Protocol,
+  }),
+  Markdown: new Tech({
     name: 'Markdown',
     icon: siMarkdown,
     description:
       'Lightweight markup language used to format plain text into formatted documents',
-    level: SkillLevel.Expert,
-    type: SkillType.Language,
-  } as Skill,
-  Android: {
+    level: TechLevel.Expert,
+    type: TechType.Language,
+  }),
+  Android: new Tech({
     name: 'Android',
     icon: siAndroid,
     description:
       'Mobile operating system based on the Linux kernel and developed by Google, used for creating mobile applications',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Platform,
-  } as Skill,
-  'Node.js': {
+    level: TechLevel.Intermediate,
+    type: TechType.Platform,
+  }),
+  'Node.js': new Tech({
     name: 'Node.js',
     icon: siNodedotjs,
     description:
       'Open-source, cross-platform, back-end JavaScript runtime environment that executes JavaScript code outside a web browser',
-    level: SkillLevel.Expert,
-    type: SkillType.Framework,
-  } as Skill,
-  React: {
+    level: TechLevel.Expert,
+    type: TechType.Framework,
+  }),
+  React: new Tech({
     name: 'React',
     icon: siReact,
     description:
       'JavaScript library used for building user interfaces and UI components',
-    level: SkillLevel.Expert,
-    type: SkillType.Framework,
-  } as Skill,
-  Flutter: {
+    level: TechLevel.Expert,
+    type: TechType.Framework,
+  }),
+  Flutter: new Tech({
     name: 'Flutter',
     icon: siFlutter,
     description:
       'Open-source mobile application development framework created by Google for creating high-performance, high-fidelity, apps for iOS and Android, from a single codebase',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Framework,
-  } as Skill,
-  Arduino: {
+    level: TechLevel.Intermediate,
+    type: TechType.Framework,
+  }),
+  Arduino: new Tech({
     name: 'Arduino',
     icon: siArduino,
     description:
       'Open-source electronics platform based on easy-to-use hardware and software, used for creating interactive electronic objects and environments',
-    level: SkillLevel.Beginner,
-    type: SkillType.Platform,
-  } as Skill,
-  'Raspberry Pi': {
+    level: TechLevel.Beginner,
+    type: TechType.Platform,
+  }),
+  'Raspberry Pi': new Tech({
     name: 'Raspberry Pi',
     icon: siRaspberrypi,
     description:
       'Low-cost, credit-card-sized computer that plugs into a computer monitor or TV, used for learning programming and creating DIY projects',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Platform,
-  } as Skill,
-  Unity: {
+    level: TechLevel.Intermediate,
+    type: TechType.Platform,
+  }),
+  Unity: new Tech({
     name: 'Unity',
     icon: siUnity,
     description:
       'Cross-platform game engine developed by Unity Technologies, used for creating video games, AR and VR experiences, and more',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Framework,
-  } as Skill,
-  NestJS: {
+    level: TechLevel.Intermediate,
+    type: TechType.Framework,
+  }),
+  NestJS: new Tech({
     name: 'NestJS',
     icon: siNestjs,
     description:
       'A progressive Node.js framework for building efficient, scalable, and enterprise-grade server-side applications',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Framework,
-  } as Skill,
-  MongoDB: {
+    level: TechLevel.Intermediate,
+    type: TechType.Framework,
+  }),
+  MongoDB: new Tech({
     name: 'MongoDB',
     icon: siMongodb,
     description:
       'Cross-platform document-oriented database program, used for high volume data storage and retrieval',
-    level: SkillLevel.Advanced,
-    type: SkillType.Database,
-  } as Skill,
-  MySQL: {
+    level: TechLevel.Advanced,
+    type: TechType.Database,
+  }),
+  MySQL: new Tech({
     name: 'MySQL',
     icon: siMysql,
     description:
       'Open-source relational database management system, used for storing and managing data in various applications',
-    level: SkillLevel.Expert,
-    type: SkillType.Database,
-  } as Skill,
-  MariaDB: {
+    level: TechLevel.Expert,
+    type: TechType.Database,
+  }),
+  MariaDB: new Tech({
     name: 'MariaDB',
     icon: siMariadb,
     description:
       'Community-developed fork of MySQL, used for storing and managing data in various applications',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Database,
-  } as Skill,
-  PostgreSQL: {
+    level: TechLevel.Intermediate,
+    type: TechType.Database,
+  }),
+  PostgreSQL: new Tech({
     name: 'PostgreSQL',
     icon: siPostgresql,
     description:
       'Powerful open-source object-relational database system, used for storing and managing data in various applications',
-    level: SkillLevel.Advanced,
-    type: SkillType.Database,
-  } as Skill,
-  SQLite: {
+    level: TechLevel.Advanced,
+    type: TechType.Database,
+  }),
+  SQLite: new Tech({
     name: 'SQLite',
     icon: siSqlite,
     description:
       'Lightweight, serverless, self-contained, high-reliability, SQL database engine, used for local data storage and management',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Database,
-  } as Skill,
-  Sequelize: {
+    level: TechLevel.Intermediate,
+    type: TechType.Database,
+  }),
+  Sequelize: new Tech({
     name: 'Sequelize',
     icon: siSequelize,
     description:
       'Promise-based ORM for Node.js, used for mapping objects to relational database tables',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Library,
-  } as Skill,
-  Prisma: {
+    level: TechLevel.Intermediate,
+    type: TechType.Library,
+  }),
+  Prisma: new Tech({
     name: 'Prisma',
     icon: siPrisma,
     description:
       'Modern database toolkit and ORM for Node.js and TypeScript, used for accessing databases and managing data in a type-safe way',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Library,
-  } as Skill,
-  GitHub: {
+    level: TechLevel.Intermediate,
+    type: TechType.Library,
+  }),
+  GitHub: new Tech({
     name: 'GitHub',
     icon: siGithub,
     description:
       'Web-based hosting service for version control using Git, used for managing and collaborating on software development projects',
-    level: SkillLevel.Expert,
-    type: SkillType.CICD,
-  } as Skill,
-  Git: {
+    level: TechLevel.Expert,
+    type: TechType.CICD,
+  }),
+  Git: new Tech({
     name: 'Git',
     icon: siGit,
     description:
       'Distributed version control system for tracking changes in source code during software development',
-    level: SkillLevel.Expert,
-    type: SkillType.CICD,
-  } as Skill,
-  'GitHub Actions': {
+    level: TechLevel.Expert,
+    type: TechType.CICD,
+  }),
+  'GitHub Actions': new Tech({
     name: 'GitHub Actions',
     icon: siGithubactions,
     description:
       'Workflow automation tool provided by GitHub, used for building, testing, and deploying software projects',
-    level: SkillLevel.Intermediate,
-    type: SkillType.CICD,
-  } as Skill,
-  Docker: {
+    level: TechLevel.Intermediate,
+    type: TechType.CICD,
+  }),
+  Docker: new Tech({
     name: 'Docker',
     icon: siDocker,
     description:
       'Open-source platform for building, shipping, and running distributed applications in containers',
-    level: SkillLevel.Intermediate,
-    type: SkillType.CICD,
-  } as Skill,
-  'Google Play': {
+    level: TechLevel.Intermediate,
+    type: TechType.CICD,
+  }),
+  'Google Play': new Tech({
     name: 'Google Play',
     icon: siGoogleplay,
     description:
       'Official app store for Android operating system, used for distributing and downloading mobile apps',
-    level: SkillLevel.Intermediate,
-    type: SkillType.CICD,
-  } as Skill,
-  'Google Cloud': {
+    level: TechLevel.Intermediate,
+    type: TechType.CICD,
+  }),
+  'Google Cloud': new Tech({
     name: 'Google Cloud',
     icon: siGooglecloud,
     description:
       'Cloud computing services provided by Google, used for hosting and managing applications and data',
-    level: SkillLevel.Beginner,
-    type: SkillType.Platform,
-  } as Skill,
-  Firebase: {
+    level: TechLevel.Beginner,
+    type: TechType.Platform,
+  }),
+  Firebase: new Tech({
     name: 'Firebase',
     icon: siFirebase,
     description:
       'Mobile and web application development platform provided by Google, used for building high-quality apps, growing your user base, and earning more money',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Platform,
-  } as Skill,
-  Cloudflare: {
+    level: TechLevel.Intermediate,
+    type: TechType.Platform,
+  }),
+  Cloudflare: new Tech({
     name: 'Cloudflare',
     icon: siCloudflare,
     description:
       'Internet security, performance, and reliability company that provides content delivery network services, DDoS mitigation, Internet security, and more',
-    level: SkillLevel.Beginner,
-    type: SkillType.CICD,
-  } as Skill,
-  'Amazon Web Services': {
+    level: TechLevel.Beginner,
+    type: TechType.CICD,
+  }),
+  'Amazon Web Services': new Tech({
     name: 'Amazon Web Services',
     icon: siAmazonaws,
     description:
       'Collection of cloud computing services provided by Amazon, used for hosting and managing applications and data',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Platform,
-  } as Skill,
-  Apple: {
+    level: TechLevel.Intermediate,
+    type: TechType.Platform,
+  }),
+  Apple: new Tech({
     name: 'Apple',
     icon: siApple,
     description:
       'Technology company that designs, develops, and sells consumer electronics, computer software, and online services',
-    level: SkillLevel.Intermediate,
-    type: SkillType.OperatingSystem,
-  } as Skill,
-  'Windows 11': {
+    level: TechLevel.Intermediate,
+    type: TechType.OperatingSystem,
+  }),
+  'Windows 11': new Tech({
     name: 'Windows 11',
     icon: siWindows11,
     description:
       'Latest version of the Windows operating system developed by Microsoft',
-    level: SkillLevel.Intermediate,
-    type: SkillType.OperatingSystem,
-  } as Skill,
-  Ubuntu: {
+    level: TechLevel.Intermediate,
+    type: TechType.OperatingSystem,
+  }),
+  Ubuntu: new Tech({
     name: 'Ubuntu',
     icon: siUbuntu,
     description:
       'Open-source operating system based on the Linux kernel, used for desktop and server computing',
-    level: SkillLevel.Intermediate,
-    type: SkillType.OperatingSystem,
-  } as Skill,
-  Linux: {
+    level: TechLevel.Intermediate,
+    type: TechType.OperatingSystem,
+  }),
+  Linux: new Tech({
     name: 'Linux',
     icon: siLinux,
     description:
       'Family of open-source Unix-like operating systems based on the Linux kernel, used for desktop and server computing',
-    level: SkillLevel.Intermediate,
-    type: SkillType.OperatingSystem,
-  } as Skill,
-  Synology: {
+    level: TechLevel.Intermediate,
+    type: TechType.OperatingSystem,
+  }),
+  Synology: new Tech({
     name: 'Synology',
     icon: siSynology,
     description:
       'Taiwanese company that develops and sells network-attached storage (NAS), routers, and surveillance products, used for data storage and management',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Platform,
-  } as Skill,
-  'Visual Studio Code': {
+    level: TechLevel.Intermediate,
+    type: TechType.Platform,
+  }),
+  'Visual Studio Code': new Tech({
     name: 'Visual Studio Code',
     icon: siVisualstudiocode,
     description:
       'Free and open-source source-code editor developed by Microsoft, used for editing and debugging code',
-    level: SkillLevel.Expert,
-    type: SkillType.IDE,
-  } as Skill,
-  'Android Studio': {
+    level: TechLevel.Expert,
+    type: TechType.IDE,
+  }),
+  'Android Studio': new Tech({
     name: 'Android Studio',
     icon: siAndroidstudio,
     description:
       'Official integrated development environment (IDE) for Android application development, based on IntelliJ IDEA',
-    level: SkillLevel.Intermediate,
-    type: SkillType.IDE,
-  } as Skill,
-  Xcode: {
+    level: TechLevel.Intermediate,
+    type: TechType.IDE,
+  }),
+  Xcode: new Tech({
     name: 'Xcode',
     icon: siXcode,
     description:
       'Integrated development environment (IDE) for macOS used for developing software for macOS, iOS, iPadOS, watchOS, and tvOS',
-    level: SkillLevel.Intermediate,
-    type: SkillType.IDE,
-  } as Skill,
-  'Visual Studio': {
+    level: TechLevel.Intermediate,
+    type: TechType.IDE,
+  }),
+  'Visual Studio': new Tech({
     name: 'Visual Studio',
     icon: siVisualstudio,
     description:
       'Integrated development environment (IDE) developed by Microsoft, used for developing software for Windows, Android, iOS, web, and cloud',
-    level: SkillLevel.Intermediate,
-    type: SkillType.IDE,
-  } as Skill,
-  Anaconda: {
+    level: TechLevel.Intermediate,
+    type: TechType.IDE,
+  }),
+  Anaconda: new Tech({
     name: 'Anaconda',
     icon: siAnaconda,
     description:
       'Free and open-source distribution of the Python and R programming languages for scientific computing, data science, and machine learning',
-    level: SkillLevel.Intermediate,
-    type: SkillType.IDE,
-  } as Skill,
-  Jupyter: {
+    level: TechLevel.Intermediate,
+    type: TechType.IDE,
+  }),
+  Jupyter: new Tech({
     name: 'Jupyter',
     icon: siJupyter,
     description:
       'Open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and narrative text',
-    level: SkillLevel.Intermediate,
-    type: SkillType.IDE,
-  } as Skill,
-  'Adobe Photoshop': {
+    level: TechLevel.Intermediate,
+    type: TechType.IDE,
+  }),
+  'Adobe Photoshop': new Tech({
     name: 'Adobe Photoshop',
     icon: siAdobephotoshop,
     description:
       'Raster graphics editor developed and published by Adobe, used for editing and manipulating digital images',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Tool,
-  } as Skill,
-  'Adobe Illustrator': {
+    level: TechLevel.Intermediate,
+    type: TechType.Tool,
+  }),
+  'Adobe Illustrator': new Tech({
     name: 'Adobe Illustrator',
     icon: siAdobeillustrator,
     description:
       'Vector graphics editor developed and published by Adobe, used for creating illustrations, icons, logos, and more',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Tool,
-  } as Skill,
-  'Adobe Premiere Pro': {
+    level: TechLevel.Intermediate,
+    type: TechType.Tool,
+  }),
+  'Adobe Premiere Pro': new Tech({
     name: 'Adobe Premiere Pro',
     icon: siAdobepremierepro,
     description:
       'Timeline-based video editing software developed and published by Adobe, used for editing and producing videos',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Tool,
-  } as Skill,
-  'Adobe After Effects': {
+    level: TechLevel.Intermediate,
+    type: TechType.Tool,
+  }),
+  'Adobe After Effects': new Tech({
     name: 'Adobe After Effects',
     icon: siAdobeaftereffects,
     description:
       'Digital visual effects, motion graphics, and compositing software developed and published by Adobe, used for creating visual effects and animations',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Tool,
-  } as Skill,
-  Sketch: {
+    level: TechLevel.Intermediate,
+    type: TechType.Tool,
+  }),
+  Sketch: new Tech({
     name: 'Sketch',
     icon: siSketch,
     description:
       'Vector graphics editor developed and published by Sketch B.V., used for designing user interfaces, websites, and icons',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Tool,
-  } as Skill,
-  Figma: {
+    level: TechLevel.Intermediate,
+    type: TechType.Tool,
+  }),
+  Figma: new Tech({
     name: 'Figma',
     icon: siFigma,
     description:
       'Web-based vector graphics editor and prototyping tool developed and published by Figma, Inc., used for designing user interfaces and interactive prototypes',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Tool,
-  } as Skill,
-  Blender: {
+    level: TechLevel.Intermediate,
+    type: TechType.Tool,
+  }),
+  Blender: new Tech({
     name: 'Blender',
     icon: siBlender,
     description:
       'Free and open-source 3D creation software, used for creating 3D models, animations, and visual effects',
-    level: SkillLevel.Beginner,
-    type: SkillType.Tool,
-  } as Skill,
-  'Ableton Live': {
+    level: TechLevel.Beginner,
+    type: TechType.Tool,
+  }),
+  'Ableton Live': new Tech({
     name: 'Ableton Live',
     icon: siAbletonlive,
     description:
       'Digital audio workstation (DAW) developed and published by Ableton, used for creating, producing, and performing music',
-    level: SkillLevel.Beginner,
-    type: SkillType.Tool,
-  } as Skill,
-  Facebook: {
+    level: TechLevel.Beginner,
+    type: TechType.Tool,
+  }),
+  Facebook: new Tech({
     name: 'Facebook',
     icon: siFacebook,
     description:
       'Social media and networking company that allows users to connect with friends and family, join groups, and share photos and videos',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Social,
-  } as Skill,
-  Instagram: {
+    level: TechLevel.Intermediate,
+    type: TechType.Social,
+  }),
+  Instagram: new Tech({
     name: 'Instagram',
     icon: siInstagram,
     description:
       'Social media and networking service that allows users to share photos and videos, and follow other users',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Social,
-  } as Skill,
-  Discord: {
+    level: TechLevel.Intermediate,
+    type: TechType.Social,
+  }),
+  Discord: new Tech({
     name: 'Discord',
     icon: siDiscord,
     description:
       'Instant messaging and VoIP application designed for creating communities, used for text, image, video, and audio communication between users',
-    level: SkillLevel.Beginner,
-    type: SkillType.Social,
-  } as Skill,
-  Slack: {
+    level: TechLevel.Beginner,
+    type: TechType.Social,
+  }),
+  Slack: new Tech({
     name: 'Slack',
     icon: siSlack,
     description:
       'Collaboration hub that brings teams together to get work done, used for real-time messaging, file sharing, and task management',
-    level: SkillLevel.Beginner,
-    type: SkillType.Tool,
-  } as Skill,
-  Notion: {
+    level: TechLevel.Beginner,
+    type: TechType.Tool,
+  }),
+  Notion: new Tech({
     name: 'Notion',
     icon: siNotion,
     description:
       'All-in-one workspace that allows users to write, plan, collaborate, and get organized, used for note-taking, project management, and knowledge sharing',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Tool,
-  } as Skill,
-  Linear: {
+    level: TechLevel.Intermediate,
+    type: TechType.Tool,
+  }),
+  Linear: new Tech({
     name: 'Linear',
     icon: siLinear,
     description:
       'Issue tracking and project management tool designed for software development teams, used for tracking bugs and feature requests',
-    level: SkillLevel.Beginner,
-    type: SkillType.Tool,
-  } as Skill,
-  Steam: {
+    level: TechLevel.Beginner,
+    type: TechType.Tool,
+  }),
+  Steam: new Tech({
     name: 'Steam',
     icon: siSteam,
     description:
       'Digital distribution platform developed and published by Valve Corporation, used for distributing and playing video games',
-    level: SkillLevel.Intermediate,
-    type: SkillType.Gaming,
-  } as Skill,
-  'Epic Games': {
+    level: TechLevel.Intermediate,
+    type: TechType.Gaming,
+  }),
+  'Epic Games': new Tech({
     name: 'Epic Games',
     icon: siEpicgames,
     description:
       'American video game and software development company that develops and publishes Fortnite, used for creating and publishing video games',
-    level: SkillLevel.Beginner,
-    type: SkillType.Gaming,
-  } as Skill,
-  Ubisoft: {
+    level: TechLevel.Beginner,
+    type: TechType.Gaming,
+  }),
+  Ubisoft: new Tech({
     name: 'Ubisoft',
     icon: siUbisoft,
     description:
       'French video game company that develops and publishes popular video game franchises, used for creating and publishing video games',
-    level: SkillLevel.Beginner,
-    type: SkillType.Gaming,
-  } as Skill,
-  Oculus: {
+    level: TechLevel.Beginner,
+    type: TechType.Gaming,
+  }),
+  Oculus: new Tech({
     name: 'Oculus',
     icon: siOculus,
     description:
       'Virtual reality technology company that develops and publishes the Oculus Rift and Oculus Quest, used for developing and playing virtual reality games and experiences',
-    level: SkillLevel.Beginner,
-    type: SkillType.Gaming,
-  } as Skill,
-  'Nintendo Switch': {
+    level: TechLevel.Beginner,
+    type: TechType.Gaming,
+  }),
+  'Nintendo Switch': new Tech({
     name: 'Nintendo Switch',
     icon: siNintendoswitch,
     description:
       'Hybrid video game console developed and published by Nintendo, used for playing video games at home and on the go',
-    level: SkillLevel.Beginner,
-    type: SkillType.Gaming,
-  } as Skill,
+    level: TechLevel.Beginner,
+    type: TechType.Gaming,
+  }),
 };

@@ -1,14 +1,28 @@
 import { SimpleIcon } from 'simple-icons';
 
-export interface Skill {
+export class Tech {
   name: string;
   icon: SimpleIcon;
   description: string;
-  level: SkillLevel;
-  type: SkillType;
+  level: TechLevel;
+  type: TechType;
+
+  constructor(data: {
+    name: string;
+    icon: SimpleIcon;
+    description: string;
+    level: TechLevel;
+    type: TechType;
+  }) {
+    this.name = data.name;
+    this.icon = data.icon;
+    this.description = data.description;
+    this.level = data.level;
+    this.type = data.type;
+  }
 }
 
-export enum SkillLevel {
+export enum TechLevel {
   Beginner = 1,
   Intermediate = 2,
   Advanced = 3,
@@ -16,7 +30,7 @@ export enum SkillLevel {
   Master = 5,
 }
 
-export enum SkillType {
+export enum TechType {
   Language = 'Language',
   Framework = 'Framework',
   Library = 'Library',

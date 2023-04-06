@@ -1,16 +1,16 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './index.module.scss';
-import IconView from '../IconView';
 import { Content, Title, Title2 } from '../../typography';
 import { Build } from '@mui/icons-material';
-import { skills } from '@site/src/data/skills';
-import { Skill } from '@site/src/model/skill';
+import { techs } from '@site/src/db/data/techs';
+import { Tech } from '@site/src/db/models/Tech';
+import IconView from '@site/src/components/IconView';
 
-export default function Skills() {
+export default function Technology() {
   const skillsByType: {
-    [type: string]: Skill[];
-  } = Object.values(skills).reduce((acc, skill) => {
+    [type: string]: Tech[];
+  } = Object.values(techs).reduce((acc, skill) => {
     if (!acc[skill.type]) {
       acc[skill.type] = [];
     }

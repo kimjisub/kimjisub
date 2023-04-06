@@ -17,3 +17,11 @@
     padding: 2rem;
   }
 }
+iframe {
+  width: 100%;
+  min-height: 500px;
+  border-radius: 10px;
+  padding: none;
+  overflow-x: hidden;
+  overflow: auto;
+}
