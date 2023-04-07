@@ -7,8 +7,16 @@ import Introduce from './Introduce';
 import TimeLine from './TimeLine';
 import Technology from './Technology';
 import Projects from './Projects';
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query';
 
 export default function Home() {
+  const queryClient = new QueryClient();
   const { siteConfig } = useDocusaurusContext();
 
   const projectRef = useRef<HTMLIFrameElement>(null);
@@ -25,12 +33,14 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={clsx(styles.root)}>
-      <Introduce className={clsx(styles.content)} />
-      <Technology />
-      <TimeLine />
-      <Projects />
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div className={clsx(styles.root)}>
+        <Introduce className={clsx(styles.content)} />
+        <Technology />
+        <TimeLine />
+        <Projects />
+      </div>
+    </QueryClientProvider>
   );
 
   return (
