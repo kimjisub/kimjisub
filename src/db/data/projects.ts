@@ -1,4 +1,6 @@
-import { Project, ProjectRole, ProjectType } from '../models/project';
+import { Project, ProjectRole, ProjectType } from '../models/Project';
+import { Tech } from '../models/Tech';
+import { techs } from './techs';
 
 export const projects = {
   'The Block': new Project(
@@ -9,7 +11,7 @@ export const projects = {
     3,
     [],
     ProjectType.OTHER,
-    ['C C++', 'Console'],
+    [techs.Cplusplus],
     { youtube: 'https://www.youtube.com/watch?v=m4FdU-_t7oA' },
   ),
   '카카오톡 채팅 분석기': new Project(
@@ -20,7 +22,7 @@ export const projects = {
     3,
     [],
     ProjectType.OTHER,
-    ['C C++, Java', 'Android, Console'],
+    [techs.Cplusplus, techs.Java, techs.Android],
     { youtube: 'https://www.youtube.com/watch?v=aGwG8mh9QE4' },
   ),
   'DutchPay 안드로이드': new Project(
@@ -31,7 +33,7 @@ export const projects = {
     3,
     [],
     ProjectType.OTHER,
-    ['Java', 'Android'],
+    [techs.Java, techs.Android],
     { youtube: 'https://www.youtube.com/watch?v=Io0mNxaNJnw' },
   ),
   'Midi to Arduino buzzer': new Project(
@@ -42,7 +44,7 @@ export const projects = {
     3,
     [],
     ProjectType.OTHER,
-    ['Java', 'Console, Midi'],
+    [techs.Java, techs.Midi],
     {
       github: 'https://github.com/kimjisub/Midi-to-Arduino-buzzer',
       youtube: 'https://www.youtube.com/watch?v=1i9ZNHit6MA',
@@ -56,7 +58,15 @@ export const projects = {
     0,
     [ProjectRole.PROJECT_LEADER],
     ProjectType.OTHER,
-    ['Java, Kotlin, Javascript', 'Android, NodeJS, Firebase, MongoDB'],
+    [
+      techs.Java,
+      techs.Kotlin,
+      techs.Javascript,
+      techs.Android,
+      techs.Nodedotjs,
+      techs.Firebase,
+      techs.Mongodb,
+    ],
     {
       url: 'https://play.google.com/store/apps/details?id=com.kimjisub.launchpad&hl=ko',
     },
@@ -69,7 +79,7 @@ export const projects = {
     2,
     [],
     ProjectType.OTHER,
-    ['Java', 'AI, GUI'],
+    [techs.Java, 'AI', 'GUI'],
     {},
   ),
   'Powder Physics': new Project(
@@ -80,7 +90,7 @@ export const projects = {
     3,
     [],
     ProjectType.OTHER,
-    ['Java', 'GUI'],
+    [techs.Java, 'GUI'],
     { github: 'https://github.com/kimjisub/Powder-Physics' },
   ),
   산울림: new Project(
@@ -91,7 +101,7 @@ export const projects = {
     3,
     [ProjectRole.APP_DEV, ProjectRole.PM],
     ProjectType.OTHER,
-    ['C C++, HTML CSS, Javascript', 'Arduino, Web'],
+    [techs.Cplusplus, 'Html/CSS', techs.Javascript, 'Arduino', 'Web'],
     {},
   ),
   'PUBG 디스코드 봇': new Project(
@@ -102,7 +112,7 @@ export const projects = {
     3,
     [],
     ProjectType.OTHER,
-    ['Javascript', 'Discord Bot'],
+    [techs.Javascript, 'Discord Bot'],
     { youtube: 'https://www.youtube.com/watch?v=Gf20Sz-uLm8' },
   ),
   CANETIS: new Project(
@@ -114,7 +124,7 @@ export const projects = {
     [],
     ProjectType.OTHER,
     [
-      'Java, C C++, Javascript, HTML CSS',
+      'Java, C C++, Javascript, Html/CSS',
       'Android, Arduino, Firebase, Vue, NodeJS, Web, Google Assistant API',
     ],
     { youtube: 'https://www.youtube.com/watch?v=F-fg8eS5GxM' },
@@ -127,7 +137,14 @@ export const projects = {
     0,
     [ProjectRole.PROJECT_LEADER, ProjectRole.BE_DEV, ProjectRole.PM],
     ProjectType.OTHER,
-    ['Javascript, HTML CSS', 'NodeJS, React, Mysql, MariaDB'],
+    [
+      techs.Javascript,
+      'Html/CSS',
+      techs.Nodedotjs,
+      techs.React,
+      'Mysql',
+      'MariaDB',
+    ],
     { url: 'https://dimigo.life/' },
   ),
   Sospitas: new Project(
@@ -139,7 +156,7 @@ export const projects = {
     [ProjectRole.PM],
     ProjectType.OTHER,
     [
-      'C C++, HTML CSS, Javascript, Java, Python',
+      'C C++, Html/CSS, Javascript, Java, Python',
       'Vue, NodeJS, Firebase, Android, Arduino, Raspberrypi',
     ],
     {},
@@ -152,7 +169,7 @@ export const projects = {
     1,
     [ProjectRole.PM],
     ProjectType.OTHER,
-    ['HTML CSS, Javascript', 'Web, Vue'],
+    ['Html/CSS', techs.Javascript, 'Web', 'Vue'],
     {},
   ),
   'Smart Pot': new Project(
@@ -177,7 +194,7 @@ export const projects = {
     3,
     [],
     ProjectType.OTHER,
-    ['', ''],
+    [],
     {},
   ),
   'Chain Post': new Project(
@@ -189,7 +206,7 @@ export const projects = {
     [],
     ProjectType.OTHER,
     [
-      'Java, HTML CSS, Javascript, Python',
+      'Java, Html/CSS, Javascript, Python',
       'Android, Web, Firebase, Block Chain, Vue',
     ],
     {},
@@ -216,7 +233,7 @@ export const projects = {
     3,
     [ProjectRole.PM, ProjectRole.DEV],
     ProjectType.OTHER,
-    ['C C++', 'Arduino'],
+    [techs.Cplusplus, techs.Arduino],
     {},
   ),
   NaiClova: new Project(
@@ -227,7 +244,7 @@ export const projects = {
     3,
     [],
     ProjectType.OTHER,
-    ['', ''],
+    [],
     {},
   ),
   STELLA: new Project(
@@ -239,7 +256,7 @@ export const projects = {
     [],
     ProjectType.OTHER,
     [
-      'HTML CSS, C C++, Javascript, Java',
+      'Html/CSS, C C++, Javascript, Java',
       'Firebase, Google Assistant API, Android, Web, Arduino',
     ],
     {},
@@ -252,7 +269,7 @@ export const projects = {
     3,
     [],
     ProjectType.OTHER,
-    ['HTML CSS, Javascript', 'Vue, Web'],
+    ['Html/CSS', techs.Javascript, 'Vue', 'Web'],
     {},
   ),
   Nasuel: new Project(
@@ -263,7 +280,7 @@ export const projects = {
     3,
     [],
     ProjectType.OTHER,
-    ['', ''],
+    [],
     {},
   ),
   잔그림: new Project(
@@ -274,7 +291,7 @@ export const projects = {
     2,
     [ProjectRole.PM, ProjectRole.DEV],
     ProjectType.OTHER,
-    ['HTML CSS, Javascript', 'Web'],
+    ['Html/CSS', techs.Javascript, 'Web'],
     {},
   ),
   VitalGHeal: new Project(
@@ -286,7 +303,7 @@ export const projects = {
     [],
     ProjectType.OTHER,
     [
-      'HTML CSS, Java, Javascript, Python',
+      'Html/CSS, Java, Javascript, Python',
       'Google Assistant API, Android, React, Flask, Tensorflow',
     ],
     {},
@@ -299,7 +316,17 @@ export const projects = {
     2,
     [],
     ProjectType.OTHER,
-    ['HTML CSS, Javascript, C C++', 'Web, AI, Arduino, Firebase, AR, WebApp'],
+    [
+      'Html/CSS',
+      techs.Javascript,
+      techs.Cplusplus,
+      'Web',
+      'AI',
+      'Arduino',
+      techs.Firebase,
+      'AR',
+      'WebApp',
+    ],
     {},
   ),
   Took: new Project(
@@ -310,7 +337,15 @@ export const projects = {
     3,
     [],
     ProjectType.OTHER,
-    ['Dart, C C++, HTML CSS, Javascript', 'Flutter, Web, Arduino'],
+    [
+      'Dart',
+      techs.Cplusplus,
+      'Html/CSS',
+      techs.Javascript,
+      'Flutter',
+      'Web',
+      'Arduino',
+    ],
     {},
   ),
   'Silent Cutter': new Project(
@@ -321,7 +356,7 @@ export const projects = {
     1,
     [],
     ProjectType.OTHER,
-    ['', 'NodeJS, FFMPEG'],
+    [techs.Nodedotjs, 'FFMPEG'],
     { github: 'https://github.com/kimjisub/Silent-Cutter' },
   ),
   WindHope: new Project(
@@ -346,7 +381,7 @@ export const projects = {
     1,
     [],
     ProjectType.OTHER,
-    ['HTML CSS, Javascript', 'React, Midi'],
+    ['Html/CSS', techs.Javascript, techs.React, techs.Midi],
     { youtube: 'https://www.youtube.com/watch?v=vkOKSzTwUYY' },
   ),
   'DutchPay 웹': new Project(
@@ -357,7 +392,7 @@ export const projects = {
     1,
     [],
     ProjectType.OTHER,
-    ['HTML CSS, Javascript', 'React, Firebase'],
+    ['Html/CSS', techs.Javascript, techs.React, techs.Firebase],
     {
       url: 'https://dutchpay.kimjisub.me/',
       github: 'https://github.com/kimjisub/dutchpay.kimjisub.me',
@@ -371,7 +406,7 @@ export const projects = {
     1,
     [],
     ProjectType.OTHER,
-    ['HTML CSS, Javascript', 'Chrome Extention, Firebase'],
+    ['Html/CSS', techs.Javascript, 'Chrome Extention', techs.Firebase],
     {},
   ),
   'Smart Home With Google Home': new Project(
@@ -383,8 +418,16 @@ export const projects = {
     [],
     ProjectType.OTHER,
     [
-      'HTML CSS, C C++, Javascript',
-      'Firebase, Google Assistant API, Docker, NodeJS, Web, Arduino, Google App Engine',
+      'Html/CSS',
+      'C C++',
+      'Javascript',
+      'Firebase',
+      'Google Assistant API',
+      'Docker',
+      'NodeJS',
+      'Web',
+      'Arduino',
+      'Google App Engine',
     ],
     {},
   ),
@@ -396,7 +439,7 @@ export const projects = {
     3,
     [],
     ProjectType.OTHER,
-    ['', '3D 모델링 및 프린팅'],
+    ['3D 모델링 및 프린팅'],
     { url: 'https://www.thingiverse.com/thing:4441240' },
   ),
   통합주차솔루션: new Project(
@@ -408,8 +451,22 @@ export const projects = {
     [ProjectRole.BE_DEV],
     ProjectType.OUTSOURCE,
     [
-      'HTML CSS, Javascript, Typescript',
-      'AWS, AWS S3, AWS Elastic Beanstalk, AWS ECS, ECR, WebApp, React, Docker, Console, Web, NodeJS, Github Actions, MongoDB',
+      'Html/CSS',
+      'Javascript',
+      'Typescript',
+      'AWS',
+      'AWS S3',
+      'AWS Elastic Beanstalk',
+      'AWS ECS',
+      'ECR',
+      'WebApp',
+      techs.React,
+      'Docker',
+      'Console',
+      'Web',
+      'NodeJS',
+      'Github Actions',
+      'MongoDB',
     ],
     {},
   ),
@@ -421,7 +478,7 @@ export const projects = {
     3,
     [],
     ProjectType.OTHER,
-    ['', '3D 모델링 및 프린팅'],
+    ['3D 모델링 및 프린팅'],
     { url: 'https://www.thingiverse.com/thing:4547503' },
   ),
   '출결관리 시스템': new Project(
@@ -432,7 +489,7 @@ export const projects = {
     2,
     [ProjectRole.APP_DEV],
     ProjectType.OUTSOURCE,
-    ['Kotlin', 'Android'],
+    [techs.Kotlin, techs.Android],
     {},
   ),
   'Text to Video : TTV': new Project(
@@ -443,7 +500,7 @@ export const projects = {
     3,
     [],
     ProjectType.OTHER,
-    ['', ''],
+    [],
     {},
   ),
   행명서: new Project(
@@ -454,7 +511,7 @@ export const projects = {
     2,
     [],
     ProjectType.OTHER,
-    ['', ''],
+    [],
     {},
   ),
   'Notion Desktop App': new Project(
@@ -465,7 +522,7 @@ export const projects = {
     2,
     [],
     ProjectType.OTHER,
-    ['Javascript, HTML CSS', ''],
+    [techs.Javascript, 'Html/CSS'],
     { github: 'https://github.com/kimjisub/notion-desktop-app' },
   ),
   'DIY Drone': new Project(
@@ -477,8 +534,13 @@ export const projects = {
     [ProjectRole.PROJECT_LEADER, ProjectRole.BE_DEV, ProjectRole.FE_DEV],
     ProjectType.OTHER,
     [
-      'Typescript, HTML CSS, Python',
-      'MCU 및 회로, Raspberrypi, PCB Artwork, React',
+      'Typescript',
+      'Html/CSS',
+      'Python',
+      'MCU 및 회로',
+      'Raspberrypi',
+      'PCB Artwork',
+      techs.React,
     ],
     {},
   ),
@@ -490,7 +552,7 @@ export const projects = {
     1,
     [ProjectRole.BE_DEV, ProjectRole.PM],
     ProjectType.OTHER,
-    ['Python', ''],
+    ['Python'],
     {},
   ),
 };

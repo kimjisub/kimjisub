@@ -1,4 +1,5 @@
 import { SimpleIcon } from 'simple-icons';
+import { Tech } from './Tech';
 
 export class Project {
   constructor(
@@ -9,7 +10,7 @@ export class Project {
     public priority: number, // 0~3
     public roles: ProjectRole[],
     public type: ProjectType,
-    public techs: string[],
+    public techs: (Tech | string)[],
     public urls?: {
       url?: string;
       github?: string;

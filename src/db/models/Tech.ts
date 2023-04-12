@@ -1,24 +1,16 @@
 import { SimpleIcon } from 'simple-icons';
 
 export class Tech {
-  name: string;
-  icon: SimpleIcon;
-  description: string;
-  level: TechLevel;
-  type: TechType;
+  constructor(
+    public name: string,
+    public icon: SimpleIcon,
+    public description: string,
+    public level: TechLevel,
+    public type: TechType,
+  ) {}
 
-  constructor(data: {
-    name: string;
-    icon: SimpleIcon;
-    description: string;
-    level: TechLevel;
-    type: TechType;
-  }) {
-    this.name = data.name;
-    this.icon = data.icon;
-    this.description = data.description;
-    this.level = data.level;
-    this.type = data.type;
+  toString() {
+    return this.name;
   }
 }
 
