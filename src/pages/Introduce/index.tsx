@@ -10,9 +10,10 @@ import {
   Content,
 } from '../../typography';
 
-export default function Introduce() {
+export default function Introduce(props: { className?: string }) {
   return (
-    <div className={clsx('hero', styles.root, styles.heroBanner)}>
+    <div
+      className={clsx(props.className, 'hero', styles.root, styles.heroBanner)}>
       <div className="container">
         <div className="hero__subtitle">
           <div className={clsx(styles.decorations)}>
