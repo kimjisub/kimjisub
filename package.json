@@ -41,11 +41,13 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-query": "^3.39.3",
+    "react-text-transition": "^3.1.0",
     "react-typing-effect": "^2.0.5",
     "rehype-katex": "5",
     "remark-math": "3",
     "sass": "^1.55.0",
     "simple-icons": "^7.18.0",
+    "styled-components": "^5.3.9",
     "url-loader": "^4.1.1"
   },
   "devDependencies": {
