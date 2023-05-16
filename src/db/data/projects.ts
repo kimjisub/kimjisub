@@ -2,7 +2,7 @@ import { Project, ProjectRole, ProjectType } from '../models/Project';
 import { Tech } from '../models/Tech';
 import { techs } from './techs';
 
-export const projects = {
+export const projectDB = {
   'The Block': new Project(
     'The Block',
     '설명',
@@ -544,15 +544,15 @@ export const projects = {
     ],
     {},
   ),
-  '리틱 점자모션그래픽프로젝트': new Project(
-    '리틱 점자모션그래픽프로젝트',
+  'Mopl Hanwha': new Project(
+    'Mopl Hanwha',
     '설명',
     null,
-    new Date('2022-09-17'),
+    new Date('2022-09-01'),
     1,
-    [ProjectRole.BE_DEV, ProjectRole.PM],
-    ProjectType.OTHER,
-    ['Python'],
+    [ProjectRole.APP_DEV],
+    ProjectType.OUTSOURCE,
+    [techs.Typescript, techs.React],
     {},
   ),
 };

@@ -1,27 +1,8 @@
 .root {
-  > * {
-    margin: 0 auto;
-    //background: green;
-  }
-}
-
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-@media screen and (max-width: 966px) {
-  .heroBanner {
-    padding: 2rem;
-  }
-}
-iframe {
-  width: 100%;
-  min-height: 500px;
-  border-radius: 10px;
-  padding: none;
-  overflow-x: hidden;
-  overflow: auto;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }

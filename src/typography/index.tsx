@@ -9,29 +9,6 @@ import '@fontsource/montserrat/400.css';
 import '@fontsource/montserrat/500.css';
 import 'font-kopub';
 
-export const IntroSubtitleTypo = styled('span')(({ theme }) => ({
-  fontSize: '2rem',
-  fontWeight: 700,
-  color: '#8187A8',
-  padding: theme.spacing(0),
-  // fontFamily: 'KoPub Dotum',
-}));
-
-export const IntroTitleTypo = styled('span')(({ theme }) => ({
-  fontSize: '4rem',
-  fontWeight: 700,
-  color: '#545971',
-  padding: theme.spacing(0),
-  lineHeight: '100%',
-}));
-
-export const IntroSmallTitleTypo = styled('span')(({ theme }) => ({
-  fontSize: '2rem',
-  fontWeight: 500,
-  color: '#545971',
-  padding: theme.spacing(1),
-}));
-
 // ======================
 
 export const Year = styled('p')(({ theme }) => ({

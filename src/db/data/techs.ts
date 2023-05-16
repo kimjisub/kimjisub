@@ -239,6 +239,13 @@ export const techs = {
     TechLevel.Expert,
     TechType.Framework,
   ),
+  ReactNative: new Tech(
+    'React Native',
+    siReact,
+    '페이스북에서 만든 오픈 소스 모바일 애플리케이션 프레임워크입니다.',
+    TechLevel.Expert,
+    TechType.Framework,
+  ),
   Flutter: new Tech(
     'Flutter',
     siFlutter,
