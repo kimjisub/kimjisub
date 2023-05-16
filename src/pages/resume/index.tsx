@@ -12,7 +12,8 @@ import Gap from '../../components/Gap';
 import Page from './components/Page';
 import IconView from './components/IconView';
 import { siFigma } from 'simple-icons/icons';
-import ExperienceView, { ItemView } from './components/ExperienceView';
+import ExperienceView from './components/ExperienceView';
+import HistoryBlock from './components/HistoryBlock';
 
 export default function Resume() {
   return (
@@ -98,9 +99,9 @@ export default function Resume() {
             <ExperienceView
               title="한국외국어대학교 IDS Lab."
               subtitle="NVM(비휘발성 메모리)의 특성을 고려한 데이터베이스 시스템, In-Storage Computing 등을 주제로 연구"
-              items={[
+              histories={[
                 {
-                  role: '학부연구생',
+                  title: '학부연구생',
                   date: '2023.05 - 현재',
                   list: [
                     'MySQL TPCC 벤치마크 자동화 도구 개발',
@@ -113,9 +114,9 @@ export default function Resume() {
             <ExperienceView
               title="The Vplanet Inc."
               subtitle="광고영상 자동제작 및 송출 플랫폼 'Vplate' 운영"
-              items={[
+              histories={[
                 {
-                  role: 'Software Engineer',
+                  title: 'Software Engineer',
                   date: '2019.02 - 09',
                   list: [
                     'Kotlin, MVVM 패턴을 활용하여 Android 앱 개발',
@@ -132,28 +133,67 @@ export default function Resume() {
       </Page>
       <Page>
         <Article>
-          <ItemTitle title="프로젝트" subtitle="PROJECTS" />
-          <ItemView
-            item={{
-              role: 'UniPad',
+          <ItemTitle title="프로젝트 및 활동" subtitle="PROJECTS & ACTIVITY" />
+          <HistoryBlock
+            history={{
+              title: 'UniPad',
               date: '2016.02 - 현재',
               list: [
                 '런치패드 기반의 연주형 리듬게임',
                 'Play Store에 출시, 500만+ 다운로드 달성',
                 '음악게임부문 1위, 전체게임부문 50위 기록',
                 '꾸준한 사용자 커뮤니티 운영',
+                'Java to Kotlin 마이그레이션 진행',
               ],
             }}
           />
-          <ItemView
-            item={{
-              role: 'Mopl: 아파트 커뮤니티 및 주차 관리 솔루션',
+          <HistoryBlock
+            history={{
+              title: 'Mopl: 아파트 커뮤니티 및 주차 관리 솔루션',
               date: '2022.09 - 현재',
               list: [
-                '런치패드 기반의 연주형 리듬게임',
-                'Play Store에 출시, 500만+ 다운로드 달성',
-                '음악게임부문 1위, 전체게임부문 50위 기록',
-                '꾸준한 사용자 커뮤니티 운영',
+                '한화 비전에서 진행중인 아파트 커뮤니티 및 주차 관리 솔루션 외주 형태 계약',
+                'React Native 기반의 모바일 앱 2개 개발 (입주민용, 관리자용)',
+              ],
+            }}
+          />
+          <HistoryBlock
+            history={{
+              title: '디미고 라이프',
+              date: '2018.03 - 2019.12',
+              list: [
+                '한화 비전에서 진행중인 아파트 커뮤니티 및 주차 관리 솔루션 외주 형태 계약',
+                'React Native 기반의 모바일 앱 2개 개발 (입주민용, 관리자용)',
+              ],
+            }}
+          />
+          <HistoryBlock
+            history={{
+              title: 'Video Skipper',
+              date: '2023.04. - 현재',
+              list: [
+                '한화 비전에서 진행중인 아파트 커뮤니티 및 주차 관리 솔루션 외주 형태 계약',
+                'React Native 기반의 모바일 앱 2개 개발 (입주민용, 관리자용)',
+              ],
+            }}
+          />
+          <HistoryBlock
+            history={{
+              title: '행명서',
+              date: '2021.08. - 2022.07',
+              list: [
+                '한화 비전에서 진행중인 아파트 커뮤니티 및 주차 관리 솔루션 외주 형태 계약',
+                'React Native 기반의 모바일 앱 2개 개발 (입주민용, 관리자용)',
+              ],
+            }}
+          />
+          <HistoryBlock
+            history={{
+              title: '설리번 프로젝트 선생님',
+              date: '2021.08. - 2022.07',
+              list: [
+                '한화 비전에서 진행중인 아파트 커뮤니티 및 주차 관리 솔루션 외주 형태 계약',
+                'React Native 기반의 모바일 앱 2개 개발 (입주민용, 관리자용)',
               ],
             }}
           />
