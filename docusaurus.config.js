@@ -60,6 +60,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/kimjisub/kimjisub/tree/main/',
+          exclude: ['**/hidden-posts/**'],
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -94,10 +95,17 @@ const config = {
         },
         items: [
           {
-            to: '/portfolio/intro',
+            // to: '/portfolio/intro',
+            href: 'https://kimjisub.notion.site/',
             label: '포트폴리오',
             position: 'left',
-            activeBaseRegex: `/portfolio/`,
+            // activeBaseRegex: `/portfolio/`,
+          },
+          {
+            // to: '/blog',
+            href: 'https://velog.io/@kimjisub',
+            label: '블로그',
+            position: 'left',
           },
           {
             to: '/tools/intro',
@@ -105,7 +113,6 @@ const config = {
             position: 'left',
             activeBaseRegex: `/tools/`,
           },
-          { to: '/blog', label: '블로그', position: 'left' },
         ],
       },
       footer: {
