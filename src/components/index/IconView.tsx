@@ -1,9 +1,32 @@
 import React from 'react';
-import clsx from 'clsx';
-import styles from './index.module.scss';
 import Popover from '@mui/material/Popover';
-import { IconDescription } from '../../../typography';
 import { SimpleIcon } from 'simple-icons';
+import styled from 'styled-components';
+
+import { IconDescription } from '../../typography';
+
+const Root = styled.div``;
+
+const Box = styled.div`
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1);
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: all 0.1s ease-in-out;
+  }
+`;
+
+const Icon = styled.svg`
+  width: 30px;
+  height: 30px;
+`;
 
 export default function IconView({
   icon,
@@ -23,20 +46,15 @@ export default function IconView({
   };
 
   return (
-    <div className={clsx(styles.root)}>
-      <div
-        className={clsx(styles.box)}
+    <Root>
+      <Box
         style={{ background: `#${icon.hex}` }}
         onMouseEnter={handlePopoverOpen}
         onMouseLeave={handlePopoverClose}>
-        <svg
-          role="img"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          className={clsx(styles.icon)}>
+        <Icon role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d={icon.path} style={{ fill: '#fff' }} />
-        </svg>
-      </div>
+        </Icon>
+      </Box>
       <Popover
         id="mouse-over-popover"
         sx={{
@@ -63,6 +81,6 @@ export default function IconView({
           <IconDescription>{description}</IconDescription>
         </div>
       </Popover>
-    </div>
+    </Root>
   );
 }

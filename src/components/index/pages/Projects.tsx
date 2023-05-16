@@ -1,20 +1,58 @@
 import React, { useState } from 'react';
-import clsx from 'clsx';
-import styles from './index.module.scss';
-import { Content, Title, Title2 } from '../../typography';
 import { Build } from '@mui/icons-material';
-import { projectDB } from '@site/src/db/data/projects';
 import { useProjects } from '@site/src/db/services/projects';
-import { Tech } from '@site/src/db/models/Tech';
-import { Project } from '@site/src/db/models/Project';
+import { Title, Title2 } from '@site/src/typography';
 import styled from 'styled-components';
-import ProjectItem from './ProjectItem';
+
+import ProjectItem from '../ProjectItem';
+
+const Root = styled.div`
+  max-width: 1000px;
+  padding: 5em 0;
+  margin: 0 auto;
+
+  .text {
+    text-align: end;
+    align-self: center;
+    padding: 0;
+    padding-right: 10px;
+  }
+
+  .icons {
+    > * {
+      float: left;
+      margin: 10px;
+    }
+    padding: 0;
+  }
+
+  .table {
+    width: fit-content;
+    margin: auto;
+
+    tr {
+      border: none;
+
+      &:nth-child(2n) {
+        background-color: #0000;
+      }
+
+      td {
+        border: none;
+      }
+    }
+  }
+`;
+
+const ProjectsWrapper = styled.div`
+  // Add your styles for .projects here
+`;
 
 export default function Projects() {
   const [selected, setSelected] = useState(null);
   const projects = useProjects({});
   return (
-    <div className={clsx(styles.root)}>
+    <Root>
       <Title>
         <Build />
         Projectes
@@ -22,7 +60,7 @@ export default function Projects() {
       <Title2>그동안 진행해왔던 프로젝트들이에요.</Title2>
 
       {/* show project using projects */}
-      <div className={clsx(styles.projects)}>
+      <ProjectsWrapper>
         {projects &&
           Object.entries(projects)?.map(([key, project]) => (
             <ProjectItem
@@ -32,7 +70,7 @@ export default function Projects() {
               onClick={() => setSelected(selected !== key ? key : null)}
             />
           ))}
-      </div>
-    </div>
+      </ProjectsWrapper>
+    </Root>
   );
 }

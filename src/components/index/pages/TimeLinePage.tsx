@@ -1,8 +1,6 @@
 import React from 'react';
 import TimeLineView from '@site/src/components/index/TimeLineView';
-import clsx from 'clsx';
-
-import styles from './index.module.scss';
+import styled from 'styled-components';
 
 export interface TimeLine {
   year: number | null;
@@ -78,10 +76,48 @@ const list = [
   },
 ];
 
+const Root = styled.div`
+  max-width: 1000px;
+  padding: 5em 0;
+  margin: 0 auto;
+
+  .text {
+    text-align: end;
+    align-self: center;
+    padding: 0;
+    padding-right: 10px;
+  }
+
+  .icons {
+    > * {
+      float: left;
+      margin: 10px;
+    }
+    padding: 0;
+  }
+
+  .table {
+    width: fit-content;
+    margin: auto;
+
+    tr {
+      border: none;
+
+      &:nth-child(2n) {
+        background-color: #0000;
+      }
+
+      td {
+        border: none;
+      }
+    }
+  }
+`;
+
 export default function TimeLinePage() {
   return (
-    <div className={clsx(styles.root)}>
+    <Root>
       <TimeLineView list={list}></TimeLineView>
-    </div>
+    </Root>
   );
 }

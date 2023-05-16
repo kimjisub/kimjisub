@@ -1,13 +1,10 @@
 import React, { useEffect } from 'react';
 import Layout from '@theme/Layout';
-import clsx from 'clsx';
 import styled from 'styled-components';
 
 import Introduce from '../components/index/pages/Introduce';
 import Technology from '../components/index/pages/Technology';
 import TimeLinePage from '../components/index/pages/TimeLinePage';
-
-import styles from './index.module.scss';
 
 export default function Home() {
   useEffect(() => {
@@ -24,7 +21,7 @@ export default function Home() {
 
   return (
     <Layout>
-      <Root className={clsx(styles.root)}>
+      <Root>
         <Introduce />
         <Technology />
         <TimeLinePage />
@@ -34,4 +31,11 @@ export default function Home() {
   );
 }
 
-const Root = styled.div``;
+const Root = styled.div`
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+`;

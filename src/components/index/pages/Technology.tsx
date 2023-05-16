@@ -3,11 +3,46 @@ import { Build } from '@mui/icons-material';
 import IconView from '@site/src/components/index/IconView';
 import { techs } from '@site/src/db/data/techs';
 import { Tech } from '@site/src/db/models/Tech';
-import clsx from 'clsx';
+import { Title, Title2 } from '@site/src/typography';
+import styled from 'styled-components';
 
-import { Title, Title2 } from '../../../../typography';
+const Root = styled.div`
+  max-width: 1000px;
+  padding: 5em 0;
+  margin: 0 auto;
+`;
 
-import styles from './index.module.scss';
+const Text = styled.td`
+  text-align: end;
+  align-self: center;
+  padding: 0;
+  padding-right: 10px;
+`;
+
+const Icons = styled.td`
+  > * {
+    float: left;
+    margin: 10px;
+  }
+  padding: 0;
+`;
+
+const Table = styled.table`
+  width: fit-content;
+  margin: auto;
+
+  tr {
+    border: none;
+
+    &:nth-child(2n) {
+      background-color: #0000;
+    }
+
+    td {
+      border: none;
+    }
+  }
+`;
 
 export default function Technology() {
   const skillsByType: {
@@ -21,18 +56,18 @@ export default function Technology() {
   }, {});
 
   return (
-    <div className={clsx(styles.root)}>
+    <Root>
       <Title>
         <Build />
         Skills
       </Title>
       <Title2>제가 구사할 수 있는 능력들이에요</Title2>
-      <table className={clsx(styles.table)}>
+      <Table>
         <tbody>
           {Object.entries(skillsByType).map(([type, skills]) => (
             <tr key={type}>
-              <td className={clsx(styles.text)}>{type}</td>
-              <td className={clsx(styles.icons)}>
+              <Text>{type}</Text>
+              <Icons>
                 {skills.map(skill => (
                   <IconView
                     key={skill.name}
@@ -40,11 +75,11 @@ export default function Technology() {
                     description={skill.description}
                   />
                 ))}
-              </td>
+              </Icons>
             </tr>
           ))}
         </tbody>
-      </table>
-    </div>
+      </Table>
+    </Root>
   );
 }
