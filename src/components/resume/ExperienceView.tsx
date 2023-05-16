@@ -1,6 +1,6 @@
-import Gap from '@site/src/components/Gap';
 import React from 'react';
 import styled from 'styled-components';
+
 import HistoryBlock, { History } from './HistoryBlock';
 
 export interface ExperienceViewProp {
@@ -17,8 +17,8 @@ const ExperienceView = ({ title, subtitle, histories }: ExperienceViewProp) => {
         <Description>{subtitle}</Description>
       </ExperienceHeader>
       {histories.map((history, index) => (
-        <div>
-          <HistoryBlock history={history} key={index} />
+        <div key={index}>
+          <HistoryBlock history={history} />
         </div>
       ))}
     </Root>

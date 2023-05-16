@@ -1,9 +1,10 @@
 import React from 'react';
-import clsx from 'clsx';
-import styles from './index.module.scss';
-import { Tech } from '@site/src/db/models/Tech';
 import { Project } from '@site/src/db/models/Project';
+import { Tech } from '@site/src/db/models/Tech';
+import clsx from 'clsx';
 import styled from 'styled-components';
+
+import styles from './index.module.scss';
 
 const ProjectItem = ({
   project,

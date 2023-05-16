@@ -1,19 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react';
-import clsx from 'clsx';
-import Layout from '@theme/Layout';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-
+import React from 'react';
+import Gap from '@site/src/components/Gap';
+import HistoryBlock from '@site/src/components/resume/HistoryBlock';
+import ItemTitle from '@site/src/components/resume/ItemTitle';
+import Page from '@site/src/components/resume/Page';
+import Table from '@site/src/components/resume/Table';
 import styled from 'styled-components';
 
+import ExperienceView from '../../components/resume/ExperienceView';
+
 import ProfileImage from './profile.png';
-import Table from './components/Table';
-import ItemTitle from './components/ItemTitle';
-import Gap from '../../components/Gap';
-import Page from './components/Page';
-import IconView from './components/IconView';
-import { siFigma } from 'simple-icons/icons';
-import ExperienceView from './components/ExperienceView';
-import HistoryBlock from './components/HistoryBlock';
 
 export default function Resume() {
   return (
@@ -35,9 +30,16 @@ export default function Resume() {
                     ['이메일', '0226daniel@gmail.com'],
                     [
                       'Github',
-                      <A href="https://github.com/kimjisub/">kimjisub</A>,
+                      <A href="https://github.com/kimjisub/" key="github">
+                        kimjisub
+                      </A>,
                     ],
-                    ['웹사이트', <A href="https://jisub.kim/">jisub.kim</A>],
+                    [
+                      '웹사이트',
+                      <A href="https://jisub.kim/" key="website">
+                        jisub.kim
+                      </A>,
+                    ],
                   ]}
                   colRatio={[1, 3]}
                 />
@@ -231,10 +233,6 @@ const Header = styled.header`
 
 const Article = styled.article``;
 
-const Row = styled.div`
-  display: flex;
-  color: var(--color-text);
-`;
 const Image = styled.img`
   height: 200px;
 `;

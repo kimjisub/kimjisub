@@ -1,10 +1,17 @@
 import React from 'react';
-import clsx from 'clsx';
-import styles from './index.module.scss';
-import { Year, Title, Title2, Content } from '../../typography';
 import { LocalFireDepartment } from '@mui/icons-material';
+import clsx from 'clsx';
 
-export default function TimeLineView({ list }) {
+import { Content, Title, Title2, Year } from '../../../typography';
+import { TimeLine } from '../pages/TimeLinePage';
+
+import styles from './index.module.scss';
+
+export interface TimeLineProps {
+  list: TimeLine[];
+}
+
+export default function TimeLineView({ list }: TimeLineProps) {
   return (
     <div className={clsx(styles.root)}>
       <Title>

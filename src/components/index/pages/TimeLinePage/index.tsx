@@ -1,9 +1,14 @@
 import React from 'react';
+import TimeLineView from '@site/src/components/index/TimeLineView';
 import clsx from 'clsx';
+
 import styles from './index.module.scss';
-import { techs } from '@site/src/db/data/techs';
-import { Tech } from '@site/src/db/models/Tech';
-import TimeLineView from '@site/src/components/TimeLineView';
+
+export interface TimeLine {
+  year: number | null;
+  title: React.ReactNode;
+  content: React.ReactNode;
+}
 
 const list = [
   {
@@ -73,17 +78,7 @@ const list = [
   },
 ];
 
-export default function TimeLine() {
-  const skillsByType: {
-    [type: string]: Tech[];
-  } = Object.values(techs).reduce((acc, skill) => {
-    if (!acc[skill.type]) {
-      acc[skill.type] = [];
-    }
-    acc[skill.type].push(skill);
-    return acc;
-  }, {});
-
+export default function TimeLinePage() {
   return (
     <div className={clsx(styles.root)}>
       <TimeLineView list={list}></TimeLineView>

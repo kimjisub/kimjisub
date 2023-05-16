@@ -1,20 +1,15 @@
-import React, { useEffect, useRef } from 'react';
-import clsx from 'clsx';
+import React, { useEffect } from 'react';
 import Layout from '@theme/Layout';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import styles from './index.module.scss';
-import Introduce from './Introduce';
-import TimeLine from './TimeLine';
-import Technology from './Technology';
-import Projects from './Projects';
-
+import clsx from 'clsx';
 import styled from 'styled-components';
 
+import Introduce from '../components/index/pages/Introduce';
+import Technology from '../components/index/pages/Technology';
+import TimeLinePage from '../components/index/pages/TimeLinePage';
+
+import styles from './index.module.scss';
+
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
-
-  const projectRef = useRef<HTMLIFrameElement>(null);
-
   useEffect(() => {
     // set title
     document.title = `개발자 김지섭 포트폴리오`;
@@ -30,9 +25,9 @@ export default function Home() {
   return (
     <Layout>
       <Root className={clsx(styles.root)}>
-        <Introduce className={clsx(styles.content)} />
+        <Introduce />
         <Technology />
-        <TimeLine />
+        <TimeLinePage />
         {/* <Projects /> */}
       </Root>
     </Layout>

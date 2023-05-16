@@ -1,11 +1,13 @@
 import React from 'react';
-import clsx from 'clsx';
-import styles from './index.module.scss';
-import { Content, Title, Title2 } from '../../typography';
 import { Build } from '@mui/icons-material';
+import IconView from '@site/src/components/index/IconView';
 import { techs } from '@site/src/db/data/techs';
 import { Tech } from '@site/src/db/models/Tech';
-import IconView from '@site/src/components/IconView';
+import clsx from 'clsx';
+
+import { Title, Title2 } from '../../../../typography';
+
+import styles from './index.module.scss';
 
 export default function Technology() {
   const skillsByType: {

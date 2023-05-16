@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import clsx from 'clsx';
-import styles from './index.module.scss';
 import Link from '@docusaurus/Link';
 import styled, { keyframes } from 'styled-components';
 
-import { Content } from '../../typography';
+import { Content } from '../../../../typography';
+
+import styles from './index.module.scss';
 
 const intros = [
   '배우는 것을 즐기는 개발자',
@@ -14,7 +14,7 @@ const intros = [
 ];
 import TextTransition, { presets } from 'react-text-transition';
 
-export default function Introduce(props: { className?: string }) {
+export default function Introduce() {
   const [intro, setIntro] = useState(intros[0]);
 
   // replace intro text every 3 seconds

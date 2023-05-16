@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './index.module.scss';
 import Popover from '@mui/material/Popover';
-import { IconDescription } from '../../typography';
+import { IconDescription } from '../../../typography';
 import { SimpleIcon } from 'simple-icons';
 
 export default function IconView({
