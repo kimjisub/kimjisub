@@ -16,7 +16,7 @@ const ItemTitle = ({ title, subtitle }: ItemTitleProps) => {
 };
 
 const Root = styled.p`
-  margin-bottom: 3px;
+  margin-bottom: 0.5em;
 `;
 
 const Title = styled.span`

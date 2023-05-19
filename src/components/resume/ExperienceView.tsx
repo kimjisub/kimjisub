@@ -25,12 +25,10 @@ const ExperienceView = ({ title, subtitle, histories }: ExperienceViewProp) => {
   );
 };
 
-const Root = styled.div`
-  margin-bottom: 3px;
-`;
+const Root = styled.div``;
 
 const ExperienceHeader = styled.div`
-  margin-bottom: 8px;
+  margin-bottom: 0.5em;
 `;
 
 const Title = styled.p`

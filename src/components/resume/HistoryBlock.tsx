@@ -1,5 +1,5 @@
-import Gap from '@site/src/components/Gap';
 import React from 'react';
+import Gap from '@site/src/components/Gap';
 import styled from 'styled-components';
 
 export interface History {
@@ -15,27 +15,27 @@ export interface HistoryBlockProps {
 const HistoryBlock = ({ history }: HistoryBlockProps) => {
   return (
     <Root className="text-2xl font-semibold">
-      <Gap gap="8px">
+      <Gap gap="1em">
         <ItemHeader>
           <Role>{history.title}</Role>
           <Description>{history.date}</Description>
         </ItemHeader>
-        <ul>
+        <List>
           {history.list.map((list, index) => (
-            <li key={index}>{list}</li>
+            <ListItem key={index}>{list}</ListItem>
           ))}
-        </ul>
+        </List>
       </Gap>
     </Root>
   );
 };
 
 const Root = styled.div`
-  margin-bottom: 10mm;
+  margin-bottom: 3em;
 `;
 
 const ItemHeader = styled.div`
-  width: 40mm;
+  width: 10em;
 `;
 
 const Role = styled.p`
@@ -48,6 +48,14 @@ const Description = styled.p`
   font-size: 1em;
   margin: 0;
   color: #949494;
+`;
+
+const List = styled.ul`
+  flex: 1;
+`;
+
+const ListItem = styled.li`
+  word-wrap: break-word;
 `;
 
 export default HistoryBlock;
