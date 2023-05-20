@@ -82,10 +82,10 @@ export default function Resume() {
                           'Flutter',
                         ],
                       ],
-                      ['Web', 'React.js, Next.js, Wasm (Rust)'],
+                      ['Web', 'React.js, Next.js'],
                       [
                         'Server',
-                        'Node.js, Express.js, Nest.js, Hapi, Prisma, MySQL, MongoDB, Redis',
+                        'Node.js, Express.js, Nest.js, Hapi, Prisma, MySQL, MongoDB, Redis, Swagger',
                       ],
                       ['DevOps', 'Docker, AWS, Github Actions'],
                       [
@@ -218,7 +218,7 @@ export default function Resume() {
               ],
             }}
           /> */}
-          <HistoryBlock
+          {/* <HistoryBlock
             history={{
               title: '설리번 프로젝트 선생님',
               date: '2019.01.',
@@ -226,7 +226,7 @@ export default function Resume() {
                 '코딩 교육 선생님으로서 활동하며 ‘게임으로 배우는 웹해킹’ 커리큘럼 제작 및 교육 진행',
               ],
             }}
-          />
+          /> */}
           <HistoryBlock
             history={{
               title: '디미고 라이프',
