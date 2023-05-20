@@ -40,11 +40,17 @@ export default function Resume() {
                       </A>,
                     ],
                     [
-                      '웹사이트',
-                      <A href="https://jisub.kim/" key="website">
-                        jisub.kim
+                      '포트폴리오',
+                      <A href="https://kimjisub.notion.site/" key="website">
+                        kimjisub.notion.site
                       </A>,
                     ],
+                    // [
+                    //   '웹사이트',
+                    //   <A href="https://jisub.kim/" key="website">
+                    //     jisub.kim
+                    //   </A>,
+                    // ],
                   ]}
                   colRatio={[1, 3]}
                 />
@@ -78,11 +84,10 @@ export default function Resume() {
                         'App',
                         [
                           'React Native (TS, Query, Recoil),',
-                          'Android Native (Kotlin, Java, Compose),',
-                          'Flutter',
+                          'Android Native (Kotlin, Java, XML, Compose), Flutter',
                         ],
                       ],
-                      ['Web', 'React.js, Next.js'],
+                      ['Web', ['HTML, CSS, Javascript,', 'React (Next.js)']],
                       [
                         'Server',
                         'Node.js, Express.js, Nest.js, Hapi, Prisma, MySQL, MongoDB, Redis, Swagger',
@@ -130,7 +135,7 @@ export default function Resume() {
                   list: [
                     'Kotlin, MVVM 패턴을 활용하여 Android 앱 개발',
                     'Android Native로 FFmpeg 기반 영상 편집 기능 개발',
-                    'Node.js, Express.js, MongoDB를 활용하여 REST API 개발',
+                    // 'Node.js, Express.js, MongoDB를 활용하여 REST API 개발',
                     'After Effect 에셋 교체 전자동 엔진 개발',
                     '다중 렌더링 머신 스케줄링 및 관리 시스템 개발',
                   ],
@@ -277,7 +282,6 @@ const Root = styled.div`
 
   all: unset;
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: 12px;
   font-weight: 500;
   // horizontal centering
   display: flex;
@@ -300,7 +304,7 @@ const Header = styled.header`
 const Article = styled.article``;
 
 const Image = styled.img`
-  height: 200px;
+  height: 40mm;
 `;
 
 const A = styled.a`

@@ -44,13 +44,13 @@ const StyledTable = styled.table`
   border-collapse: collapse;
   margin-bottom: 2em;
 
-  border-top: 2px solid #333333;
-  border-bottom: 2px solid #333333;
+  border-top: 0.125em solid #333333;
+  border-bottom: 0.125em solid #333333;
 
   tbody {
     tr {
       border: none;
-      border-bottom: 1px solid #d7d7d7;
+      border-bottom: 0.0625em solid #d7d7d7;
 
       &:nth-child(2n) {
         background-color: #ffffff;
@@ -62,7 +62,7 @@ const StyledTable = styled.table`
 
     td {
       border: none;
-      border-right: 1px dashed #d7d7d7;
+      border-right: 0.0625em dashed #d7d7d7;
       padding: 0.5rem;
 
       &:last-child {

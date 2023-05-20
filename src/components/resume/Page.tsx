@@ -11,7 +11,7 @@ const Page = ({ children, style }: PageProps) => {
 };
 
 const A4 = styled.div`
-  font-size: 3.5mm;
+  font-size: 3.45mm;
   background: white;
   padding: 4em;
 
