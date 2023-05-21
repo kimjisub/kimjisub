@@ -17,11 +17,29 @@ export default function Resume() {
     <Root>
       <Page>
         <Header>
-          <Image src={ProfileImage} alt="profile" />
-          <Introduce>
-            <p>asdf</p>
-            <h1>김지섭</h1>
-          </Introduce>
+          <Gap gap="2em">
+            <img
+              src={ProfileImage}
+              alt="profile"
+              style={{
+                height: '13em',
+              }}
+            />
+            <Gap gap="0em" direction="column">
+              <Introduce>
+                <h1>김지섭</h1>
+              </Introduce>
+              <p>
+                46여개의 프로젝트를 진행해보았고, IT 관련 대회에서 23회 수상한
+                경험이 있는 8년차 개발자 김지섭입니다. 주로 앱 개발을
+                담당하였지만, 필요에 따라 기획자, UX 디자이너, 백엔드 포지션의
+                역할도 겸하였습니다. 저는 UX 디자인에 관심이 많으며, 사용자
+                경험과 일관성있는 디자인에 대해 끊임없는 고찰을 하고 있습니다.
+                프로젝트를 진행할 때에 반복하여 사용되는 UI는 컴포넌트화 하여
+                재사용할 수 있도록 하였습니다.
+              </p>
+            </Gap>
+          </Gap>
         </Header>
         <section>
           <Gap gap="24px">
@@ -193,7 +211,6 @@ export default function Resume() {
                 '82개의 페이지, 120개의 API를 가진 React Native 기반의 모바일 앱 개발',
                 '36개의 디자인 시스템 컴포넌트 구현',
                 '디자인 팀과 주기적으로 회의 및 피드백 진행',
-                '자체 디자인 규칙 및 컴포넌트 라이브러리 개발',
               ],
             }}
           />
@@ -294,6 +311,9 @@ const Root = styled.div`
     box-shadow: none;
     margin: 0;
   }
+  * {
+    word-break: keep-all;
+  }
 `;
 
 const Header = styled.header`
@@ -302,10 +322,6 @@ const Header = styled.header`
 `;
 
 const Article = styled.article``;
-
-const Image = styled.img`
-  height: 40mm;
-`;
 
 const A = styled.a`
   color: var(--color-text);
