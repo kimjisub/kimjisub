@@ -1,9 +1,15 @@
-<div align="center">
-<!-- <a href="https://jisub.kim">포트폴리오 웹사이트 바로가기</a> -->
-<a href="https://kimjisub.notion.site/">포트폴리오 바로가기</a>
-</div>
-
 ## 👋 사고의 차원을 높히는 개발자 김지섭입니다!
+
+### 📞 Contact
+
+- Email: 0226daniel@gmail.com
+- Instagram: [@ji.sub_b](https://www.instagram.com/ji.sub_b)
+
+### 🌍 Backlink
+
+- [포트폴리오](https://kimjisub.notion.site/)
+- [기술 블로그](https://velog.io/@kimjisub)
+<!-- - [웹사이트](https://jisub.kim) -->
 
 ### 🔥 Experience
 
@@ -17,9 +23,9 @@
 
 ### 🎓 Education
 
-- 한국디지털미디어고등학교 16기 해킹방어과 졸업
-- 한국외국어대학교 20학번 컴퓨터공학부 2학년 재학중
 - 한국외국어대학교 IDS Lab. 학부연구생
+- 한국외국어대학교 20학번 컴퓨터공학부 2학년 재학중
+- 한국디지털미디어고등학교 16기 해킹방어과 졸업
 
 ### 🛠 Tech Stack
 
@@ -43,11 +49,6 @@
   <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=AmazonAWS&logoColor=white"/>
 </div>
 
-### 📞 Contact
-
-- Email: 0226daniel@gmail.com
-- Instagram: [@ji.sub_b](https://www.instagram.com/ji.sub_b)
-- Website: [jisub.kim](https://jisub.kim)
 
 ### 👀 Status
 
