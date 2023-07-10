@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { ComponentType, SVGProps } from 'react';
 import Gap from '@site/src/components/Gap';
 import styled from 'styled-components';
+
+export interface HistoryIcon {
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
+  name: string;
+  url: string;
+}
 
 export interface History {
   title: React.ReactNode;
   date?: React.ReactNode;
   list: React.ReactNode[];
+  urls?: HistoryIcon[];
 }
 
 export interface HistoryBlockProps {
@@ -19,6 +26,20 @@ const HistoryBlock = ({ history }: HistoryBlockProps) => {
         <ItemHeader>
           <Role>{history.title}</Role>
           <Description>{history.date}</Description>
+          <p
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+            }}>
+            {history.urls?.map((historyIcon, index) => {
+              const { icon: Icon, url } = historyIcon;
+              return (
+                <A key={index} href={url}>
+                  <Icon width={30} height={30} key={index}></Icon>
+                </A>
+              );
+            })}
+          </p>
         </ItemHeader>
         <List>
           {history.list.map((list, index) => (
@@ -56,6 +77,10 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   word-wrap: break-word;
+`;
+
+const A = styled.a`
+  cursor: pointer;
 `;
 
 export default HistoryBlock;

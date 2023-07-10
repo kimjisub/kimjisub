@@ -8,7 +8,7 @@ import styled from 'styled-components';
 
 import ExperienceView from '../../components/resume/ExperienceView';
 
-import ProfileImage from './profile.png';
+import ProfileImage from './profile.jpg';
 
 const Introduce = styled.div``;
 
