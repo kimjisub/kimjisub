@@ -8,7 +8,7 @@
 ### 🌍 Backlink
 
 - [포트폴리오](https://kimjisub.notion.site/)
-- [기술 블로그](https://velog.io/@kimjisub)
+- [기술 블로그](https://blog.jisub.kim)
 <!-- - [웹사이트](https://jisub.kim) -->
 
 ### 🔥 Experience
