@@ -103,7 +103,7 @@ const config = {
           },
           {
             // to: '/blog',
-            href: 'https://velog.io/@kimjisub',
+            href: 'https://blog.jisub.kim',
             label: '블로그',
             position: 'left',
           },
