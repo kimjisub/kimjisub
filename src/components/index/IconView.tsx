@@ -1,11 +1,7 @@
 import React from 'react';
-import Popover from '@mui/material/Popover';
+import * as icons from 'simple-icons';
 import { SimpleIcon } from 'simple-icons';
 import styled from 'styled-components';
-
-import { IconDescription } from '../../typography';
-
-const Root = styled.div``;
 
 const Box = styled.div`
   width: 50px;
@@ -29,58 +25,35 @@ const Icon = styled.svg`
 `;
 
 export default function IconView({
-  icon,
-  description,
+  iconSlug,
 }: {
-  icon: SimpleIcon;
+  iconSlug: string;
+  title: string;
   description?: string;
 }) {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handlePopoverOpen = event => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handlePopoverClose = () => {
-    setAnchorEl(null);
-  };
+  const icon =
+    iconSlug &&
+    (icons?.[
+      `si${iconSlug.charAt(0).toUpperCase() + iconSlug.slice(1)}`
+    ] as SimpleIcon | null);
 
   return (
-    <Root>
-      <Box
-        style={{ background: `#${icon.hex}` }}
-        onMouseEnter={handlePopoverOpen}
-        onMouseLeave={handlePopoverClose}>
-        <Icon role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d={icon.path} style={{ fill: '#fff' }} />
-        </Icon>
+    <article>
+      <Box style={{ background: `#${icon?.hex ?? 'fff'}` }}>
+        {/* <img
+          height="24"
+          width="24"
+          src={`https://cdn.simpleicons.org/${iconSlug}/_/gray`}
+        /> */}
+        {icon && (
+          <Icon
+            role="img"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d={icon.path} style={{ fill: '#fff' }} />
+          </Icon>
+        )}
       </Box>
-      <Popover
-        id="mouse-over-popover"
-        sx={{
-          pointerEvents: 'none',
-        }}
-        open={open}
-        anchorEl={anchorEl}
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'center',
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'center',
-        }}
-        onClose={handlePopoverClose}
-        disableRestoreFocus>
-        <div
-          style={{
-            width: '200px',
-            height: '300px',
-          }}>
-          <IconDescription>{icon.title}</IconDescription>
-          <IconDescription>{description}</IconDescription>
-        </div>
-      </Popover>
-    </Root>
+    </article>
   );
 }

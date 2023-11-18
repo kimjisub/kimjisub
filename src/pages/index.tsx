@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
-import Layout from '@theme/Layout';
 import styled from 'styled-components';
 
 import Introduce from '../components/index/pages/Introduce';
 import Technology from '../components/index/pages/Technology';
 import TimeLinePage from '../components/index/pages/TimeLinePage';
+import careers from '../db/data/careers.json';
+import projects from '../db/data/projects.json';
 
 export default function Home() {
   useEffect(() => {
@@ -19,15 +20,44 @@ export default function Home() {
     document.head.appendChild(meta);
   }, []);
 
+  /*
+
+자기소개 ( 명함 )
+프로젝트
+업적 (경력)
+
+
+*/
+
   return (
-    <Layout>
-      <Root>
-        <Introduce />
-        <Technology />
-        <TimeLinePage />
-        {/* <Projects /> */}
-      </Root>
-    </Layout>
+    <Root>
+      <Introduce />
+      <Technology />
+      <TimeLinePage />
+      {/* <Projects /> */}
+      {careers.results.map(career => (
+        <p key={career.id}>
+          <p>{career.properties.이름.title?.[0]?.text?.content}</p>
+          {/* <pre
+              style={{
+                fontSize: '0.5rem',
+              }}>
+              {JSON.stringify(career, null, 2)}
+            </pre> */}
+        </p>
+      ))}
+      {projects.results.map(career => (
+        <p key={career.id}>
+          <p>{career.properties.이름.title?.[0]?.text?.content}</p>
+          {/* <pre
+              style={{
+                fontSize: '0.5rem',
+              }}>
+              {JSON.stringify(career, null, 2)}
+            </pre> */}
+        </p>
+      ))}
+    </Root>
   );
 }
 

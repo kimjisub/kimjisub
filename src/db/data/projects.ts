@@ -1,5 +1,5 @@
 import { Project, ProjectRole, ProjectType } from '../models/Project';
-import { Tech } from '../models/Tech';
+
 import { techs } from './techs';
 
 export const projectDB = {
