@@ -5,11 +5,11 @@ import projects from '../../data/projects.json';
 export default function ProjectsPage() {
   const [selected, setSelected] = useState(null);
   return (
-    <div className="mx-auto p-4 max-w-4xl">
+    <div className="mx-auto p-6 max-w-4xl">
       <p>Projects</p>
       <p>그동안 진행해왔던 프로젝트들이에요.</p>
       <div
-        className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5 justify-center max-x-1xl"
+        className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5 justify-center max-x-1xl"
         style={
           {
             // gridTemplateColumns: 'repeat(auto-fill, 20rem)',

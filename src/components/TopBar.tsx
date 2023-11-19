@@ -30,7 +30,7 @@ const TopBar: React.FC = () => {
         <div className="flex items-center w-auto flex-grow justify-between">
           <Link to="/" className="text-xl font-bold mr-6 flex items-center">
             <img src="/logo192.png" alt="logo" width={36} className="mr-4" />
-            김지섭
+            jisub.kim
           </Link>
 
           {/* 햄버거 메뉴 버튼 (모바일) */}
