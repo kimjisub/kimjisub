@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 
-import careers from '../data/careers.json';
+import projects from '../../data/projects.json';
 
-export default function CareerSection() {
+export default function ProjectsSection() {
   const [selected, setSelected] = useState(null);
   return (
-    <div className="mx-auto p-20 max-w-6xl">
+    <div className="mx-auto p-20 max-w-5xl">
       <p>Projects</p>
       <p>그동안 진행해왔던 프로젝트들이에요.</p>
 
       <div className="grid grid-cols-3 gap-4 mt-5">
-        {careers.results.map(career => (
+        {projects.results.map(project => (
           <div
-            key={career.id}
+            key={project.id}
             className="text-center rounded-lg border-2 border-gray-400 h-75 p-4">
-            <CareerItem project={career} />
+            <ProjectItem project={project} />
           </div>
         ))}
       </div>
@@ -22,14 +22,13 @@ export default function CareerSection() {
   );
 }
 
-type Career = (typeof careers.results)[number];
+type Project = (typeof projects.results)[number];
 
-interface CareerItemProps {
-  project: Career;
+interface ProjectItemProps {
+  project: Project;
   className?: string;
 }
-
-const CareerItem = ({ project, className }: CareerItemProps) => {
+const ProjectItem = ({ project, className }: ProjectItemProps) => {
   const name = project.properties.이름.title?.[0]?.text?.content;
   const description = project.properties.설명.rich_text[0]?.plain_text;
 

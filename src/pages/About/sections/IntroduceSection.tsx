@@ -34,16 +34,6 @@ export default function IntroduceSection() {
           개발자에요.
         </p>
       </div>
-      <div className="space-x-4 mt-4">
-        <a
-          className="btn btn-secondary btn-lg"
-          href="https://kimjisub.notion.site">
-          포트폴리오
-        </a>
-        <a className="btn btn-secondary btn-lg" href="https://blog.jisub.kim">
-          블로그
-        </a>
-      </div>
     </div>
   );
 }

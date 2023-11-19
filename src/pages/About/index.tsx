@@ -1,22 +1,12 @@
 import React, { useEffect } from 'react';
 
-import CareerSection from './sections/CareerSection';
 import IntroduceSection from './sections/IntroduceSection';
-import ProjectsSection from './sections/ProjectsSection';
-import TechnologySection from './sections/TechnologySection';
 import TimeLineSection from './sections/TimeLineSection';
-// import styled from 'styled-components';
 
-// import careers from '../db/data/careers.json';
-// import Introduce from '../sections/Introduce';
-// import Projects from '../sections/Projects';
-// import Technology from '../sections/Technology';
-// import TimeLinePage from '../sections/TimeLinePage';
-
-export default function MainPage() {
+export default function AboutPage() {
   useEffect(() => {
     // set title
-    document.title = `개발자 김지섭 포트폴리오`;
+    document.title = `About Jisub.kim`;
 
     // set description
     const meta = document.createElement('meta');
@@ -29,8 +19,12 @@ export default function MainPage() {
   /*
 
 자기소개 ( 명함 )
+기술
 프로젝트
 업적 (경력)
+  Github
+
+연락처
 
 
 */
@@ -38,9 +32,6 @@ export default function MainPage() {
   return (
     <div className="select-none">
       <IntroduceSection />
-      <TechnologySection />
-      <ProjectsSection />
-      <CareerSection />
       <TimeLineSection />
     </div>
   );

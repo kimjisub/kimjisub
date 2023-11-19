@@ -108,7 +108,7 @@ const list = [
 
 export default function TimeLineSection() {
   return (
-    <section className="mx-auto my-0 p-20 max-w-6xl">
+    <section className="mx-auto my-0 p-20 max-w-5xl">
       <p>Career</p>
       <p>저는 이러한 길을 걸어왔어요.</p>
       <div className="mx-auto">

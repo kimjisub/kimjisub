@@ -11,8 +11,8 @@ import {
 } from 'matter-js';
 import * as icons from 'simple-icons';
 
-import { IconView } from '../component/IconView';
-import techs from '../data/techs.json';
+import techs from '../../data/techs.json';
+import { IconView } from '../About/component/IconView';
 
 function generateIconSvgCode(iconSlug: string) {
   if (!iconSlug) return `<svg xmlns="http://www.w3.org/2000/svg" />`;
@@ -47,7 +47,7 @@ function hashStringToNumber(str: string) {
   return hash;
 }
 
-export default function TechnologySection() {
+export default function SkillsPage() {
   const sceneRef = useRef<HTMLDivElement>(null);
   const engineRef = useRef(Engine.create());
   const mouseRef = useRef<Mouse>();
@@ -252,7 +252,7 @@ export default function TechnologySection() {
   // };
 
   return (
-    <section className="mx-auto my-0 p-20 max-w-6xl">
+    <section className="mx-auto my-0 p-20 max-w-5xl">
       <h1 className="text-4xl font-bold">Skills</h1>
       <h2 className="text-2xl">제가 구사할 수 있는 능력들이에요</h2>
 
