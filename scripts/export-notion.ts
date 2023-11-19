@@ -30,7 +30,7 @@ const fetchAndSaveNotionData = (databaseId: string, filePath: string, data: obje
   });
 };
 
-fetchAndSaveNotionData('f3f9bf321850465d9d193c39e2a06d3e', './src/pages/main/data/techs.json',{
+fetchAndSaveNotionData('f3f9bf321850465d9d193c39e2a06d3e', './src/data/techs.json',{
   sorts: [
     {
       property: '분류',
@@ -41,5 +41,5 @@ fetchAndSaveNotionData('f3f9bf321850465d9d193c39e2a06d3e', './src/pages/main/dat
     }
   ]
 });
-fetchAndSaveNotionData('1aef42d566f84045a94303d07ea12e95', './src/pages/main/data/projects.json');
-fetchAndSaveNotionData('89d24d36ad334e62a418d765d6ed4c0b', './src/pages/main/data/careers.json');
+fetchAndSaveNotionData('1aef42d566f84045a94303d07ea12e95', './src/data/projects.json');
+fetchAndSaveNotionData('89d24d36ad334e62a418d765d6ed4c0b', './src/data/careers.json');

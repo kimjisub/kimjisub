@@ -26,7 +26,7 @@ export default function IntroduceSection({
       </div>
       <div>
         <p>서비스 기획, 구체화, 설계, 개발, 운영 및 배포까지</p>
-        <p></p>
+        <p>다양한 경험을 해보았습니다</p>
       </div>
     </div>
   );
