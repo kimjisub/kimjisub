@@ -1,0 +1,6017 @@
+{
+  "object": "list",
+  "results": [
+    {
+      "object": "page",
+      "id": "b0d62388-6d2d-4c27-b481-e23d898b86ad",
+      "created_time": "2023-11-03T18:44:00.000Z",
+      "last_edited_time": "2023-11-07T13:33:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "emoji",
+        "emoji": "⛺"
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "f8408212-01e1-4ca5-ae9b-0aff52122cff"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "대상",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "대상",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "629d5af2-d1e4-41b7-ac4c-158d9c34e3f3",
+              "name": "한국외국어대학교",
+              "color": "pink"
+            },
+            {
+              "id": "dd7ff2a1-0ddb-46ba-ba46-fcbf3350a424",
+              "name": "슘페터",
+              "color": "green"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "b1cc2943-2c1c-4c32-bc06-47a54df12cbd",
+            "name": "중간",
+            "color": "yellow"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "5828eb52-2347-417c-a1ec-b8207f50de82",
+              "name": "캠프",
+              "color": "green"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2023-11-03",
+            "end": "2023-11-04",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "a2620521-f73f-4b55-86dd-bee74cbdb64a",
+            "name": "1위",
+            "color": "red"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "2023 HUFS 창업캠프",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "2023 HUFS 창업캠프",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/2023-HUFS-b0d623886d2d4c27b481e23d898b86ad",
+      "public_url": "https://kimjisub.notion.site/2023-HUFS-b0d623886d2d4c27b481e23d898b86ad"
+    },
+    {
+      "object": "page",
+      "id": "14161dfd-8efd-4ba9-a52a-cfea0275d55e",
+      "created_time": "2023-09-11T18:24:00.000Z",
+      "last_edited_time": "2023-09-11T18:27:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "4921b020-aaf8-4482-bfef-4976499dde2e"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "77cfa8f5-35dc-46a1-bb65-5464240a621f",
+              "name": "중소벤처기업부",
+              "color": "red"
+            },
+            {
+              "id": "46d06c28-3647-41ef-9d11-088056400b14",
+              "name": "한국 스타트업 포럼",
+              "color": "green"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "903405db-70be-4603-a7fc-c7a51014e37b",
+            "name": "낮음",
+            "color": "gray"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "3238731f-538a-4002-b99a-eca6a0f9c2b9",
+              "name": "해커톤",
+              "color": "red"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2023-08-29",
+            "end": "2023-08-30",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "a1fef08a-a8b0-4547-849e-aa4316852b50",
+            "name": "비수상",
+            "color": "brown"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "벤처·스타트업 아카데미 해커톤",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "벤처·스타트업 아카데미 해커톤",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            },
+            {
+              "id": "e6e95832-1f74-440f-afd3-d11098404fba",
+              "name": "디자인",
+              "color": "green"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/14161dfd8efd4ba9a52acfea0275d55e",
+      "public_url": "https://kimjisub.notion.site/14161dfd8efd4ba9a52acfea0275d55e"
+    },
+    {
+      "object": "page",
+      "id": "ca75ef79-2c62-4926-af1a-7b5608e36d12",
+      "created_time": "2023-06-27T05:03:00.000Z",
+      "last_edited_time": "2023-07-06T12:03:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "file",
+        "file": {
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/23207daa-9da2-4b4a-b04f-4a684056a764/image.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T053851Z&X-Amz-Expires=3600&X-Amz-Signature=0aa92e8160facdf9f7964229aa88cd3b2eb38673b16a82342819d80f95ac48cc&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-19T06:38:51.596Z"
+        }
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "6a12c934-4914-47fe-99ca-faaebc1a04d8"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "한국외국어대학교총장상 (대상)",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "한국외국어대학교총장상 (대상)",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "c2d1bd86-6429-4666-8226-96165085e047",
+              "name": "GDSC",
+              "color": "blue"
+            },
+            {
+              "id": "ccbbfbda-5a4a-4c83-b109-c14f5eb050c7",
+              "name": "한국외국어대학교 AI 교육원",
+              "color": "pink"
+            },
+            {
+              "id": "8521f7ca-08ac-40f3-a9c6-d12089d57fa7",
+              "name": "Google Developers",
+              "color": "blue"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "b1cc2943-2c1c-4c32-bc06-47a54df12cbd",
+            "name": "중간",
+            "color": "yellow"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "3238731f-538a-4002-b99a-eca6a0f9c2b9",
+              "name": "해커톤",
+              "color": "red"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2023-06-23",
+            "end": "2023-06-24",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "a2620521-f73f-4b55-86dd-bee74cbdb64a",
+            "name": "1위",
+            "color": "red"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "HUFSummer Hackathon",
+                "link": null
+              },
+              "annotations": {
+                "bold": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "HUFSummer Hackathon",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            },
+            {
+              "id": "e6e95832-1f74-440f-afd3-d11098404fba",
+              "name": "디자인",
+              "color": "green"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/HUFSummer-Hackathon-ca75ef792c624926af1a7b5608e36d12",
+      "public_url": "https://kimjisub.notion.site/HUFSummer-Hackathon-ca75ef792c624926af1a7b5608e36d12"
+    },
+    {
+      "object": "page",
+      "id": "0efa438c-617f-46b4-bd48-18903013d80f",
+      "created_time": "2023-05-20T17:20:00.000Z",
+      "last_edited_time": "2023-11-05T15:01:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "file",
+        "file": {
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/9110d6d5-7488-4e18-b9e1-49d921c57558/download.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T053851Z&X-Amz-Expires=3600&X-Amz-Signature=d49d0f1429c96e000462185cc25ab90cf692e9504e013eba29ee33ce18bfa5f8&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-19T06:38:51.597Z"
+        }
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "8abeb85b-6efe-464c-a035-8f69b4bcf282"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": null
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "ae6578f8-db3c-441e-bba4-068303d7d447",
+              "name": "회사",
+              "color": "brown"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2019-01-09",
+            "end": "2019-09-11",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": null
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "The Vplanet Inc.",
+                "link": null
+              },
+              "annotations": {
+                "bold": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "The Vplanet Inc.",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/The-Vplanet-Inc-0efa438c617f46b4bd4818903013d80f",
+      "public_url": "https://kimjisub.notion.site/The-Vplanet-Inc-0efa438c617f46b4bd4818903013d80f"
+    },
+    {
+      "object": "page",
+      "id": "39343b25-6514-4fb1-8732-003acf0a23f3",
+      "created_time": "2023-05-16T08:23:00.000Z",
+      "last_edited_time": "2023-07-06T14:35:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "emoji",
+        "emoji": "🎓"
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "4405a0ac-01ed-4962-a9e3-e6e8aebe20e4",
+              "name": "디지털새싹",
+              "color": "green"
+            },
+            {
+              "id": "64a4a73c-b969-4263-8f4c-83434ba30166",
+              "name": "소프트웨어야 놀자",
+              "color": "green"
+            },
+            {
+              "id": "beed9e87-11d8-407c-acba-311581f94e19",
+              "name": "네이버 커넥트",
+              "color": "blue"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": null
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "4bb07d59-23a5-4340-8029-a1d393af8237",
+              "name": "교육봉사",
+              "color": "purple"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2023-02-06",
+            "end": "2023-02-07",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "초등학생을 대상으로 인공지능 로봇 교육봉사",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "초등학생을 대상으로 인공지능 로봇 교육봉사",
+              "href": null
+            }
+          ]
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": null
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "1784 스쿨혁명 인공지능 캠프",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "1784 스쿨혁명 인공지능 캠프",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "b848fc11-d4d5-4ceb-87d4-4058891dc7e9",
+              "name": "교육",
+              "color": "red"
+            },
+            {
+              "id": "5e41b1e8-5378-4e71-b1f5-4efa729a1376",
+              "name": "커리큘럼 제작",
+              "color": "blue"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/1784-39343b2565144fb18732003acf0a23f3",
+      "public_url": "https://kimjisub.notion.site/1784-39343b2565144fb18732003acf0a23f3"
+    },
+    {
+      "object": "page",
+      "id": "cf34e57d-33b1-44b7-bc56-2db17cb67b6a",
+      "created_time": "2021-08-21T13:05:00.000Z",
+      "last_edited_time": "2023-06-27T05:05:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": null
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "3238731f-538a-4002-b99a-eca6a0f9c2b9",
+              "name": "해커톤",
+              "color": "red"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2021-08-21",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "a1fef08a-a8b0-4547-849e-aa4316852b50",
+            "name": "비수상",
+            "color": "brown"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "OSAM 국방부 해커톤",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "OSAM 국방부 해커톤",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/OSAM-cf34e57d33b144b7bc562db17cb67b6a",
+      "public_url": "https://kimjisub.notion.site/OSAM-cf34e57d33b144b7bc562db17cb67b6a"
+    },
+    {
+      "object": "page",
+      "id": "07a7bf84-45bc-4669-b836-7ca8790bebd3",
+      "created_time": "2020-09-28T05:56:00.000Z",
+      "last_edited_time": "2023-05-20T15:47:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "cbf86215-fc1a-42f4-bfdd-e262227b6f58",
+              "name": "한국외대 SW 봉사단",
+              "color": "pink"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": null
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "4bb07d59-23a5-4340-8029-a1d393af8237",
+              "name": "교육봉사",
+              "color": "purple"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2020-10-16",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": null
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "파이썬 교육",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "파이썬 교육",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "5e41b1e8-5378-4e71-b1f5-4efa729a1376",
+              "name": "커리큘럼 제작",
+              "color": "blue"
+            },
+            {
+              "id": "af8c7fe3-5d86-4d19-8e4c-f2b947554448",
+              "name": "도우미",
+              "color": "orange"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/07a7bf8445bc4669b8367ca8790bebd3",
+      "public_url": "https://kimjisub.notion.site/07a7bf8445bc4669b8367ca8790bebd3"
+    },
+    {
+      "object": "page",
+      "id": "e0a35e1e-9ff1-4714-82f7-205fc76001e6",
+      "created_time": "2020-09-28T05:56:00.000Z",
+      "last_edited_time": "2023-05-20T15:48:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "cbf86215-fc1a-42f4-bfdd-e262227b6f58",
+              "name": "한국외대 SW 봉사단",
+              "color": "pink"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": null
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "4bb07d59-23a5-4340-8029-a1d393af8237",
+              "name": "교육봉사",
+              "color": "purple"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2020-10-06",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": null
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "SW 진로설계 세미나 + 아두이노",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "SW 진로설계 세미나 + 아두이노",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "5e41b1e8-5378-4e71-b1f5-4efa729a1376",
+              "name": "커리큘럼 제작",
+              "color": "blue"
+            },
+            {
+              "id": "b848fc11-d4d5-4ceb-87d4-4058891dc7e9",
+              "name": "교육",
+              "color": "red"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/SW-e0a35e1e9ff1471482f7205fc76001e6",
+      "public_url": "https://kimjisub.notion.site/SW-e0a35e1e9ff1471482f7205fc76001e6"
+    },
+    {
+      "object": "page",
+      "id": "da2074ac-3656-4592-8a73-d0dd3e5fd1b7",
+      "created_time": "2020-03-20T05:23:00.000Z",
+      "last_edited_time": "2023-11-07T13:33:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "emoji",
+        "emoji": "📺"
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "최우수상",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "최우수상",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "b1cc2943-2c1c-4c32-bc06-47a54df12cbd",
+            "name": "중간",
+            "color": "yellow"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "3238731f-538a-4002-b99a-eca6a0f9c2b9",
+              "name": "해커톤",
+              "color": "red"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2019-03-29",
+            "end": "2019-03-30",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "d5a45f1f-96fc-476e-b240-2085a836ad1d",
+            "name": "2위",
+            "color": "orange"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "방송영상 뉴미디어 콘텐츠 아이디어톤",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "방송영상 뉴미디어 콘텐츠 아이디어톤",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/da2074ac365645928a73d0dd3e5fd1b7",
+      "public_url": "https://kimjisub.notion.site/da2074ac365645928a73d0dd3e5fd1b7"
+    },
+    {
+      "object": "page",
+      "id": "29055678-f315-4668-940b-973aff964c4b",
+      "created_time": "2020-03-20T05:12:00.000Z",
+      "last_edited_time": "2023-06-27T05:06:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "d041a673-7348-4dd0-aa72-2e56065036f1"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "903405db-70be-4603-a7fc-c7a51014e37b",
+            "name": "낮음",
+            "color": "gray"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "3238731f-538a-4002-b99a-eca6a0f9c2b9",
+              "name": "해커톤",
+              "color": "red"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2018-08-31",
+            "end": "2018-09-01",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "a1fef08a-a8b0-4547-849e-aa4316852b50",
+            "name": "비수상",
+            "color": "brown"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "대한민국 SW 융합 해커톤",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "대한민국 SW 융합 해커톤",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/SW-29055678f3154668940b973aff964c4b",
+      "public_url": "https://kimjisub.notion.site/SW-29055678f3154668940b973aff964c4b"
+    },
+    {
+      "object": "page",
+      "id": "43d36b20-c680-4663-b9ac-d36b24a94f13",
+      "created_time": "2020-03-20T05:12:00.000Z",
+      "last_edited_time": "2023-06-27T05:06:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "94abf410-d23e-4253-8e66-d6fe06d07fd0"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "903405db-70be-4603-a7fc-c7a51014e37b",
+            "name": "낮음",
+            "color": "gray"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "3238731f-538a-4002-b99a-eca6a0f9c2b9",
+              "name": "해커톤",
+              "color": "red"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2018-10-13",
+            "end": "2018-10-14",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "a1fef08a-a8b0-4547-849e-aa4316852b50",
+            "name": "비수상",
+            "color": "brown"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "INAPSE HACKATHON",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "INAPSE HACKATHON",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/INAPSE-HACKATHON-43d36b20c6804663b9acd36b24a94f13",
+      "public_url": "https://kimjisub.notion.site/INAPSE-HACKATHON-43d36b20c6804663b9acd36b24a94f13"
+    },
+    {
+      "object": "page",
+      "id": "de7e634c-720e-447a-8b29-3452f2683b5f",
+      "created_time": "2020-03-19T16:10:00.000Z",
+      "last_edited_time": "2023-06-27T05:06:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "ad7b67e5-f69e-4177-b130-afa16eadd5be"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "우수상",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "우수상",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "f89a284d-8990-4897-9fcf-92dcf24654d3",
+              "name": "DMZ Hackathon",
+              "color": "default"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "903405db-70be-4603-a7fc-c7a51014e37b",
+            "name": "낮음",
+            "color": "gray"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "3238731f-538a-4002-b99a-eca6a0f9c2b9",
+              "name": "해커톤",
+              "color": "red"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2019-01-23",
+            "end": "2019-01-25",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "a2620521-f73f-4b55-86dd-bee74cbdb64a",
+            "name": "1위",
+            "color": "red"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "DMZ 해커톤",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "DMZ 해커톤",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/DMZ-de7e634c720e447a8b293452f2683b5f",
+      "public_url": "https://kimjisub.notion.site/DMZ-de7e634c720e447a8b293452f2683b5f"
+    },
+    {
+      "object": "page",
+      "id": "fde68f8d-e2d5-4e93-8821-a25b3af556b4",
+      "created_time": "2020-03-19T16:10:00.000Z",
+      "last_edited_time": "2023-06-27T05:06:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "8fda43a6-b6cb-495f-8256-898cd2e66b03"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "d300c042-1b10-4019-b8ef-576547904b12",
+              "name": "남양주",
+              "color": "red"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "903405db-70be-4603-a7fc-c7a51014e37b",
+            "name": "낮음",
+            "color": "gray"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "3238731f-538a-4002-b99a-eca6a0f9c2b9",
+              "name": "해커톤",
+              "color": "red"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2018-08-11",
+            "end": "2018-08-12",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "a1fef08a-a8b0-4547-849e-aa4316852b50",
+            "name": "비수상",
+            "color": "brown"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "남양주 해커톤",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "남양주 해커톤",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/fde68f8de2d54e938821a25b3af556b4",
+      "public_url": "https://kimjisub.notion.site/fde68f8de2d54e938821a25b3af556b4"
+    },
+    {
+      "object": "page",
+      "id": "479e58ac-c767-4790-afc6-dd224bd77d9b",
+      "created_time": "2020-03-19T14:30:00.000Z",
+      "last_edited_time": "2023-11-07T13:36:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "emoji",
+        "emoji": "👥"
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "72fff05b-7e1a-47ae-a3df-543ae5e8a57a"
+            },
+            {
+              "id": "10722f86-9794-4ec2-bb11-5b92a16970e5"
+            },
+            {
+              "id": "f9cda467-4e16-4a41-b99a-7e915db4c181"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "우수동아리 선정",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "우수동아리 선정",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "e3673312-53b3-49fe-b4a0-6c3fe36b3dc5",
+              "name": "YEEP",
+              "color": "yellow"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "b1cc2943-2c1c-4c32-bc06-47a54df12cbd",
+            "name": "중간",
+            "color": "yellow"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "f20a7cfb-2c27-498d-89a5-d6bf4bcd2ab6",
+              "name": "부스운영",
+              "color": "pink"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2018-08-29",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "a2620521-f73f-4b55-86dd-bee74cbdb64a",
+            "name": "1위",
+            "color": "red"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "학생창업유망팀 300+ 우수 동아리",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "학생창업유망팀 300+ 우수 동아리",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/300-479e58acc7674790afc6dd224bd77d9b",
+      "public_url": "https://kimjisub.notion.site/300-479e58acc7674790afc6dd224bd77d9b"
+    },
+    {
+      "object": "page",
+      "id": "deda62c8-0d3d-4805-bf5f-b156f179ef68",
+      "created_time": "2020-03-19T14:30:00.000Z",
+      "last_edited_time": "2023-06-27T05:06:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "file",
+        "file": {
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/f8a71c9f-7a75-4500-8644-f0745dc7a36a/logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T053851Z&X-Amz-Expires=3600&X-Amz-Signature=0d45ca4ebe254467f9ca1135df78bd979d3cb5af1c56e66fbb188fbcdb764696&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-19T06:38:51.597Z"
+        }
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "8633e484-74fb-484f-931b-af6286fc7418"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "최우수상",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "최우수상",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "e7a63e90-29b7-40b9-9cd8-989bf636e18a",
+              "name": "신세계아이엔씨",
+              "color": "blue"
+            },
+            {
+              "id": "30c9cca4-265e-4ada-aebd-0be25eee5f1a",
+              "name": "함께일하는재단",
+              "color": "green"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "b1cc2943-2c1c-4c32-bc06-47a54df12cbd",
+            "name": "중간",
+            "color": "yellow"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": "http://hellonewworld.co.kr/bbs/board.php?bo_table=33&wr_id=2"
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "3238731f-538a-4002-b99a-eca6a0f9c2b9",
+              "name": "해커톤",
+              "color": "red"
+            },
+            {
+              "id": "afc55165-7a6c-4d27-960e-eea4e88cd4df",
+              "name": "공모전",
+              "color": "orange"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2019-07-19",
+            "end": "2019-07-20",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "신세계 주최 해커톤",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "신세계 주최 해커톤",
+              "href": null
+            }
+          ]
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "d5a45f1f-96fc-476e-b240-2085a836ad1d",
+            "name": "2위",
+            "color": "orange"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Hello New() World",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Hello New() World",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Hello-New-World-deda62c80d3d4805bf5fb156f179ef68",
+      "public_url": "https://kimjisub.notion.site/Hello-New-World-deda62c80d3d4805bf5fb156f179ef68"
+    },
+    {
+      "object": "page",
+      "id": "3bbe06ca-d551-4eb2-bbaa-42a4ef882e0f",
+      "created_time": "2020-03-19T14:29:00.000Z",
+      "last_edited_time": "2023-11-07T13:34:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "emoji",
+        "emoji": "💼"
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "동상",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "동상",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "4d719306-9d2a-4ec7-b121-61a9bcc6553a",
+              "name": "한국디지털미디어고등학교",
+              "color": "pink"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "b1cc2943-2c1c-4c32-bc06-47a54df12cbd",
+            "name": "중간",
+            "color": "yellow"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "f20a7cfb-2c27-498d-89a5-d6bf4bcd2ab6",
+              "name": "부스운영",
+              "color": "pink"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2018-12-28",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "m31u",
+            "name": "3위",
+            "color": "yellow"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "비즈쿨성과발표 우수동아리",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "비즈쿨성과발표 우수동아리",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/3bbe06cad5514eb2bbaa42a4ef882e0f",
+      "public_url": "https://kimjisub.notion.site/3bbe06cad5514eb2bbaa42a4ef882e0f"
+    },
+    {
+      "object": "page",
+      "id": "89469a5f-20fa-496a-9504-32a037875528",
+      "created_time": "2020-03-19T14:29:00.000Z",
+      "last_edited_time": "2023-06-27T05:06:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "emoji",
+        "emoji": "⛺"
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "울산과학기술원 총장상",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "울산과학기술원 총장상",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "776b9dc5-3873-4367-afe0-b63444913a3c",
+              "name": "UNIST",
+              "color": "pink"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "47548e83-78ef-47a0-9682-6c1bfe5a01f9",
+            "name": "높음",
+            "color": "orange"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "5828eb52-2347-417c-a1ec-b8207f50de82",
+              "name": "캠프",
+              "color": "green"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2019-07-15",
+            "end": "2019-07-19",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "m31u",
+            "name": "3위",
+            "color": "yellow"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "국가슈퍼컴퓨팅 청소년 캠프",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "국가슈퍼컴퓨팅 청소년 캠프",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/89469a5f20fa496a950432a037875528",
+      "public_url": "https://kimjisub.notion.site/89469a5f20fa496a950432a037875528"
+    },
+    {
+      "object": "page",
+      "id": "c65f40a3-12fb-438a-8afb-4ab60ac814f6",
+      "created_time": "2020-03-19T14:29:00.000Z",
+      "last_edited_time": "2023-11-07T13:33:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "emoji",
+        "emoji": "🏆"
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "72fff05b-7e1a-47ae-a3df-543ae5e8a57a"
+            },
+            {
+              "id": "10722f86-9794-4ec2-bb11-5b92a16970e5"
+            },
+            {
+              "id": "f9cda467-4e16-4a41-b99a-7e915db4c181"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "기업가정신상",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "기업가정신상",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "e3673312-53b3-49fe-b4a0-6c3fe36b3dc5",
+              "name": "YEEP",
+              "color": "yellow"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "b1cc2943-2c1c-4c32-bc06-47a54df12cbd",
+            "name": "중간",
+            "color": "yellow"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "f20a7cfb-2c27-498d-89a5-d6bf4bcd2ab6",
+              "name": "부스운영",
+              "color": "pink"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2019-01-15",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "m31u",
+            "name": "3위",
+            "color": "yellow"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "2018 대한민국 청소년 창업경진대회",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "2018 대한민국 청소년 창업경진대회",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/2018-c65f40a312fb438a8afb4ab60ac814f6",
+      "public_url": "https://kimjisub.notion.site/2018-c65f40a312fb438a8afb4ab60ac814f6"
+    },
+    {
+      "object": "page",
+      "id": "e7fbf93d-f2e3-4a60-92b5-246790eabab5",
+      "created_time": "2020-03-19T14:29:00.000Z",
+      "last_edited_time": "2023-06-27T05:06:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "emoji",
+        "emoji": "👼"
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "dd3d53cf-94ce-41c5-bf38-309a4da791bf"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "LG U+ Track Winner",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "LG U+ Track Winner",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "0bc4bee3-1991-4968-86f5-a2fe3d60cf00",
+              "name": "AngelHack",
+              "color": "default"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "b1cc2943-2c1c-4c32-bc06-47a54df12cbd",
+            "name": "중간",
+            "color": "yellow"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "3238731f-538a-4002-b99a-eca6a0f9c2b9",
+              "name": "해커톤",
+              "color": "red"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2019-06-01",
+            "end": "2019-06-02",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "a2620521-f73f-4b55-86dd-bee74cbdb64a",
+            "name": "1위",
+            "color": "red"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "2019 AngelHack Hackathon",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "2019 AngelHack Hackathon",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/2019-AngelHack-Hackathon-e7fbf93df2e34a6092b5246790eabab5",
+      "public_url": "https://kimjisub.notion.site/2019-AngelHack-Hackathon-e7fbf93df2e34a6092b5246790eabab5"
+    },
+    {
+      "object": "page",
+      "id": "f94d52d8-d31b-4040-a0ef-3378e73cc1da",
+      "created_time": "2020-03-19T14:29:00.000Z",
+      "last_edited_time": "2023-11-07T13:34:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "emoji",
+        "emoji": "🎆"
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "장려상",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "장려상",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "4d719306-9d2a-4ec7-b121-61a9bcc6553a",
+              "name": "한국디지털미디어고등학교",
+              "color": "pink"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "b1cc2943-2c1c-4c32-bc06-47a54df12cbd",
+            "name": "중간",
+            "color": "yellow"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "afc55165-7a6c-4d27-960e-eea4e88cd4df",
+              "name": "공모전",
+              "color": "orange"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2018-12-27",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "551fc316-dfa2-408f-8b4a-e9529d920f34",
+            "name": "4위",
+            "color": "purple"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "창의 IT 공모전",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "창의 IT 공모전",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/IT-f94d52d8d31b4040a0ef3378e73cc1da",
+      "public_url": "https://kimjisub.notion.site/IT-f94d52d8d31b4040a0ef3378e73cc1da"
+    },
+    {
+      "object": "page",
+      "id": "1e449861-3743-43ee-b5a6-21b3e32e77df",
+      "created_time": "2020-03-19T14:28:00.000Z",
+      "last_edited_time": "2023-11-07T13:34:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "emoji",
+        "emoji": "🏆"
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "8186aec8-ed5a-44b7-b17a-4ba595a16fe3"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "사회혁신상(대상)",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "사회혁신상(대상)",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "03a7ab5b-2270-4f0d-a5e9-741501a18c0c",
+              "name": "라임프랜즈",
+              "color": "blue"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "b1cc2943-2c1c-4c32-bc06-47a54df12cbd",
+            "name": "중간",
+            "color": "yellow"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "3238731f-538a-4002-b99a-eca6a0f9c2b9",
+              "name": "해커톤",
+              "color": "red"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2018-11-10",
+            "end": "2018-11-11",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "a2620521-f73f-4b55-86dd-bee74cbdb64a",
+            "name": "1위",
+            "color": "red"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "IF 해커톤",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "IF 해커톤",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/IF-1e449861374343eeb5a621b3e32e77df",
+      "public_url": "https://kimjisub.notion.site/IF-1e449861374343eeb5a621b3e32e77df"
+    },
+    {
+      "object": "page",
+      "id": "41d72e17-deb7-4d1b-8cdb-860a3d008187",
+      "created_time": "2020-03-19T14:28:00.000Z",
+      "last_edited_time": "2023-07-07T13:12:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "file",
+        "file": {
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/c1ed76c9-c87b-4616-9731-964a831359fc/download-1.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T053851Z&X-Amz-Expires=3600&X-Amz-Signature=ddb8ed458ac850510ee486e52d4a57844e83bed828d2eaf5eac0548ebea5c4a9&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-19T06:38:51.599Z"
+        }
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "f0499ae1-e215-4aaf-8066-fcd9428be8c8"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "동상(취소됨)",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "동상(취소됨)",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "4d719306-9d2a-4ec7-b121-61a9bcc6553a",
+              "name": "한국디지털미디어고등학교",
+              "color": "pink"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "b1cc2943-2c1c-4c32-bc06-47a54df12cbd",
+            "name": "중간",
+            "color": "yellow"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "3238731f-538a-4002-b99a-eca6a0f9c2b9",
+              "name": "해커톤",
+              "color": "red"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2018-10-26",
+            "end": "2018-10-27",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "a1fef08a-a8b0-4547-849e-aa4316852b50",
+            "name": "비수상",
+            "color": "brown"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "디미고 해커톤",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "디미고 해커톤",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/41d72e17deb74d1b8cdb860a3d008187",
+      "public_url": "https://kimjisub.notion.site/41d72e17deb74d1b8cdb860a3d008187"
+    },
+    {
+      "object": "page",
+      "id": "56ae8dd3-74ef-4b6d-b63e-03535d3a271b",
+      "created_time": "2020-03-19T14:28:00.000Z",
+      "last_edited_time": "2023-06-27T05:06:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "emoji",
+        "emoji": "🎊"
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "72fff05b-7e1a-47ae-a3df-543ae5e8a57a"
+            },
+            {
+              "id": "10722f86-9794-4ec2-bb11-5b92a16970e5"
+            },
+            {
+              "id": "f9cda467-4e16-4a41-b99a-7e915db4c181"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "우수상",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "우수상",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "77cfa8f5-35dc-46a1-bb65-5464240a621f",
+              "name": "중소벤처기업부",
+              "color": "red"
+            },
+            {
+              "id": "39953077-eced-4e41-9910-cd0b61825515",
+              "name": "창업진흥원",
+              "color": "red"
+            },
+            {
+              "id": "e574e89a-4971-4854-8bd8-aca6af716207",
+              "name": "교육부",
+              "color": "red"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "47548e83-78ef-47a0-9682-6c1bfe5a01f9",
+            "name": "높음",
+            "color": "orange"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "f20a7cfb-2c27-498d-89a5-d6bf4bcd2ab6",
+              "name": "부스운영",
+              "color": "pink"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2018-11-10",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "m31u",
+            "name": "3위",
+            "color": "yellow"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "청소년 비즈쿨 페스티벌",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "청소년 비즈쿨 페스티벌",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/56ae8dd374ef4b6db63e03535d3a271b",
+      "public_url": "https://kimjisub.notion.site/56ae8dd374ef4b6db63e03535d3a271b"
+    },
+    {
+      "object": "page",
+      "id": "e5b7b55a-a297-4283-9a2d-5fda94ce569d",
+      "created_time": "2020-03-19T14:28:00.000Z",
+      "last_edited_time": "2023-11-07T13:36:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "emoji",
+        "emoji": "📱"
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "10722f86-9794-4ec2-bb11-5b92a16970e5"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "우수상",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "우수상",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "a6c14c84-3a1d-49db-9ae8-27463922d083",
+              "name": "SK 플래닛",
+              "color": "blue"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "47548e83-78ef-47a0-9682-6c1bfe5a01f9",
+            "name": "높음",
+            "color": "orange"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "afc55165-7a6c-4d27-960e-eea4e88cd4df",
+              "name": "공모전",
+              "color": "orange"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2018-09-29",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "m31u",
+            "name": "3위",
+            "color": "yellow"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "STAC 스마틴앱챌린지",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "STAC 스마틴앱챌린지",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/STAC-e5b7b55aa29742839a2d5fda94ce569d",
+      "public_url": "https://kimjisub.notion.site/STAC-e5b7b55aa29742839a2d5fda94ce569d"
+    },
+    {
+      "object": "page",
+      "id": "be750e1e-c461-4aad-9ada-7cdc516f10fa",
+      "created_time": "2020-03-19T14:26:00.000Z",
+      "last_edited_time": "2023-11-07T13:35:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "emoji",
+        "emoji": "✋"
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "31fcdff2-b969-47bc-b2f6-681122fe2215"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "최우수상",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "최우수상",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "2fdc0cdd-38f5-4b76-b979-201a5911c803",
+              "name": "국민체육진흥공단",
+              "color": "red"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "b1cc2943-2c1c-4c32-bc06-47a54df12cbd",
+            "name": "중간",
+            "color": "yellow"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "3238731f-538a-4002-b99a-eca6a0f9c2b9",
+              "name": "해커톤",
+              "color": "red"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2018-11-03",
+            "end": "2018-11-04",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "a2620521-f73f-4b55-86dd-bee74cbdb64a",
+            "name": "1위",
+            "color": "red"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "불법 스포츠 도박 근절 해커톤",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "불법 스포츠 도박 근절 해커톤",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/be750e1ec4614aad9ada7cdc516f10fa",
+      "public_url": "https://kimjisub.notion.site/be750e1ec4614aad9ada7cdc516f10fa"
+    },
+    {
+      "object": "page",
+      "id": "61aef909-0211-456a-ae3f-0a279a1e2f87",
+      "created_time": "2020-03-19T14:24:00.000Z",
+      "last_edited_time": "2023-06-27T05:06:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "file",
+        "file": {
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/e3cb8c39-71f8-4072-95e2-b303ac398413/s.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T053851Z&X-Amz-Expires=3600&X-Amz-Signature=03ab97f033bd90241bab906b773d9544fed214a6c4ea96eb673c3489a00bf5e9&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-19T06:38:51.599Z"
+        }
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "1991cd92-201b-4909-871c-fba3d19d366b"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "451f41c9-4b14-40ff-8cdf-8df83a192e84",
+              "name": "SK techx",
+              "color": "blue"
+            },
+            {
+              "id": "82681a95-3cc5-403c-9bd7-c12bfad4a46c",
+              "name": "서울디지털재단",
+              "color": "green"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "903405db-70be-4603-a7fc-c7a51014e37b",
+            "name": "낮음",
+            "color": "gray"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "3238731f-538a-4002-b99a-eca6a0f9c2b9",
+              "name": "해커톤",
+              "color": "red"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2018-08-18",
+            "end": "2018-08-19",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "a1fef08a-a8b0-4547-849e-aa4316852b50",
+            "name": "비수상",
+            "color": "brown"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "제 16회 앱잼",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "제 16회 앱잼",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/16-61aef9090211456aae3f0a279a1e2f87",
+      "public_url": "https://kimjisub.notion.site/16-61aef9090211456aae3f0a279a1e2f87"
+    },
+    {
+      "object": "page",
+      "id": "b8a6bf29-d61a-457b-941a-170a99b0a29a",
+      "created_time": "2020-03-19T14:24:00.000Z",
+      "last_edited_time": "2023-11-07T13:36:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "emoji",
+        "emoji": "🤖"
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "3488f0b9-da37-4809-8d14-1d573d663fac"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "대상",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "대상",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "&1ni",
+              "name": "동탄중앙이음터",
+              "color": "yellow"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "903405db-70be-4603-a7fc-c7a51014e37b",
+            "name": "낮음",
+            "color": "gray"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "3238731f-538a-4002-b99a-eca6a0f9c2b9",
+              "name": "해커톤",
+              "color": "red"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2018-10-20",
+            "end": "2018-10-21",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "a2620521-f73f-4b55-86dd-bee74cbdb64a",
+            "name": "1위",
+            "color": "red"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "ICT 메이커톤",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "ICT 메이커톤",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/ICT-b8a6bf29d61a457b941a170a99b0a29a",
+      "public_url": "https://kimjisub.notion.site/ICT-b8a6bf29d61a457b941a170a99b0a29a"
+    },
+    {
+      "object": "page",
+      "id": "a998b222-5541-4aae-baee-0cfa75664867",
+      "created_time": "2020-03-19T14:23:00.000Z",
+      "last_edited_time": "2023-06-27T05:06:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "file",
+        "file": {
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/92249130-3ac8-4138-bba6-b8163b92046d/s.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T053851Z&X-Amz-Expires=3600&X-Amz-Signature=33aabfebbd9ddd25bc0be8337e6f52425f5ccfbb6897a044b244595c4aa09160&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-19T06:38:51.598Z"
+        }
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "10722f86-9794-4ec2-bb11-5b92a16970e5"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "미래산업 부문 최우수상",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "미래산업 부문 최우수상",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "451f41c9-4b14-40ff-8cdf-8df83a192e84",
+              "name": "SK techx",
+              "color": "blue"
+            },
+            {
+              "id": "82681a95-3cc5-403c-9bd7-c12bfad4a46c",
+              "name": "서울디지털재단",
+              "color": "green"
+            },
+            {
+              "id": "d58d7908-59be-43cb-848f-82aeaabbaa69",
+              "name": "Unity",
+              "color": "blue"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "b1cc2943-2c1c-4c32-bc06-47a54df12cbd",
+            "name": "중간",
+            "color": "yellow"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "3238731f-538a-4002-b99a-eca6a0f9c2b9",
+              "name": "해커톤",
+              "color": "red"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2018-03-31",
+            "end": "2018-04-01",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "a2620521-f73f-4b55-86dd-bee74cbdb64a",
+            "name": "1위",
+            "color": "red"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "제 15회 앱잼",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "제 15회 앱잼",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/15-a998b22255414aaebaee0cfa75664867",
+      "public_url": "https://kimjisub.notion.site/15-a998b22255414aaebaee0cfa75664867"
+    },
+    {
+      "object": "page",
+      "id": "25a7c61f-887c-47ae-ad63-a68e5759489b",
+      "created_time": "2020-03-19T11:46:00.000Z",
+      "last_edited_time": "2023-05-20T19:06:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "file",
+        "file": {
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/3584bdfe-1538-4215-aea0-9747b21359b2/download-1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T053851Z&X-Amz-Expires=3600&X-Amz-Signature=7e37ab5f64c8cc454d3eb8575f451793512e73c5c512837d687ce00c920cea81&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-19T06:38:51.598Z"
+        }
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "17fa9334-6503-4a79-9571-d40c7ff49418",
+              "name": "설리번 프로젝트",
+              "color": "green"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": null
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "4bb07d59-23a5-4340-8029-a1d393af8237",
+              "name": "교육봉사",
+              "color": "purple"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2019-01-05",
+            "end": "2019-01-27",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": null
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "설리번 '오빠 RC카 뽑았다'",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "설리번 '오빠 RC카 뽑았다'",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "5e41b1e8-5378-4e71-b1f5-4efa729a1376",
+              "name": "커리큘럼 제작",
+              "color": "blue"
+            },
+            {
+              "id": "b848fc11-d4d5-4ceb-87d4-4058891dc7e9",
+              "name": "교육",
+              "color": "red"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/RC-25a7c61f887c47aead63a68e5759489b",
+      "public_url": "https://kimjisub.notion.site/RC-25a7c61f887c47aead63a68e5759489b"
+    },
+    {
+      "object": "page",
+      "id": "80c918f4-8ead-4409-ba3d-a3d54fbd41de",
+      "created_time": "2020-03-19T11:46:00.000Z",
+      "last_edited_time": "2023-05-20T19:05:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "file",
+        "file": {
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/5c2ad22c-e682-4e2c-9d38-d054c0a83014/download-1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T053851Z&X-Amz-Expires=3600&X-Amz-Signature=74d3c995c32009ee3c882f09df2572ac3b66632fb6adc0e4244d01b808ec13f8&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-19T06:38:51.599Z"
+        }
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "17fa9334-6503-4a79-9571-d40c7ff49418",
+              "name": "설리번 프로젝트",
+              "color": "green"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": null
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "4bb07d59-23a5-4340-8029-a1d393af8237",
+              "name": "교육봉사",
+              "color": "purple"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2018-01-08",
+            "end": "2018-02-02",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": null
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "설리번 '게임으로 배우는 웹해킹'",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "설리번 '게임으로 배우는 웹해킹'",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "5e41b1e8-5378-4e71-b1f5-4efa729a1376",
+              "name": "커리큘럼 제작",
+              "color": "blue"
+            },
+            {
+              "id": "b848fc11-d4d5-4ceb-87d4-4058891dc7e9",
+              "name": "교육",
+              "color": "red"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/80c918f48ead4409ba3da3d54fbd41de",
+      "public_url": "https://kimjisub.notion.site/80c918f48ead4409ba3da3d54fbd41de"
+    },
+    {
+      "object": "page",
+      "id": "429bbe1b-4253-4d22-a01c-08308d19024f",
+      "created_time": "2020-03-19T11:18:00.000Z",
+      "last_edited_time": "2023-07-07T13:12:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "file",
+        "file": {
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/f9542b95-4d72-450d-a7ab-5f5d48e078f5/logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T053851Z&X-Amz-Expires=3600&X-Amz-Signature=05866fa3a419c03715d49fe45457ea189c934a7df2cb6ae05cab07469c30b4cc&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-19T06:38:51.599Z"
+        }
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "f9cda467-4e16-4a41-b99a-7e915db4c181"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "우수상",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "우수상",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "e7a63e90-29b7-40b9-9cd8-989bf636e18a",
+              "name": "신세계아이엔씨",
+              "color": "blue"
+            },
+            {
+              "id": "30c9cca4-265e-4ada-aebd-0be25eee5f1a",
+              "name": "함께일하는재단",
+              "color": "green"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "47548e83-78ef-47a0-9682-6c1bfe5a01f9",
+            "name": "높음",
+            "color": "orange"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": "http://hellonewworld.co.kr/bbs/board.php?bo_table=34&wr_id=4"
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "3238731f-538a-4002-b99a-eca6a0f9c2b9",
+              "name": "해커톤",
+              "color": "red"
+            },
+            {
+              "id": "afc55165-7a6c-4d27-960e-eea4e88cd4df",
+              "name": "공모전",
+              "color": "orange"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2018-07-13",
+            "end": "2018-07-14",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "m31u",
+            "name": "3위",
+            "color": "yellow"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Hello New() World",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Hello New() World",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Hello-New-World-429bbe1b42534d22a01c08308d19024f",
+      "public_url": "https://kimjisub.notion.site/Hello-New-World-429bbe1b42534d22a01c08308d19024f"
+    },
+    {
+      "object": "page",
+      "id": "ed734136-883f-4c76-9df7-0cb71bb05991",
+      "created_time": "2020-03-19T11:08:00.000Z",
+      "last_edited_time": "2023-06-27T05:06:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "emoji",
+        "emoji": "💼"
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "고급",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "고급",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "Ye?'",
+              "name": "대전교육정보원 영재교육원",
+              "color": "red"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "b1cc2943-2c1c-4c32-bc06-47a54df12cbd",
+            "name": "중간",
+            "color": "yellow"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "219b6c9c-eb4e-45fc-81aa-8c89cdc5878b",
+              "name": "수료",
+              "color": "default"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2016-12-31",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "a2620521-f73f-4b55-86dd-bee74cbdb64a",
+            "name": "1위",
+            "color": "red"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "대전교육정보원 정보 고급 수료",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "대전교육정보원 정보 고급 수료",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/ed734136883f4c769df70cb71bb05991",
+      "public_url": "https://kimjisub.notion.site/ed734136883f4c769df70cb71bb05991"
+    },
+    {
+      "object": "page",
+      "id": "87bd18af-8515-4c14-a7df-40dcb2dae553",
+      "created_time": "2020-03-19T10:55:00.000Z",
+      "last_edited_time": "2023-06-27T05:06:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "emoji",
+        "emoji": "🛠️"
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "86bf901d-caa9-424a-90f0-02da3d8f1bea"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "대상",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "대상",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "93afc769-1fe9-440e-9319-9ba5d76d7b22",
+              "name": "경기지방중소벤처기업청",
+              "color": "red"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "b1cc2943-2c1c-4c32-bc06-47a54df12cbd",
+            "name": "중간",
+            "color": "yellow"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "3238731f-538a-4002-b99a-eca6a0f9c2b9",
+              "name": "해커톤",
+              "color": "red"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2018-05-11",
+            "end": "2018-05-12",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "a2620521-f73f-4b55-86dd-bee74cbdb64a",
+            "name": "1위",
+            "color": "red"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "산업 현장 안전 메이커톤",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "산업 현장 안전 메이커톤",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/87bd18af85154c14a7df40dcb2dae553",
+      "public_url": "https://kimjisub.notion.site/87bd18af85154c14a7df40dcb2dae553"
+    },
+    {
+      "object": "page",
+      "id": "e1f0fc05-8023-4141-9469-64b5a78d7db8",
+      "created_time": "2020-03-19T10:54:00.000Z",
+      "last_edited_time": "2023-06-27T05:06:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "file",
+        "file": {
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/ea632b7e-b3d0-4825-9153-75e7ffbfa09b/s.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T053851Z&X-Amz-Expires=3600&X-Amz-Signature=aca5f16257a42d74119478e3723916e1654656739e83627d483bae7a6fcbfe37&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-19T06:38:51.599Z"
+        }
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "b67749b7-f3f1-4939-a51b-bcae543b0ae3"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "미래산업 부문 최우수상",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "미래산업 부문 최우수상",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "451f41c9-4b14-40ff-8cdf-8df83a192e84",
+              "name": "SK techx",
+              "color": "blue"
+            },
+            {
+              "id": "82681a95-3cc5-403c-9bd7-c12bfad4a46c",
+              "name": "서울디지털재단",
+              "color": "green"
+            },
+            {
+              "id": "764c39d0-5220-4b46-9899-4319a14b909e",
+              "name": "아산나눔재단",
+              "color": "green"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "b1cc2943-2c1c-4c32-bc06-47a54df12cbd",
+            "name": "중간",
+            "color": "yellow"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "3238731f-538a-4002-b99a-eca6a0f9c2b9",
+              "name": "해커톤",
+              "color": "red"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2017-12-16",
+            "end": "2017-12-17",
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "a2620521-f73f-4b55-86dd-bee74cbdb64a",
+            "name": "1위",
+            "color": "red"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "제 14회 앱잼",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "제 14회 앱잼",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/14-e1f0fc0580234141946964b5a78d7db8",
+      "public_url": "https://kimjisub.notion.site/14-e1f0fc0580234141946964b5a78d7db8"
+    },
+    {
+      "object": "page",
+      "id": "cf1cc337-b1f9-464c-803a-8cbd7d56567f",
+      "created_time": "2020-03-19T10:51:00.000Z",
+      "last_edited_time": "2023-11-09T17:30:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": {
+        "type": "emoji",
+        "emoji": "🏆"
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "72fff05b-7e1a-47ae-a3df-543ae5e8a57a"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "전국 금상",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "전국 금상",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "c6de18c3-0cee-4c44-abbe-8d8c5870af59",
+              "name": "KOI",
+              "color": "red"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "b1cc2943-2c1c-4c32-bc06-47a54df12cbd",
+            "name": "중간",
+            "color": "yellow"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "afc55165-7a6c-4d27-960e-eea4e88cd4df",
+              "name": "공모전",
+              "color": "orange"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2016-07-01",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "d5a45f1f-96fc-476e-b240-2085a836ad1d",
+            "name": "2위",
+            "color": "orange"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "제 33회 정보올림피아드 공모 부문",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "제 33회 정보올림피아드 공모 부문",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/33-cf1cc337b1f9464c803a8cbd7d56567f",
+      "public_url": "https://kimjisub.notion.site/33-cf1cc337b1f9464c803a8cbd7d56567f"
+    },
+    {
+      "object": "page",
+      "id": "0e492ad6-4b98-4292-9900-8e92f35596c0",
+      "created_time": "2020-03-19T10:16:00.000Z",
+      "last_edited_time": "2023-06-27T05:06:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "f8eaf004-c9ef-40d0-8512-fb0e49f06a88"
+            }
+          ],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "금상",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "금상",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "Ye?'",
+              "name": "대전교육정보원 영재교육원",
+              "color": "red"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "903405db-70be-4603-a7fc-c7a51014e37b",
+            "name": "낮음",
+            "color": "gray"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "afc55165-7a6c-4d27-960e-eea4e88cd4df",
+              "name": "공모전",
+              "color": "orange"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2015-11-01",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "d5a45f1f-96fc-476e-b240-2085a836ad1d",
+            "name": "2위",
+            "color": "orange"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "영재교육원 개인주제탐구발표대회",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "영재교육원 개인주제탐구발표대회",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/0e492ad64b98429299008e92f35596c0",
+      "public_url": "https://kimjisub.notion.site/0e492ad64b98429299008e92f35596c0"
+    },
+    {
+      "object": "page",
+      "id": "63e9ec4b-3368-41ef-8e54-50b0a55640a2",
+      "created_time": "2020-03-19T10:16:00.000Z",
+      "last_edited_time": "2023-05-16T08:20:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "동상",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "동상",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "71a7cac1-5af6-489d-9264-096da49f7bc7",
+              "name": "대전광역시",
+              "color": "red"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "903405db-70be-4603-a7fc-c7a51014e37b",
+            "name": "낮음",
+            "color": "gray"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "f20a7cfb-2c27-498d-89a5-d6bf4bcd2ab6",
+              "name": "부스운영",
+              "color": "pink"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2015-10-23",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "m31u",
+            "name": "3위",
+            "color": "yellow"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "대전 영재 페스티벌",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "대전 영재 페스티벌",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": []
+        }
+      },
+      "url": "https://www.notion.so/63e9ec4b336841ef8e5450b0a55640a2",
+      "public_url": "https://kimjisub.notion.site/63e9ec4b336841ef8e5450b0a55640a2"
+    },
+    {
+      "object": "page",
+      "id": "babf869c-f6a3-4b1c-9d5f-00d61470fa30",
+      "created_time": "2020-03-19T10:16:00.000Z",
+      "last_edited_time": "2023-06-27T05:06:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "89d24d36-ad33-4e62-a418-d765d6ed4c0b"
+      },
+      "archived": false,
+      "properties": {
+        "관련된 프로젝트": {
+          "id": "2J%7B%3D",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "수상 및 수료": {
+          "id": "5%2F%3CX",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "중급",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "중급",
+              "href": null
+            }
+          ]
+        },
+        "기관": {
+          "id": "%3Am%3D%5B",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "Ye?'",
+              "name": "대전교육정보원 영재교육원",
+              "color": "red"
+            }
+          ]
+        },
+        "갤러리에서 보기": {
+          "id": "HBIz",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "중요도": {
+          "id": "O%7D48",
+          "type": "select",
+          "select": {
+            "id": "b1cc2943-2c1c-4c32-bc06-47a54df12cbd",
+            "name": "중간",
+            "color": "yellow"
+          }
+        },
+        "URL": {
+          "id": "SfX%7D",
+          "type": "url",
+          "url": null
+        },
+        "분류": {
+          "id": "fJ0V",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "219b6c9c-eb4e-45fc-81aa-8c89cdc5878b",
+              "name": "수료",
+              "color": "default"
+            }
+          ]
+        },
+        "날짜": {
+          "id": "kF%7BN",
+          "type": "date",
+          "date": {
+            "start": "2015-12-31",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "설명": {
+          "id": "yyk%3E",
+          "type": "rich_text",
+          "rich_text": []
+        },
+        "수상 순위": {
+          "id": "%7B%3B%7CJ",
+          "type": "select",
+          "select": {
+            "id": "d5a45f1f-96fc-476e-b240-2085a836ad1d",
+            "name": "2위",
+            "color": "orange"
+          }
+        },
+        "이름": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "대전교육정보원 정보 중급 수료",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "대전교육정보원 정보 중급 수료",
+              "href": null
+            }
+          ]
+        },
+        "맡은 업무": {
+          "id": "b62081d5-f3a1-4c30-baae-1d27ca6c7479",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "11175fc4-7e88-4ac0-b490-fb99099118a2",
+              "name": "개발",
+              "color": "yellow"
+            },
+            {
+              "id": "b57d41a3-6266-4e53-9232-896b457013f8",
+              "name": "기획",
+              "color": "pink"
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/babf869cf6a34b1c9d5f00d61470fa30",
+      "public_url": "https://kimjisub.notion.site/babf869cf6a34b1c9d5f00d61470fa30"
+    }
+  ],
+  "next_cursor": null,
+  "has_more": false,
+  "type": "page_or_database",
+  "page_or_database": {},
+  "request_id": "dccc2c35-57c3-4106-b6e2-6a0cce5c50ee"
+}

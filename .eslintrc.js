@@ -5,7 +5,7 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended'],
+  extends: ['react-app', 'react-app/jest'],
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'simple-import-sort', 'unused-imports'],
   overrides: [
@@ -16,8 +16,8 @@ module.exports = {
         'no-shadow': 'off',
         'no-undef': 'off',
         'react-native/no-inline-styles': 'off',
-        '@typescript-eslint/no-unused-vars': 'warn',
         'unused-imports/no-unused-imports': 'warn',
+        'no-unused-vars': 'warn',
         'simple-import-sort/imports': [
           'warn',
           {
