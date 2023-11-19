@@ -5,17 +5,18 @@ import projects from '../../data/projects.json';
 export default function ProjectsPage() {
   const [selected, setSelected] = useState(null);
   return (
-    <div className="mx-auto p-20 max-w-5xl">
+    <div className="mx-auto p-4 max-w-4xl">
       <p>Projects</p>
       <p>그동안 진행해왔던 프로젝트들이에요.</p>
-
-      <div className="grid grid-cols-3 gap-4 mt-5">
+      <div
+        className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5 justify-center max-x-1xl"
+        style={
+          {
+            // gridTemplateColumns: 'repeat(auto-fill, 20rem)',
+          }
+        }>
         {projects.results.map(project => (
-          <div
-            key={project.id}
-            className="text-center rounded-lg border-2 border-gray-400 h-75 p-4">
-            <ProjectItem project={project} />
-          </div>
+          <ProjectItem key={project.id} project={project} />
         ))}
       </div>
     </div>
@@ -35,9 +36,16 @@ const ProjectItem = ({ project, className }: ProjectItemProps) => {
   const onClick = () => {};
 
   return (
-    <article onClick={onClick} className={`h-40 cursor-pointer ${className}`}>
-      <p className="text-lg font-semibold">{name}</p>
-      <p className="text-sm">{description}</p>
+    <article
+      onClick={onClick}
+      className={`cursor-pointer rounded-lg border-2 border-gray-200 ${className}`}>
+      <div className="h-32 bg-red-500">
+        <img src="" alt="이미지"></img>
+      </div>
+      <div className="p-2">
+        <p className="text-md font-semibold">{name}</p>
+        <p className="text-sm">{description}</p>
+      </div>
     </article>
   );
 };
