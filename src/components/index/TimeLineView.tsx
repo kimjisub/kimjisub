@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { Content, Title, Title2, Year } from '../../typography';
 
-import { TimeLine } from './pages/TimeLinePage';
+import { TimeLine } from '../../sections/TimeLinePage';
 
 export interface TimeLineProps {
   list: TimeLine[];

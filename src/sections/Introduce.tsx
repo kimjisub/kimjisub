@@ -3,7 +3,7 @@ import TextTransition, { presets } from 'react-text-transition';
 import Link from '@docusaurus/Link';
 import styled, { keyframes } from 'styled-components';
 
-import { Content } from '../../../typography';
+import { Content } from '../typography';
 
 const Root = styled.div`
   height: 100vh;

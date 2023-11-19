@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
-import Introduce from '../components/index/pages/Introduce';
-import Technology from '../components/index/pages/Technology';
-import TimeLinePage from '../components/index/pages/TimeLinePage';
 import careers from '../db/data/careers.json';
-import projects from '../db/data/projects.json';
+import Introduce from '../sections/Introduce';
+import Projects from '../sections/Projects';
+import Technology from '../sections/Technology';
+import TimeLinePage from '../sections/TimeLinePage';
 
 export default function Home() {
   useEffect(() => {
@@ -34,29 +34,47 @@ export default function Home() {
       <Introduce />
       <Technology />
       <TimeLinePage />
-      {/* <Projects /> */}
-      {careers.results.map(career => (
-        <p key={career.id}>
-          <p>{career.properties.이름.title?.[0]?.text?.content}</p>
-          {/* <pre
-              style={{
-                fontSize: '0.5rem',
-              }}>
-              {JSON.stringify(career, null, 2)}
-            </pre> */}
-        </p>
-      ))}
-      {projects.results.map(career => (
-        <p key={career.id}>
-          <p>{career.properties.이름.title?.[0]?.text?.content}</p>
-          {/* <pre
-              style={{
-                fontSize: '0.5rem',
-              }}>
-              {JSON.stringify(career, null, 2)}
-            </pre> */}
-        </p>
-      ))}
+      <Projects />
+
+      <GridContainer>
+        {careers.results.map(career => {
+          const icon = {
+            emoji: <span>{career.icon?.emoji}</span>,
+            file: (
+              <img
+                style={{
+                  width: '24px',
+                  height: '24px',
+                }}
+                src={career.icon?.file?.url}
+              />
+            ),
+          }[career.icon?.type] ?? <></>;
+          return (
+            <GridItem key={career.id}>
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                }}>
+                <div>asdf</div>
+                <p>
+                  {icon}
+                  {career.properties.이름.title?.[0]?.text?.content}
+                </p>
+                <p>{career.properties?.['수상 순위']?.select?.name}</p>
+                {/* <pre
+                  style={{
+                    fontSize: '0.5rem',
+                  }}>
+                  {JSON.stringify(career, null, 2)}
+                </pre> */}
+              </div>
+            </GridItem>
+          );
+        })}
+      </GridContainer>
     </Root>
   );
 }
@@ -68,4 +86,14 @@ const Root = styled.div`
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+`;
+
+const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  grid-gap: 16px;
+`;
+
+const GridItem = styled.div`
+  text-align: center;
 `;

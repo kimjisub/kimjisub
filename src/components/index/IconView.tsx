@@ -24,36 +24,42 @@ const Icon = styled.svg`
   height: 30px;
 `;
 
-export default function IconView({
-  iconSlug,
-}: {
+export interface IconViewProps {
+  id?: string;
   iconSlug: string;
   title: string;
   description?: string;
-}) {
-  const icon =
-    iconSlug &&
-    (icons?.[
-      `si${iconSlug.charAt(0).toUpperCase() + iconSlug.slice(1)}`
-    ] as SimpleIcon | null);
+  style?: React.CSSProperties;
+}
 
-  return (
-    <article>
-      <Box style={{ background: `#${icon?.hex ?? 'fff'}` }}>
-        {/* <img
+export const IconView = React.forwardRef<HTMLElement, IconViewProps>(
+  ({ id, iconSlug, style }, ref) => {
+    const icon =
+      iconSlug &&
+      (icons?.[
+        `si${iconSlug.charAt(0).toUpperCase() + iconSlug.slice(1)}`
+      ] as SimpleIcon | null);
+
+    return (
+      <article ref={ref} style={style} id={id}>
+        <Box style={{ background: `#${icon?.hex ?? 'fff'}` }}>
+          {/* <img
           height="24"
           width="24"
           src={`https://cdn.simpleicons.org/${iconSlug}/_/gray`}
         /> */}
-        {icon && (
-          <Icon
-            role="img"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg">
-            <path d={icon.path} style={{ fill: '#fff' }} />
-          </Icon>
-        )}
-      </Box>
-    </article>
-  );
-}
+          {icon && (
+            <Icon
+              role="img"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d={icon.path} style={{ fill: '#fff' }} />
+            </Icon>
+          )}
+        </Box>
+      </article>
+    );
+  },
+);
+
+IconView.displayName = 'IconView';

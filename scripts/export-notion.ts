@@ -43,3 +43,6 @@ fetchAndSaveNotionData('f3f9bf321850465d9d193c39e2a06d3e', './src/db/data/techs.
 });
 fetchAndSaveNotionData('1aef42d566f84045a94303d07ea12e95', './src/db/data/projects.json');
 fetchAndSaveNotionData('89d24d36ad334e62a418d765d6ed4c0b', './src/db/data/careers.json');
+
+// import techs from '../src/db/data/techs.json';
+
