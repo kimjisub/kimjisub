@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import projects from '../../data/projects.json';
 
-export default function ProjectsSection() {
+export default function ProjectsPage() {
   const [selected, setSelected] = useState(null);
   return (
     <div className="mx-auto p-20 max-w-5xl">

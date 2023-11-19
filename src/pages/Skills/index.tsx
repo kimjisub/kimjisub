@@ -7,20 +7,33 @@ import {
   Mouse,
   MouseConstraint,
   Render,
+  Runner,
   World,
 } from 'matter-js';
 import * as icons from 'simple-icons';
 
 import techs from '../../data/techs.json';
-import { IconView } from '../About/component/IconView';
+
+const emptySvg = `<svg xmlns="http://www.w3.org/2000/svg" />`;
+
+function svgToDataUrl(svg: string) {
+  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+}
 
 function generateIconSvgCode(iconSlug: string) {
-  if (!iconSlug) return `<svg xmlns="http://www.w3.org/2000/svg" />`;
+  // iconSlug가 없으면 빈 svg를 반환
+  if (!iconSlug) return svgToDataUrl(emptySvg);
+
+  // slug 가져오기
   const slug = `si${
     iconSlug.charAt(0).toUpperCase() + iconSlug.slice(1)
   }` as keyof typeof icons;
   const icon = icons[slug];
-  if (!icon) return `<svg xmlns="http://www.w3.org/2000/svg" />`;
+
+  // 존재하지 않으면 빈 svg를 반환
+  if (!icon) return svgToDataUrl(emptySvg);
+
+  // svg 생성
   const iconBackground = `#${icon?.hex ?? 'fff'}`;
   const svgWidth = 50;
   const svgHeight = 50;
@@ -98,6 +111,8 @@ export default function SkillsPage() {
     const loadAndCreateBodies = async () => {
       for (const tech of techs.results) {
         const iconSlug = tech.properties.iconSlug.rich_text[0]?.plain_text;
+
+        console.log(iconSlug, generateIconSvgCode(iconSlug));
 
         try {
           const body = Bodies.rectangle(100, 100, 50, 50, {
@@ -214,8 +229,9 @@ export default function SkillsPage() {
       moveObjectToTarget();
     });
 
-    // Runner.run(engineRef.current);
-    // Render.run(render);
+    Runner.run(engineRef.current);
+    Render.run(render);
+    console.log('run');
 
     // unmount
     return () => {
@@ -252,11 +268,11 @@ export default function SkillsPage() {
   // };
 
   return (
-    <section className="mx-auto my-0 p-20 max-w-5xl">
+    <section className="h-screen mx-auto my-0 p-20 max-w-5xl">
       <h1 className="text-4xl font-bold">Skills</h1>
       <h2 className="text-2xl">제가 구사할 수 있는 능력들이에요</h2>
 
-      <div
+      {/* <div
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fill, 50px)',
@@ -275,10 +291,10 @@ export default function SkillsPage() {
             />
           );
         })}
-      </div>
+      </div> */}
 
       {/* 여기서 sceneRef는 Canvas 또는 해당하는 요소에 대한 참조 */}
-      <div className="fixed top-0 left-0 w-full h-full z-[-1]" ref={sceneRef} />
+      <div className="fixed top-0 left-0 w-full h-full" ref={sceneRef} />
     </section>
   );
 }
