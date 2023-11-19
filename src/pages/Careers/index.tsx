@@ -5,7 +5,7 @@ import careers from '../../data/careers.json';
 export default function CareerPage() {
   const [selected, setSelected] = useState(null);
   return (
-    <div className="mx-auto p-6 max-w-4xl">
+    <div className="pt-16 mx-auto p-6 max-w-4xl">
       <p>Career</p>
       <p>그동안 경험했던 것들이에요.</p>
 

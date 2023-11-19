@@ -20,10 +20,6 @@ function App() {
         <Route path="/skills" element={<SkillsPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/careers" element={<CareerPage />} />
-        <Route path="/contact" element={<div>contact</div>} />
-
-        {/* <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} /> */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>

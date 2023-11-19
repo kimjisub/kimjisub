@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 interface Section {
   id: string;
@@ -11,7 +11,6 @@ const sections: (Section | null)[] = [
   { id: 'skills', title: 'Skills', path: '/skills' },
   { id: 'projects', title: 'Projects', path: '/projects' },
   { id: 'careers', title: 'Careers', path: '/careers' },
-  { id: 'contact', title: 'Contact', path: '/contact' },
   null,
   { id: 'blog', title: 'Blog', path: 'https://blog.jisub.kim' },
   { id: 'github', title: 'Github', path: 'https://github.com/kimjisub' },
@@ -21,10 +20,45 @@ const blur = 'bg-white bg-opacity-60 backdrop-filter backdrop-blur-lg';
 
 const TopBar: React.FC = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [navBarHidden, setNavBarHidden] = useState(false);
+  const lastScrollY = useRef(0);
+
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    if (currentScrollY <= 0 || currentScrollY <= lastScrollY.current) {
+      setNavBarHidden(false);
+    } else {
+      setNavBarHidden(true);
+    }
+    lastScrollY.current = currentScrollY;
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleLinkClick = (path: string) => {
+    setIsMenuOpen(false);
+
+    if (path.startsWith('http://') || path.startsWith('https://')) {
+      window.location.href = path;
+    } else {
+      navigate(path);
+    }
+  };
 
   return (
-    <nav className={`fixed top-0 left-0 w-full h-16 md:h-16 z-10  ${blur}`}>
+    <nav
+      className={`fixed top-0 left-0 w-full h-16 md:h-16 z-10 ${blur} transition-transform ${
+        navBarHidden ? '-translate-y-full' : ''
+      }`}>
       <div
         className={`h-16 max-w-5xl mx-auto px-6 flex justify-between items-center `}>
         <div className="flex items-center w-auto flex-grow justify-between">
@@ -33,14 +67,12 @@ const TopBar: React.FC = () => {
             jisub.kim
           </Link>
 
-          {/* 햄버거 메뉴 버튼 (모바일) */}
-          <button
+          <p
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-xl md:hidden ">
-            메뉴 {/* 아이콘 또는 텍스트로 표현 */}
-          </button>
+            className="text-md p-4 md:hidden cursor-pointer">
+            메뉴
+          </p>
 
-          {/* 네비게이션 링크 (데스크탑 & 모바일) */}
           <ul
             className={[
               `absolute md:relative md:flex`,
@@ -57,14 +89,13 @@ const TopBar: React.FC = () => {
               section ? (
                 <li
                   key={section.id}
-                  className={`text-center md:text-left px-6 py-3 md:py-0 border-b md:border-none ${
+                  className={`text-center md:text-left px-6 py-3 md:py-0 border-b md:border-none cursor-pointer ${
                     location.pathname === section.path
                       ? 'text-blue-500 font-bold'
                       : 'text-gray-600'
-                  }`}>
-                  <Link to={section.path} onClick={() => setIsMenuOpen(false)}>
-                    {section.title}
-                  </Link>
+                  }`}
+                  onClick={() => handleLinkClick(section.path)}>
+                  <p>{section.title}</p>
                 </li>
               ) : (
                 <li className="md:flex-grow" />
@@ -72,19 +103,6 @@ const TopBar: React.FC = () => {
             )}
           </ul>
         </div>
-        {/* 
-        <ul className="hidden md:flex items-center">
-          <li className="px-4">
-            <a href="https://github.com/kimjisub" target="_" rel="noreferrer">
-              Github
-            </a>
-          </li>
-          <li className="px-4">
-            <a href="https://blog.jisub.kim" target="_top" rel="noreferrer">
-              Blog
-            </a>
-          </li>
-        </ul> */}
       </div>
     </nav>
   );

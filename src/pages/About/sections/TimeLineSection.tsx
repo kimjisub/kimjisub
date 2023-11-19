@@ -66,7 +66,7 @@ const list = [
     content:
       'MySql과 같은 DB 엔진을 SSD 컨트롤러 단계에서 구현하여 성능을 향상시키는 연구를 진행하고 있어요.',
   },
-];
+].reverse();
 
 // const Root = styled.div`
 //   max-width: 1000px;
@@ -106,28 +106,30 @@ const list = [
 //   }
 // `;
 
-export default function TimeLineSection() {
+export default function TimeLineSection({ className }: { className?: string }) {
   return (
-    <section className="mx-auto my-0 p-20 max-w-5xl">
+    <section className={`mx-auto my-0 p-8 max-w-5xl ${className}`}>
       <p>Career</p>
       <p>저는 이러한 길을 걸어왔어요.</p>
       <div className="mx-auto">
-        {list.map((data, i) => (
-          <div key={i.toString()} className="flex">
-            <div className="min-w-15 w-15 text-right">
-              <p>{data.year}</p>
-            </div>
-            <div className="relative mx-6">
-              <div className="absolute w-0.5 bg-gray-300 h-full" />
-              <div className="absolute w-3.5 h-3.5 bg-orange-400 rounded-full border-0 border-orange-400 opacity-25 -left-1.5 mt-1.5" />
-              <div className="absolute w-1 h-1 bg-white rounded-full border-2 border-orange-400 -left-1.5 mt-2" />
-            </div>
-            <div className="pb-4">
-              <p>{data.title}</p>
-              <p>{data.content}</p>
-            </div>
-          </div>
-        ))}
+        <table className="min-w-full">
+          <thead>
+            <tr>
+              <th className="text-left">년도</th>
+              <th className="text-left">제목</th>
+              <th className="text-left">내용</th>
+            </tr>
+          </thead>
+          <tbody>
+            {list.map((data, i) => (
+              <tr key={i.toString()} className="border-b">
+                <td className="p-4">{data.year}</td>
+                <td className="p-4">{data.title}</td>
+                <td className="p-4">{data.content}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </section>
   );

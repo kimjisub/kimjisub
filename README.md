@@ -1,5 +1,7 @@
 ## 👋 사고의 차원을 높히는 개발자 김지섭입니다!
 
+![](https://komarev.com/ghpvc/?username=kimjisub)
+
 ### 📞 Contact
 
 - Email: 0226daniel@gmail.com
@@ -7,9 +9,8 @@
 
 ### 🌍 Backlink
 
-- [포트폴리오](https://kimjisub.notion.site/)
+- [포트폴리오](https://jisub.kim)
 - [기술 블로그](https://blog.jisub.kim)
-<!-- - [웹사이트](https://jisub.kim) -->
 
 ### 🔥 Experience
 
@@ -29,34 +30,7 @@
 
 ### 🛠 Tech Stack
 
-<div>
-  <img src="https://img.shields.io/badge/Html-E34F26?style=flat-square&logo=HTML5&logoColor=white"/>
-  <img src="https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=CSS3&logoColor=white"/>
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Python-3766AB?style=flat-square&logo=Python&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Java-007396?style=flat-square&logo=Java&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=Kotlin&logoColor=white"/>
-  <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=C%2B%2B&logoColor=white"/>
-</div>
-
-<div>
-  <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=Node.js&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=Android&logoColor=white"/>
-  <img src="https://img.shields.io/badge/React.js-61DAFB?style=flat-square&logo=React&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Arduino-00979D?style=flat-square&logo=Arduino&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=Docker&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=Firebase&logoColor=white"/>
-  <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=AmazonAWS&logoColor=white"/>
-</div>
-
-
-### 👀 Status
-
-![](https://komarev.com/ghpvc/?username=kimjisub)
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=kimjisub&layout=compact&langs_count=8)
-
-![Kimjisub's GitHub stats](https://github-readme-stats.vercel.app/api?username=kimjisub&show_icons=true&count_private=true)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=kimjisub&layout=compact&langs_count=20)
 
 [website]: https://jisub.kim
 [notion]: https://www.notion.so/kimjisub/b47d075874e9420cb9804c4bd4f78691

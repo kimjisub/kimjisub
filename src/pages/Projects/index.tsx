@@ -5,7 +5,7 @@ import projects from '../../data/projects.json';
 export default function ProjectsPage() {
   const [selected, setSelected] = useState(null);
   return (
-    <div className="mx-auto p-6 max-w-4xl">
+    <div className="pt-16 mx-auto p-6 max-w-4xl">
       <p>Projects</p>
       <p>그동안 진행해왔던 프로젝트들이에요.</p>
       <div
