@@ -1,24 +1,22 @@
 import React from 'react';
-
-import careers from '../../data/careers.json';
-
 import Image from 'next/image';
-export default function CareerPage() {
+
+import { Career, fetchCareer } from '@/api/notion';
+export default async function CareerPage() {
+	const careers = await fetchCareer();
 	return (
 		<div className="pt-16 mx-auto p-6 max-w-5xl">
 			<p>Career</p>
 			<p>그동안 경험했던 것들이에요.</p>
 
 			<div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-5 justify-center max-x-1xl">
-				{careers.results.map((career) => (
+				{careers.map(career => (
 					<CareerItem key={career.id} project={career} />
 				))}
 			</div>
 		</div>
 	);
 }
-
-type Career = (typeof careers.results)[number];
 
 interface CareerItemProps {
 	project: Career;
@@ -45,8 +43,7 @@ const CareerItem = ({ project, className }: CareerItemProps) => {
 
 	return (
 		<article
-			className={`cursor-pointer rounded-lg border-2 border-gray-200 ${className}`}
-		>
+			className={`cursor-pointer rounded-lg border-2 border-gray-200 ${className}`}>
 			<div className="h-32">
 				{/* <Image
 					src=""

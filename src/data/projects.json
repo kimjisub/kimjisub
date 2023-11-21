@@ -53,6 +53,11 @@
             }
           ]
         },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
+        },
         "중요도": {
           "id": "O%7D48",
           "type": "select",
@@ -198,6 +203,11 @@
               "color": "orange"
             }
           ]
+        },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
         },
         "중요도": {
           "id": "O%7D48",
@@ -362,6 +372,11 @@
             }
           ]
         },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
+        },
         "중요도": {
           "id": "O%7D48",
           "type": "select",
@@ -463,7 +478,7 @@
       "object": "page",
       "id": "f8408212-01e1-4ca5-ae9b-0aff52122cff",
       "created_time": "2023-06-09T05:50:00.000Z",
-      "last_edited_time": "2023-11-05T15:00:00.000Z",
+      "last_edited_time": "2023-11-20T05:18:00.000Z",
       "created_by": {
         "object": "user",
         "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
@@ -518,6 +533,22 @@
               "id": "8fcb7b13-71fe-44dc-b135-88610e216a15",
               "name": "Dev-ops",
               "color": "pink"
+            }
+          ]
+        },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "79a76bcf-ccb3-4c23-832e-650a24998a2c",
+              "name": "출시됨",
+              "color": "red"
+            },
+            {
+              "id": "aa6399c4-8d04-40c5-8d6a-0ffe7fda65f7",
+              "name": "창업",
+              "color": "default"
             }
           ]
         },
@@ -670,7 +701,7 @@
       "object": "page",
       "id": "8abeb85b-6efe-464c-a035-8f69b4bcf282",
       "created_time": "2023-05-20T19:13:00.000Z",
-      "last_edited_time": "2023-11-05T15:01:00.000Z",
+      "last_edited_time": "2023-11-21T09:43:00.000Z",
       "created_by": {
         "object": "user",
         "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
@@ -683,8 +714,8 @@
       "icon": {
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/ddf54203-c3c3-4046-a333-229e978b47f8/download.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T181711Z&X-Amz-Expires=3600&X-Amz-Signature=9625ee0fc93a0845acd8e027ab2bbe3bba455b6f7a4662c34d2c4ced3e52ae90&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2023-11-19T19:17:11.311Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/ddf54203-c3c3-4046-a333-229e978b47f8/download.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231121T131103Z&X-Amz-Expires=3600&X-Amz-Signature=a215afcc049cd552336055e3ab7e0711528aac277996eea432d7ebbe32463e81&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-21T14:11:03.296Z"
         }
       },
       "parent": {
@@ -707,6 +738,22 @@
           "id": "%3Exu'",
           "type": "multi_select",
           "multi_select": []
+        },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "79a76bcf-ccb3-4c23-832e-650a24998a2c",
+              "name": "출시됨",
+              "color": "red"
+            },
+            {
+              "id": "7e04cebd-828d-4588-af17-32ade1f483d9",
+              "name": "회사",
+              "color": "yellow"
+            }
+          ]
         },
         "중요도": {
           "id": "O%7D48",
@@ -827,7 +874,7 @@
       "object": "page",
       "id": "917a67d4-dae7-4a04-a756-c0f96f562a32",
       "created_time": "2023-05-16T00:37:00.000Z",
-      "last_edited_time": "2023-05-20T18:43:00.000Z",
+      "last_edited_time": "2023-11-20T05:16:00.000Z",
       "created_by": {
         "object": "user",
         "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
@@ -867,6 +914,17 @@
               "id": "56750bee-5352-43b7-b462-8b27c04c24f6",
               "name": "개발",
               "color": "blue"
+            }
+          ]
+        },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "d1a2da09-6850-4952-867a-d79f029cf713",
+              "name": "오픈소스",
+              "color": "brown"
             }
           ]
         },
@@ -986,7 +1044,7 @@
       "object": "page",
       "id": "60eb508d-c631-45b0-a580-225873bedb7c",
       "created_time": "2023-05-16T00:32:00.000Z",
-      "last_edited_time": "2023-05-20T22:46:00.000Z",
+      "last_edited_time": "2023-11-20T05:16:00.000Z",
       "created_by": {
         "object": "user",
         "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
@@ -1031,6 +1089,17 @@
               "id": "56750bee-5352-43b7-b462-8b27c04c24f6",
               "name": "개발",
               "color": "blue"
+            }
+          ]
+        },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "d1a2da09-6850-4952-867a-d79f029cf713",
+              "name": "오픈소스",
+              "color": "brown"
             }
           ]
         },
@@ -1205,6 +1274,11 @@
             }
           ]
         },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
+        },
         "중요도": {
           "id": "O%7D48",
           "type": "select",
@@ -1312,7 +1386,7 @@
       "object": "page",
       "id": "feb5779b-9e0d-4b8f-9aa1-e7a7a393c0cf",
       "created_time": "2023-04-06T12:57:00.000Z",
-      "last_edited_time": "2023-05-20T22:46:00.000Z",
+      "last_edited_time": "2023-11-20T05:18:00.000Z",
       "created_by": {
         "object": "user",
         "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
@@ -1325,8 +1399,8 @@
       "icon": {
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/54e0cd25-dd0f-4a6d-9d6b-b5eff24dc39e/unnamed-2.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T181711Z&X-Amz-Expires=3600&X-Amz-Signature=1a99f1c22e43433980739ca0812e9ee5d02bbcdc3297681e530f7025a0427267&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2023-11-19T19:17:11.311Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/54e0cd25-dd0f-4a6d-9d6b-b5eff24dc39e/unnamed-2.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231121T131103Z&X-Amz-Expires=3600&X-Amz-Signature=92190cfea8ae9dec2dc01f630042e0f093d03df1a840ce8515b3ba70356515e8&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-21T14:11:03.300Z"
         }
       },
       "parent": {
@@ -1353,6 +1427,22 @@
               "id": "56750bee-5352-43b7-b462-8b27c04c24f6",
               "name": "개발",
               "color": "blue"
+            }
+          ]
+        },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "79a76bcf-ccb3-4c23-832e-650a24998a2c",
+              "name": "출시됨",
+              "color": "red"
+            },
+            {
+              "id": "7e04cebd-828d-4588-af17-32ade1f483d9",
+              "name": "회사",
+              "color": "yellow"
             }
           ]
         },
@@ -1578,6 +1668,11 @@
             }
           ]
         },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
+        },
         "중요도": {
           "id": "O%7D48",
           "type": "select",
@@ -1767,6 +1862,11 @@
             }
           ]
         },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
+        },
         "중요도": {
           "id": "O%7D48",
           "type": "select",
@@ -1886,7 +1986,7 @@
       "object": "page",
       "id": "ed9a0f96-eb1a-42e8-9ffd-74c9ebfe093e",
       "created_time": "2021-12-06T03:20:00.000Z",
-      "last_edited_time": "2023-05-20T18:43:00.000Z",
+      "last_edited_time": "2023-11-21T09:42:00.000Z",
       "created_by": {
         "object": "user",
         "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
@@ -1917,6 +2017,17 @@
           "id": "%3Exu'",
           "type": "multi_select",
           "multi_select": []
+        },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "d1a2da09-6850-4952-867a-d79f029cf713",
+              "name": "오픈소스",
+              "color": "brown"
+            }
+          ]
         },
         "중요도": {
           "id": "O%7D48",
@@ -2083,6 +2194,11 @@
           "type": "multi_select",
           "multi_select": []
         },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
+        },
         "중요도": {
           "id": "O%7D48",
           "type": "select",
@@ -2205,6 +2321,11 @@
         },
         "맡은 업무": {
           "id": "%3Exu'",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "태그": {
+          "id": "GkC%3D",
           "type": "multi_select",
           "multi_select": []
         },
@@ -2356,6 +2477,11 @@
               "color": "blue"
             }
           ]
+        },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
         },
         "중요도": {
           "id": "O%7D48",
@@ -2521,6 +2647,11 @@
               "color": "pink"
             }
           ]
+        },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
         },
         "중요도": {
           "id": "O%7D48",
@@ -2721,6 +2852,11 @@
           "type": "multi_select",
           "multi_select": []
         },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
+        },
         "중요도": {
           "id": "O%7D48",
           "type": "select",
@@ -2850,6 +2986,11 @@
           "type": "multi_select",
           "multi_select": []
         },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
+        },
         "중요도": {
           "id": "O%7D48",
           "type": "select",
@@ -2976,6 +3117,11 @@
         },
         "맡은 업무": {
           "id": "%3Exu'",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "태그": {
+          "id": "GkC%3D",
           "type": "multi_select",
           "multi_select": []
         },
@@ -3140,7 +3286,7 @@
       "object": "page",
       "id": "07b08690-a37c-421f-8a80-b13d3824549a",
       "created_time": "2020-03-19T15:05:00.000Z",
-      "last_edited_time": "2023-05-20T18:42:00.000Z",
+      "last_edited_time": "2023-11-20T05:18:00.000Z",
       "created_by": {
         "object": "user",
         "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
@@ -3171,6 +3317,22 @@
           "id": "%3Exu'",
           "type": "multi_select",
           "multi_select": []
+        },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "79a76bcf-ccb3-4c23-832e-650a24998a2c",
+              "name": "출시됨",
+              "color": "red"
+            },
+            {
+              "id": "d1a2da09-6850-4952-867a-d79f029cf713",
+              "name": "오픈소스",
+              "color": "brown"
+            }
+          ]
         },
         "중요도": {
           "id": "O%7D48",
@@ -3303,7 +3465,7 @@
       "object": "page",
       "id": "9e91657b-3c21-4a8f-8955-ab70fea7fdd7",
       "created_time": "2020-03-19T15:05:00.000Z",
-      "last_edited_time": "2023-05-20T18:34:00.000Z",
+      "last_edited_time": "2023-11-20T05:17:00.000Z",
       "created_by": {
         "object": "user",
         "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
@@ -3334,6 +3496,17 @@
           "id": "%3Exu'",
           "type": "multi_select",
           "multi_select": []
+        },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "d1a2da09-6850-4952-867a-d79f029cf713",
+              "name": "오픈소스",
+              "color": "brown"
+            }
+          ]
         },
         "중요도": {
           "id": "O%7D48",
@@ -3488,6 +3661,11 @@
           "type": "multi_select",
           "multi_select": []
         },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
+        },
         "중요도": {
           "id": "O%7D48",
           "type": "select",
@@ -3592,7 +3770,7 @@
       "object": "page",
       "id": "cdee7253-d5de-4cdc-930a-3255d57a0c4c",
       "created_time": "2020-03-19T13:10:00.000Z",
-      "last_edited_time": "2023-05-20T18:44:00.000Z",
+      "last_edited_time": "2023-11-20T05:17:00.000Z",
       "created_by": {
         "object": "user",
         "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
@@ -3623,6 +3801,17 @@
           "id": "%3Exu'",
           "type": "multi_select",
           "multi_select": []
+        },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "d1a2da09-6850-4952-867a-d79f029cf713",
+              "name": "오픈소스",
+              "color": "brown"
+            }
+          ]
         },
         "중요도": {
           "id": "O%7D48",
@@ -3736,7 +3925,7 @@
       "object": "page",
       "id": "10aae47d-992a-44f0-85ff-50a30aba8cc5",
       "created_time": "2020-03-19T12:54:00.000Z",
-      "last_edited_time": "2023-05-20T18:42:00.000Z",
+      "last_edited_time": "2023-11-21T09:42:00.000Z",
       "created_by": {
         "object": "user",
         "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
@@ -3767,6 +3956,17 @@
           "id": "%3Exu'",
           "type": "multi_select",
           "multi_select": []
+        },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "d1a2da09-6850-4952-867a-d79f029cf713",
+              "name": "오픈소스",
+              "color": "brown"
+            }
+          ]
         },
         "중요도": {
           "id": "O%7D48",
@@ -3891,7 +4091,7 @@
       "object": "page",
       "id": "b0ad0c42-bd9c-45a9-8ff9-33ed9dd82dad",
       "created_time": "2020-03-19T12:52:00.000Z",
-      "last_edited_time": "2023-05-20T18:42:00.000Z",
+      "last_edited_time": "2023-11-20T05:17:00.000Z",
       "created_by": {
         "object": "user",
         "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
@@ -3922,6 +4122,17 @@
           "id": "%3Exu'",
           "type": "multi_select",
           "multi_select": []
+        },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "d1a2da09-6850-4952-867a-d79f029cf713",
+              "name": "오픈소스",
+              "color": "brown"
+            }
+          ]
         },
         "중요도": {
           "id": "O%7D48",
@@ -4091,6 +4302,11 @@
           "type": "multi_select",
           "multi_select": []
         },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
+        },
         "중요도": {
           "id": "O%7D48",
           "type": "select",
@@ -4221,6 +4437,11 @@
         },
         "맡은 업무": {
           "id": "%3Exu'",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "태그": {
+          "id": "GkC%3D",
           "type": "multi_select",
           "multi_select": []
         },
@@ -4360,6 +4581,11 @@
           "type": "multi_select",
           "multi_select": []
         },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
+        },
         "중요도": {
           "id": "O%7D48",
           "type": "select",
@@ -4493,6 +4719,11 @@
         },
         "맡은 업무": {
           "id": "%3Exu'",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "태그": {
+          "id": "GkC%3D",
           "type": "multi_select",
           "multi_select": []
         },
@@ -4646,6 +4877,11 @@
             }
           ]
         },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
+        },
         "중요도": {
           "id": "O%7D48",
           "type": "select",
@@ -4760,7 +4996,7 @@
       "object": "page",
       "id": "f8eaf004-c9ef-40d0-8512-fb0e49f06a88",
       "created_time": "2020-03-19T12:48:00.000Z",
-      "last_edited_time": "2023-11-19T18:16:00.000Z",
+      "last_edited_time": "2023-11-21T09:41:00.000Z",
       "created_by": {
         "object": "user",
         "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
@@ -4792,6 +5028,11 @@
         },
         "맡은 업무": {
           "id": "%3Exu'",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "태그": {
+          "id": "GkC%3D",
           "type": "multi_select",
           "multi_select": []
         },
@@ -4925,8 +5166,8 @@
       "icon": {
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/3b2b04e7-2db0-41ce-86ef-70f0ec5dff5b/_flat.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T181711Z&X-Amz-Expires=3600&X-Amz-Signature=166842899a2f9648d6f5bd60b6dfa41f7e189f0a645aeef06abb276b7dca4724&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2023-11-19T19:17:11.312Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/3b2b04e7-2db0-41ce-86ef-70f0ec5dff5b/_flat.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231121T131103Z&X-Amz-Expires=3600&X-Amz-Signature=49ed7a57677d8ff5acea835e7feb97e6693938592a772308236fa0d4a931983b&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-21T14:11:03.300Z"
         }
       },
       "parent": {
@@ -4947,6 +5188,11 @@
         },
         "맡은 업무": {
           "id": "%3Exu'",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "태그": {
+          "id": "GkC%3D",
           "type": "multi_select",
           "multi_select": []
         },
@@ -5119,6 +5365,11 @@
           "type": "multi_select",
           "multi_select": []
         },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
+        },
         "중요도": {
           "id": "O%7D48",
           "type": "select",
@@ -5241,6 +5492,11 @@
         },
         "맡은 업무": {
           "id": "%3Exu'",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "태그": {
+          "id": "GkC%3D",
           "type": "multi_select",
           "multi_select": []
         },
@@ -5404,6 +5660,11 @@
           "type": "multi_select",
           "multi_select": []
         },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
+        },
         "중요도": {
           "id": "O%7D48",
           "type": "select",
@@ -5539,15 +5800,15 @@
       "cover": {
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/a9e8b0f1-9d71-40a7-a3f6-797ee29d6235/1179_51101_0_yIaxIT.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T181711Z&X-Amz-Expires=3600&X-Amz-Signature=a35dbd6064c1caf7dc9562a75066ccb4f004a9a71465d0ea9b62b097220e7fbd&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2023-11-19T19:17:11.307Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/a9e8b0f1-9d71-40a7-a3f6-797ee29d6235/1179_51101_0_yIaxIT.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231121T131103Z&X-Amz-Expires=3600&X-Amz-Signature=3db3e3da25ac639fcca8f665bb0b522b3362d8c5edf2a4a92e2e3205f45a9b75&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-21T14:11:03.289Z"
         }
       },
       "icon": {
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/9066bc7b-131c-4417-980a-0602296fc155/logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T181711Z&X-Amz-Expires=3600&X-Amz-Signature=b758a7450bd6177a4ee7bb8aea889716fef07112dba9844c6ee7dbef0363090e&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2023-11-19T19:17:11.333Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/9066bc7b-131c-4417-980a-0602296fc155/logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231121T131103Z&X-Amz-Expires=3600&X-Amz-Signature=270f9546a5bcd2ad4755c399cd8a1bc155a7e17a5ff8fff48d97f8dbc950c03a&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-21T14:11:03.343Z"
         }
       },
       "parent": {
@@ -5568,6 +5829,11 @@
         },
         "맡은 업무": {
           "id": "%3Exu'",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "태그": {
+          "id": "GkC%3D",
           "type": "multi_select",
           "multi_select": []
         },
@@ -5718,15 +5984,15 @@
       "cover": {
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/38378794-c702-4ded-b858-ee98eed0163b/INTRO2x.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T181711Z&X-Amz-Expires=3600&X-Amz-Signature=372669bb0e6ab39157d6153287da8f95df8f2775c02af120bb0fc7e2625e77f0&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2023-11-19T19:17:11.307Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/38378794-c702-4ded-b858-ee98eed0163b/INTRO2x.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231121T131103Z&X-Amz-Expires=3600&X-Amz-Signature=242eea109909ca3843989f6cd55bde3b5d027ee79da407773235d4643dd43206&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-21T14:11:03.289Z"
         }
       },
       "icon": {
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/560acf6d-2586-4122-b992-99ff4690cdc4/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T181711Z&X-Amz-Expires=3600&X-Amz-Signature=e6343f530cf8afd60e614a96b54cd00436755e3dbc2760fa15abba62100f829b&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2023-11-19T19:17:11.363Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/560acf6d-2586-4122-b992-99ff4690cdc4/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231121T131103Z&X-Amz-Expires=3600&X-Amz-Signature=a08d3b1d42ded687879fbd0f43c0e5211ef161b302c84b312867a8a7defd24db&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-21T14:11:03.343Z"
         }
       },
       "parent": {
@@ -5747,6 +6013,11 @@
         },
         "맡은 업무": {
           "id": "%3Exu'",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "태그": {
+          "id": "GkC%3D",
           "type": "multi_select",
           "multi_select": []
         },
@@ -5928,6 +6199,11 @@
             }
           ]
         },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
+        },
         "중요도": {
           "id": "O%7D48",
           "type": "select",
@@ -6068,6 +6344,11 @@
           "type": "multi_select",
           "multi_select": []
         },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
+        },
         "중요도": {
           "id": "O%7D48",
           "type": "select",
@@ -6165,7 +6446,7 @@
       "object": "page",
       "id": "e893af80-0b86-4c5c-99b5-52cb8f51a78f",
       "created_time": "2020-03-19T11:45:00.000Z",
-      "last_edited_time": "2023-05-20T22:46:00.000Z",
+      "last_edited_time": "2023-11-21T09:40:00.000Z",
       "created_by": {
         "object": "user",
         "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
@@ -6178,8 +6459,8 @@
       "icon": {
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/817264a3-9577-49d4-b972-38c6f56d9fdc/download.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T181711Z&X-Amz-Expires=3600&X-Amz-Signature=3a9000587b5fa5789c6032487f8559e8261dfaac00f9a52fb9825a777b6483b1&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2023-11-19T19:17:11.313Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/817264a3-9577-49d4-b972-38c6f56d9fdc/download.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231121T131103Z&X-Amz-Expires=3600&X-Amz-Signature=a35b3049366f26e5b06354cc9c550bd57fba0d9c271884d07d2c203aac41a3df&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-21T14:11:03.300Z"
         }
       },
       "parent": {
@@ -6216,6 +6497,17 @@
               "id": "56750bee-5352-43b7-b462-8b27c04c24f6",
               "name": "개발",
               "color": "blue"
+            }
+          ]
+        },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "79a76bcf-ccb3-4c23-832e-650a24998a2c",
+              "name": "출시됨",
+              "color": "red"
             }
           ]
         },
@@ -6368,15 +6660,15 @@
       "cover": {
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/c0e2176a-acd8-4910-909f-bcc39d939be6/STELLA_WEB2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T181711Z&X-Amz-Expires=3600&X-Amz-Signature=f07fd0b78f8368dddc8e78619e31b2bf3a410d0bfd88c516fa9679b8f4743f93&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2023-11-19T19:17:11.314Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/c0e2176a-acd8-4910-909f-bcc39d939be6/STELLA_WEB2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231121T131103Z&X-Amz-Expires=3600&X-Amz-Signature=69335d06f9e851842a4eb699ecb5519672b655e3c9ea6680a2bb607315901b92&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-21T14:11:03.291Z"
         }
       },
       "icon": {
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/92598712-88c2-4f09-ad43-b37426c76595/stellar.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T181711Z&X-Amz-Expires=3600&X-Amz-Signature=7fb4a9907f20e10dbc7784ba3e4d4206d60afa0476db52ef3295f10aeeda1cbb&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2023-11-19T19:17:11.341Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/92598712-88c2-4f09-ad43-b37426c76595/stellar.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231121T131103Z&X-Amz-Expires=3600&X-Amz-Signature=097a3e2acceab246178425e083ea4179fabc6e9a57ad4c5925cc92f374ee9b93&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-21T14:11:03.318Z"
         }
       },
       "parent": {
@@ -6397,6 +6689,11 @@
         },
         "맡은 업무": {
           "id": "%3Exu'",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "태그": {
+          "id": "GkC%3D",
           "type": "multi_select",
           "multi_select": []
         },
@@ -6571,15 +6868,15 @@
       "cover": {
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/59f6878b-9e71-4b31-9b9c-f282f522e396/HANA_WINDOW2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T181711Z&X-Amz-Expires=3600&X-Amz-Signature=6eebc0ed1ff964c6b05231e7f330caf0205eaa26b8ee203c0234bfcfd5a21336&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2023-11-19T19:17:11.308Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/59f6878b-9e71-4b31-9b9c-f282f522e396/HANA_WINDOW2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231121T131103Z&X-Amz-Expires=3600&X-Amz-Signature=d188a219606ee18839e3471cdcebbc57b8a47115fe31ca26a3692fe5898e8fba&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-21T14:11:03.292Z"
         }
       },
       "icon": {
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/94eeee95-518b-4615-8137-9712b05624ba/hana.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T181711Z&X-Amz-Expires=3600&X-Amz-Signature=c8c3d330ec437198b8beb3de9a7d95201709f01571837f0ac526b89b37e31a38&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2023-11-19T19:17:11.331Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/94eeee95-518b-4615-8137-9712b05624ba/hana.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231121T131103Z&X-Amz-Expires=3600&X-Amz-Signature=13c7d7654e5dbb483ac38ffbb4713b534f6e92ee427a90990b4afe23b847136a&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-21T14:11:03.321Z"
         }
       },
       "parent": {
@@ -6613,6 +6910,11 @@
               "color": "blue"
             }
           ]
+        },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
         },
         "중요도": {
           "id": "O%7D48",
@@ -6758,15 +7060,15 @@
       "cover": {
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/e502ec92-454f-4e15-94f9-d9ec5fe8e536/_2020-03-22__12.31.22.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T181711Z&X-Amz-Expires=3600&X-Amz-Signature=076e4c403def6f1f33eb7655b37a1484bce10c09a7439d63777242de36c9e9e5&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2023-11-19T19:17:11.308Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/e502ec92-454f-4e15-94f9-d9ec5fe8e536/_2020-03-22__12.31.22.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231121T131103Z&X-Amz-Expires=3600&X-Amz-Signature=099d6ee6095816c29096de6c78abc34c71ad28ada3f7cb9968a0b61f147b18f2&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-21T14:11:03.293Z"
         }
       },
       "icon": {
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/a5456613-8759-4228-a615-75ae6077493a/1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T181711Z&X-Amz-Expires=3600&X-Amz-Signature=4db3626528bd95f99561a19cf79340f1484e50fc0150219d94b197cb3bcb9965&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2023-11-19T19:17:11.348Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/a5456613-8759-4228-a615-75ae6077493a/1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231121T131103Z&X-Amz-Expires=3600&X-Amz-Signature=c125c4300623c6c0f185fd10acea5c0063d013fe6ebc1f38b1389c4bb8c6cdd8&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-21T14:11:03.343Z"
         }
       },
       "parent": {
@@ -6787,6 +7089,11 @@
         },
         "맡은 업무": {
           "id": "%3Exu'",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "태그": {
+          "id": "GkC%3D",
           "type": "multi_select",
           "multi_select": []
         },
@@ -6940,15 +7247,15 @@
       "cover": {
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/d90fb3e2-7b88-4ff8-9648-bd78225c1404/canetis.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T181711Z&X-Amz-Expires=3600&X-Amz-Signature=9fc6c6908d43582e4371c16e0f91cc97ed39f5428145f01a0608cb5ddd9d6c00&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2023-11-19T19:17:11.309Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/d90fb3e2-7b88-4ff8-9648-bd78225c1404/canetis.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231121T131103Z&X-Amz-Expires=3600&X-Amz-Signature=9e3aace96080ac5366e8a7a0794c1caa360fee6842a280556a3e86dcdc5677e1&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-21T14:11:03.293Z"
         }
       },
       "icon": {
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/f50ee792-1df3-4389-ae65-926d4ec9e414/canetis.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T181711Z&X-Amz-Expires=3600&X-Amz-Signature=25ef86fe089280bfb9bd2ad75e06849aee211c05b34b8d01ecc3df5ae83d556f&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2023-11-19T19:17:11.336Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/f50ee792-1df3-4389-ae65-926d4ec9e414/canetis.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231121T131103Z&X-Amz-Expires=3600&X-Amz-Signature=5bd9047b91ca010a970ce81039564353cf3e387b2357f89712b5a2778d30d091&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-21T14:11:03.327Z"
         }
       },
       "parent": {
@@ -6969,6 +7276,11 @@
         },
         "맡은 업무": {
           "id": "%3Exu'",
+          "type": "multi_select",
+          "multi_select": []
+        },
+        "태그": {
+          "id": "GkC%3D",
           "type": "multi_select",
           "multi_select": []
         },
@@ -7181,6 +7493,11 @@
           "type": "multi_select",
           "multi_select": []
         },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
+        },
         "중요도": {
           "id": "O%7D48",
           "type": "select",
@@ -7339,6 +7656,11 @@
             }
           ]
         },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
+        },
         "중요도": {
           "id": "O%7D48",
           "type": "select",
@@ -7474,7 +7796,7 @@
       "object": "page",
       "id": "f9cda467-4e16-4a41-b99a-7e915db4c181",
       "created_time": "2020-03-19T11:12:00.000Z",
-      "last_edited_time": "2023-05-20T18:39:00.000Z",
+      "last_edited_time": "2023-11-20T05:17:00.000Z",
       "created_by": {
         "object": "user",
         "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
@@ -7486,15 +7808,15 @@
       "cover": {
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/4d6bbabd-5583-4ac9-8316-32b761d263b5/1179_48104_0_-BJDD1.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T181711Z&X-Amz-Expires=3600&X-Amz-Signature=c584ece018184c3241e23b367e96a681ebfe1505a506df8787e747e03ba249ef&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2023-11-19T19:17:11.309Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/4d6bbabd-5583-4ac9-8316-32b761d263b5/1179_48104_0_-BJDD1.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231121T131103Z&X-Amz-Expires=3600&X-Amz-Signature=5422b364f054e01ad49b22185692ad9597953e5aebd7d05d672f2ec481d0a022&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-21T14:11:03.294Z"
         }
       },
       "icon": {
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/450d3a9d-2e71-4fd0-b599-907d1f2543cb/lunacoding_logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T181711Z&X-Amz-Expires=3600&X-Amz-Signature=b40d935eb3ce931c25d232759648e5817904c47440ef63679aaf12a3ed1d7062&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2023-11-19T19:17:11.344Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/450d3a9d-2e71-4fd0-b599-907d1f2543cb/lunacoding_logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231121T131103Z&X-Amz-Expires=3600&X-Amz-Signature=a239a41cb1c3b4814f3997507efd8d319b7dc835545b212692b26b3acca44b0a&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-21T14:11:03.343Z"
         }
       },
       "parent": {
@@ -7528,6 +7850,11 @@
               "color": "blue"
             }
           ]
+        },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
         },
         "중요도": {
           "id": "O%7D48",
@@ -7573,7 +7900,7 @@
         "URL": {
           "id": "%60RN-",
           "type": "url",
-          "url": null
+          "url": "https://luna.codes"
         },
         "설명": {
           "id": "jjCA",
@@ -7673,7 +8000,7 @@
       "object": "page",
       "id": "72fff05b-7e1a-47ae-a3df-543ae5e8a57a",
       "created_time": "2020-03-19T10:21:00.000Z",
-      "last_edited_time": "2023-05-25T22:08:00.000Z",
+      "last_edited_time": "2023-11-20T05:17:00.000Z",
       "created_by": {
         "object": "user",
         "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
@@ -7682,12 +8009,17 @@
         "object": "user",
         "id": "214d43ba-2a97-4339-8cbb-8e49492a80f6"
       },
-      "cover": null,
+      "cover": {
+        "type": "external",
+        "external": {
+          "url": "https://www.notion.so/images/page-cover/webb1.jpg"
+        }
+      },
       "icon": {
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/00af7939-20af-44f6-8a41-9913ffc69ce5/unnamed.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T181711Z&X-Amz-Expires=3600&X-Amz-Signature=0f26d3f1159528e67110420c67d43f590bb2f22a3b1392be81f9f5c89cba688f&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2023-11-19T19:17:11.314Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/00af7939-20af-44f6-8a41-9913ffc69ce5/unnamed.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231121T131103Z&X-Amz-Expires=3600&X-Amz-Signature=21027952f06572e84f83ed4dd905b170e36e44d387560c478834448865bddb49&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-21T14:11:03.300Z"
         }
       },
       "parent": {
@@ -7734,6 +8066,22 @@
               "id": "6cab6092-b0bb-4c7a-9e93-141237b912fa",
               "name": "마케팅",
               "color": "purple"
+            }
+          ]
+        },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": [
+            {
+              "id": "d1a2da09-6850-4952-867a-d79f029cf713",
+              "name": "오픈소스",
+              "color": "brown"
+            },
+            {
+              "id": "79a76bcf-ccb3-4c23-832e-650a24998a2c",
+              "name": "출시됨",
+              "color": "red"
             }
           ]
         },
@@ -7835,6 +8183,11 @@
               "id": "3098a5f0-64ce-4740-bdf4-27b466d1b2ec",
               "name": "개인 프로젝트",
               "color": "red"
+            },
+            {
+              "id": "bd744a41-0f27-4578-aa53-0b93c29759f8",
+              "name": "오픈소스",
+              "color": "yellow"
             }
           ]
         },
@@ -7906,8 +8259,8 @@
       "icon": {
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/94f7d1ff-8010-476c-b64d-bd49f1857e8b/ic_launcher-web.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20231119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231119T181711Z&X-Amz-Expires=3600&X-Amz-Signature=caf27c5afb966eca80ec9e6c304d1f09680e1a38849ab735687f34245cbbcc06&X-Amz-SignedHeaders=host&x-id=GetObject",
-          "expiry_time": "2023-11-19T19:17:11.314Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/94f7d1ff-8010-476c-b64d-bd49f1857e8b/ic_launcher-web.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231121T131103Z&X-Amz-Expires=3600&X-Amz-Signature=8c83081461c769952be2ecda352b74fec28c155e9ddb95793035db1edaf853a0&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2023-11-21T14:11:03.300Z"
         }
       },
       "parent": {
@@ -7941,6 +8294,11 @@
               "color": "blue"
             }
           ]
+        },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
         },
         "중요도": {
           "id": "O%7D48",
@@ -8132,6 +8490,11 @@
             }
           ]
         },
+        "태그": {
+          "id": "GkC%3D",
+          "type": "multi_select",
+          "multi_select": []
+        },
         "중요도": {
           "id": "O%7D48",
           "type": "select",
@@ -8274,5 +8637,5 @@
   "has_more": false,
   "type": "page_or_database",
   "page_or_database": {},
-  "request_id": "8ab75273-6a17-4364-a956-099d1c8be9dc"
+  "request_id": "f0757d5b-1177-4a27-9b5c-c51b6558418e"
 }

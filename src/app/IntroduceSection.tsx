@@ -21,8 +21,7 @@ export default function IntroduceSection({
 
 	return (
 		<div
-			className={`h-screen flex flex-col justify-center items-center m-auto p-8 ${className}`}
-		>
+			className={`h-screen flex flex-col justify-center items-center m-auto p-8 ${className}`}>
 			<div className="text-2xl font-bold text-gray-700 mb-4">
 				{intro} <span className="text-6xl font-bold text-black">김지섭</span>
 				입니다! <span>👋</span>
