@@ -11,7 +11,7 @@ export default async function CareerPage() {
 
 			<div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-5 justify-center max-x-1xl">
 				{careers.map(career => (
-					<CareerItem key={career.id} project={career} />
+					<CareerItem key={career.id} career={career} />
 				))}
 			</div>
 		</div>
@@ -19,37 +19,50 @@ export default async function CareerPage() {
 }
 
 interface CareerItemProps {
-	project: Career;
+	career: Career;
 	className?: string;
 }
 
-const CareerItem = ({ project, className }: CareerItemProps) => {
-	const name = project.properties.이름.title?.[0]?.text?.content;
-	const description = project.properties.설명.rich_text[0]?.plain_text;
+const CareerItem = ({ career, className }: CareerItemProps) => {
+	const name = career.properties.이름.title?.[0]?.text?.content;
+	const description = career.properties.설명.rich_text[0]?.plain_text;
 	const icon = {
-		emoji: <span className="mr-2">{project.icon?.emoji}</span>,
-		file: project.icon?.file?.url ? (
+		emoji: <span className="mr-2">{career.icon?.emoji}</span>,
+		file: career.icon?.file?.url ? (
 			<Image
 				className="mr-2"
 				width={24}
 				height={24}
-				src={project.icon?.file?.url}
+				src={career.icon?.file?.url}
 				alt={`${name} 아이콘`}
 			/>
 		) : (
 			<></>
 		),
-	}[project.icon?.type ?? ''] ?? <></>;
+	}[career.icon?.type ?? ''] ?? <></>;
+
+	const coverImageUrl =
+		{
+			file: career?.cover?.file?.url,
+			external: career?.cover?.external?.url,
+		}[career?.cover?.type ?? ''] ?? '';
+
+	const coverImage = coverImageUrl ? (
+		<Image
+			className="rounded-t-lg w-full h-full object-cover"
+			width={300}
+			height={150}
+			src={coverImageUrl}
+			alt="" //{`${name} 커버 이미지`}
+		/>
+	) : (
+		<></>
+	);
 
 	return (
 		<article
 			className={`cursor-pointer rounded-lg border-2 border-gray-200 ${className}`}>
-			<div className="h-32">
-				{/* <Image
-					src=""
-					alt=""
-				/> */}
-			</div>
+			<div className="h-32">{coverImage}</div>
 			<div className="p-2">
 				<p className="text-md font-semibold flex">
 					{icon}

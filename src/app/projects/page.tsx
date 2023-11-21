@@ -45,24 +45,28 @@ const ProjectItem = ({ project, className }: ProjectItemProps) => {
 		),
 	}[project.icon?.type ?? ''] ?? <></>;
 
-	const imageUrl =
+	const coverImageUrl =
 		{
 			file: project?.cover?.file?.url,
 			external: project?.cover?.external?.url,
 		}[project?.cover?.type ?? ''] ?? '';
 
+	const coverImage = coverImageUrl ? (
+		<Image
+			className="rounded-t-lg w-full h-full object-cover"
+			width={300}
+			height={150}
+			src={coverImageUrl}
+			alt="" //{`${name} 커버 이미지`}
+		/>
+	) : (
+		<></>
+	);
+
 	return (
 		<article
 			className={`cursor-pointer rounded-lg border-2 border-gray-200 m-2 ${className}`}>
-			<div className="h-48">
-				<Image
-					className="rounded-t-lg w-full h-full object-cover"
-					width={300}
-					height={150}
-					src={imageUrl}
-					alt="" //{`${name} 커버 이미지`}
-				/>
-			</div>
+			<div className="h-48">{coverImage}</div>
 			<div className="p-2">
 				<p className="text-md font-semibold flex">
 					{icon}

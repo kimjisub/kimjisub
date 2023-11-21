@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import Image from 'next/image';
 
 interface Section {
 	id: string;
@@ -62,11 +62,9 @@ const TopBar: React.FC = () => {
 		<nav
 			className={`fixed top-0 left-0 w-full h-16 md:h-16 z-10 ${blur} transition-transform ${
 				navBarHidden ? '-translate-y-full' : ''
-			}`}
-		>
+			}`}>
 			<div
-				className={`h-16 max-w-5xl mx-auto px-6 flex justify-between items-center `}
-			>
+				className={`h-16 max-w-5xl mx-auto px-6 flex justify-between items-center `}>
 				<div className="flex items-center w-auto flex-grow justify-between">
 					<Link href="/" className="text-xl font-bold mr-6 flex items-center">
 						<Image
@@ -81,8 +79,7 @@ const TopBar: React.FC = () => {
 
 					<p
 						onClick={() => setIsMenuOpen(!isMenuOpen)}
-						className="text-md p-4 md:hidden cursor-pointer"
-					>
+						className="text-md p-4 md:hidden cursor-pointer">
 						메뉴
 					</p>
 
@@ -97,8 +94,7 @@ const TopBar: React.FC = () => {
 							`transition-transform ${
 								isMenuOpen ? '' : '-translate-x-full opacity-0 md:opacity-100'
 							} md:translate-x-0`,
-						].join(' ')}
-					>
+						].join(' ')}>
 						{sections.map((section, index) =>
 							section ? (
 								<li
@@ -108,13 +104,12 @@ const TopBar: React.FC = () => {
 											? 'text-blue-500 font-bold'
 											: 'text-gray-600'
 									}`}
-									onClick={() => handleLinkClick(section.path)}
-								>
+									onClick={() => handleLinkClick(section.path)}>
 									<p>{section.title}</p>
 								</li>
 							) : (
 								<li key={`space-${index}`} className="md:flex-grow" />
-							)
+							),
 						)}
 					</ul>
 				</div>
