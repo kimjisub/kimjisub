@@ -30,15 +30,13 @@ const ProjectItem = ({ project, className }: ProjectItemProps) => {
 		emoji: <span className="mr-2">{project.icon?.emoji}</span>,
 		file: project.icon?.file?.url ? (
 			<Image
-				className="mr-2"
-				style={{
-					width: '24px',
-					height: '24px',
-				}}
+				className="mr-2 w-6 h-6"
 				width={24}
 				height={24}
 				src={project.icon?.file?.url}
 				alt={`${name} 아이콘`}
+				layout="fixed"
+				objectFit="cover"
 			/>
 		) : (
 			<></>
@@ -58,6 +56,8 @@ const ProjectItem = ({ project, className }: ProjectItemProps) => {
 			height={150}
 			src={coverImageUrl}
 			alt="" //{`${name} 커버 이미지`}
+			layout="fixed"
+			objectFit="cover"
 		/>
 	) : (
 		<></>

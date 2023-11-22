@@ -30,11 +30,13 @@ const CareerItem = ({ career, className }: CareerItemProps) => {
 		emoji: <span className="mr-2">{career.icon?.emoji}</span>,
 		file: career.icon?.file?.url ? (
 			<Image
-				className="mr-2"
+				className="mr-2 w-6 h-6"
 				width={24}
 				height={24}
 				src={career.icon?.file?.url}
 				alt={`${name} 아이콘`}
+				layout="fixed"
+				objectFit="cover"
 			/>
 		) : (
 			<></>
@@ -54,6 +56,8 @@ const CareerItem = ({ career, className }: CareerItemProps) => {
 			height={150}
 			src={coverImageUrl}
 			alt="" //{`${name} 커버 이미지`}
+			layout="fixed"
+			objectFit="cover"
 		/>
 	) : (
 		<></>

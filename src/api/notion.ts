@@ -12,10 +12,9 @@ export const fetchNotionDB = async (databaseId: string, data = {}) => {
 				'Content-Type': 'application/json',
 			},
 				body: JSON.stringify(data),
-				//   next:{
-			//     revalidate: 0
-			//   }
-			cache: 'no-cache',
+				next:{
+			    revalidate: 3600
+			  },
 		},
 	);
 
@@ -28,7 +27,18 @@ export const fetchNotionDB = async (databaseId: string, data = {}) => {
 
 export type Project = (typeof projects.results)[number];
 export const fetchProject = async () => {
-	const projects = await fetchNotionDB('1aef42d566f84045a94303d07ea12e95');
+	const projects = await fetchNotionDB('1aef42d566f84045a94303d07ea12e95',{
+		"filter": {
+			"and": [
+				{
+					"property": "visible",
+					"checkbox": {
+						"equals": true
+					}
+				}
+			]
+		}
+	});
 
 	return projects.results as Project[];
 };
@@ -36,7 +46,24 @@ export const fetchProject = async () => {
 
 export type Career = (typeof careers.results)[number];
 export const fetchCareer = async () => {
-	const projects = await fetchNotionDB('89d24d36ad334e62a418d765d6ed4c0b');
+	const careers = await fetchNotionDB('89d24d36ad334e62a418d765d6ed4c0b',{
+		"filter": {
+			"and": [
+				{
+					"property": "수상 순위",
+					"select": {
+						"does_not_equal": "비수상"
+					}
+				},
+				{
+					"property": "visible",
+					"checkbox": {
+						"equals": true
+					}
+				}
+			]
+		}
+	});
 
-	return projects.results as Career[];
+	return careers.results as Career[];
 };
