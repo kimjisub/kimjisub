@@ -1,9 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
 
-import { Career, fetchCareer } from '@/api/notion';
+import { Career, fetchCareers } from '@/api/notion';
 export default async function CareerPage() {
-	const careers = await fetchCareer();
+	const careers = await fetchCareers();
 	return (
 		<div className="pt-16 mx-auto p-6 max-w-5xl">
 			<p>Career</p>

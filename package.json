@@ -14,8 +14,10 @@
     "axios": "^1.6.2",
     "matter-js": "^0.19.0",
     "next": "14.0.3",
+    "notion-client": "^6.16.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-notion-x": "^6.16.0",
     "simple-icons": "^9.21.0"
   },
   "devDependencies": {

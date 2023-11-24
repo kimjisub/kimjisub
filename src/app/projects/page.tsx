@@ -1,10 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
-import { fetchProject, Project } from '@/api/notion';
+import { fetchProjects, Project } from '@/api/notion';
 
 export default async function ProjectsPage() {
-	const projects = await fetchProject();
+	const projects = await fetchProjects();
 
 	return (
 		<div className="pt-16 mx-auto p-6 max-w-5xl">
@@ -64,17 +65,19 @@ const ProjectItem = ({ project, className }: ProjectItemProps) => {
 	);
 
 	return (
-		<article
-			className={`cursor-pointer rounded-lg border-2 border-gray-200 m-2 ${className}`}>
-			<div className="h-48">{coverImage}</div>
-			<div className="p-2">
-				<p className="text-md font-semibold flex">
-					{icon}
-					{name}
-				</p>
-				<p className="text-sm">{description}</p>
-			</div>
-			{/* <pre className="text-xs">{JSON.stringify(project, null, 2)}</pre> */}
-		</article>
+		<Link href={`/projects/${project.id}`}>
+			<article
+				className={`cursor-pointer rounded-lg border-2 border-gray-200 m-2 ${className}`}>
+				<div className="h-48">{coverImage}</div>
+				<div className="p-2">
+					<p className="text-md font-semibold flex">
+						{icon}
+						{name}
+					</p>
+					<p className="text-sm">{description}</p>
+				</div>
+				{/* <pre className="text-xs">{JSON.stringify(project, null, 2)}</pre> */}
+			</article>
+		</Link>
 	);
 };
