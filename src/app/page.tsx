@@ -1,13 +1,42 @@
-import TopBar from '@/components/TopBar';
-import Image from 'next/image';
-import TimeLineSection from './TimeLineSection';
-import IntroduceSection from './IntroduceSection';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-export default function Home() {
+import IntroduceSection from './(sections)/IntroduceSection';
+import SkillsSection from './(sections)/SkillSection';
+import TimeLineSection from './(sections)/TimeLineSection';
+import GithubSection from './GithubSection';
+
+import { getGitHubContributions } from '@/api/github';
+
+gsap.registerPlugin(ScrollTrigger);
+
+export default async function Home() {
+	const fromDate = new Date('2018-01-07');
+	const contribute = await getGitHubContributions('kimjisub', fromDate);
+
 	return (
-		<div>
+		<main className="flex flex-col min-h-screen py-4 snap-y snap-mandatory">
 			<IntroduceSection />
+			<SkillsSection />
+			<GithubSection data={contribute} fromDate={fromDate} />
 			<TimeLineSection />
-		</div>
+		</main>
 	);
 }
+
+/*
+1. 자기소개
+	 제너럴리스트
+
+2. 기술
+	 위에서 말한 제너럴리스트답게 다양한 기술
+
+3. 프로젝트 및 업적 타임라인
+	업적 (경력)
+  Github 커밋 히트맵과 함께 
+
+4. 연락처
+   명함 3D 모델링 활용
+
+
+*/

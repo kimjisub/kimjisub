@@ -30,8 +30,7 @@ const list = [
 				개발 및 운영
 			</>
 		),
-		content:
-			'기숙사 생활에 있어서 필요한 각종 신청서들을 전산화시켜 효율적인 학교 생활을 할 수 있도록 하였어요.',
+		content: '전교생의 기숙사 생활을 위한 인트라넷 서비스',
 	},
 	{
 		year: 2019,
@@ -40,8 +39,7 @@ const list = [
 				스타트업 <span style={{ color: '#DC4744' }}>The Vplanet</span> 입사
 			</>
 		),
-		content:
-			'안드로이드, API 서버, After Effect를 이용한 렌더링 엔진 등 다양한 것들을 개발했어요.',
+		content: '안드로이드, API 서버, After Effect를 이용한 렌더링 엔진 등 개발',
 	},
 	{
 		year: null,
@@ -51,8 +49,7 @@ const list = [
 	{
 		year: 2020,
 		title: '한국외국어대학교 20학번 컴퓨터공학부 입학',
-		content:
-			'더 많은 것들을 배우고 성장해나가기 위해서 한국외대 컴공과에 입학했어요.',
+		content: '컴퓨터공학을 더 깊이 공부하기 위해 입학',
 	},
 	// {
 	//   year: 2021,
@@ -64,7 +61,12 @@ const list = [
 		year: 2023,
 		title: 'HUFS IDS Lab. 학부연구생',
 		content:
-			'MySql과 같은 DB 엔진을 SSD 컨트롤러 단계에서 구현하여 성능을 향상시키는 연구를 진행하고 있어요.',
+			'MySql과 같은 DB 엔진을 SSD 컨트롤러 단계에서 구현하여 성능을 향상시키는 연구 진행',
+	},
+	{
+		year: 2023,
+		title: 'Alpaon LLC.',
+		content: '산업용 IoT 플랫폼 개발 및 운영. CTO로 참여 중',
 	},
 ].reverse();
 
@@ -108,7 +110,8 @@ const list = [
 
 export default function TimeLineSection({ className }: { className?: string }) {
 	return (
-		<section className={`mx-auto my-0 p-8 max-w-5xl ${className}`}>
+		<section
+			className={`h-screen mx-auto my-0 p-8 max-w-5xl ${className} snap-start`}>
 			<p>Career</p>
 			<p>저는 이러한 길을 걸어왔어요.</p>
 			<div className="mx-auto">

@@ -60,11 +60,11 @@ const TopBar: React.FC = () => {
 
 	return (
 		<nav
-			className={`fixed top-0 left-0 w-full h-16 md:h-16 z-10 ${blur} transition-transform ${
+			className={`fixed top-0 w-full h-16 md:h-16 z-10 ${blur} transition-transform ${
 				navBarHidden ? '-translate-y-full' : ''
 			}`}>
 			<div
-				className={`h-16 max-w-5xl mx-auto px-6 flex justify-between items-center `}>
+				className={`h-16 mx-auto px-6 flex justify-between items-center container`}>
 				<div className="flex items-center w-auto flex-grow justify-between">
 					<Link href="/" className="text-xl font-bold mr-6 flex items-center">
 						<Image
@@ -72,7 +72,7 @@ const TopBar: React.FC = () => {
 							alt="logo"
 							width={36}
 							height={36}
-							className="mr-4"
+							className="mr-4 rounded-full"
 						/>
 						jisub.kim
 					</Link>
