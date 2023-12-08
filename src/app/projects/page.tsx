@@ -36,8 +36,6 @@ const ProjectItem = ({ project, className }: ProjectItemProps) => {
 				height={24}
 				src={project.icon?.file?.url}
 				alt={`${name} 아이콘`}
-				layout="fixed"
-				objectFit="cover"
 			/>
 		) : (
 			<></>
@@ -57,8 +55,6 @@ const ProjectItem = ({ project, className }: ProjectItemProps) => {
 			height={150}
 			src={coverImageUrl}
 			alt="" //{`${name} 커버 이미지`}
-			layout="fixed"
-			objectFit="cover"
 		/>
 	) : (
 		<></>

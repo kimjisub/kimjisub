@@ -3,7 +3,7 @@ import { NotionAPI } from 'notion-client';
 import careers from '../data/careers.json';
 import projects from '../data/projects.json';
 
-export const notionApi = new NotionAPI()
+export const notionApi = new NotionAPI();
 
 export const fetchNotionDB = async (databaseId: string, data = {}) => {
 	const response = await fetch(
@@ -35,6 +35,9 @@ export const fetchNotionPage = async (pageId: string) => {
 			Authorization: `Bearer ${process.env.NOTION_SECRET}`,
 			'Notion-Version': '2022-06-28',
 		},
+		next: {
+			revalidate: 3600,
+		},
 	});
 
 	if (!response.ok) {
@@ -51,6 +54,9 @@ export const fetchNotionBlock = async (pageId: string) => {
 			headers: {
 				Authorization: `Bearer ${process.env.NOTION_SECRET}`,
 				'Notion-Version': '2022-06-28',
+			},
+			next: {
+				revalidate: 3600,
 			},
 		},
 	);
@@ -75,6 +81,12 @@ export const fetchProjects = async () => {
 				},
 			],
 		},
+		sorts: [
+			{
+				property: '중요도',
+				direction: 'ascending',
+			},
+		],
 	});
 
 	return projects.results as Project[];
@@ -96,7 +108,7 @@ export const fetchProject = async (id: string) => {
 	const blocks = await fetchNotionBlock(id);
 	console.log('blocks', blocks);
 
-	return blocks
+	return blocks;
 
 	return project[0] as Project | undefined;
 };
@@ -120,6 +132,12 @@ export const fetchCareers = async () => {
 				},
 			],
 		},
+		sorts: [
+			{
+				property: '날짜',
+				direction: 'descending',
+			},
+		],
 	});
 
 	return careers.results as Career[];

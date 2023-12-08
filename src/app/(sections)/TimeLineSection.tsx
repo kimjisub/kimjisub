@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Title } from '@/components/Title';
+
 const list = [
 	{
 		year: 2016,
@@ -111,9 +113,8 @@ const list = [
 export default function TimeLineSection({ className }: { className?: string }) {
 	return (
 		<section
-			className={`h-screen mx-auto my-0 p-8 max-w-5xl ${className} snap-start`}>
-			<p>Career</p>
-			<p>저는 이러한 길을 걸어왔어요.</p>
+			className={`h-screen flex flex-col justify-center mx-auto my-0 p-8 max-w-5xl ${className}`}>
+			<Title title="Career" subTitle="저는 이러한 길을 걸어왔어요." />
 			<div className="mx-auto">
 				<table className="min-w-full">
 					<thead>

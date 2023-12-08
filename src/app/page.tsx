@@ -1,24 +1,25 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+import GithubSection from './(sections)/GithubSection';
+import GithubSectionCol from './(sections)/GithubSectionCol';
 import IntroduceSection from './(sections)/IntroduceSection';
 import SkillsSection from './(sections)/SkillSection';
 import TimeLineSection from './(sections)/TimeLineSection';
-import GithubSection from './GithubSection';
 
 import { getGitHubContributions } from '@/api/github';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default async function Home() {
-	const fromDate = new Date('2018-01-07');
+	const fromDate = new Date('2016-01-01');
 	const contribute = await getGitHubContributions('kimjisub', fromDate);
 
 	return (
 		<main className="flex flex-col min-h-screen py-4 snap-y snap-mandatory">
 			<IntroduceSection />
 			<SkillsSection />
-			<GithubSection data={contribute} fromDate={fromDate} />
+			<GithubSectionCol data={contribute} fromDate={fromDate} />
 			<TimeLineSection />
 		</main>
 	);

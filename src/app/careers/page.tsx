@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { Career, fetchCareers } from '@/api/notion';
 export default async function CareerPage() {
@@ -35,8 +36,6 @@ const CareerItem = ({ career, className }: CareerItemProps) => {
 				height={24}
 				src={career.icon?.file?.url}
 				alt={`${name} 아이콘`}
-				layout="fixed"
-				objectFit="cover"
 			/>
 		) : (
 			<></>
@@ -56,24 +55,24 @@ const CareerItem = ({ career, className }: CareerItemProps) => {
 			height={150}
 			src={coverImageUrl}
 			alt="" //{`${name} 커버 이미지`}
-			layout="fixed"
-			objectFit="cover"
 		/>
 	) : (
 		<></>
 	);
 
 	return (
-		<article
-			className={`cursor-pointer rounded-lg border-2 border-gray-200 ${className}`}>
-			<div className="h-32">{coverImage}</div>
-			<div className="p-2">
-				<p className="text-md font-semibold flex">
-					{icon}
-					{name}
-				</p>
-				<p className="text-sm">{description}</p>
-			</div>
-		</article>
+		<Link href={`/careers/${career.id}`}>
+			<article
+				className={`cursor-pointer rounded-lg border-2 border-gray-200 ${className}`}>
+				<div className="h-32">{coverImage}</div>
+				<div className="p-2">
+					<p className="text-md font-semibold flex">
+						{icon}
+						{name}
+					</p>
+					<p className="text-sm">{description}</p>
+				</div>
+			</article>
+		</Link>
 	);
 };

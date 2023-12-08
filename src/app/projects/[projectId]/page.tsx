@@ -6,13 +6,12 @@ import { NotionPage } from '@/components/NotionPage';
 
 const ProjectPage = async ({ params }: { params: { projectId: string } }) => {
 	const { projectId } = params;
-
-	const project = await fetchProject(projectId);
+	const [project, recordMap] = await Promise.all([
+		fetchProject(projectId),
+		notionApi.getPage(projectId),
+	]);
 
 	console.log('project', project);
-
-	const recordMap = await notionApi.getPage(projectId);
-
 	console.log('recordMap', recordMap);
 
 	return (

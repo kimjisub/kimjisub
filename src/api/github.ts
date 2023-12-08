@@ -21,6 +21,7 @@ export async function getGitHubContributions(
 		const toString = format(endOfYear(currentDate), 'yyyy-MM-dd'); // 해당 년도의 마지막 날
 		const response = await fetch(
 			`https://github.com/users/${username}/contributions?from=${fromString}&to=${toString}`,
+			{ next: { revalidate: 3600 } },
 		);
 		console.log(`from=${fromString}&to=${toString}`);
 

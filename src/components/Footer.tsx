@@ -5,25 +5,34 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
-interface Section {
-	id: string;
-	title: string;
-	path: string;
-}
-
-const sections: (Section | null)[] = [
-	{ id: 'skills', title: 'Skills', path: '/skills' },
-	{ id: 'projects', title: 'Projects', path: '/projects' },
-	{ id: 'careers', title: 'Careers', path: '/careers' },
-	null,
-	{ id: 'blog', title: 'Blog', path: 'https://blog.jisub.kim' },
-	{ id: 'github', title: 'Github', path: 'https://github.com/kimjisub' },
-];
-
-const blur = 'bg-white bg-opacity-60 backdrop-filter backdrop-blur-lg';
-
+// Footer 컴포넌트 정의
 const Footer: React.FC = () => {
-	return <footer className={`w-full h-16 bg-[#262626] text-white`}></footer>;
+	return (
+		<footer
+			className={`w-full h-24 bg-[#262626] text-white flex flex-col justify-center items-center`}>
+			<div className={`flex justify-center items-center`}>
+				<li className="mx-4">
+					<Link href="https://blog.jisub.kim">
+						<span className="text-lg">Blog</span>
+					</Link>
+				</li>
+				<li className="mx-4">
+					<Link href="https://github.com/kimjisub">
+						<span className="text-lg">Github</span>
+					</Link>
+				</li>
+				<li className="mx-4">
+					<Link href="https://www.linkedin.com/in/kimjisub">
+						<span className="text-lg">LinkedIn</span>
+					</Link>
+				</li>
+			</div>
+			<div className={`flex justify-center items-center mt-4`}>
+				<span className="text-md">© 2023 jisub.kim</span>
+			</div>
+		</footer>
+	);
 };
 
+// Footer 컴포넌트를 export
 export default Footer;
