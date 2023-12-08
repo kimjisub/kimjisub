@@ -1,5 +1,4 @@
 import {
-	addDays,
 	addYears,
 	differenceInDays,
 	endOfYear,
@@ -23,11 +22,9 @@ export async function getGitHubContributions(
 			`https://github.com/users/${username}/contributions?from=${fromString}&to=${toString}`,
 			{ next: { revalidate: 3600 } },
 		);
-		console.log(`from=${fromString}&to=${toString}`);
 
 		const html = await response.text();
 		const dataEntries = extractDataFromTable(html);
-		console.log(dataEntries.length);
 
 		contributions = contributions.concat(dataEntries);
 		currentDate = addYears(currentDate, 1); // 다음 년도로 이동

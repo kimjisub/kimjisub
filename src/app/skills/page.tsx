@@ -146,13 +146,13 @@ export default function SkillsPage() {
 		const selectTechnology = async (body: Body) => {
 			if (!body) return;
 			const tech = techs.results.find(
-				(t) => hashStringToNumber(t.id) === body.id
+				t => hashStringToNumber(t.id) === body.id,
 			);
 			if (!tech) return;
 			console.log('Selected Technology:', tech);
 
 			const relatedTechs = techs.results.filter(
-				(t) => t.properties['관련 기술']?.relation?.[0]?.id === tech.id
+				t => t.properties['관련 기술']?.relation?.[0]?.id === tech.id,
 			);
 
 			console.log('Related Technologies:', relatedTechs);
@@ -169,7 +169,7 @@ export default function SkillsPage() {
 			targetBodyRef.current = null;
 		};
 
-		Events.on(mouseConstraintRef.current, 'mousedown', (event) => {
+		Events.on(mouseConstraintRef.current, 'mousedown', event => {
 			selectTechnology(event.source.body);
 		});
 

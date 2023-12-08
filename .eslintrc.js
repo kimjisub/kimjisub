@@ -12,6 +12,7 @@ module.exports = {
 			files: ['*.ts', '*.tsx'],
 			rules: {
 				'no-unused-vars': 'warn',
+				'unused-imports/no-unused-imports': 'warn',
 				'simple-import-sort/imports': [
 					'warn',
 					{

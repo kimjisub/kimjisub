@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { fetchProjects, Project } from '@/api/notion';
+import { fetchProjects, Project } from '@/api/notion/projects';
 
 export default async function ProjectsPage() {
 	const projects = await fetchProjects();

@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Career, fetchCareers } from '@/api/notion';
+import { Career, fetchCareers } from '@/api/notion/careers';
 export default async function CareerPage() {
 	const careers = await fetchCareers();
 	return (

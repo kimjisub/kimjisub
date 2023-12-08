@@ -1,7 +1,7 @@
 import React from 'react';
-import { NotionRenderer } from 'react-notion-x';
 
-import { fetchProject, notionApi } from '@/api/notion';
+import { notionApi } from '@/api/notion/notion';
+import { fetchProject } from '@/api/notion/projects';
 import { NotionPage } from '@/components/NotionPage';
 
 const ProjectPage = async ({ params }: { params: { projectId: string } }) => {

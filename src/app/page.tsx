@@ -1,7 +1,6 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import GithubSection from './(sections)/GithubSection';
 import GithubSectionCol from './(sections)/GithubSectionCol';
 import IntroduceSection from './(sections)/IntroduceSection';
 import SkillsSection from './(sections)/SkillSection';

@@ -1,9 +1,7 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
+import React from 'react';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
 
 // Footer 컴포넌트 정의
 const Footer: React.FC = () => {
