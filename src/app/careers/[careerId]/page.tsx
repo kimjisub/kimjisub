@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { fetchCareer, notionApi } from '@/api/notion/notion';
+import { fetchCareer } from '@/api/notion/careers';
+import { notionApi } from '@/api/notion/notion';
 import { NotionPage } from '@/components/NotionPage';
 
 const CareerPage = async ({ params }: { params: { careerId: string } }) => {

@@ -1,9 +1,8 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import { useAnimation } from 'framer-motion';
 
-import GitHubHitmap from '@/components/GithubHitmap';
 import GithubHitmapCol from '@/components/GithubHitmapCol';
 
 export interface GithubSectionPropsCol {

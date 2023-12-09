@@ -14,7 +14,7 @@ import {
 } from 'matter-js';
 import * as icons from 'simple-icons';
 
-import techs from '../../data/techs.json';
+import techs from '../../data/skills.json';
 
 const emptySvg = `<svg xmlns="http://www.w3.org/2000/svg" />`;
 

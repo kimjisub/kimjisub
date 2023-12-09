@@ -1,7 +1,6 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import GithubSectionCol from './(sections)/GithubSectionCol';
 import IntroduceSection from './(sections)/IntroduceSection';
 import SkillsSection from './(sections)/SkillSection';
 import TimeLineSection from './(sections)/TimeLineSection';
@@ -18,7 +17,7 @@ export default async function Home() {
 		<main className="flex flex-col min-h-screen py-4 snap-y snap-mandatory">
 			<IntroduceSection />
 			<SkillsSection />
-			<GithubSectionCol data={contribute} fromDate={fromDate} />
+			{/* <GithubSection data={contribute} fromDate={fromDate} /> */}
 			<TimeLineSection />
 		</main>
 	);
