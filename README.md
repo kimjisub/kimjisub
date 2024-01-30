@@ -10,7 +10,7 @@
 ### 🌍 Backlink
 
 - [포트폴리오](https://jisub.kim)
-- [기술 블로그](https://blog.jisub.kim)
+- [기술 블로그](https://velog.io/@kimjisub)
 
 ### 🔥 Experience
 
