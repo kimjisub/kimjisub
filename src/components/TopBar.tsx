@@ -16,7 +16,7 @@ const sections: (Section | null)[] = [
 	{ id: 'projects', title: 'Projects', path: '/projects' },
 	{ id: 'careers', title: 'Careers', path: '/careers' },
 	null,
-	{ id: 'blog', title: 'Blog', path: 'https://blog.jisub.kim' },
+	{ id: 'blog', title: 'Blog', path: 'https://https://velog.io/@kimjisub' },
 	{ id: 'github', title: 'Github', path: 'https://github.com/kimjisub' },
 ];
 
