@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
 			className={`w-full h-24 bg-[#262626] text-white flex flex-col justify-center items-center`}>
 			<div className={`flex justify-center items-center`}>
 				<li className="mx-4">
-					<Link href="https://blog.jisub.kim">
+					<Link href="https://velog.io/@kimjisub">
 						<span className="text-lg">Blog</span>
 					</Link>
 				</li>
