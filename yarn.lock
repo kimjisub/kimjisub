@@ -3088,10 +3088,10 @@ side-channel@^1.0.4:
     get-intrinsic "^1.0.2"
     object-inspect "^1.9.0"
 
-simple-icons@^9.21.0:
-  version "9.21.0"
-  resolved "https://registry.yarnpkg.com/simple-icons/-/simple-icons-9.21.0.tgz#ab6b0a45bddf45887153ba6f3c5ba3fa26bf5875"
-  integrity sha512-yxjs49nKwff5ozRwPCBVcGG4Ehlg5YiR1g4EJ83zmqc0hYhYb6UQJqiy2WOga2OJ1/qVHaej7q762hYZX/mavA==
+simple-icons@^11.3.0:
+  version "11.3.0"
+  resolved "https://registry.yarnpkg.com/simple-icons/-/simple-icons-11.3.0.tgz#82de9916fbacdf0fe18cf666c105749145a60472"
+  integrity sha512-dr178hpEoy8ZtPKEQvmFcQbbOfqMHGDQ0Mt8BOqZ8lqIvbQ8X7kHdznIIwDVn4yKRPtP8wXGPpMJ/2/1xjjhVA==
 
 slash@^3.0.0:
   version "3.0.0"

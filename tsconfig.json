@@ -36,7 +36,8 @@
     "scripts/export-notion.ㅓs",
     "scripts/export-notion.js",
     "scripts/export-notion.mts",
-    "src/api/notion.mts"
+    "src/api/notion.mts",
+    "scripts/simple-icon-badge.js"
   ],
   "exclude": [
     "node_modules"

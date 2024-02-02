@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "notion": "node ./scripts/export-notion.js"
+    "notion": "node ./scripts/export-notion.js",
+    "icons": "node scripts/simple-icon-badge.js | pbcopy"
   },
   "dependencies": {
     "@types/matter-js": "^0.19.5",
@@ -24,7 +25,7 @@
     "react-flip-toolkit": "^7.1.0",
     "react-notion-x": "^6.16.0",
     "react-type-animation": "^3.2.0",
-    "simple-icons": "^9.21.0"
+    "simple-icons": "^11.3.0"
   },
   "devDependencies": {
     "@types/jsdom": "^21.1.6",
