@@ -8,36 +8,26 @@ const tableText = `언어	html5
 언어	kotlin
 언어	python
 언어	cplusplus
-언어	svg
 기술	nodedotjs
 기술	react
 기술	react|React Native
 기술	electron
 기술	nextdotjs
-기술	recoil
-기술	styledcomponents
-기술	reactquery
 기술	tailwindcss
 기술	nestjs
 기술	firebase
 기술	ffmpeg
-기술	adobeaftereffects
+기술	adobeaftereffects|AE Script
 기술	googlechrome|Chrome Extention
 기술	discord|Discord Bot
-기술	nginx
 기술	i18next
 기술	elasticstack
 기술	elasticsearch
 기술	logstash
 기술	kibana
-기술	eslint
-기술	githubcopilot
 기술	googleadmob
 기술	googleanalytics
 기술	googlehome
-기술	jsonwebtokens
-기술	mailgun
-기술	glide
 DB	mysql
 DB	postgresql
 DB	mariadb
@@ -48,27 +38,19 @@ DB	influxdb
 DB	neo4j
 DB	redis
 DB	prisma
-DB	mongoose
-IDE	visualstudio
 IDE	visualstudiocode
 IDE	xcode
 IDE	androidstudio
 IDE	intellijidea
 IDE	easyeda
-개발 도구	gitkraken
-개발 도구	termius
-개발 도구	warp
 개발 도구	openai
-개발 도구	arc
-개발 도구	studio3t
-개발 도구	zsh
 프로토콜	socketdotio
 프로토콜	apachekafka
 프로토콜	rabbitmq
 프로토콜	grpc|gRPC|2d4a59
 프로토콜	mqtt
 프로토콜	emqx|EMQX|47ac77
-프로토콜	bluetooth
+프로토콜	bluetooth|BLE
 프로토콜	nfc
 프로토콜	zigbee
 프로토콜	modbus|ModBus
@@ -79,30 +61,29 @@ Infra	amazonec2
 Infra	amazons3
 Infra	amazonecs|Amazon ECR
 Infra	amazonecs
-Infra	amazoneks
 Infra	amazonrds
-Infra	vmware
+Infra	googlecloud
+Infra	googleassistant
+Infra	googlecloud|GCP App Engine
 Infra	cloudflare
 Infra	prometheus
-Infra	letsencrypt
-Infra	openssl
-Infra	portainer
-Infra	visualstudioappcenter
 Infra	vultr
+Infra	vmware|VMware ESXI
+Infra	nginx
 Infra	haproxy|HAProxy|173c5e
 CI/CD	fastlane
+CI/CD	visualstudioappcenter
 CI/CD	githubactions
 CI/CD	jenkins
-CI/CD	googlecloud
 CI/CD	jest
 OS	macos
 OS	windows
 OS	ubuntu
+OS	alpinelinux
 OS	ios
 OS	android
 OS	raspberrypi
 OS	arduino
-OS	alpinelinux
 협업/문서	git
 기술,협업/문서	github
 협업/문서	postman
@@ -115,9 +96,7 @@ OS	alpinelinux
 협업/문서	adobexd
 기술,협업/문서	swagger
 협업/문서	obsidian
-협업/문서	mermaid
-협업/문서	docusaurus
-협업/문서	githubpages`;
+협업/문서	mermaid`;
 
 const table = tableText
 	.split('\n')
