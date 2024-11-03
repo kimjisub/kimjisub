@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { generateIconSvgCode } from '@/utils/icons';
-import { IconView } from '../../IconView';
+import { IconView } from '../../../components/IconView';
 import { getSkills } from '@/api/notion/skills';
 import Link from 'next/link';
 import { SkillItem } from '@/components/SkillItem';
@@ -17,12 +17,7 @@ export default async function SkillsPage() {
 			<h1 className="text-4xl font-bold">Skills</h1>
 			<h2 className="text-2xl">제가 구사할 수 있는 능력들이에요</h2>
 
-			<div
-				style={{
-					display: 'grid',
-					gridTemplateColumns: 'repeat(auto-fill, 50px)',
-					gridGap: '16px',
-				}}>
+			<div className="grid grid-cols-[repeat(auto-fill,_50px)] gap-4">
 				{skills.map(skill => {
 					return (
 						<Link href={`/skills/${skill.id}`} key={skill.id} prefetch>

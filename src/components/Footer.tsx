@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { IconView } from '@/app/IconView';
+import { IconView } from '@/components/IconView';
 
 // Footer 컴포넌트 정의
 const Footer: React.FC = () => {

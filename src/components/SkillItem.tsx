@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 import { format } from 'date-fns';
 import { SkillT } from '@/api/notion/skills';
-import { IconView } from '@/app/IconView';
+import { IconView } from '@/components/IconView';
 
 const blur = 'bg-white bg-opacity-60 backdrop-filter backdrop-blur-sm';
 

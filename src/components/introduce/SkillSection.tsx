@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 import { getSkills } from '@/api/notion/skills';
-import { IconView } from '@/app/IconView';
+import { IconView } from '@/components/IconView';
 import { Title } from '@/components/Title';
 
 export default async function SkillsSection() {
