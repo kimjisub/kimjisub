@@ -3,30 +3,34 @@
 import React from 'react';
 import Link from 'next/link';
 
+import { IconView } from '@/app/IconView';
+
 // Footer 컴포넌트 정의
 const Footer: React.FC = () => {
 	return (
 		<footer
-			className={`w-full h-24 bg-[#262626] text-white flex flex-col justify-center items-center`}>
+			className={`w-full bg-[#262626] text-white flex flex-col justify-center items-center py-8`}>
 			<div className={`flex justify-center items-center`}>
-				<li className="mx-4">
-					<Link href="https://velog.io/@kimjisub">
-						<span className="text-lg">Blog</span>
-					</Link>
-				</li>
-				<li className="mx-4">
-					<Link href="https://github.com/kimjisub">
-						<span className="text-lg">Github</span>
-					</Link>
-				</li>
-				<li className="mx-4">
-					<Link href="https://www.linkedin.com/in/kimjisub">
-						<span className="text-lg">LinkedIn</span>
-					</Link>
-				</li>
+				<ul className="flex space-x-4">
+					<li>
+						<Link href="https://velog.io/@kimjisub">
+							<IconView title="Velog" slug="velog" />
+						</Link>
+					</li>
+					<li>
+						<Link href="https://github.com/kimjisub">
+							<IconView title="Github" slug="github" />
+						</Link>
+					</li>
+					<li>
+						<Link href="https://www.linkedin.com/in/kimjisub">
+							<IconView title="Linkedin" slug="linkedin" />
+						</Link>
+					</li>
+				</ul>
 			</div>
 			<div className={`flex justify-center items-center mt-4`}>
-				<span className="text-md">© 2023 jisub.kim</span>
+				<span className="text-md">© 2024 Jisub Kim All Rights Reserved.</span>
 			</div>
 		</footer>
 	);

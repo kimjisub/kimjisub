@@ -6,6 +6,9 @@ import Link from 'next/link';
 import { getSkill, getSkillPage, getSkills } from '@/api/notion/skills';
 import { JsonView } from '@/components/JsonView';
 import { NotionClientRenderer } from '@/components/NotionPage';
+import { SkillItem } from '@/components/SkillItem';
+import { CareerItem } from '@/components/CareerItem';
+import { ProjectItem } from '@/components/ProjectItem';
 
 export async function generateStaticParams() {
 	console.log('[generateStaticParams]', 'skills/[skillId]');
@@ -19,7 +22,7 @@ export async function generateStaticParams() {
 	return skillIds;
 }
 
-export const revalidate = 60;
+export const revalidate = false;
 
 export const dynamicParams = true;
 
@@ -27,6 +30,8 @@ type Params = Promise<{ skillId: string }>;
 
 const SkillPage = async (props: { params: Params }) => {
 	const { skillId } = await props.params;
+	console.log('[SSG] SkillPage', { skillId });
+
 	const [skill, recordMap] = await Promise.all([
 		getSkill(skillId),
 		getSkillPage(skillId),
@@ -46,6 +51,30 @@ const SkillPage = async (props: { params: Params }) => {
 
 			<h1>{skill.title}</h1>
 
+			<SkillItem skill={skill} />
+
+			<div>
+				<p>관련된 기술</p>
+				<div className="grid grid-cols-[repeat(auto-fill,_50px)] gap-4">
+					{skill.relatedSkills.map(skill => (
+						<Link key={skill.id} href={`/skills/${skill.id}`}>
+							<SkillItem skill={skill} />
+						</Link>
+					))}
+				</div>
+			</div>
+
+			<div>
+				<p>관련된 Project</p>
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5 justify-center max-x-1xl">
+					{skill.relatedProject.map(project => (
+						<Link key={project.id} href={`/project/${project.id}`}>
+							<ProjectItem project={project} />
+						</Link>
+					))}
+				</div>
+			</div>
+
 			<JsonView name="skill" src={skill} collapsed />
 
 			<NotionClientRenderer
@@ -54,11 +83,6 @@ const SkillPage = async (props: { params: Params }) => {
 				fullPage={false}
 				darkMode={false}
 				disableHeader
-				defaultPageIcon="📄"
-				components={{
-					nextImage: Image,
-					nextLink: Link,
-				}}
 			/>
 		</div>
 	);

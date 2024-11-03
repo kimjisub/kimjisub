@@ -17,7 +17,7 @@ export default function IntroduceSection() {
 	}, [intro]);
 
 	return (
-		<section className="h-screen flex content-center items-center justify-center snap-start">
+		<section className="flex content-center items-center justify-center snap-start h-[600px]">
 			<div className="content-center self-center">
 				<div className="flex content-center gap-16">
 					<Image

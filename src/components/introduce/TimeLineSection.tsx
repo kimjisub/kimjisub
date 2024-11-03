@@ -113,7 +113,7 @@ const list = [
 export default function TimeLineSection({ className }: { className?: string }) {
 	return (
 		<section
-			className={`h-screen flex flex-col justify-center mx-auto my-0 p-8 max-w-5xl ${className}`}>
+			className={`flex flex-col justify-center mx-auto my-0 p-8 max-w-5xl ${className}`}>
 			<Title title="Career" subTitle="저는 이러한 길을 걸어왔어요." />
 			<div className="mx-auto">
 				<table className="min-w-full">

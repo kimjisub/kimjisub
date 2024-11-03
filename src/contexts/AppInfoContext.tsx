@@ -32,15 +32,13 @@ export const AppInfoProvider: React.FC<AppInfoProviderProps> = ({
 	});
 
 	useEffect(() => {
-		setAppInfo({
+		const info = {
 			appName: packageJson.name,
 			version: packageJson.version,
-		});
+		};
+		console.log(info);
+		setAppInfo(info);
 	}, []);
-
-	useEffect(() => {
-		console.log(appInfo);
-	}, [appInfo]);
 
 	return (
 		<AppInfoContext.Provider value={appInfo}>

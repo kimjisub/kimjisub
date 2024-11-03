@@ -5,20 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
-interface Section {
-	id: string;
-	title: string;
-	path: string;
-}
-
-const sections: (Section | null)[] = [
-	{ id: 'skills', title: 'Skills', path: '/skills' },
-	{ id: 'projects', title: 'Projects', path: '/projects' },
-	{ id: 'careers', title: 'Careers', path: '/careers' },
-	null,
-	{ id: 'blog', title: 'Blog', path: 'https://velog.io/@kimjisub' },
-	{ id: 'github', title: 'Github', path: 'https://github.com/kimjisub' },
-];
+import { IconView } from '@/app/IconView';
+import MaintainingBar from './MaintainingBar';
 
 const blur = 'bg-white bg-opacity-60 backdrop-filter backdrop-blur-lg';
 
@@ -77,43 +65,77 @@ const TopBar: React.FC = () => {
 						jisub.kim
 					</Link>
 
-					<p
-						onClick={() => setIsMenuOpen(!isMenuOpen)}
-						className="text-md p-4 md:hidden cursor-pointer">
-						메뉴
-					</p>
+					<div className="flex">
+						<p
+							onClick={() => setIsMenuOpen(!isMenuOpen)}
+							className="text-md p-4 md:hidden cursor-pointer">
+							메뉴
+						</p>
 
-					<ul
-						className={[
-							`absolute md:relative md:flex`,
-							`top-16 md:top-0`,
-							`bg-white md:bg-transparent`,
-							`w-screen md:w-auto `,
-							`left-0  md:flex`,
-							`md:w-auto md:flex-grow`,
-							`transition-transform ${
-								isMenuOpen ? '' : '-translate-x-full opacity-0 md:opacity-100'
-							} md:translate-x-0`,
-						].join(' ')}>
-						{sections.map((section, index) =>
-							section ? (
-								<li
-									key={section.id}
-									className={`text-center md:text-left px-6 py-3 md:py-0 border-b md:border-none cursor-pointer ${
-										pathname === section.path
-											? 'text-blue-500 font-bold'
-											: 'text-gray-600'
-									}`}
-									onClick={() => handleLinkClick(section.path)}>
-									<p>{section.title}</p>
-								</li>
-							) : (
-								<li key={`space-${index}`} className="md:flex-grow" />
-							),
-						)}
-					</ul>
+						<ul
+							className={[
+								`absolute md:relative`,
+								`md:flex`,
+								`top-16 md:top-0`,
+								`w-screen md:w-auto`,
+								`left-0`,
+								`transition-transform`,
+								`${
+									isMenuOpen
+										? 'bg-white w-full'
+										: '-translate-x-full opacity-0 md:opacity-100'
+								} md:translate-x-0`,
+							].join(' ')}>
+							<li
+								key="skills"
+								className={`text-center md:text-left px-6 py-3 md:py-0 border-b md:border-none cursor-pointer ${
+									pathname === '/skills'
+										? 'text-blue-500 font-bold'
+										: 'text-gray-600'
+								}`}
+								onClick={() => handleLinkClick('/skills')}>
+								<p>Skills</p>
+							</li>
+							<li
+								key="projects"
+								className={`text-center md:text-left px-6 py-3 md:py-0 border-b md:border-none cursor-pointer ${
+									pathname === '/projects'
+										? 'text-blue-500 font-bold'
+										: 'text-gray-600'
+								}`}
+								onClick={() => handleLinkClick('/projects')}>
+								<p>Projects</p>
+							</li>
+							<li
+								key="careers"
+								className={`text-center md:text-left px-6 py-3 md:py-0 border-b md:border-none cursor-pointer ${
+									pathname === '/careers'
+										? 'text-blue-500 font-bold'
+										: 'text-gray-600'
+								}`}
+								onClick={() => handleLinkClick('/careers')}>
+								<p>Careers</p>
+							</li>
+							<li
+								key="graph"
+								className={`text-center md:text-left px-6 py-3 md:py-0 border-b md:border-none cursor-pointer ${
+									pathname === '/graph'
+										? 'text-blue-500 font-bold'
+										: 'text-gray-600'
+								}`}
+								onClick={() => handleLinkClick('/graph')}>
+								<p className="space-x-2">
+									<span>Graph</span>
+									<span className="badge bg-blue-500 text-white rounded-full px-2 py-1 text-xs">
+										beta
+									</span>
+								</p>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
+			<MaintainingBar />
 		</nav>
 	);
 };

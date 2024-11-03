@@ -1,10 +1,12 @@
 import React from 'react';
 
 import { generateIconSvgCode } from '@/utils/icons';
-import { IconView } from '../IconView';
+import { IconView } from '../../IconView';
 import { getSkills } from '@/api/notion/skills';
 import Link from 'next/link';
+import { SkillItem } from '@/components/SkillItem';
 
+export const revalidate = false;
 export default async function SkillsPage() {
 	console.log('[SSG] SkillsPage');
 
@@ -23,14 +25,11 @@ export default async function SkillsPage() {
 				}}>
 				{skills.map(skill => {
 					return (
-						<Link href={`/skills/${skill.id}`} key={skill.id}>
-							<IconView
+						<Link href={`/skills/${skill.id}`} key={skill.id} prefetch>
+							<SkillItem
 								className="w-[100px] text-center"
 								key={skill.id}
-								title={skill.title}
-								slug={skill.slug}
-								color={skill.iconColor}
-								raw={skill}
+								skill={skill}
 							/>
 						</Link>
 					);

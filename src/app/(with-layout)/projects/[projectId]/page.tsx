@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { getProject, getProjectPage, getProjects } from '@/api/notion/projects';
 import { JsonView } from '@/components/JsonView';
 import { NotionClientRenderer } from '@/components/NotionPage';
+import { CareerItem } from '@/components/CareerItem';
+import { SkillItem } from '@/components/SkillItem';
 
 export async function generateStaticParams() {
 	console.log('[generateStaticParams]', 'projects/[projectId]');
@@ -19,7 +21,7 @@ export async function generateStaticParams() {
 	return projectIds;
 }
 
-export const revalidate = 60;
+export const revalidate = false;
 
 export const dynamicParams = true;
 
@@ -27,6 +29,7 @@ type Params = Promise<{ projectId: string }>;
 
 const ProjectPage = async (props: { params: Params }) => {
 	const { projectId } = await props.params;
+	console.log('[SSG] ProjectPage', { projectId });
 	const [project, recordMap] = await Promise.all([
 		getProject(projectId),
 		getProjectPage(projectId),
@@ -45,6 +48,28 @@ const ProjectPage = async (props: { params: Params }) => {
 			</Head>
 
 			<h1>{project.title}</h1>
+
+			<div>
+				<p>관련된 커리어</p>
+				<div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-5 justify-center max-x-1xl">
+					{project.relatedCareers.map(career => (
+						<Link key={career.id} href={`/careers/${career.id}`}>
+							<CareerItem career={career} />
+						</Link>
+					))}
+				</div>
+			</div>
+
+			<div>
+				<p>관련된 스킬</p>
+				<div className="grid grid-cols-[repeat(auto-fill,_50px)] gap-4">
+					{project.relatedSkills.map(skill => (
+						<Link key={skill.id} href={`/skills/${skill.id}`}>
+							<SkillItem skill={skill} />
+						</Link>
+					))}
+				</div>
+			</div>
 
 			{/* <JsonView name="project" src={project} collapsed /> */}
 			{/* 
@@ -136,11 +161,6 @@ const ProjectPage = async (props: { params: Params }) => {
 				fullPage={false}
 				darkMode={false}
 				disableHeader
-				defaultPageIcon="📄"
-				components={{
-					nextImage: Image,
-					nextLink: Link,
-				}}
 			/>
 		</div>
 	);

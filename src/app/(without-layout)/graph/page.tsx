@@ -13,7 +13,7 @@ import {
 	World,
 } from 'matter-js';
 
-import techs from '../../data/skills.json';
+import techs from '../../../data/skills.json';
 
 import { generateIconSvgCode } from '@/utils/icons';
 
@@ -234,7 +234,7 @@ export default function SkillsPage() {
 	// };
 
 	return (
-		<section className="pt-16 h-screen mx-auto my-0 p-20 max-w-5xl">
+		<section className="">
 			{/* <h1 className="text-4xl font-bold">Skills</h1>
       <h2 className="text-2xl">제가 구사할 수 있는 능력들이에요</h2> */}
 
@@ -260,7 +260,7 @@ export default function SkillsPage() {
       </div> */}
 
 			{/* 여기서 sceneRef는 Canvas 또는 해당하는 요소에 대한 참조 */}
-			<div className="fixed top-0 left-0 w-full h-full" ref={sceneRef} />
+			<div className="w-full h-full" ref={sceneRef} />
 		</section>
 	);
 }

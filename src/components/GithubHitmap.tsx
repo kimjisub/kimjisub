@@ -41,7 +41,7 @@ const GitHubHitmap: React.FC<GitHubHitmapProps> = ({ data, fromDate }) => {
 		return (
 			<div key={rowIndex} className="flex flex-col">
 				<p className="h-5 text-sm ">
-					<span className="absolute">{monthLabel}</span>
+					<span className="relative">{monthLabel}</span>
 				</p>
 				{weekData.map((count, index) => {
 					const date = addDays(fromDate, rowIndex * 7 + index);
@@ -60,7 +60,7 @@ const GitHubHitmap: React.FC<GitHubHitmapProps> = ({ data, fromDate }) => {
 					);
 				})}
 				<p className="h-5 text-sm ">
-					<span className="absolute">{yearLabel}</span>
+					<span className="relative">{yearLabel}</span>
 				</p>
 			</div>
 		);

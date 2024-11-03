@@ -6,20 +6,19 @@ import Link from 'next/link';
 import { getCareer, getCareerPage, getCareers } from '@/api/notion/careers';
 import { JsonView } from '@/components/JsonView';
 import { NotionClientRenderer } from '@/components/NotionPage';
+import { ProjectItem } from '@/components/ProjectItem';
 
 export async function generateStaticParams() {
-	console.log('[generateStaticParams]', 'careers/[careerId]');
 	const careers = await getCareers();
 	const careerIds = careers.map(career => ({
 		params: {
 			careerId: career.id,
 		},
 	}));
-	console.log('[generateStaticParams]', 'careers/[careerId]', careerIds);
 	return careerIds;
 }
 
-export const revalidate = 60;
+export const revalidate = false;
 
 export const dynamicParams = true;
 
@@ -27,6 +26,7 @@ type Params = Promise<{ careerId: string }>;
 
 const CareerPage = async (props: { params: Params }) => {
 	const { careerId } = await props.params;
+	console.log('[SSG] CareerPage', { careerId });
 	const [career, recordMap] = await Promise.all([
 		getCareer(careerId),
 		getCareerPage(careerId),
@@ -46,6 +46,17 @@ const CareerPage = async (props: { params: Params }) => {
 
 			<h1>{career.title}</h1>
 
+			<div>
+				<p>관련된 프로젝트</p>
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5 justify-center max-x-1xl">
+					{career.relatedProjects.map(project => (
+						<Link key={project.id} href={`/projects/${project.id}`}>
+							<ProjectItem project={project} />
+						</Link>
+					))}
+				</div>
+			</div>
+
 			{/* <JsonView name="career" src={career} collapsed /> */}
 
 			<NotionClientRenderer
@@ -54,11 +65,6 @@ const CareerPage = async (props: { params: Params }) => {
 				fullPage={false}
 				darkMode={false}
 				disableHeader
-				defaultPageIcon="📄"
-				components={{
-					nextImage: Image,
-					nextLink: Link,
-				}}
 			/>
 		</div>
 	);
