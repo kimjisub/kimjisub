@@ -1,6 +1,10 @@
+import { Client } from '@notionhq/client';
 import { NotionAPI } from 'notion-client';
 
-export const notionApi = new NotionAPI();
+export const notionXApi = new NotionAPI();
+export const notionApi = new Client({
+	auth: process.env.NOTION_SECRET,
+});
 
 export const fetchNotionDB = async (databaseId: string, data = {}) => {
 	const response = await fetch(

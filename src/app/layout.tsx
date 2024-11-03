@@ -8,6 +8,7 @@ import 'katex/dist/katex.min.css';
 
 import Footer from '@/components/Footer';
 import TopBar from '@/components/TopBar';
+import { AppInfoProvider } from '@/contexts/AppInfoContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,16 +19,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
 	children,
-}: {
+}: Readonly<{
 	children: React.ReactNode;
-}) {
+}>) {
 	return (
 		<html>
-			<body className={`flex flex-col min-h-screen ${inter.className}`}>
-				<TopBar />
-				<main className="flex-grow">{children}</main>
-				<Footer />
-			</body>
+			<AppInfoProvider>
+				<body className={`flex flex-col min-h-screen ${inter.className}`}>
+					<TopBar />
+					<main className="flex-grow">{children}</main>
+					<Footer />
+				</body>
+			</AppInfoProvider>
 		</html>
 	);
 }

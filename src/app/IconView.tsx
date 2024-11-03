@@ -1,23 +1,23 @@
 import React from 'react';
 import * as icons from 'simple-icons';
 
+import { JsonView } from '@/components/JsonView';
+import { getSimpleIconBySlug } from '@/utils/icons';
+
 export interface IconViewProps {
 	id?: string;
-	iconSlug: string;
+	slug: string;
+	color?: string;
 	title: string;
 	description?: string;
 	style?: React.CSSProperties;
 	className?: string;
+	raw?: any;
 }
 
 export const IconView = React.forwardRef<HTMLElement, IconViewProps>(
-	({ id, iconSlug, style, className }, ref) => {
-		if (!iconSlug) return null;
-
-		const slug = `si${
-			iconSlug.charAt(0).toUpperCase() + iconSlug.slice(1)
-		}` as keyof typeof icons;
-		const icon = icons[slug];
+	({ id, title, slug, style, className, raw }, ref) => {
+		const icon = getSimpleIconBySlug(slug);
 
 		return (
 			<article className={` ${className}`} ref={ref} style={style} id={id}>
@@ -34,6 +34,7 @@ export const IconView = React.forwardRef<HTMLElement, IconViewProps>(
 						</svg>
 					)}
 				</div>
+				{/* <JsonView src={raw} /> */}
 			</article>
 		);
 	},

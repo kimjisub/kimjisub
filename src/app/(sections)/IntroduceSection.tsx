@@ -1,14 +1,9 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { TypeAnimation } from 'react-type-animation';
 import Image from 'next/image';
 
-export default function IntroduceSection({
-	className,
-}: {
-	className?: string;
-}) {
+export default function IntroduceSection() {
 	const [intro, setIntro] = useState('배우는 것을 즐기는 개발자');
 
 	useEffect(() => {

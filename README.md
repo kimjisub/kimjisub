@@ -19,6 +19,13 @@
 
 ## 🔥 Experience
 
+- **Silicon Bridge, Inc** - Eyevacs4 (2023.08 ~ 현재)
+    - <img src="https://img.shields.io/badge/-React%20Native-61DAFB?style=flat&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/-NestJS-E0234E?style=flat&logo=nestjs&logoColor=white"/>
+    - Full Stack Software Engineer, 정규직
+
+- **AlpaConnect** (2023.06 ~ 현재)
+    - <img src="https://img.shields.io/badge/-NestJS-E0234E?style=flat&logo=nestjs&logoColor=white"/> <img src="https://img.shields.io/badge/-Next.js-000000?style=flat&logo=nextdotjs&logoColor=white"/> <img src="https://img.shields.io/badge/-React%20Native-61DAFB?style=flat&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/-MQTT-660066?style=flat&logo=mqtt&logoColor=white"/> <img src="https://img.shields.io/badge/-EMQX-47ac77?style=flat&logo=emqx&logoColor=white"/> <img src="https://img.shields.io/badge/-Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white"/> <img src="https://img.shields.io/badge/-i18next-26A69A?style=flat&logo=i18next&logoColor=white"/> <img src="https://img.shields.io/badge/-Elastic%20Stack-005571?style=flat&logo=elasticstack&logoColor=white"/> <img src="https://img.shields.io/badge/-BLE-0082FC?style=flat&logo=bluetooth&logoColor=white"/> <img src="https://img.shields.io/badge/-Apache%20Kafka-231F20?style=flat&logo=apachekafka&logoColor=white"/> <img src="https://img.shields.io/badge/-ModBus-000000?style=flat&logo=modbus&logoColor=white"/>
+
 - [**UniPad**](https://play.google.com/store/apps/details?id=com.kimjisub.launchpad) (2016.02 ~ 현재)
     - 개인 프로젝트
     - 500+만 다운로드 달성
@@ -30,12 +37,14 @@
 ---
 
 - (주)한화비전 - [Mopl](https://apps.apple.com/kr/app/mopl-%EB%AA%A8%ED%94%8C-%ED%95%9C%ED%99%94%EB%B9%84%EC%A0%84/id1665024541) (2022.09 ~ 2023.05)
+    - <img src="https://img.shields.io/badge/-React%20Native-61DAFB?style=flat&logo=react&logoColor=white"/>
     - 외주 과제
     - 아파트 커뮤니티 및 주차 관리 솔루션
     - React Native을 이용한 입주민 앱 개발
 
-- (주)더브이플래닛 (2019.01 ~ 2019.09)
-    - 풀스택 정규직 개발자
+- (주)더브이플래닛 - [Vplate](https://app.vplate.io/) (2019.01 ~ 2019.09)
+    - <img src="https://img.shields.io/badge/-Android-34A853?style=flat&logo=android&logoColor=white"/> <img src="https://img.shields.io/badge/-MongoDB-47A248?style=flat&logo=mongodb&logoColor=white"/>
+    - Full Stack Software Engineer, 정규직
     - Android, API Service, After Effect 기반 Rendering Engine 및 다중노드 병렬처리 엔진 개발
 
 - [디미고라이프](https://www.facebook.com/ourdimigolife/photos/?paipv=0&eav=Afb9A5HQAdzbBtE6Jt9UqOB_m0pVLC8wNhiT9cdYCRfr-4DOHMZDl4gjPh23OdXGicg&_rdr) (2018.04 ~ 2019.12)

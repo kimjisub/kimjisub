@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { useAnimation } from 'framer-motion';
 
 import GithubHitmapCol from '@/components/GithubHitmapCol';
@@ -14,7 +14,6 @@ const GithubSectionCol: React.FC<GithubSectionPropsCol> = ({
 	data,
 	fromDate,
 }) => {
-	const hitmapRef = useRef<HTMLDivElement>(null);
 	const controls = useAnimation();
 
 	useEffect(() => {

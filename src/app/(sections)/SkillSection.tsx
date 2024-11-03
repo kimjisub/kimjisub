@@ -3,11 +3,11 @@ import Link from 'next/link';
 
 import { IconView } from '../IconView';
 
-import { fetchSkills } from '@/api/notion/skills';
+import { getSkills } from '@/api/notion/skills';
 import { Title } from '@/components/Title';
 
 export default async function SkillsSection() {
-	const skills = await fetchSkills();
+	const skills = await getSkills();
 
 	return (
 		<section className="h-screen flex justify-center items-center">
@@ -22,16 +22,15 @@ export default async function SkillsSection() {
 						gridGap: '16px',
 					}}>
 					{skills.map(skill => {
-						const title =
-							skill.properties['환경 및 기술'].title?.[0]?.text?.content;
-						const iconSlug = skill.properties.iconSlug.rich_text[0]?.plain_text;
 						return (
-							<Link href={`/skills/${title}`} key={title}>
+							<Link href={`/skills/${skill.id}`} key={skill.id}>
 								<IconView
 									className="w-[100px] text-center"
-									key={title}
-									title={title}
-									iconSlug={iconSlug}
+									key={skill.id}
+									title={skill.title}
+									slug={skill.slug}
+									color={skill.iconColor}
+									raw={skill}
 								/>
 							</Link>
 						);

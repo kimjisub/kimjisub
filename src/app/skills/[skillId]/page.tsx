@@ -1,27 +1,67 @@
 import React from 'react';
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import { notionApi } from '@/api/notion/notion';
-import { fetchProject } from '@/api/notion/projects';
-import { NotionPage } from '@/components/NotionPage';
+import { getSkill, getSkillPage, getSkills } from '@/api/notion/skills';
+import { JsonView } from '@/components/JsonView';
+import { NotionClientRenderer } from '@/components/NotionPage';
 
-const ProjectPage = async ({ params }: { params: { projectId: string } }) => {
-	return <div className="">작업중인 페이지입니다.</div>;
+export async function generateStaticParams() {
+	console.log('[generateStaticParams]', 'skills/[skillId]');
+	const skills = await getSkills();
+	const skillIds = skills.map(skill => ({
+		params: {
+			skillId: skill.id,
+		},
+	}));
+	console.log('[generateStaticParams]', 'skills/[skillId]', skillIds);
+	return skillIds;
+}
 
-	const { projectId } = params;
+export const revalidate = 60;
 
-	const project = await fetchProject(projectId);
+export const dynamicParams = true;
 
-	console.log('project', project);
+type Params = Promise<{ skillId: string }>;
 
-	const recordMap = await notionApi.getPage(projectId);
+const SkillPage = async (props: { params: Params }) => {
+	const { skillId } = await props.params;
+	const [skill, recordMap] = await Promise.all([
+		getSkill(skillId),
+		getSkillPage(skillId),
+	]);
 
-	console.log('recordMap', recordMap);
+	if (!skill) {
+		return <div>Skill not found</div>;
+	}
 
 	return (
 		<div className="pt-16 mx-auto p-6 max-w-5xl">
-			<NotionPage recordMap={recordMap} rootPageId={projectId} />
+			<Head>
+				<meta name="description" content="React Notion X Minimal Demo" />
+
+				<title>{skill.title}</title>
+			</Head>
+
+			<h1>{skill.title}</h1>
+
+			<JsonView name="skill" src={skill} collapsed />
+
+			<NotionClientRenderer
+				rootPageId={skillId}
+				recordMap={recordMap}
+				fullPage={false}
+				darkMode={false}
+				disableHeader
+				defaultPageIcon="📄"
+				components={{
+					nextImage: Image,
+					nextLink: Link,
+				}}
+			/>
 		</div>
 	);
 };
 
-export default ProjectPage;
+export default SkillPage;

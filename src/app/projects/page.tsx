@@ -2,10 +2,14 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { fetchProjects, Project } from '@/api/notion/projects';
+import { getProjects } from '@/api/notion/projects';
+import { JsonView } from '@/components/JsonView';
+export const revalidate = 60;
 
 export default async function ProjectsPage() {
-	const projects = await fetchProjects();
+	console.log('[SSG] ProjectsPage');
+
+	const projects = await getProjects();
 
 	return (
 		<div className="pt-16 mx-auto p-6 max-w-5xl">
@@ -13,7 +17,16 @@ export default async function ProjectsPage() {
 			<p>그동안 진행해왔던 프로젝트들이에요.</p>
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5 justify-center max-x-1xl">
 				{projects.map(project => (
-					<ProjectItem key={project.id} project={project} />
+					<ProjectItem
+						key={project.id}
+						projectId={project.id}
+						title={project.title}
+						description={project.description}
+						iconUrl={project.iconUrl}
+						iconEmoji={project.iconEmoji}
+						coverImageUrl={project.coverImageUrl}
+						raw={project.raw}
+					/>
 				))}
 			</div>
 		</div>
@@ -21,32 +34,38 @@ export default async function ProjectsPage() {
 }
 
 interface ProjectItemProps {
-	project: Project;
 	className?: string;
+	projectId: string;
+	title: string;
+	description?: string;
+	iconUrl?: string;
+	iconEmoji?: string;
+	coverImageUrl?: string;
+	raw?: any;
 }
-const ProjectItem = ({ project, className }: ProjectItemProps) => {
-	const name = project.properties.이름.title?.[0]?.text?.content;
-	const description = project.properties.설명.rich_text[0]?.plain_text;
-	const icon = {
-		emoji: <span className="mr-2">{project.icon?.emoji}</span>,
-		file: project.icon?.file?.url ? (
-			<Image
-				className="mr-2 w-6 h-6"
-				width={24}
-				height={24}
-				src={project.icon?.file?.url}
-				alt={`${name} 아이콘`}
-			/>
-		) : (
-			<></>
-		),
-	}[project.icon?.type ?? ''] ?? <></>;
-
-	const coverImageUrl =
-		{
-			file: project?.cover?.file?.url,
-			external: project?.cover?.external?.url,
-		}[project?.cover?.type ?? ''] ?? '';
+const ProjectItem = ({
+	className,
+	projectId,
+	title,
+	description,
+	iconUrl,
+	iconEmoji,
+	coverImageUrl,
+	raw,
+}: ProjectItemProps) => {
+	const icon = iconUrl ? (
+		<Image
+			className="mr-2 w-6 h-6"
+			width={24}
+			height={24}
+			src={iconUrl}
+			alt={`${title} 아이콘`}
+		/>
+	) : iconEmoji ? (
+		<span className="mr-2">{iconEmoji}</span>
+	) : (
+		<></>
+	);
 
 	const coverImage = coverImageUrl ? (
 		<Image
@@ -61,19 +80,19 @@ const ProjectItem = ({ project, className }: ProjectItemProps) => {
 	);
 
 	return (
-		<Link href={`/projects/${project.id}`}>
+		<Link href={`/projects/${projectId}`}>
 			<article
 				className={`cursor-pointer rounded-lg border-2 border-gray-200 m-2 ${className}`}>
 				<div className="h-48">{coverImage}</div>
 				<div className="p-2">
 					<p className="text-md font-semibold flex">
 						{icon}
-						{name}
+						{title}
 					</p>
 					<p className="text-sm">{description}</p>
 				</div>
-				{/* <pre className="text-xs">{JSON.stringify(project, null, 2)}</pre> */}
 			</article>
+			{/* <JsonView name="raw" src={raw} /> */}
 		</Link>
 	);
 };

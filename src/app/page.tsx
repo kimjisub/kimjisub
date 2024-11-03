@@ -5,13 +5,13 @@ import IntroduceSection from './(sections)/IntroduceSection';
 import SkillsSection from './(sections)/SkillSection';
 import TimeLineSection from './(sections)/TimeLineSection';
 
-import { getGitHubContributions } from '@/api/github';
+// import { getGitHubContributions } from '@/api/github';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default async function Home() {
-	const fromDate = new Date('2016-01-01');
-	const contribute = await getGitHubContributions('kimjisub', fromDate);
+	// const fromDate = new Date('2016-01-01');
+	// const contribute = await getGitHubContributions('kimjisub', fromDate);
 
 	return (
 		<main className="flex flex-col min-h-screen py-4 snap-y snap-mandatory">

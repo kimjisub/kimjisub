@@ -1,16 +1,18 @@
 {
   "name": "kimjisub",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
+    "build-and-start": "yarn build && yarn start",
     "lint": "next lint",
     "notion": "node ./scripts/export-notion.js",
     "icons": "node scripts/simple-icon-badge.js | pbcopy"
   },
   "dependencies": {
+    "@notionhq/client": "^2.2.15",
     "@types/matter-js": "^0.19.5",
     "axios": "^1.6.2",
     "date-fns": "^2.30.0",
@@ -18,12 +20,15 @@
     "gsap": "^3.12.2",
     "jsdom": "^22.1.0",
     "matter-js": "^0.19.0",
-    "next": "14.0.3",
-    "notion-client": "^6.16.0",
-    "react": "^18",
-    "react-dom": "^18",
+    "next": "15.0.2",
+    "notion-client": "^7.0.1",
+    "notion-types": "^7.0.1",
+    "notion-utils": "^7.0.1",
+    "react": "19.0.0-rc-02c0e824-20241028",
+    "react-dom": "19.0.0-rc-02c0e824-20241028",
     "react-flip-toolkit": "^7.1.0",
-    "react-notion-x": "^6.16.0",
+    "react-json-view": "^1.21.3",
+    "react-notion-x": "^7.0.1",
     "react-type-animation": "^3.2.0",
     "simple-icons": "^11.3.0"
   },
@@ -35,11 +40,11 @@
     "autoprefixer": "^10.0.1",
     "dotenv": "^16.3.1",
     "eslint": "^8",
-    "eslint-config-next": "14.0.3",
+    "eslint-config-next": "15.0.2",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-unused-imports": "^3.0.0",
     "postcss": "^8",
-    "tailwindcss": "^3.3.0",
+    "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
 }
