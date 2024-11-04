@@ -39,7 +39,7 @@ const SkillPage = async (props: { params: Params }) => {
 	}
 
 	return (
-		<div className="pt-16 mx-auto p-6 max-w-5xl">
+		<div className="pt-16 mx-auto p-6">
 			<Head>
 				<meta name="description" content="React Notion X Minimal Demo" />
 				<title>{skill.title}</title>
