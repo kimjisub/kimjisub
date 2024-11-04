@@ -40,7 +40,7 @@ export const CareerItem = ({ className, career }: CareerItemProps) => {
 		<Link href={`/careers/${career.id}`} prefetch>
 			<article
 				className={`cursor-pointer rounded-lg border-2 border-gray-200 ${className}`}>
-				<div className="h-32">{coverImage}</div>
+				<div className="aspect-video">{coverImage}</div>
 				<div className="p-2">
 					<p className="text-md font-semibold flex">
 						{icon}

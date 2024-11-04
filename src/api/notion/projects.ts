@@ -125,7 +125,10 @@ export const getProjectsWithRelated = () =>
 
 			return projects.map(project => ({
 				...project,
-				relatedSkills: project['주요 기술']
+				relatedTechSkills: project['주요 기술']
+					.map(skillId => skills.find(skill => skill.id === skillId))
+					.filter(Boolean) as SkillT[],
+				relatedLanguageSkills: project['프로그래밍 언어']
 					.map(skillId => skills.find(skill => skill.id === skillId))
 					.filter(Boolean) as SkillT[],
 				relatedCareers: project['대회 및 수료']

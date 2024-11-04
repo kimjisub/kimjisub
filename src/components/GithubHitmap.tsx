@@ -17,7 +17,6 @@ const GitHubHitmap: React.FC<GitHubHitmapProps> = ({ data, fromDate }) => {
 		}[count];
 	};
 
-	console.log(fromDate.getDay(), Array.from({ length: fromDate.getDay() }));
 	// 각 타일을 7칸짜리 세로열로 배치
 	const rows = Array.from({ length: Math.ceil(data.length / 7) });
 	const tiles = rows.map((_, rowIndex) => {

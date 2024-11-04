@@ -18,13 +18,12 @@ export async function generateStaticParams() {
 			skillId: skill.id,
 		},
 	}));
-	console.log('[generateStaticParams]', 'skills/[skillId]', skillIds);
 	return skillIds;
 }
 
 export const revalidate = false;
 
-export const dynamicParams = true;
+export const dynamicParams = false;
 
 type Params = Promise<{ skillId: string }>;
 
@@ -45,45 +44,89 @@ const SkillPage = async (props: { params: Params }) => {
 		<div className="pt-16 mx-auto p-6 max-w-5xl">
 			<Head>
 				<meta name="description" content="React Notion X Minimal Demo" />
-
 				<title>{skill.title}</title>
 			</Head>
 
-			<h1>{skill.title}</h1>
+			<div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+				<section className="col-span-3 max-w-fit">
+					<div className="flex items-center bg-center">
+						<SkillItem skill={skill} />
+						<h1 className="text-3xl font-bold">{skill.title}</h1>
+					</div>
 
-			<SkillItem skill={skill} />
+					<NotionClientRenderer
+						className="w-full"
+						rootPageId={skillId}
+						recordMap={recordMap}
+						fullPage={false}
+						darkMode={false}
+						disableHeader
+					/>
+				</section>
 
-			<div>
-				<p>관련된 기술</p>
-				<div className="grid grid-cols-[repeat(auto-fill,_50px)] gap-4">
-					{skill.relatedSkills.map(skill => (
-						<Link key={skill.id} href={`/skills/${skill.id}`}>
-							<SkillItem skill={skill} />
-						</Link>
-					))}
-				</div>
+				<section className="col-span-2">
+					<div className="space-y-4">
+						{/* <div>
+							태그
+							<div className="space-x-2">
+								{skill.태그.map(tag => (
+									<Badge key={tag.name} text={tag.name} color={tag.color} />
+								))}
+							</div>
+						</div>
+						<div>
+							분류
+							<div className="space-x-2">
+								{skill.분류.map(category => (
+									<Badge
+										key={category.name}
+										text={category.name}
+										color={category.color}
+									/>
+								))}
+							</div>
+						</div>
+						<div>
+							맡은 업무
+							<div className="space-x-2">
+								{project['맡은 업무'].map(role => (
+									<Badge key={role.name} text={role.name} color={role.color} />
+								))}
+							</div>
+						</div> */}
+						<div className="space-y-4">
+							<h2>관련 기술</h2>
+							<div
+								className="grid gap-4"
+								style={{
+									gridTemplateColumns: 'repeat(auto-fill, minmax(48px, 1fr))',
+								}}>
+								{skill.relatedSkill.map(skill => (
+									<Link key={skill.id} href={`/skills/${skill.id}`}>
+										<SkillItem skill={skill} />
+									</Link>
+								))}
+							</div>
+						</div>
+
+						<div className="space-y-4">
+							<h2>관련된 프로젝트</h2>
+							<div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5 justify-center max-x-1xl">
+								{[
+									...skill.relatedProjectUsedByLanguage,
+									...skill.relatedProjectUsedBySkill,
+								].map(project => (
+									<Link key={project.id} href={`/projects/${project.id}`}>
+										<ProjectItem project={project} />
+									</Link>
+								))}
+							</div>
+						</div>
+
+						<JsonView src={skill} collapsed />
+					</div>
+				</section>
 			</div>
-
-			<div>
-				<p>관련된 Project</p>
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5 justify-center max-x-1xl">
-					{skill.relatedProject.map(project => (
-						<Link key={project.id} href={`/project/${project.id}`}>
-							<ProjectItem project={project} />
-						</Link>
-					))}
-				</div>
-			</div>
-
-			<JsonView name="skill" src={skill} collapsed />
-
-			<NotionClientRenderer
-				rootPageId={skillId}
-				recordMap={recordMap}
-				fullPage={false}
-				darkMode={false}
-				disableHeader
-			/>
 		</div>
 	);
 };

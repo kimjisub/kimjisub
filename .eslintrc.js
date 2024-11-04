@@ -5,8 +5,19 @@ module.exports = {
 		es2021: true,
 		node: true,
 	},
-	extends: ['next/core-web-vitals'],
-	plugins: ['simple-import-sort', 'unused-imports'],
+	parser: '@typescript-eslint/parser',
+	parserOptions: {
+		ecmaVersion: 2020,
+		sourceType: 'module',
+		project: './tsconfig.json',
+	},
+	plugins: ['@typescript-eslint', 'simple-import-sort', 'unused-imports'],
+	extends: [
+		'eslint:recommended',
+		'plugin:@typescript-eslint/recommended',
+		'plugin:@typescript-eslint/recommended-requiring-type-checking',
+		'next/core-web-vitals',
+	],
 	overrides: [
 		{
 			files: ['*.ts', '*.tsx'],

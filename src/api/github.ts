@@ -38,7 +38,7 @@ export async function getGitHubContributions(
 function extractDataFromTable(html: string): number[] {
 	const dom = new JSDOM(html);
 	const doc = dom.window.document;
-	let tds = Array.from(doc.querySelectorAll('td[data-date]'));
+	const tds = Array.from(doc.querySelectorAll('td[data-date]'));
 
 	// data-date로 정렬
 	return tds

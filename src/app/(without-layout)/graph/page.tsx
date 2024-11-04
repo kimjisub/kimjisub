@@ -78,8 +78,6 @@ export default function SkillsPage() {
 			for (const tech of techs.results) {
 				const iconSlug = tech.properties.iconSlug.rich_text[0]?.plain_text;
 
-				console.log(iconSlug, generateIconSvgCode(iconSlug));
-
 				try {
 					const body = Bodies.rectangle(100, 100, 50, 50, {
 						chamfer: { radius: 16 }, // 둥근 모서리

@@ -15,7 +15,8 @@ export type SkillT = {
 	하위_항목: string[];
 	숙련도: string;
 	사용한_횟수: number;
-	프로젝트: string[];
+	projectUsedBySkill: string[];
+	projectUsedByLanguage: string[];
 	관련_기술: string[];
 	description: string;
 	iconUrl: string;
@@ -74,7 +75,14 @@ export const getSkills = (): Promise<SkillT[]> =>
 					숙련도: skill.properties['숙련도']?.select?.name as string,
 					사용한_횟수: skill.properties['사용한 횟수']?.rollup?.number as
 						| number,
-					프로젝트: skill.properties['프로젝트']?.relation?.map(
+					projectUsedBySkill: skill.properties[
+						'기술로써 사용된 프로젝트'
+					]?.relation?.map(
+						({ id }: { id: string }) => id as string,
+					) as string[],
+					projectUsedByLanguage: skill.properties[
+						'기술로써 사용된 프로젝트'
+					]?.relation?.map(
 						({ id }: { id: string }) => id as string,
 					) as string[],
 					관련_기술: skill.properties['관련 기술']?.relation?.map(
@@ -105,12 +113,15 @@ export const getSkillsWithRelated = () =>
 			]);
 			return skills.map(skill => ({
 				...skill,
-				relatedProject: skill['프로젝트']
-					.map(projectId => projects.find(project => project.id === projectId))
-					.filter(Boolean) as ProjectT[],
-				relatedSkills: skill['관련_기술']
+				relatedSkill: skill['관련_기술']
 					.map(skillId => skills.find(skill => skill.id === skillId))
 					.filter(Boolean) as SkillT[],
+				relatedProjectUsedByLanguage: skill.projectUsedByLanguage
+					.map(projectId => projects.find(project => project.id === projectId))
+					.filter(Boolean) as ProjectT[],
+				relatedProjectUsedBySkill: skill.projectUsedBySkill
+					.map(projectId => projects.find(project => project.id === projectId))
+					.filter(Boolean) as ProjectT[],
 			}));
 		},
 		['skills-related'],

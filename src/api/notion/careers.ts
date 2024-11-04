@@ -1,6 +1,6 @@
 import { unstable_cache } from 'next/cache';
 
-import { notionApi, notionXApi } from '.';
+import { notionApi, notionXApi } from '../notion';
 import { getSkills } from './skills';
 import { getProjects, ProjectT } from './projects';
 import { parseISO } from 'date-fns';
@@ -14,10 +14,15 @@ export type CareerT = {
 	coverImageUrl: string;
 	relatedProjects: string[];
 	awardsAndCertifications: string;
-	institution: string[];
+	institutions: { name: string; color: string }[];
 	importance: string;
 	url: string;
-	category: string[];
+	categories: { name: string; color: string }[];
+	date: {
+		start?: Date;
+		end?: Date;
+	};
+	assignedTasks: { name: string; color: string }[];
 	raw: any;
 };
 
@@ -65,14 +70,20 @@ export const getCareers = (): Promise<CareerT[]> =>
 				) as string[],
 				awardsAndCertifications: career.properties['수상 및 수료']
 					?.rich_text?.[0]?.plain_text as string,
-				institution: career.properties['기관']?.multi_select?.map(
-					(select: any) => select.name as string,
-				),
+				institutions: career.properties['기관']?.multi_select?.map(
+					({ name, color }: { name: string; color: string }) => ({
+						name: name as string,
+						color: color as string,
+					}),
+				) as { name: string; color: string }[],
 				importance: career.properties['중요도']?.select?.name as string,
 				url: career.properties['URL']?.url as string,
-				category: career.properties['분류']?.multi_select?.map(
-					(select: any) => select.name as string,
-				) as string[],
+				categories: career.properties['분류']?.multi_select?.map(
+					({ name, color }: { name: string; color: string }) => ({
+						name: name as string,
+						color: color as string,
+					}),
+				) as { name: string; color: string }[],
 				date: {
 					start: career.properties['날짜']?.date?.start
 						? parseISO(career.properties['날짜']?.date?.start)
@@ -82,8 +93,11 @@ export const getCareers = (): Promise<CareerT[]> =>
 						: undefined,
 				} as { start?: Date; end?: Date },
 				assignedTasks: career.properties['맡은 업무']?.multi_select?.map(
-					(select: any) => select.name as string,
-				) as string[],
+					({ name, color }: { name: string; color: string }) => ({
+						name: name as string,
+						color: color as string,
+					}),
+				) as { name: string; color: string }[],
 
 				raw: career as any,
 			}));

@@ -34,7 +34,7 @@ export const ProjectItem = ({ className, project }: ProjectItemProps) => {
 		<Image
 			className="w-full h-full object-cover rounded-[26px] rounded-b-sm"
 			width={300}
-			height={200}
+			height={150}
 			src={project.coverImageUrl}
 			alt="" //{`${project.name} 커버 이미지`}
 		/>
@@ -49,7 +49,7 @@ export const ProjectItem = ({ className, project }: ProjectItemProps) => {
 				onMouseEnter={() => setIsHovered(true)}
 				onMouseLeave={() => setIsHovered(false)}>
 				<div className="relative h-64 ">
-					{coverImage}
+					<div className="aspect-video">{coverImage}</div>
 					<div
 						className={`absolute top-2 left-2 px-4 py-2 border rounded-full ${blur} `}>
 						<p className="text-md font-semibold flex">

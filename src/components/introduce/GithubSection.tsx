@@ -1,7 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import React from 'react';
 
 import GitHubHitmap from '@/components/GithubHitmap';
 import { Title } from '@/components/Title';
