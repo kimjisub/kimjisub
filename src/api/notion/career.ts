@@ -15,20 +15,25 @@ import { getSkills } from './skills';
 export const getCareersWithRelated = () =>
 	unstable_cache(
 		async () => {
-			console.log('[API] getCareersWithRelated');
+			console.time('[API] getCareersWithRelated');
+			try {
+				const [careers, projects, skills] = await Promise.all([
+					getCareers(),
+					getProjects(),
+					getSkills(),
+				]);
 
-			const [careers, projects, skills] = await Promise.all([
-				getCareers(),
-				getProjects(),
-				getSkills(),
-			]);
-
-			return careers.map(career => ({
-				...career,
-				relatedProjects: career.relatedProjects
-					.map(projectId => projects.find(project => project.id === projectId))
-					.filter(Boolean) as ProjectT[],
-			}));
+				return careers.map(career => ({
+					...career,
+					relatedProjects: career.relatedProjects
+						.map(projectId =>
+							projects.find(project => project.id === projectId),
+						)
+						.filter(Boolean) as ProjectT[],
+				}));
+			} finally {
+				console.timeEnd('[API] getCareersWithRelated');
+			}
 		},
 		['careers-related'],
 		{ revalidate: 3600, tags: ['careers-related'] },
@@ -37,9 +42,13 @@ export const getCareersWithRelated = () =>
 export const getCareer = (careerId: string) =>
 	unstable_cache(
 		async () => {
-			console.log('[API] getCareer', careerId);
-			const careers = await getCareersWithRelated();
-			return careers.find(career => career.id === careerId);
+			console.time('[API] getCareer');
+			try {
+				const careers = await getCareersWithRelated();
+				return careers.find(career => career.id === careerId);
+			} finally {
+				console.timeEnd('[API] getCareer');
+			}
 		},
 		['careers', careerId],
 		{ revalidate: 3600, tags: ['careers', careerId] },
@@ -48,8 +57,12 @@ export const getCareer = (careerId: string) =>
 export const getCareerPage = (careerId: string) =>
 	unstable_cache(
 		async () => {
-			console.log('[API] getCareerPage', careerId);
-			return await notionXApi.getPage(careerId);
+			console.time('[API] getCareerPage');
+			try {
+				return await notionXApi.getPage(careerId);
+			} finally {
+				console.timeEnd('[API] getCareerPage');
+			}
 		},
 		['careers', careerId, 'page'],
 		{ revalidate: 3600, tags: ['careers', careerId, 'page'] },
