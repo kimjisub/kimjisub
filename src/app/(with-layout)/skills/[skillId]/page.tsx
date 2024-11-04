@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 
 import { getSkill, getSkillPage, getSkills } from '@/api/notion/skills';
 import { JsonView } from '@/components/JsonView';
@@ -100,9 +99,7 @@ const SkillPage = async (props: { params: Params }) => {
 									gridTemplateColumns: 'repeat(auto-fill, minmax(48px, 1fr))',
 								}}>
 								{skill.relatedSkill.map(skill => (
-									<Link key={skill.id} href={`/skills/${skill.id}`}>
-										<SkillItem skill={skill} />
-									</Link>
+									<SkillItem key={skill.id} skill={skill} />
 								))}
 							</div>
 						</div>
@@ -114,9 +111,7 @@ const SkillPage = async (props: { params: Params }) => {
 									...skill.relatedProjectUsedByLanguage,
 									...skill.relatedProjectUsedBySkill,
 								].map(project => (
-									<Link key={project.id} href={`/projects/${project.id}`}>
-										<ProjectItem project={project} />
-									</Link>
+									<ProjectItem key={project.id} project={project} />
 								))}
 							</div>
 						</div>

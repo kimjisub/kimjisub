@@ -2,7 +2,6 @@ import React from 'react';
 import { format } from 'date-fns';
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import { getCareer, getCareerPage, getCareers } from '@/api/notion/careers';
 import Badge from '@/components/Badge';
@@ -131,9 +130,7 @@ const CareerPage = async (props: { params: Params }) => {
 							<h2>관련된 프로젝트</h2>
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5 justify-center max-x-1xl">
 								{career.relatedProjects.map(project => (
-									<Link key={project.id} href={`/projects/${project.id}`}>
-										<ProjectItem project={project} />
-									</Link>
+									<ProjectItem key={project.id} project={project} />
 								))}
 							</div>
 						</div>

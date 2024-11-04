@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 import { SkillT } from '@/api/notion/skills';
 import { IconView } from '@/components/IconView';
@@ -15,13 +16,15 @@ export const SkillItem = ({ className, skill }: SkillItemProps) => {
 	const [isHovered, setIsHovered] = useState(false);
 
 	return (
-		<IconView
-			className="w-[100px] text-center"
-			key={skill.id}
-			title={skill.title}
-			slug={skill.slug}
-			color={skill.iconColor}
-			raw={skill}
-		/>
+		<Link href={`/skills/${skill.id}`} prefetch>
+			<IconView
+				className="w-[100px] text-center"
+				key={skill.id}
+				title={skill.title}
+				slug={skill.slug}
+				color={skill.iconColor}
+				raw={skill}
+			/>
+		</Link>
 	);
 };

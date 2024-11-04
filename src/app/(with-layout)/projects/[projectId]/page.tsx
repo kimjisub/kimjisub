@@ -2,7 +2,6 @@ import React from 'react';
 import { format } from 'date-fns';
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import { getProject, getProjectPage, getProjects } from '@/api/notion/projects';
 import Badge from '@/components/Badge';
@@ -131,9 +130,7 @@ const ProjectPage = async (props: { params: Params }) => {
 									gridTemplateColumns: 'repeat(auto-fill, minmax(48px, 1fr))',
 								}}>
 								{project.relatedTechSkills.map(skill => (
-									<Link key={skill.id} href={`/skills/${skill.id}`}>
-										<SkillItem skill={skill} />
-									</Link>
+									<SkillItem key={skill.id} skill={skill} />
 								))}
 							</div>
 						</div>
@@ -146,9 +143,7 @@ const ProjectPage = async (props: { params: Params }) => {
 									gridTemplateColumns: 'repeat(auto-fill, minmax(48px, 1fr))',
 								}}>
 								{project.relatedLanguageSkills.map(skill => (
-									<Link key={skill.id} href={`/skills/${skill.id}`}>
-										<SkillItem skill={skill} />
-									</Link>
+									<SkillItem key={skill.id} skill={skill} />
 								))}
 							</div>
 						</div>
@@ -160,9 +155,7 @@ const ProjectPage = async (props: { params: Params }) => {
 									gridTemplateColumns: 'repeat(auto-fill, minmax(256px, 1fr))',
 								}}>
 								{project.relatedCareers.map(career => (
-									<Link key={career.id} href={`/careers/${career.id}`}>
-										<CareerItem career={career} />
-									</Link>
+									<CareerItem key={career.id} career={career} />
 								))}
 							</div>
 						</div>

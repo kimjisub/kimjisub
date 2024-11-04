@@ -16,6 +16,7 @@ export const NotionClientRenderer = (props: NotionClientRendererProps) => {
 			components={{
 				nextImage: Image,
 				nextLink: Link,
+				Collection: () => <></>,
 			}}
 		/>
 	);

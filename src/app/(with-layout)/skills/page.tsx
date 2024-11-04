@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 
 import { getSkills } from '@/api/notion/skills';
 import { SkillItem } from '@/components/SkillItem';
@@ -18,13 +17,11 @@ export default async function SkillsPage() {
 			<div className="grid grid-cols-[repeat(auto-fill,_50px)] gap-4">
 				{skills.map(skill => {
 					return (
-						<Link href={`/skills/${skill.id}`} key={skill.id} prefetch>
-							<SkillItem
-								className="w-[100px] text-center"
-								key={skill.id}
-								skill={skill}
-							/>
-						</Link>
+						<SkillItem
+							className="w-[100px] text-center"
+							key={skill.id}
+							skill={skill}
+						/>
 					);
 				})}
 			</div>
