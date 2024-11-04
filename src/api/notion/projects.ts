@@ -1,3 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+
 import { parseISO } from 'date-fns';
 import { unstable_cache } from 'next/cache';
 
@@ -68,14 +74,14 @@ export const getProjects: () => Promise<ProjectT[]> = unstable_cache(
 			url: project.properties['URL']?.url as string,
 			'맡은 업무': project.properties['맡은 업무']?.multi_select?.map(
 				({ name, color }: { name: string; color: string }) => ({
-					name: name as string,
-					color: color as string,
+					name: name,
+					color: color,
 				}),
 			) as { name: string; color: string }[],
 			태그: project.properties['태그']?.multi_select?.map(
 				({ name, color }: { name: string; color: string }) => ({
-					name: name as string,
-					color: color as string,
+					name: name,
+					color: color,
 				}),
 			) as { name: string; color: string }[],
 			중요도: {
@@ -83,30 +89,30 @@ export const getProjects: () => Promise<ProjectT[]> = unstable_cache(
 				color: project.properties['중요도']?.select?.color as string,
 			},
 			'주요 기술': project.properties['주요 기술']?.relation?.map(
-				({ id }: { id: string }) => id as string,
+				({ id }: { id: string }) => id,
 			) as string[],
 			'프로그래밍 언어': project.properties['프로그래밍 언어']?.relation?.map(
-				({ id }: { id: string }) => id as string,
+				({ id }: { id: string }) => id,
 			) as string[],
 			date: {
 				start: project.properties['날짜']?.date?.start
-					? (parseISO(project.properties['날짜']?.date?.start) as Date)
+					? parseISO(project.properties['날짜']?.date?.start)
 					: undefined,
 				end: project.properties['날짜']?.date?.end
-					? (parseISO(project.properties['날짜']?.date?.end) as Date)
+					? parseISO(project.properties['날짜']?.date?.end)
 					: undefined,
 			},
 			분류: project.properties['분류']?.multi_select?.map(
 				({ name, color }: { name: string; color: string }) => ({
-					name: name as string,
-					color: color as string,
+					name: name,
+					color: color,
 				}),
 			) as { name: string; color: string }[],
 			'대회 및 수료': project.properties['대회 및 수료']?.relation?.map(
-				({ id }: { id: string }) => id as string,
+				({ id }: { id: string }) => id,
 			) as string[],
 
-			raw: project as any,
+			raw: project,
 		}));
 	},
 	['projects'],

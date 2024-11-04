@@ -1,10 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 
-import { format } from 'date-fns';
 import { SkillT } from '@/api/notion/skills';
 import { IconView } from '@/components/IconView';
 

@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
-import { IconView } from '@/components/IconView';
 import MaintainingBar from './MaintainingBar';
 
 const blur = 'bg-white bg-opacity-60 backdrop-filter backdrop-blur-lg';

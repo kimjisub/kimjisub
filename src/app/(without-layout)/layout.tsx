@@ -6,8 +6,6 @@ import 'react-notion-x/src/styles.css';
 import 'prismjs/themes/prism-tomorrow.css';
 import 'katex/dist/katex.min.css';
 
-import Footer from '@/components/Footer';
-import TopBar from '@/components/TopBar';
 import { AppInfoProvider } from '@/contexts/AppInfoContext';
 
 const inter = Inter({ subsets: ['latin'] });

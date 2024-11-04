@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/require-await */
+/* eslint-disable @typescript-eslint/no-floating-promises */
 'use client';
 
 import React, { useEffect, useRef } from 'react';

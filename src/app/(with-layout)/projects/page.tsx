@@ -1,12 +1,8 @@
 import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 
 import { getProjects } from '@/api/notion/projects';
-import { JsonView } from '@/components/JsonView';
-import { format } from 'date-fns';
-import { Title } from '@/components/Title';
 import { ProjectItem } from '@/components/ProjectItem';
+import { Title } from '@/components/Title';
 
 export const revalidate = false;
 

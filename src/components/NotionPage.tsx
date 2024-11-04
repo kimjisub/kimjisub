@@ -5,8 +5,9 @@ import { NotionRenderer } from 'react-notion-x';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export interface NotionClientRendererProps
-	extends React.ComponentProps<typeof NotionRenderer> {}
+export type NotionClientRendererProps = React.ComponentProps<
+	typeof NotionRenderer
+>;
 
 export const NotionClientRenderer = (props: NotionClientRendererProps) => {
 	return (

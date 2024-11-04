@@ -1,13 +1,7 @@
 'use client';
 
-import {
-	createContext,
-	Dispatch,
-	ReactNode,
-	SetStateAction,
-	useState,
-	useEffect,
-} from 'react';
+import { createContext, ReactNode, useEffect, useState } from 'react';
+
 import packageJson from '../../package.json';
 
 interface AppInfoContextType {

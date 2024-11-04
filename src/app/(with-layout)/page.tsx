@@ -6,7 +6,6 @@ import GithubSection from '@/components/introduce/GithubSection';
 import IntroduceSection from '@/components/introduce/IntroduceSection';
 import SkillsSection from '@/components/introduce/SkillSection';
 import TimeLineSection from '@/components/introduce/TimeLineSection';
-import MaintainingBar from '@/components/MaintainingBar';
 
 // import { getGitHubContributions } from '@/api/github';
 

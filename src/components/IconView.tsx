@@ -1,7 +1,5 @@
 import React from 'react';
-import * as icons from 'simple-icons';
 
-import { JsonView } from '@/components/JsonView';
 import { getSimpleIconBySlug } from '@/utils/icons';
 
 export interface IconViewProps {
@@ -12,7 +10,7 @@ export interface IconViewProps {
 	description?: string;
 	style?: React.CSSProperties;
 	className?: string;
-	raw?: any;
+	raw?: unknown;
 }
 
 export const IconView = React.forwardRef<HTMLElement, IconViewProps>(

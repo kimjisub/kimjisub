@@ -1,8 +1,14 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+
 import { unstable_cache } from 'next/cache';
 
-import { notionApi, notionXApi } from '.';
-import { getProjects, ProjectT } from './projects';
 import { getCareers } from './careers';
+import { getProjects, ProjectT } from './projects';
+import { notionApi, notionXApi } from '.';
 
 export type SkillT = {
 	id: string;
@@ -63,30 +69,26 @@ export const getSkills = (): Promise<SkillT[]> =>
 					slug: slug as string,
 					iconColor: iconColor as string,
 					분류: skill.properties['분류']?.multi_select?.map(
-						({ name }: { name: string }) => name as string,
+						({ name }: { name: string }) => name,
 					) as string[],
 					상위_항목: skill.properties['상위 항목']?.relation?.map(
-						({ id }: { id: string }) => id as string,
+						({ id }: { id: string }) => id,
 					) as string[],
 					visible: skill.properties['visible']?.checkbox as boolean,
 					하위_항목: skill.properties['하위 항목']?.relation?.map(
-						({ id }: { id: string }) => id as string,
+						({ id }: { id: string }) => id,
 					) as string[],
 					숙련도: skill.properties['숙련도']?.select?.name as string,
 					사용한_횟수: skill.properties['사용한 횟수']?.rollup?.number as
 						| number,
 					projectUsedBySkill: skill.properties[
 						'기술로써 사용된 프로젝트'
-					]?.relation?.map(
-						({ id }: { id: string }) => id as string,
-					) as string[],
+					]?.relation?.map(({ id }: { id: string }) => id) as string[],
 					projectUsedByLanguage: skill.properties[
 						'기술로써 사용된 프로젝트'
-					]?.relation?.map(
-						({ id }: { id: string }) => id as string,
-					) as string[],
+					]?.relation?.map(({ id }: { id: string }) => id) as string[],
 					관련_기술: skill.properties['관련 기술']?.relation?.map(
-						({ id }: { id: string }) => id as string,
+						({ id }: { id: string }) => id,
 					) as string[],
 					description: skill.properties['설명']?.rich_text?.[0]?.plain_text as
 						| string,
@@ -94,7 +96,7 @@ export const getSkills = (): Promise<SkillT[]> =>
 					iconEmoji: skill['icon']?.emoji as string,
 					coverImageUrl: skill['cover']?.file?.url as string,
 
-					raw: skill as any,
+					raw: skill,
 				};
 			});
 		},

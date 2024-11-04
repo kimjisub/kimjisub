@@ -22,6 +22,7 @@ const GithubHitmapCol: React.FC<GitHubHitmapProps> = ({ data, fromDate }) => {
 	const paddingSize = (data.length + dayOfWeek) % 7;
 	if (paddingSize !== 0) {
 		const padding = new Array(7 - paddingSize).fill(-1);
+		// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 		data = [...new Array(dayOfWeek).fill(-1), ...data, ...padding];
 	}
 

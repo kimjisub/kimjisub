@@ -1,9 +1,16 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+
+import { parseISO } from 'date-fns';
 import { unstable_cache } from 'next/cache';
 
 import { notionApi, notionXApi } from '../notion';
-import { getSkills } from './skills';
+
 import { getProjects, ProjectT } from './projects';
-import { parseISO } from 'date-fns';
+import { getSkills } from './skills';
 
 export type CareerT = {
 	id: string;
@@ -72,16 +79,16 @@ export const getCareers = (): Promise<CareerT[]> =>
 					?.rich_text?.[0]?.plain_text as string,
 				institutions: career.properties['기관']?.multi_select?.map(
 					({ name, color }: { name: string; color: string }) => ({
-						name: name as string,
-						color: color as string,
+						name: name,
+						color: color,
 					}),
 				) as { name: string; color: string }[],
 				importance: career.properties['중요도']?.select?.name as string,
 				url: career.properties['URL']?.url as string,
 				categories: career.properties['분류']?.multi_select?.map(
 					({ name, color }: { name: string; color: string }) => ({
-						name: name as string,
-						color: color as string,
+						name: name,
+						color: color,
 					}),
 				) as { name: string; color: string }[],
 				date: {
@@ -94,12 +101,12 @@ export const getCareers = (): Promise<CareerT[]> =>
 				} as { start?: Date; end?: Date },
 				assignedTasks: career.properties['맡은 업무']?.multi_select?.map(
 					({ name, color }: { name: string; color: string }) => ({
-						name: name as string,
-						color: color as string,
+						name: name,
+						color: color,
 					}),
 				) as { name: string; color: string }[],
 
-				raw: career as any,
+				raw: career,
 			}));
 		},
 		['careers'],

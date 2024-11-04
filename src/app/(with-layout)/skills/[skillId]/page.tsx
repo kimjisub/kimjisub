@@ -1,14 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 
 import { getSkill, getSkillPage, getSkills } from '@/api/notion/skills';
 import { JsonView } from '@/components/JsonView';
 import { NotionClientRenderer } from '@/components/NotionPage';
-import { SkillItem } from '@/components/SkillItem';
-import { CareerItem } from '@/components/CareerItem';
 import { ProjectItem } from '@/components/ProjectItem';
+import { SkillItem } from '@/components/SkillItem';
 
 export async function generateStaticParams() {
 	console.log('[generateStaticParams]', 'skills/[skillId]');

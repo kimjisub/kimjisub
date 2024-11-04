@@ -1,7 +1,7 @@
 import type { SimpleIcon } from 'simple-icons';
 import * as simpleIcons from 'simple-icons';
 
-const icons = simpleIcons as any as { [key: string]: SimpleIcon };
+const icons = simpleIcons as unknown as { [key: string]: SimpleIcon };
 
 const emptySvg = `<svg xmlns="http://www.w3.org/2000/svg" />`;
 

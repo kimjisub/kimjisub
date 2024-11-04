@@ -1,9 +1,7 @@
 import React from 'react';
-
-import { generateIconSvgCode } from '@/utils/icons';
-import { IconView } from '../../../components/IconView';
-import { getSkills } from '@/api/notion/skills';
 import Link from 'next/link';
+
+import { getSkills } from '@/api/notion/skills';
 import { SkillItem } from '@/components/SkillItem';
 
 export const revalidate = false;
