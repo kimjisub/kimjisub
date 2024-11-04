@@ -3,7 +3,8 @@ import { format } from 'date-fns';
 import Head from 'next/head';
 import Image from 'next/image';
 
-import { getProject, getProjectPage, getProjects } from '@/api/notion/projects';
+import { getProject, getProjectPage } from '@/api/notion/project';
+import { getProjects } from '@/api/notion/projects';
 import Badge from '@/components/Badge';
 import { CareerItem } from '@/components/CareerItem';
 import { JsonView } from '@/components/JsonView';

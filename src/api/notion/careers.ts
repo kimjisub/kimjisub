@@ -7,10 +7,7 @@
 import { parseISO } from 'date-fns';
 import { unstable_cache } from 'next/cache';
 
-import { notionApi, notionXApi } from '../notion';
-
-import { getProjects, ProjectT } from './projects';
-import { getSkills } from './skills';
+import { notionApi } from '../notion';
 
 export type CareerT = {
 	id: string;
@@ -111,46 +108,4 @@ export const getCareers = (): Promise<CareerT[]> =>
 		},
 		['careers'],
 		{ revalidate: 3600, tags: ['careers'] },
-	)();
-
-export const getCareersWithRelated = () =>
-	unstable_cache(
-		async () => {
-			console.log('[API] getCareersWithRelated');
-			const [careers, projects, skills] = await Promise.all([
-				getCareers(),
-				getProjects(),
-				getSkills(),
-			]);
-
-			return careers.map(career => ({
-				...career,
-				relatedProjects: career.relatedProjects
-					.map(projectId => projects.find(project => project.id === projectId))
-					.filter(Boolean) as ProjectT[],
-			}));
-		},
-		['careers-related'],
-		{ revalidate: 3600, tags: ['careers-related'] },
-	)();
-
-export const getCareer = (careerId: string) =>
-	unstable_cache(
-		async () => {
-			console.log('[API] getCareer', careerId);
-			const careers = await getCareersWithRelated();
-			return careers.find(career => career.id === careerId);
-		},
-		['careers', careerId],
-		{ revalidate: 3600, tags: ['careers', careerId] },
-	)();
-
-export const getCareerPage = (careerId: string) =>
-	unstable_cache(
-		async () => {
-			console.log('[API] getCareerPage', careerId);
-			return await notionXApi.getPage(careerId);
-		},
-		['careers', careerId, 'page'],
-		{ revalidate: 3600, tags: ['careers', careerId, 'page'] },
 	)();

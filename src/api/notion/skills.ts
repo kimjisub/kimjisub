@@ -6,9 +6,7 @@
 
 import { unstable_cache } from 'next/cache';
 
-import { getCareers } from './careers';
-import { getProjects, ProjectT } from './projects';
-import { notionApi, notionXApi } from '.';
+import { notionApi } from '.';
 
 export type SkillT = {
 	id: string;
@@ -102,51 +100,4 @@ export const getSkills = (): Promise<SkillT[]> =>
 		},
 		['skills'],
 		{ revalidate: 3600, tags: ['skills'] },
-	)();
-
-export const getSkillsWithRelated = () =>
-	unstable_cache(
-		async () => {
-			console.log('[API] getSkillsWithRelated');
-			const [careers, projects, skills] = await Promise.all([
-				getCareers(),
-				getProjects(),
-				getSkills(),
-			]);
-			return skills.map(skill => ({
-				...skill,
-				relatedSkill: skill['관련_기술']
-					.map(skillId => skills.find(skill => skill.id === skillId))
-					.filter(Boolean) as SkillT[],
-				relatedProjectUsedByLanguage: skill.projectUsedByLanguage
-					.map(projectId => projects.find(project => project.id === projectId))
-					.filter(Boolean) as ProjectT[],
-				relatedProjectUsedBySkill: skill.projectUsedBySkill
-					.map(projectId => projects.find(project => project.id === projectId))
-					.filter(Boolean) as ProjectT[],
-			}));
-		},
-		['skills-related'],
-		{ revalidate: 3600, tags: ['skills-related'] },
-	)();
-
-export const getSkill = (skillId: string) =>
-	unstable_cache(
-		async () => {
-			console.log('[API] getSkill', skillId);
-			const skills = await getSkillsWithRelated();
-			return skills.find(skill => skill.id === skillId);
-		},
-		['skills', skillId],
-		{ revalidate: 3600, tags: ['skills', skillId] },
-	)();
-
-export const getSkillPage = (skillId: string) =>
-	unstable_cache(
-		async () => {
-			console.log('[API] getSkillPage', skillId);
-			return await notionXApi.getPage(skillId);
-		},
-		['skills', skillId, 'page'],
-		{ revalidate: 3600, tags: ['skills', skillId, 'page'] },
 	)();

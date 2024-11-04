@@ -1,7 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 
-import { getSkill, getSkillPage, getSkills } from '@/api/notion/skills';
+import { getSkill, getSkillPage } from '@/api/notion/skill';
+import { getSkills } from '@/api/notion/skills';
 import { JsonView } from '@/components/JsonView';
 import { NotionClientRenderer } from '@/components/NotionPage';
 import { ProjectItem } from '@/components/ProjectItem';
