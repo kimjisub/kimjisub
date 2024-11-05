@@ -40,7 +40,7 @@
     "scripts/export-notion.mts",
     "src/api/notion.mts",
     "scripts/simple-icon-badge.js",
-    ".eslintrc.js"
+    ".eslintrc.js",
   ],
   "exclude": [
     "node_modules"

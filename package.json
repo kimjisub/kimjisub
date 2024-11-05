@@ -3,8 +3,8 @@
   "version": "0.0.2",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "dev:no-turbopack": "next dev",
+    "dev": "next dev",
+    "dev:turbopack": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "build-and-start": "yarn build && yarn start",

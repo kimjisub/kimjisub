@@ -63,8 +63,8 @@ export const IconSlugView = React.forwardRef<HTMLElement, IconSlugViewProps>(
 			<article className={` ${className}`} ref={ref} style={style} id={id}>
 				<div
 					className="w-12 h-12 rounded-xl flex items-center justify-center transition-transform duration-100 ease-in-out transform hover:scale-110"
-					style={{ background: `grey` }}>
-					404
+					style={{ background: `grey`, fontSize: 'calc(0.5em + 0.5vw)' }}>
+					{slug}
 				</div>
 				{/* <JsonView src={raw} /> */}
 			</article>
