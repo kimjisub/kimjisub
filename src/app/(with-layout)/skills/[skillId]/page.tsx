@@ -11,9 +11,7 @@ export async function generateStaticParams() {
 	console.log('[generateStaticParams]', 'skills/[skillId]');
 	const skills = await getSkills();
 	const skillIds = skills.map(skill => ({
-		params: {
-			skillId: skill.id,
-		},
+		skillId: skill.id,
 	}));
 	return skillIds;
 }

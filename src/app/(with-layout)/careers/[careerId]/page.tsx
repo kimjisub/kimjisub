@@ -13,9 +13,7 @@ export async function generateStaticParams() {
 	console.log('[generateStaticParams]', 'careers/[careerId]');
 	const careers = await getCareers();
 	const careerIds = careers.map(career => ({
-		params: {
-			careerId: career.id,
-		},
+		careerId: career.id,
 	}));
 	return careerIds;
 }

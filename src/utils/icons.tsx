@@ -2,15 +2,6 @@ import dynamic from 'next/dynamic';
 import type { SimpleIcon } from 'simple-icons';
 import * as simpleIcons from 'simple-icons';
 
-import Github from '@/icon/github.svg';
-console.log('@/icon/github.svg', Github);
-
-import Github2 from '@/icon/github.svg?url';
-console.log('@/icon/github.svg?url', Github2);
-
-import Github3 from '@/icon/github.svg?raw';
-console.log('@/icon/github.svg?raw', Github3);
-
 const icons = simpleIcons as unknown as { [key: string]: SimpleIcon };
 
 const emptySvg = `<svg xmlns="http://www.w3.org/2000/svg" />`;

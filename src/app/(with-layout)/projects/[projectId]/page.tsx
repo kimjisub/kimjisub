@@ -14,9 +14,7 @@ export async function generateStaticParams() {
 	console.log('[generateStaticParams]', 'projects/[projectId]');
 	const projects = await getProjects();
 	const projectIds = projects.map(project => ({
-		params: {
-			projectId: project.id,
-		},
+		projectId: project.id,
 	}));
 	return projectIds;
 }

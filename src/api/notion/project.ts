@@ -14,8 +14,6 @@ import { notionXApi } from '.';
 export const getProjectsWithRelated = () =>
 	unstable_cache(
 		async () => {
-			console.log('[API] getProjectsWithRelated');
-
 			const [careers, projects, skills] = await Promise.all([
 				getCareers(),
 				getProjects(),
@@ -42,8 +40,6 @@ export const getProjectsWithRelated = () =>
 export const getProject = (projectId: string) =>
 	unstable_cache(
 		async () => {
-			console.log('[API] getProject');
-
 			const projects = await getProjectsWithRelated();
 			return projects.find(project => project.id === projectId);
 		},
@@ -54,8 +50,6 @@ export const getProject = (projectId: string) =>
 export const getProjectPage = (projectId: string) =>
 	unstable_cache(
 		async () => {
-			console.log('[API] getProjectPage');
-
 			return await notionXApi.getPage(projectId);
 		},
 		['projects', projectId, 'page'],
