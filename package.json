@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "dev:no-turbopack": "next dev",
     "build": "next build",
     "start": "next start",
     "build-and-start": "yarn build && yarn start",
@@ -34,6 +35,7 @@
     "simple-icons": "^11.3.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/jsdom": "^21.1.6",
     "@types/node": "^20",
     "@types/react": "^18",
@@ -47,6 +49,7 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-unused-imports": "^3.2.0",
     "postcss": "^8",
+    "raw-loader": "^4.0.2",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

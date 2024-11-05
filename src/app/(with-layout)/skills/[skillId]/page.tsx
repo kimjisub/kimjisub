@@ -1,5 +1,4 @@
 import React from 'react';
-import Head from 'next/head';
 
 import { getSkill, getSkillPage } from '@/api/notion/skill';
 import { getSkills } from '@/api/notion/skills';
@@ -25,6 +24,15 @@ export const dynamicParams = false;
 
 type Params = Promise<{ skillId: string }>;
 
+export async function generateMetadata(props: { params: Params }) {
+	const { skillId } = await props.params;
+
+	const skill = await getSkill(skillId);
+	return {
+		title: skill?.title,
+	};
+}
+
 const SkillPage = async (props: { params: Params }) => {
 	const { skillId } = await props.params;
 	console.log('[SSG] SkillPage', { skillId });
@@ -40,11 +48,6 @@ const SkillPage = async (props: { params: Params }) => {
 
 	return (
 		<div className="pt-16 mx-auto p-6">
-			<Head>
-				<meta name="description" content="React Notion X Minimal Demo" />
-				<title>{skill.title}</title>
-			</Head>
-
 			<div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
 				<section className="col-span-3 max-w-fit">
 					<div className="flex items-center bg-center">

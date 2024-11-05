@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { IconView } from '@/components/IconView';
+import { IconSlugView } from '@/components/IconSlugView';
 
 // Footer 컴포넌트 정의
 const Footer: React.FC = () => {
@@ -14,17 +14,17 @@ const Footer: React.FC = () => {
 				<ul className="flex space-x-4">
 					<li>
 						<Link href="https://velog.io/@kimjisub">
-							<IconView title="Velog" slug="velog" />
+							<IconSlugView title="Velog" slug="velog" />
 						</Link>
 					</li>
 					<li>
 						<Link href="https://github.com/kimjisub">
-							<IconView title="Github" slug="github" />
+							<IconSlugView title="Github" slug="github" />
 						</Link>
 					</li>
 					<li>
 						<Link href="https://www.linkedin.com/in/kimjisub">
-							<IconView title="Linkedin" slug="linkedin" />
+							<IconSlugView title="Linkedin" slug="linkedin" />
 						</Link>
 					</li>
 				</ul>

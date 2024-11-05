@@ -1,6 +1,5 @@
 import React from 'react';
 import { format } from 'date-fns';
-import Head from 'next/head';
 import Image from 'next/image';
 
 import { getProject, getProjectPage } from '@/api/notion/project';
@@ -27,6 +26,15 @@ export const revalidate = false;
 export const dynamicParams = false;
 
 type Params = Promise<{ projectId: string }>;
+
+export async function generateMetadata(props: { params: Params }) {
+	const { projectId } = await props.params;
+
+	const project = await getProject(projectId);
+	return {
+		title: project?.title,
+	};
+}
 
 const ProjectPage = async (props: { params: Params }) => {
 	const { projectId } = await props.params;
@@ -56,11 +64,6 @@ const ProjectPage = async (props: { params: Params }) => {
 
 	return (
 		<div className="pt-16 mx-auto p-6">
-			<Head>
-				<meta name="description" content="React Notion X Minimal Demo" />
-				<title>{project.title}</title>
-			</Head>
-
 			<div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
 				<section className="col-span-3 max-w-fit">
 					<div className="flex items-center bg-center space-x-2">

@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 import { getSkills } from '@/api/notion/skills';
-import { IconView } from '@/components/IconView';
+import { IconSlugView } from '@/components/IconSlugView';
 import { Title } from '@/components/Title';
 
 export default async function SkillsSection() {
@@ -23,7 +23,7 @@ export default async function SkillsSection() {
 					{skills.map(skill => {
 						return (
 							<Link href={`/skills/${skill.id}`} key={skill.id}>
-								<IconView
+								<IconSlugView
 									className="w-[100px] text-center"
 									key={skill.id}
 									title={skill.title}

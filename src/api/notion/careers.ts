@@ -35,33 +35,42 @@ export const getCareers = (): Promise<CareerT[]> =>
 		async () => {
 			console.time('[API] getCareers');
 			try {
-				const result = await notionApi.databases.query({
-					database_id: '89d24d36ad334e62a418d765d6ed4c0b',
-					filter: {
-						and: [
+				const allResults: any[] = [];
+				let nextCursor: string | null | undefined = undefined;
+
+				do {
+					const result = await notionApi.databases.query({
+						database_id: '89d24d36ad334e62a418d765d6ed4c0b',
+						start_cursor: nextCursor,
+						// filter: {
+						// 	and: [
+						// 		{
+						// 			property: '수상 순위',
+						// 			select: {
+						// 				does_not_equal: '비수상',
+						// 			},
+						// 		},
+						// 		{
+						// 			property: 'visible',
+						// 			checkbox: {
+						// 				equals: true,
+						// 			},
+						// 		},
+						// 	],
+						// },
+						sorts: [
 							{
-								property: '수상 순위',
-								select: {
-									does_not_equal: '비수상',
-								},
-							},
-							{
-								property: 'visible',
-								checkbox: {
-									equals: true,
-								},
+								property: '날짜',
+								direction: 'descending',
 							},
 						],
-					},
-					sorts: [
-						{
-							property: '날짜',
-							direction: 'descending',
-						},
-					],
-				});
+					});
 
-				return result.results.map((career: any) => ({
+					allResults.push(...result.results);
+					nextCursor = result.next_cursor;
+				} while (nextCursor);
+
+				return allResults.map((career: any) => ({
 					id: career.id as string,
 					title: career.properties['이름']?.title?.[0]?.text?.content as string,
 					description: career.properties['설명']?.rich_text?.[0]

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 import { SkillT } from '@/api/notion/skills';
-import { IconView } from '@/components/IconView';
+import { IconSlugView } from '@/components/IconSlugView';
 
 const blur = 'bg-white bg-opacity-60 backdrop-filter backdrop-blur-sm';
 
@@ -17,7 +17,7 @@ export const SkillItem = ({ className, skill }: SkillItemProps) => {
 
 	return (
 		<Link href={`/skills/${skill.id}`} prefetch>
-			<IconView
+			<IconSlugView
 				className="w-[100px] text-center"
 				key={skill.id}
 				title={skill.title}

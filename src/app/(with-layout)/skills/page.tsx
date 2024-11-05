@@ -10,7 +10,7 @@ export default async function SkillsPage() {
 	const skills = await getSkills();
 
 	return (
-		<section className="pt-16 h-screen mx-auto my-0 p-20 max-w-5xl">
+		<section className="pt-16 mx-auto my-0 p-20 max-w-5xl">
 			<h1 className="text-4xl font-bold">Skills</h1>
 			<h2 className="text-2xl">제가 구사할 수 있는 능력들이에요</h2>
 

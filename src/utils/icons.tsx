@@ -1,5 +1,15 @@
+import dynamic from 'next/dynamic';
 import type { SimpleIcon } from 'simple-icons';
 import * as simpleIcons from 'simple-icons';
+
+import Github from '@/icon/github.svg';
+console.log('@/icon/github.svg', Github);
+
+import Github2 from '@/icon/github.svg?url';
+console.log('@/icon/github.svg?url', Github2);
+
+import Github3 from '@/icon/github.svg?raw';
+console.log('@/icon/github.svg?raw', Github3);
 
 const icons = simpleIcons as unknown as { [key: string]: SimpleIcon };
 
@@ -10,13 +20,15 @@ function svgToDataUrl(svg: string) {
 }
 
 export function getSimpleIconBySlug(slug: string): {
-	title: string;
-	slug: string;
-	svg: string;
+	// title: string;
+	// slug: string;
+	// svg: string;
 	path: string;
-	source: string;
+	// source: string;
 	hex: string;
 } | null {
+	if (!slug) return null;
+
 	const siSlug = `si${
 		slug.charAt(0).toUpperCase() + slug.slice(1)
 	}` as keyof typeof icons;
@@ -27,8 +39,22 @@ export function getSimpleIconBySlug(slug: string): {
 	return icon;
 }
 
+export function getCustomIconBySlug(slug: string) {
+	const Icon = dynamic(() => import(`@/icon/${slug}.svg`), {
+		ssr: true,
+	});
+
+	return Icon;
+}
+
+export function getIconBySlug(slug: string) {
+	// return getCustomIconBySlug(slug) || getSimpleIconBySlug(slug);
+	return getSimpleIconBySlug(slug);
+}
+
+// matter-js에서 사용
 export function generateIconSvgCode(slug: string) {
-	const icon = getSimpleIconBySlug(slug);
+	const icon = getIconBySlug(slug);
 
 	// iconSlug가 없으면 빈 svg를 반환
 	if (!icon) return svgToDataUrl(emptySvg);
@@ -48,5 +74,5 @@ export function generateIconSvgCode(slug: string) {
   </svg>
   `;
 
-	return `data:image/svg+xml;utf8,${encodeURIComponent(svgCode)}`;
+	return svgToDataUrl(svgCode);
 }

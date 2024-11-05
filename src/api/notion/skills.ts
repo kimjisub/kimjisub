@@ -34,27 +34,36 @@ export const getSkills = (): Promise<SkillT[]> =>
 		async () => {
 			console.time('[API] getSkills');
 			try {
-				const result = await notionApi.databases.query({
-					database_id: 'f3f9bf321850465d9d193c39e2a06d3e',
-					filter: {
-						and: [
-							{
-								property: 'visible',
-								checkbox: {
-									equals: true,
-								},
-							},
-						],
-					},
-					// sorts: [
-					// 	{
-					// 		property: '중요도',
-					// 		direction: 'ascending',
-					// 	},
-					// ],
-				});
+				const allResults: any[] = [];
+				let nextCursor: string | null | undefined = undefined;
 
-				return result.results.map((skill: any) => {
+				do {
+					const result = await notionApi.databases.query({
+						database_id: 'f3f9bf321850465d9d193c39e2a06d3e',
+						start_cursor: nextCursor,
+						// filter: {
+						// 	and: [
+						// 		{
+						// 			property: 'visible',
+						// 			checkbox: {
+						// 				equals: true,
+						// 			},
+						// 		},
+						// 	],
+						// },
+						// sorts: [
+						// 	{
+						// 		property: '중요도',
+						// 		direction: 'ascending',
+						// 	},
+						// ],
+					});
+
+					allResults.push(...result.results);
+					nextCursor = result.next_cursor;
+				} while (nextCursor);
+
+				return allResults.map((skill: any) => {
 					const iconSlugSplit =
 						skill.properties['iconSlug']?.rich_text?.[0]?.plain_text?.split(
 							'|',

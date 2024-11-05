@@ -40,27 +40,36 @@ export const getProjects: () => Promise<ProjectT[]> = unstable_cache(
 	async () => {
 		console.time('[API] getProjects');
 		try {
-			const result = await notionApi.databases.query({
-				database_id: '1aef42d566f84045a94303d07ea12e95',
-				filter: {
-					and: [
+			const allResults: any[] = [];
+			let nextCursor: string | null | undefined = undefined;
+
+			do {
+				const result = await notionApi.databases.query({
+					database_id: '1aef42d566f84045a94303d07ea12e95',
+					start_cursor: nextCursor,
+					// filter: {
+					// 	and: [
+					// 		{
+					// 			property: 'visible',
+					// 			checkbox: {
+					// 				equals: true,
+					// 			},
+					// 		},
+					// 	],
+					// },
+					sorts: [
 						{
-							property: 'visible',
-							checkbox: {
-								equals: true,
-							},
+							property: '중요도',
+							direction: 'ascending',
 						},
 					],
-				},
-				sorts: [
-					{
-						property: '중요도',
-						direction: 'ascending',
-					},
-				],
-			});
+				});
 
-			const projects = result.results.map((project: any) => ({
+				allResults.push(...result.results);
+				nextCursor = result.next_cursor;
+			} while (nextCursor);
+
+			const projects = allResults.map((project: any) => ({
 				id: project.id as string,
 				title: project.properties['이름']?.title?.[0]?.text?.content as string,
 				description: project.properties['설명']?.rich_text?.[0]
