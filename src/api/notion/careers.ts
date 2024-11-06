@@ -6,8 +6,8 @@
 
 import { Mutex } from 'async-mutex';
 import { parseISO } from 'date-fns';
-import { unstable_cache } from 'next/cache';
 
+import { NotionCache } from '../cache/notion-cache';
 import { notionApi } from '../notion';
 
 export type CareerT = {
@@ -32,25 +32,10 @@ export type CareerT = {
 };
 
 const mutex = new Mutex();
-let cache: CareerT[] | null = null;
 
-export const getCareers = (): Promise<CareerT[]> =>
+export const getCareers = () =>
 	mutex.runExclusive(async () =>
-		unstable_cache(
-			async () => {
-				if (process.env.NEXT_PHASE === 'phase-production-build' && cache)
-					return cache;
-
-				const careers = await fetchCareers();
-
-				if (process.env.NEXT_PHASE === 'phase-production-build')
-					cache = careers;
-
-				return careers;
-			},
-			['careers'],
-			{ revalidate: 3600, tags: ['careers'] },
-		)(),
+		NotionCache.getInstance().cacheCareers(fetchCareers),
 	);
 
 const fetchCareers = async () => {

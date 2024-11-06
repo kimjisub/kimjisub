@@ -5,7 +5,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
 import { Mutex } from 'async-mutex';
-import { unstable_cache } from 'next/cache';
+
+import { NotionCache } from '../cache/notion-cache';
 
 import { notionApi } from '.';
 
@@ -31,24 +32,10 @@ export type SkillT = {
 };
 
 const mutex = new Mutex();
-let cache: SkillT[] | null = null;
 
-export const getSkills = (): Promise<SkillT[]> =>
+export const getSkills = () =>
 	mutex.runExclusive(async () =>
-		unstable_cache(
-			async () => {
-				if (process.env.NEXT_PHASE === 'phase-production-build' && cache)
-					return cache;
-
-				const skills = await fetchSkills();
-
-				if (process.env.NEXT_PHASE === 'phase-production-build') cache = skills;
-
-				return skills;
-			},
-			['skills'],
-			{ revalidate: 3600, tags: ['skills'] },
-		)(),
+		NotionCache.getInstance().cacheSkills(fetchSkills),
 	);
 
 const fetchSkills = async () => {

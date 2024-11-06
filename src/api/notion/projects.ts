@@ -6,7 +6,8 @@
 
 import { Mutex } from 'async-mutex';
 import { parseISO } from 'date-fns';
-import { unstable_cache } from 'next/cache';
+
+import { NotionCache } from '../cache/notion-cache';
 
 import { notionApi } from '.';
 
@@ -38,25 +39,10 @@ export type ProjectT = {
 };
 
 const mutex = new Mutex();
-let cache: ProjectT[] | null = null;
 
-export const getProjects = (): Promise<ProjectT[]> =>
+export const getProjects = () =>
 	mutex.runExclusive(async () =>
-		unstable_cache(
-			async () => {
-				if (process.env.NEXT_PHASE === 'phase-production-build' && cache)
-					return cache;
-
-				const projects = await fetchProjects();
-
-				if (process.env.NEXT_PHASE === 'phase-production-build')
-					cache = projects;
-
-				return projects;
-			},
-			['projects'],
-			{ revalidate: 3600, tags: ['projects'] },
-		)(),
+		NotionCache.getInstance().cacheProjects(fetchProjects),
 	);
 
 const fetchProjects = async () => {
