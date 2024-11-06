@@ -1,10 +1,10 @@
 import React from 'react';
+import { Badge, DataList } from '@radix-ui/themes';
 import { format } from 'date-fns';
 import Image from 'next/image';
 
 import { getProject, getProjectPage } from '@/api/notion/project';
 import { getProjects } from '@/api/notion/projects';
-import Badge from '@/components/Badge';
 import { CareerItem } from '@/components/CareerItem';
 import { JsonView } from '@/components/JsonView';
 import { NotionClientRenderer } from '@/components/NotionPage';
@@ -80,10 +80,10 @@ const ProjectPage = async (props: { params: Params }) => {
 				</section>
 
 				<section className="col-span-2">
-					<div className="space-y-4">
-						<div>
-							날짜
-							<div className="space-x-2">
+					<DataList.Root>
+						<DataList.Item>
+							<DataList.Label minWidth="88px">날짜</DataList.Label>
+							<DataList.Value>
 								{project.date.start && project.date.end ? (
 									<div>
 										{`${format(project.date.start, 'yyyy-MM-dd')} ~ ${format(
@@ -94,61 +94,57 @@ const ProjectPage = async (props: { params: Params }) => {
 								) : project.date.start ? (
 									<div>{format(project.date.start, 'yyyy-MM-dd')}</div>
 								) : null}
-							</div>
-						</div>
-						<div>
-							태그
-							<div className="space-x-2">
+							</DataList.Value>
+						</DataList.Item>
+						<DataList.Item>
+							<DataList.Label minWidth="88px">태그</DataList.Label>
+							<DataList.Value className="space-x-2">
 								{project.태그.map(tag => (
-									<Badge key={tag.name} text={tag.name} color={tag.color} />
+									<Badge key={tag.name} color={tag.color}>
+										{tag.name}
+									</Badge>
 								))}
-							</div>
-						</div>
-						<div>
-							분류
-							<div className="space-x-2">
+							</DataList.Value>
+						</DataList.Item>
+						<DataList.Item>
+							<DataList.Label minWidth="88px">분류</DataList.Label>
+							<DataList.Value className="space-x-2">
 								{project.분류.map(category => (
-									<Badge
-										key={category.name}
-										text={category.name}
-										color={category.color}
-									/>
+									<Badge key={category.name} color={category.color}>
+										{category.name}
+									</Badge>
 								))}
-							</div>
-						</div>
-						<div>
-							맡은 업무
-							<div className="space-x-2">
+							</DataList.Value>
+						</DataList.Item>
+						<DataList.Item>
+							<DataList.Label minWidth="88px">맡은 업무</DataList.Label>
+							<DataList.Value className="space-x-2">
 								{project['맡은 업무'].map(role => (
-									<Badge key={role.name} text={role.name} color={role.color} />
+									<Badge key={role.name} color={role.color}>
+										{role.name}
+									</Badge>
 								))}
-							</div>
-						</div>
-						<div className="space-y-4">
-							<h2>주요 기술</h2>
-							<div
-								className="grid gap-4"
-								style={{
-									gridTemplateColumns: 'repeat(auto-fill, minmax(48px, 1fr))',
-								}}>
+							</DataList.Value>
+						</DataList.Item>
+						<DataList.Item>
+							<DataList.Label minWidth="88px">주요 기술</DataList.Label>
+							<DataList.Value className="space-x-2">
 								{project.relatedTechSkills.map(skill => (
 									<SkillItem key={skill.id} skill={skill} />
 								))}
-							</div>
-						</div>
-
-						<div className="space-y-4">
-							<h2>프로그래밍 언어</h2>
-							<div
-								className="grid gap-4"
-								style={{
-									gridTemplateColumns: 'repeat(auto-fill, minmax(48px, 1fr))',
-								}}>
+							</DataList.Value>
+						</DataList.Item>
+						<DataList.Item>
+							<DataList.Label minWidth="88px">프로그래밍 언어</DataList.Label>
+							<DataList.Value className="space-x-2">
 								{project.relatedLanguageSkills.map(skill => (
 									<SkillItem key={skill.id} skill={skill} />
 								))}
-							</div>
-						</div>
+							</DataList.Value>
+						</DataList.Item>
+					</DataList.Root>
+
+					<div className="space-y-4">
 						<div className="space-y-4">
 							<h2>관련된 Careers</h2>
 							<div

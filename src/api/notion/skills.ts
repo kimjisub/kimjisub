@@ -5,10 +5,11 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
 import { Mutex } from 'async-mutex';
-
-import { NotionCache } from '../cache/notion-cache';
+import { unstable_cache } from 'next/cache';
 
 import { notionApi } from '.';
+
+import { isBuildPhase } from '@/utils/phase';
 
 export type SkillT = {
 	id: string;
@@ -30,13 +31,6 @@ export type SkillT = {
 	coverImageUrl: string;
 	raw: any;
 };
-
-const mutex = new Mutex();
-
-export const getSkills = () =>
-	mutex.runExclusive(async () =>
-		NotionCache.getInstance().cacheSkills(fetchSkills),
-	);
 
 const fetchSkills = async () => {
 	console.log('[API] getSkills');
@@ -99,7 +93,7 @@ const fetchSkills = async () => {
 				'기술로써 사용된 프로젝트'
 			]?.relation?.map(({ id }: { id: string }) => id) as string[],
 			projectUsedByLanguage: skill.properties[
-				'기술로써 사용된 프로젝트'
+				'언어로써 사용된 프로젝트'
 			]?.relation?.map(({ id }: { id: string }) => id) as string[],
 			관련_기술: skill.properties['관련 기술']?.relation?.map(
 				({ id }: { id: string }) => id,
@@ -111,8 +105,31 @@ const fetchSkills = async () => {
 			coverImageUrl: skill['cover']?.file?.url as string,
 
 			raw: skill,
-		};
+		} as SkillT;
 	});
 
 	return skills;
+};
+
+const mutex = new Mutex();
+
+// export const getSkills = () =>
+// 	mutex.runExclusive(async () =>
+// 		NotionCache.getInstance().cacheSkills(fetchSkills),
+// 	);
+let buildCache: Awaited<ReturnType<typeof fetchSkills>> | null = null;
+export const getSkills = async () => {
+	if (isBuildPhase()) {
+		return await mutex.runExclusive(async () => {
+			if (buildCache) return buildCache;
+			const data = await fetchSkills();
+			buildCache = data;
+			return data;
+		});
+	} else {
+		return await unstable_cache(async () => {
+			const data = await fetchSkills();
+			return data;
+		}, ['skills'])();
+	}
 };

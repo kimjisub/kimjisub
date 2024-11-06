@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { Text, Tooltip } from '@radix-ui/themes';
+import { Badge, Text, Tooltip } from '@radix-ui/themes';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
@@ -130,9 +130,9 @@ const TopBar: React.FC = () => {
 								onClick={() => handleLinkClick('/graph')}>
 								<p className="space-x-2">
 									<span>Graph</span>
-									<span className="badge bg-blue-500 text-white rounded-full px-2 py-1 text-xs">
+									<Badge color="orange" radius="full" variant="solid" size="2">
 										beta
-									</span>
+									</Badge>
 								</p>
 							</li>
 						</ul>

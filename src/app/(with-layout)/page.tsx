@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { getGitHubContributions } from '@/api/github';
 import GithubSection from '@/components/introduce/GithubSection';
 import IntroduceSection from '@/components/introduce/IntroduceSection';
+import ProjectSection from '@/components/introduce/ProjectSection';
 import SkillsSection from '@/components/introduce/SkillSection';
 import TimeLineSection from '@/components/introduce/TimeLineSection';
 
@@ -19,9 +20,10 @@ export default async function Home() {
 	return (
 		<main className="pt-16 flex flex-col min-h-screen py-4 snap-y snap-mandatory">
 			<IntroduceSection />
-			<SkillsSection />
-			<GithubSection data={contribute} fromDate={fromDate} />
 			<TimeLineSection />
+			<ProjectSection />
+			<GithubSection data={contribute} fromDate={fromDate} />
+			<SkillsSection />
 		</main>
 	);
 }

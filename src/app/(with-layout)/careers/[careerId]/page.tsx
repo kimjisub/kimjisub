@@ -1,10 +1,10 @@
 import React from 'react';
+import { Badge, DataList } from '@radix-ui/themes';
 import { format } from 'date-fns';
 import Image from 'next/image';
 
 import { getCareer, getCareerPage } from '@/api/notion/career';
 import { getCareers } from '@/api/notion/careers';
-import Badge from '@/components/Badge';
 import { JsonView } from '@/components/JsonView';
 import { NotionClientRenderer } from '@/components/NotionPage';
 import { ProjectItem } from '@/components/ProjectItem';
@@ -80,53 +80,55 @@ const CareerPage = async (props: { params: Params }) => {
 
 				<section className="col-span-2">
 					<div className="space-y-4">
-						<div>
-							날짜
-							<div className="space-x-2">
-								{career.date.start && career.date.end ? (
-									<div>
-										{`${format(career.date.start, 'yyyy-MM-dd')} ~ ${format(
-											career.date.end,
-											'yyyy-MM-dd',
-										)}`}
-									</div>
-								) : career.date.start ? (
-									<div>{format(career.date.start, 'yyyy-MM-dd')}</div>
-								) : null}
-							</div>
-						</div>
-						<div>
-							수상 및 수료
-							<div className="space-x-2">{career.awardsAndCertifications}</div>
-						</div>
-						<div>
-							기관
-							<div className="space-x-2">
-								{career.institutions.map(institution => (
-									<Badge
-										key={institution.name}
-										text={institution.name}
-										color={institution.color}
-									/>
-								))}
-							</div>
-						</div>
-						<div>
-							importance
-							<div className="space-x-2">{career.importance}</div>
-						</div>
-						<div>
-							분류
-							<div className="space-x-2">
-								{career.categories.map(category => (
-									<Badge
-										key={category.name}
-										text={category.name}
-										color={category.color}
-									/>
-								))}
-							</div>
-						</div>
+						<DataList.Root>
+							<DataList.Item>
+								<DataList.Label minWidth="88px">날짜</DataList.Label>
+								<DataList.Value>
+									{career.date.start && career.date.end ? (
+										<div>
+											{`${format(career.date.start, 'yyyy-MM-dd')} ~ ${format(
+												career.date.end,
+												'yyyy-MM-dd',
+											)}`}
+										</div>
+									) : career.date.start ? (
+										<div>{format(career.date.start, 'yyyy-MM-dd')}</div>
+									) : null}
+								</DataList.Value>
+							</DataList.Item>
+							<DataList.Item>
+								<DataList.Label minWidth="88px">수상 및 수료</DataList.Label>
+								<DataList.Value className="space-x-2">
+									{career.awardsAndCertifications}
+								</DataList.Value>
+							</DataList.Item>
+							<DataList.Item>
+								<DataList.Label minWidth="88px">기관</DataList.Label>
+								<DataList.Value className="space-x-2">
+									{career.institutions.map(institution => (
+										<Badge key={institution.name} color={institution.color}>
+											{institution.name}
+										</Badge>
+									))}
+								</DataList.Value>
+							</DataList.Item>
+							<DataList.Item>
+								<DataList.Label minWidth="88px">importance</DataList.Label>
+								<DataList.Value className="space-x-2">
+									{career.importance}
+								</DataList.Value>
+							</DataList.Item>
+							<DataList.Item>
+								<DataList.Label minWidth="88px">분류</DataList.Label>
+								<DataList.Value className="space-x-2">
+									{career.categories.map(category => (
+										<Badge key={category.name} color={category.color}>
+											{category.name}
+										</Badge>
+									))}
+								</DataList.Value>
+							</DataList.Item>
+						</DataList.Root>
 
 						<div className="space-y-4">
 							<h2>관련된 프로젝트</h2>

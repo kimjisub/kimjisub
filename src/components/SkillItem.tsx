@@ -18,7 +18,7 @@ export const SkillItem = ({ className, skill }: SkillItemProps) => {
 	return (
 		<Link href={`/skills/${skill.id}`} prefetch>
 			<IconSlugView
-				className="w-[100px] text-center"
+				className="text-center"
 				key={skill.id}
 				title={skill.title}
 				slug={skill.slug}
