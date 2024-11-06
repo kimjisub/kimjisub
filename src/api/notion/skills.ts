@@ -34,9 +34,9 @@ const mutex = new Mutex();
 let cache: SkillT[] | null = null;
 
 export const getSkills = (): Promise<SkillT[]> =>
-	unstable_cache(
-		async () =>
-			mutex.runExclusive(async () => {
+	mutex.runExclusive(async () =>
+		unstable_cache(
+			async () => {
 				if (process.env.NEXT_PHASE === 'phase-production-build' && cache)
 					return cache;
 
@@ -45,10 +45,11 @@ export const getSkills = (): Promise<SkillT[]> =>
 				if (process.env.NEXT_PHASE === 'phase-production-build') cache = skills;
 
 				return skills;
-			}),
-		['skills'],
-		{ revalidate: 3600, tags: ['skills'] },
-	)();
+			},
+			['skills'],
+			{ revalidate: 3600, tags: ['skills'] },
+		)(),
+	);
 
 const fetchSkills = async () => {
 	console.log('[API] getSkills');

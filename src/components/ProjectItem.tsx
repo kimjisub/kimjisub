@@ -45,7 +45,7 @@ export const ProjectItem = ({ className, project }: ProjectItemProps) => {
 	return (
 		<Link href={`/projects/${project.id}`} prefetch>
 			<article
-				className={`cursor-pointer rounded-[28px] border-2 border-gray-200 m-2 mix-blend-difference ${className}`}
+				className={`cursor-pointer rounded-[28px] border-2 border-gray-200 m-2 ${className}`}
 				onMouseEnter={() => setIsHovered(true)}
 				onMouseLeave={() => setIsHovered(false)}>
 				<div className="relative h-64 ">

@@ -1,3 +1,4 @@
+import { Theme } from '@radix-ui/themes';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
@@ -5,6 +6,7 @@ import '../globals.css';
 import 'react-notion-x/src/styles.css';
 import 'prismjs/themes/prism-tomorrow.css';
 import 'katex/dist/katex.min.css';
+import '@radix-ui/themes/styles.css';
 
 import Footer from '@/components/Footer';
 import TopBar from '@/components/TopBar';
@@ -26,9 +28,11 @@ export default function RootLayout({
 		<html>
 			<AppInfoProvider>
 				<body className={`flex flex-col min-h-screen ${inter.className}`}>
-					<TopBar />
-					<main className="flex-grow">{children}</main>
-					<Footer />
+					<Theme>
+						<TopBar />
+						<main className="flex-grow">{children}</main>
+						<Footer />
+					</Theme>
 				</body>
 			</AppInfoProvider>
 		</html>

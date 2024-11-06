@@ -35,9 +35,9 @@ const mutex = new Mutex();
 let cache: CareerT[] | null = null;
 
 export const getCareers = (): Promise<CareerT[]> =>
-	unstable_cache(
-		async () =>
-			mutex.runExclusive(async () => {
+	mutex.runExclusive(async () =>
+		unstable_cache(
+			async () => {
 				if (process.env.NEXT_PHASE === 'phase-production-build' && cache)
 					return cache;
 
@@ -47,10 +47,11 @@ export const getCareers = (): Promise<CareerT[]> =>
 					cache = careers;
 
 				return careers;
-			}),
-		['careers'],
-		{ revalidate: 3600, tags: ['careers'] },
-	)();
+			},
+			['careers'],
+			{ revalidate: 3600, tags: ['careers'] },
+		)(),
+	);
 
 const fetchCareers = async () => {
 	console.log('[API] getCareers');

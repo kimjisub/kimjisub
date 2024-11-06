@@ -41,9 +41,9 @@ const mutex = new Mutex();
 let cache: ProjectT[] | null = null;
 
 export const getProjects = (): Promise<ProjectT[]> =>
-	unstable_cache(
-		async () =>
-			mutex.runExclusive(async () => {
+	mutex.runExclusive(async () =>
+		unstable_cache(
+			async () => {
 				if (process.env.NEXT_PHASE === 'phase-production-build' && cache)
 					return cache;
 
@@ -53,10 +53,11 @@ export const getProjects = (): Promise<ProjectT[]> =>
 					cache = projects;
 
 				return projects;
-			}),
-		['projects'],
-		{ revalidate: 3600, tags: ['projects'] },
-	)();
+			},
+			['projects'],
+			{ revalidate: 3600, tags: ['projects'] },
+		)(),
+	);
 
 const fetchProjects = async () => {
 	console.log('[API] getProjects');

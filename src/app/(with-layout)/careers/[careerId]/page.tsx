@@ -18,9 +18,9 @@ export async function generateStaticParams() {
 	return careerIds;
 }
 
-export const revalidate = false;
+export const revalidate = 3600;
 
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 type Params = Promise<{ careerId: string }>;
 

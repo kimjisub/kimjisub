@@ -11,7 +11,11 @@ export default async function SkillsSection() {
 	return (
 		<section className="flex justify-center items-center">
 			<div className="w-full max-w-5xl mx-auto px-4">
-				<Title title="Skills" subTitle="제가 구사할 수 있는 능력들이에요" />
+				<Title
+					title="Skills"
+					subTitle="상상을 현실로 만들기 위해, 분야를 막론하고 세상의 기술들을 배워나가고
+				있습니다."
+				/>
 
 				<div
 					className="my-8"

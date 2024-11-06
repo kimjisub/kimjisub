@@ -10,7 +10,7 @@ import TimeLineSection from '@/components/introduce/TimeLineSection';
 // import { getGitHubContributions } from '@/api/github';
 
 gsap.registerPlugin(ScrollTrigger);
-export const revalidate = false;
+export const revalidate = 3600;
 
 export default async function Home() {
 	const fromDate = new Date('2016-01-01');

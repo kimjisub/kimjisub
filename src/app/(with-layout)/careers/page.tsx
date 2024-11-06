@@ -3,7 +3,7 @@ import React from 'react';
 import { getCareers } from '@/api/notion/careers';
 import { CareerItem } from '@/components/CareerItem';
 
-export const revalidate = false;
+export const revalidate = 3600;
 export default async function CareersPage() {
 	console.log('[SSG] CareersPage');
 

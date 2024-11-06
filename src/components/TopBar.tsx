@@ -1,11 +1,10 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
+import { Text, Tooltip } from '@radix-ui/themes';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-
-import MaintainingBar from './MaintainingBar';
 
 const blur = 'bg-white bg-opacity-60 backdrop-filter backdrop-blur-lg';
 
@@ -53,17 +52,23 @@ const TopBar: React.FC = () => {
 			<div
 				className={`h-16 mx-auto px-6 flex justify-between items-center container`}>
 				<div className="flex items-center w-auto flex-grow justify-between">
-					<Link href="/" className="text-xl font-bold mr-6 flex items-center">
-						<Image
-							src="/logo192.png"
-							alt="logo"
-							width={36}
-							height={36}
-							className="mr-4 rounded-full"
-						/>
-						jisub.kim
-					</Link>
-
+					<div className="flex items-center">
+						<Link href="/" className="text-xl font-bold mr-6 flex items-center">
+							<Image
+								src="/logo192.png"
+								alt="logo"
+								width={36}
+								height={36}
+								className="mr-4 rounded-full"
+							/>
+							jisub.kim
+						</Link>
+						<Tooltip
+							content="아직 개발이 진행중입니다. 일부 레이아웃이 정상적으로 표시되지
+									않을 수 있습니다.">
+							<Text>🚧</Text>
+						</Tooltip>
+					</div>
 					<div className="flex">
 						<p
 							onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -134,7 +139,6 @@ const TopBar: React.FC = () => {
 					</div>
 				</div>
 			</div>
-			<MaintainingBar />
 		</nav>
 	);
 };
