@@ -141,9 +141,17 @@ export const getCareers = async () => {
 			return data;
 		});
 	} else {
-		return await unstable_cache(async () => {
-			const data = await fetchCareers();
-			return data;
-		}, ['careers'])();
+		const getCachedCareers = unstable_cache(
+			async () => {
+				const data = await fetchCareers();
+				return data;
+			},
+			[],
+			{
+				tags: ['careers'],
+				revalidate: 60 * 60,
+			},
+		);
+		return await getCachedCareers();
 	}
 };

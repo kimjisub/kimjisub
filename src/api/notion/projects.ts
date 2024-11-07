@@ -150,9 +150,18 @@ export const getProjects = async () => {
 			return data;
 		});
 	} else {
-		return await unstable_cache(async () => {
-			const data = await fetchProjects();
-			return data;
-		}, ['projects'])();
+		const getCachedProjects = unstable_cache(
+			async () => {
+				const data = await fetchProjects();
+				return data;
+			},
+			[],
+			{
+				tags: ['projects'],
+				revalidate: 60 * 60,
+			},
+		);
+
+		return await getCachedProjects();
 	}
 };

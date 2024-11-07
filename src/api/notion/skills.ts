@@ -127,9 +127,18 @@ export const getSkills = async () => {
 			return data;
 		});
 	} else {
-		return await unstable_cache(async () => {
-			const data = await fetchSkills();
-			return data;
-		}, ['skills'])();
+		const getCachedSkills = unstable_cache(
+			async () => {
+				const data = await fetchSkills();
+				return data;
+			},
+			[],
+			{
+				tags: ['skills'],
+				revalidate: 60 * 60,
+			},
+		);
+
+		return await getCachedSkills();
 	}
 };
