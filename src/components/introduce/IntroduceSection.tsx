@@ -1,25 +1,13 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Text } from '@radix-ui/themes';
 import Image from 'next/image';
 
 export default function IntroduceSection() {
-	const [intro, setIntro] = useState('배우는 것을 즐기는 개발자');
-
-	useEffect(() => {
-		const intros = ['T-shaped Developer', '세상에 호기심이 많은 제너럴리스트'];
-
-		const interval = setInterval(() => {
-			setIntro(intros[(intros.indexOf(intro) + 1) % intros.length]);
-		}, 5000);
-
-		return () => clearInterval(interval);
-	}, [intro]);
-
 	return (
 		<section className="flex content-center items-center justify-center snap-start h-[600px]">
-			<div className="content-center self-center bg-white transition-transform duration-200 hover:transform hover:scale-105 aspect-[3/2] w-[66vw] p-8 rounded-lg outline-1">
+			<div className="content-center self-center bg-white transition-transform duration-200 aspect-[3/2] w-[66vw] p-8 rounded-lg outline-1">
 				<div className="flex content-center gap-16 h-full">
 					<div className="flex flex-col flex-[3] content-center items-center self-center space-y-4">
 						<Image
@@ -30,7 +18,6 @@ export default function IntroduceSection() {
 							height={128}
 						/>
 						<h1 className="text-6xl font-extralight">김지섭</h1>
-						<p className="text-2xl font-bold text-gray-700 mb-4">{intro}</p>
 					</div>
 					<div className="flex-[5] self-center">
 						<div>

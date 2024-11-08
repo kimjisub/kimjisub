@@ -6,7 +6,7 @@ import { IconSlugView } from '@/components/IconSlugView';
 import { Title } from '@/components/Title';
 
 export default async function SkillsSection() {
-	const skills = await getSkills();
+	const { skills } = await getSkills();
 
 	return (
 		<section className="flex justify-center items-center">
@@ -33,7 +33,6 @@ export default async function SkillsSection() {
 									title={skill.title}
 									slug={skill.slug}
 									color={skill.iconColor}
-									raw={skill}
 								/>
 							</Link>
 						);

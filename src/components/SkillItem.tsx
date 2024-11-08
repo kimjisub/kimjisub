@@ -1,29 +1,25 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 
 import { SkillT } from '@/api/notion/skills';
 import { IconSlugView } from '@/components/IconSlugView';
 
-const blur = 'bg-white bg-opacity-60 backdrop-filter backdrop-blur-sm';
-
 export interface SkillItemProps {
-	className?: string;
 	skill: SkillT;
+	variant?: 'default' | 'inline';
 }
-export const SkillItem = ({ className, skill }: SkillItemProps) => {
-	const [isHovered, setIsHovered] = useState(false);
-
+export const SkillItem = ({ skill, variant = 'default' }: SkillItemProps) => {
 	return (
-		<Link href={`/skills/${skill.id}`} prefetch>
+		<Link href={`/skills/${skill.id}`} prefetch className="inline">
 			<IconSlugView
 				className="text-center"
+				variant={variant}
 				key={skill.id}
 				title={skill.title}
 				slug={skill.slug}
 				color={skill.iconColor}
-				raw={skill}
 			/>
 		</Link>
 	);
