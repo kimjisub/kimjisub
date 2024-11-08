@@ -1,7 +1,10 @@
 import React from 'react';
+import { Text } from '@radix-ui/themes';
+import { format } from 'date-fns';
 
 import { getSkill, getSkillPage } from '@/api/notion/skill';
 import { getSkills } from '@/api/notion/skills';
+import DebugView from '@/components/DebugView';
 import { JsonView } from '@/components/JsonView';
 import { NotionClientRenderer } from '@/components/NotionPage';
 import { ProjectItem } from '@/components/ProjectItem';
@@ -9,11 +12,10 @@ import { SkillItem } from '@/components/SkillItem';
 
 export async function generateStaticParams() {
 	console.log('[generateStaticParams]', 'skills/[skillId]');
-	const skills = await getSkills();
-	const skillIds = skills.map(skill => ({
+	const { skills } = await getSkills();
+	return skills.map(skill => ({
 		skillId: skill.id,
 	}));
-	return skillIds;
 }
 
 export const revalidate = 3600;
@@ -25,9 +27,9 @@ type Params = Promise<{ skillId: string }>;
 export async function generateMetadata(props: { params: Params }) {
 	const { skillId } = await props.params;
 
-	const skill = await getSkill(skillId);
+	const { skill } = await getSkill(skillId);
 	return {
-		title: skill?.title,
+		title: skill?.title || 'Not found',
 	};
 }
 
@@ -35,10 +37,10 @@ const SkillPage = async (props: { params: Params }) => {
 	const { skillId } = await props.params;
 	console.log('[SSG] SkillPage', { skillId });
 
-	const [skill, recordMap] = await Promise.all([
-		getSkill(skillId),
-		getSkillPage(skillId),
-	]);
+	const [
+		{ skill, fetchedAt },
+		{ extendedRecordMap, fetchedAt: pageFetchedAt },
+	] = await Promise.all([getSkill(skillId), getSkillPage(skillId)]);
 
 	if (!skill) {
 		return <div>Skill not found</div>;
@@ -56,11 +58,14 @@ const SkillPage = async (props: { params: Params }) => {
 					<NotionClientRenderer
 						className="w-full"
 						rootPageId={skillId}
-						recordMap={recordMap}
+						recordMap={extendedRecordMap}
 						fullPage={false}
 						darkMode={false}
 						disableHeader
 					/>
+					<DebugView>
+						<Text>{format(pageFetchedAt, 'yyyy-MM-dd HH:mm:ss')}</Text>
+					</DebugView>
 				</section>
 
 				<section className="col-span-2">
@@ -100,7 +105,7 @@ const SkillPage = async (props: { params: Params }) => {
 								style={{
 									gridTemplateColumns: 'repeat(auto-fill, minmax(48px, 1fr))',
 								}}>
-								{skill.relatedSkill.map(skill => (
+								{skill.relatedSkills.map(skill => (
 									<SkillItem key={skill.id} skill={skill} />
 								))}
 							</div>
@@ -110,15 +115,18 @@ const SkillPage = async (props: { params: Params }) => {
 							<h2>관련된 프로젝트</h2>
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5 justify-center max-x-1xl">
 								{[
-									...skill.relatedProjectUsedByLanguage,
-									...skill.relatedProjectUsedBySkill,
+									...skill.relatedProjectsUsedByLanguage,
+									...skill.relatedProjectsUsedBySkill,
 								].map(project => (
 									<ProjectItem key={project.id} project={project} />
 								))}
 							</div>
 						</div>
 
-						<JsonView src={skill} collapsed />
+						<DebugView>
+							<Text>{format(fetchedAt, 'yyyy-MM-dd HH:mm:ss')}</Text>
+							<JsonView src={skill} collapsed />
+						</DebugView>
 					</div>
 				</section>
 			</div>

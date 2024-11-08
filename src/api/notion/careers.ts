@@ -121,7 +121,7 @@ const fetchCareers = async () => {
 			} as CareerT),
 	);
 
-	return careers;
+	return { careers, fetchedAt: new Date() };
 };
 
 const mutex = new Mutex();

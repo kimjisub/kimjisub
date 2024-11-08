@@ -12,15 +12,22 @@ export interface GithubSectionProps {
 
 export default function GithubSection({ data, fromDate }: GithubSectionProps) {
 	return (
-		<div>
-			<Title title="Github" subTitle="Github Hitmap" />
-			<div
-				className="overflow-x-auto whitespace-nowrap"
-				style={{ overflowX: 'auto' }}>
-				<div>
-					<GitHubHitmap data={data} fromDate={fromDate} />
+		<section>
+			<div>
+				<Title title="Github" subTitle="Github Hitmap" />
+				<div
+					className="overflow-x-auto whitespace-nowrap"
+					style={{ overflowX: 'auto' }}
+					ref={div => {
+						if (div) {
+							div.scrollLeft = div.scrollWidth;
+						}
+					}}>
+					<div>
+						<GitHubHitmap data={data} fromDate={fromDate} />
+					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 }

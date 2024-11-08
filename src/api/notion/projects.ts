@@ -130,7 +130,7 @@ const fetchProjects = async () => {
 			} as ProjectT),
 	);
 
-	return projects;
+	return { projects, fetchedAt: new Date() };
 };
 
 const mutex = new Mutex();

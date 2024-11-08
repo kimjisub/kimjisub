@@ -1,21 +1,22 @@
 import React from 'react';
 import { Badge, DataList } from '@radix-ui/themes';
+import { Text } from '@radix-ui/themes';
 import { format } from 'date-fns';
 import Image from 'next/image';
 
 import { getCareer, getCareerPage } from '@/api/notion/career';
 import { getCareers } from '@/api/notion/careers';
+import DebugView from '@/components/DebugView';
 import { JsonView } from '@/components/JsonView';
 import { NotionClientRenderer } from '@/components/NotionPage';
 import { ProjectItem } from '@/components/ProjectItem';
 
 export async function generateStaticParams() {
 	console.log('[generateStaticParams]', 'careers/[careerId]');
-	const careers = await getCareers();
-	const careerIds = careers.map(career => ({
+	const { careers } = await getCareers();
+	return careers.map(career => ({
 		careerId: career.id,
 	}));
-	return careerIds;
 }
 
 export const revalidate = 3600;
@@ -27,19 +28,19 @@ type Params = Promise<{ careerId: string }>;
 export async function generateMetadata(props: { params: Params }) {
 	const { careerId } = await props.params;
 
-	const career = await getCareer(careerId);
+	const { career } = await getCareer(careerId);
 	return {
-		title: career?.title,
+		title: career?.title || 'Not found',
 	};
 }
 
 const CareerPage = async (props: { params: Params }) => {
 	const { careerId } = await props.params;
 	console.log('[SSG] CareerPage', { careerId });
-	const [career, recordMap] = await Promise.all([
-		getCareer(careerId),
-		getCareerPage(careerId),
-	]);
+	const [
+		{ career, fetchedAt },
+		{ extendedRecordMap, fetchedAt: pageFetchedAt },
+	] = await Promise.all([getCareer(careerId), getCareerPage(careerId)]);
 
 	if (!career) {
 		return <div>Career not found</div>;
@@ -71,11 +72,15 @@ const CareerPage = async (props: { params: Params }) => {
 					<NotionClientRenderer
 						className="w-full"
 						rootPageId={careerId}
-						recordMap={recordMap}
+						recordMap={extendedRecordMap}
 						fullPage={false}
 						darkMode={false}
 						disableHeader
 					/>
+
+					<DebugView>
+						<Text>{format(pageFetchedAt, 'yyyy-MM-dd HH:mm:ss')}</Text>
+					</DebugView>
 				</section>
 
 				<section className="col-span-2">
@@ -139,7 +144,10 @@ const CareerPage = async (props: { params: Params }) => {
 							</div>
 						</div>
 
-						<JsonView src={career} collapsed />
+						<DebugView>
+							<Text>{format(fetchedAt, 'yyyy-MM-dd HH:mm:ss')}</Text>
+							<JsonView src={career} collapsed />
+						</DebugView>
 					</div>
 				</section>
 			</div>

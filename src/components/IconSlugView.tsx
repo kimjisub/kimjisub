@@ -1,4 +1,5 @@
 import React from 'react';
+import { Text } from '@radix-ui/themes';
 import { SimpleIcon } from 'simple-icons';
 import * as simpleIcons from 'simple-icons';
 
@@ -14,61 +15,107 @@ export interface IconSlugViewProps {
 	description?: string;
 	style?: React.CSSProperties;
 	className?: string;
-	raw?: unknown;
+	variant?: 'default' | 'inline';
 }
 
 export const IconSlugView = React.forwardRef<HTMLElement, IconSlugViewProps>(
-	({ id, title, slug, style, className, raw }, ref) => {
+	({ id, title, slug, style, className, variant = 'default' }, ref) => {
 		const customIcon = getCustomIconBySlug(slug);
 
 		if (customIcon) {
-			return (
-				<article className={` ${className}`} ref={ref} style={style} id={id}>
-					<div
-						className="w-12 h-12 rounded-xl flex items-center justify-center transition-transform duration-100 ease-in-out transform hover:scale-110"
-						style={{ background: `#${customIcon?.hex ?? 'fff'}` }}>
+			if (variant === 'default')
+				return (
+					<article className={` ${className}`} ref={ref} style={style} id={id}>
+						<div
+							className="w-12 h-12 rounded-xl flex items-center justify-center transition-transform duration-100 ease-in-out transform hover:scale-110"
+							style={{ background: `#${customIcon?.hex ?? 'fff'}` }}>
+							<customIcon.component
+								color="#fff"
+								width={32}
+								height={32}
+								viewBox="0 0 24 24"
+							/>
+						</div>
+					</article>
+				);
+			else
+				return (
+					<span
+						className={`inline-flex items-center rounded-xl transition-transform duration-100 ease-in-out transform hover:scale-110 p-2 space-x-2 ${className}`}
+						ref={ref}
+						style={{ ...style, background: `#${customIcon?.hex ?? 'fff'}` }}
+						id={id}>
 						<customIcon.component
 							color="#fff"
-							width={32}
-							height={32}
+							width={16}
+							height={16}
 							viewBox="0 0 24 24"
 						/>
-					</div>
-					{/* <JsonView src={raw} /> */}
-				</article>
-			);
+						<Text className="text-white">{title}</Text>
+					</span>
+				);
 		}
 
 		const si = getSimpleIconBySlug(slug);
 
-		if (si)
-			return (
-				<article className={` ${className}`} ref={ref} style={style} id={id}>
-					<div
-						className="w-12 h-12 rounded-xl flex items-center justify-center transition-transform duration-100 ease-in-out transform hover:scale-110"
-						style={{ background: `#${si?.hex ?? 'fff'}` }}>
+		if (si) {
+			if (variant === 'default')
+				return (
+					<article className={` ${className}`} ref={ref} style={style} id={id}>
+						<div
+							className="w-12 h-12 rounded-xl flex items-center justify-center transition-transform duration-100 ease-in-out transform hover:scale-110"
+							style={{ background: `#${si?.hex ?? 'fff'}` }}>
+							<svg
+								role="img"
+								viewBox="0 0 24 24"
+								xmlns="http://www.w3.org/2000/svg"
+								className="w-8 h-8">
+								<path d={si.path} style={{ fill: '#fff' }} />
+							</svg>
+						</div>
+					</article>
+				);
+			else
+				return (
+					<span
+						className={`inline-flex items-center rounded-xl transition-transform duration-100 ease-in-out transform hover:scale-110 p-2 space-x-2 ${className}`}
+						ref={ref}
+						style={{ ...style, background: `#${si?.hex ?? 'fff'}` }}
+						id={id}>
 						<svg
 							role="img"
 							viewBox="0 0 24 24"
 							xmlns="http://www.w3.org/2000/svg"
-							className="w-8 h-8">
+							className="w-4 h-4">
 							<path d={si.path} style={{ fill: '#fff' }} />
 						</svg>
+						<Text className="text-white">{title}</Text>
+					</span>
+				);
+		}
+		if (variant === 'default')
+			return (
+				<article className={` ${className}`} ref={ref} style={style} id={id}>
+					<div
+						className="w-12 h-12 rounded-xl flex items-center justify-center transition-transform duration-100 ease-in-out transform hover:scale-110"
+						style={{ background: `grey`, fontSize: 'calc(0.5em + 0.5vw)' }}>
+						{slug}
 					</div>
-					{/* <JsonView src={raw} /> */}
 				</article>
 			);
-
-		return (
-			<article className={` ${className}`} ref={ref} style={style} id={id}>
-				<div
-					className="w-12 h-12 rounded-xl flex items-center justify-center transition-transform duration-100 ease-in-out transform hover:scale-110"
-					style={{ background: `grey`, fontSize: 'calc(0.5em + 0.5vw)' }}>
-					{slug}
-				</div>
-				{/* <JsonView src={raw} /> */}
-			</article>
-		);
+		else
+			return (
+				<span
+					className={`inline-flex items-center rounded-xl transition-transform duration-100 ease-in-out transform hover:scale-110 p-2 space-x-2 ${className}`}
+					ref={ref}
+					style={{
+						...style,
+						background: `grey`,
+					}}
+					id={id}>
+					<Text>{title}</Text>
+				</span>
+			);
 	},
 );
 

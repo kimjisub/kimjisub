@@ -1,6 +1,9 @@
 import React from 'react';
+import { Text } from '@radix-ui/themes';
+import { format } from 'date-fns';
 
 import { getProjects } from '@/api/notion/projects';
+import DebugView from '@/components/DebugView';
 import { ProjectItem } from '@/components/ProjectItem';
 import { Title } from '@/components/Title';
 
@@ -9,7 +12,7 @@ export const revalidate = 3600;
 export default async function ProjectsPage() {
 	console.log('[SSG] ProjectsPage');
 
-	const projects = await getProjects();
+	const { projects, fetchedAt } = await getProjects();
 
 	return (
 		<div className="pt-16 mx-auto p-6 max-w-5xl">
@@ -22,6 +25,10 @@ export default async function ProjectsPage() {
 					<ProjectItem key={project.id} project={project} />
 				))}
 			</div>
+
+			<DebugView>
+				<Text>{format(fetchedAt, 'yyyy-MM-dd HH:mm:ss')}</Text>
+			</DebugView>
 		</div>
 	);
 }

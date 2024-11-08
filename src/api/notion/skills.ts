@@ -108,7 +108,7 @@ const fetchSkills = async () => {
 		} as SkillT;
 	});
 
-	return skills;
+	return { skills, fetchedAt: new Date() };
 };
 
 const mutex = new Mutex();

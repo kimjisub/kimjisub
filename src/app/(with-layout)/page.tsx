@@ -2,6 +2,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { getGitHubContributions } from '@/api/github';
+import ContactSection from '@/components/introduce/ContactSection';
 import GithubSection from '@/components/introduce/GithubSection';
 import IntroduceSection from '@/components/introduce/IntroduceSection';
 import ProjectSection from '@/components/introduce/ProjectSection';
@@ -24,6 +25,7 @@ export default async function Home() {
 			<ProjectSection />
 			<GithubSection data={contribute} fromDate={fromDate} />
 			<SkillsSection />
+			<ContactSection />
 		</main>
 	);
 }

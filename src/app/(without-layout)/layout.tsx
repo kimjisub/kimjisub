@@ -26,9 +26,7 @@ export default function RootLayout({
 		<html>
 			<Theme>
 				<AppInfoProvider>
-					<body className={`flex flex-col min-h-screen ${inter.className}`}>
-						<main className="flex-grow">{children}</main>
-					</body>
+					<body className={`${inter.className}`}>{children}</body>
 				</AppInfoProvider>
 			</Theme>
 		</html>
