@@ -244,10 +244,7 @@ export default function GraphView({ skillsWithRelated }: GraphViewProps) {
 		const items: { [key in string]: Body } = {};
 
 		const loadAndCreateBodies = async () => {
-			let i = 0;
 			for (const skill of skills) {
-				// if (i > 10) break;
-				// i++;
 				await sleep(100);
 				const svgData = getSvgDataFromSlug(skill.slug);
 				try {

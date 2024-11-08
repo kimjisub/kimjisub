@@ -73,20 +73,29 @@ const ForceGraph: React.FC<ForceGraphProps> = ({ data }) => {
 			.call(
 				d3
 					.drag<SVGCircleElement, Node>()
-					.on('start', (event, d) => {
-						if (!event.active) simulation.alphaTarget(0.3).restart();
-						d.fx = d.x;
-						d.fy = d.y;
-					})
-					.on('drag', (event, d) => {
-						d.fx = event.x;
-						d.fy = event.y;
-					})
-					.on('end', (event, d) => {
-						if (!event.active) simulation.alphaTarget(0);
-						d.fx = null;
-						d.fy = null;
-					}),
+					.on(
+						'start',
+						(event: d3.D3DragEvent<SVGCircleElement, Node, Node>, d: Node) => {
+							if (!event.active) simulation.alphaTarget(0.3).restart();
+							d.fx = d.x;
+							d.fy = d.y;
+						},
+					)
+					.on(
+						'drag',
+						(event: d3.D3DragEvent<SVGCircleElement, Node, Node>, d: Node) => {
+							d.fx = event.x;
+							d.fy = event.y;
+						},
+					)
+					.on(
+						'end',
+						(event: d3.D3DragEvent<SVGCircleElement, Node, Node>, d: Node) => {
+							if (!event.active) simulation.alphaTarget(0);
+							d.fx = null;
+							d.fy = null;
+						},
+					),
 			);
 
 		// 텍스트 라벨 추가
