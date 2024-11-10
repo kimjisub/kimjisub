@@ -1,11 +1,11 @@
 import { addDays, format } from 'date-fns';
 
 interface GitHubHitmapProps {
-	data: number[];
+	data: (number | null)[];
 	fromDate: Date;
 }
 
-const GithubHitmapCol: React.FC<GitHubHitmapProps> = ({ data, fromDate }) => {
+const GitHubHitmap2: React.FC<GitHubHitmapProps> = ({ data, fromDate }) => {
 	// 커밋 수에 따라 색상의 밝기를 결정하는 함수
 	const getColor = (count: number) => {
 		return {
@@ -17,19 +17,22 @@ const GithubHitmapCol: React.FC<GitHubHitmapProps> = ({ data, fromDate }) => {
 		}[count];
 	};
 
-	// fromDate를 기준으로 요일을 계산하여 데이터가 7의 배수가 아닐 경우 뒤에 0을 추가하여 주차별로 맞춤
-	const dayOfWeek = fromDate.getDay();
-	const paddingSize = (data.length + dayOfWeek) % 7;
-	if (paddingSize !== 0) {
-		const padding = new Array(7 - paddingSize).fill(-1);
-		// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-		data = [...new Array(dayOfWeek).fill(-1), ...data, ...padding];
-	}
+	const beforeMarginDates = fromDate.getDay();
 
-	// 각 타일을 7칸짜리 세로열로 배치하고 최신순으로 정렬
-	const rows = Array.from({ length: Math.ceil(data.length / 7) });
+	const dataAddedBeforeMargin = [
+		...Array<number | null>(beforeMarginDates).fill(null),
+		...data,
+	];
+
+	// 각 타일을 7칸짜리 세로열로 배치
+	const rows = Array.from({
+		length: Math.ceil(dataAddedBeforeMargin.length / 7),
+	});
 	const tiles = rows.map((_, rowIndex) => {
-		const weekData = data.slice(rowIndex * 7, (rowIndex + 1) * 7);
+		const weekData = dataAddedBeforeMargin.slice(
+			rowIndex * 7,
+			(rowIndex + 1) * 7,
+		);
 
 		const weekStartDate = addDays(fromDate, rowIndex * 7);
 		const prevWeekStartDate = addDays(weekStartDate, -7);
@@ -47,29 +50,39 @@ const GithubHitmapCol: React.FC<GitHubHitmapProps> = ({ data, fromDate }) => {
 				: '';
 
 		return (
-			<div key={rowIndex} className="flex flex-row">
-				<p className="w-10 text-left relative">
-					<span className="h-5 text-sm inline-block absolute bottom-0 left-0">
-						{yearLabel || monthLabel}
-					</span>
-				</p>
+			<div key={rowIndex} className="flex flex-col">
+				{/* <p className="h-5 text-sm w-0">{monthLabel}</p> */}
 				{weekData.map((count, index) => {
 					const date = addDays(fromDate, rowIndex * 7 + index);
 					const formattedDate = format(date, 'yyyy-MM-dd');
-					return (
+					return count !== null ? (
 						<div
 							key={formattedDate}
 							title={`${formattedDate}: ${count} commits`}
 							className={`w-2.5 h-2.5 m-[2px] rounded-sm ${getColor(
 								count,
-							)} text-[4px]`}></div>
+							)} text-[4px]`}>
+							{/* {formattedDate}
+						<br />
+						{count} */}
+						</div>
+					) : (
+						<div
+							key={formattedDate}
+							title={`${formattedDate}: ${count} commits`}
+							className={`w-2.5 h-2.5 m-[2px] rounded-sm text-[4px]`}>
+							{/* {formattedDate}
+						<br />
+						{count} */}
+						</div>
 					);
 				})}
+				{/* <p className="h-5 text-sm w-0">{yearLabel}</p> */}
 			</div>
 		);
 	});
 
-	return <div className="flex flex-col-reverse">{tiles}</div>;
+	return <div className="flex">{tiles}</div>;
 };
 
-export default GithubHitmapCol;
+export default GitHubHitmap2;

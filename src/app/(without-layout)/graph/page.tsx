@@ -1,19 +1,33 @@
 import React from 'react';
 
 import { getSkillsWithRelated } from '@/api/notion/skill';
-import GraphView from '@/components/GraphView';
-
-function hashStringToNumber(str: string) {
-	let hash = 0;
-	for (let i = 0; i < str.length; i++) {
-		const char = str.charCodeAt(i);
-		hash = (hash << 5) - hash + char;
-	}
-	return hash;
-}
+import ForceGraph from '@/components/ForceGraph';
+import { IconSlugView } from '@/components/IconSlugView';
 
 export default async function SkillsPage() {
-	const skillsWithRelated = await getSkillsWithRelated();
+  const skillsWithRelated = await getSkillsWithRelated();
 
-	return <GraphView skillsWithRelated={skillsWithRelated} />;
+  return (
+    <div>
+      <ForceGraph
+        data={{
+          nodes: skillsWithRelated.skills.map(skill => ({
+            id: skill.id,
+            name: skill.title,
+            svg: <IconSlugView slug={skill.slug} />,
+
+            // relatedSkills: skill.relatedSkills.map(
+            // 	relatedSkill => relatedSkill.id,
+            // ),
+          })),
+          links: skillsWithRelated.skills.flatMap(skill =>
+            skill.relatedSkills.map(relatedSkill => ({
+              source: skill.id,
+              target: relatedSkill.id,
+            })),
+          ),
+        }}
+      />
+    </div>
+  );
 }

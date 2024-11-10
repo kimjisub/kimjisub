@@ -3,19 +3,40 @@ import {
 	differenceInDays,
 	endOfYear,
 	format,
+	setYear,
 	startOfYear,
 } from 'date-fns';
 import { JSDOM } from 'jsdom';
 
+export async function getYearlyGithubContributions(
+	username: string,
+	years: number,
+) {
+	const from = startOfYear(setYear(new Date(), years));
+	const to = endOfYear(setYear(new Date(), years));
+
+	const fromString = format(from, 'yyyy-MM-dd');
+	const toString = format(to, 'yyyy-MM-dd');
+
+	const response = await fetch(
+		`https://github.com/users/${username}/contributions?from=${fromString}&to=${toString}`,
+		{ next: { revalidate: 3600 } },
+	);
+
+	const html = await response.text();
+	const data = extractDataFromTable(html);
+
+	return { data, from, to };
+}
+
 export async function getGitHubContributions(
 	username: string,
-	from: Date,
-): Promise<number[]> {
-	const now = new Date();
+	{ from, to }: { from: Date; to: Date },
+) {
 	let contributions: number[] = [];
 	let currentDate = startOfYear(from); // from 날짜가 속한 년도의 시작
 
-	while (currentDate <= now) {
+	while (currentDate <= to) {
 		const fromString = format(currentDate, 'yyyy-MM-dd');
 		const toString = format(endOfYear(currentDate), 'yyyy-MM-dd'); // 해당 년도의 마지막 날
 		const response = await fetch(
@@ -31,8 +52,14 @@ export async function getGitHubContributions(
 	}
 
 	const removeHeadCount = differenceInDays(from, startOfYear(from));
-	const removeTailCount = differenceInDays(endOfYear(now), now);
-	return contributions.slice(removeHeadCount).slice(0, -removeTailCount);
+	const removeTailCount = differenceInDays(endOfYear(to), to);
+	const data = contributions.slice(removeHeadCount).slice(0, -removeTailCount);
+
+	return {
+		from,
+		to,
+		data,
+	};
 }
 
 function extractDataFromTable(html: string): number[] {
