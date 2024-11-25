@@ -12,64 +12,64 @@ import { getSkills, SkillT } from './skills';
 import { notionXApi } from '.';
 
 export type SkillsWithRelatedT = Awaited<
-	ReturnType<typeof getSkillsWithRelated>
+  ReturnType<typeof getSkillsWithRelated>
 >;
 
 export const getSkillsWithRelated = async () => {
-	const [careersRes, projectsRes, skillsRes] = await Promise.all([
-		getCareers(),
-		getProjects(),
-		getSkills(),
-	]);
+  const [careersRes, projectsRes, skillsRes] = await Promise.all([
+    getCareers(),
+    getProjects(),
+    getSkills(),
+  ]);
 
-	const relatedSkills = skillsRes.skills.map(skill => ({
-		...skill,
-		relatedSkills: skill['관련_기술']
-			.map(skillId => skillsRes.skills.find(skill => skill.id === skillId))
-			.filter(Boolean) as SkillT[],
-		relatedProjectsUsedByLanguage: skill.projectUsedByLanguage
-			.map(projectId =>
-				projectsRes.projects.find(project => project.id === projectId),
-			)
-			.filter(Boolean) as ProjectT[],
-		relatedProjectsUsedBySkill: skill.projectUsedBySkill
-			.map(projectId =>
-				projectsRes.projects.find(project => project.id === projectId),
-			)
-			.filter(Boolean) as ProjectT[],
-	}));
+  const relatedSkills = skillsRes.skills.map(skill => ({
+    ...skill,
+    relatedSkills: skill['관련_기술']
+      .map(skillId => skillsRes.skills.find(skill => skill.id === skillId))
+      .filter(Boolean) as SkillT[],
+    relatedProjectsUsedByLanguage: skill.projectUsedByLanguage
+      .map(projectId =>
+        projectsRes.projects.find(project => project.id === projectId),
+      )
+      .filter(Boolean) as ProjectT[],
+    relatedProjectsUsedBySkill: skill.projectUsedBySkill
+      .map(projectId =>
+        projectsRes.projects.find(project => project.id === projectId),
+      )
+      .filter(Boolean) as ProjectT[],
+  }));
 
-	return {
-		skills: relatedSkills,
-		fetchedAt: skillsRes.fetchedAt,
-	};
+  return {
+    skills: relatedSkills,
+    fetchedAt: skillsRes.fetchedAt,
+  };
 };
 
 export const getSkill = async (skillId: string) => {
-	const skillsRes = await getSkillsWithRelated();
-	const skill = skillsRes.skills.find(skill => skill.id === skillId);
+  const skillsRes = await getSkillsWithRelated();
+  const skill = skillsRes.skills.find(skill => skill.id === skillId);
 
-	return {
-		skill,
-		fetchedAt: skillsRes.fetchedAt,
-	};
+  return {
+    skill,
+    fetchedAt: skillsRes.fetchedAt,
+  };
 };
 
 export const getSkillPage = async (skillId: string) => {
-	const getNotionPage = unstable_cache(
-		async () => {
-			const extendedRecordMap = await notionXApi.getPage(skillId);
-			return {
-				extendedRecordMap,
-				fetchedAt: new Date(),
-			};
-		},
-		[skillId],
-		{
-			tags: ['skill-page'],
-			revalidate: 60 * 60,
-		},
-	);
+  const getNotionPage = unstable_cache(
+    async () => {
+      const extendedRecordMap = await notionXApi.getPage(skillId);
+      return {
+        extendedRecordMap,
+        fetchedAt: new Date(),
+      };
+    },
+    ['skill-page', skillId],
+    {
+      tags: ['skill-page'],
+      revalidate: 60 * 60,
+    },
+  );
 
-	return await getNotionPage();
+  return await getNotionPage();
 };
