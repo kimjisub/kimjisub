@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 import '../globals.css';
+import '@/styles/prism-theme.css';
 import 'react-notion-x/src/styles.css';
-import 'prismjs/themes/prism-tomorrow.css';
 import 'katex/dist/katex.min.css';
 import '@radix-ui/themes/styles.css';
 
@@ -27,11 +27,13 @@ export default function RootLayout({
 	return (
 		<html>
 			<AppInfoProvider>
-				<body className={`flex flex-col min-h-screen ${inter.className}`}>
+				<body className={`${inter.className}`}>
 					<Theme>
-						<TopBar />
-						<main className="flex-grow">{children}</main>
-						<Footer />
+						<div className="min-h-screen flex flex-col">
+							<TopBar />
+							<main className="flex-grow pt-16 md:pt-16">{children}</main>
+							<Footer />
+						</div>
 					</Theme>
 				</body>
 			</AppInfoProvider>

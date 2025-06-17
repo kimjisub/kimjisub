@@ -1,0 +1,250 @@
+export const meta = {
+  title: "Next.js 14에서 MDX로 블로그 만들기",
+  date: "2025-01-17",
+  description: "Next.js 14 App Router와 MDX를 활용하여 SEO 최적화된 블로그를 구축하는 방법",
+  author: "Kim Jisub",
+  keywords: ["MDX", "Next.js", "Blog", "React", "SEO", "App Router"],
+  image: "/blog-thumbnail.jpg",
+  tags: ["Next.js", "MDX", "TypeScript", "React"],
+  readingTime: "10분",
+  category: "개발",
+  published: true
+}
+
+Next.js 14의 App Router와 MDX를 활용하여 블로그를 구축하는 과정을 공유합니다. 
+이 글에서는 MDX 설정부터 SEO 최적화까지 실제 구현 과정을 다룹니다.
+
+## 목차
+- MDX 설정
+- 동적 라우팅 구현
+- 블로그 리스트 페이지
+- SEO 최적화
+- 레이아웃 개선
+
+## 1. MDX 설정
+
+먼저 MDX 패키지를 설치하고 Next.js 설정을 업데이트합니다.
+
+```bash
+npm install @next/mdx @mdx-js/loader @mdx-js/react
+```
+
+`next.config.mjs` 파일을 다음과 같이 수정합니다:
+
+```javascript
+import createMDX from '@next/mdx';
+
+const nextConfig = {
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+};
+
+const withMDX = createMDX({
+  extension: /\.(md|mdx)$/,
+});
+
+export default withMDX(nextConfig);
+```
+
+## 2. 동적 라우팅 구현
+
+블로그 글을 위한 동적 라우트를 생성합니다. `/app/(with-layout)/blog/[slug]/page.tsx`:
+
+```typescript
+import type { MDXProps } from "mdx/types";
+import type { Metadata } from "next";
+import fs from "fs";
+import path from "path";
+
+interface PostMeta {
+  title: string;
+  date: string;
+  description: string;
+  author?: string;
+  keywords?: string[];
+  image?: string;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const { slug } = params;
+  
+  try {
+    const { meta } = await import(`@/blog/${slug}.mdx`) as { meta: PostMeta };
+    
+    return {
+      title: meta?.title || slug,
+      description: meta?.description || `Read about ${slug}`,
+      authors: meta?.author ? [{ name: meta.author }] : undefined,
+      keywords: meta?.keywords,
+      openGraph: {
+        title: meta?.title || slug,
+        description: meta?.description || `Read about ${slug}`,
+        type: 'article',
+        publishedTime: meta?.date,
+        authors: meta?.author ? [meta.author] : undefined,
+        images: meta?.image ? [{ url: meta.image }] : undefined,
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: meta?.title || slug,
+        description: meta?.description || `Read about ${slug}`,
+        images: meta?.image ? [meta.image] : undefined,
+      },
+    };
+  } catch {
+    return {
+      title: slug,
+      description: `Read about ${slug}`,
+    };
+  }
+}
+
+export default async function Page({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const { slug } = params;
+  const { default: MDXContent } = await import(`@/blog/${slug}.mdx`) as {
+    default: React.ComponentType<MDXProps>;
+  };
+
+  return (
+    <article className="prose prose-lg mx-auto px-4 py-8">
+      <MDXContent />
+    </article>
+  );
+}
+
+export function generateStaticParams() {
+  const postsDir = path.join(process.cwd(), 'src/blog');
+  const filenames = fs.readdirSync(postsDir);
+  return filenames
+    .filter((name) => name.endsWith('.mdx'))
+    .map((name) => ({ slug: name.replace(/\.mdx$/, '') }));
+}
+
+export const dynamicParams = false;
+```
+
+## 3. 블로그 리스트 페이지
+
+모든 블로그 글을 보여주는 리스트 페이지를 만듭니다. `/app/(with-layout)/blog/page.tsx`:
+
+```typescript
+import fs from 'fs';
+import Link from 'next/link';
+import path from 'path';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: '블로그',
+  description: '개발 관련 글과 생각을 공유하는 블로그입니다.',
+  openGraph: {
+    title: '블로그',
+    description: '개발 관련 글과 생각을 공유하는 블로그입니다.',
+    type: 'website',
+  },
+};
+
+interface PostMeta {
+  title: string;
+  date: string;
+  description: string;
+}
+
+export default async function BlogIndex() {
+  const postsDir = path.join(process.cwd(), 'src/blog');
+  const filenames = fs.readdirSync(postsDir);
+  
+  const posts = await Promise.all(
+    filenames
+      .filter((name) => name.endsWith('.mdx'))
+      .map(async (name) => {
+        const slug = name.replace(/\.mdx$/, '');
+        try {
+          const { meta } = await import(`@/blog/${slug}.mdx`) as { meta: PostMeta };
+          return {
+            slug,
+            meta: meta || { title: slug, date: '', description: '' }
+          };
+        } catch {
+          return {
+            slug,
+            meta: { title: slug, date: '', description: '' }
+          };
+        }
+      })
+  );
+
+  return (
+    <div className="max-w-4xl mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-8">블로그</h1>
+      <div className="space-y-6">
+        {posts.map(({ slug, meta }) => (
+          <article key={slug} className="border-b pb-6">
+            <Link href={`/blog/${slug}`} className="block hover:opacity-80 transition-opacity">
+              <h2 className="text-xl font-semibold mb-2">{meta.title}</h2>
+              {meta.date && (
+                <time className="text-sm text-gray-500">{meta.date}</time>
+              )}
+              {meta.description && (
+                <p className="mt-2 text-gray-600">{meta.description}</p>
+              )}
+            </Link>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}
+```
+
+## 4. MDX 파일 작성
+
+각 블로그 글은 MDX 파일로 작성합니다. 메타데이터를 export하여 SEO와 리스트 페이지에서 활용합니다:
+
+```mdx
+export const meta = {
+  title: "글 제목",
+  date: "2025-01-17",
+  description: "글 설명",
+  author: "Kim Jisub",
+  keywords: ["MDX", "Next.js", "Blog"],
+  image: "/blog-thumbnail.jpg"
+}
+
+# {meta.title}
+
+본문 내용...
+```
+
+## 5. 주요 기능 및 최적화
+
+### SEO 최적화
+- `generateMetadata` 함수로 동적 메타데이터 생성
+- Open Graph와 Twitter 카드 메타데이터 설정
+- 구조화된 메타데이터로 검색 엔진 최적화
+
+### 타입 안정성
+- TypeScript로 MDX import 타입 정의
+- ESLint 경고 해결을 위한 명시적 타입 선언
+
+### 레이아웃 개선
+- TopBar와 컨텐츠 겹침 방지를 위한 padding-top 추가
+- Footer 위치 고정을 위한 flex 레이아웃 적용
+
+## 마무리
+
+Next.js 14의 App Router와 MDX를 활용하면 강력하고 유연한 블로그 시스템을 구축할 수 있습니다. 
+특히 다음과 같은 장점이 있습니다:
+
+- **개발자 친화적**: MDX로 React 컴포넌트를 포함한 마크다운 작성
+- **SEO 최적화**: 동적 메타데이터로 검색 엔진 최적화
+- **성능**: 정적 생성으로 빠른 로딩 속도
+- **타입 안정성**: TypeScript로 안전한 코드 작성
+
+이 구조를 기반으로 댓글 시스템, 태그 기능, 검색 기능 등을 추가하여 더욱 풍부한 블로그로 발전시킬 수 있습니다.

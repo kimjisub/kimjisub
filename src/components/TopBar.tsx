@@ -121,6 +121,16 @@ const TopBar: React.FC = () => {
 								<p>Careers</p>
 							</li>
 							<li
+								key="blog"
+								className={`text-center md:text-left px-6 py-3 md:py-0 border-b md:border-none cursor-pointer ${
+									pathname.startsWith('/blog')
+										? 'text-blue-500 font-bold'
+										: 'text-gray-600'
+								}`}
+								onClick={() => handleLinkClick('/blog')}>
+								<p>Blog</p>
+							</li>
+							<li
 								key="graph"
 								className={`text-center md:text-left px-6 py-3 md:py-0 border-b md:border-none cursor-pointer ${
 									pathname === '/graph'

@@ -23,6 +23,7 @@
     "@notionhq/client": "^2.2.15",
     "@radix-ui/react-popover": "^1.1.2",
     "@radix-ui/themes": "^3.1.4",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/matter-js": "^0.19.5",
     "@types/mdx": "^2.0.13",
     "async-mutex": "^0.5.0",
@@ -46,6 +47,8 @@
     "react-json-view": "^1.21.3",
     "react-notion-x": "^7.0.1",
     "react-type-animation": "^3.2.0",
+    "rehype-highlight": "^7.0.2",
+    "rehype-prism-plus": "^2.0.1",
     "simple-icons": "^11.3.0"
   },
   "devDependencies": {
