@@ -14,7 +14,7 @@ export async function generateMetadata({
   const { slug } = params;
   
   try {
-    const { meta } = await import(`@/blog/${slug}.mdx`) as { meta: BlogPostMeta };
+    const { meta } = await import(`@/blog/${slug}/index.mdx`) as { meta: BlogPostMeta };
     
     return {
       title: meta?.title || slug,
@@ -50,7 +50,7 @@ export default async function Page({
   params: { slug: string };
 }) {
   const { slug } = params;
-  const { default: MDXContent, meta } = await import(`@/blog/${slug}.mdx`) as {
+  const { default: MDXContent, meta } = await import(`@/blog/${slug}/index.mdx`) as {
     default: React.ComponentType<MDXProps>;
     meta: BlogPostMeta;
   };
@@ -74,10 +74,15 @@ export default async function Page({
 
 export function generateStaticParams() {
   const postsDir = path.join(process.cwd(), 'src/blog');
-  const filenames = fs.readdirSync(postsDir);
-  return filenames
-    .filter((name) => name.endsWith('.mdx'))
-    .map((name) => ({ slug: name.replace(/\.mdx$/, '') }));
+  const entries = fs.readdirSync(postsDir, { withFileTypes: true });
+  
+  return entries
+    .filter((entry) => {
+      if (!entry.isDirectory()) return false;
+      const indexPath = path.join(postsDir, entry.name, 'index.mdx');
+      return fs.existsSync(indexPath);
+    })
+    .map((entry) => ({ slug: entry.name }));
 }
 
 export const dynamicParams = false;

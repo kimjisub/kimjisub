@@ -16,15 +16,19 @@ export const metadata: Metadata = {
 
 export default async function BlogIndex() {
   const postsDir = path.join(process.cwd(), 'src/blog');
-  const filenames = fs.readdirSync(postsDir);
+  const entries = fs.readdirSync(postsDir, { withFileTypes: true });
   
   const posts = await Promise.all(
-    filenames
-      .filter((name) => name.endsWith('.mdx'))
-      .map(async (name) => {
-        const slug = name.replace(/\.mdx$/, '');
+    entries
+      .filter((entry) => {
+        if (!entry.isDirectory()) return false;
+        const indexPath = path.join(postsDir, entry.name, 'index.mdx');
+        return fs.existsSync(indexPath);
+      })
+      .map(async (entry) => {
+        const slug = entry.name;
         try {
-          const { meta } = await import(`@/blog/${slug}.mdx`) as { meta: BlogPostMeta };
+          const { meta } = await import(`@/blog/${slug}/index.mdx`) as { meta: BlogPostMeta };
           return {
             slug,
             meta: meta || { title: slug, date: '', description: '' } as BlogPostMeta
