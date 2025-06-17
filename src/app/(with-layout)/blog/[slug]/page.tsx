@@ -1,9 +1,10 @@
+import fs from "fs";
 import type { MDXProps } from "mdx/types";
 import type { Metadata } from "next";
-import fs from "fs";
 import path from "path";
-import TableOfContents from "@/components/TableOfContents";
+
 import BlogPostHeader from "@/components/BlogPostHeader";
+import TableOfContents from "@/components/TableOfContents";
 import type { BlogPostMeta } from "@/types/blog";
 
 export async function generateMetadata({

@@ -1,7 +1,8 @@
 import fs from 'fs';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import path from 'path';
-import type { Metadata } from 'next';
+
 import type { BlogPostMeta } from '@/types/blog';
 
 export const metadata: Metadata = {
