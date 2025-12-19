@@ -19,22 +19,27 @@
 
 ## 🔥 Experience
 
-- **Silicon Bridge, Inc** - Eyevacs4 (2023.08 ~ 현재)
-    - <img src="https://img.shields.io/badge/-React%20Native-61DAFB?style=flat&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/-NestJS-E0234E?style=flat&logo=nestjs&logoColor=white"/>
-    - Full Stack Software Engineer, 정규직
+- **Candid** (2025.08 ~ 현재)
+    - 채용 컨설팅 스타트업의 Core ERP 시스템 설계 및 개발
 
 - **AlpaConnect** (2023.06 ~ 현재)
-    - <img src="https://img.shields.io/badge/-NestJS-E0234E?style=flat&logo=nestjs&logoColor=white"/> <img src="https://img.shields.io/badge/-Next.js-000000?style=flat&logo=nextdotjs&logoColor=white"/> <img src="https://img.shields.io/badge/-React%20Native-61DAFB?style=flat&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/-MQTT-660066?style=flat&logo=mqtt&logoColor=white"/> <img src="https://img.shields.io/badge/-EMQX-47ac77?style=flat&logo=emqx&logoColor=white"/> <img src="https://img.shields.io/badge/-Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white"/> <img src="https://img.shields.io/badge/-i18next-26A69A?style=flat&logo=i18next&logoColor=white"/> <img src="https://img.shields.io/badge/-Elastic%20Stack-005571?style=flat&logo=elasticstack&logoColor=white"/> <img src="https://img.shields.io/badge/-BLE-0082FC?style=flat&logo=bluetooth&logoColor=white"/> <img src="https://img.shields.io/badge/-Apache%20Kafka-231F20?style=flat&logo=apachekafka&logoColor=white"/> <img src="https://img.shields.io/badge/-ModBus-000000?style=flat&logo=modbus&logoColor=white"/>
+    - 산업용 PLC 클라우드 모니터링 및 제어 IoT 플랫폼
+    - 하드웨어 보드 설계부터 클라우드 아키텍처, 모바일 앱, 대시보드까지 풀스택 개발
+
+- **Synapus** (2025.02 ~ 현재)
+    - 클라우드 호스팅 서비스 (가상 서버, 전용 서버, 관리형 Kubernetes)
+    - IDC 서버실 직접 운영 및 대규모 트래픽 인프라 구축
 
 - [**UniPad**](https://play.google.com/store/apps/details?id=com.kimjisub.launchpad) (2016.02 ~ 현재)
-    - 개인 프로젝트
-    - 500+만 다운로드 달성
-    - 음악게임부문 1위, 전체게임부문 50위 기록 보유
-
-- 한국외국어대학교 [IDS Lab.](http://ids.hufs.ac.kr/) 학부연구생 (2023.05 ~ 현재)
-    - NVM, Flash Based Database System, In-Storage computing.
+    - 모바일 런치패드 앱, 1,000만+ 다운로드
+    - Google Play 음악게임 부문 1위, 전체게임 부문 50위
 
 ---
+
+
+- Silicon Bridge, Inc - Eyevacs4 (2023.08 ~ 2025.07)
+    - <img src="https://img.shields.io/badge/-React%20Native-61DAFB?style=flat&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/-NestJS-E0234E?style=flat&logo=nestjs&logoColor=white"/>
+    - Full Stack Software Engineer, 정규직
 
 - (주)한화비전 - [Mopl](https://apps.apple.com/kr/app/mopl-%EB%AA%A8%ED%94%8C-%ED%95%9C%ED%99%94%EB%B9%84%EC%A0%84/id1665024541) (2022.09 ~ 2023.05)
     - <img src="https://img.shields.io/badge/-React%20Native-61DAFB?style=flat&logo=react&logoColor=white"/>
@@ -51,6 +56,9 @@
     - 팀 프로젝트
     - 한국디지털미디어고등학교 재학생들을 위한 인트라넷
     - 기획, DB 설계 및 API Service 개발
+
+- 한국외국어대학교 [IDS Lab.](http://ids.hufs.ac.kr/) 학부연구생 (2023.)
+    - NVM, Flash Based Database System, In-Storage computing.
 
 ## 🏆 Prize
 
@@ -81,5 +89,6 @@
 
 ## 🎙️ Interview
 
+- [Candid 블로그](https://teamcandid.kr/blog/student-developer-unipad)
 - [10대 소년의 유의미한 성공스토리 - UniPad](https://www.issuemaker.kr/news/articleView.html?idxno=26080)
 - [PLC 원격 제어 솔루션 AlpaConnect, 현장 도입](https://www.linkedin.com/feed/update/urn:li:activity:7132029531871182848/)
