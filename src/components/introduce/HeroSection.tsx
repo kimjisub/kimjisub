@@ -4,6 +4,7 @@ import { GradientBlob } from '@/components/GradientBlob';
 import { MagneticLink } from '@/components/MagneticButton';
 import { NeonText } from '@/components/NeonText';
 import { RoughHighlight } from '@/components/RoughHighlight';
+import { SectionReveal, SectionRevealItem } from '@/components/SectionReveal';
 import { TextScramble } from '@/components/TextScramble';
 import { TiltImage } from '@/components/TiltImage';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -36,8 +37,8 @@ export const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-transparent" />
       
       <div className="relative z-10 max-w-4xl mx-auto px-6 py-24">
-        <div className="flex flex-col md:flex-row items-start gap-12">
-          <div className="relative animate-fade-in-scale w-32 h-32 md:w-40 md:h-40">
+        <SectionReveal stagger staggerDelay={0.15} className="flex flex-col md:flex-row items-start gap-12">
+          <SectionRevealItem className="relative w-32 h-32 md:w-40 md:h-40">
             {/* Click counter badge */}
             <AnimatePresence>
               {clickCount > 0 && clickCount < 10 && (
@@ -77,9 +78,9 @@ export const HeroSection = () => {
                 priority
               />
             </div>
-          </div>
+          </SectionRevealItem>
 
-          <div className="flex-1">
+          <SectionRevealItem className="flex-1">
             <h1 
               className="text-4xl md:text-5xl font-medium mb-4 tracking-tight"
             >
@@ -89,8 +90,7 @@ export const HeroSection = () => {
             </h1>
             
             <p 
-              className="text-lg text-muted-foreground mb-6 leading-relaxed max-w-xl animate-fade-in-up"
-              style={{ animationDelay: '0.2s' }}
+              className="text-lg text-muted-foreground mb-6 leading-relaxed max-w-xl"
             >
               <RoughHighlight type="underline" delay={600} animationDuration={600}>
                 Alpaon
@@ -106,8 +106,7 @@ export const HeroSection = () => {
             </p>
 
             <div 
-              className="flex flex-wrap gap-3 text-sm animate-fade-in-up"
-              style={{ animationDelay: '0.3s' }}
+              className="flex flex-wrap gap-3 text-sm"
             >
               <MagneticLink
                 href="https://alpaon.com"
@@ -134,8 +133,8 @@ export const HeroSection = () => {
                 GitHub
               </MagneticLink>
             </div>
-          </div>
-        </div>
+          </SectionRevealItem>
+        </SectionReveal>
       </div>
     </section>
   );

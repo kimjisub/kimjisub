@@ -1,7 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { SectionReveal, SectionRevealItem } from '@/components/SectionReveal';
 
 interface WorkItemProps {
   title: string;
@@ -9,16 +8,10 @@ interface WorkItemProps {
   role: string;
   description: string;
   details: string[];
-  delay: number;
-  isInView: boolean;
 }
 
-const WorkItem = ({ title, period, role, description, details, delay, isInView }: WorkItemProps) => (
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-    transition={{ duration: 0.6, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
-  >
+const WorkItem = ({ title, period, role, description, details }: WorkItemProps) => (
+  <div>
     <div className="flex items-baseline gap-4 mb-4">
       <h3 className="text-xl font-medium text-foreground">{title}</h3>
       <span className="text-sm text-muted-foreground">{period}</span>
@@ -30,13 +23,10 @@ const WorkItem = ({ title, period, role, description, details, delay, isInView }
         <li key={i}>{detail}</li>
       ))}
     </ul>
-  </motion.div>
+  </div>
 );
 
 export const WorkSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
   const works = [
     {
       title: 'Alpaon',
@@ -74,27 +64,21 @@ export const WorkSection = () => {
   ];
 
   return (
-    <section className="py-24 border-t border-border bg-card/30" ref={ref}>
+    <section className="py-24 border-t border-border bg-card/30">
       <div className="max-w-4xl mx-auto px-6">
-        <motion.h2 
-          className="font-serif text-2xl md:text-3xl text-foreground mb-12 italic"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-        >
-          Work
-        </motion.h2>
+        <SectionReveal>
+          <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-12 italic">
+            Work
+          </h2>
+        </SectionReveal>
 
-        <div className="space-y-16">
-          {works.map((work, i) => (
-            <WorkItem 
-              key={work.title}
-              {...work}
-              delay={0.1 + i * 0.1}
-              isInView={isInView}
-            />
+        <SectionReveal stagger staggerDelay={0.15} className="space-y-16">
+          {works.map((work) => (
+            <SectionRevealItem key={work.title}>
+              <WorkItem {...work} />
+            </SectionRevealItem>
           ))}
-        </div>
+        </SectionReveal>
       </div>
     </section>
   );

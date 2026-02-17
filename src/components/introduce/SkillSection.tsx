@@ -5,7 +5,8 @@ import { SkillIconWrapper } from './SkillIconWrapper';
 
 import { getSkills } from '@/api/notion/skills';
 import { IconSlugView } from '@/components/IconSlugView';
-import { AnimatedGridItem, AnimatedSection,AnimatedTitle } from '@/components/motion/AnimatedSection';
+import { AnimatedGridItem, AnimatedSection } from '@/components/motion/AnimatedSection';
+import { SectionReveal } from '@/components/SectionReveal';
 
 export default async function SkillsSection() {
   const { skills } = await getSkills();
@@ -13,9 +14,11 @@ export default async function SkillsSection() {
   return (
     <section className="py-24 border-t border-border">
       <div className="max-w-4xl mx-auto px-6">
-        <AnimatedTitle className="font-serif text-2xl md:text-3xl text-foreground mb-12 italic">
-          Stack
-        </AnimatedTitle>
+        <SectionReveal>
+          <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-12 italic">
+            Stack
+          </h2>
+        </SectionReveal>
 
         <div className="flex flex-wrap gap-2">
           {skills.slice(0, 40).map((skill, index) => (

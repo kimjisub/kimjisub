@@ -1,30 +1,19 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { SectionReveal, SectionRevealItem } from '@/components/SectionReveal';
 
 export const BackgroundSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
   return (
-    <section className="py-24 border-t border-border" ref={ref}>
+    <section className="py-24 border-t border-border">
       <div className="max-w-4xl mx-auto px-6">
-        <motion.h2 
-          className="font-serif text-2xl md:text-3xl text-foreground mb-12 italic"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-        >
-          Background
-        </motion.h2>
+        <SectionReveal>
+          <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-12 italic">
+            Background
+          </h2>
+        </SectionReveal>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-          >
+        <SectionReveal stagger staggerDelay={0.15} className="grid md:grid-cols-2 gap-12">
+          <SectionRevealItem>
             <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-6">Education</h3>
             <ul className="space-y-4 text-sm">
               <li>
@@ -36,13 +25,9 @@ export const BackgroundSection = () => {
                 <p className="text-muted-foreground">2017 — 2019</p>
               </li>
             </ul>
-          </motion.div>
+          </SectionRevealItem>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-          >
+          <SectionRevealItem>
             <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-6">Recognition</h3>
             <ul className="space-y-4 text-sm">
               <li>
@@ -54,8 +39,8 @@ export const BackgroundSection = () => {
                 <p className="text-muted-foreground">2017 — 2023</p>
               </li>
             </ul>
-          </motion.div>
-        </div>
+          </SectionRevealItem>
+        </SectionReveal>
       </div>
     </section>
   );

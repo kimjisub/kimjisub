@@ -7,6 +7,7 @@ import 'react-notion-x/src/styles.css';
 import '@/styles/prism-theme.css';
 import '../globals.css';
 
+import BackToTop from '@/components/BackToTop';
 import CustomCursor from '@/components/CustomCursor';
 import FloatingSocialSidebar from '@/components/FloatingSocialSidebar';
 import Footer from '@/components/Footer';
@@ -99,6 +100,7 @@ export default function RootLayout({
 						<GrainOverlay />
 						<SpotlightEffect />
 						<ScrollProgressIndicator />
+						<BackToTop />
 						<CustomCursor />
 						<FloatingSocialSidebar />
 						<div className="min-h-screen flex flex-col">
