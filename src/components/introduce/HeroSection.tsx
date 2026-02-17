@@ -3,7 +3,7 @@
 import { MeshGradientBackground } from '@/components/MeshGradientBackground';
 import { ParticleBackground } from '@/components/ParticleBackground';
 import { MagneticLink } from '@/components/MagneticButton';
-import { NeonText } from '@/components/NeonText';
+import { GradientText } from '@/components/GradientText';
 import { RoughHighlight } from '@/components/RoughHighlight';
 import { TextScramble } from '@/components/TextScramble';
 import { TiltImage } from '@/components/TiltImage';
@@ -123,9 +123,9 @@ export const HeroSection = () => {
           {/* ── Name ── */}
           <motion.div variants={heroItemVariants}>
             <h1 className="text-4xl md:text-5xl font-medium mb-4 tracking-tight">
-              <NeonText>
+              <GradientText duration={5}>
                 <TextScramble text="김지섭" />
-              </NeonText>
+              </GradientText>
             </h1>
           </motion.div>
 
