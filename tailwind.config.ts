@@ -52,10 +52,15 @@ const config: Config = {
           '0%': { opacity: '0', transform: 'scale(0.9)' },
           '100%': { opacity: '1', transform: 'scale(1)' },
         },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
       },
       animation: {
         'fade-in-up': 'fade-in-up 0.5s ease-out forwards',
         'fade-in-scale': 'fade-in-scale 0.5s ease-out forwards',
+        shimmer: 'shimmer 2s linear infinite',
       },
     },
   },

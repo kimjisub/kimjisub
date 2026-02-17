@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { CareerT } from '@/api/notion/careers';
+import { BlurImage } from '@/components/BlurImage';
 
 export interface CareerItemProps {
 	className?: string;
@@ -23,12 +24,13 @@ export const CareerItem = ({ className, career }: CareerItemProps) => {
 	) : null;
 
 	const coverImage = career.coverImageUrl ? (
-		<Image
-			className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+		<BlurImage
+			className="w-full h-full transition-transform duration-500 group-hover:scale-110"
 			width={300}
 			height={150}
 			src={career.coverImageUrl}
 			alt={`${career.title} 커버 이미지`}
+			sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 256px"
 		/>
 	) : (
 		<div className="w-full h-full bg-gradient-to-br from-secondary to-primary" aria-label={`${career.title}`} />

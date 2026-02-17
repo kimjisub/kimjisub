@@ -7,6 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { ProjectT } from '@/api/notion/projects';
+import { BlurImage } from '@/components/BlurImage';
 
 export interface ProjectItemProps {
   className?: string;
@@ -27,12 +28,13 @@ export const ProjectItem = ({ className, project }: ProjectItemProps) => {
   ) : null;
 
   const coverImage = project.coverImageUrl ? (
-    <Image
-      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+    <BlurImage
+      className="w-full h-full transition-transform duration-500 group-hover:scale-110"
       width={400}
       height={200}
       src={project.coverImageUrl}
       alt={`${project.title} 프로젝트 커버 이미지`}
+      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
     />
   ) : (
     <div className="w-full h-full bg-gradient-to-br from-secondary to-primary" aria-label={`${project.title} 프로젝트`} />

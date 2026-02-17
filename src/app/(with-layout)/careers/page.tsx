@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import { getCareers } from '@/api/notion/careers';
 import { CareerItem } from '@/components/CareerItem';
 import DebugView from '@/components/DebugView';
+import { AnimatedGridItem, AnimatedSection, AnimatedTitle } from '@/components/motion/AnimatedSection';
 
 export const metadata: Metadata = {
 	title: 'Career',
@@ -33,17 +34,21 @@ export default async function CareersPage() {
   return (
     <section className="py-24 px-6 max-w-4xl mx-auto">
       <header className="mb-16">
-        <h1 className="font-serif text-3xl md:text-4xl text-foreground mb-4 italic">
+        <AnimatedTitle className="font-serif text-3xl md:text-4xl text-foreground mb-4 italic">
           Career
-        </h1>
-        <p className="text-muted-foreground leading-relaxed max-w-xl">
-          회사, 대회, 프로젝트 등 경험했던 것들.
-        </p>
+        </AnimatedTitle>
+        <AnimatedSection delay={0.1}>
+          <p className="text-muted-foreground leading-relaxed max-w-xl">
+            회사, 대회, 프로젝트 등 경험했던 것들.
+          </p>
+        </AnimatedSection>
       </header>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {careers.map(career => (
-          <CareerItem key={career.id} career={career} />
+        {careers.map((career, index) => (
+          <AnimatedGridItem key={career.id} index={index}>
+            <CareerItem career={career} />
+          </AnimatedGridItem>
         ))}
       </div>
 

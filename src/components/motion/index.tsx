@@ -234,3 +234,6 @@ export const MotionSkillIcon = ({ children, className }: MotionSkillIconProps) =
 
 // Re-export motion for direct use
 export { motion };
+
+// Page transition components
+export { PageTransition, PageEnter } from './PageTransition';
