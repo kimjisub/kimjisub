@@ -187,23 +187,37 @@ export interface LanguageStat {
 	color: string;
 }
 
+function githubHeaders(): HeadersInit {
+	const token = process.env.GITHUB_TOKEN;
+	return token
+		? { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' }
+		: { Accept: 'application/vnd.github+json' };
+}
+
 export async function getGitHubLanguageStats(
 	username: string,
-	maxRepos = 50,
 ): Promise<LanguageStat[]> {
-	// Fetch user's own repos (non-fork), sorted by push date
+	const hasToken = Boolean(process.env.GITHUB_TOKEN);
+	// Without a token the unauthenticated rate-limit is 60 req/hr.
+	// Keep repo count low enough to stay safe; with a token we can be generous.
+	const maxRepos = hasToken ? 60 : 10;
+
+	// Fetch user's own repos (non-fork), sorted by star count for best coverage
 	const reposResponse = await fetch(
 		`https://api.github.com/users/${username}/repos?per_page=100&sort=pushed&type=owner`,
-		{ next: { revalidate: 3600 } },
+		{ headers: githubHeaders(), next: { revalidate: 3600 } },
 	);
 
 	if (!reposResponse.ok) return [];
 
-	const repos: Array<{ name: string; fork: boolean }> =
+	const repos: Array<{ name: string; fork: boolean; stargazers_count: number }> =
 		await reposResponse.json();
 
-	// Limit to top N non-forked repos to stay within API rate limits
-	const topRepos = repos.filter((r) => !r.fork).slice(0, maxRepos);
+	// Sort by stars (most significant repos first), then limit
+	const topRepos = repos
+		.filter((r) => !r.fork)
+		.sort((a, b) => b.stargazers_count - a.stargazers_count)
+		.slice(0, maxRepos);
 
 	// Fetch language bytes for each repo in parallel
 	const languageCounts: Record<string, number> = {};
@@ -212,7 +226,7 @@ export async function getGitHubLanguageStats(
 		topRepos.map(async (repo) => {
 			const langResponse = await fetch(
 				`https://api.github.com/repos/${username}/${repo.name}/languages`,
-				{ next: { revalidate: 3600 } },
+				{ headers: githubHeaders(), next: { revalidate: 3600 } },
 			);
 			if (!langResponse.ok) return;
 			const langs: Record<string, number> = await langResponse.json();
