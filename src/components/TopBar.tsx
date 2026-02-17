@@ -5,12 +5,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+import { CommandPalette, useCommandPalette } from './CommandPalette';
 import { MagneticLink, MagneticWrapper } from './MagneticButton';
 import { ThemeToggle } from './ThemeToggle';
 
 const TopBar: React.FC = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { open: cmdOpen, onClose: cmdClose, setOpen: setCmdOpen } = useCommandPalette();
   const [navBarHidden, setNavBarHidden] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const lastScrollY = useRef(0);
@@ -48,6 +50,7 @@ const TopBar: React.FC = () => {
   const bgOpacity = 0.8 + scrollProgress * 0.15; // 0.8 to 0.95
 
   return (
+    <>
     <nav
       className={`fixed top-0 w-full h-14 z-50 border-b border-border transition-transform duration-200 ${
         navBarHidden ? '-translate-y-full' : ''
@@ -92,6 +95,23 @@ const TopBar: React.FC = () => {
               {link.label}
             </MagneticLink>
           ))}
+
+          {/* Command Palette trigger */}
+          <MagneticWrapper strength={0.3} radius={60}>
+            <button
+              onClick={() => setCmdOpen(true)}
+              className="flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-border text-xs text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+              aria-label="Open command palette"
+              title="Open command palette (⌘K)"
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.35-4.35" />
+              </svg>
+              <kbd className="font-mono">⌘K</kbd>
+            </button>
+          </MagneticWrapper>
+
           <MagneticWrapper strength={0.3} radius={50}>
             <ThemeToggle />
           </MagneticWrapper>
@@ -99,6 +119,17 @@ const TopBar: React.FC = () => {
 
         {/* Mobile toggle */}
         <div className="md:hidden flex items-center gap-2">
+          {/* Command Palette trigger (mobile) */}
+          <button
+            onClick={() => setCmdOpen(true)}
+            className="w-8 h-8 flex items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+            aria-label="Open command palette"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.35-4.35" />
+            </svg>
+          </button>
           <ThemeToggle />
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -129,6 +160,10 @@ const TopBar: React.FC = () => {
         </div>
       )}
     </nav>
+
+    {/* Command Palette (rendered outside nav to avoid stacking context issues) */}
+    <CommandPalette open={cmdOpen} onClose={cmdClose} />
+  </>
   );
 };
 
