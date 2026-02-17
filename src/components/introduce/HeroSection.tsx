@@ -3,8 +3,8 @@
 import { GradientBlob } from '@/components/GradientBlob';
 import { MagneticLink } from '@/components/MagneticButton';
 import { RoughHighlight } from '@/components/RoughHighlight';
+import { TextScramble } from '@/components/TextScramble';
 import { TiltImage } from '@/components/TiltImage';
-import { TypingText } from '@/components/TypingText';
 
 export const HeroSection = () => {
   return (
@@ -28,7 +28,7 @@ export const HeroSection = () => {
             <h1 
               className="text-4xl md:text-5xl font-medium text-foreground mb-4 tracking-tight"
             >
-              <TypingText text="김지섭" delay={0.1} staggerDelay={0.12} />
+              <TextScramble text="김지섭" />
             </h1>
             
             <p 
@@ -43,7 +43,7 @@ export const HeroSection = () => {
                 Candid
               </RoughHighlight>{' '}
               <RoughHighlight type="highlight" delay={1000} animationDuration={800}>
-                Product Engineer
+                <TextScramble text="Product Engineer" frameDelay={2} />
               </RoughHighlight>.<br />
               소프트웨어부터 펌웨어, 인프라까지 직접 만들고 운영합니다.
             </p>
