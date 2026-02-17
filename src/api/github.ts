@@ -80,3 +80,66 @@ function extractDataFromTable(html: string): number[] {
 		})
 		.map(td => parseInt(td.getAttribute('data-level') || '0', 10));
 }
+
+export interface GitHubStats {
+	totalContributions: number;
+	repositories: number;
+	followers: number;
+	following: number;
+}
+
+export async function getGitHubStats(username: string): Promise<GitHubStats> {
+	// Fetch profile page for repos/followers/following
+	const profileResponse = await fetch(`https://github.com/${username}`, {
+		next: { revalidate: 3600 },
+	});
+	const profileHtml = await profileResponse.text();
+	const profileDom = new JSDOM(profileHtml);
+	const profileDoc = profileDom.window.document;
+
+	// Parse repositories count
+	const repoLink = profileDoc.querySelector('a[href$="?tab=repositories"] .Counter');
+	const repositories = repoLink ? parseInt(repoLink.textContent?.trim() || '0', 10) : 0;
+
+	// Parse followers count
+	const followersLink = profileDoc.querySelector('a[href$="?tab=followers"] .text-bold');
+	const followersText = followersLink?.textContent?.trim() || '0';
+	const followers = parseCount(followersText);
+
+	// Parse following count
+	const followingLink = profileDoc.querySelector('a[href$="?tab=following"] .text-bold');
+	const followingText = followingLink?.textContent?.trim() || '0';
+	const following = parseCount(followingText);
+
+	// Fetch contribution graph page for total contributions
+	const contribResponse = await fetch(
+		`https://github.com/users/${username}/contributions`,
+		{ next: { revalidate: 3600 } },
+	);
+	const contribHtml = await contribResponse.text();
+	const contribDom = new JSDOM(contribHtml);
+	const contribDoc = contribDom.window.document;
+
+	// Parse total contributions from the heading
+	const contributionText = contribDoc.querySelector('h2')?.textContent?.trim() || '';
+	const contributionMatch = contributionText.match(/([\d,]+)\s+contributions?/i);
+	const totalContributions = contributionMatch 
+		? parseInt(contributionMatch[1].replace(/,/g, ''), 10) 
+		: 0;
+
+	return {
+		totalContributions,
+		repositories,
+		followers,
+		following,
+	};
+}
+
+function parseCount(text: string): number {
+	// Handle "1.5k" format
+	const kMatch = text.match(/([\d.]+)k/i);
+	if (kMatch) {
+		return Math.round(parseFloat(kMatch[1]) * 1000);
+	}
+	return parseInt(text.replace(/,/g, ''), 10) || 0;
+}

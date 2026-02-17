@@ -237,3 +237,6 @@ export { motion };
 
 // Page transition components
 export { PageTransition, PageEnter } from './PageTransition';
+
+// Animated number component
+export { AnimatedNumber } from './AnimatedNumber';

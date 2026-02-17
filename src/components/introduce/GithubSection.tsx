@@ -1,17 +1,40 @@
 import React from 'react';
 
 import GitHubHitmap from '../GithubHitmap';
-import {AnimatedSection, AnimatedTitle } from '../motion/AnimatedSection';
+import { AnimatedSection, AnimatedTitle } from '../motion/AnimatedSection';
+import { AnimatedNumber } from '../motion/AnimatedNumber';
 
-import { getYearlyGithubContributions } from '@/api/github';
+import { getYearlyGithubContributions, getGitHubStats } from '@/api/github';
+
+interface StatCardProps {
+  value: number;
+  label: string;
+  suffix?: string;
+}
+
+function StatCard({ value, label, suffix = '' }: StatCardProps) {
+  return (
+    <div className="flex flex-col items-center p-4 bg-card rounded-lg border border-border">
+      <AnimatedNumber
+        value={value}
+        suffix={suffix}
+        className="text-3xl md:text-4xl font-bold text-foreground tabular-nums"
+        duration={2.5}
+      />
+      <span className="text-sm text-muted-foreground mt-1">{label}</span>
+    </div>
+  );
+}
 
 export default async function GithubSection() {
   const startYear = 2018;
   const endYear = new Date().getFullYear();
   const years = Array.from({ length: endYear - startYear + 1 }, (_, i) => startYear + i);
-  const contributions = await Promise.all(
-    years.map((year) => getYearlyGithubContributions('kimjisub', year))
-  );
+  
+  const [contributions, stats] = await Promise.all([
+    Promise.all(years.map((year) => getYearlyGithubContributions('kimjisub', year))),
+    getGitHubStats('kimjisub'),
+  ]);
   
   return (
     <section className="py-24 border-t border-border bg-card/30">
@@ -20,7 +43,18 @@ export default async function GithubSection() {
           Activity
         </AnimatedTitle>
 
+        {/* GitHub Stats */}
         <AnimatedSection delay={0.1}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+            <StatCard value={stats.totalContributions} label="Contributions" suffix="+" />
+            <StatCard value={stats.repositories} label="Repositories" />
+            <StatCard value={stats.followers} label="Followers" />
+            <StatCard value={stats.following} label="Following" />
+          </div>
+        </AnimatedSection>
+
+        {/* Contribution Heatmap */}
+        <AnimatedSection delay={0.2}>
           <div className="flex flex-col items-center gap-y-2">
             {contributions.map((contribution, index) => (
               <div key={contribution.from.toString()} className="flex flex-row items-center w-fit">
