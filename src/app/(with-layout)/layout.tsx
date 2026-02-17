@@ -13,7 +13,7 @@ import FloatingSocialSidebar from '@/components/FloatingSocialSidebar';
 import Footer from '@/components/Footer';
 import GrainOverlay from '@/components/GrainOverlay';
 import JsonLd from '@/components/JsonLd';
-import { PageTransition } from '@/components/motion/PageTransition';
+import { AnimatePresenceWrapper } from '@/components/motion/AnimatePresenceWrapper';
 import ScrollProgressIndicator from '@/components/ScrollProgressIndicator';
 import SpotlightEffect from '@/components/SpotlightEffect';
 import { ThemeProvider } from '@/components/ThemeProvider';
@@ -106,9 +106,9 @@ export default function RootLayout({
 						<div className="min-h-screen flex flex-col">
 							<TopBar />
 							<main className="flex-grow">
-								<PageTransition>
+								<AnimatePresenceWrapper>
 									{children}
-								</PageTransition>
+								</AnimatePresenceWrapper>
 							</main>
 							<Footer />
 						</div>
