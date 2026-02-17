@@ -1,6 +1,7 @@
 'use client';
 
 import { MeshGradientBackground } from '@/components/MeshGradientBackground';
+import { ParallaxBackground } from '@/components/ParallaxBackground';
 import { ParticleBackground } from '@/components/ParticleBackground';
 import { MagneticLink } from '@/components/MagneticButton';
 import { GradientText } from '@/components/GradientText';
@@ -57,6 +58,7 @@ export const HeroSection = () => {
     <section className="min-h-[85vh] flex items-center relative overflow-hidden">
       <EasterEggs clickCount={clickCount} />
       <MeshGradientBackground />
+      <ParallaxBackground />
       <ParticleBackground />
       <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-transparent" />
 

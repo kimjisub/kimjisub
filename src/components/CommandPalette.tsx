@@ -396,6 +396,12 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
                 <input
                   ref={inputRef}
                   type="text"
+                  role="combobox"
+                  aria-expanded={filtered.length > 0}
+                  aria-haspopup="listbox"
+                  aria-controls="cmd-palette-listbox"
+                  aria-autocomplete="list"
+                  aria-label="페이지, 액션 검색"
                   placeholder="Search pages, actions..."
                   value={query}
                   onChange={(e) => {
@@ -418,8 +424,10 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
               {/* Results */}
               <ul
                 ref={listRef}
+                id="cmd-palette-listbox"
                 className="max-h-[22rem] overflow-y-auto py-2"
                 role="listbox"
+                aria-label="검색 결과"
               >
                 {filtered.length === 0 ? (
                   <li className="px-4 py-8 text-center text-sm text-muted-foreground">
@@ -427,9 +435,9 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
                   </li>
                 ) : (
                   Object.entries(groups).map(([groupName, groupItems]) => (
-                    <li key={groupName}>
+                    <li key={groupName} role="presentation">
                       {/* Group label */}
-                      <span className="block px-4 pt-3 pb-1 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">
+                      <span className="block px-4 pt-3 pb-1 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60" aria-hidden="true">
                         {groupName}
                       </span>
 
