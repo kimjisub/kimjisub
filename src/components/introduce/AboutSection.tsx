@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { RoughHighlight } from '@/components/RoughHighlight';
 
 export const AboutSection = () => {
   const ref = useRef(null);
@@ -26,12 +27,24 @@ export const AboutSection = () => {
             transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             <p className="text-muted-foreground leading-relaxed mb-6">
-              2016년에 만든 앱이 500만 다운로드를 넘기면서 개발을 시작했습니다. 
-              중학교 때였고, 그게 UniPad입니다.
+              2016년에 만든 앱이{' '}
+              <RoughHighlight type="highlight" delay={200}>
+                500만 다운로드
+              </RoughHighlight>를 넘기면서 개발을 시작했습니다. 
+              중학교 때였고, 그게{' '}
+              <RoughHighlight type="box" delay={400} strokeWidth={1.5} padding={3}>
+                UniPad
+              </RoughHighlight>입니다.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              지금은 두 회사에서 일합니다. Alpaon에서는 공동창업자이자 CTO로 
-              산업용 IoT 제품을 만들고, Candid에서는 유일한 엔지니어로 
+              지금은 두 회사에서 일합니다.{' '}
+              <RoughHighlight type="underline" delay={600}>
+                Alpaon
+              </RoughHighlight>에서는 공동창업자이자 CTO로 
+              산업용 IoT 제품을 만들고,{' '}
+              <RoughHighlight type="underline" delay={800}>
+                Candid
+              </RoughHighlight>에서는 유일한 엔지니어로 
               채용 시스템을 개발합니다.
             </p>
             <p className="text-muted-foreground leading-relaxed">
@@ -50,11 +63,20 @@ export const AboutSection = () => {
               학교 다니면서 계속 일했습니다.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              한국디지털미디어고등학교 해킹방어과 출신입니다. 
-              거기서 정보올림피아드 금상도 받고, 해커톤도 많이 나갔습니다.
+              <RoughHighlight type="circle" delay={300} strokeWidth={1.5} padding={5}>
+                한국디지털미디어고등학교
+              </RoughHighlight>{' '}
+              해킹방어과 출신입니다. 
+              거기서{' '}
+              <RoughHighlight type="highlight" delay={500}>
+                정보올림피아드 금상
+              </RoughHighlight>도 받고, 해커톤도 많이 나갔습니다.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              요즘은 LLM을 제품에 어떻게 넣을지 고민하고 있습니다. 
+              요즘은{' '}
+              <RoughHighlight type="highlight" delay={700}>
+                LLM
+              </RoughHighlight>을 제품에 어떻게 넣을지 고민하고 있습니다. 
               Candid에서는 추천 시스템에, Alpaon에서는 산업 설비 제어에 쓰고 있습니다.
             </p>
           </motion.div>

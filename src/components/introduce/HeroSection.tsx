@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { RoughHighlight } from '@/components/RoughHighlight';
 
 export const HeroSection = () => {
   return (
@@ -32,7 +33,16 @@ export const HeroSection = () => {
               className="text-lg text-muted-foreground mb-6 leading-relaxed max-w-xl animate-fade-in-up"
               style={{ animationDelay: '0.2s' }}
             >
-              Alpaon CTO. Candid Product Engineer.<br />
+              <RoughHighlight type="underline" delay={600} animationDuration={600}>
+                Alpaon
+              </RoughHighlight>{' '}
+              CTO.{' '}
+              <RoughHighlight type="underline" delay={800} animationDuration={600}>
+                Candid
+              </RoughHighlight>{' '}
+              <RoughHighlight type="highlight" delay={1000} animationDuration={800}>
+                Product Engineer
+              </RoughHighlight>.<br />
               소프트웨어부터 펌웨어, 인프라까지 직접 만들고 운영합니다.
             </p>
 
