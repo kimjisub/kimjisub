@@ -2,6 +2,7 @@
 
 import { GradientBlob } from '@/components/GradientBlob';
 import { MagneticLink } from '@/components/MagneticButton';
+import { NeonText } from '@/components/NeonText';
 import { RoughHighlight } from '@/components/RoughHighlight';
 import { TextScramble } from '@/components/TextScramble';
 import { TiltImage } from '@/components/TiltImage';
@@ -26,9 +27,11 @@ export const HeroSection = () => {
 
           <div className="flex-1">
             <h1 
-              className="text-4xl md:text-5xl font-medium text-foreground mb-4 tracking-tight"
+              className="text-4xl md:text-5xl font-medium mb-4 tracking-tight"
             >
-              <TextScramble text="김지섭" />
+              <NeonText>
+                <TextScramble text="김지섭" />
+              </NeonText>
             </h1>
             
             <p 
