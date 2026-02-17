@@ -1,10 +1,11 @@
 import React from 'react';
 
 import GitHubHitmap from '../GithubHitmap';
+import GitHubLanguageStats from '../GitHubLanguageStats';
 import { AnimatedSection, AnimatedTitle } from '../motion/AnimatedSection';
 import { AnimatedNumber } from '../motion/AnimatedNumber';
 
-import { getYearlyGithubContributions, getGitHubStats } from '@/api/github';
+import { getYearlyGithubContributions, getGitHubStats, getGitHubLanguageStats } from '@/api/github';
 
 interface StatCardProps {
   value: number;
@@ -31,9 +32,10 @@ export default async function GithubSection() {
   const endYear = new Date().getFullYear();
   const years = Array.from({ length: endYear - startYear + 1 }, (_, i) => startYear + i);
   
-  const [contributions, stats] = await Promise.all([
+  const [contributions, stats, languages] = await Promise.all([
     Promise.all(years.map((year) => getYearlyGithubContributions('kimjisub', year))),
     getGitHubStats('kimjisub'),
+    getGitHubLanguageStats('kimjisub'),
   ]);
   
   return (
@@ -69,6 +71,18 @@ export default async function GithubSection() {
             ))}
           </div>
         </AnimatedSection>
+
+        {/* Language Stats */}
+        {languages.length > 0 && (
+          <AnimatedSection delay={0.3}>
+            <div className="mt-12">
+              <p className="text-sm text-muted-foreground mb-4 font-medium tracking-wide uppercase">
+                Most Used Languages
+              </p>
+              <GitHubLanguageStats languages={languages} />
+            </div>
+          </AnimatedSection>
+        )}
       </div>
     </section>
   );

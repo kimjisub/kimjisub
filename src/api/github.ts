@@ -143,3 +143,95 @@ function parseCount(text: string): number {
 	}
 	return parseInt(text.replace(/,/g, ''), 10) || 0;
 }
+
+// GitHub standard language colors
+const GITHUB_LANGUAGE_COLORS: Record<string, string> = {
+	TypeScript: '#3178c6',
+	JavaScript: '#f1e05a',
+	Python: '#3572A5',
+	Java: '#b07219',
+	Kotlin: '#A97BFF',
+	Swift: '#F05138',
+	'C++': '#f34b7d',
+	C: '#555555',
+	'C#': '#178600',
+	Rust: '#dea584',
+	Go: '#00ADD8',
+	Ruby: '#701516',
+	PHP: '#4F5D95',
+	HTML: '#e34c26',
+	CSS: '#563d7c',
+	SCSS: '#c6538c',
+	Shell: '#89e051',
+	Dart: '#00B4AB',
+	Vue: '#41b883',
+	Svelte: '#ff3e00',
+	Lua: '#000080',
+	'Objective-C': '#438eff',
+	Perl: '#0298c3',
+	R: '#198CE7',
+	Scala: '#c22d40',
+	Haskell: '#5e5086',
+	Elixir: '#6e4a7e',
+	Clojure: '#db5855',
+	Dockerfile: '#384d54',
+	Makefile: '#427819',
+	MDX: '#fcb32c',
+	Markdown: '#083fa1',
+};
+
+export interface LanguageStat {
+	name: string;
+	bytes: number;
+	percentage: number;
+	color: string;
+}
+
+export async function getGitHubLanguageStats(
+	username: string,
+	maxRepos = 50,
+): Promise<LanguageStat[]> {
+	// Fetch user's own repos (non-fork), sorted by push date
+	const reposResponse = await fetch(
+		`https://api.github.com/users/${username}/repos?per_page=100&sort=pushed&type=owner`,
+		{ next: { revalidate: 3600 } },
+	);
+
+	if (!reposResponse.ok) return [];
+
+	const repos: Array<{ name: string; fork: boolean }> =
+		await reposResponse.json();
+
+	// Limit to top N non-forked repos to stay within API rate limits
+	const topRepos = repos.filter((r) => !r.fork).slice(0, maxRepos);
+
+	// Fetch language bytes for each repo in parallel
+	const languageCounts: Record<string, number> = {};
+
+	await Promise.all(
+		topRepos.map(async (repo) => {
+			const langResponse = await fetch(
+				`https://api.github.com/repos/${username}/${repo.name}/languages`,
+				{ next: { revalidate: 3600 } },
+			);
+			if (!langResponse.ok) return;
+			const langs: Record<string, number> = await langResponse.json();
+			for (const [lang, bytes] of Object.entries(langs)) {
+				languageCounts[lang] = (languageCounts[lang] ?? 0) + bytes;
+			}
+		}),
+	);
+
+	const total = Object.values(languageCounts).reduce((a, b) => a + b, 0);
+	if (total === 0) return [];
+
+	return Object.entries(languageCounts)
+		.sort(([, a], [, b]) => b - a)
+		.slice(0, 10)
+		.map(([name, bytes]) => ({
+			name,
+			bytes,
+			percentage: (bytes / total) * 100,
+			color: GITHUB_LANGUAGE_COLORS[name] ?? '#8b949e',
+		}));
+}
