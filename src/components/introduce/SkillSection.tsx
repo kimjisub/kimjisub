@@ -6,6 +6,7 @@ import { SkillIconWrapper } from './SkillIconWrapper';
 import { getSkills } from '@/api/notion/skills';
 import { IconSlugView } from '@/components/IconSlugView';
 import { AnimatedGridItem, AnimatedSection } from '@/components/motion/AnimatedSection';
+import { SkillsRadarChart } from '@/components/SkillsRadarChart';
 import { SectionReveal } from '@/components/SectionReveal';
 
 export default async function SkillsSection() {
@@ -20,6 +21,12 @@ export default async function SkillsSection() {
           </h2>
         </SectionReveal>
 
+        {/* Radar chart */}
+        <div className="mb-12 flex justify-center">
+          <SkillsRadarChart skills={skills} size={300} />
+        </div>
+
+        {/* Icon grid */}
         <div className="flex flex-wrap gap-2">
           {skills.slice(0, 40).map((skill, index) => (
             <AnimatedGridItem key={skill.id} index={index}>

@@ -5,8 +5,9 @@ import type { Metadata } from 'next';
 
 import { getSkills } from '@/api/notion/skills';
 import DebugView from '@/components/DebugView';
-import { AnimatedSection,AnimatedTitle } from '@/components/motion/AnimatedSection';
+import { AnimatedSection, AnimatedTitle } from '@/components/motion/AnimatedSection';
 import { SkillCategoryAnimated } from '@/components/SkillCategoryAnimated';
+import { SkillsRadarChart } from '@/components/SkillsRadarChart';
 
 export const metadata: Metadata = {
 	title: 'Skills',
@@ -62,14 +63,35 @@ export default async function SkillsPage() {
         </AnimatedSection>
       </header>
 
+      {/* Radar Chart */}
+      <AnimatedSection delay={0.15} className="mb-20">
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-10">
+          <div className="flex-shrink-0">
+            <SkillsRadarChart skills={skills} size={320} />
+          </div>
+          <div className="md:pt-6 space-y-3 max-w-xs">
+            <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-semibold">
+              Overview
+            </h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              각 축은 해당 영역의 스킬 숙련도와 프로젝트 적용 빈도를 바탕으로 산출된 종합 점수입니다.
+              꼭짓점 위에 마우스를 올리면 세부 스킬을 확인할 수 있습니다.
+            </p>
+            <p className="text-xs text-muted-foreground/60 leading-relaxed">
+              Score = average proficiency × project usage depth
+            </p>
+          </div>
+        </div>
+      </AnimatedSection>
+
       <div>
         {categories.map((cat, index) => {
           const filtered = skills.filter(skill => skill.분류.includes(cat.key));
           if (filtered.length === 0) return null;
           return (
-            <SkillCategoryAnimated 
-              key={cat.key} 
-              title={cat.title} 
+            <SkillCategoryAnimated
+              key={cat.key}
+              title={cat.title}
               skills={filtered}
               categoryIndex={index}
             />
