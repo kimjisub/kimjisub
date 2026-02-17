@@ -1,6 +1,7 @@
 'use client';
 
 import { GradientBlob } from '@/components/GradientBlob';
+import { MagneticLink } from '@/components/MagneticButton';
 import { RoughHighlight } from '@/components/RoughHighlight';
 import { TiltImage } from '@/components/TiltImage';
 import { TypingText } from '@/components/TypingText';
@@ -51,30 +52,30 @@ export const HeroSection = () => {
               className="flex flex-wrap gap-3 text-sm animate-fade-in-up"
               style={{ animationDelay: '0.3s' }}
             >
-              <a 
-                href="https://alpaon.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <MagneticLink
+                href="https://alpaon.com"
                 className="px-4 py-2 rounded-lg bg-card border border-border hover:border-foreground/30 transition-colors"
+                strength={0.4}
+                radius={120}
               >
                 Alpaon
-              </a>
-              <a 
-                href="https://teamcandid.kr" 
-                target="_blank" 
-                rel="noopener noreferrer"
+              </MagneticLink>
+              <MagneticLink
+                href="https://teamcandid.kr"
                 className="px-4 py-2 rounded-lg bg-card border border-border hover:border-foreground/30 transition-colors"
+                strength={0.4}
+                radius={120}
               >
                 Candid
-              </a>
-              <a 
-                href="https://github.com/kimjisub" 
-                target="_blank" 
-                rel="noopener noreferrer"
+              </MagneticLink>
+              <MagneticLink
+                href="https://github.com/kimjisub"
                 className="px-4 py-2 rounded-lg bg-card border border-border hover:border-foreground/30 transition-colors"
+                strength={0.4}
+                radius={120}
               >
                 GitHub
-              </a>
+              </MagneticLink>
             </div>
           </div>
         </div>

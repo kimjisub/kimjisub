@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+import { MagneticLink, MagneticWrapper } from './MagneticButton';
 import { ThemeToggle } from './ThemeToggle';
 
 const TopBar: React.FC = () => {
@@ -58,7 +59,12 @@ const TopBar: React.FC = () => {
       }}
     >
       <div className="h-14 max-w-4xl mx-auto px-6 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors">
+        <MagneticLink 
+          href="/" 
+          className="flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors"
+          strength={0.25}
+          radius={60}
+        >
           <Image
             src="/logo192.png"
             alt="Jisub Kim 로고"
@@ -67,24 +73,28 @@ const TopBar: React.FC = () => {
             className="rounded-md"
           />
           <span className="text-sm font-medium">Jisub Kim</span>
-        </Link>
+        </MagneticLink>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-6">
           {links.map((link) => (
-            <Link
+            <MagneticLink
               key={link.path}
               href={link.path}
               className={`text-sm transition-colors ${
-                pathname.startsWith(link.path)
+                pathname?.startsWith(link.path)
                   ? 'text-foreground'
                   : 'text-muted-foreground hover:text-foreground'
               }`}
+              strength={0.3}
+              radius={60}
             >
               {link.label}
-            </Link>
+            </MagneticLink>
           ))}
-          <ThemeToggle />
+          <MagneticWrapper strength={0.3} radius={50}>
+            <ThemeToggle />
+          </MagneticWrapper>
         </div>
 
         {/* Mobile toggle */}
@@ -108,7 +118,7 @@ const TopBar: React.FC = () => {
               href={link.path}
               onClick={() => setIsMenuOpen(false)}
               className={`block px-6 py-3 text-sm border-b border-border last:border-0 ${
-                pathname.startsWith(link.path)
+                pathname?.startsWith(link.path)
                   ? 'text-foreground'
                   : 'text-muted-foreground'
               }`}
