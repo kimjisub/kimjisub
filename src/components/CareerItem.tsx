@@ -37,20 +37,22 @@ export const CareerItem = ({ className, career }: CareerItemProps) => {
 	return (
 		<Link href={`/careers/${career.id}`} prefetch className="group">
 			<article
-				className={`cursor-pointer rounded-xl overflow-hidden card-hover ${className}`}
+				className={`cursor-pointer rounded-xl border border-border bg-card overflow-hidden card-hover ${className}`}
 			>
 				<div className="relative overflow-hidden">
 					<div className="aspect-video">{coverImage}</div>
 					<div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-colors duration-300" />
 				</div>
 				<div className="p-4">
-					<p className="text-base font-semibold text-foreground flex items-center mb-1 group-hover:text-accent transition-colors">
+					<p className="text-sm font-medium text-foreground flex items-center mb-1 group-hover:text-accent transition-colors">
 						{icon}
 						{career.title}
 					</p>
-					<p className="text-sm text-muted-foreground line-clamp-2">
-						{career.description}
-					</p>
+					{career.description && (
+						<p className="text-sm text-muted-foreground line-clamp-2">
+							{career.description}
+						</p>
+					)}
 				</div>
 			</article>
 		</Link>
