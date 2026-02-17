@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { MagneticLink } from '@/components/MagneticWrapper';
 
 export const ContactSectionAnimated = () => {
   const ref = useRef(null);
@@ -20,35 +21,37 @@ export const ContactSectionAnimated = () => {
         </motion.h2>
         
         <motion.div 
-          className="flex flex-wrap gap-4"
+          className="flex flex-wrap gap-4 items-center"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          <a 
+          <MagneticLink
             href="mailto:0226daniel@gmail.com"
             className="text-muted-foreground hover:text-foreground transition-colors"
+            strength={0.35}
+            radius={80}
           >
             0226daniel@gmail.com
-          </a>
+          </MagneticLink>
           <span className="text-border">·</span>
-          <a 
+          <MagneticLink
             href="https://www.linkedin.com/in/kimjisub"
-            target="_blank"
-            rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors"
+            strength={0.35}
+            radius={80}
           >
             LinkedIn
-          </a>
+          </MagneticLink>
           <span className="text-border">·</span>
-          <a 
+          <MagneticLink
             href="https://github.com/kimjisub"
-            target="_blank"
-            rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors"
+            strength={0.35}
+            radius={80}
           >
             GitHub
-          </a>
+          </MagneticLink>
         </motion.div>
       </div>
     </section>
