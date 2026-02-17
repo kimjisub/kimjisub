@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import path from "path";
 
 import BlogPostHeader from "@/components/BlogPostHeader";
+import ReadingProgress from "@/components/ui/ReadingProgress";
 import TableOfContents from "@/components/TableOfContents";
 import type { BlogPostMeta } from "@/types/blog";
 
@@ -57,6 +58,8 @@ export default async function Page({
   };
 
   return (
+    <>
+      <ReadingProgress />
     <div className="max-w-7xl mx-auto px-6 py-24">
       <div className="flex gap-12">
         <div className="flex-1 max-w-4xl">
@@ -70,6 +73,7 @@ export default async function Page({
         </aside>
       </div>
     </div>
+    </>
   );
 }
 
