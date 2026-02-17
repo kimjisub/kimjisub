@@ -7,21 +7,41 @@ import GithubSection from '@/components/introduce/GithubSection';
 import { HeroSection } from '@/components/introduce/HeroSection';
 import SkillsSection from '@/components/introduce/SkillSection';
 import { WorkSection } from '@/components/introduce/WorkSection';
+import ScrollSpyNav from '@/components/ScrollSpyNav';
 
 export const revalidate = 3600;
 
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
-      <HeroSection />
-      <AboutBentoSection />
-      <AboutSection />
-      <WorkSection />
-      <BackgroundSection />
-      <GithubSection />
-      <SkillsSection />
-      <BlogPreviewSection />
-      <ContactSectionAnimated />
+      <ScrollSpyNav />
+
+      <section id="hero">
+        <HeroSection />
+      </section>
+
+      <section id="about">
+        <AboutBentoSection />
+        <AboutSection />
+      </section>
+
+      <section id="work">
+        <WorkSection />
+        <BackgroundSection />
+        <GithubSection />
+      </section>
+
+      <section id="skills">
+        <SkillsSection />
+      </section>
+
+      <section id="blog">
+        <BlogPreviewSection />
+      </section>
+
+      <section id="contact">
+        <ContactSectionAnimated />
+      </section>
     </main>
   );
 }
