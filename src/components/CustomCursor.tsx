@@ -1,8 +1,8 @@
 'use client';
 
+import { useCallback, useEffect, useRef,useState } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { useTheme } from 'next-themes';
-import { useEffect, useState, useCallback, useRef } from 'react';
 
 export default function CustomCursor() {
 	const [isHovering, setIsHovering] = useState(false);

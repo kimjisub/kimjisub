@@ -1,8 +1,8 @@
 'use client';
 
+import { ReactNode, useEffect, useState } from 'react';
 import { Theme } from '@radix-ui/themes';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
-import { ReactNode, useEffect, useState } from 'react';
 
 interface ThemeProviderProps {
   children: ReactNode;

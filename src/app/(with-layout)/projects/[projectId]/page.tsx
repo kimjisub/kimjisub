@@ -3,6 +3,7 @@ import { Badge, DataList } from '@radix-ui/themes';
 import { Text } from '@radix-ui/themes';
 import { format } from 'date-fns';
 import Image from 'next/image';
+import type { ExtendedRecordMap } from 'notion-types';
 
 import { getProject, getProjectPage } from '@/api/notion/project';
 import { getProjects } from '@/api/notion/projects';
@@ -12,12 +13,20 @@ import { JsonView } from '@/components/JsonView';
 import { NotionClientRenderer } from '@/components/NotionPage';
 import { SkillItem } from '@/components/SkillItem';
 
+// Projects with known Notion formula issues that cause build failures
+const EXCLUDED_PROJECT_IDS = [
+	'07b08690-a37c-421f-8a80-b13d3824549a', // replaceAll undefined error
+	'4921b020-aaf8-4482-bfef-4976499dde2e', // replaceAll undefined error
+];
+
 export async function generateStaticParams() {
 	console.log('[generateStaticParams]', 'projects/[projectId]');
 	const { projects } = await getProjects();
-	return projects.map(project => ({
-		projectId: project.id,
-	}));
+	return projects
+		.filter(project => !EXCLUDED_PROJECT_IDS.includes(project.id))
+		.map(project => ({
+			projectId: project.id,
+		}));
 }
 
 export const revalidate = 3600;
@@ -61,10 +70,16 @@ export async function generateMetadata(props: { params: Params }) {
 const ProjectPage = async (props: { params: Params }) => {
 	const { projectId } = await props.params;
 	console.log('[SSG] ProjectPage', { projectId });
-	const [
-		{ project, fetchedAt },
-		{ extendedRecordMap, fetchedAt: pageFetchedAt },
-	] = await Promise.all([getProject(projectId), getProjectPage(projectId)]);
+	// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+	const [projectRes, pageRes] = await Promise.all([
+		getProject(projectId),
+		getProjectPage(projectId),
+	]);
+	const { project, fetchedAt } = projectRes;
+	const { extendedRecordMap, fetchedAt: pageFetchedAt } = pageRes as {
+		extendedRecordMap: ExtendedRecordMap;
+		fetchedAt: Date;
+	};
 
 	if (!project) {
 		return <div>Project not found</div>;

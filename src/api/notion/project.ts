@@ -54,11 +54,20 @@ export const getProject = async (projectId: string) => {
 export const getProjectPage = async (projectId: string) => {
   const getNotionPage = unstable_cache(
     async () => {
-      const extendedRecordMap = await notionXApi.getPage(projectId);
-      return {
-        extendedRecordMap,
-        fetchedAt: new Date(),
-      };
+      try {
+        const extendedRecordMap = await notionXApi.getPage(projectId);
+        return {
+          extendedRecordMap,
+          fetchedAt: new Date(),
+        };
+      } catch (error) {
+        console.error(`[getProjectPage] Error fetching page ${projectId}:`, error);
+        // Return empty recordMap to allow build to continue
+        return {
+          extendedRecordMap: { block: {}, collection: {}, collection_view: {}, notion_user: {}, collection_query: {}, signed_urls: {} } as any,
+          fetchedAt: new Date(),
+        };
+      }
     },
     ['project-page', projectId],
     {
