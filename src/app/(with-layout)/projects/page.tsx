@@ -5,9 +5,8 @@ import type { Metadata } from 'next';
 
 import { getProjects } from '@/api/notion/projects';
 import DebugView from '@/components/DebugView';
-import { ProjectCarousel } from '@/components/ProjectCarousel';
-import { AnimatedGridItem, AnimatedSection, AnimatedTitle } from '@/components/motion/AnimatedSection';
-import { ProjectItem } from '@/components/ProjectItem';
+import { ProjectsClient } from '@/components/ProjectsClient';
+import { AnimatedSection, AnimatedTitle } from '@/components/motion/AnimatedSection';
 
 export const metadata: Metadata = {
 	title: 'Projects',
@@ -41,28 +40,15 @@ export default async function ProjectsPage() {
         </AnimatedTitle>
         <AnimatedSection delay={0.1}>
           <p className="text-muted-foreground leading-relaxed max-w-xl">
-            {projects.length}개 프로젝트. 개인 프로젝트부터 회사 제품까지.
+            개인 프로젝트부터 회사 제품까지.
           </p>
         </AnimatedSection>
       </header>
 
-      {/* 데스크탑: 수평 캐러셀 */}
-      <AnimatedSection delay={0.2} className="hidden md:block">
-        <ProjectCarousel projects={projects} />
+      {/* 필터 + 프로젝트 목록 (Client Component) */}
+      <AnimatedSection delay={0.2}>
+        <ProjectsClient projects={projects} />
       </AnimatedSection>
-
-      {/* 모바일: 세로 그리드 */}
-      <div className="md:hidden px-6 grid grid-cols-1 gap-6">
-        {projects.map((project, index) => (
-          <AnimatedGridItem
-            key={project.id}
-            index={index}
-            className="transition-opacity duration-200"
-          >
-            <ProjectItem project={project} />
-          </AnimatedGridItem>
-        ))}
-      </div>
 
       <DebugView>
         <Text className="text-muted-foreground text-sm px-6">

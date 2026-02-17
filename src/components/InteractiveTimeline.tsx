@@ -1,35 +1,89 @@
 'use client';
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, useInView, useScroll, useTransform } from 'framer-motion';
+import {
+  motion,
+  useInView,
+  useScroll,
+  useTransform,
+  AnimatePresence,
+  cubicBezier,
+} from 'framer-motion';
 import { format } from 'date-fns';
 
 import { CareerT } from '@/api/notion/careers';
 import { BlurImage } from '@/components/BlurImage';
 
+// ────────────────────────────────────────────
+// Variants
+// ────────────────────────────────────────────
+
+const EASE = cubicBezier(0.25, 0.46, 0.45, 0.94);
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.12, when: 'beforeChildren' as const },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -24 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.5, ease: EASE },
+  },
+};
+
+const expandVariants = {
+  collapsed: { height: 0, opacity: 0 },
+  expanded: {
+    height: 'auto',
+    opacity: 1,
+    transition: { duration: 0.3, ease: EASE },
+  },
+};
+
+// ────────────────────────────────────────────
+// Pulse dot for ongoing items
+// ────────────────────────────────────────────
+
+const PulseDot = () => (
+  <span className="relative flex h-4 w-4">
+    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-60" />
+    <span className="relative inline-flex h-4 w-4 rounded-full bg-accent" />
+  </span>
+);
+
+// ────────────────────────────────────────────
+// TimelineItem
+// ────────────────────────────────────────────
+
 interface TimelineItemProps {
   career: CareerT;
-  index: number;
-  isActive: boolean;
 }
 
-const TimelineItem = ({ career, index, isActive }: TimelineItemProps) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-50px 0px -50px 0px' });
-  const isLeft = index % 2 === 0;
+const TimelineItem = ({ career }: TimelineItemProps) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-60px 0px' });
+  const [hovered, setHovered] = useState(false);
+
+  const isOngoing = !career.date.end;
 
   const icon = career.iconUrl ? (
     <Image
-      className="w-5 h-5"
+      className="w-5 h-5 rounded-sm shrink-0"
       width={20}
       height={20}
       src={career.iconUrl}
       alt={`${career.title} 아이콘`}
     />
   ) : career.iconEmoji ? (
-    <span className="text-sm">{career.iconEmoji}</span>
+    <span className="text-base leading-none shrink-0">{career.iconEmoji}</span>
   ) : null;
 
   const formatDateRange = () => {
@@ -38,93 +92,120 @@ const TimelineItem = ({ career, index, isActive }: TimelineItemProps) => {
     return start ? `${start} — ${end}` : '';
   };
 
+  // Extra detail tags
+  const detailTags = [
+    ...(career.institutions ?? []),
+    ...(career.assignedTasks ?? []),
+  ];
+
   return (
     <motion.div
       ref={ref}
-      className={`relative flex items-start mb-8 md:mb-12 ${
-        isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
-      }`}
-      initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-      transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+      variants={itemVariants}
+      initial="hidden"
+      animate={isInView ? 'visible' : 'hidden'}
+      className="relative flex gap-6 pb-10 last:pb-0"
     >
-      {/* 타임라인 노드 (데스크톱 중앙) */}
-      <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 flex-col items-center z-10">
-        <motion.div
-          className={`w-4 h-4 rounded-full border-2 transition-all duration-300 ${
-            isActive
-              ? 'bg-accent border-accent scale-125 shadow-lg shadow-accent/30'
-              : 'bg-background border-border hover:border-accent'
-          }`}
-          whileHover={{ scale: 1.3 }}
-        />
+      {/* ── Node column ── */}
+      <div className="flex flex-col items-center shrink-0" style={{ width: 20 }}>
+        {/* Node */}
+        <motion.button
+          aria-label={`${career.title} 상세 보기`}
+          onClick={() => setHovered((v) => !v)}
+          onHoverStart={() => setHovered(true)}
+          onHoverEnd={() => setHovered(false)}
+          className="relative z-10 cursor-pointer focus:outline-none"
+          whileHover={{ scale: 1.25 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          {isOngoing ? (
+            <PulseDot />
+          ) : (
+            <motion.span
+              className={`block h-4 w-4 rounded-full border-2 transition-colors duration-200 ${
+                hovered
+                  ? 'bg-accent border-accent shadow-lg shadow-accent/40'
+                  : 'bg-background border-border dark:bg-card dark:border-border'
+              }`}
+            />
+          )}
+        </motion.button>
+        {/* Connector line (skip for last item) */}
+        <div className="flex-1 w-px bg-border mt-1" />
       </div>
 
-      {/* 타임라인 노드 (모바일 왼쪽) */}
-      <div className="flex md:hidden absolute left-0 flex-col items-center z-10">
-        <motion.div
-          className={`w-3 h-3 rounded-full border-2 transition-all duration-300 ${
-            isActive
-              ? 'bg-accent border-accent scale-125 shadow-lg shadow-accent/30'
-              : 'bg-background border-border'
-          }`}
-        />
-      </div>
-
-      {/* 컨텐츠 카드 */}
-      <div
-        className={`w-full md:w-[calc(50%-2rem)] pl-8 md:pl-0 ${
-          isLeft ? 'md:pr-12' : 'md:pl-12'
-        }`}
+      {/* ── Content column ── */}
+      <motion.div
+        className="flex-1 min-w-0 -mt-1"
+        onHoverStart={() => setHovered(true)}
+        onHoverEnd={() => setHovered(false)}
       >
-        <Link href={`/careers/${career.id}`} prefetch className="group block">
+        <Link href={`/careers/${career.id}`} prefetch>
           <motion.article
-            className={`relative rounded-xl border bg-card overflow-hidden transition-all duration-300 ${
-              isActive
-                ? 'border-accent/50 shadow-lg shadow-accent/10'
-                : 'border-border hover:border-accent/30 hover:shadow-md'
+            className={`relative rounded-xl border bg-card overflow-hidden transition-shadow duration-300 cursor-pointer ${
+              hovered
+                ? 'border-accent/40 shadow-lg shadow-accent/10 dark:shadow-accent/5'
+                : 'border-border'
             }`}
-            whileHover={{ y: -2 }}
+            animate={hovered ? { y: -2 } : { y: 0 }}
+            transition={{ duration: 0.2 }}
           >
-            {/* 커버 이미지 */}
+            {/* Cover image */}
             {career.coverImageUrl && (
               <div className="relative overflow-hidden">
                 <div className="aspect-[16/9]">
                   <BlurImage
-                    className="w-full h-full transition-transform duration-500 group-hover:scale-105"
-                    width={400}
-                    height={225}
+                    className={`w-full h-full transition-transform duration-500 ${
+                      hovered ? 'scale-105' : 'scale-100'
+                    }`}
+                    width={480}
+                    height={270}
                     src={career.coverImageUrl}
                     alt={`${career.title} 커버 이미지`}
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    sizes="(max-width: 768px) 100vw, 600px"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                {/* Ongoing badge */}
+                {isOngoing && (
+                  <span className="absolute top-3 right-3 px-2 py-0.5 bg-accent text-accent-foreground text-xs font-medium rounded-full">
+                    진행 중
+                  </span>
+                )}
               </div>
             )}
 
             <div className="p-4 md:p-5">
-              {/* 날짜 */}
-              <p className="text-xs text-muted-foreground mb-2 font-mono">
+              {/* Date */}
+              <p className="text-xs text-muted-foreground mb-2 font-mono tracking-wide">
                 {formatDateRange()}
               </p>
 
-              {/* 제목 */}
-              <h3 className="font-medium text-foreground flex items-center gap-2 mb-2 group-hover:text-accent transition-colors">
+              {/* Title */}
+              <h3
+                className={`font-medium flex items-center gap-2 mb-1 transition-colors duration-200 ${
+                  hovered ? 'text-accent' : 'text-foreground'
+                }`}
+              >
                 {icon}
                 <span className="line-clamp-1">{career.title}</span>
+                {isOngoing && !career.coverImageUrl && (
+                  <span className="ml-auto shrink-0 px-2 py-0.5 bg-accent text-accent-foreground text-xs font-medium rounded-full">
+                    진행 중
+                  </span>
+                )}
               </h3>
 
-              {/* 설명 */}
+              {/* Description */}
               {career.description && (
-                <p className="text-sm text-muted-foreground line-clamp-2">
+                <p className="text-sm text-muted-foreground line-clamp-2 mb-2">
                   {career.description}
                 </p>
               )}
 
-              {/* 카테고리 태그 */}
+              {/* Categories */}
               {career.categories && career.categories.length > 0 && (
-                <div className="flex flex-wrap gap-1.5 mt-3">
+                <div className="flex flex-wrap gap-1.5 mt-2">
                   {career.categories.slice(0, 3).map((cat) => (
                     <span
                       key={cat.name}
@@ -135,16 +216,47 @@ const TimelineItem = ({ career, index, isActive }: TimelineItemProps) => {
                   ))}
                 </div>
               )}
+
+              {/* Expandable details on hover */}
+              <AnimatePresence initial={false}>
+                {hovered && detailTags.length > 0 && (
+                  <motion.div
+                    key="details"
+                    variants={expandVariants}
+                    initial="collapsed"
+                    animate="expanded"
+                    exit="collapsed"
+                    className="overflow-hidden"
+                  >
+                    <div className="pt-3 mt-3 border-t border-border/60">
+                      <p className="text-xs text-muted-foreground mb-1.5 font-medium uppercase tracking-wider">
+                        상세 정보
+                      </p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {detailTags.map((tag) => (
+                          <span
+                            key={tag.name}
+                            className="px-2 py-0.5 text-xs rounded-full border border-accent/30 text-accent bg-accent/10"
+                          >
+                            {tag.name}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </motion.article>
         </Link>
-      </div>
-
-      {/* 데스크톱용 반대편 공간 */}
-      <div className="hidden md:block w-[calc(50%-2rem)]" />
+      </motion.div>
     </motion.div>
   );
 };
+
+// ────────────────────────────────────────────
+// InteractiveTimeline
+// ────────────────────────────────────────────
 
 interface InteractiveTimelineProps {
   careers: CareerT[];
@@ -152,122 +264,45 @@ interface InteractiveTimelineProps {
 
 export const InteractiveTimeline = ({ careers }: InteractiveTimelineProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const isInView = useInView(containerRef, { once: true, margin: '-60px' });
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['start center', 'end center'],
+    offset: ['start 80%', 'end 20%'],
   });
 
-  // 스크롤 진행도에 따른 라인 애니메이션
+  // Scroll-driven line fill
   const lineHeight = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
 
-  // 스크롤 위치에 따라 활성 아이템 결정
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return;
-
-      const container = containerRef.current;
-      const items = container.querySelectorAll('[data-timeline-item]');
-      const viewportCenter = window.innerHeight / 2;
-
-      let closestIndex = 0;
-      let closestDistance = Infinity;
-
-      items.forEach((item, index) => {
-        const rect = item.getBoundingClientRect();
-        const itemCenter = rect.top + rect.height / 2;
-        const distance = Math.abs(itemCenter - viewportCenter);
-
-        if (distance < closestDistance) {
-          closestDistance = distance;
-          closestIndex = index;
-        }
-      });
-
-      setActiveIndex(closestIndex);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // 날짜순 정렬 (최신순)
+  // Sort newest first
   const sortedCareers = [...careers].sort((a, b) => {
-    const dateA = a.date.start?.getTime() || 0;
-    const dateB = b.date.start?.getTime() || 0;
+    const dateA = a.date.start?.getTime() ?? 0;
+    const dateB = b.date.start?.getTime() ?? 0;
     return dateB - dateA;
   });
 
-  // 연도별 그룹 추출
-  const years = Array.from(new Set(
-    sortedCareers
-      .filter(c => c.date.start)
-      .map(c => c.date.start!.getFullYear())
-  ));
-
   return (
-    <div ref={containerRef} className="relative">
-      {/* 타임라인 세로선 (데스크톱 중앙) */}
-      <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 w-px h-full">
-        <div className="w-full h-full bg-border" />
-        <motion.div
-          className="absolute top-0 left-0 w-full bg-gradient-to-b from-accent to-accent/50"
-          style={{ height: lineHeight }}
-        />
-      </div>
+    <div ref={containerRef} className="relative pl-5">
+      {/* ── Vertical line (left) ── */}
+      {/* Background track */}
+      <div className="absolute left-[9px] top-0 bottom-0 w-px bg-border" />
+      {/* Scroll-driven fill */}
+      <motion.div
+        className="absolute left-[9px] top-0 w-px origin-top bg-gradient-to-b from-accent via-accent to-accent/30"
+        style={{ height: lineHeight }}
+      />
 
-      {/* 타임라인 세로선 (모바일 왼쪽) */}
-      <div className="md:hidden absolute left-[5px] top-0 w-px h-full">
-        <div className="w-full h-full bg-border" />
-        <motion.div
-          className="absolute top-0 left-0 w-full bg-gradient-to-b from-accent to-accent/50"
-          style={{ height: lineHeight }}
-        />
-      </div>
-
-      {/* 연도 마커 */}
-      <div className="hidden md:block">
-        {years.map((year) => {
-          const firstCareerOfYear = sortedCareers.find(
-            c => c.date.start?.getFullYear() === year
-          );
-          const index = sortedCareers.indexOf(firstCareerOfYear!);
-          
-          return (
-            <div
-              key={year}
-              className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
-              style={{ top: `${(index / sortedCareers.length) * 100}%` }}
-            >
-              <motion.div
-                className="px-3 py-1 bg-accent text-accent-foreground text-sm font-mono rounded-full shadow-md"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-              >
-                {year}
-              </motion.div>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* 타임라인 아이템들 */}
-      <div className="relative">
-        {sortedCareers.map((career, index) => (
-          <div key={career.id} data-timeline-item>
-            <TimelineItem
-              career={career}
-              index={index}
-              isActive={index === activeIndex}
-            />
-          </div>
+      {/* ── Items ── */}
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate={isInView ? 'visible' : 'hidden'}
+        className="relative"
+      >
+        {sortedCareers.map((career) => (
+          <TimelineItem key={career.id} career={career} />
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
