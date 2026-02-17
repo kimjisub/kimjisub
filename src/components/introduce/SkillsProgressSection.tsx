@@ -64,9 +64,9 @@ const SkillBarRow = ({ name, skill, accent, globalIndex }: SkillBarRowProps) => 
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-30px' });
 
-  const proficiency = skill?.숙련도
-    ? proficiencyConfig[skill.숙련도]
-    : { label: '—', percent: 20, color: '#94a3b8' };
+  const proficiency =
+    (skill?.숙련도 && proficiencyConfig[skill.숙련도]) ||
+    { label: '—', percent: 20, color: '#94a3b8' };
 
   const delay = Math.min(globalIndex * 0.05, 0.4);
 
