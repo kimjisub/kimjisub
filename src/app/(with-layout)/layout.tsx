@@ -8,6 +8,7 @@ import '@/styles/prism-theme.css';
 import '../globals.css';
 
 import CustomCursor from '@/components/CustomCursor';
+import FloatingSocialSidebar from '@/components/FloatingSocialSidebar';
 import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
 import { PageTransition } from '@/components/motion/PageTransition';
@@ -95,6 +96,7 @@ export default function RootLayout({
 					<ThemeProvider>
 						<ScrollProgressIndicator />
 						<CustomCursor />
+						<FloatingSocialSidebar />
 						<div className="min-h-screen flex flex-col">
 							<TopBar />
 							<main className="flex-grow">
