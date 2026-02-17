@@ -8,6 +8,7 @@ import 'prismjs/themes/prism-tomorrow.css';
 import 'katex/dist/katex.min.css';
 import '@radix-ui/themes/styles.css';
 
+import CustomCursor from '@/components/CustomCursor';
 import { AppInfoProvider } from '@/contexts/AppInfoContext';
 
 const spaceGrotesk = Space_Grotesk({ 
@@ -36,7 +37,10 @@ export default function RootLayout({
 		<html className={`${spaceGrotesk.variable} ${dmSans.variable}`}>
 			<Theme appearance="dark">
 				<AppInfoProvider>
-					<body className="font-body bg-background text-foreground">{children}</body>
+					<body className="font-body bg-background text-foreground">
+						<CustomCursor />
+						{children}
+					</body>
 				</AppInfoProvider>
 			</Theme>
 		</html>

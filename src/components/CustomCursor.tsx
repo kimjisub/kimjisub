@@ -119,7 +119,8 @@ export default function CustomCursor() {
 	// 터치 디바이스에서는 렌더링하지 않음
 	if (isTouchDevice) return null;
 
-	const isDark = resolvedTheme === 'dark';
+	// resolvedTheme이 없으면 시스템 테마 감지, 기본 다크
+	const isDark = resolvedTheme ? resolvedTheme === 'dark' : true;
 	const cursorColor = isDark ? 'rgba(255, 255, 255, 0.8)' : 'rgba(0, 0, 0, 0.8)';
 	const cursorBorderColor = isDark ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.3)';
 
