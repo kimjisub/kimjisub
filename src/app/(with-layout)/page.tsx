@@ -6,6 +6,7 @@ import { ContactSectionAnimated } from '@/components/introduce/ContactSectionAni
 import GithubSection from '@/components/introduce/GithubSection';
 import { HeroSection } from '@/components/introduce/HeroSection';
 import SkillsSection from '@/components/introduce/SkillSection';
+import { TerminalSection } from '@/components/introduce/TerminalSection';
 import { TestimonialsSection } from '@/components/introduce/TestimonialsSection';
 import { WorkSection } from '@/components/introduce/WorkSection';
 import ScrollSpyNav from '@/components/ScrollSpyNav';
@@ -24,6 +25,10 @@ export default function Home() {
       <section id="about">
         <AboutBentoSection />
         <AboutSection />
+      </section>
+
+      <section id="terminal">
+        <TerminalSection />
       </section>
 
       <section id="work">
