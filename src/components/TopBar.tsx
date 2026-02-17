@@ -1,9 +1,11 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import React, { useEffect, useRef, useState } from 'react';
+
+import { ThemeToggle } from './ThemeToggle';
 
 const TopBar: React.FC = () => {
   const pathname = usePathname();
@@ -82,15 +84,19 @@ const TopBar: React.FC = () => {
               {link.label}
             </Link>
           ))}
+          <ThemeToggle />
         </div>
 
         {/* Mobile toggle */}
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden text-sm text-muted-foreground"
-        >
-          {isMenuOpen ? 'Close' : 'Menu'}
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="text-sm text-muted-foreground"
+          >
+            {isMenuOpen ? 'Close' : 'Menu'}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
