@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 
+import type { BlogPost } from '@/types/blog';
+
 // ─── Icons ────────────────────────────────────────────────────────────────────
 
 function HomeIcon() {
@@ -55,6 +57,17 @@ function BlogIcon() {
   );
 }
 
+function UsesIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect width="14" height="8" x="5" y="2" rx="2" />
+      <rect width="20" height="8" x="2" y="14" rx="2" />
+      <line x1="6" x2="6.01" y1="6" y2="6" />
+      <line x1="6" x2="6.01" y1="18" y2="18" />
+    </svg>
+  );
+}
+
 function GithubIcon() {
   return (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -66,7 +79,7 @@ function GithubIcon() {
 function LinkedinIcon() {
   return (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 23.2 24 22.222 24H.003z" />
     </svg>
   );
 }
@@ -98,6 +111,25 @@ function ExternalLinkIcon() {
   );
 }
 
+function SearchIcon() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="text-muted-foreground flex-shrink-0"
+    >
+      <circle cx="11" cy="11" r="8" />
+      <path d="m21 21-4.35-4.35" />
+    </svg>
+  );
+}
+
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 type ItemKind = 'navigate' | 'external' | 'action';
@@ -111,6 +143,7 @@ interface CommandItem {
   href?: string;
   action?: () => void;
   keywords?: string[];
+  description?: string;
 }
 
 // ─── Main Component ───────────────────────────────────────────────────────────
@@ -125,11 +158,22 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
   const { setTheme, resolvedTheme } = useTheme();
   const [query, setQuery] = useState('');
   const [activeIndex, setActiveIndex] = useState(0);
+  const [recentPosts, setRecentPosts] = useState<BlogPost[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
   const isDark = resolvedTheme === 'dark';
 
+  // Fetch recent blog posts when palette opens
+  useEffect(() => {
+    if (!open) return;
+    fetch('/api/blog-posts')
+      .then((r) => r.json())
+      .then((data: BlogPost[]) => setRecentPosts(data))
+      .catch(() => setRecentPosts([]));
+  }, [open]);
+
   const items: CommandItem[] = [
+    // ── Pages ──────────────────────────────────────────────────────────────
     {
       id: 'home',
       label: 'Home',
@@ -137,7 +181,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
       icon: <HomeIcon />,
       kind: 'navigate',
       href: '/',
-      keywords: ['home', 'main', '홈'],
+      keywords: ['home', 'main', '홈', '메인'],
     },
     {
       id: 'projects',
@@ -146,7 +190,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
       icon: <ProjectsIcon />,
       kind: 'navigate',
       href: '/projects',
-      keywords: ['project', '프로젝트'],
+      keywords: ['project', '프로젝트', 'work'],
     },
     {
       id: 'skills',
@@ -155,7 +199,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
       icon: <SkillsIcon />,
       kind: 'navigate',
       href: '/skills',
-      keywords: ['skill', '기술', '스킬'],
+      keywords: ['skill', '기술', '스킬', 'tech', 'stack'],
     },
     {
       id: 'careers',
@@ -164,7 +208,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
       icon: <CareersIcon />,
       kind: 'navigate',
       href: '/careers',
-      keywords: ['career', 'job', '커리어', '경력'],
+      keywords: ['career', 'job', '커리어', '경력', 'experience', 'work'],
     },
     {
       id: 'blog',
@@ -173,8 +217,37 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
       icon: <BlogIcon />,
       kind: 'navigate',
       href: '/blog',
-      keywords: ['blog', '블로그', 'post'],
+      keywords: ['blog', '블로그', 'post', '글', 'article'],
     },
+    {
+      id: 'uses',
+      label: 'Uses',
+      group: 'Pages',
+      icon: <UsesIcon />,
+      kind: 'navigate',
+      href: '/uses',
+      keywords: ['uses', '사용', '도구', 'tool', 'setup', 'gear', 'equipment'],
+    },
+
+    // ── Recent Blog Posts ───────────────────────────────────────────────────
+    ...recentPosts.map((post) => ({
+      id: `blog-${post.slug}`,
+      label: post.meta.title,
+      group: 'Recent Posts',
+      icon: <BlogIcon />,
+      kind: 'navigate' as ItemKind,
+      href: `/blog/${post.slug}`,
+      description: post.meta.date,
+      keywords: [
+        ...(post.meta.tags ?? []),
+        ...(post.meta.keywords ?? []),
+        post.meta.category ?? '',
+        'blog',
+        '블로그',
+      ].filter(Boolean),
+    })),
+
+    // ── Links ───────────────────────────────────────────────────────────────
     {
       id: 'github',
       label: 'GitHub',
@@ -182,7 +255,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
       icon: <GithubIcon />,
       kind: 'external',
       href: 'https://github.com/kimjisub',
-      keywords: ['github', 'git', 'code'],
+      keywords: ['github', 'git', 'code', 'repo', 'repository'],
     },
     {
       id: 'linkedin',
@@ -191,16 +264,18 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
       icon: <LinkedinIcon />,
       kind: 'external',
       href: 'https://linkedin.com/in/kimjisub',
-      keywords: ['linkedin', 'sns', 'social'],
+      keywords: ['linkedin', 'sns', 'social', 'connect'],
     },
+
+    // ── Actions ─────────────────────────────────────────────────────────────
     {
       id: 'theme',
-      label: `Toggle Theme (${isDark ? 'Light' : 'Dark'})`,
+      label: isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode',
       group: 'Actions',
       icon: isDark ? <SunIcon /> : <MoonIcon />,
       kind: 'action',
       action: () => setTheme(isDark ? 'light' : 'dark'),
-      keywords: ['theme', 'dark', 'light', '다크', '라이트', '테마'],
+      keywords: ['theme', 'dark', 'light', '다크', '라이트', '테마', 'mode', 'toggle'],
     },
   ];
 
@@ -211,7 +286,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
         return (
           item.label.toLowerCase().includes(q) ||
           item.group.toLowerCase().includes(q) ||
-          item.keywords?.some((k) => k.includes(q))
+          item.keywords?.some((k) => k.toLowerCase().includes(q))
         );
       })
     : items;
@@ -255,10 +330,10 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
     (e: React.KeyboardEvent<HTMLInputElement>) => {
       if (e.key === 'ArrowDown') {
         e.preventDefault();
-        setActiveIndex((prev) => (prev + 1) % filtered.length);
+        setActiveIndex((prev) => (prev + 1) % Math.max(filtered.length, 1));
       } else if (e.key === 'ArrowUp') {
         e.preventDefault();
-        setActiveIndex((prev) => (prev - 1 + filtered.length) % filtered.length);
+        setActiveIndex((prev) => (prev - 1 + Math.max(filtered.length, 1)) % Math.max(filtered.length, 1));
       } else if (e.key === 'Enter') {
         e.preventDefault();
         const item = filtered[activeIndex];
@@ -285,24 +360,24 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
         <>
           {/* Backdrop */}
           <motion.div
-            key="backdrop"
+            key="cp-backdrop"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15 }}
-            className="fixed inset-0 z-[100] bg-black/40 backdrop-blur-sm"
+            className="fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm"
             onClick={onClose}
             aria-hidden="true"
           />
 
           {/* Panel */}
           <motion.div
-            key="panel"
-            initial={{ opacity: 0, scale: 0.95, y: -12 }}
+            key="cp-panel"
+            initial={{ opacity: 0, scale: 0.96, y: -16 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: -12 }}
-            transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-x-0 top-[20vh] z-[101] mx-auto w-full max-w-lg px-4"
+            exit={{ opacity: 0, scale: 0.96, y: -16 }}
+            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-x-0 top-[18vh] z-[101] mx-auto w-full max-w-lg px-4"
             role="dialog"
             aria-modal="true"
             aria-label="Command Palette"
@@ -316,26 +391,12 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
             >
               {/* Search input */}
               <div className="flex items-center gap-3 px-4 py-3 border-b border-border">
-                {/* Search icon */}
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-muted-foreground flex-shrink-0"
-                >
-                  <circle cx="11" cy="11" r="8" />
-                  <path d="m21 21-4.35-4.35" />
-                </svg>
+                <SearchIcon />
 
                 <input
                   ref={inputRef}
                   type="text"
-                  placeholder="Search commands..."
+                  placeholder="Search pages, actions..."
                   value={query}
                   onChange={(e) => {
                     setQuery(e.target.value);
@@ -349,7 +410,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
                   spellCheck={false}
                 />
 
-                <kbd className="hidden sm:inline-flex items-center gap-1 rounded border border-border px-1.5 py-0.5 text-[10px] text-muted-foreground font-mono">
+                <kbd className="hidden sm:inline-flex items-center rounded border border-border px-1.5 py-0.5 text-[10px] text-muted-foreground font-mono">
                   ESC
                 </kbd>
               </div>
@@ -357,18 +418,18 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
               {/* Results */}
               <ul
                 ref={listRef}
-                className="max-h-72 overflow-y-auto py-2"
+                className="max-h-[22rem] overflow-y-auto py-2"
                 role="listbox"
               >
                 {filtered.length === 0 ? (
                   <li className="px-4 py-8 text-center text-sm text-muted-foreground">
-                    No results found.
+                    No results for &ldquo;{query}&rdquo;
                   </li>
                 ) : (
                   Object.entries(groups).map(([groupName, groupItems]) => (
                     <li key={groupName}>
                       {/* Group label */}
-                      <span className="block px-4 py-1 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
+                      <span className="block px-4 pt-3 pb-1 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">
                         {groupName}
                       </span>
 
@@ -384,7 +445,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
                             data-active={isActive}
                             onClick={() => runItem(item)}
                             onMouseEnter={() => setActiveIndex(globalIndex)}
-                            className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm text-left transition-colors ${
+                            className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm text-left transition-colors duration-75 ${
                               isActive
                                 ? 'bg-muted text-foreground'
                                 : 'text-muted-foreground hover:text-foreground'
@@ -392,22 +453,29 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
                           >
                             {/* Icon */}
                             <span
-                              className={`flex-shrink-0 ${
+                              className={`flex-shrink-0 transition-colors ${
                                 isActive ? 'text-foreground' : 'text-muted-foreground'
                               }`}
                             >
                               {item.icon}
                             </span>
 
-                            {/* Label */}
-                            <span className="flex-1 font-medium">{item.label}</span>
+                            {/* Label + description */}
+                            <span className="flex-1 min-w-0">
+                              <span className="block font-medium truncate">{item.label}</span>
+                              {item.description && (
+                                <span className="block text-[11px] text-muted-foreground/60 truncate mt-0.5">
+                                  {item.description}
+                                </span>
+                              )}
+                            </span>
 
                             {/* External link indicator */}
                             {item.kind === 'external' && <ExternalLinkIcon />}
 
                             {/* Enter hint when active */}
                             {isActive && (
-                              <kbd className="hidden sm:inline-flex items-center gap-1 rounded border border-border px-1.5 py-0.5 text-[10px] text-muted-foreground font-mono">
+                              <kbd className="hidden sm:inline-flex items-center rounded border border-border px-1.5 py-0.5 text-[10px] text-muted-foreground font-mono flex-shrink-0">
                                 ↵
                               </kbd>
                             )}
@@ -419,16 +487,20 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
                 )}
               </ul>
 
-              {/* Footer hint */}
+              {/* Footer */}
               <div className="border-t border-border px-4 py-2 flex items-center gap-4 text-[11px] text-muted-foreground">
                 <span className="flex items-center gap-1">
                   <kbd className="rounded border border-border px-1 py-0.5 font-mono">↑</kbd>
                   <kbd className="rounded border border-border px-1 py-0.5 font-mono">↓</kbd>
-                  to navigate
+                  navigate
                 </span>
                 <span className="flex items-center gap-1">
                   <kbd className="rounded border border-border px-1 py-0.5 font-mono">↵</kbd>
-                  to select
+                  select
+                </span>
+                <span className="ml-auto flex items-center gap-1 opacity-60">
+                  <kbd className="rounded border border-border px-1 py-0.5 font-mono">⌘K</kbd>
+                  toggle
                 </span>
               </div>
             </div>

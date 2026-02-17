@@ -8,6 +8,7 @@ import '@/styles/prism-theme.css';
 import '../globals.css';
 
 import BackToTop from '@/components/BackToTop';
+import { CommandPaletteWrapper } from '@/components/CommandPaletteWrapper';
 import CustomCursor from '@/components/CustomCursor';
 import FloatingSocialSidebar from '@/components/FloatingSocialSidebar';
 import Footer from '@/components/Footer';
@@ -98,6 +99,7 @@ export default function RootLayout({
 			<AppInfoProvider>
 				<body className="font-sans bg-background text-foreground antialiased">
 					<ThemeProvider>
+						<CommandPaletteWrapper />
 						<Preloader />
 						<GrainOverlay />
 						<SpotlightEffect />
