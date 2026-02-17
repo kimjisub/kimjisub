@@ -1,5 +1,5 @@
-import type { MetadataRoute } from 'next';
 import fs from 'fs';
+import type { MetadataRoute } from 'next';
 import path from 'path';
 
 import { getCareers } from '@/api/notion/careers';

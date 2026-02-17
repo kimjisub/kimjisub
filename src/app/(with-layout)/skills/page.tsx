@@ -1,7 +1,7 @@
 import React from 'react';
-import type { Metadata } from 'next';
 import { Text } from '@radix-ui/themes';
 import { format } from 'date-fns';
+import type { Metadata } from 'next';
 
 import { getSkills } from '@/api/notion/skills';
 import DebugView from '@/components/DebugView';
