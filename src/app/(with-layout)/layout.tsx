@@ -9,11 +9,13 @@ import '../globals.css';
 
 import BackToTop from '@/components/BackToTop';
 import { CommandPaletteWrapper } from '@/components/CommandPaletteWrapper';
+import { KeyboardShortcutsWrapper } from '@/components/KeyboardShortcutsWrapper';
 import CustomCursor from '@/components/CustomCursor';
 import FloatingSocialSidebar from '@/components/FloatingSocialSidebar';
 import Footer from '@/components/Footer';
 import GrainOverlay from '@/components/GrainOverlay';
 import JsonLd from '@/components/JsonLd';
+import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration';
 import { AnimatePresenceWrapper } from '@/components/motion/AnimatePresenceWrapper';
 import ScrollProgressIndicator from '@/components/ScrollProgressIndicator';
 import SpotlightEffect from '@/components/SpotlightEffect';
@@ -70,6 +72,7 @@ export const metadata: Metadata = {
 		images: ['/logo512.png'],
 		creator: '@kimjisub',
 	},
+	manifest: '/manifest.json',
 	robots: {
 		index: true,
 		follow: true,
@@ -84,6 +87,11 @@ export const metadata: Metadata = {
 	verification: {
 		google: 'google-site-verification-code', // TODO: Add actual verification code
 	},
+	alternates: {
+		types: {
+			'application/rss+xml': `${siteUrl}/api/rss`,
+		},
+	},
 };
 
 export default function RootLayout({
@@ -95,11 +103,15 @@ export default function RootLayout({
 		<html className={`${inter.variable} ${newsreader.variable}`} suppressHydrationWarning>
 			<head>
 				<JsonLd />
+				<meta name="theme-color" content="#09090b" />
+				<link rel="apple-touch-icon" href="/logo192.png" />
 			</head>
 			<AppInfoProvider>
 				<body className="font-sans bg-background text-foreground antialiased">
 					<ThemeProvider>
+						<ServiceWorkerRegistration />
 						<CommandPaletteWrapper />
+					<KeyboardShortcutsWrapper />
 						<Preloader />
 						<GrainOverlay />
 						<SpotlightEffect />
