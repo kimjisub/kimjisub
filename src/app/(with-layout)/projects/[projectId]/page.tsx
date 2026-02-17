@@ -62,12 +62,12 @@ const ProjectPage = async (props: { params: Params }) => {
 	);
 
 	return (
-		<div className="pt-16 mx-auto p-6">
-			<div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-				<section className="col-span-3 max-w-fit">
-					<div className="flex items-center bg-center space-x-2">
+		<div className="py-24 px-6 max-w-7xl mx-auto">
+			<div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+				<section className="col-span-3">
+					<div className="flex items-center space-x-3 mb-8">
 						{icon}
-						<h1 className="text-3xl font-bold">{project.title}</h1>
+						<h1 className="font-serif text-3xl md:text-4xl text-foreground italic">{project.title}</h1>
 					</div>
 
 					<NotionClientRenderer
@@ -153,9 +153,9 @@ const ProjectPage = async (props: { params: Params }) => {
 						</DataList.Item>
 					</DataList.Root>
 
-					<div className="space-y-4">
+					<div className="space-y-8 mt-8">
 						<div className="space-y-4">
-							<h2>관련된 Careers</h2>
+							<h2 className="font-serif text-xl text-foreground italic">Related</h2>
 							<div
 								className="grid grid-cols-2 md:grid-cols-3 gap-6 justify-center max-x-1xl"
 								style={{
