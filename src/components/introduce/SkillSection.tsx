@@ -6,6 +6,7 @@ import { AnimatedSection } from '@/components/motion/AnimatedSection';
 import { SkillsRadarChart } from '@/components/SkillsRadarChart';
 import { SkillsStaggerGrid } from '@/components/SkillsStaggerGrid';
 import { SectionReveal } from '@/components/SectionReveal';
+import { SkillsProgressSection } from '@/components/introduce/SkillsProgressSection';
 
 export default async function SkillsSection() {
   const { skills } = await getSkills();
@@ -24,8 +25,18 @@ export default async function SkillsSection() {
           <SkillsRadarChart skills={skills} size={300} />
         </div>
 
+        {/* Animated progress bars — grouped by category */}
+        <AnimatedSection delay={0.2} className="mb-12">
+          <SkillsProgressSection skills={skills} />
+        </AnimatedSection>
+
         {/* Icon grid — staggerChildren on viewport entry */}
-        <SkillsStaggerGrid skills={skills.slice(0, 40)} />
+        <AnimatedSection delay={0.1} className="mb-8">
+          <p className="text-xs uppercase tracking-widest text-muted-foreground font-semibold mb-4">
+            All Technologies
+          </p>
+          <SkillsStaggerGrid skills={skills.slice(0, 40)} />
+        </AnimatedSection>
 
         <AnimatedSection delay={0.4} className="mt-8">
           <Link

@@ -6,8 +6,8 @@ import type { Metadata } from 'next';
 import { getSkills } from '@/api/notion/skills';
 import DebugView from '@/components/DebugView';
 import { AnimatedSection, AnimatedTitle } from '@/components/motion/AnimatedSection';
-import { SkillCategoryAnimated } from '@/components/SkillCategoryAnimated';
 import { SkillsRadarChart } from '@/components/SkillsRadarChart';
+import { SkillsVisualization } from '@/components/SkillsVisualization';
 
 export const metadata: Metadata = {
 	title: 'Skills',
@@ -84,20 +84,8 @@ export default async function SkillsPage() {
         </div>
       </AnimatedSection>
 
-      <div>
-        {categories.map((cat, index) => {
-          const filtered = skills.filter(skill => skill.분류.includes(cat.key));
-          if (filtered.length === 0) return null;
-          return (
-            <SkillCategoryAnimated
-              key={cat.key}
-              title={cat.title}
-              skills={filtered}
-              categoryIndex={index}
-            />
-          );
-        })}
-      </div>
+      {/* Skills grid / list with proficiency bars */}
+      <SkillsVisualization skills={skills} categories={categories} />
 
       <DebugView>
         <Text className="text-muted-foreground text-sm">
