@@ -24,6 +24,11 @@
     
     --border: #e4e4e7;
     --ring: #16a34a;
+
+    /* Gradient blob colors - Light mode */
+    --blob-color-1: #22c55e;  /* Green accent */
+    --blob-color-2: #3b82f6;  /* Blue */
+    --blob-color-3: #8b5cf6;  /* Purple */
   }
 
   .dark {
@@ -47,6 +52,11 @@
     
     --border: #27272a;
     --ring: #22c55e;
+
+    /* Gradient blob colors - Dark mode */
+    --blob-color-1: #16a34a;  /* Darker green */
+    --blob-color-2: #2563eb;  /* Darker blue */
+    --blob-color-3: #7c3aed;  /* Darker purple */
   }
 
   html {

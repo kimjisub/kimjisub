@@ -1,11 +1,14 @@
 'use client';
 
+import { GradientBlob } from '@/components/GradientBlob';
 import { RoughHighlight } from '@/components/RoughHighlight';
 import { TiltImage } from '@/components/TiltImage';
+import { TypingText } from '@/components/TypingText';
 
 export const HeroSection = () => {
   return (
-    <section className="min-h-[85vh] flex items-center relative">
+    <section className="min-h-[85vh] flex items-center relative overflow-hidden">
+      <GradientBlob />
       <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-transparent" />
       
       <div className="relative z-10 max-w-4xl mx-auto px-6 py-24">
@@ -22,10 +25,9 @@ export const HeroSection = () => {
 
           <div className="flex-1">
             <h1 
-              className="text-4xl md:text-5xl font-medium text-foreground mb-4 tracking-tight animate-fade-in-up"
-              style={{ animationDelay: '0.1s' }}
+              className="text-4xl md:text-5xl font-medium text-foreground mb-4 tracking-tight"
             >
-              김지섭
+              <TypingText text="김지섭" delay={0.1} staggerDelay={0.12} />
             </h1>
             
             <p 
