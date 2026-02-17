@@ -40,7 +40,7 @@ function fireConfetti() {
   const end = Date.now() + duration;
 
   // Initial burst
-  confetti({
+  void confetti({
     particleCount: 120,
     spread: 80,
     origin: { y: 0.5 },
@@ -49,14 +49,14 @@ function fireConfetti() {
 
   // Side streams
   const frame = () => {
-    confetti({
+    void confetti({
       particleCount: 3,
       angle: 60,
       spread: 55,
       origin: { x: 0 },
       colors: ['#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3', '#54a0ff'],
     });
-    confetti({
+    void confetti({
       particleCount: 3,
       angle: 120,
       spread: 55,
