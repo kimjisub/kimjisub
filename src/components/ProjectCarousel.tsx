@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef, useState, useEffect, useCallback } from 'react';
-import { motion, useMotionValue, useAnimation, type PanInfo } from 'framer-motion';
+import { motion, useMotionValue, useAnimation, AnimatePresence, type PanInfo } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 import { type ProjectT } from '@/api/notion/projects';
@@ -26,6 +26,7 @@ export const ProjectCarousel = ({ projects }: ProjectCarouselProps) => {
 
   const x = useMotionValue(0);
   const controls = useAnimation();
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   // 컨테이너 크기에 따라 maxDrag 계산
   useEffect(() => {
@@ -167,17 +168,34 @@ export const ProjectCarousel = ({ projects }: ProjectCarouselProps) => {
           onDragStart={handleDragStart}
           onDragEnd={handleDragEnd}
         >
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              style={{ width: CARD_WIDTH, flexShrink: 0 }}
-              onClickCapture={(e) => {
-                if (isDraggingRef.current) e.preventDefault();
-              }}
-            >
-              <ProjectItem project={project} />
-            </div>
-          ))}
+          {projects.map((project) => {
+            const isHovered = hoveredId === project.id;
+            const isDimmed = hoveredId !== null && hoveredId !== project.id;
+            return (
+              <motion.div
+                key={project.id}
+                style={{
+                  width: CARD_WIDTH,
+                  flexShrink: 0,
+                  position: 'relative',
+                  zIndex: isHovered ? 10 : 1,
+                }}
+                animate={{
+                  opacity: isDimmed ? 0.55 : 1,
+                  filter: isDimmed ? 'blur(2px)' : 'blur(0px)',
+                  scale: isHovered ? 1.03 : 1,
+                }}
+                transition={{ duration: 0.22, ease: [0.25, 0.46, 0.45, 0.94] }}
+                onMouseEnter={() => setHoveredId(project.id)}
+                onMouseLeave={() => setHoveredId(null)}
+                onClickCapture={(e) => {
+                  if (isDraggingRef.current) e.preventDefault();
+                }}
+              >
+                <ProjectItem project={project} />
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
 
