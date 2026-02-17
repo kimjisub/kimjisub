@@ -44,9 +44,13 @@ export default async function ProjectsPage() {
         </AnimatedSection>
       </header>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="group/list grid grid-cols-1 md:grid-cols-2 gap-6">
         {projects.map((project, index) => (
-          <AnimatedGridItem key={project.id} index={index}>
+          <AnimatedGridItem 
+            key={project.id} 
+            index={index}
+            className="transition-opacity duration-200 group-hover/list:opacity-30 hover:!opacity-100"
+          >
             <ProjectItem project={project} />
           </AnimatedGridItem>
         ))}
