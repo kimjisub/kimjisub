@@ -4,14 +4,37 @@ import { MeshGradientBackground } from '@/components/MeshGradientBackground';
 import { MagneticLink } from '@/components/MagneticButton';
 import { NeonText } from '@/components/NeonText';
 import { RoughHighlight } from '@/components/RoughHighlight';
-import { SectionReveal, SectionRevealItem } from '@/components/SectionReveal';
 import { TextScramble } from '@/components/TextScramble';
 import { TiltImage } from '@/components/TiltImage';
 import { TypewriterEffect } from '@/components/TypewriterEffect';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import { useState, useCallback } from 'react';
 import EasterEggs from '@/components/EasterEggs';
 
+// ── Stagger Variants ──────────────────────────────────────
+const heroContainerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.05,
+    },
+  },
+};
+
+const heroItemVariants: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
+};
+
+// ── Component ─────────────────────────────────────────────
 export const HeroSection = () => {
   const [clickCount, setClickCount] = useState(0);
   const [showHint, setShowHint] = useState(false);
@@ -20,12 +43,10 @@ export const HeroSection = () => {
     const next = clickCount + 1;
     setClickCount(next);
 
-    // Show a subtle hint after 3 clicks
     if (next === 3) {
       setShowHint(true);
       setTimeout(() => setShowHint(false), 2000);
     }
-    // Reset after 10 clicks so it can trigger again
     if (next >= 10) {
       setTimeout(() => setClickCount(0), 5000);
     }
@@ -36,10 +57,26 @@ export const HeroSection = () => {
       <EasterEggs clickCount={clickCount} />
       <MeshGradientBackground />
       <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-transparent" />
-      
+
       <div className="relative z-10 max-w-4xl mx-auto px-6 py-24">
-        <SectionReveal stagger staggerDelay={0.15} className="flex flex-col md:flex-row items-start gap-12">
-          <SectionRevealItem className="relative w-32 h-32 md:w-40 md:h-40">
+        {/*
+         * Grid layout:
+         *   mobile  → single column (image → name → role → desc → links)
+         *   desktop → 2 columns ([image | text items stacked])
+         * staggerChildren animates each item sequentially on viewport entry.
+         */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-[auto_1fr] items-start gap-6 md:gap-x-12 md:gap-y-0"
+          variants={heroContainerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {/* ── Profile image (spans all text rows on desktop) ── */}
+          <motion.div
+            variants={heroItemVariants}
+            className="relative w-32 h-32 md:w-40 md:h-40 shrink-0 md:row-span-4"
+          >
             {/* Click counter badge */}
             <AnimatePresence>
               {clickCount > 0 && clickCount < 10 && (
@@ -79,17 +116,19 @@ export const HeroSection = () => {
                 priority
               />
             </div>
-          </SectionRevealItem>
+          </motion.div>
 
-          <SectionRevealItem className="flex-1">
-            <h1 
-              className="text-4xl md:text-5xl font-medium mb-4 tracking-tight"
-            >
+          {/* ── Name ── */}
+          <motion.div variants={heroItemVariants}>
+            <h1 className="text-4xl md:text-5xl font-medium mb-4 tracking-tight">
               <NeonText>
                 <TextScramble text="김지섭" />
               </NeonText>
             </h1>
-            
+          </motion.div>
+
+          {/* ── Role (typewriter) ── */}
+          <motion.div variants={heroItemVariants}>
             <div className="mb-3 text-xl md:text-2xl font-medium text-foreground/80">
               <TypewriterEffect
                 texts={[
@@ -104,10 +143,11 @@ export const HeroSection = () => {
                 pauseTime={2000}
               />
             </div>
+          </motion.div>
 
-            <p 
-              className="text-lg text-muted-foreground mb-6 leading-relaxed max-w-xl"
-            >
+          {/* ── Description ── */}
+          <motion.div variants={heroItemVariants}>
+            <p className="text-lg text-muted-foreground mb-6 leading-relaxed max-w-xl">
               <RoughHighlight type="underline" delay={600} animationDuration={600}>
                 Alpaon
               </RoughHighlight>{' '}
@@ -120,10 +160,11 @@ export const HeroSection = () => {
               </RoughHighlight>.<br />
               소프트웨어부터 펌웨어, 인프라까지 직접 만들고 운영합니다.
             </p>
+          </motion.div>
 
-            <div 
-              className="flex flex-wrap gap-3 text-sm"
-            >
+          {/* ── Links ── */}
+          <motion.div variants={heroItemVariants}>
+            <div className="flex flex-wrap gap-3 text-sm">
               <MagneticLink
                 href="https://alpaon.com"
                 className="px-4 py-2 rounded-lg bg-card border border-border hover:border-foreground/30 transition-colors"
@@ -149,8 +190,8 @@ export const HeroSection = () => {
                 GitHub
               </MagneticLink>
             </div>
-          </SectionRevealItem>
-        </SectionReveal>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

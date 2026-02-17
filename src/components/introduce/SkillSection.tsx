@@ -1,12 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { SkillIconWrapper } from './SkillIconWrapper';
-
 import { getSkills } from '@/api/notion/skills';
-import { IconSlugView } from '@/components/IconSlugView';
-import { AnimatedGridItem, AnimatedSection } from '@/components/motion/AnimatedSection';
+import { AnimatedSection } from '@/components/motion/AnimatedSection';
 import { SkillsRadarChart } from '@/components/SkillsRadarChart';
+import { SkillsStaggerGrid } from '@/components/SkillsStaggerGrid';
 import { SectionReveal } from '@/components/SectionReveal';
 
 export default async function SkillsSection() {
@@ -26,23 +24,8 @@ export default async function SkillsSection() {
           <SkillsRadarChart skills={skills} size={300} />
         </div>
 
-        {/* Icon grid */}
-        <div className="flex flex-wrap gap-2">
-          {skills.slice(0, 40).map((skill, index) => (
-            <AnimatedGridItem key={skill.id} index={index}>
-              <Link href={`/skills/${skill.id}`}>
-                <SkillIconWrapper>
-                  <IconSlugView
-                    className="w-8 h-8"
-                    title={skill.title}
-                    slug={skill.slug}
-                    color={skill.iconColor}
-                  />
-                </SkillIconWrapper>
-              </Link>
-            </AnimatedGridItem>
-          ))}
-        </div>
+        {/* Icon grid — staggerChildren on viewport entry */}
+        <SkillsStaggerGrid skills={skills.slice(0, 40)} />
 
         <AnimatedSection delay={0.4} className="mt-8">
           <Link

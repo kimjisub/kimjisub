@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useMemo, useRef } from 'react';
+import { motion, AnimatePresence, useInView, type Variants } from 'framer-motion';
 
 import { type ProjectT } from '@/api/notion/projects';
 import { ProjectCarousel } from '@/components/ProjectCarousel';
@@ -12,6 +12,27 @@ interface ProjectsClientProps {
 }
 
 type FilterKey = string; // 'all' | '분류:xxx' | '태그:xxx'
+
+// ── Mobile stagger variants ────────────────────────────────
+const mobileListVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.06,
+      delayChildren: 0.05,
+    },
+  },
+};
+
+const mobileItemVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.95, y: 16 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { duration: 0.28, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+};
 
 /* ─────────────────────────────────────────────────────── */
 /* FilterPill                                              */
@@ -57,6 +78,10 @@ const FilterPill = ({ label, count, isActive, onClick }: FilterPillProps) => (
 /* ─────────────────────────────────────────────────────── */
 export const ProjectsClient = ({ projects }: ProjectsClientProps) => {
   const [activeFilter, setActiveFilter] = useState<FilterKey>('all');
+
+  // whileInView trigger for mobile stagger list
+  const mobileListRef = useRef<HTMLDivElement>(null);
+  const isMobileInView = useInView(mobileListRef, { once: true, margin: '-100px' });
 
   /* ── 필터 옵션 수집 ── */
   const categories = useMemo(() => {
@@ -190,27 +215,27 @@ export const ProjectsClient = ({ projects }: ProjectsClientProps) => {
         </AnimatePresence>
       </div>
 
-      {/* ── 모바일: 세로 그리드 ── */}
-      <div className="md:hidden px-6">
-        <AnimatePresence mode="popLayout">
+      {/* ── 모바일: 세로 그리드 (staggerChildren + whileInView) ── */}
+      <div ref={mobileListRef} className="md:hidden px-6">
+        <AnimatePresence mode="wait">
           {filteredProjects.length > 0 ? (
-            filteredProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                layout
-                initial={{ opacity: 0, scale: 0.95, y: 16 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.92, y: -8 }}
-                transition={{
-                  duration: 0.28,
-                  delay: Math.min(index * 0.04, 0.25),
-                  ease: [0.25, 0.46, 0.45, 0.94],
-                }}
-                className="mb-6"
-              >
-                <ProjectItem project={project} />
-              </motion.div>
-            ))
+            <motion.div
+              key={activeFilter}
+              variants={mobileListVariants}
+              initial="hidden"
+              animate={isMobileInView ? 'visible' : 'hidden'}
+              exit={{ opacity: 0, transition: { duration: 0.15 } }}
+            >
+              {filteredProjects.map((project) => (
+                <motion.div
+                  key={project.id}
+                  variants={mobileItemVariants}
+                  className="mb-6"
+                >
+                  <ProjectItem project={project} />
+                </motion.div>
+              ))}
+            </motion.div>
           ) : (
             <motion.div
               key="empty"
