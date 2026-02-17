@@ -4,9 +4,8 @@ import { format } from 'date-fns';
 import type { Metadata } from 'next';
 
 import { getCareers } from '@/api/notion/careers';
-import { CareerItem } from '@/components/CareerItem';
 import DebugView from '@/components/DebugView';
-import { AnimatedGridItem, AnimatedSection, AnimatedTitle } from '@/components/motion/AnimatedSection';
+import { CareersView } from './CareersView';
 
 export const metadata: Metadata = {
 	title: 'Career',
@@ -32,25 +31,8 @@ export default async function CareersPage() {
   const { careers, fetchedAt } = await getCareers();
   
   return (
-    <section className="py-24 px-6 max-w-4xl mx-auto">
-      <header className="mb-16">
-        <AnimatedTitle className="font-serif text-3xl md:text-4xl text-foreground mb-4 italic">
-          Career
-        </AnimatedTitle>
-        <AnimatedSection delay={0.1}>
-          <p className="text-muted-foreground leading-relaxed max-w-xl">
-            회사, 대회, 프로젝트 등 경험했던 것들.
-          </p>
-        </AnimatedSection>
-      </header>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {careers.map((career, index) => (
-          <AnimatedGridItem key={career.id} index={index}>
-            <CareerItem career={career} />
-          </AnimatedGridItem>
-        ))}
-      </div>
+    <section className="py-24 px-6 max-w-5xl mx-auto">
+      <CareersView careers={careers} />
 
       <DebugView>
         <Text className="text-muted-foreground text-sm">
