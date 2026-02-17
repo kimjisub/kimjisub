@@ -169,7 +169,6 @@ export const InteractiveTimeline = ({ careers }: InteractiveTimelineProps) => {
 
       const container = containerRef.current;
       const items = container.querySelectorAll('[data-timeline-item]');
-      const containerTop = container.getBoundingClientRect().top;
       const viewportCenter = window.innerHeight / 2;
 
       let closestIndex = 0;
@@ -203,11 +202,11 @@ export const InteractiveTimeline = ({ careers }: InteractiveTimelineProps) => {
   });
 
   // 연도별 그룹 추출
-  const years = [...new Set(
+  const years = Array.from(new Set(
     sortedCareers
       .filter(c => c.date.start)
       .map(c => c.date.start!.getFullYear())
-  )];
+  ));
 
   return (
     <div ref={containerRef} className="relative">
@@ -231,7 +230,7 @@ export const InteractiveTimeline = ({ careers }: InteractiveTimelineProps) => {
 
       {/* 연도 마커 */}
       <div className="hidden md:block">
-        {years.map((year, i) => {
+        {years.map((year) => {
           const firstCareerOfYear = sortedCareers.find(
             c => c.date.start?.getFullYear() === year
           );
