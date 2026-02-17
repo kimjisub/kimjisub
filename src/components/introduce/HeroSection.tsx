@@ -8,7 +8,7 @@ import { TextScramble } from '@/components/TextScramble';
 import { TiltImage } from '@/components/TiltImage';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useCallback } from 'react';
-// import EasterEggs from '@/components/EasterEggs'; // TODO: Re-enable when ready
+import EasterEggs from '@/components/EasterEggs';
 
 export const HeroSection = () => {
   const [clickCount, setClickCount] = useState(0);
@@ -31,7 +31,7 @@ export const HeroSection = () => {
 
   return (
     <section className="min-h-[85vh] flex items-center relative overflow-hidden">
-      {/* <EasterEggs clickCount={clickCount} /> */}
+      <EasterEggs clickCount={clickCount} />
       <GradientBlob />
       <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-transparent" />
       

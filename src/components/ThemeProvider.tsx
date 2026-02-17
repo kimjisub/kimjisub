@@ -3,6 +3,7 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { Theme } from '@radix-ui/themes';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
+import { AccentColorKey, ACCENT_COLORS } from '@/hooks/useAccentColor';
 
 interface ThemeProviderProps {
   children: ReactNode;
@@ -12,6 +13,17 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // Restore accent color before first paint to avoid flash
+    try {
+      const stored = localStorage.getItem('accent-color') as AccentColorKey | null;
+      if (stored && stored in ACCENT_COLORS) {
+        document.documentElement.setAttribute('data-accent', stored);
+      } else {
+        document.documentElement.setAttribute('data-accent', 'green');
+      }
+    } catch {
+      document.documentElement.setAttribute('data-accent', 'green');
+    }
     setMounted(true);
   }, []);
 

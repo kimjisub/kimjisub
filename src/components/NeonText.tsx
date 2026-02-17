@@ -66,7 +66,7 @@ export function NeonText({
       }
     };
 
-    breathe();
+    void breathe();
 
     return () => {
       alive.current = false;

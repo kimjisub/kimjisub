@@ -43,6 +43,7 @@ const TopBar: React.FC = () => {
     { path: '/projects', label: 'Projects' },
     { path: '/careers', label: 'Careers' },
     { path: '/blog', label: 'Blog' },
+    { path: '/uses', label: 'Uses' },
   ];
 
   // Dynamic blur based on scroll

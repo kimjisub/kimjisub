@@ -1,74 +1,175 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTheme } from 'next-themes';
+
+import { ACCENT_COLORS, AccentColorKey, useAccentColor } from '@/hooks/useAccentColor';
+
+/* ── Icons ────────────────────────────────────────────────────────────── */
+
+function SunIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+      className="w-4 h-4">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2m-15.07 5.66-1.41 1.41M19.07 4.93l-1.41 1.41" />
+    </svg>
+  );
+}
+
+function MoonIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+      className="w-4 h-4">
+      <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+    </svg>
+  );
+}
+
+function PaletteIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+      className="w-3.5 h-3.5">
+      <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" />
+      <circle cx="17.5" cy="10.5" r=".5" fill="currentColor" />
+      <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" />
+      <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" />
+      <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" />
+    </svg>
+  );
+}
+
+/* ── Component ────────────────────────────────────────────────────────── */
 
 export function ThemeToggle() {
   const { setTheme, resolvedTheme } = useTheme();
+  const { accentColor, setAccentColor } = useAccentColor();
   const [mounted, setMounted] = useState(false);
+  const [paletteOpen, setPaletteOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => { setMounted(true); }, []);
+
+  // Close palette on outside click / Escape
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    if (!paletteOpen) return;
+    const handleOutside = (e: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setPaletteOpen(false);
+      }
+    };
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setPaletteOpen(false);
+    };
+    document.addEventListener('mousedown', handleOutside);
+    document.addEventListener('keydown', handleKey);
+    return () => {
+      document.removeEventListener('mousedown', handleOutside);
+      document.removeEventListener('keydown', handleKey);
+    };
+  }, [paletteOpen]);
 
+  /* Placeholder before hydration – prevents layout shift */
   if (!mounted) {
-    // Return placeholder to prevent layout shift
     return (
-      <button
-        className="w-8 h-8 flex items-center justify-center rounded-md text-muted-foreground"
-        aria-label="Toggle theme"
-      >
-        <span className="w-4 h-4" />
-      </button>
+      <div className="flex items-center gap-1">
+        <button className="w-8 h-8 flex items-center justify-center rounded-md text-muted-foreground" aria-label="Toggle theme">
+          <span className="w-4 h-4" />
+        </button>
+        <button className="w-6 h-6 flex items-center justify-center rounded-md text-muted-foreground" aria-label="Choose accent color">
+          <span className="w-3.5 h-3.5" />
+        </button>
+      </div>
     );
   }
 
   const isDark = resolvedTheme === 'dark';
+  const currentColor = ACCENT_COLORS[accentColor];
 
   return (
-    <button
-      onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      className="w-8 h-8 flex items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-      aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
-      title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
-    >
-      {isDark ? (
-        // Sun icon for dark mode (click to switch to light)
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="w-4 h-4"
-        >
-          <circle cx="12" cy="12" r="4" />
-          <path d="M12 2v2" />
-          <path d="M12 20v2" />
-          <path d="m4.93 4.93 1.41 1.41" />
-          <path d="m17.66 17.66 1.41 1.41" />
-          <path d="M2 12h2" />
-          <path d="M20 12h2" />
-          <path d="m6.34 17.66-1.41 1.41" />
-          <path d="m19.07 4.93-1.41 1.41" />
-        </svg>
-      ) : (
-        // Moon icon for light mode (click to switch to dark)
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="w-4 h-4"
-        >
-          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-        </svg>
-      )}
-    </button>
+    <div ref={containerRef} className="relative flex items-center gap-1">
+      {/* Dark / Light toggle */}
+      <button
+        onClick={() => setTheme(isDark ? 'light' : 'dark')}
+        className="w-8 h-8 flex items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+        aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
+        title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
+      >
+        {isDark ? <SunIcon /> : <MoonIcon />}
+      </button>
+
+      {/* Palette trigger – shows current accent color dot */}
+      <button
+        onClick={() => setPaletteOpen(prev => !prev)}
+        className="w-7 h-7 flex items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors relative"
+        aria-label="Choose accent color"
+        aria-expanded={paletteOpen}
+        title="Choose accent color"
+      >
+        <PaletteIcon />
+        {/* tiny color indicator */}
+        <span
+          className="absolute bottom-1 right-1 w-1.5 h-1.5 rounded-full ring-1 ring-background"
+          style={{ background: currentColor.preview }}
+        />
+      </button>
+
+      {/* Color palette panel */}
+      <div
+        className={`
+          absolute right-0 top-full mt-2 z-50
+          flex flex-col gap-1 items-end
+          transition-all duration-200 ease-out origin-top-right
+          ${paletteOpen
+            ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto'
+            : 'opacity-0 scale-95 -translate-y-1 pointer-events-none'}
+        `}
+        role="listbox"
+        aria-label="Accent color options"
+      >
+        {/* Floating card */}
+        <div className="bg-card border border-border rounded-xl shadow-lg p-2.5 flex flex-col gap-1.5 min-w-[9rem]">
+          <p className="text-[10px] font-medium text-muted-foreground tracking-wider uppercase px-0.5 mb-0.5">
+            Accent color
+          </p>
+          <div className="flex gap-2">
+            {(Object.entries(ACCENT_COLORS) as [AccentColorKey, typeof ACCENT_COLORS[AccentColorKey]][]).map(
+              ([key, cfg], i) => {
+                const isActive = key === accentColor;
+                return (
+                  <button
+                    key={key}
+                    role="option"
+                    aria-selected={isActive}
+                    onClick={() => {
+                      setAccentColor(key);
+                      setPaletteOpen(false);
+                    }}
+                    title={cfg.label}
+                    aria-label={`${cfg.label} accent`}
+                    className={`
+                      w-6 h-6 rounded-full flex-shrink-0
+                      transition-all duration-200
+                      ${paletteOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1'}
+                      ${isActive ? 'scale-110' : 'hover:scale-110 active:scale-95'}
+                    `}
+                    style={{
+                      background: cfg.preview,
+                      transitionDelay: paletteOpen ? `${i * 30}ms` : '0ms',
+                      ...(isActive
+                        ? { boxShadow: `0 0 0 2px var(--card), 0 0 0 3.5px ${cfg.preview}` }
+                        : {}),
+                    } as React.CSSProperties}
+                  />
+                );
+              }
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
