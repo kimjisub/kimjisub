@@ -18,6 +18,7 @@ import ScrollProgressIndicator from '@/components/ScrollProgressIndicator';
 import SpotlightEffect from '@/components/SpotlightEffect';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import TopBar from '@/components/TopBar';
+import Preloader from '@/components/ui/Preloader';
 import { AppInfoProvider } from '@/contexts/AppInfoContext';
 
 const inter = Inter({ 
@@ -97,6 +98,7 @@ export default function RootLayout({
 			<AppInfoProvider>
 				<body className="font-sans bg-background text-foreground antialiased">
 					<ThemeProvider>
+						<Preloader />
 						<GrainOverlay />
 						<SpotlightEffect />
 						<ScrollProgressIndicator />
