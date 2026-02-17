@@ -10,6 +10,8 @@ import '../globals.css';
 import CustomCursor from '@/components/CustomCursor';
 import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
+import { PageTransition } from '@/components/motion/PageTransition';
+import ScrollProgressIndicator from '@/components/ScrollProgressIndicator';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import TopBar from '@/components/TopBar';
 import { AppInfoProvider } from '@/contexts/AppInfoContext';
@@ -91,10 +93,15 @@ export default function RootLayout({
 			<AppInfoProvider>
 				<body className="font-sans bg-background text-foreground antialiased">
 					<ThemeProvider>
+						<ScrollProgressIndicator />
 						<CustomCursor />
 						<div className="min-h-screen flex flex-col">
 							<TopBar />
-							<main className="flex-grow">{children}</main>
+							<main className="flex-grow">
+								<PageTransition>
+									{children}
+								</PageTransition>
+							</main>
 							<Footer />
 						</div>
 					</ThemeProvider>
