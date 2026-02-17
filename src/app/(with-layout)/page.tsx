@@ -1,4 +1,5 @@
 import { AboutSection } from '@/components/introduce/AboutSection';
+import { AboutBentoSection } from '@/components/introduce/AboutBentoSection';
 import { BackgroundSection } from '@/components/introduce/BackgroundSection';
 import { ContactSectionAnimated } from '@/components/introduce/ContactSectionAnimated';
 import GithubSection from '@/components/introduce/GithubSection';
@@ -12,6 +13,7 @@ export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
       <HeroSection />
+      <AboutBentoSection />
       <AboutSection />
       <WorkSection />
       <BackgroundSection />
