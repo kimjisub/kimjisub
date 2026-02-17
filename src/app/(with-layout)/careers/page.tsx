@@ -1,10 +1,27 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import { Text } from '@radix-ui/themes';
 import { format } from 'date-fns';
 
 import { getCareers } from '@/api/notion/careers';
 import { CareerItem } from '@/components/CareerItem';
 import DebugView from '@/components/DebugView';
+
+export const metadata: Metadata = {
+	title: 'Career',
+	description: '김지섭의 경력 및 경험. 회사, 대회 수상, 프로젝트 등 다양한 커리어 경험들.',
+	openGraph: {
+		title: 'Career | Jisub Kim',
+		description: '김지섭의 경력 및 경험. 회사, 대회, 프로젝트 등.',
+		type: 'website',
+		images: ['/logo512.png'],
+	},
+	twitter: {
+		card: 'summary',
+		title: 'Career | Jisub Kim',
+		description: '김지섭의 경력 및 경험.',
+	},
+};
 
 export const revalidate = 3600;
 

@@ -61,7 +61,7 @@ const TopBar: React.FC = () => {
         <Link href="/" className="flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors">
           <Image
             src="/logo192.png"
-            alt=""
+            alt="Jisub Kim 로고"
             width={28}
             height={28}
             className="rounded-md"

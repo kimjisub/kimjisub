@@ -28,10 +28,10 @@ export const CareerItem = ({ className, career }: CareerItemProps) => {
 			width={300}
 			height={150}
 			src={career.coverImageUrl}
-			alt=""
+			alt={`${career.title} 커버 이미지`}
 		/>
 	) : (
-		<div className="w-full h-full bg-gradient-to-br from-secondary to-primary" />
+		<div className="w-full h-full bg-gradient-to-br from-secondary to-primary" aria-label={`${career.title}`} />
 	);
 
 	return (

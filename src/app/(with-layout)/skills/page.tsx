@@ -1,4 +1,5 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import { Text } from '@radix-ui/themes';
 import { format } from 'date-fns';
 
@@ -6,6 +7,22 @@ import { getSkills } from '@/api/notion/skills';
 import DebugView from '@/components/DebugView';
 import { AnimatedSection,AnimatedTitle } from '@/components/motion/AnimatedSection';
 import { SkillCategoryAnimated } from '@/components/SkillCategoryAnimated';
+
+export const metadata: Metadata = {
+	title: 'Skills',
+	description: '김지섭의 기술 스택. 프로그래밍 언어, 프레임워크, 데이터베이스, 개발 도구, 인프라 등 실제로 사용해본 기술들.',
+	openGraph: {
+		title: 'Skills | Jisub Kim',
+		description: '김지섭의 기술 스택. 실제로 사용해본 기술들만 정리했습니다.',
+		type: 'website',
+		images: ['/logo512.png'],
+	},
+	twitter: {
+		card: 'summary',
+		title: 'Skills | Jisub Kim',
+		description: '김지섭의 기술 스택.',
+	},
+};
 
 export const revalidate = 3600;
 

@@ -30,8 +30,31 @@ export async function generateMetadata(props: { params: Params }) {
 	const { projectId } = await props.params;
 
 	const { project } = await getProject(projectId);
+	
+	if (!project) {
+		return { title: 'Project Not Found' };
+	}
+
+	const description = project.description || `${project.title} - 김지섭의 프로젝트`;
+	const tags = project.태그.map(t => t.name).join(', ');
+	
 	return {
-		title: project?.title || 'Not found',
+		title: project.title,
+		description: description,
+		keywords: [project.title, ...project.태그.map(t => t.name), ...project.분류.map(c => c.name)],
+		openGraph: {
+			title: `${project.title} | Jisub Kim`,
+			description: description,
+			type: 'article',
+			images: project.coverImageUrl ? [{ url: project.coverImageUrl }] : ['/logo512.png'],
+			tags: tags ? [tags] : undefined,
+		},
+		twitter: {
+			card: 'summary_large_image',
+			title: `${project.title} | Jisub Kim`,
+			description: description,
+			images: project.coverImageUrl ? [project.coverImageUrl] : ['/logo512.png'],
+		},
 	};
 }
 
@@ -61,8 +84,37 @@ const ProjectPage = async (props: { params: Params }) => {
 		<></>
 	);
 
+	// JSON-LD CreativeWork schema for SEO
+	const creativeWorkSchema = {
+		'@context': 'https://schema.org',
+		'@type': 'CreativeWork',
+		name: project.title,
+		description: project.description || `${project.title} - 김지섭의 프로젝트`,
+		url: `https://kimjisub.com/projects/${projectId}`,
+		image: project.coverImageUrl || 'https://kimjisub.com/logo512.png',
+		dateCreated: project.date.start ? format(project.date.start, 'yyyy-MM-dd') : undefined,
+		dateModified: project.date.end ? format(project.date.end, 'yyyy-MM-dd') : undefined,
+		author: {
+			'@type': 'Person',
+			name: 'Jisub Kim',
+			url: 'https://kimjisub.com',
+		},
+		creator: {
+			'@type': 'Person',
+			name: 'Jisub Kim',
+		},
+		keywords: [...project.태그.map(t => t.name), ...project.분류.map(c => c.name)].join(', '),
+		genre: project.분류.map(c => c.name).join(', '),
+	};
+
 	return (
 		<div className="py-24 px-6 max-w-7xl mx-auto">
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify(creativeWorkSchema),
+				}}
+			/>
 			<div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
 				<section className="col-span-3">
 					<div className="flex items-center space-x-3 mb-8">

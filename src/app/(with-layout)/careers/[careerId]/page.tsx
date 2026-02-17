@@ -29,8 +29,30 @@ export async function generateMetadata(props: { params: Params }) {
 	const { careerId } = await props.params;
 
 	const { career } = await getCareer(careerId);
+	
+	if (!career) {
+		return { title: 'Career Not Found' };
+	}
+
+	const description = career.description || `${career.title} - 김지섭의 경력 경험`;
+	const categories = career.categories.map(c => c.name);
+	
 	return {
-		title: career?.title || 'Not found',
+		title: career.title,
+		description: description,
+		keywords: [career.title, ...categories, '경력', 'career'],
+		openGraph: {
+			title: `${career.title} | Jisub Kim Career`,
+			description: description,
+			type: 'article',
+			images: career.coverImageUrl ? [{ url: career.coverImageUrl }] : ['/logo512.png'],
+		},
+		twitter: {
+			card: 'summary_large_image',
+			title: `${career.title} | Jisub Kim`,
+			description: description,
+			images: career.coverImageUrl ? [career.coverImageUrl] : ['/logo512.png'],
+		},
 	};
 }
 

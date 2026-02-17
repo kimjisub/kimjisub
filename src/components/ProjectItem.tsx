@@ -32,10 +32,10 @@ export const ProjectItem = ({ className, project }: ProjectItemProps) => {
       width={400}
       height={200}
       src={project.coverImageUrl}
-      alt=""
+      alt={`${project.title} 프로젝트 커버 이미지`}
     />
   ) : (
-    <div className="w-full h-full bg-gradient-to-br from-secondary to-primary" />
+    <div className="w-full h-full bg-gradient-to-br from-secondary to-primary" aria-label={`${project.title} 프로젝트`} />
   );
 
   return (

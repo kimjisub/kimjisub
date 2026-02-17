@@ -9,7 +9,9 @@ import '@/styles/prism-theme.css';
 
 import '../globals.css';
 
+import CustomCursor from '@/components/CustomCursor';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import TopBar from '@/components/TopBar';
 import { AppInfoProvider } from '@/contexts/AppInfoContext';
@@ -26,9 +28,56 @@ const newsreader = Newsreader({
 	style: ['normal', 'italic'],
 });
 
+const siteUrl = 'https://kimjisub.com';
+
 export const metadata: Metadata = {
-	title: 'Jisub Kim',
-	description: 'CTO, Product Engineer, Builder',
+	metadataBase: new URL(siteUrl),
+	title: {
+		default: 'Jisub Kim | CTO & Product Engineer',
+		template: '%s | Jisub Kim',
+	},
+	description: 'CTO at Alpaon. Product Engineer who builds software, firmware, and infrastructure. Portfolio of projects, skills, and career experiences.',
+	keywords: ['김지섭', 'Jisub Kim', 'CTO', 'Product Engineer', 'Full Stack Developer', 'Alpaon', 'Candid', '포트폴리오', 'Portfolio'],
+	authors: [{ name: 'Jisub Kim', url: siteUrl }],
+	creator: 'Jisub Kim',
+	openGraph: {
+		type: 'website',
+		locale: 'ko_KR',
+		alternateLocale: 'en_US',
+		url: siteUrl,
+		siteName: 'Jisub Kim Portfolio',
+		title: 'Jisub Kim | CTO & Product Engineer',
+		description: 'CTO at Alpaon. Product Engineer who builds software, firmware, and infrastructure.',
+		images: [
+			{
+				url: '/logo512.png',
+				width: 512,
+				height: 512,
+				alt: 'Jisub Kim Profile',
+			},
+		],
+	},
+	twitter: {
+		card: 'summary_large_image',
+		title: 'Jisub Kim | CTO & Product Engineer',
+		description: 'CTO at Alpaon. Product Engineer who builds software, firmware, and infrastructure.',
+		images: ['/logo512.png'],
+		creator: '@kimjisub',
+	},
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			'max-video-preview': -1,
+			'max-image-preview': 'large',
+			'max-snippet': -1,
+		},
+	},
+	verification: {
+		google: 'google-site-verification-code', // TODO: Add actual verification code
+	},
 };
 
 export default function RootLayout({
@@ -38,9 +87,13 @@ export default function RootLayout({
 }>) {
 	return (
 		<html className={`${inter.variable} ${newsreader.variable}`} suppressHydrationWarning>
+			<head>
+				<JsonLd />
+			</head>
 			<AppInfoProvider>
 				<body className="font-sans bg-background text-foreground antialiased">
 					<ThemeProvider>
+						<CustomCursor />
 						<div className="min-h-screen flex flex-col">
 							<TopBar />
 							<main className="flex-grow">{children}</main>

@@ -28,8 +28,28 @@ export async function generateMetadata(props: { params: Params }) {
 	const { skillId } = await props.params;
 
 	const { skill } = await getSkill(skillId);
+	
+	if (!skill) {
+		return { title: 'Skill Not Found' };
+	}
+
+	const description = `${skill.title} - 김지섭이 사용하는 기술. 관련 프로젝트 및 경험.`;
+	
 	return {
-		title: skill?.title || 'Not found',
+		title: skill.title,
+		description: description,
+		keywords: [skill.title, ...skill.분류, '기술 스택', 'skill'],
+		openGraph: {
+			title: `${skill.title} | Jisub Kim Skills`,
+			description: description,
+			type: 'article',
+			images: ['/logo512.png'],
+		},
+		twitter: {
+			card: 'summary',
+			title: `${skill.title} | Jisub Kim`,
+			description: description,
+		},
 	};
 }
 
