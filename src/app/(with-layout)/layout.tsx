@@ -13,6 +13,7 @@ import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
 import { PageTransition } from '@/components/motion/PageTransition';
 import ScrollProgressIndicator from '@/components/ScrollProgressIndicator';
+import SpotlightEffect from '@/components/SpotlightEffect';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import TopBar from '@/components/TopBar';
 import { AppInfoProvider } from '@/contexts/AppInfoContext';
@@ -94,6 +95,7 @@ export default function RootLayout({
 			<AppInfoProvider>
 				<body className="font-sans bg-background text-foreground antialiased">
 					<ThemeProvider>
+						<SpotlightEffect />
 						<ScrollProgressIndicator />
 						<CustomCursor />
 						<FloatingSocialSidebar />
