@@ -47,12 +47,12 @@ const SkillPage = async (props: { params: Params }) => {
 	}
 
 	return (
-		<div className="pt-16 mx-auto p-6">
-			<div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-				<section className="col-span-3 max-w-fit">
-					<div className="flex items-center bg-center">
+		<div className="py-24 px-6 max-w-7xl mx-auto">
+			<div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+				<section className="col-span-3">
+					<div className="flex items-center space-x-3 mb-8">
 						<SkillItem skill={skill} />
-						<h1 className="text-3xl font-bold">{skill.title}</h1>
+						<h1 className="font-serif text-3xl md:text-4xl text-foreground italic">{skill.title}</h1>
 					</div>
 
 					<NotionClientRenderer
@@ -98,22 +98,24 @@ const SkillPage = async (props: { params: Params }) => {
 								))}
 							</div>
 						</div> */}
-						<div className="space-y-4">
-							<h2>관련 기술</h2>
-							<div
-								className="grid gap-4"
-								style={{
-									gridTemplateColumns: 'repeat(auto-fill, minmax(48px, 1fr))',
-								}}>
-								{skill.relatedSkills.map(skill => (
-									<SkillItem key={skill.id} skill={skill} />
-								))}
+						{skill.relatedSkills.length > 0 && (
+							<div className="space-y-4">
+								<h2 className="font-serif text-xl text-foreground italic">Related Skills</h2>
+								<div
+									className="grid gap-4"
+									style={{
+										gridTemplateColumns: 'repeat(auto-fill, minmax(48px, 1fr))',
+									}}>
+									{skill.relatedSkills.map(skill => (
+										<SkillItem key={skill.id} skill={skill} />
+									))}
+								</div>
 							</div>
-						</div>
+						)}
 
-						<div className="space-y-4">
-							<h2>관련된 프로젝트</h2>
-							<div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5 justify-center max-x-1xl">
+						<div className="space-y-4 mt-8">
+							<h2 className="font-serif text-xl text-foreground italic">Related Projects</h2>
+							<div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center">
 								{[
 									...skill.relatedProjectsUsedByLanguage,
 									...skill.relatedProjectsUsedBySkill,
