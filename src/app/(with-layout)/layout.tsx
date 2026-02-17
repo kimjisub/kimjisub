@@ -10,6 +10,7 @@ import '../globals.css';
 import CustomCursor from '@/components/CustomCursor';
 import FloatingSocialSidebar from '@/components/FloatingSocialSidebar';
 import Footer from '@/components/Footer';
+import GrainOverlay from '@/components/GrainOverlay';
 import JsonLd from '@/components/JsonLd';
 import { PageTransition } from '@/components/motion/PageTransition';
 import ScrollProgressIndicator from '@/components/ScrollProgressIndicator';
@@ -95,6 +96,7 @@ export default function RootLayout({
 			<AppInfoProvider>
 				<body className="font-sans bg-background text-foreground antialiased">
 					<ThemeProvider>
+						<GrainOverlay />
 						<SpotlightEffect />
 						<ScrollProgressIndicator />
 						<CustomCursor />
