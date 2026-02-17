@@ -3,19 +3,20 @@
 import { motion, useInView, type Variants } from 'framer-motion';
 import { useRef } from 'react';
 import { BentoCard, BentoGrid } from '@/components/BentoGrid';
+import { AnimatedCounter } from '@/components/AnimatedCounter';
 
 // ── Tech stack icons (simple-icons slugs / emoji fallbacks) ───────────────
 const TECH_STACK = [
-  { name: 'TypeScript', color: '#3178c6', emoji: '𝗧𝗦' },
-  { name: 'React', color: '#61dafb', emoji: '⚛' },
-  { name: 'Next.js', color: '#000000', emoji: 'N' },
-  { name: 'Python', color: '#3776ab', emoji: '🐍' },
-  { name: 'Rust', color: '#ce412b', emoji: '🦀' },
-  { name: 'Go', color: '#00add8', emoji: 'G' },
-  { name: 'Docker', color: '#2496ed', emoji: '🐳' },
-  { name: 'Kubernetes', color: '#326ce5', emoji: '☸' },
-  { name: 'LLM / AI', color: '#22c55e', emoji: '🤖' },
-  { name: 'Tailwind', color: '#38bdf8', emoji: '🌊' },
+  { name: 'TypeScript', color: '#3178c6' },
+  { name: 'React', color: '#61dafb' },
+  { name: 'Next.js', color: '#000000' },
+  { name: 'Python', color: '#3776ab' },
+  { name: 'Rust', color: '#ce412b' },
+  { name: 'Go', color: '#00add8' },
+  { name: 'Docker', color: '#2496ed' },
+  { name: 'Kubernetes', color: '#326ce5' },
+  { name: 'LLM / AI', color: '#22c55e' },
+  { name: 'Tailwind', color: '#38bdf8' },
 ] as const;
 
 // ── Interest tags ─────────────────────────────────────────────────────────
@@ -159,12 +160,11 @@ function TechStackCard() {
     <BentoCard size="2x1">
       <p className="text-xs text-muted-foreground uppercase tracking-widest mb-3">Tech Stack</p>
       <div className="flex flex-wrap gap-2">
-        {TECH_STACK.map(({ name, color, emoji }) => (
+        {TECH_STACK.map(({ name, color }) => (
           <motion.span
             key={name}
             title={name}
             className="flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-lg border border-border bg-secondary/50 text-foreground font-medium"
-            style={{ '--dot-color': color } as React.CSSProperties}
             whileHover={{ scale: 1.08 }}
             transition={{ type: 'spring', stiffness: 400, damping: 25 }}
           >
@@ -212,7 +212,12 @@ function MilestoneCard() {
   return (
     <BentoCard size="1x1" accent>
       <p className="text-xs text-muted-foreground uppercase tracking-widest mb-2">Milestone</p>
-      <p className="text-3xl font-bold text-accent tabular-nums">500만+</p>
+      <AnimatedCounter
+        value={500}
+        suffix="만+"
+        duration={2}
+        className="text-3xl font-bold text-accent tabular-nums"
+      />
       <p className="text-sm text-foreground font-medium mt-0.5">UniPad 다운로드</p>
       <p className="text-xs text-muted-foreground mt-1">중학교 때 만든 앱 · 2016</p>
     </BentoCard>
