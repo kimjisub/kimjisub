@@ -222,6 +222,38 @@
   }
 }
 
+/* ─── Theme Transition ────────────────────────────────────────────────── */
+
+/* Smooth color transitions for browsers without View Transitions API */
+@supports not (selector(::view-transition)) {
+  *,
+  *::before,
+  *::after {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+    /* Preserve existing transform/opacity transitions */
+    transition-behavior: allow-discrete;
+  }
+}
+
+/* View Transitions API: disable default cross-fade so we control it */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-image-pair(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0.01ms !important;
+  }
+}
+
 @layer components {
   .glass-card {
     background-color: var(--card);

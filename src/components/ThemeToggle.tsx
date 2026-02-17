@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 
 import { ACCENT_COLORS, AccentColorKey, useAccentColor } from '@/hooks/useAccentColor';
@@ -41,6 +42,16 @@ function PaletteIcon() {
     </svg>
   );
 }
+
+/* ── View Transition helper type ──────────────────────────────────────── */
+
+type DocumentWithViewTransition = Document & {
+  startViewTransition?: (callback: () => void | Promise<void>) => {
+    ready: Promise<void>;
+    finished: Promise<void>;
+    updateCallbackDone: Promise<void>;
+  };
+};
 
 /* ── Component ────────────────────────────────────────────────────────── */
 
@@ -89,16 +100,63 @@ export function ThemeToggle() {
   const isDark = resolvedTheme === 'dark';
   const currentColor = ACCENT_COLORS[accentColor];
 
+  /* ── Circular reveal on theme toggle ─────────────────────────────── */
+  const handleThemeToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const nextTheme = isDark ? 'light' : 'dark';
+
+    const doc = document as DocumentWithViewTransition;
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Use View Transitions API if available and user hasn't requested reduced motion
+    if (!prefersReduced && typeof doc.startViewTransition === 'function') {
+      const { clientX: x, clientY: y } = e;
+      const radius = Math.hypot(
+        Math.max(x, window.innerWidth - x),
+        Math.max(y, window.innerHeight - y),
+      );
+      const clipFrom = `circle(0px at ${x}px ${y}px)`;
+      const clipTo   = `circle(${radius}px at ${x}px ${y}px)`;
+
+      const vt = doc.startViewTransition!(() => {
+        setTheme(nextTheme);
+      });
+
+      vt.ready.then(() => {
+        document.documentElement.animate(
+          { clipPath: [clipFrom, clipTo] },
+          {
+            duration: 500,
+            easing: 'ease-in-out',
+            pseudoElement: '::view-transition-new(root)',
+          },
+        );
+      });
+    } else {
+      setTheme(nextTheme);
+    }
+  };
+
   return (
     <div ref={containerRef} className="relative flex items-center gap-1">
-      {/* Dark / Light toggle */}
+      {/* Dark / Light toggle – animated icon */}
       <button
-        onClick={() => setTheme(isDark ? 'light' : 'dark')}
-        className="w-8 h-8 flex items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+        onClick={handleThemeToggle}
+        className="w-8 h-8 flex items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors overflow-hidden"
         aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
         title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
       >
-        {isDark ? <SunIcon /> : <MoonIcon />}
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={isDark ? 'sun' : 'moon'}
+            initial={{ rotate: isDark ? -90 : 90, opacity: 0, scale: 0.5 }}
+            animate={{ rotate: 0, opacity: 1, scale: 1 }}
+            exit={{ rotate: isDark ? 90 : -90, opacity: 0, scale: 0.5 }}
+            transition={{ duration: 0.22, ease: [0.4, 0, 0.2, 1] }}
+            className="flex items-center justify-center"
+          >
+            {isDark ? <SunIcon /> : <MoonIcon />}
+          </motion.div>
+        </AnimatePresence>
       </button>
 
       {/* Palette trigger – shows current accent color dot */}
