@@ -8,6 +8,7 @@ import Link from 'next/link';
 
 import { ProjectT } from '@/api/notion/projects';
 import { BlurImage } from '@/components/BlurImage';
+import { TiltCard } from '@/components/TiltCard';
 
 export interface ProjectItemProps {
   className?: string;
@@ -42,8 +43,9 @@ export const ProjectItem = ({ className, project }: ProjectItemProps) => {
 
   return (
     <Link href={`/projects/${project.id}`} prefetch className="group">
+      <TiltCard className="w-full">
       <article
-        className={`cursor-pointer rounded-2xl border border-border bg-card overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg ${className}`}
+        className={`cursor-pointer rounded-2xl border border-border bg-card overflow-hidden shadow-md hover:shadow-xl ${className}`}
       >
         <div className="relative overflow-hidden">
           <div className="aspect-video">{coverImage}</div>
@@ -78,6 +80,7 @@ export const ProjectItem = ({ className, project }: ProjectItemProps) => {
           )}
         </div>
       </article>
+      </TiltCard>
     </Link>
   );
 };
