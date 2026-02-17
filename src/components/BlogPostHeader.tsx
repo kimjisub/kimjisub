@@ -15,33 +15,33 @@ export default function BlogPostHeader({ meta }: BlogPostHeaderProps) {
   };
 
   return (
-    <header className="mb-8 pb-8 border-b border-border">
-      <h1 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+    <header className="mb-12 pb-8 border-b border-border">
+      <h1 className="font-serif text-3xl md:text-4xl text-foreground mb-4 italic">
         {meta.title}
       </h1>
       
       {meta.description && (
-        <p className="text-lg text-muted-foreground mb-4">{meta.description}</p>
+        <p className="text-lg text-muted-foreground mb-6 leading-relaxed">{meta.description}</p>
       )}
       
-      <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
         {meta.date && (
           <time dateTime={meta.date}>
-            📅 {formatDate(meta.date)}
+            {formatDate(meta.date)}
           </time>
         )}
         
         {meta.author && (
-          <span>✍️ {meta.author}</span>
+          <span>{meta.author}</span>
         )}
         
         {meta.readingTime && (
-          <span>⏱️ {meta.readingTime}</span>
+          <span>{meta.readingTime}</span>
         )}
         
         {meta.category && (
-          <span className="px-2 py-1 bg-secondary rounded-md text-foreground">
-            📁 {meta.category}
+          <span className="px-2 py-0.5 bg-secondary rounded text-foreground text-xs">
+            {meta.category}
           </span>
         )}
       </div>
@@ -51,7 +51,7 @@ export default function BlogPostHeader({ meta }: BlogPostHeaderProps) {
           {meta.tags.map((tag) => (
             <span
               key={tag}
-              className="px-3 py-1 text-sm bg-accent/20 text-accent rounded-full"
+              className="px-2 py-0.5 text-xs text-muted-foreground"
             >
               #{tag}
             </span>

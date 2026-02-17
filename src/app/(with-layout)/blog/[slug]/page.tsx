@@ -57,11 +57,11 @@ export default async function Page({
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
-      <div className="flex gap-8">
+    <div className="max-w-7xl mx-auto px-6 py-24">
+      <div className="flex gap-12">
         <div className="flex-1 max-w-4xl">
           <BlogPostHeader meta={meta} />
-          <article className="prose prose-lg max-w-none">
+          <article className="prose prose-lg prose-invert max-w-none prose-headings:font-serif prose-headings:font-normal prose-a:text-accent prose-a:no-underline hover:prose-a:underline">
             <MDXContent />
           </article>
         </div>
