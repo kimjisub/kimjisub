@@ -29,13 +29,13 @@ export async function generateMetadata({
         type: 'article',
         publishedTime: meta?.date,
         authors: meta?.author ? [meta.author] : undefined,
-        images: meta?.image ? [{ url: meta.image }] : undefined,
+        // images omitted → file-based opengraph-image.tsx takes over
       },
       twitter: {
         card: 'summary_large_image',
         title: meta?.title || slug,
         description: meta?.description || `Read about ${slug}`,
-        images: meta?.image ? [meta.image] : undefined,
+        // images omitted → file-based opengraph-image.tsx takes over
       },
     };
   } catch {

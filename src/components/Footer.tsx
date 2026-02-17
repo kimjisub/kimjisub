@@ -237,19 +237,25 @@ function NewsletterBox() {
 				<form
 					onSubmit={handleSubmit}
 					className="flex items-center gap-2"
+					aria-label="뉴스레터 구독"
 				>
+					<label htmlFor="newsletter-email" className="sr-only">
+						이메일 주소
+					</label>
 					<input
+						id="newsletter-email"
 						type="email"
 						value={value}
 						onChange={(e) => setValue(e.target.value)}
 						placeholder="your@email.com"
 						className="w-44 rounded-lg border border-border bg-background px-3 py-1.5 text-xs text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:ring-1 focus:ring-accent/50 transition"
+						autoComplete="email"
 					/>
 					<motion.button
 						type="submit"
 						whileHover={{ scale: 1.05 }}
 						whileTap={{ scale: 0.95 }}
-						className="flex h-7 w-7 items-center justify-center rounded-lg border border-border text-muted-foreground hover:text-accent hover:border-accent/50 transition-colors"
+						className="flex h-7 w-7 items-center justify-center rounded-lg border border-border text-muted-foreground hover:text-accent hover:border-accent/50 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:outline-none transition-colors"
 						aria-label="Subscribe"
 					>
 						<FontAwesomeIcon icon={faPaperPlane} className="h-3 w-3" />

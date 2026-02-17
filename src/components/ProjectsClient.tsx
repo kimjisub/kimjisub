@@ -49,7 +49,8 @@ const FilterPill = ({ label, count, isActive, onClick }: FilterPillProps) => (
     layout
     whileTap={{ scale: 0.95 }}
     onClick={onClick}
-    className={`relative flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-sm font-medium border transition-colors duration-200 select-none ${
+    aria-pressed={isActive}
+    className={`relative flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-sm font-medium border transition-colors duration-200 select-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:outline-none ${
       isActive
         ? 'bg-foreground text-background border-foreground'
         : 'bg-transparent text-muted-foreground border-border hover:border-foreground/40 hover:text-foreground'

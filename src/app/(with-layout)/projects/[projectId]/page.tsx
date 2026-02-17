@@ -55,14 +55,14 @@ export async function generateMetadata(props: { params: Params }) {
 			title: `${project.title} | Jisub Kim`,
 			description: description,
 			type: 'article',
-			images: project.coverImageUrl ? [{ url: project.coverImageUrl }] : ['/logo512.png'],
+			// images omitted → file-based opengraph-image.tsx takes over
 			tags: tags ? [tags] : undefined,
 		},
 		twitter: {
 			card: 'summary_large_image',
 			title: `${project.title} | Jisub Kim`,
 			description: description,
-			images: project.coverImageUrl ? [project.coverImageUrl] : ['/logo512.png'],
+			// images omitted → file-based opengraph-image.tsx takes over
 		},
 	};
 }

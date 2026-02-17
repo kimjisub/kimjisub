@@ -109,10 +109,17 @@ export const HeroSection = () => {
               )}
             </AnimatePresence>
 
-            <div onClick={handleImageClick} className="cursor-pointer select-none">
+            <div
+              onClick={handleImageClick}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleImageClick(); } }}
+              role="button"
+              tabIndex={0}
+              aria-label="김지섭 프로필 사진"
+              className="cursor-pointer select-none focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2 rounded-full"
+            >
               <TiltImage
                 src="/logo192.png"
-                alt="김지섭"
+                alt=""
                 width={160}
                 height={160}
                 priority

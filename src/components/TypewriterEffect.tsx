@@ -26,16 +26,9 @@ export const TypewriterEffect = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Show static first text if reduced motion is preferred
-  if (prefersReduced) {
-    return (
-      <span className={`inline-flex items-baseline ${className}`} aria-label={texts[0]}>
-        <span>{texts[0]}</span>
-      </span>
-    );
-  }
-
   useEffect(() => {
+    // Skip animation entirely when reduced motion is preferred
+    if (prefersReduced) return;
     if (texts.length === 0) return;
 
     const currentText = texts[currentIndex];
@@ -70,7 +63,16 @@ export const TypewriterEffect = ({
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
-  }, [displayed, phase, currentIndex, texts, typingSpeed, deletingSpeed, pauseTime]);
+  }, [displayed, phase, currentIndex, texts, typingSpeed, deletingSpeed, pauseTime, prefersReduced]);
+
+  // Reduced motion: show the first text statically
+  if (prefersReduced) {
+    return (
+      <span className={`inline-flex items-baseline ${className}`} aria-label={texts[0]}>
+        <span>{texts[0]}</span>
+      </span>
+    );
+  }
 
   // Cursor blinks faster while typing/deleting, slower while pausing
   const cursorBlinkDuration = phase === 'pausing' ? 0.6 : 0.4;

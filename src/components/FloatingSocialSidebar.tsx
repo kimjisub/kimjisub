@@ -47,7 +47,7 @@ export default function FloatingSocialSidebar() {
 								target="_blank"
 								rel="noopener noreferrer"
 								aria-label={link.name}
-								className="block p-2 text-muted-foreground hover:text-primary hover:-translate-y-1 transition-all duration-200"
+								className="block p-2 text-muted-foreground hover:text-primary hover:-translate-y-1 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:rounded-md focus-visible:outline-none transition-all duration-200"
 							>
 								<FontAwesomeIcon icon={link.icon} className="w-5 h-5" />
 							</a>
@@ -72,7 +72,8 @@ export default function FloatingSocialSidebar() {
 			>
 				<motion.a
 					href={`mailto:${email}`}
-					className="font-mono text-xs tracking-widest text-muted-foreground hover:text-primary hover:-translate-y-1 transition-all duration-200"
+					aria-label={`이메일 보내기: ${email}`}
+					className="font-mono text-xs tracking-widest text-muted-foreground hover:text-primary hover:-translate-y-1 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:rounded-sm focus-visible:outline-none transition-all duration-200"
 					style={{ writingMode: 'vertical-rl' }}
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}

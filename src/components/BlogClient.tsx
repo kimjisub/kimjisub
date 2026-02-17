@@ -129,7 +129,8 @@ export default function BlogClient({ posts }: BlogClientProps) {
           <div className="flex flex-wrap gap-2 flex-1">
             <button
               onClick={() => setSelectedTag(null)}
-              className={`px-3 py-1 text-xs rounded-full border transition-all duration-200 ${
+              aria-pressed={!selectedTag}
+              className={`px-3 py-1 text-xs rounded-full border transition-all duration-200 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:outline-none ${
                 !selectedTag
                   ? 'bg-accent text-accent-foreground border-accent'
                   : 'bg-background text-muted-foreground border-border hover:border-accent/50 hover:text-foreground'
@@ -141,7 +142,8 @@ export default function BlogClient({ posts }: BlogClientProps) {
               <button
                 key={tag}
                 onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
-                className={`px-3 py-1 text-xs rounded-full border transition-all duration-200 ${
+                aria-pressed={selectedTag === tag}
+                className={`px-3 py-1 text-xs rounded-full border transition-all duration-200 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:outline-none ${
                   selectedTag === tag
                     ? 'bg-accent text-accent-foreground border-accent'
                     : 'bg-background text-muted-foreground border-border hover:border-accent/50 hover:text-foreground'
@@ -165,7 +167,8 @@ export default function BlogClient({ posts }: BlogClientProps) {
             <button
               key={value}
               onClick={() => setSortOption(value)}
-              className={`px-2.5 py-1 text-xs rounded-lg transition-all duration-200 ${
+              aria-pressed={sortOption === value}
+              className={`px-2.5 py-1 text-xs rounded-lg transition-all duration-200 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:outline-none ${
                 sortOption === value
                   ? 'bg-accent/15 text-accent font-medium'
                   : 'text-muted-foreground hover:text-foreground'
