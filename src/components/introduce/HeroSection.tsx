@@ -1,6 +1,7 @@
 'use client';
 
 import { MeshGradientBackground } from '@/components/MeshGradientBackground';
+import { ParticleBackground } from '@/components/ParticleBackground';
 import { MagneticLink } from '@/components/MagneticButton';
 import { NeonText } from '@/components/NeonText';
 import { RoughHighlight } from '@/components/RoughHighlight';
@@ -56,6 +57,7 @@ export const HeroSection = () => {
     <section className="min-h-[85vh] flex items-center relative overflow-hidden">
       <EasterEggs clickCount={clickCount} />
       <MeshGradientBackground />
+      <ParticleBackground />
       <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-transparent" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 py-24">
