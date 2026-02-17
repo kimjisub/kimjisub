@@ -17,6 +17,16 @@ const TopBar: React.FC = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const lastScrollY = useRef(0);
 
+  // Close mobile menu on Escape key
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsMenuOpen(false);
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isMenuOpen]);
+
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
     
@@ -53,6 +63,7 @@ const TopBar: React.FC = () => {
   return (
     <>
       <nav
+      aria-label="메인 내비게이션"
       className={`fixed top-0 w-full h-14 z-50 border-b border-border transition-transform duration-200 ${
         navBarHidden ? '-translate-y-full' : ''
       }`}
@@ -85,6 +96,7 @@ const TopBar: React.FC = () => {
             <MagneticLink
               key={link.path}
               href={link.path}
+              aria-current={pathname?.startsWith(link.path) ? 'page' : undefined}
               className={`text-sm transition-colors ${
                 pathname?.startsWith(link.path)
                   ? 'text-foreground'
@@ -134,7 +146,10 @@ const TopBar: React.FC = () => {
           <ThemeToggle />
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-sm text-muted-foreground"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+            aria-label={isMenuOpen ? '메뉴 닫기' : '메뉴 열기'}
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded-md"
           >
             {isMenuOpen ? 'Close' : 'Menu'}
           </button>
@@ -143,16 +158,17 @@ const TopBar: React.FC = () => {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-background border-b border-border">
+        <div id="mobile-menu" className="md:hidden bg-background border-b border-border">
           {links.map((link) => (
             <Link
               key={link.path}
               href={link.path}
               onClick={() => setIsMenuOpen(false)}
-              className={`block px-6 py-3 text-sm border-b border-border last:border-0 ${
+              aria-current={pathname?.startsWith(link.path) ? 'page' : undefined}
+              className={`block px-6 py-3 text-sm border-b border-border last:border-0 transition-colors ${
                 pathname?.startsWith(link.path)
                   ? 'text-foreground'
-                  : 'text-muted-foreground'
+                  : 'text-muted-foreground hover:text-foreground'
               }`}
             >
               {link.label}

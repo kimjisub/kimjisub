@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactNode, useRef } from 'react';
-import { motion, useInView, Variants } from 'framer-motion';
+import { motion, useInView, useReducedMotion, Variants } from 'framer-motion';
 
 export interface FadeInProps {
   children: ReactNode;
@@ -28,6 +28,11 @@ export const FadeIn: React.FC<FadeInProps> = ({
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once, margin: '-50px' });
+  const prefersReduced = useReducedMotion();
+
+  if (prefersReduced) {
+    return <div ref={ref} className={className}>{children}</div>;
+  }
 
   const getInitialPosition = () => {
     switch (direction) {

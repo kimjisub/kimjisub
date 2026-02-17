@@ -141,7 +141,7 @@ export function ThemeToggle() {
       {/* Dark / Light toggle – animated icon */}
       <button
         onClick={handleThemeToggle}
-        className="w-8 h-8 flex items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors overflow-hidden"
+        className="w-8 h-8 flex items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background focus-visible:outline-none transition-colors overflow-hidden"
         aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
         title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
       >
@@ -162,9 +162,10 @@ export function ThemeToggle() {
       {/* Palette trigger – shows current accent color dot */}
       <button
         onClick={() => setPaletteOpen(prev => !prev)}
-        className="w-7 h-7 flex items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors relative"
+        className="w-7 h-7 flex items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background focus-visible:outline-none transition-colors relative"
         aria-label="Choose accent color"
         aria-expanded={paletteOpen}
+        aria-haspopup="listbox"
         title="Choose accent color"
       >
         <PaletteIcon />
@@ -211,6 +212,7 @@ export function ThemeToggle() {
                     className={`
                       w-6 h-6 rounded-full flex-shrink-0
                       transition-all duration-200
+                      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card
                       ${paletteOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1'}
                       ${isActive ? 'scale-110' : 'hover:scale-110 active:scale-95'}
                     `}

@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 
 interface TypewriterEffectProps {
@@ -20,10 +20,20 @@ export const TypewriterEffect = ({
   deletingSpeed = 45,
   pauseTime = 1800,
 }: TypewriterEffectProps) => {
+  const prefersReduced = useReducedMotion();
   const [displayed, setDisplayed] = useState('');
   const [phase, setPhase] = useState<Phase>('typing');
   const [currentIndex, setCurrentIndex] = useState(0);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Show static first text if reduced motion is preferred
+  if (prefersReduced) {
+    return (
+      <span className={`inline-flex items-baseline ${className}`} aria-label={texts[0]}>
+        <span>{texts[0]}</span>
+      </span>
+    );
+  }
 
   useEffect(() => {
     if (texts.length === 0) return;

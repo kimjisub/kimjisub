@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactNode, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useReducedMotion } from 'framer-motion';
 
 interface AnimatedSectionProps {
   children: ReactNode;
@@ -12,6 +12,11 @@ interface AnimatedSectionProps {
 export const AnimatedSection = ({ children, className, delay = 0 }: AnimatedSectionProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const prefersReduced = useReducedMotion();
+
+  if (prefersReduced) {
+    return <div ref={ref} className={className}>{children}</div>;
+  }
 
   return (
     <motion.div
@@ -39,6 +44,11 @@ interface AnimatedTitleProps {
 export const AnimatedTitle = ({ children, className }: AnimatedTitleProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const prefersReduced = useReducedMotion();
+
+  if (prefersReduced) {
+    return <h2 ref={ref} className={className}>{children}</h2>;
+  }
 
   return (
     <motion.h2
@@ -62,6 +72,11 @@ interface AnimatedGridItemProps {
 export const AnimatedGridItem = ({ children, className, index = 0 }: AnimatedGridItemProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
+  const prefersReduced = useReducedMotion();
+
+  if (prefersReduced) {
+    return <div ref={ref} className={className}>{children}</div>;
+  }
 
   return (
     <motion.div
