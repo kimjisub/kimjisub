@@ -51,7 +51,7 @@ const TopBar: React.FC = () => {
 
   return (
     <>
-    <nav
+      <nav
       className={`fixed top-0 w-full h-14 z-50 border-b border-border transition-transform duration-200 ${
         navBarHidden ? '-translate-y-full' : ''
       }`}
@@ -159,11 +159,11 @@ const TopBar: React.FC = () => {
           ))}
         </div>
       )}
-    </nav>
+      </nav>
 
-    {/* Command Palette (rendered outside nav to avoid stacking context issues) */}
-    <CommandPalette open={cmdOpen} onClose={cmdClose} />
-  </>
+      {/* Command Palette (rendered outside nav to avoid stacking context issues) */}
+      <CommandPalette open={cmdOpen} onClose={cmdClose} />
+    </>
   );
 };
 

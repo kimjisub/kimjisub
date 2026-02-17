@@ -5,7 +5,8 @@ import type { Metadata } from 'next';
 
 import { getProjects } from '@/api/notion/projects';
 import DebugView from '@/components/DebugView';
-import { AnimatedGridItem,AnimatedSection, AnimatedTitle } from '@/components/motion/AnimatedSection';
+import { ProjectCarousel } from '@/components/ProjectCarousel';
+import { AnimatedGridItem, AnimatedSection, AnimatedTitle } from '@/components/motion/AnimatedSection';
 import { ProjectItem } from '@/components/ProjectItem';
 
 export const metadata: Metadata = {
@@ -32,8 +33,9 @@ export default async function ProjectsPage() {
   const { projects, fetchedAt } = await getProjects();
 
   return (
-    <section className="py-24 px-6 max-w-4xl mx-auto">
-      <header className="mb-16">
+    <section className="py-24 max-w-7xl mx-auto">
+      {/* 헤더 */}
+      <header className="mb-12 px-6">
         <AnimatedTitle className="font-serif text-3xl md:text-4xl text-foreground mb-4 italic">
           Projects
         </AnimatedTitle>
@@ -43,13 +45,19 @@ export default async function ProjectsPage() {
           </p>
         </AnimatedSection>
       </header>
-      
-      <div className="group/list grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      {/* 데스크탑: 수평 캐러셀 */}
+      <AnimatedSection delay={0.2} className="hidden md:block">
+        <ProjectCarousel projects={projects} />
+      </AnimatedSection>
+
+      {/* 모바일: 세로 그리드 */}
+      <div className="md:hidden px-6 grid grid-cols-1 gap-6">
         {projects.map((project, index) => (
-          <AnimatedGridItem 
-            key={project.id} 
+          <AnimatedGridItem
+            key={project.id}
             index={index}
-            className="transition-opacity duration-200 group-hover/list:opacity-30 hover:!opacity-100"
+            className="transition-opacity duration-200"
           >
             <ProjectItem project={project} />
           </AnimatedGridItem>
@@ -57,7 +65,7 @@ export default async function ProjectsPage() {
       </div>
 
       <DebugView>
-        <Text className="text-muted-foreground text-sm">
+        <Text className="text-muted-foreground text-sm px-6">
           {format(fetchedAt, 'yyyy-MM-dd HH:mm:ss')}
         </Text>
       </DebugView>
