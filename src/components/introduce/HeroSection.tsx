@@ -7,6 +7,7 @@ import { RoughHighlight } from '@/components/RoughHighlight';
 import { SectionReveal, SectionRevealItem } from '@/components/SectionReveal';
 import { TextScramble } from '@/components/TextScramble';
 import { TiltImage } from '@/components/TiltImage';
+import { TypewriterEffect } from '@/components/TypewriterEffect';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useCallback } from 'react';
 import EasterEggs from '@/components/EasterEggs';
@@ -89,6 +90,21 @@ export const HeroSection = () => {
               </NeonText>
             </h1>
             
+            <div className="mb-3 text-xl md:text-2xl font-medium text-foreground/80">
+              <TypewriterEffect
+                texts={[
+                  'Full-stack Developer',
+                  'Product Engineer',
+                  'System Architect',
+                  'Firmware Hacker',
+                  'Infrastructure Builder',
+                ]}
+                typingSpeed={75}
+                deletingSpeed={40}
+                pauseTime={2000}
+              />
+            </div>
+
             <p 
               className="text-lg text-muted-foreground mb-6 leading-relaxed max-w-xl"
             >
