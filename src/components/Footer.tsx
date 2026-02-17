@@ -1,11 +1,27 @@
 'use client';
 
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import {
+	faArrowRight,
+	faBriefcase,
+	faCircle,
+	faEnvelope,
+	faFileCode,
+	faFolderOpen,
+	faPaperPlane,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { motion, useInView, Variants } from 'framer-motion';
+import {
+	animate,
+	motion,
+	useInView,
+	useMotionValue,
+	Variants,
+} from 'framer-motion';
 import Link from 'next/link';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+// ─── Data ───────────────────────────────────────────────────────────────────
 
 const socialLinks = [
 	{
@@ -29,10 +45,10 @@ const socialLinks = [
 ];
 
 const navLinks = [
-	{ href: '/skills', label: 'Skills' },
-	{ href: '/projects', label: 'Projects' },
-	{ href: '/careers', label: 'Careers' },
-	{ href: '/blog', label: 'Blog' },
+	{ href: '/skills', label: 'Skills', icon: faFileCode },
+	{ href: '/projects', label: 'Projects', icon: faFolderOpen },
+	{ href: '/careers', label: 'Careers', icon: faBriefcase },
+	{ href: '/blog', label: 'Blog', icon: faFileCode },
 ];
 
 const techStack = [
@@ -42,14 +58,27 @@ const techStack = [
 	{ label: 'Tailwind CSS', url: 'https://tailwindcss.com' },
 ];
 
+const siteStats = [
+	{ label: 'Projects', value: 20, suffix: '+' },
+	{ label: 'Blog Posts', value: 15, suffix: '+' },
+	{ label: 'Years Coding', value: 10, suffix: '+' },
+];
+
+// Current activity config — edit here to update status
+const currentActivity = {
+	role: 'Building at Candid',
+	available: true,
+	availableLabel: 'Available for freelance',
+	updatedAt: '2025',
+};
+
+// ─── Variants ───────────────────────────────────────────────────────────────
+
 const containerVariants: Variants = {
 	hidden: { opacity: 0 },
 	visible: {
 		opacity: 1,
-		transition: {
-			staggerChildren: 0.08,
-			delayChildren: 0.05,
-		},
+		transition: { staggerChildren: 0.08, delayChildren: 0.05 },
 	},
 };
 
@@ -62,13 +91,187 @@ const itemVariants: Variants = {
 	},
 };
 
+// ─── Sub-components ─────────────────────────────────────────────────────────
+
+/** Animated stat counter (0 → value on first view) */
+function StatCounter({
+	value,
+	suffix = '',
+	duration = 1.8,
+}: {
+	value: number;
+	suffix?: string;
+	duration?: number;
+}) {
+	const ref = useRef<HTMLSpanElement>(null);
+	const isInView = useInView(ref, { once: true, margin: '-40px' });
+	const mv = useMotionValue(0);
+	const [display, setDisplay] = useState('0');
+
+	useEffect(() => {
+		return mv.on('change', (v) => setDisplay(Math.round(v).toLocaleString()));
+	}, [mv]);
+
+	useEffect(() => {
+		if (isInView) {
+			const c = animate(mv, value, { duration, ease: 'easeOut' });
+			return c.stop;
+		}
+	}, [isInView, value, duration, mv]);
+
+	return (
+		<span ref={ref}>
+			{display}
+			{suffix}
+		</span>
+	);
+}
+
+/** Current activity + availability badge */
+function CurrentWidget() {
+	const [pulse, setPulse] = useState(true);
+
+	// Blink-stop after a few seconds to be subtle
+	useEffect(() => {
+		const t = setTimeout(() => setPulse(false), 6000);
+		return () => clearTimeout(t);
+	}, []);
+
+	return (
+		<motion.div
+			variants={itemVariants}
+			className="flex flex-col gap-3 rounded-xl border border-border bg-card/40 px-5 py-4 backdrop-blur-sm"
+		>
+			<p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">
+				Currently
+			</p>
+
+			{/* Role */}
+			<div className="flex items-center gap-2">
+				<FontAwesomeIcon
+					icon={faBriefcase}
+					className="h-3 w-3 text-accent/70 shrink-0"
+				/>
+				<span className="text-sm text-foreground font-medium">
+					{currentActivity.role}
+				</span>
+			</div>
+
+			{/* Availability */}
+			<div className="flex items-center gap-2">
+				<span className="relative flex h-2 w-2 shrink-0">
+					{currentActivity.available && pulse && (
+						<span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+					)}
+					<FontAwesomeIcon
+						icon={faCircle}
+						className={`h-2 w-2 ${
+							currentActivity.available ? 'text-emerald-400' : 'text-muted-foreground/40'
+						}`}
+					/>
+				</span>
+				<span
+					className={`text-xs ${
+						currentActivity.available
+							? 'text-emerald-400/90'
+							: 'text-muted-foreground/50'
+					}`}
+				>
+					{currentActivity.availableLabel}
+				</span>
+			</div>
+
+			{/* Updated */}
+			<p className="text-[10px] text-muted-foreground/40">
+				Updated {currentActivity.updatedAt}
+			</p>
+		</motion.div>
+	);
+}
+
+/** Site stats row */
+function SiteStats() {
+	return (
+		<motion.div
+			variants={itemVariants}
+			className="flex gap-6"
+		>
+			{siteStats.map((stat) => (
+				<div key={stat.label} className="flex flex-col gap-0.5">
+					<span className="text-lg font-semibold text-foreground tabular-nums">
+						<StatCounter value={stat.value} suffix={stat.suffix} />
+					</span>
+					<span className="text-[10px] text-muted-foreground/60 uppercase tracking-wider">
+						{stat.label}
+					</span>
+				</div>
+			))}
+		</motion.div>
+	);
+}
+
+/** Newsletter signup placeholder */
+function NewsletterBox() {
+	const [value, setValue] = useState('');
+	const [sent, setSent] = useState(false);
+
+	const handleSubmit = (e: React.FormEvent) => {
+		e.preventDefault();
+		if (value.trim()) setSent(true);
+	};
+
+	return (
+		<motion.div variants={itemVariants} className="flex flex-col gap-2">
+			<p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">
+				Newsletter
+			</p>
+			{sent ? (
+				<motion.p
+					initial={{ opacity: 0, y: 4 }}
+					animate={{ opacity: 1, y: 0 }}
+					className="text-xs text-emerald-400"
+				>
+					Thanks! I'll reach out soon. ✨
+				</motion.p>
+			) : (
+				<form
+					onSubmit={handleSubmit}
+					className="flex items-center gap-2"
+				>
+					<input
+						type="email"
+						value={value}
+						onChange={(e) => setValue(e.target.value)}
+						placeholder="your@email.com"
+						className="w-44 rounded-lg border border-border bg-background px-3 py-1.5 text-xs text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:ring-1 focus:ring-accent/50 transition"
+					/>
+					<motion.button
+						type="submit"
+						whileHover={{ scale: 1.05 }}
+						whileTap={{ scale: 0.95 }}
+						className="flex h-7 w-7 items-center justify-center rounded-lg border border-border text-muted-foreground hover:text-accent hover:border-accent/50 transition-colors"
+						aria-label="Subscribe"
+					>
+						<FontAwesomeIcon icon={faPaperPlane} className="h-3 w-3" />
+					</motion.button>
+				</form>
+			)}
+		</motion.div>
+	);
+}
+
+// ─── Main Footer ─────────────────────────────────────────────────────────────
+
 export default function Footer() {
 	const ref = useRef<HTMLElement>(null);
 	const isInView = useInView(ref, { once: true, margin: '-60px' });
 	const currentYear = new Date().getFullYear();
 
 	return (
-		<footer ref={ref} className="relative mt-16 border-t border-border overflow-hidden">
+		<footer
+			ref={ref}
+			className="relative mt-16 border-t border-border overflow-hidden"
+		>
 			{/* Subtle gradient glow */}
 			<div
 				className="pointer-events-none absolute inset-x-0 top-0 h-px"
@@ -84,13 +287,13 @@ export default function Footer() {
 					animate={isInView ? 'visible' : 'hidden'}
 					className="flex flex-col gap-10"
 				>
-					{/* Top row: brand + nav */}
+					{/* ── Row 1: Brand + Nav + CurrentActivity ── */}
 					<motion.div
 						variants={itemVariants}
 						className="flex flex-col sm:flex-row justify-between gap-8"
 					>
-						{/* Brand block */}
-						<div className="flex flex-col gap-2">
+						{/* Brand */}
+						<div className="flex flex-col gap-3">
 							<Link
 								href="/"
 								className="text-sm font-semibold text-foreground hover:text-accent transition-colors"
@@ -100,32 +303,47 @@ export default function Footer() {
 							<p className="text-xs text-muted-foreground max-w-[220px] leading-relaxed">
 								CTO &amp; Product Engineer building software, firmware, and infrastructure.
 							</p>
+							<SiteStats />
 						</div>
 
-						{/* Nav links */}
-						<nav aria-label="Footer navigation">
-							<ul className="flex flex-wrap gap-x-6 gap-y-2">
-								{navLinks.map((link) => (
-									<li key={link.href}>
-										<Link
-											href={link.href}
-											className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-										>
-											{link.label}
-										</Link>
-									</li>
-								))}
-							</ul>
-						</nav>
+						{/* Right side: nav + current widget */}
+						<div className="flex flex-col gap-6 sm:items-end">
+							{/* Nav links with hover underline animation */}
+							<nav aria-label="Footer navigation">
+								<ul className="flex flex-wrap gap-x-6 gap-y-2 sm:justify-end">
+									{navLinks.map((link) => (
+										<li key={link.href}>
+											<Link
+												href={link.href}
+												className="group relative flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+											>
+												<FontAwesomeIcon
+													icon={link.icon}
+													className="h-3 w-3 opacity-50 group-hover:opacity-100 transition-opacity"
+												/>
+												<span>
+													{link.label}
+													<span className="absolute -bottom-px left-0 h-px w-0 bg-accent transition-all duration-300 group-hover:w-full" />
+												</span>
+												<FontAwesomeIcon
+													icon={faArrowRight}
+													className="h-2.5 w-2.5 opacity-0 -translate-x-1 group-hover:opacity-70 group-hover:translate-x-0 transition-all duration-200"
+												/>
+											</Link>
+										</li>
+									))}
+								</ul>
+							</nav>
+
+							{/* Current Activity */}
+							<CurrentWidget />
+						</div>
 					</motion.div>
 
-					{/* Divider */}
-					<motion.div
-						variants={itemVariants}
-						className="h-px bg-border"
-					/>
+					{/* ── Divider ── */}
+					<motion.div variants={itemVariants} className="h-px bg-border" />
 
-					{/* Bottom row: copyright + social + tech */}
+					{/* ── Row 2: Copyright + Newsletter + Social ── */}
 					<motion.div
 						variants={itemVariants}
 						className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6"
@@ -143,9 +361,10 @@ export default function Footer() {
 											href={tech.url}
 											target="_blank"
 											rel="noopener noreferrer"
-											className="hover:text-accent transition-colors underline-offset-2 hover:underline"
+											className="relative group hover:text-accent transition-colors"
 										>
 											{tech.label}
+											<span className="absolute -bottom-px left-0 h-px w-0 bg-accent/60 transition-all duration-300 group-hover:w-full" />
 										</a>
 										{i < techStack.length - 1 && (
 											<span className="mx-0.5 opacity-50">·</span>
@@ -154,6 +373,9 @@ export default function Footer() {
 								))}
 							</p>
 						</div>
+
+						{/* Middle: Newsletter */}
+						<NewsletterBox />
 
 						{/* Right: social icons */}
 						<ul className="flex items-center gap-2" aria-label="Social links">
@@ -167,11 +389,18 @@ export default function Footer() {
 									<a
 										href={link.url}
 										target={link.url.startsWith('mailto') ? undefined : '_blank'}
-										rel={link.url.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+										rel={
+											link.url.startsWith('mailto')
+												? undefined
+												: 'noopener noreferrer'
+										}
 										aria-label={link.label}
 										className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-muted-foreground hover:text-foreground hover:border-accent/50 hover:bg-accent/5 transition-all duration-200"
 									>
-										<FontAwesomeIcon icon={link.icon} className="h-[15px] w-[15px]" />
+										<FontAwesomeIcon
+											icon={link.icon}
+											className="h-[15px] w-[15px]"
+										/>
 									</a>
 								</motion.li>
 							))}
