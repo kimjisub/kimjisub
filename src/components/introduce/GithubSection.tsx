@@ -3,7 +3,6 @@ import React from 'react';
 import GitHubHitmap from '../GithubHitmap';
 
 import { getYearlyGithubContributions } from '@/api/github';
-import { Title } from '@/components/Title';
 
 export default async function GithubSection() {
   const startYear = 2018;
@@ -12,15 +11,18 @@ export default async function GithubSection() {
   const contributions = await Promise.all(
     years.map((year) => getYearlyGithubContributions('kimjisub', year))
   );
+  
   return (
-    <section className="w-full bg-white py-12">
-      <div className="w-full max-w-5xl mx-auto px-2 items-center">
-        <Title title="Github" subTitle="개발자로 살아왔던 나날들입니다." />
+    <section className="py-24 border-t border-border bg-card/30">
+      <div className="max-w-4xl mx-auto px-6">
+        <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-12 italic">
+          Activity
+        </h2>
 
-        <div className="flex flex-col items-center justify-center gap-y-2 mt-6">
+        <div className="flex flex-col items-center gap-y-2">
           {contributions.map((contribution, index) => (
             <div key={contribution.from.toString()} className="flex flex-row items-center w-fit">
-              <span className="font-semibold text-xs text-slate-500 w-12 text-right mr-2 md:w-16 md:text-sm md:mr-4 select-none">
+              <span className="text-xs text-muted-foreground w-12 text-right mr-3 tabular-nums">
                 {years[index]}
               </span>
               <GitHubHitmap
@@ -29,16 +31,6 @@ export default async function GithubSection() {
               />
             </div>
           ))}
-        </div>
-        <div className="flex justify-center mt-8">
-          <a
-            href="https://github.com/kimjisub"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-6 py-2 rounded-lg bg-slate-900 text-white font-semibold shadow hover:bg-slate-700 transition-colors duration-150"
-          >
-            GitHub 프로필 바로가기
-          </a>
         </div>
       </div>
     </section>

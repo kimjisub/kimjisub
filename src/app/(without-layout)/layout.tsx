@@ -1,6 +1,6 @@
 import { Theme } from '@radix-ui/themes';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { DM_Sans, Space_Grotesk } from 'next/font/google';
 
 import '../globals.css';
 import 'react-notion-x/src/styles.css';
@@ -10,7 +10,17 @@ import '@radix-ui/themes/styles.css';
 
 import { AppInfoProvider } from '@/contexts/AppInfoContext';
 
-const inter = Inter({ subsets: ['latin'] });
+const spaceGrotesk = Space_Grotesk({ 
+	subsets: ['latin'],
+	variable: '--font-heading',
+	weight: ['400', '500', '600', '700'],
+});
+
+const dmSans = DM_Sans({ 
+	subsets: ['latin'],
+	variable: '--font-body',
+	weight: ['400', '500', '700'],
+});
 
 export const metadata: Metadata = {
 	title: 'Jisub Kim, Software Engineer',
@@ -23,10 +33,10 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html>
-			<Theme>
+		<html className={`${spaceGrotesk.variable} ${dmSans.variable}`}>
+			<Theme appearance="dark">
 				<AppInfoProvider>
-					<body className={`${inter.className}`}>{children}</body>
+					<body className="font-body bg-background text-foreground">{children}</body>
 				</AppInfoProvider>
 			</Theme>
 		</html>

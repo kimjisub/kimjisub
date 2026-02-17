@@ -10,9 +10,9 @@ import type { BlogPostMeta } from "@/types/blog";
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
   
   try {
     const { meta } = await import(`@/blog/${slug}/index.mdx`) as { meta: BlogPostMeta };
@@ -48,9 +48,9 @@ export async function generateMetadata({
 export default async function Page({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
+  const { slug } = await params;
   const { default: MDXContent, meta } = await import(`@/blog/${slug}/index.mdx`) as {
     default: React.ComponentType<MDXProps>;
     meta: BlogPostMeta;

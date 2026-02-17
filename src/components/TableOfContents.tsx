@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 interface TocItem {
   id: string;
@@ -59,7 +59,7 @@ export default function TableOfContents() {
 
   return (
     <nav className="sticky top-20 max-h-[calc(100vh-6rem)] overflow-auto">
-      <h2 className="text-lg font-semibold mb-4">목차</h2>
+      <h2 className="font-heading text-lg font-semibold text-foreground mb-4">목차</h2>
       <ul className="space-y-2 text-sm">
         {toc.map((item) => (
           <li
@@ -68,10 +68,10 @@ export default function TableOfContents() {
           >
             <Link
               href={`#${item.id}`}
-              className={`block py-1 transition-colors hover:text-blue-600 ${
+              className={`block py-1 transition-colors hover:text-accent ${
                 activeId === item.id
-                  ? 'text-blue-600 font-medium border-l-2 border-blue-600 pl-2 -ml-2'
-                  : 'text-gray-600'
+                  ? 'text-accent font-medium border-l-2 border-accent pl-2 -ml-2'
+                  : 'text-muted-foreground'
               }`}
               onClick={(e) => {
                 e.preventDefault();

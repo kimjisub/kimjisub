@@ -1,6 +1,6 @@
 import { Theme } from '@radix-ui/themes';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Newsreader } from 'next/font/google';
 
 import '../globals.css';
 import '@/styles/prism-theme.css';
@@ -12,11 +12,21 @@ import Footer from '@/components/Footer';
 import TopBar from '@/components/TopBar';
 import { AppInfoProvider } from '@/contexts/AppInfoContext';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ 
+	subsets: ['latin'],
+	variable: '--font-sans',
+});
+
+const newsreader = Newsreader({ 
+	subsets: ['latin'],
+	variable: '--font-serif',
+	weight: ['400', '500', '600'],
+	style: ['normal', 'italic'],
+});
 
 export const metadata: Metadata = {
-	title: 'Jisub Kim, Software Engineer',
-	description: '보유 기술, 프로젝트, 경력 등을 소개합니다.',
+	title: 'Jisub Kim',
+	description: 'CTO, Product Engineer, Builder',
 };
 
 export default function RootLayout({
@@ -25,13 +35,13 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html>
+		<html className={`${inter.variable} ${newsreader.variable}`}>
 			<AppInfoProvider>
-				<body className={`${inter.className}`}>
-					<Theme>
+				<body className="font-sans bg-background text-foreground antialiased">
+					<Theme appearance="dark">
 						<div className="min-h-screen flex flex-col">
 							<TopBar />
-							<main className="flex-grow pt-16 md:pt-16">{children}</main>
+							<main className="flex-grow">{children}</main>
 							<Footer />
 						</div>
 					</Theme>

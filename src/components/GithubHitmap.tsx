@@ -10,7 +10,7 @@ const GitHubHitmap: React.FC<GitHubHitmapProps> = ({ data, fromDate }) => {
   const getColor = (level: number | null): string => {
     if (level === null || level === undefined) return '';
     const colorMap: Record<number, string> = {
-      0: 'bg-gray-200',
+      0: 'bg-secondary',
       1: 'bg-[#9be9a8]',
       2: 'bg-[#40c463]',
       3: 'bg-[#30a14e]',
@@ -38,7 +38,6 @@ const GitHubHitmap: React.FC<GitHubHitmapProps> = ({ data, fromDate }) => {
 
     return (
       <div key={rowIndex} className="flex flex-col">
-        {/* <p className="h-5 text-sm w-0">{monthLabel}</p> */}
         {weekData.map((level, index) => {
           const date = addDays(fromDate, rowIndex * 7 + index);
           const formattedDate = format(date, 'yyyy-MM-dd');

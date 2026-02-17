@@ -43,24 +43,66 @@ export default async function BlogIndex() {
       })
   );
 
+  // Sort by date (newest first)
+  posts.sort((a, b) => {
+    if (!a.meta.date) return 1;
+    if (!b.meta.date) return -1;
+    return new Date(b.meta.date).getTime() - new Date(a.meta.date).getTime();
+  });
+
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">블로그</h1>
-      <div className="space-y-6">
-        {posts.map(({ slug, meta }) => (
-          <article key={slug} className="border-b pb-6">
-            <Link href={`/blog/${slug}`} className="block hover:opacity-80 transition-opacity">
-              <h2 className="text-xl font-semibold mb-2">{meta.title}</h2>
-              {meta.date && (
-                <time className="text-sm text-gray-500">{meta.date}</time>
-              )}
-              {meta.description && (
-                <p className="mt-2 text-gray-600">{meta.description}</p>
-              )}
-            </Link>
-          </article>
+    <section className="py-24 px-6 max-w-4xl mx-auto">
+      <header className="mb-16">
+        <h1 className="font-serif text-3xl md:text-4xl text-foreground mb-4 italic">
+          Blog
+        </h1>
+        <p className="text-muted-foreground leading-relaxed max-w-xl">
+          가끔 글을 씁니다.
+        </p>
+      </header>
+      
+      <div className="space-y-4">
+        {posts.map(({ slug, meta }, index) => (
+          <Link 
+            key={slug} 
+            href={`/blog/${slug}`} 
+            className="block group"
+            style={{ animationDelay: `${index * 0.05}s` }}
+          >
+            <article className="p-6 rounded-xl card-hover">
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex-1">
+                  <h2 className="font-heading text-lg font-semibold text-foreground mb-2 group-hover:text-accent transition-colors duration-300">
+                    {meta.title}
+                  </h2>
+                  {meta.description && (
+                    <p className="text-muted-foreground text-sm line-clamp-2 mb-3">
+                      {meta.description}
+                    </p>
+                  )}
+                  {meta.tags && meta.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2">
+                      {meta.tags.slice(0, 3).map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2 py-0.5 text-xs bg-accent/10 text-accent rounded-full"
+                        >
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                {meta.date && (
+                  <time className="text-sm text-muted-foreground whitespace-nowrap">
+                    {meta.date}
+                  </time>
+                )}
+              </div>
+            </article>
+          </Link>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

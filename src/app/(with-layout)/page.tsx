@@ -1,183 +1,254 @@
-import { Text } from '@radix-ui/themes';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import GithubSection from '@/components/introduce/GithubSection';
 import SkillsSection from '@/components/introduce/SkillSection';
-import { TimeLine, TimeLineItem } from '@/components/TimeLine';
 
-// import { getGitHubContributions } from '@/api/github';
-
-gsap.registerPlugin(ScrollTrigger);
 export const revalidate = 3600;
 
 export default function Home() {
   return (
-    <main className="pt-16 flex flex-col min-h-screen py-4 snap-y snap-mandatory">
-      <section className="w-full min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-[#f8fafc] via-[#e0e7ef] to-[#f1f5f9] py-16">
-      <div className="bg-white/90 rounded-3xl shadow-2xl border border-slate-100 flex flex-col md:flex-row items-center md:items-start max-w-4xl w-full px-8 py-12 md:px-16 md:py-16 gap-0 md:gap-12">
-        {/* 프로필 영역 */}
-        <div className="flex flex-col items-center md:items-start mb-8 md:mb-0 md:w-1/3">
-          <Image
-            src="/logo192.png"
-            className="rounded-full border-4 border-white shadow-lg w-36 h-36 object-cover mb-4"
-            alt={''}
-            width={144}
-            height={144}
-          />
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-800 tracking-tight mb-2">김지섭</h1>
-          <span className="text-base md:text-lg text-slate-500 font-medium mb-1">Fullstack Engineer</span>
-          <span className="text-xs text-slate-400">10년차 · 창업 · 프리랜서 · 수상 26회</span>
+    <main className="flex flex-col min-h-screen">
+      {/* Hero */}
+      <section className="min-h-[85vh] flex items-center relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-transparent" />
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-6 py-24">
+          <div className="flex flex-col md:flex-row items-start gap-12">
+            <Image
+              src="/logo192.png"
+              className="rounded-2xl w-32 h-32 md:w-40 md:h-40 object-cover ring-1 ring-border"
+              alt="김지섭"
+              width={160}
+              height={160}
+              priority
+            />
+
+            <div className="flex-1">
+              <h1 className="text-4xl md:text-5xl font-medium text-foreground mb-4 tracking-tight">
+                김지섭
+              </h1>
+              
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed max-w-xl">
+                Alpaon CTO. Candid Product Engineer.<br />
+                소프트웨어부터 펌웨어, 인프라까지 직접 만들고 운영합니다.
+              </p>
+
+              <div className="flex flex-wrap gap-3 text-sm">
+                <a 
+                  href="https://alpaon.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 rounded-lg bg-card border border-border hover:border-foreground/30 transition-colors"
+                >
+                  Alpaon
+                </a>
+                <a 
+                  href="https://teamcandid.kr" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 rounded-lg bg-card border border-border hover:border-foreground/30 transition-colors"
+                >
+                  Candid
+                </a>
+                <a 
+                  href="https://github.com/kimjisub" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 rounded-lg bg-card border border-border hover:border-foreground/30 transition-colors"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        {/* 소개 텍스트 */}
-        <div className="w-full md:w-2/3 text-center md:text-left flex flex-col justify-center">
-          <Text className="break-keep text-slate-700 text-lg leading-relaxed space-y-5">
-            <p>
-              안녕하세요, 지난 10여년을 코드를 통해 세상의 문제를 풀어온 <span className="font-bold text-blue-600">풀스택 엔지니어</span> 김지섭입니다. 지금까지 <span className="font-bold text-violet-500">55개 이상의 프로젝트</span>를 직접 만들고 운영해봤고, 그 과정에서 <span className="font-bold text-teal-600">수백만 명</span>의 사용자를 끌어모은 경험도 있습니다.
-            </p>
-            <p>
-              또한, IT 관련 대회에서 <span className="font-bold text-orange-500">26회의 수상</span> 경험이 있고, <span className="font-bold text-emerald-600">2번의 창업</span>, <span className="font-bold text-sky-600">6년의 프리랜서</span> 활동, 그리고 <span className="font-bold text-blue-600">3년간의 정규직</span> 경험을 통해 세상의 흐름을 읽어내고, 그 사이에 피어난 수요를 파고들어 제품을 개발해나가는 것에 강점이 있습니다.
-            </p>
-            <p>
-              이 모든 경험은 <span className="font-bold text-violet-500">학사 과정</span>을 병행하며 얻은 것들입니다. <span className="font-bold text-blue-600">실무</span>에서의 통찰과 함께 <span className="font-bold text-teal-600">이론적인 기반</span>도 갖춘, <span className="font-bold text-rose-500">균형 잡힌 엔지니어</span>라고 자신있게 말씀드립니다.
-            </p>
-            <p>
-              귀사와 함께 더 재미있고 의미 있는 문제들을 함께 풀어나가고 싶습니다. 저의 <span className="font-bold text-sky-600">직감과 기술</span>이 그 여정에 힘이 되길 바랍니다.
-            </p>
-          </Text>
+      </section>
+
+      {/* About */}
+      <section className="py-24 border-t border-border">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-12 italic">
+            About
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                2016년에 만든 앱이 500만 다운로드를 넘기면서 개발을 시작했습니다. 
+                중학교 때였고, 그게 UniPad입니다.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                지금은 두 회사에서 일합니다. Alpaon에서는 공동창업자이자 CTO로 
+                산업용 IoT 제품을 만들고, Candid에서는 유일한 엔지니어로 
+                채용 시스템을 개발합니다.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                코드만 짜는 건 재미없습니다. 제품이 어떻게 쓰이는지, 
+                비즈니스가 어떻게 돌아가는지 같이 고민하는 쪽을 선호합니다.
+              </p>
+            </div>
+            
+            <div>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                한국외대 컴퓨터공학과 재학 중입니다. 2026년 2월에 졸업 예정.
+                학교 다니면서 계속 일했습니다.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                한국디지털미디어고등학교 해킹방어과 출신입니다. 
+                거기서 정보올림피아드 금상도 받고, 해커톤도 많이 나갔습니다.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                요즘은 LLM을 제품에 어떻게 넣을지 고민하고 있습니다. 
+                Candid에서는 추천 시스템에, Alpaon에서는 산업 설비 제어에 쓰고 있습니다.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-      {/* <EducationSection /> */}
-      <div className="w-full max-w-4xl mx-auto px-4 md:px-8 my-12">
-        <TimeLine>
-          <TimeLineItem
-            year={2023}
-            title="Alpaon LLC."
-            content={
-              <>
-                산업용 IoT 플랫폼의 설계, 개발, 배포, 운영까지 전 과정을 총괄하며 CTO로 참여하고 있습니다.
-                <br />
-                대규모 센서 데이터 수집 및 실시간 분석, 클라우드 인프라 구축, 산업 현장 맞춤형 솔루션 제공 등 다양한 프로젝트를 리딩하고 있습니다.
-                <br />
-                기술팀 리딩과 아키텍처 설계, 고객사와의 협업 경험을 통해 비즈니스와 기술의 균형을 추구하고 있습니다.
-              </>
-            }
-          />
-          <TimeLineItem
-            year={2023}
-            title="HUFS IDS Lab. 학부연구생"
-            content={
-              <>
-                한국외국어대학교 IDS 연구실에서 학부연구생으로 활동하며, MySQL 등 DB 엔진을 SSD 컨트롤러 단계에서 직접 구현하는 연구에 참여했습니다.
-                <br />
-                스토리지 하드웨어와 소프트웨어의 경계를 넘나드는 실험을 통해 데이터베이스 성능 최적화와 시스템 구조에 대한 깊은 이해를 쌓았습니다.
-                <br />
-                논문 작성, 실험 설계, 연구 미팅 등 학술적 경험도 함께 쌓았습니다.
-              </>
-            }
-          />
-          <TimeLineItem
-            year={2020}
-            title="한국외국어대학교 20학번 컴퓨터공학부 입학"
-            content={
-              <>
-                컴퓨터공학의 이론과 실제를 깊이 있게 배우기 위해 진학했습니다.
-                <br />
-                자료구조, 알고리즘, 운영체제, 네트워크 등 CS 전반을 학습하며, 다양한 팀 프로젝트와 공모전에 참여했습니다.
-                <br />
-                학업과 실무를 병행하며 균형 잡힌 엔지니어로 성장하고 있습니다.
-              </>
-            }
-          />
-          <TimeLineItem
-            title="IT 창업 경진 대회 및 해커톤 18여 회 수상"
-            content={
-              <>
-                전국 규모의 해커톤, 창업 경진대회 등에서 18회 이상 수상하며 아이디어 기획, 프로토타입 개발, 발표까지 전 과정을 경험했습니다.
-                <br />
-                다양한 팀과 협업하며 빠른 MVP 제작, 시장성 검증, 피칭 역량을 키웠습니다.
-                <br />
-                실제 서비스로 이어진 프로젝트도 다수 있습니다.
-              </>
-            }
-          />
-          <TimeLineItem
-            year={2019}
-            title={<><span style={{ color: '#DC4744' }}>The Vplanet</span> 입사</>}
-            content={
-              <>
-                스타트업 The Vplanet에서 안드로이드 앱, API 서버, After Effect 기반 렌더링 엔진 등 다양한 제품을 개발했습니다.
-                <br />
-                소규모 팀에서 기획부터 배포, 유지보수까지 전 과정을 경험하며 실전 개발 역량을 쌓았습니다.
-                <br />
-                고객 요구사항 분석, UI/UX 개선, 신규 기능 설계 등 폭넓은 업무를 담당했습니다.
-              </>
-            }
-          />
-          <TimeLineItem
-            year={2018}
-            title={<><span style={{ color: '#D31877' }}>디미고라이프</span> 개발 및 운영</>}
-            content={
-              <>
-                교내 인트라넷 서비스인 디미고라이프를 직접 기획, 개발, 운영하여 전교생의 기숙사 생활을 지원했습니다.
-                <br />
-                사용자 피드백을 반영한 지속적 개선, 서버 인프라 관리, 데이터베이스 설계 등 실무 경험을 쌓았습니다.
-                <br />
-                서비스의 성장과정에서 문제 해결력과 책임감을 키웠습니다.
-              </>
-            }
-          />
-          <TimeLineItem
-            year={2017}
-            title={<><span style={{ color: '#D31877' }}>한국디지털미디어고등학교</span> 16기 해킹방어과 입학</>}
-            content={
-              <>
-                IT 특성화고에 입학하여 해킹방어, 네트워크, 프로그래밍 등 다양한 기술을 체계적으로 배웠습니다.
-                <br />
-                교내외 대회, 동아리 활동, 프로젝트 경험을 통해 실전 감각을 익혔습니다.
-                <br />
-                이 시기에 개발자로서의 진로를 확고히 다졌습니다.
-              </>
-            }
-          />
-          <TimeLineItem
-            year={2016}
-            title="UniPad 프로젝트 진행"
-            content={
-              <>
-                안드로이드 기반 음악 게임 UniPad를 기획, 개발, 출시하여 플레이스토어 500만+ 다운로드를 달성했습니다.
-                <br />
-                전 세계 유저와 소통하며 지속적으로 업데이트, 커뮤니티 관리, 피드백 반영 등 서비스 운영 전반을 경험했습니다.
-                <br />
-                이 프로젝트를 통해 개발자로서의 첫 성공 경험을 얻었습니다.
-              </>
-            }
-          />
-        </TimeLine>
-      </div>
-      {/* <ProjectSection /> */}
+      </section>
+
+      {/* Work */}
+      <section className="py-24 border-t border-border bg-card/30">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-12 italic">
+            Work
+          </h2>
+
+          <div className="space-y-16">
+            {/* Alpaon */}
+            <div>
+              <div className="flex items-baseline gap-4 mb-4">
+                <h3 className="text-xl font-medium text-foreground">Alpaon</h3>
+                <span className="text-sm text-muted-foreground">2023 — present</span>
+              </div>
+              <p className="text-sm text-accent mb-4">CTO, Co-founder</p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                산업용 IoT와 클라우드 인프라 회사입니다. 3명이서 시작했습니다.
+              </p>
+              <ul className="text-muted-foreground text-sm space-y-2">
+                <li>AlpaConnect — PLC를 클라우드에 연결해서 원격 모니터링/제어. LLM 기반 대화형 인터페이스 개발 중.</li>
+                <li>Synap.us — Managed VPC, Kubernetes, VM 서비스. 480Gbps transit, 99.99% SLA.</li>
+                <li>펌웨어, 백엔드, 프론트엔드, 인프라 전부 담당. 회로 설계만 다른 분이 합니다.</li>
+              </ul>
+            </div>
+
+            {/* Candid */}
+            <div>
+              <div className="flex items-baseline gap-4 mb-4">
+                <h3 className="text-xl font-medium text-foreground">Candid</h3>
+                <span className="text-sm text-muted-foreground">2023 — present</span>
+              </div>
+              <p className="text-sm text-accent mb-4">Product Engineer (sole engineer)</p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                스타트업 채용 컨설팅 회사입니다. 19명 중 엔지니어는 저 혼자입니다.
+              </p>
+              <ul className="text-muted-foreground text-sm space-y-2">
+                <li>Excel로 하던 업무를 자체 ERP로 전환했습니다.</li>
+                <li>2-stage 후보자 추천 시스템 개발. 컨설턴트들이 쓰는 AI agent도 만들었습니다.</li>
+                <li>자체 LLM 서버 세팅. RTX 4090으로 로컬 추론 돌립니다.</li>
+              </ul>
+            </div>
+
+            {/* UniPad */}
+            <div>
+              <div className="flex items-baseline gap-4 mb-4">
+                <h3 className="text-xl font-medium text-foreground">UniPad</h3>
+                <span className="text-sm text-muted-foreground">2016 — 2020</span>
+              </div>
+              <p className="text-sm text-accent mb-4">Founder</p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Launchpad 시뮬레이터 앱입니다. 중학교 때 만들었습니다.
+              </p>
+              <ul className="text-muted-foreground text-sm space-y-2">
+                <li>Google Play 500만+ 다운로드. 전 세계 유저들이 썼습니다.</li>
+                <li>유저 커뮤니티가 만든 프로젝트 파일이 수만 개 공유됐습니다.</li>
+                <li>지금은 오픈소스로 공개했습니다.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Education & Awards */}
+      <section className="py-24 border-t border-border">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-12 italic">
+            Background
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-6">Education</h3>
+              <ul className="space-y-4 text-sm">
+                <li>
+                  <p className="text-foreground">한국외국어대학교 컴퓨터공학과</p>
+                  <p className="text-muted-foreground">2020 — 2026 (졸업 예정)</p>
+                </li>
+                <li>
+                  <p className="text-foreground">한국디지털미디어고등학교 해킹방어과</p>
+                  <p className="text-muted-foreground">2017 — 2019</p>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-6">Recognition</h3>
+              <ul className="space-y-4 text-sm">
+                <li>
+                  <p className="text-foreground">정보올림피아드 금상</p>
+                  <p className="text-muted-foreground">2017</p>
+                </li>
+                <li>
+                  <p className="text-foreground">해커톤 및 창업 대회 18회+ 수상</p>
+                  <p className="text-muted-foreground">2017 — 2023</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* GitHub */}
       <GithubSection />
+      
+      {/* Skills */}
       <SkillsSection />
-      {/* <ContactSection /> */}
+
+      {/* Contact */}
+      <section className="py-24 border-t border-border">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-8 italic">
+            Contact
+          </h2>
+          
+          <div className="flex flex-wrap gap-4">
+            <a 
+              href="mailto:0226daniel@gmail.com"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              0226daniel@gmail.com
+            </a>
+            <span className="text-border">·</span>
+            <a 
+              href="https://www.linkedin.com/in/kimjisub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              LinkedIn
+            </a>
+            <span className="text-border">·</span>
+            <a 
+              href="https://github.com/kimjisub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
-
-/*
-1. 자기소개
-	 제너럴리스트
-
-2. 기술
-	 위에서 말한 제너럴리스트답게 다양한 기술
-
-3. 프로젝트 및 업적 타임라인
-	업적 (경력)
-  Github 커밋 히트맵과 함께 
-
-4. 연락처
-   명함 3D 모델링 활용
-
-
-*/

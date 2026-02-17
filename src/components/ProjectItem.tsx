@@ -1,22 +1,19 @@
 'use client';
 
-import React, { useState } from 'react';
 import { Badge, Text } from '@radix-ui/themes';
 import { format } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
+import React from 'react';
 
 import { ProjectT } from '@/api/notion/projects';
-
-const blur = 'bg-white bg-opacity-60 backdrop-filter backdrop-blur-sm';
 
 export interface ProjectItemProps {
 	className?: string;
 	project: ProjectT;
 }
-export const ProjectItem = ({ className, project }: ProjectItemProps) => {
-	const [isHovered, setIsHovered] = useState(false);
 
+export const ProjectItem = ({ className, project }: ProjectItemProps) => {
 	const icon = project.iconUrl ? (
 		<Image
 			className="mr-2 w-6 h-6"
@@ -27,82 +24,59 @@ export const ProjectItem = ({ className, project }: ProjectItemProps) => {
 		/>
 	) : project.iconEmoji ? (
 		<span className="mr-2">{project.iconEmoji}</span>
-	) : (
-		<></>
-	);
+	) : null;
 
 	const coverImage = project.coverImageUrl ? (
 		<Image
-			className="w-full h-full object-cover rounded-[26px] rounded-b-sm"
-			width={300}
-			height={150}
+			className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+			width={400}
+			height={200}
 			src={project.coverImageUrl}
-			alt="" //{`${project.name} 커버 이미지`}
+			alt=""
 		/>
 	) : (
-		<></>
+		<div className="w-full h-full bg-gradient-to-br from-secondary to-primary" />
 	);
 
 	return (
-		<Link href={`/projects/${project.id}`} prefetch>
+		<Link href={`/projects/${project.id}`} prefetch className="group">
 			<article
-				className={`cursor-pointer rounded-[28px] border-2 border-gray-200 m-2 ${className}`}
-				onMouseEnter={() => setIsHovered(true)}
-				onMouseLeave={() => setIsHovered(false)}>
-				<div className="relative ">
+				className={`cursor-pointer rounded-2xl border border-border bg-card overflow-hidden card-hover ${className}`}
+			>
+				<div className="relative overflow-hidden">
 					<div className="aspect-video">{coverImage}</div>
-					<div
-						className={`absolute top-2 left-2 px-4 py-2 border rounded-full ${blur} `}>
-						<p className="text-md font-semibold flex">
+					{/* Overlay on hover */}
+					<div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-colors duration-300" />
+					<div className="absolute top-3 left-3 px-3 py-1.5 rounded-full bg-background/90 backdrop-blur-sm border border-border">
+						<p className="text-sm font-medium text-foreground flex items-center">
 							{icon}
 							{project.title}
 						</p>
 					</div>
-					{/* <div
-						className={`absolute bottom-2 left-2 px-4 py-2 border rounded-full ${blur} transition-opacity duration-300 ${
-							isHovered ? 'opacity-100' : 'opacity-0'
-						} `}>
-						<p className="text-md font-semibold flex">
-							<div className="p-2">
-								<p className="text-sm">{project.description}</p>
-								{project.date.start && (
-									<p className="text-sm">
-										{format(project.date.start, 'yyyy-MM-dd')}
-									</p>
-								)}
-							</div>
-						</p>
-					</div> */}
 				</div>
-				<div className="p-4">
-					<div className="space-x-2">
-						{project.태그.map(tag => (
-							<Badge key={tag.name} color={tag.color}>
+				<div className="p-5">
+					<div className="flex flex-wrap gap-1.5 mb-3">
+						{project.태그.slice(0, 3).map(tag => (
+							<Badge key={tag.name} color={tag.color} variant="soft" size="1">
 								{tag.name}
 							</Badge>
 						))}
-						{project.분류.map(category => (
-							<Badge key={category.name} color={category.color}>
+						{project.분류.slice(0, 2).map(category => (
+							<Badge key={category.name} color={category.color} variant="soft" size="1">
 								{category.name}
 							</Badge>
 						))}
-						{project['맡은 업무'].map(role => (
-							<Badge key={role.name} color={role.color}>
-								{role.name}
-							</Badge>
-						))}
 					</div>
-					<Text className="text-sm" as="p">
+					<Text className="text-sm text-muted-foreground line-clamp-2" as="p">
 						{project.description}
 					</Text>
 					{project.date.start && (
-						<Text className="text-sm" as="p">
+						<Text className="text-xs text-muted-foreground mt-3 block" as="p">
 							{format(project.date.start, 'yyyy-MM-dd')}
 						</Text>
 					)}
 				</div>
 			</article>
-			{/* <JsonView name="raw" src={raw} /> */}
 		</Link>
 	);
 };

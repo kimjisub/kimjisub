@@ -8,24 +8,30 @@ export interface TimeLineItemProps {
 
 export function TimeLineItem({ year, title, content }: TimeLineItemProps) {
   return (
-    <li className="relative flex items-center z-10">
-      {/* 연도/텍스트 */}
-      <div className="w-24 text-right pr-6 flex-shrink-0 flex items-center justify-end h-full min-h-[60px]">
+    <li className="relative flex items-start z-10 group">
+      {/* 연도 */}
+      <div className="w-20 md:w-24 text-right pr-4 md:pr-6 flex-shrink-0 pt-1">
         {year !== null && year !== undefined && (
-          <span className="text-base md:text-lg font-semibold text-slate-600 select-none">
+          <span className="text-sm md:text-base font-semibold text-muted-foreground font-heading group-hover:text-accent transition-colors duration-300">
             {year}
           </span>
         )}
       </div>
+      
       {/* 타임라인 포인트 */}
-      <div className="relative flex flex-col items-center w-6 flex-shrink-0">
-        <div className="w-4 h-4 rounded-full bg-gradient-to-br from-blue-400 to-violet-500 border-4 border-white shadow-lg z-10 mt-0.5 mb-0.5" />
+      <div className="relative flex flex-col items-center w-4 flex-shrink-0 pt-1.5">
+        <div className="w-3 h-3 rounded-full bg-accent ring-4 ring-background z-10 group-hover:scale-150 group-hover:ring-accent/30 transition-all duration-300" />
       </div>
+      
       {/* 카드 */}
-      <div className="ml-8 md:ml-12 flex-1">
-        <div className="bg-white/90 rounded-xl shadow-md border border-slate-100 px-6 py-5">
-          <div className="font-semibold text-lg text-blue-700 mb-1">{title}</div>
-          <div className="text-slate-700 text-base leading-relaxed">{content}</div>
+      <div className="ml-4 md:ml-8 flex-1 pb-10">
+        <div className="glass-card px-5 py-4 hover:border-accent/50 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-lg group-hover:shadow-accent/5">
+          <h3 className="font-heading font-semibold text-base md:text-lg text-foreground mb-2 group-hover:text-accent transition-colors duration-300">
+            {title}
+          </h3>
+          <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+            {content}
+          </p>
         </div>
       </div>
     </li>
@@ -35,9 +41,9 @@ export function TimeLineItem({ year, title, content }: TimeLineItemProps) {
 export function TimeLine({ children }: { children: ReactNode }) {
   return (
     <div className="relative">
-      {/* 전체 타임라인 세로선 */}
-      <div className="absolute left-[6.5rem] top-0 w-1 h-full bg-gradient-to-b from-blue-200 via-violet-200 to-slate-200 rounded-full z-0" />
-      <ul className="space-y-10 relative z-10">
+      {/* 타임라인 세로선 */}
+      <div className="absolute left-[5.5rem] md:left-[6.5rem] top-0 w-px h-full bg-gradient-to-b from-accent via-border to-transparent z-0" />
+      <ul className="relative z-10">
         {children}
       </ul>
     </div>

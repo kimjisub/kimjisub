@@ -15,14 +15,16 @@ export default function BlogPostHeader({ meta }: BlogPostHeaderProps) {
   };
 
   return (
-    <header className="mb-8 pb-8 border-b">
-      <h1 className="text-4xl font-bold mb-4">{meta.title}</h1>
+    <header className="mb-8 pb-8 border-b border-border">
+      <h1 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+        {meta.title}
+      </h1>
       
       {meta.description && (
-        <p className="text-xl text-gray-600 mb-4">{meta.description}</p>
+        <p className="text-lg text-muted-foreground mb-4">{meta.description}</p>
       )}
       
-      <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+      <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
         {meta.date && (
           <time dateTime={meta.date}>
             📅 {formatDate(meta.date)}
@@ -38,7 +40,7 @@ export default function BlogPostHeader({ meta }: BlogPostHeaderProps) {
         )}
         
         {meta.category && (
-          <span className="px-2 py-1 bg-gray-100 rounded-md">
+          <span className="px-2 py-1 bg-secondary rounded-md text-foreground">
             📁 {meta.category}
           </span>
         )}
@@ -49,7 +51,7 @@ export default function BlogPostHeader({ meta }: BlogPostHeaderProps) {
           {meta.tags.map((tag) => (
             <span
               key={tag}
-              className="px-3 py-1 text-sm bg-blue-100 text-blue-700 rounded-full"
+              className="px-3 py-1 text-sm bg-accent/20 text-accent rounded-full"
             >
               #{tag}
             </span>
