@@ -1,23 +1,13 @@
+import React from 'react';
 import { Text } from '@radix-ui/themes';
 import { format } from 'date-fns';
-import React from 'react';
 
 import { getSkills } from '@/api/notion/skills';
 import DebugView from '@/components/DebugView';
-import { SkillItem } from '@/components/SkillItem';
+import { AnimatedSection,AnimatedTitle } from '@/components/motion/AnimatedSection';
+import { SkillCategoryAnimated } from '@/components/SkillCategoryAnimated';
 
 export const revalidate = 3600;
-
-const SkillCategory = ({ title, skills }: { title: string; skills: any[] }) => (
-  <div className="mb-10">
-    <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-4">{title}</h3>
-    <div className="flex flex-wrap gap-2">
-      {skills.map(skill => (
-        <SkillItem key={skill.id} skill={skill} variant="inline" />
-      ))}
-    </div>
-  </div>
-);
 
 export default async function SkillsPage() {
   console.log('[SSG] SkillsPage');
@@ -45,19 +35,28 @@ export default async function SkillsPage() {
   return (
     <section className="py-24 px-6 max-w-4xl mx-auto">
       <header className="mb-16">
-        <h1 className="font-serif text-3xl md:text-4xl text-foreground mb-4 italic">
+        <AnimatedTitle className="font-serif text-3xl md:text-4xl text-foreground mb-4 italic">
           Skills
-        </h1>
-        <p className="text-muted-foreground leading-relaxed max-w-xl">
-          실제로 써본 것들만 올렸습니다.
-        </p>
+        </AnimatedTitle>
+        <AnimatedSection delay={0.1}>
+          <p className="text-muted-foreground leading-relaxed max-w-xl">
+            실제로 써본 것들만 올렸습니다.
+          </p>
+        </AnimatedSection>
       </header>
 
       <div>
-        {categories.map(cat => {
+        {categories.map((cat, index) => {
           const filtered = skills.filter(skill => skill.분류.includes(cat.key));
           if (filtered.length === 0) return null;
-          return <SkillCategory key={cat.key} title={cat.title} skills={filtered} />;
+          return (
+            <SkillCategoryAnimated 
+              key={cat.key} 
+              title={cat.title} 
+              skills={filtered}
+              categoryIndex={index}
+            />
+          );
         })}
       </div>
 

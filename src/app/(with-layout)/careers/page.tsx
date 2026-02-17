@@ -1,6 +1,6 @@
+import React from 'react';
 import { Text } from '@radix-ui/themes';
 import { format } from 'date-fns';
-import React from 'react';
 
 import { getCareers } from '@/api/notion/careers';
 import { CareerItem } from '@/components/CareerItem';
