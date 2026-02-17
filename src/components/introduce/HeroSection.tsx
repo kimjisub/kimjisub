@@ -1,7 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import { RoughHighlight } from '@/components/RoughHighlight';
+import { TiltImage } from '@/components/TiltImage';
 
 export const HeroSection = () => {
   return (
@@ -10,10 +10,9 @@ export const HeroSection = () => {
       
       <div className="relative z-10 max-w-4xl mx-auto px-6 py-24">
         <div className="flex flex-col md:flex-row items-start gap-12">
-          <div className="animate-fade-in-scale">
-            <Image
+          <div className="animate-fade-in-scale w-32 h-32 md:w-40 md:h-40">
+            <TiltImage
               src="/logo192.png"
-              className="rounded-2xl w-32 h-32 md:w-40 md:h-40 object-cover ring-1 ring-border"
               alt="김지섭"
               width={160}
               height={160}
