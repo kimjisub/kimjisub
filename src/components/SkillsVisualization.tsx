@@ -45,7 +45,7 @@ const SkillListRow = ({
 
   return (
     <motion.a
-      href={`/skills/${skill.id}`}
+      href={`/skills/${encodeURIComponent(skill.id)}`}
       ref={ref}
       initial={{ opacity: 0, x: -16 }}
       animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -16 }}

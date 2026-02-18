@@ -52,7 +52,7 @@ export const SkillsStaggerGrid = ({ skills }: SkillsStaggerGridProps) => {
     >
       {skills.map((skill) => (
         <motion.div key={skill.id} variants={itemVariants}>
-          <Link href={`/skills/${skill.id}`}>
+          <Link href={`/skills/${encodeURIComponent(skill.id)}`}>
             <SkillIconWrapper>
               <SafeSkillIcon skill={skill} />
             </SkillIconWrapper>

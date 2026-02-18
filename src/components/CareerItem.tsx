@@ -37,7 +37,7 @@ export const CareerItem = ({ className, career }: CareerItemProps) => {
 	);
 
 	return (
-		<Link href={`/careers/${career.id}`} prefetch className="group">
+		<Link href={`/careers/${encodeURIComponent(career.id)}`} prefetch className="group">
 			<article
 				className={`cursor-pointer rounded-xl border border-border bg-card overflow-hidden card-hover ${className}`}
 			>

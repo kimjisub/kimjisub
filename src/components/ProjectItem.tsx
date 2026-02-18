@@ -42,7 +42,7 @@ export const ProjectItem = ({ className, project }: ProjectItemProps) => {
   );
 
   return (
-    <Link href={`/projects/${project.id}`} prefetch className="group">
+    <Link href={`/projects/${encodeURIComponent(project.id)}`} prefetch className="group">
       <TiltCard className="w-full">
       <article
         className={`cursor-pointer rounded-2xl border border-border bg-card overflow-hidden shadow-md hover:shadow-xl ${className}`}

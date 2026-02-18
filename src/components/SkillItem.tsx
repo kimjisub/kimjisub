@@ -12,7 +12,7 @@ export interface SkillItemProps {
 }
 export const SkillItem = ({ skill, variant = 'default' }: SkillItemProps) => {
 	return (
-		<Link href={`/skills/${skill.id}`} prefetch className="inline">
+		<Link href={`/skills/${encodeURIComponent(skill.id)}`} prefetch className="inline">
 			<IconSlugView
 				className="text-center"
 				variant={variant}

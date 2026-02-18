@@ -141,7 +141,7 @@ const TimelineItem = ({ career }: TimelineItemProps) => {
         onHoverStart={() => setHovered(true)}
         onHoverEnd={() => setHovered(false)}
       >
-        <Link href={`/careers/${career.id}`} prefetch>
+        <Link href={`/careers/${encodeURIComponent(career.id)}`} prefetch>
           <motion.article
             className={`relative rounded-xl border bg-card overflow-hidden transition-shadow duration-300 cursor-pointer ${
               hovered
