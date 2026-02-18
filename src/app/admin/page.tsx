@@ -109,6 +109,9 @@ export default function AdminPage() {
     if (res.ok) {
       setAuthenticated(true);
       setPassword("");
+    } else if (res.status === 429) {
+      const data = await res.json();
+      setError(`너무 많은 시도입니다. ${data.retryAfter}초 후 다시 시도하세요.`);
     } else {
       setError("잘못된 비밀번호입니다");
     }

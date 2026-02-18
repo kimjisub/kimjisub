@@ -1,40 +1,52 @@
 import { NextRequest, NextResponse } from "next/server";
-import { cookies } from "next/headers";
+import { 
+  isAuthenticated, 
+  createAdminSession, 
+  destroyAdminSession,
+  isRateLimited,
+  recordFailedAttempt,
+  clearAttempts,
+} from "@/lib/admin-auth";
 
-const ADMIN_COOKIE = "admin_session";
-const COOKIE_MAX_AGE = 60 * 60 * 24 * 7; // 7 days
-
+// POST /api/admin/auth - Login
 export async function POST(request: NextRequest) {
   try {
-    const { password } = await request.json();
-    const adminPassword = process.env.ADMIN_PASSWORD;
+    // Get IP for rate limiting
+    const forwarded = request.headers.get("x-forwarded-for");
+    const ip = forwarded?.split(",")[0]?.trim() || "unknown";
 
-    if (!adminPassword) {
+    // Check rate limit
+    const rateLimit = isRateLimited(ip);
+    if (rateLimit.limited) {
       return NextResponse.json(
-        { error: "Admin password not configured" },
-        { status: 500 }
+        { 
+          error: "Too many login attempts", 
+          retryAfter: rateLimit.remainingTime 
+        },
+        { status: 429 }
       );
     }
 
-    if (password !== adminPassword) {
+    const { password } = await request.json();
+
+    if (!password) {
+      return NextResponse.json(
+        { error: "Password is required" },
+        { status: 400 }
+      );
+    }
+
+    const success = await createAdminSession(password);
+
+    if (!success) {
+      recordFailedAttempt(ip);
       return NextResponse.json(
         { error: "Invalid password" },
         { status: 401 }
       );
     }
 
-    // Set session cookie
-    const cookieStore = await cookies();
-    const sessionToken = Buffer.from(`${Date.now()}:${adminPassword}`).toString("base64");
-    
-    cookieStore.set(ADMIN_COOKIE, sessionToken, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
-      maxAge: COOKIE_MAX_AGE,
-      path: "/",
-    });
-
+    clearAttempts(ip);
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Admin auth error:", error);
@@ -45,43 +57,21 @@ export async function POST(request: NextRequest) {
   }
 }
 
+// GET /api/admin/auth - Check auth status
 export async function GET() {
   try {
-    const cookieStore = await cookies();
-    const session = cookieStore.get(ADMIN_COOKIE);
-    
-    if (!session?.value) {
-      return NextResponse.json({ authenticated: false });
-    }
-
-    const adminPassword = process.env.ADMIN_PASSWORD;
-    if (!adminPassword) {
-      return NextResponse.json({ authenticated: false });
-    }
-
-    // Verify session
-    try {
-      const decoded = Buffer.from(session.value, "base64").toString();
-      const [, storedPassword] = decoded.split(":");
-      
-      if (storedPassword === adminPassword) {
-        return NextResponse.json({ authenticated: true });
-      }
-    } catch {
-      // Invalid session format
-    }
-
-    return NextResponse.json({ authenticated: false });
+    const authenticated = await isAuthenticated();
+    return NextResponse.json({ authenticated });
   } catch (error) {
     console.error("Admin auth check error:", error);
     return NextResponse.json({ authenticated: false });
   }
 }
 
+// DELETE /api/admin/auth - Logout
 export async function DELETE() {
   try {
-    const cookieStore = await cookies();
-    cookieStore.delete(ADMIN_COOKIE);
+    await destroyAdminSession();
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Admin logout error:", error);

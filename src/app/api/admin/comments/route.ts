@@ -1,25 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { cookies } from "next/headers";
+import { isAuthenticated } from "@/lib/admin-auth";
 import prisma from "@/lib/prisma";
 
-async function isAuthenticated(): Promise<boolean> {
-  const cookieStore = await cookies();
-  const session = cookieStore.get("admin_session");
-  if (!session?.value) return false;
-
-  const adminPassword = process.env.ADMIN_PASSWORD;
-  if (!adminPassword) return false;
-
-  try {
-    const decoded = Buffer.from(session.value, "base64").toString();
-    const [, storedPassword] = decoded.split(":");
-    return storedPassword === adminPassword;
-  } catch {
-    return false;
-  }
-}
-
-// GET /api/admin/comments - 모든 댓글 (관리자용)
+// GET /api/admin/comments - All comments (admin)
 export async function GET() {
   if (!(await isAuthenticated())) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -45,7 +28,7 @@ export async function GET() {
   }
 }
 
-// PATCH /api/admin/comments - 댓글 승인/숨김 토글
+// PATCH /api/admin/comments - Toggle comment visibility
 export async function PATCH(request: NextRequest) {
   if (!(await isAuthenticated())) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
