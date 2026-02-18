@@ -316,17 +316,28 @@ function MilestoneCard() {
           </span>
         </div>
 
-        {/* Content */}
-        <div className="min-h-[100px]">
-          <div className="flex items-center gap-2 mb-1">
-            <Icon className={`w-5 h-5 ${milestone.color}`} />
-            <span className="text-[10px] text-muted-foreground/60">{milestone.year}</span>
-          </div>
-          <p className={`text-3xl font-bold tabular-nums ${milestone.color}`}>
-            {milestone.value.toLocaleString()}{milestone.suffix}
-          </p>
-          <p className="text-sm text-foreground font-medium mt-1">{milestone.label}</p>
-          <p className="text-xs text-muted-foreground mt-0.5">{milestone.sublabel}</p>
+        {/* Content with slide animation */}
+        <div className="h-[100px] relative overflow-hidden">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="absolute inset-0"
+            >
+              <div className="flex items-center gap-2 mb-1">
+                <Icon className={`w-5 h-5 ${milestone.color}`} />
+                <span className="text-[10px] text-muted-foreground/60">{milestone.year}</span>
+              </div>
+              <p className={`text-3xl font-bold tabular-nums ${milestone.color}`}>
+                {milestone.value.toLocaleString()}{milestone.suffix}
+              </p>
+              <p className="text-sm text-foreground font-medium mt-1">{milestone.label}</p>
+              <p className="text-xs text-muted-foreground mt-0.5">{milestone.sublabel}</p>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         {/* Dots indicator */}
