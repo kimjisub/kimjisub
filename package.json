@@ -56,10 +56,12 @@
     "react-error-boundary": "^6.1.1",
     "react-flip-toolkit": "^7.1.0",
     "react-json-view": "^1.21.3",
+    "react-markdown": "^10.1.0",
     "react-notion-x": "^7.0.1",
     "react-type-animation": "^3.2.0",
     "rehype-highlight": "^7.0.2",
     "rehype-prism-plus": "^2.0.1",
+    "remark-gfm": "^4.0.1",
     "rough-notation": "^0.5.1",
     "simple-icons": "^11.3.0"
   },

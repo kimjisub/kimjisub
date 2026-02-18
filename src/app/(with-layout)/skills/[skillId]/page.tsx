@@ -6,7 +6,7 @@ import { getSkill, getSkillPage } from '@/api/notion/skill';
 import { getSkills } from '@/api/notion/skills';
 import DebugView from '@/components/DebugView';
 import { JsonView } from '@/components/JsonView';
-import { NotionClientRenderer } from '@/components/NotionPage';
+import { MarkdownRenderer } from '@/components/MarkdownRenderer';
 import { ProjectItem } from '@/components/ProjectItem';
 import { SkillItem } from '@/components/SkillItem';
 
@@ -73,7 +73,7 @@ const SkillPage = async (props: { params: Params }) => {
 
 	const [
 		{ skill, fetchedAt },
-		{ extendedRecordMap, fetchedAt: pageFetchedAt },
+		{ markdown, fetchedAt: pageFetchedAt },
 	] = await Promise.all([getSkill(skillId), getSkillPage(skillId)]);
 
 	if (!skill) {
@@ -89,14 +89,7 @@ const SkillPage = async (props: { params: Params }) => {
 						<h1 className="font-serif text-3xl md:text-4xl text-foreground italic">{skill.title}</h1>
 					</div>
 
-					<NotionClientRenderer
-						className="w-full"
-						rootPageId={skillId}
-						recordMap={extendedRecordMap}
-						fullPage={false}
-						darkMode={false}
-						disableHeader
-					/>
+					<MarkdownRenderer content={markdown} className="w-full" />
 					<DebugView>
 						<Text>{format(pageFetchedAt, 'yyyy-MM-dd HH:mm:ss')}</Text>
 					</DebugView>
