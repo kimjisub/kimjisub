@@ -74,7 +74,7 @@ const ForceGraph: React.FC<ForceGraphProps> = ({ data }) => {
       .attr('height', 50)
       // .attr('x', -25)
       // .attr('y', -25)
-      .attr('transform', d => `translate(${-25}, ${-25})`)
+      .attr('transform', () => `translate(${-25}, ${-25})`)
       // .attr('id', d => d.id)
       .each(function (d) {
         ReactDOM.createRoot(this).render(d.svg);

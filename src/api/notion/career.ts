@@ -13,7 +13,7 @@ import { getProjects, ProjectT } from './projects';
 import { getSkills } from './skills';
 
 export const getCareersWithRelated = async () => {
-  const [careersRes, projectsRes, skillsRes] = await Promise.all([
+  const [careersRes, projectsRes, _skillsRes] = await Promise.all([
     getCareers(),
     getProjects(),
     getSkills(),

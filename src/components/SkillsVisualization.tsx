@@ -224,7 +224,7 @@ const ViewToggle = ({
   onChange,
 }: {
   mode: ViewMode;
-  onChange: (m: ViewMode) => void;
+  onChange: (_m: ViewMode) => void;
 }) => {
   return (
     <div className="flex items-center gap-1 bg-muted/60 rounded-lg p-1">

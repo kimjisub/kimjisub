@@ -284,7 +284,7 @@ export const ParticleBackground = memo(function ParticleBackground() {
 
     // iOS 13+ requires permission
     const requestOrientationPermission = async () => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      /* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */
       const DeviceOrientationEventAny = DeviceOrientationEvent as any;
       if (typeof DeviceOrientationEventAny.requestPermission === 'function') {
         try {
@@ -298,6 +298,7 @@ export const ParticleBackground = memo(function ParticleBackground() {
       } else {
         window.addEventListener('deviceorientation', onOrientation);
       }
+      /* eslint-enable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */
     };
 
     // ── ResizeObserver ───────────────────
@@ -314,7 +315,7 @@ export const ParticleBackground = memo(function ParticleBackground() {
     window.addEventListener('touchend', onTouchEnd);
 
     if (state.isMobile) {
-      requestOrientationPermission();
+      void requestOrientationPermission();
     }
 
     // ── 색상 변화 감지 (다크모드 토글 대응) ──

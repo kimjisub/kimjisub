@@ -16,7 +16,7 @@ export type SkillsWithRelatedT = Awaited<
 >;
 
 export const getSkillsWithRelated = async () => {
-  const [careersRes, projectsRes, skillsRes] = await Promise.all([
+  const [_careersRes, projectsRes, skillsRes] = await Promise.all([
     getCareers(),
     getProjects(),
     getSkills(),

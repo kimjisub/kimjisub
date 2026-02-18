@@ -9,7 +9,7 @@ export interface DebugViewProps {
 }
 
 const DebugView: React.FC<DebugViewProps> = ({ children }) => {
-	const [debug, setDebug] = useLocalStorage('debug', false);
+	const [debug, _setDebug] = useLocalStorage('debug', false);
 
 	if (!debug) {
 		return null;

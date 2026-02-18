@@ -300,7 +300,7 @@ export const InteractiveTerminal = () => {
     
     if (e.key === 'Enter') {
       e.preventDefault();
-      handleCommand(currentInput);
+      void handleCommand(currentInput);
       setCurrentInput('');
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();

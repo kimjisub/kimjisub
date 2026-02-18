@@ -46,7 +46,7 @@ function PaletteIcon() {
 /* ── View Transition helper type ──────────────────────────────────────── */
 
 type DocumentWithViewTransition = Document & {
-  startViewTransition?: (callback: () => void | Promise<void>) => {
+  startViewTransition?: (_callback: () => void | Promise<void>) => {
     ready: Promise<void>;
     finished: Promise<void>;
     updateCallbackDone: Promise<void>;

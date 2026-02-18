@@ -210,8 +210,11 @@ export async function getGitHubLanguageStats(
 
 	if (!reposResponse.ok) return [];
 
-	const repos: Array<{ name: string; fork: boolean; stargazers_count: number }> =
-		await reposResponse.json();
+	const repos = (await reposResponse.json()) as Array<{
+		name: string;
+		fork: boolean;
+		stargazers_count: number;
+	}>;
 
 	// Sort by stars (most significant repos first), then limit
 	const topRepos = repos
@@ -229,7 +232,7 @@ export async function getGitHubLanguageStats(
 				{ headers: githubHeaders(), next: { revalidate: 3600 } },
 			);
 			if (!langResponse.ok) return;
-			const langs: Record<string, number> = await langResponse.json();
+			const langs = (await langResponse.json()) as Record<string, number>;
 			for (const [lang, bytes] of Object.entries(langs)) {
 				languageCounts[lang] = (languageCounts[lang] ?? 0) + bytes;
 			}

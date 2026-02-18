@@ -231,7 +231,7 @@ function NewsletterBox() {
 					animate={{ opacity: 1, y: 0 }}
 					className="text-xs text-emerald-400"
 				>
-					Thanks! I'll reach out soon. ✨
+					Thanks! I&apos;ll reach out soon. ✨
 				</motion.p>
 			) : (
 				<form
