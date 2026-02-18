@@ -519,50 +519,32 @@ export function TestimonialsSection() {
   if (isEmpty) {
     return (
       <>
-        <section
-          ref={ref}
-          className="py-12 md:py-24 border-t border-border"
-        >
+        <section className="py-12 md:py-24 border-t border-border">
           <div className="max-w-4xl mx-auto px-4 md:px-6">
-            <motion.h2
-              className="font-serif text-2xl md:text-3xl text-foreground mb-2 italic"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-            >
+            <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-2 italic">
               Testimonials
-            </motion.h2>
-            <motion.p
-              className="text-muted-foreground text-sm mb-10"
-              initial={{ opacity: 0, y: 16 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-              transition={{ duration: 0.5, delay: 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
-            >
+            </h2>
+            <p className="text-muted-foreground text-sm mb-10">
               함께 일한 분들의 이야기
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-              transition={{ duration: 0.5, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="relative rounded-2xl border border-dashed border-white/20 bg-white/5 p-12 text-center"
-            >
-              <QuoteIcon className="w-16 h-16 mx-auto mb-6 text-white/20" />
-              <h3 className="text-xl font-semibold text-white mb-2">
+            <div className="relative rounded-2xl border border-dashed border-border bg-card/50 p-12 text-center">
+              <QuoteIcon className="w-16 h-16 mx-auto mb-6 text-muted-foreground/30" />
+              <h3 className="text-xl font-semibold text-foreground mb-2">
                 첫 번째 추천사를 기다리고 있어요
               </h3>
-              <p className="text-gray-400 mb-8 max-w-md mx-auto">
+              <p className="text-muted-foreground mb-8 max-w-md mx-auto">
                 김지섭과 함께 일한 경험이 있으시다면, 
                 추천사를 작성해주세요. 소중한 피드백이 됩니다.
               </p>
               <button
                 onClick={() => setShowForm(true)}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 text-white 
-                           rounded-xl font-medium hover:bg-green-600 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground 
+                           rounded-xl font-medium hover:bg-accent/90 transition-colors"
               >
                 ✍️ 추천사 작성하기
               </button>
-            </motion.div>
+            </div>
           </div>
         </section>
 
