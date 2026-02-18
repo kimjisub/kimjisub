@@ -101,21 +101,40 @@ export const RoughHighlight = ({
   useEffect(() => {
     if (!elementRef.current || !mounted) return;
 
+    const element = elementRef.current;
     const shouldShow = show !== undefined ? show : (triggerOnView ? isInView : true);
     const finalColor = color || getDefaultColor();
 
-    // 기존 annotation 정리
-    if (annotationRef.current) {
-      annotationRef.current.remove();
-      annotationRef.current = null;
-    }
+    const createAnnotation = () => {
+      // 기존 annotation 정리
+      if (annotationRef.current) {
+        annotationRef.current.remove();
+        annotationRef.current = null;
+      }
 
-    // Wait for layout to be stable before creating annotation
-    const rafId = requestAnimationFrame(() => {
-      if (!elementRef.current) return;
-      
+      if (!element) return;
+
       // 새 annotation 생성
-      annotationRef.current = annotate(elementRef.current, {
+      annotationRef.current = annotate(element, {
+        type,
+        color: finalColor,
+        animate: false, // 재생성 시 애니메이션 끄기
+        animationDuration,
+        strokeWidth,
+        padding,
+        multiline,
+        iterations,
+        brackets,
+      });
+
+      if (shouldShow) {
+        annotationRef.current?.show();
+      }
+    };
+
+    // 초기 생성 (애니메이션 포함)
+    const initAnnotation = () => {
+      annotationRef.current = annotate(element, {
         type,
         color: finalColor,
         animate,
@@ -132,10 +151,25 @@ export const RoughHighlight = ({
           annotationRef.current?.show();
         }, delay);
       }
+    };
+
+    // ResizeObserver로 레이아웃 변경 감지
+    let resizeTimeout: NodeJS.Timeout;
+    const resizeObserver = new ResizeObserver(() => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(createAnnotation, 50);
+    });
+
+    // Wait for layout then create
+    const rafId = requestAnimationFrame(() => {
+      initAnnotation();
+      resizeObserver.observe(element);
     });
 
     return () => {
       cancelAnimationFrame(rafId);
+      clearTimeout(resizeTimeout);
+      resizeObserver.disconnect();
       annotationRef.current?.remove();
     };
   }, [
