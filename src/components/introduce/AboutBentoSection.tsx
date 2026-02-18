@@ -331,12 +331,9 @@ function MilestoneCard() {
                 <Icon className={`w-5 h-5 ${milestone.color}`} />
                 <span className="text-[10px] text-muted-foreground/60">{milestone.year}</span>
               </div>
-              <AnimatedCounter
-                value={milestone.value}
-                suffix={milestone.suffix}
-                duration={1.5}
-                className={`text-3xl font-bold tabular-nums ${milestone.color}`}
-              />
+              <p className={`text-3xl font-bold tabular-nums ${milestone.color}`}>
+                {milestone.value.toLocaleString()}{milestone.suffix}
+              </p>
               <p className="text-sm text-foreground font-medium mt-1">{milestone.label}</p>
               <p className="text-xs text-muted-foreground mt-0.5">{milestone.sublabel}</p>
             </motion.div>
