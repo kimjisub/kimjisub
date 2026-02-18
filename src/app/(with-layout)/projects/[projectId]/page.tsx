@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { getProject, getProjectPage } from '@/api/notion/project';
 import { getProjects } from '@/api/notion/projects';
 import { CareerItem } from '@/components/CareerItem';
+import { ContentEngagement } from '@/components/ContentEngagement';
 import DebugView from '@/components/DebugView';
 import { JsonView } from '@/components/JsonView';
 import { MarkdownRenderer } from '@/components/MarkdownRenderer';
@@ -136,10 +137,12 @@ const ProjectPage = async (props: { params: Params }) => {
 			/>
 			<div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
 				<section className="col-span-3">
-					<div className="flex items-center space-x-3 mb-8">
+					<div className="flex items-center space-x-3 mb-4">
 						{icon}
 						<h1 className="font-serif text-3xl md:text-4xl text-foreground italic">{project.title}</h1>
 					</div>
+					
+					<ContentEngagement slug={projectId} contentType="project" className="mb-8" />
 
 					<MarkdownRenderer content={markdown} className="w-full" />
 

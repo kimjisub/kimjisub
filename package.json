@@ -37,6 +37,7 @@
     "async-mutex": "^0.5.0",
     "axios": "^1.6.2",
     "canvas-confetti": "^1.9.4",
+    "clsx": "^2.1.1",
     "colorjs.io": "^0.5.2",
     "d3": "^7.9.0",
     "date-fns": "^4.1.0",
@@ -68,7 +69,8 @@
     "rehype-prism-plus": "^2.0.1",
     "remark-gfm": "^4.0.1",
     "rough-notation": "^0.5.1",
-    "simple-icons": "^11.3.0"
+    "simple-icons": "^11.3.0",
+    "tailwind-merge": "^3.4.1"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",

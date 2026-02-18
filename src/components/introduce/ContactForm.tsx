@@ -44,37 +44,32 @@ export function ContactForm() {
   );
 
   const handleSubmit = useCallback(
-    (e: FormEvent<HTMLFormElement>) => {
+    async (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       setFormState('sending');
 
-      // mailto fallback로 구현 (서버리스 친화적)
-      const { name, email, subject, message } = formData;
-      const mailtoBody = `
-안녕하세요, ${name}입니다.
+      try {
+        const res = await fetch('/api/contacts', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
 
-${message}
-
----
-보낸 사람: ${name}
-이메일: ${email}
-      `.trim();
-
-      const mailtoUrl = `mailto:0226daniel@gmail.com?subject=${encodeURIComponent(
-        subject || `[포트폴리오] ${name}님의 메시지`
-      )}&body=${encodeURIComponent(mailtoBody)}`;
-
-      // 잠시 로딩 표시 후 mailto 열기
-      setTimeout(() => {
-        window.location.href = mailtoUrl;
-        setFormState('success');
-        
-        // 3초 후 폼 리셋
-        setTimeout(() => {
-          setFormData(initialFormData);
-          setFormState('idle');
-        }, 3000);
-      }, 500);
+        if (res.ok) {
+          setFormState('success');
+          // 3초 후 폼 리셋
+          setTimeout(() => {
+            setFormData(initialFormData);
+            setFormState('idle');
+          }, 3000);
+        } else {
+          setFormState('error');
+          setTimeout(() => setFormState('idle'), 3000);
+        }
+      } catch {
+        setFormState('error');
+        setTimeout(() => setFormState('idle'), 3000);
+      }
     },
     [formData]
   );
@@ -252,7 +247,7 @@ ${message}
                     className="flex items-center gap-2"
                   >
                     <FontAwesomeIcon icon={faCheck} />
-                    이메일 앱이 열렸습니다!
+                    메시지가 전송되었습니다!
                   </motion.span>
                 )}
                 {formState === 'error' && (
@@ -273,7 +268,7 @@ ${message}
 
           {/* Privacy note */}
           <p className="mt-4 text-xs text-muted-foreground text-center">
-            이 폼은 기본 이메일 클라이언트를 통해 메시지를 전송합니다.
+            메시지는 안전하게 저장되며, 빠른 시일 내에 답변드리겠습니다.
           </p>
         </motion.div>
       </div>

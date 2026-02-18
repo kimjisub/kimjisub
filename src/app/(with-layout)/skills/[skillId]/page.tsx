@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 
 import { getSkill, getSkillPage } from '@/api/notion/skill';
 import { getSkills } from '@/api/notion/skills';
+import { ContentEngagement } from '@/components/ContentEngagement';
 import DebugView from '@/components/DebugView';
 import { JsonView } from '@/components/JsonView';
 import { MarkdownRenderer } from '@/components/MarkdownRenderer';
@@ -84,10 +85,12 @@ const SkillPage = async (props: { params: Params }) => {
 		<div className="py-12 md:py-24 px-4 md:px-6 max-w-7xl mx-auto">
 			<div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
 				<section className="col-span-3">
-					<div className="flex items-center space-x-3 mb-8">
+					<div className="flex items-center space-x-3 mb-4">
 						<SkillItem skill={skill} />
 						<h1 className="font-serif text-3xl md:text-4xl text-foreground italic">{skill.title}</h1>
 					</div>
+					
+					<ContentEngagement slug={skillId} contentType="skill" className="mb-8" />
 
 					<MarkdownRenderer content={markdown} className="w-full" />
 					<DebugView>

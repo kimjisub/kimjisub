@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import path from "path";
 
 import BlogPostHeader from "@/components/BlogPostHeader";
+import { CommentSection } from "@/components/CommentSection";
+import { ContentEngagement } from "@/components/ContentEngagement";
 import TableOfContents from "@/components/TableOfContents";
 import ReadingProgress from "@/components/ui/ReadingProgress";
 import type { BlogPostMeta } from "@/types/blog";
@@ -64,9 +66,15 @@ export default async function Page({
       <div className="flex gap-12">
         <div className="flex-1 max-w-4xl">
           <BlogPostHeader meta={meta} />
+          <ContentEngagement slug={slug} contentType="blog" className="mb-8" />
           <article className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-sans prose-headings:font-medium prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-p:text-foreground prose-li:text-foreground prose-strong:text-foreground">
             <MDXContent />
           </article>
+          
+          {/* Comments */}
+          <div className="mt-16 pt-8 border-t border-white/10">
+            <CommentSection postSlug={slug} />
+          </div>
         </div>
         <aside className="hidden lg:block w-64 shrink-0">
           <TableOfContents />
