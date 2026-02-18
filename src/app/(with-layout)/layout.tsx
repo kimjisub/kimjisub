@@ -18,6 +18,7 @@ import { KeyboardShortcutsWrapper } from '@/components/KeyboardShortcutsWrapper'
 import { AnimatePresenceWrapper } from '@/components/motion/AnimatePresenceWrapper';
 import ScrollProgressIndicator from '@/components/ScrollProgressIndicator';
 import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration';
+import { SectionNavigation } from '@/components/SectionNavigation';
 import { SkipToContent } from '@/components/SkipToContent';
 import SpotlightEffect from '@/components/SpotlightEffect';
 import { ThemeProvider } from '@/components/ThemeProvider';
@@ -111,6 +112,7 @@ export default function RootLayout({
 				<body className="font-sans bg-background text-foreground antialiased">
 					<ThemeProvider>
 						<SkipToContent />
+						<SectionNavigation />
 						<ServiceWorkerRegistration />
 						<CommandPaletteWrapper />
 						<KeyboardShortcutsWrapper />

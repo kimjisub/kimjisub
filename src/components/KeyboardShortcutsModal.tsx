@@ -24,6 +24,10 @@ const SHORTCUT_GROUPS: ShortcutGroup[] = [
     items: [
       { keys: ['⌘', 'K'], description: 'Open Command Palette' },
       { keys: ['?'], description: 'Show keyboard shortcuts' },
+      { keys: ['j'], description: 'Next section' },
+      { keys: ['k'], description: 'Previous section' },
+      { keys: ['g'], description: 'Go to top' },
+      { keys: ['G'], description: 'Go to bottom' },
     ],
   },
   {
