@@ -1,16 +1,7 @@
 'use client';
 
-import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
-import { useTheme } from 'next-themes';
-import { annotate } from 'rough-notation';
-
-// rough-notation 타입 정의
-interface RoughAnnotation {
-  isShowing(): boolean;
-  show(): void;
-  hide(): void;
-  remove(): void;
-}
+import { ReactNode, useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
 type AnnotationType = 'underline' | 'box' | 'circle' | 'highlight' | 'strike-through' | 'crossed-off' | 'bracket';
 
@@ -31,6 +22,8 @@ interface RoughHighlightProps {
   className?: string;
 }
 
+// CSS 기반 하이라이트 (rough-notation 대체)
+// 장점: 항상 요소에 상대적 위치, 스크롤 문제 없음
 export const RoughHighlight = ({
   children,
   type = 'highlight',
@@ -39,49 +32,21 @@ export const RoughHighlight = ({
   animationDuration = 800,
   strokeWidth = 2,
   padding = 2,
-  multiline = true,
-  iterations = 2,
-  brackets = ['left', 'right'],
   show,
   triggerOnView = true,
   delay = 0,
   className = '',
 }: RoughHighlightProps) => {
   const elementRef = useRef<HTMLSpanElement>(null);
-  const annotationRef = useRef<RoughAnnotation | null>(null);
   const [isInView, setIsInView] = useState(false);
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  // 테마별 기본 색상
-  const getDefaultColor = useCallback(() => {
-    if (type === 'highlight') {
-      return resolvedTheme === 'dark' 
-        ? 'rgba(255, 215, 0, 0.3)' // 골드 (다크모드)
-        : 'rgba(255, 215, 0, 0.4)'; // 골드 (라이트모드)
-    }
-    return resolvedTheme === 'dark' 
-      ? 'rgba(147, 197, 253, 0.8)' // 밝은 파랑 (다크모드)
-      : 'rgba(59, 130, 246, 0.8)'; // 파랑 (라이트모드)
-  }, [type, resolvedTheme]);
-
-  useEffect(() => {
-    // Wait for fonts to load and layout to stabilize
-    const init = async () => {
-      // Wait for fonts
-      if (document.fonts?.ready) {
-        await document.fonts.ready;
-      }
-      // Additional delay for layout stability
-      await new Promise(resolve => setTimeout(resolve, 100));
-      setMounted(true);
-    };
-    init();
-  }, []);
+  const [shouldShow, setShouldShow] = useState(false);
 
   // Intersection Observer for scroll trigger
   useEffect(() => {
-    if (!triggerOnView || !elementRef.current) return;
+    if (!triggerOnView || !elementRef.current) {
+      setShouldShow(true);
+      return;
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -90,118 +55,132 @@ export const RoughHighlight = ({
           observer.disconnect();
         }
       },
-      { threshold: 0.5, rootMargin: '-50px' }
+      { threshold: 0.3, rootMargin: '0px' }
     );
 
     observer.observe(elementRef.current);
     return () => observer.disconnect();
   }, [triggerOnView]);
 
-  // Annotation 생성 및 관리
+  // Delay 처리
   useEffect(() => {
-    if (!elementRef.current || !mounted) return;
+    const visible = show !== undefined ? show : (triggerOnView ? isInView : true);
+    if (visible) {
+      const timer = setTimeout(() => setShouldShow(true), delay);
+      return () => clearTimeout(timer);
+    }
+  }, [show, triggerOnView, isInView, delay]);
 
-    const element = elementRef.current;
-    const shouldShow = show !== undefined ? show : (triggerOnView ? isInView : true);
-    const finalColor = color || getDefaultColor();
+  // 타입별 스타일 생성
+  const getStyles = () => {
+    const finalColor = color || 'rgba(255, 215, 0, 0.35)';
+    const duration = animationDuration / 1000;
+    const padValue = typeof padding === 'number' ? padding : padding[0];
 
-    const createAnnotation = () => {
-      // 기존 annotation 정리
-      if (annotationRef.current) {
-        annotationRef.current.remove();
-        annotationRef.current = null;
-      }
+    switch (type) {
+      case 'highlight':
+        return {
+          wrapper: 'relative inline',
+          decoration: `absolute inset-0 -mx-1 -my-0.5 rounded-sm pointer-events-none`,
+          initial: { scaleX: 0, originX: 0 },
+          animate: shouldShow ? { scaleX: 1 } : { scaleX: 0 },
+          style: { backgroundColor: finalColor },
+          transition: { duration, ease: 'easeOut' as const },
+        };
+      
+      case 'underline':
+        return {
+          wrapper: 'relative inline',
+          decoration: `absolute bottom-0 left-0 right-0 pointer-events-none`,
+          initial: { scaleX: 0, originX: 0 },
+          animate: shouldShow ? { scaleX: 1 } : { scaleX: 0 },
+          style: { 
+            height: `${strokeWidth}px`, 
+            backgroundColor: finalColor,
+            bottom: '-2px',
+          },
+          transition: { duration, ease: 'easeOut' as const },
+        };
+      
+      case 'box':
+        return {
+          wrapper: 'relative inline',
+          decoration: `absolute inset-0 pointer-events-none rounded-sm`,
+          initial: { opacity: 0, scale: 0.95 },
+          animate: shouldShow ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 },
+          style: { 
+            border: `${strokeWidth}px solid ${finalColor}`,
+            margin: `-${padValue}px`,
+            padding: `${padValue}px`,
+          },
+          transition: { duration, ease: 'easeOut' as const },
+        };
+      
+      case 'circle':
+        return {
+          wrapper: 'relative inline',
+          decoration: `absolute inset-0 pointer-events-none`,
+          initial: { opacity: 0, scale: 0.8 },
+          animate: shouldShow ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 },
+          style: { 
+            border: `${strokeWidth}px solid ${finalColor}`,
+            borderRadius: '50%',
+            margin: `-${padValue + 4}px -${padValue + 8}px`,
+            padding: `${padValue + 4}px ${padValue + 8}px`,
+          },
+          transition: { duration, ease: 'easeOut' as const },
+        };
+      
+      case 'strike-through':
+      case 'crossed-off':
+        return {
+          wrapper: 'relative inline',
+          decoration: `absolute top-1/2 left-0 right-0 pointer-events-none`,
+          initial: { scaleX: 0, originX: 0 },
+          animate: shouldShow ? { scaleX: 1 } : { scaleX: 0 },
+          style: { 
+            height: `${strokeWidth}px`, 
+            backgroundColor: finalColor,
+            transform: 'translateY(-50%)',
+          },
+          transition: { duration, ease: 'easeOut' as const },
+        };
+      
+      default:
+        return {
+          wrapper: 'relative inline',
+          decoration: '',
+          initial: {},
+          animate: {},
+          style: {},
+          transition: { duration, ease: 'easeOut' as const },
+        };
+    }
+  };
 
-      if (!element) return;
-
-      // 새 annotation 생성
-      annotationRef.current = annotate(element, {
-        type,
-        color: finalColor,
-        animate: false, // 재생성 시 애니메이션 끄기
-        animationDuration,
-        strokeWidth,
-        padding,
-        multiline,
-        iterations,
-        brackets,
-      });
-
-      if (shouldShow) {
-        annotationRef.current?.show();
-      }
-    };
-
-    // 초기 생성 (애니메이션 포함)
-    const initAnnotation = () => {
-      // 요소가 제대로 배치되었는지 확인 (0,0 방지)
-      const rect = element.getBoundingClientRect();
-      if (rect.width === 0 || rect.height === 0) {
-        // 레이아웃이 아직 완료되지 않음, 재시도
-        setTimeout(initAnnotation, 100);
-        return;
-      }
-
-      annotationRef.current = annotate(element, {
-        type,
-        color: finalColor,
-        animate,
-        animationDuration,
-        strokeWidth,
-        padding,
-        multiline,
-        iterations,
-        brackets,
-      });
-
-      if (shouldShow) {
-        setTimeout(() => {
-          annotationRef.current?.show();
-        }, delay);
-      }
-    };
-
-    // ResizeObserver로 레이아웃 변경 감지
-    let resizeTimeout: NodeJS.Timeout;
-    const resizeObserver = new ResizeObserver(() => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(createAnnotation, 50);
-    });
-
-    // Wait for layout then create
-    const rafId = requestAnimationFrame(() => {
-      initAnnotation();
-      resizeObserver.observe(element);
-    });
-
-    return () => {
-      cancelAnimationFrame(rafId);
-      clearTimeout(resizeTimeout);
-      resizeObserver.disconnect();
-      annotationRef.current?.remove();
-    };
-  }, [
-    mounted,
-    isInView,
-    show,
-    triggerOnView,
-    type,
-    color,
-    resolvedTheme,
-    animate,
-    animationDuration,
-    strokeWidth,
-    padding,
-    multiline,
-    iterations,
-    delay,
-    brackets,
-    getDefaultColor,
-  ]);
+  const styles = getStyles();
 
   return (
-    <span ref={elementRef} className={`inline ${className}`}>
-      {children}
+    <span ref={elementRef} className={`${styles.wrapper} ${className}`}>
+      <span className="relative z-10">{children}</span>
+      {animate ? (
+        <motion.span
+          className={styles.decoration}
+          style={styles.style}
+          initial={styles.initial}
+          animate={styles.animate}
+          transition={styles.transition}
+        />
+      ) : (
+        shouldShow && (
+          <span 
+            className={styles.decoration}
+            style={styles.style}
+          />
+        )
+      )}
     </span>
   );
 };
+
+export default RoughHighlight;
