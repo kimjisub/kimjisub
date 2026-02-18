@@ -1,21 +1,16 @@
- 
- 
- 
-/* eslint-disable @typescript-eslint/no-explicit-any */
- 
+/**
+ * Projects API - 로컬 파일 기반
+ */
 
-import { Mutex } from 'async-mutex';
+import * as path from 'path';
 import { parseISO } from 'date-fns';
-import { unstable_cache } from 'next/cache';
 
 import { NotionColor } from '../type/color';
-
-import { notionApi } from '.';
-
-import { isBuildPhase } from '@/utils/phase';
+import { CONTENT_DIR, getDirectories, readJsonFile, findImageFile } from '.';
 
 export type ProjectT = {
-  id: string;
+  id: string;        // slug를 ID로 사용
+  slug: string;      // URL용 slug
   title: string;
   description: string;
   iconUrl: string;
@@ -30,138 +25,112 @@ export type ProjectT = {
     value: string;
     color: NotionColor;
   };
-  '주요 기술': string[];
-  '프로그래밍 언어': string[];
+  '주요 기술': string[];      // skill slugs
+  '프로그래밍 언어': string[]; // skill slugs (languages)
   date: {
     start?: Date;
     end?: Date;
   };
   분류: { name: string; color: NotionColor }[];
-  '대회 및 수료': string[];
-  raw: any;
+  '대회 및 수료': string[];   // career slugs
 };
 
-const fetchProjects = async () => {
-  console.log('[API] getProjects');
+// 로컬 meta.json 타입
+interface ProjectMeta {
+  id: string;
+  slug: string;
+  title: string;
+  description: string | null;
+  date: { start: string | null; end: string | null };
+  github: string | null;
+  youtube: string | null;
+  url: string | null;
+  importance: string | null;
+  tags: { name: string; color: string }[];
+  categories: { name: string; color: string }[];
+  assignedTasks: { name: string; color: string }[];
+  techSkills: string[];
+  languages: string[];
+  relatedCareers: string[];
+  iconUrl: string | null;
+  iconEmoji: string | null;
+  coverUrl: string | null;
+}
 
-  const allResults: any[] = [];
-  let nextCursor: string | null | undefined = undefined;
-
-  do {
-    const result = await notionApi.databases.query({
-      database_id: '1aef42d566f84045a94303d07ea12e95',
-      start_cursor: nextCursor,
-      // filter: {
-      // 	and: [
-      // 		{
-      // 			property: 'visible',
-      // 			checkbox: {
-      // 				equals: true,
-      // 			},
-      // 		},
-      // 	],
-      // },
-      sorts: [
-        {
-          property: '중요도',
-          direction: 'ascending',
-        },
-      ],
-    });
-
-    allResults.push(...result.results);
-    nextCursor = result.next_cursor;
-  } while (nextCursor);
-
-  const projects = allResults.map(
-    (project: any) =>
-      ({
-        id: project.id as string,
-        title: project.properties['이름']?.title?.[0]?.text?.content as string,
-        description: project.properties['설명']?.rich_text?.[0]
-          ?.plain_text as string,
-        iconUrl: project['icon']?.file?.url as string,
-        iconEmoji: project['icon']?.emoji as string,
-        coverImageUrl: project['cover']?.file?.url as string,
-        github: project.properties['Github']?.url as string,
-        youtube: project.properties['Youtube']?.url as string,
-        url: project.properties['URL']?.url as string,
-        '맡은 업무': project.properties['맡은 업무']?.multi_select?.map(
-          ({ name, color }: { name: string; color: NotionColor }) => ({
-            name: name,
-            color: color,
-          }),
-        ) as { name: string; color: NotionColor }[],
-        태그: project.properties['태그']?.multi_select?.map(
-          ({ name, color }: { name: string; color: NotionColor }) => ({
-            name: name,
-            color: color,
-          }),
-        ) as { name: string; color: NotionColor }[],
-        중요도: {
-          value: project.properties['중요도']?.select?.name as string,
-          color: project.properties['중요도']?.select?.color as string,
-        },
-        '주요 기술': project.properties['주요 기술']?.relation?.map(
-          ({ id }: { id: string }) => id,
-        ) as string[],
-        '프로그래밍 언어': project.properties['프로그래밍 언어']?.relation?.map(
-          ({ id }: { id: string }) => id,
-        ) as string[],
-        date: {
-          start: project.properties['날짜']?.date?.start
-            ? parseISO(project.properties['날짜']?.date?.start)
-            : undefined,
-          end: project.properties['날짜']?.date?.end
-            ? parseISO(project.properties['날짜']?.date?.end)
-            : undefined,
-        },
-        분류: project.properties['분류']?.multi_select?.map(
-          ({ name, color }: { name: string; color: NotionColor }) => ({
-            name: name,
-            color: color,
-          }),
-        ) as { name: string; color: NotionColor }[],
-        '대회 및 수료': project.properties['대회 및 수료']?.relation?.map(
-          ({ id }: { id: string }) => id,
-        ) as string[],
-
-        raw: project,
-      } as ProjectT),
-  );
-
-  return { projects, fetchedAt: new Date() };
-};
-
-const mutex = new Mutex();
-
-// export const getProjects = () =>
-// 	mutex.runExclusive(async () =>
-// 		NotionCache.getInstance().cacheProjects(fetchProjects),
-// 	);
-
-let buildCache: Awaited<ReturnType<typeof fetchProjects>> | null = null;
-export const getProjects = async () => {
-  if (isBuildPhase()) {
-    return await mutex.runExclusive(async () => {
-      if (buildCache) return buildCache;
-      const data = await fetchProjects();
-      buildCache = data;
-      return data;
-    });
-  } else {
-    const getCachedProjects = unstable_cache(
-      async () => {
-        const data = await fetchProjects();
-        return data;
+function loadProjects(): ProjectT[] {
+  const projectsDir = path.join(CONTENT_DIR, 'projects');
+  const slugs = getDirectories(projectsDir);
+  
+  const projects: ProjectT[] = [];
+  
+  for (const slug of slugs) {
+    const projectDir = path.join(projectsDir, slug);
+    const metaPath = path.join(projectDir, 'meta.json');
+    const meta = readJsonFile<ProjectMeta>(metaPath);
+    
+    if (!meta) continue;
+    
+    // 로컬 이미지 파일 찾기 (있으면 사용, 없으면 원본 URL)
+    const localIcon = findImageFile(projectDir, 'icon');
+    const localCover = findImageFile(projectDir, 'cover');
+    
+    projects.push({
+      id: slug,  // slug를 ID로 사용
+      slug,
+      title: meta.title || '',
+      description: meta.description || '',
+      iconUrl: localIcon || meta.iconUrl || '',
+      iconEmoji: meta.iconEmoji || '',
+      coverImageUrl: localCover || meta.coverUrl || '',
+      github: meta.github || '',
+      youtube: meta.youtube || '',
+      url: meta.url || '',
+      '맡은 업무': (meta.assignedTasks || []).map(t => ({
+        name: t.name,
+        color: t.color as NotionColor,
+      })),
+      태그: (meta.tags || []).map(t => ({
+        name: t.name,
+        color: t.color as NotionColor,
+      })),
+      중요도: {
+        value: meta.importance || '',
+        color: 'default' as NotionColor,
       },
-      ['projects'],
-      {
-        tags: ['projects'],
-        revalidate: 60 * 60,
+      '주요 기술': meta.techSkills || [],
+      '프로그래밍 언어': meta.languages || [],
+      date: {
+        start: meta.date?.start ? parseISO(meta.date.start) : undefined,
+        end: meta.date?.end ? parseISO(meta.date.end) : undefined,
       },
-    );
-
-    return await getCachedProjects();
+      분류: (meta.categories || []).map(c => ({
+        name: c.name,
+        color: c.color as NotionColor,
+      })),
+      '대회 및 수료': meta.relatedCareers || [],
+    });
   }
+  
+  // 중요도 기준 정렬
+  projects.sort((a, b) => {
+    const aVal = a.중요도.value || '999';
+    const bVal = b.중요도.value || '999';
+    return aVal.localeCompare(bVal);
+  });
+  
+  return projects;
+}
+
+// 캐시
+let projectsCache: { projects: ProjectT[]; fetchedAt: Date } | null = null;
+
+export const getProjects = async () => {
+  if (!projectsCache) {
+    const projects = loadProjects();
+    projectsCache = {
+      projects,
+      fetchedAt: new Date(),
+    };
+  }
+  return projectsCache;
 };

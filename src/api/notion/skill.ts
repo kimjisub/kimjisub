@@ -1,15 +1,13 @@
- 
- 
- 
- 
- 
+/**
+ * Skill API - 단일 스킬 조회 + 관계 해결
+ */
 
-import { unstable_cache } from 'next/cache';
+import * as path from 'path';
 
 import { getCareers } from './careers';
 import { getProjects, ProjectT } from './projects';
 import { getSkills, SkillT } from './skills';
-import { notionXApi } from '.';
+import { CONTENT_DIR, readMdFile } from '.';
 
 export type SkillsWithRelatedT = Awaited<
   ReturnType<typeof getSkillsWithRelated>
@@ -25,16 +23,16 @@ export const getSkillsWithRelated = async () => {
   const relatedSkills = skillsRes.skills.map(skill => ({
     ...skill,
     relatedSkills: skill['관련_기술']
-      .map(skillId => skillsRes.skills.find(skill => skill.id === skillId))
+      .map(skillSlug => skillsRes.skills.find(s => s.id === skillSlug))
       .filter(Boolean) as SkillT[],
     relatedProjectsUsedByLanguage: skill.projectUsedByLanguage
-      .map(projectId =>
-        projectsRes.projects.find(project => project.id === projectId),
+      .map(projectSlug =>
+        projectsRes.projects.find(project => project.id === projectSlug),
       )
       .filter(Boolean) as ProjectT[],
     relatedProjectsUsedBySkill: skill.projectUsedBySkill
-      .map(projectId =>
-        projectsRes.projects.find(project => project.id === projectId),
+      .map(projectSlug =>
+        projectsRes.projects.find(project => project.id === projectSlug),
       )
       .filter(Boolean) as ProjectT[],
   }));
@@ -55,21 +53,21 @@ export const getSkill = async (skillId: string) => {
   };
 };
 
+// 페이지 콘텐츠 (마크다운)
 export const getSkillPage = async (skillId: string) => {
-  const getNotionPage = unstable_cache(
-    async () => {
-      const extendedRecordMap = await notionXApi.getPage(skillId);
-      return {
-        extendedRecordMap,
-        fetchedAt: new Date(),
-      };
+  const skillDir = path.join(CONTENT_DIR, 'skills', skillId);
+  const mdContent = readMdFile(path.join(skillDir, 'index.md'));
+  
+  return {
+    markdown: mdContent || '',
+    extendedRecordMap: {
+      block: {},
+      collection: {},
+      collection_view: {},
+      notion_user: {},
+      collection_query: {},
+      signed_urls: {},
     },
-    ['skill-page', skillId],
-    {
-      tags: ['skill-page'],
-      revalidate: 60 * 60,
-    },
-  );
-
-  return await getNotionPage();
+    fetchedAt: new Date(),
+  };
 };

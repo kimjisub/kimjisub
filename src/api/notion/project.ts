@@ -1,15 +1,13 @@
- 
- 
- 
-/* eslint-disable @typescript-eslint/no-explicit-any */
- 
+/**
+ * Project API - 단일 프로젝트 조회 + 관계 해결
+ */
 
-import { unstable_cache } from 'next/cache';
+import * as path from 'path';
 
 import { CareerT, getCareers } from './careers';
-import { getProjects } from './projects';
+import { getProjects, ProjectT } from './projects';
 import { getSkills, SkillT } from './skills';
-import { notionXApi } from '.';
+import { CONTENT_DIR, readMdFile } from '.';
 
 export const getProjectsWithRelated = async () => {
   const [careersRes, projectsRes, skillsRes] = await Promise.all([
@@ -21,14 +19,14 @@ export const getProjectsWithRelated = async () => {
   const relatedProjects = projectsRes.projects.map(project => ({
     ...project,
     relatedTechSkills: project['주요 기술']
-      .map(skillId => skillsRes.skills.find(skill => skill.id === skillId))
+      .map(skillSlug => skillsRes.skills.find(skill => skill.id === skillSlug))
       .filter(Boolean) as SkillT[],
     relatedLanguageSkills: project['프로그래밍 언어']
-      .map(skillId => skillsRes.skills.find(skill => skill.id === skillId))
+      .map(skillSlug => skillsRes.skills.find(skill => skill.id === skillSlug))
       .filter(Boolean) as SkillT[],
     relatedCareers: project['대회 및 수료']
-      .map(careerId =>
-        careersRes.careers.find(career => career.id === careerId),
+      .map(careerSlug =>
+        careersRes.careers.find(career => career.id === careerSlug),
       )
       .filter(Boolean) as CareerT[],
   }));
@@ -51,30 +49,23 @@ export const getProject = async (projectId: string) => {
   };
 };
 
+// 페이지 콘텐츠 (마크다운)
 export const getProjectPage = async (projectId: string) => {
-  const getNotionPage = unstable_cache(
-    async () => {
-      try {
-        const extendedRecordMap = await notionXApi.getPage(projectId);
-        return {
-          extendedRecordMap,
-          fetchedAt: new Date(),
-        };
-      } catch (error) {
-        console.error(`[getProjectPage] Error fetching page ${projectId}:`, error);
-        // Return empty recordMap to allow build to continue
-        return {
-          extendedRecordMap: { block: {}, collection: {}, collection_view: {}, notion_user: {}, collection_query: {}, signed_urls: {} } as any,
-          fetchedAt: new Date(),
-        };
-      }
+  const projectDir = path.join(CONTENT_DIR, 'projects', projectId);
+  const mdContent = readMdFile(path.join(projectDir, 'index.md'));
+  
+  return {
+    // 마크다운 콘텐츠
+    markdown: mdContent || '',
+    // 빈 ExtendedRecordMap (기존 코드 호환용)
+    extendedRecordMap: {
+      block: {},
+      collection: {},
+      collection_view: {},
+      notion_user: {},
+      collection_query: {},
+      signed_urls: {},
     },
-    ['project-page', projectId],
-    {
-      tags: ['project-page'],
-      revalidate: 60 * 60,
-    },
-  );
-
-  return await getNotionPage();
+    fetchedAt: new Date(),
+  };
 };

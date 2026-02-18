@@ -1,26 +1,22 @@
- 
- 
- 
-/* eslint-disable @typescript-eslint/no-explicit-any */
- 
+/**
+ * Careers API - 로컬 파일 기반
+ */
 
-import { Mutex } from 'async-mutex';
+import * as path from 'path';
 import { parseISO } from 'date-fns';
-import { unstable_cache } from 'next/cache';
 
-import { notionApi } from '../notion';
 import { NotionColor } from '../type/color';
-
-import { isBuildPhase } from '@/utils/phase';
+import { CONTENT_DIR, getDirectories, readJsonFile, findImageFile } from '.';
 
 export type CareerT = {
-  id: string;
+  id: string;        // slug를 ID로 사용
+  slug: string;
   title: string;
   description: string;
   iconUrl: string;
   iconEmoji: string;
   coverImageUrl: string;
-  relatedProjects: string[];
+  relatedProjects: string[];  // project slugs
   awardsAndCertifications: string;
   institutions: { name: string; color: NotionColor }[];
   importance: string;
@@ -31,127 +27,96 @@ export type CareerT = {
     end?: Date;
   };
   assignedTasks: { name: string; color: NotionColor }[];
-  raw: any;
 };
 
-const fetchCareers = async () => {
-  console.log('[API] getCareers');
+// 로컬 meta.json 타입
+interface CareerMeta {
+  id: string;
+  slug: string;
+  title: string;
+  description: string | null;
+  date: { start: string | null; end: string | null };
+  institutions: { name: string; color: string }[];
+  categories: { name: string; color: string }[];
+  assignedTasks: { name: string; color: string }[];
+  importance: string | null;
+  url: string | null;
+  awardsAndCertifications: string | null;
+  iconUrl: string | null;
+  iconEmoji: string | null;
+  coverUrl: string | null;
+  // 빌드 시점에 추가되는 역방향 관계
+  relatedProjects?: string[];
+}
 
-  const allResults: any[] = [];
-  let nextCursor: string | null | undefined = undefined;
-
-  do {
-    const result = await notionApi.databases.query({
-      database_id: '89d24d36ad334e62a418d765d6ed4c0b',
-      start_cursor: nextCursor,
-      // filter: {
-      // 	and: [
-      // 		{
-      // 			property: '수상 순위',
-      // 			select: {
-      // 				does_not_equal: '비수상',
-      // 			},
-      // 		},
-      // 		{
-      // 			property: 'visible',
-      // 			checkbox: {
-      // 				equals: true,
-      // 			},
-      // 		},
-      // 	],
-      // },
-      sorts: [
-        {
-          property: '날짜',
-          direction: 'descending',
-        },
-      ],
-    });
-
-    allResults.push(...result.results);
-    nextCursor = result.next_cursor;
-  } while (nextCursor);
-
-  const careers = allResults.map(
-    (career: any) =>
-      ({
-        id: career.id as string,
-        title: career.properties['이름']?.title?.[0]?.text?.content as string,
-        description: career.properties['설명']?.rich_text?.[0]
-          ?.plain_text as string,
-        iconUrl: career['icon']?.file?.url as string,
-        iconEmoji: career['icon']?.emoji as string,
-        coverImageUrl: career['cover']?.file?.url as string,
-
-        relatedProjects: career.properties['관련된 프로젝트']?.relation?.map(
-          (relation: any) => relation.id as string,
-        ) as string[],
-        awardsAndCertifications: career.properties['수상 및 수료']
-          ?.rich_text?.[0]?.plain_text as string,
-        institutions: career.properties['기관']?.multi_select?.map(
-          ({ name, color }: { name: string; color: NotionColor }) => ({
-            name: name,
-            color: color,
-          }),
-        ) as { name: string; color: NotionColor }[],
-        importance: career.properties['중요도']?.select?.name as string,
-        url: career.properties['URL']?.url as string,
-        categories: career.properties['분류']?.multi_select?.map(
-          ({ name, color }: { name: string; color: NotionColor }) => ({
-            name: name,
-            color: color,
-          }),
-        ) as { name: string; color: NotionColor }[],
-        date: {
-          start: career.properties['날짜']?.date?.start
-            ? parseISO(career.properties['날짜']?.date?.start)
-            : undefined,
-          end: career.properties['날짜']?.date?.end
-            ? parseISO(career.properties['날짜']?.date?.end)
-            : undefined,
-        } as { start?: Date; end?: Date },
-        assignedTasks: career.properties['맡은 업무']?.multi_select?.map(
-          ({ name, color }: { name: string; color: NotionColor }) => ({
-            name: name,
-            color: color,
-          }),
-        ) as { name: string; color: NotionColor }[],
-
-        raw: career,
-      } as CareerT),
-  );
-
-  return { careers, fetchedAt: new Date() };
-};
-
-const mutex = new Mutex();
-
-// export const getCareers = () =>
-// 	mutex.runExclusive(async () =>
-// 		NotionCache.getInstance().cacheCareers(fetchCareers),
-// 	);
-
-let buildCache: Awaited<ReturnType<typeof fetchCareers>> | null = null;
-export const getCareers = async () => {
-  if (isBuildPhase()) {
-    return await mutex.runExclusive(async () => {
-      if (buildCache) return buildCache;
-      const data = await fetchCareers();
-      buildCache = data;
-      return data;
-    });
-  } else {
-    const getCachedCareers = unstable_cache(
-      async () => {
-        const data = await fetchCareers();
-        return data;
+function loadCareers(): CareerT[] {
+  const careersDir = path.join(CONTENT_DIR, 'careers');
+  const slugs = getDirectories(careersDir);
+  
+  const careers: CareerT[] = [];
+  
+  for (const slug of slugs) {
+    const careerDir = path.join(careersDir, slug);
+    const metaPath = path.join(careerDir, 'meta.json');
+    const meta = readJsonFile<CareerMeta>(metaPath);
+    
+    if (!meta) continue;
+    
+    // 로컬 이미지 파일 찾기
+    const localIcon = findImageFile(careerDir, 'icon');
+    const localCover = findImageFile(careerDir, 'cover');
+    
+    careers.push({
+      id: slug,  // slug를 ID로 사용
+      slug,
+      title: meta.title || '',
+      description: meta.description || '',
+      iconUrl: localIcon || meta.iconUrl || '',
+      iconEmoji: meta.iconEmoji || '',
+      coverImageUrl: localCover || meta.coverUrl || '',
+      relatedProjects: meta.relatedProjects || [],
+      awardsAndCertifications: meta.awardsAndCertifications || '',
+      institutions: (meta.institutions || []).map(i => ({
+        name: i.name,
+        color: i.color as NotionColor,
+      })),
+      importance: meta.importance || '',
+      url: meta.url || '',
+      categories: (meta.categories || []).map(c => ({
+        name: c.name,
+        color: c.color as NotionColor,
+      })),
+      date: {
+        start: meta.date?.start ? parseISO(meta.date.start) : undefined,
+        end: meta.date?.end ? parseISO(meta.date.end) : undefined,
       },
-      ['careers'],
-      {
-        tags: ['careers'],
-        revalidate: 60 * 60,
-      },
-    );
-    return await getCachedCareers();
+      assignedTasks: (meta.assignedTasks || []).map(t => ({
+        name: t.name,
+        color: t.color as NotionColor,
+      })),
+    });
   }
+  
+  // 날짜 기준 내림차순 정렬
+  careers.sort((a, b) => {
+    const aDate = a.date.start?.getTime() || 0;
+    const bDate = b.date.start?.getTime() || 0;
+    return bDate - aDate;
+  });
+  
+  return careers;
+}
+
+// 캐시
+let careersCache: { careers: CareerT[]; fetchedAt: Date } | null = null;
+
+export const getCareers = async () => {
+  if (!careersCache) {
+    const careers = loadCareers();
+    careersCache = {
+      careers,
+      fetchedAt: new Date(),
+    };
+  }
+  return careersCache;
 };

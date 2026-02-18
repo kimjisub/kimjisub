@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --port 32957",
     "dev:turbopack": "next dev --turbopack",
-    "prebuild": "tsx scripts/build-relations.ts",
+    "prebuild": "npx tsx scripts/build-relations.ts",
     "build": "next build",
     "start": "next start",
     "build-and-start": "yarn build && yarn start",

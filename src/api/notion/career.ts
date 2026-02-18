@@ -1,16 +1,13 @@
- 
- 
- 
- 
- 
+/**
+ * Career API - 단일 커리어 조회 + 관계 해결
+ */
 
-import { unstable_cache } from 'next/cache';
-
-import { notionXApi } from '../notion';
+import * as path from 'path';
 
 import { getCareers } from './careers';
 import { getProjects, ProjectT } from './projects';
 import { getSkills } from './skills';
+import { CONTENT_DIR, readMdFile } from '.';
 
 export const getCareersWithRelated = async () => {
   const [careersRes, projectsRes, _skillsRes] = await Promise.all([
@@ -22,8 +19,8 @@ export const getCareersWithRelated = async () => {
   const relatedCareers = careersRes.careers.map(career => ({
     ...career,
     relatedProjects: career.relatedProjects
-      .map(projectId =>
-        projectsRes.projects.find(project => project.id === projectId),
+      .map(projectSlug =>
+        projectsRes.projects.find(project => project.id === projectSlug),
       )
       .filter(Boolean) as ProjectT[],
   }));
@@ -44,21 +41,21 @@ export const getCareer = async (careerId: string) => {
   };
 };
 
+// 페이지 콘텐츠 (마크다운)
 export const getCareerPage = async (careerId: string) => {
-  const getNotionPage = unstable_cache(
-    async () => {
-      const extendedRecordMap = await notionXApi.getPage(careerId);
-      return {
-        extendedRecordMap,
-        fetchedAt: new Date(),
-      };
+  const careerDir = path.join(CONTENT_DIR, 'careers', careerId);
+  const mdContent = readMdFile(path.join(careerDir, 'index.md'));
+  
+  return {
+    markdown: mdContent || '',
+    extendedRecordMap: {
+      block: {},
+      collection: {},
+      collection_view: {},
+      notion_user: {},
+      collection_query: {},
+      signed_urls: {},
     },
-    ['career-page', careerId],
-    {
-      tags: ['career-page'],
-      revalidate: 60 * 60,
-    },
-  );
-
-  return await getNotionPage();
+    fetchedAt: new Date(),
+  };
 };
