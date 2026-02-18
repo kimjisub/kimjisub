@@ -134,6 +134,14 @@ export const RoughHighlight = ({
 
     // 초기 생성 (애니메이션 포함)
     const initAnnotation = () => {
+      // 요소가 제대로 배치되었는지 확인 (0,0 방지)
+      const rect = element.getBoundingClientRect();
+      if (rect.width === 0 || rect.height === 0) {
+        // 레이아웃이 아직 완료되지 않음, 재시도
+        setTimeout(initAnnotation, 100);
+        return;
+      }
+
       annotationRef.current = annotate(element, {
         type,
         color: finalColor,

@@ -184,7 +184,8 @@ export const InteractiveTerminal = () => {
 
   useEffect(() => {
     if (!isLoading && !isTyping) {
-      inputRef.current?.focus();
+      // preventScroll: 페이지 로드 시 터미널로 자동 스크롤 방지
+      inputRef.current?.focus({ preventScroll: true });
     }
   }, [isLoading, isTyping]);
 
