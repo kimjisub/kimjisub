@@ -428,22 +428,13 @@ function TestimonialFormModal({
 ───────────────────────────────────────────── */
 const AUTO_SLIDE_INTERVAL = 5000;
 
-// Fallback testimonials (shown when DB is empty)
-const fallbackTestimonials: Testimonial[] = [
-  {
-    id: 'fallback-1',
-    authorName: '첫 번째 추천사를 기다리고 있어요',
-    authorTitle: '',
-    content: '김지섭과 함께 일한 경험이 있으시다면, 추천사를 작성해주세요!',
-  },
-];
-
 export function TestimonialsSection() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-120px' });
 
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isEmpty, setIsEmpty] = useState(false);
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const [paused, setPaused] = useState(false);
@@ -457,11 +448,16 @@ export function TestimonialsSection() {
         const res = await fetch('/api/testimonials');
         if (res.ok) {
           const data = await res.json();
-          setTestimonials(data.length > 0 ? data : fallbackTestimonials);
+          if (data.length > 0) {
+            setTestimonials(data);
+            setIsEmpty(false);
+          } else {
+            setIsEmpty(true);
+          }
         }
       } catch (error) {
         console.error('Failed to fetch testimonials:', error);
-        setTestimonials(fallbackTestimonials);
+        setIsEmpty(true);
       } finally {
         setLoading(false);
       }
@@ -512,6 +508,66 @@ export function TestimonialsSection() {
           </div>
         </div>
       </section>
+    );
+  }
+
+  // Empty state - no testimonials yet
+  if (isEmpty) {
+    return (
+      <>
+        <section
+          ref={ref}
+          className="py-12 md:py-24 border-t border-border"
+        >
+          <div className="max-w-4xl mx-auto px-4 md:px-6">
+            <motion.h2
+              className="font-serif text-2xl md:text-3xl text-foreground mb-2 italic"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
+              Testimonials
+            </motion.h2>
+            <motion.p
+              className="text-muted-foreground text-sm mb-10"
+              initial={{ opacity: 0, y: 16 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+              transition={{ duration: 0.5, delay: 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
+              함께 일한 분들의 이야기
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+              transition={{ duration: 0.5, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="relative rounded-2xl border border-dashed border-border bg-card/50 p-12 text-center"
+            >
+              <QuoteIcon className="w-16 h-16 mx-auto mb-6 text-foreground/10" />
+              <h3 className="text-xl font-semibold text-foreground mb-2">
+                첫 번째 추천사를 기다리고 있어요
+              </h3>
+              <p className="text-muted-foreground mb-8 max-w-md mx-auto">
+                김지섭과 함께 일한 경험이 있으시다면, 
+                추천사를 작성해주세요. 소중한 피드백이 됩니다.
+              </p>
+              <button
+                onClick={() => setShowForm(true)}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground 
+                           rounded-xl font-medium hover:bg-accent/90 transition-colors"
+              >
+                ✍️ 추천사 작성하기
+              </button>
+            </motion.div>
+          </div>
+        </section>
+
+        <AnimatePresence>
+          {showForm && (
+            <TestimonialFormModal isOpen={showForm} onClose={() => setShowForm(false)} />
+          )}
+        </AnimatePresence>
+      </>
     );
   }
 
