@@ -180,14 +180,36 @@ function SiteStats() {
 	);
 }
 
-/** Newsletter signup placeholder */
+/** Newsletter signup */
 function NewsletterBox() {
-	const [value, setValue] = useState('');
-	const [sent, setSent] = useState(false);
+	const [email, setEmail] = useState('');
+	const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+	const [message, setMessage] = useState('');
 
-	const handleSubmit = (e: React.FormEvent) => {
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
-		if (value.trim()) setSent(true);
+		if (!email.trim()) return;
+
+		setStatus('loading');
+		try {
+			const res = await fetch('/api/newsletter/subscribe', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ email, source: 'footer' }),
+			});
+			const data = await res.json();
+			
+			if (res.ok) {
+				setStatus('success');
+				setMessage(data.message || '구독 완료!');
+			} else {
+				setStatus('error');
+				setMessage(data.error || '오류가 발생했습니다.');
+			}
+		} catch {
+			setStatus('error');
+			setMessage('네트워크 오류가 발생했습니다.');
+		}
 	};
 
 	return (
@@ -195,41 +217,58 @@ function NewsletterBox() {
 			<p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">
 				Newsletter
 			</p>
-			{sent ? (
+			{status === 'success' ? (
 				<motion.p
 					initial={{ opacity: 0, y: 4 }}
 					animate={{ opacity: 1, y: 0 }}
 					className="text-xs text-emerald-400"
 				>
-					Thanks! I&apos;ll reach out soon. ✨
+					{message}
 				</motion.p>
 			) : (
 				<form
 					onSubmit={handleSubmit}
-					className="flex items-center gap-2"
+					className="flex flex-col gap-2"
 					aria-label="뉴스레터 구독"
 				>
-					<label htmlFor="newsletter-email" className="sr-only">
-						이메일 주소
-					</label>
-					<input
-						id="newsletter-email"
-						type="email"
-						value={value}
-						onChange={(e) => setValue(e.target.value)}
-						placeholder="your@email.com"
-						className="w-44 rounded-lg border border-border bg-background px-3 py-1.5 text-xs text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:ring-1 focus:ring-accent/50 transition"
-						autoComplete="email"
-					/>
-					<motion.button
-						type="submit"
-						whileHover={{ scale: 1.05 }}
-						whileTap={{ scale: 0.95 }}
-						className="flex h-7 w-7 items-center justify-center rounded-lg border border-border text-muted-foreground hover:text-accent hover:border-accent/50 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:outline-none transition-colors"
-						aria-label="Subscribe"
-					>
-						<FontAwesomeIcon icon={faPaperPlane} className="h-3 w-3" />
-					</motion.button>
+					<div className="flex items-center gap-2">
+						<label htmlFor="newsletter-email" className="sr-only">
+							이메일 주소
+						</label>
+						<input
+							id="newsletter-email"
+							type="email"
+							value={email}
+							onChange={(e) => setEmail(e.target.value)}
+							placeholder="your@email.com"
+							disabled={status === 'loading'}
+							className="w-44 rounded-lg border border-border bg-background px-3 py-1.5 text-xs text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:ring-1 focus:ring-accent/50 transition disabled:opacity-50"
+							autoComplete="email"
+						/>
+						<motion.button
+							type="submit"
+							disabled={status === 'loading'}
+							whileHover={{ scale: status === 'loading' ? 1 : 1.05 }}
+							whileTap={{ scale: status === 'loading' ? 1 : 0.95 }}
+							className="flex h-7 w-7 items-center justify-center rounded-lg border border-border text-muted-foreground hover:text-accent hover:border-accent/50 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:outline-none transition-colors disabled:opacity-50"
+							aria-label="Subscribe"
+						>
+							{status === 'loading' ? (
+								<span className="h-3 w-3 border-2 border-current border-t-transparent rounded-full animate-spin" />
+							) : (
+								<FontAwesomeIcon icon={faPaperPlane} className="h-3 w-3" />
+							)}
+						</motion.button>
+					</div>
+					{status === 'error' && (
+						<motion.p
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							className="text-xs text-red-400"
+						>
+							{message}
+						</motion.p>
+					)}
 				</form>
 			)}
 		</motion.div>

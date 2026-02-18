@@ -153,6 +153,40 @@ model AgentSession {
 }
 
 // ============================================
+// 뉴스레터 구독
+// ============================================
+
+enum SubscriptionStatus {
+  ACTIVE       // 활성
+  UNSUBSCRIBED // 구독 취소
+}
+
+/// 뉴스레터 구독자
+model NewsletterSubscriber {
+  id        String   @id @default(cuid())
+  
+  email     String   @unique
+  
+  // 상태
+  status    SubscriptionStatus @default(ACTIVE)
+  
+  // 구독 취소 토큰 (이메일 내 unsubscribe 링크용)
+  unsubscribeToken String @unique @default(cuid()) @map("unsubscribe_token")
+  
+  // 메타데이터
+  source    String?  // 어디서 구독했는지 (footer, popup 등)
+  userAgent String?  @map("user_agent")
+  ipAddress String?  @map("ip_address")
+  
+  subscribedAt   DateTime  @default(now()) @map("subscribed_at")
+  unsubscribedAt DateTime? @map("unsubscribed_at")
+  
+  @@index([status])
+  @@index([email])
+  @@map("newsletter_subscribers")
+}
+
+// ============================================
 // 좋아요 반응 (fingerprint 기반 중복 방지)
 // ============================================
 
