@@ -1,8 +1,8 @@
 'use client';
 
-import { useRef } from 'react';
-import { Briefcase, GraduationCap, Lightbulb, MapPin, Rocket, Sparkles } from 'lucide-react';
-import { motion, useInView, type Variants } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import { Award, Briefcase, Code, Download, GraduationCap, Lightbulb, MapPin, Rocket, Sparkles, Trophy } from 'lucide-react';
+import { AnimatePresence, motion, useInView, type Variants } from 'framer-motion';
 
 import { AnimatedCounter } from '@/components/AnimatedCounter';
 import { BentoCard, BentoGrid } from '@/components/BentoGrid';
@@ -27,6 +27,46 @@ const VALUES = [
   { icon: '🎯', text: '문제의 본질을 파고드는 것' },
   { icon: '🔧', text: '코드보다 돌아가는 시스템' },
   { icon: '📐', text: '자동화와 시스템화' },
+] as const;
+
+// ── Milestones ────────────────────────────────────────────────────────────
+const MILESTONES = [
+  {
+    icon: Download,
+    value: 500,
+    suffix: '만+',
+    label: 'UniPad 다운로드',
+    sublabel: '중학교 때 만든 앱',
+    year: '2016',
+    color: 'text-accent',
+  },
+  {
+    icon: Code,
+    value: 12,
+    suffix: '+',
+    label: '년 코딩 경력',
+    sublabel: '2013년 시작',
+    year: '2013~',
+    color: 'text-blue-400',
+  },
+  {
+    icon: Trophy,
+    value: 15,
+    suffix: '+',
+    label: '해커톤/경진대회',
+    sublabel: '수상 경력',
+    year: '2015~',
+    color: 'text-yellow-400',
+  },
+  {
+    icon: Rocket,
+    value: 2,
+    suffix: '',
+    label: '스타트업 창업',
+    sublabel: 'Alpaon, Synap.us',
+    year: '2020~',
+    color: 'text-purple-400',
+  },
 ] as const;
 
 // ── Stagger animation helpers ─────────────────────────────────────────────
@@ -241,22 +281,84 @@ function TechStackCard() {
   );
 }
 
-/** 🚀 UniPad 성과 — 1×1 */
+/** 🚀 성과 캐러셀 — 1×1 */
 function MilestoneCard() {
+  const [current, setCurrent] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Auto-rotate every 4 seconds (pause on hover)
+  useEffect(() => {
+    if (isHovered) return;
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % MILESTONES.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [isHovered]);
+
+  const milestone = MILESTONES[current];
+  const Icon = milestone.icon;
+
   return (
     <BentoCard size="1x1" accent>
-      <div className="flex items-center gap-2 mb-2">
-        <Rocket className="w-4 h-4 text-accent" />
-        <p className="text-xs text-muted-foreground uppercase tracking-widest">Milestone</p>
+      <div 
+        className="h-full flex flex-col"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {/* Header */}
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-2">
+            <Award className="w-4 h-4 text-accent" />
+            <p className="text-xs text-muted-foreground uppercase tracking-widest">Milestones</p>
+          </div>
+          <span className="text-[10px] text-muted-foreground/60 tabular-nums">
+            {current + 1}/{MILESTONES.length}
+          </span>
+        </div>
+
+        {/* Content with animation */}
+        <div className="flex-1 relative overflow-hidden">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3, ease: 'easeOut' }}
+              className="absolute inset-0"
+            >
+              <div className="flex items-center gap-2 mb-1">
+                <Icon className={`w-5 h-5 ${milestone.color}`} />
+                <span className="text-[10px] text-muted-foreground/60">{milestone.year}</span>
+              </div>
+              <AnimatedCounter
+                value={milestone.value}
+                suffix={milestone.suffix}
+                duration={1.5}
+                className={`text-3xl font-bold tabular-nums ${milestone.color}`}
+              />
+              <p className="text-sm text-foreground font-medium mt-1">{milestone.label}</p>
+              <p className="text-xs text-muted-foreground mt-0.5">{milestone.sublabel}</p>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Dots indicator */}
+        <div className="flex items-center justify-center gap-1.5 mt-3">
+          {MILESTONES.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrent(idx)}
+              className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                idx === current 
+                  ? 'bg-accent w-3' 
+                  : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
+              }`}
+              aria-label={`Milestone ${idx + 1}`}
+            />
+          ))}
+        </div>
       </div>
-      <AnimatedCounter
-        value={500}
-        suffix="만+"
-        duration={2}
-        className="text-3xl font-bold text-accent tabular-nums"
-      />
-      <p className="text-sm text-foreground font-medium mt-1">UniPad 다운로드</p>
-      <p className="text-xs text-muted-foreground mt-0.5">중학교 때 만든 앱 · 2016</p>
     </BentoCard>
   );
 }
