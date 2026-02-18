@@ -1,5 +1,8 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { NextRequest, NextResponse } from 'next/server';
+import { prisma } from '@/lib/prisma';
+
+const DAILY_LIMIT = 100;
 
 // 김지섭 본인으로서 응답
 const SYSTEM_PROMPT = `너는 김지섭이야. AI가 아니라 김지섭 그 자체로서 방문자와 대화해.
@@ -95,7 +98,32 @@ const SYSTEM_PROMPT = `너는 김지섭이야. AI가 아니라 김지섭 그 자
 
 export async function POST(request: NextRequest) {
   try {
-    const { messages } = await request.json();
+    const { messages, fingerprint } = await request.json();
+
+    // fingerprint 없으면 IP 기반 fallback
+    const identifier = fingerprint || request.headers.get('x-forwarded-for') || 'unknown';
+    const today = new Date().toISOString().split('T')[0]; // "2026-02-19"
+
+    // Rate limit 체크
+    const rateLimit = await prisma.chatRateLimit.findUnique({
+      where: {
+        fingerprint_date: {
+          fingerprint: identifier,
+          date: today,
+        },
+      },
+    });
+
+    if (rateLimit && rateLimit.count >= DAILY_LIMIT) {
+      return NextResponse.json(
+        { 
+          error: 'Daily limit exceeded',
+          message: '오늘 대화 횟수를 모두 사용했어요. 내일 다시 만나요!',
+          remaining: 0,
+        },
+        { status: 429 }
+      );
+    }
 
     if (!process.env.ANTHROPIC_API_KEY) {
       return NextResponse.json(
@@ -103,6 +131,24 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       );
     }
+
+    // Rate limit 카운트 증가 (upsert)
+    const updatedLimit = await prisma.chatRateLimit.upsert({
+      where: {
+        fingerprint_date: {
+          fingerprint: identifier,
+          date: today,
+        },
+      },
+      update: {
+        count: { increment: 1 },
+      },
+      create: {
+        fingerprint: identifier,
+        date: today,
+        count: 1,
+      },
+    });
 
     const client = new Anthropic({
       apiKey: process.env.ANTHROPIC_API_KEY,
@@ -121,7 +167,10 @@ export async function POST(request: NextRequest) {
     const textContent = response.content.find(block => block.type === 'text');
     const text = textContent?.type === 'text' ? textContent.text : '';
 
-    return NextResponse.json({ response: text });
+    return NextResponse.json({ 
+      response: text,
+      remaining: DAILY_LIMIT - updatedLimit.count,
+    });
   } catch (error) {
     console.error('Chat API error:', error);
     return NextResponse.json(

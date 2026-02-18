@@ -187,6 +187,25 @@ model NewsletterSubscriber {
 }
 
 // ============================================
+// 터미널 AI Rate Limit
+// ============================================
+
+/// 터미널 AI 일별 사용량 제한 (사용자당 100회/일)
+model ChatRateLimit {
+  id          String   @id @default(cuid())
+  fingerprint String
+  date        String   // "2026-02-19" 형태
+  count       Int      @default(0)
+  
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+  
+  @@unique([fingerprint, date])
+  @@index([date])
+  @@map("chat_rate_limits")
+}
+
+// ============================================
 // 좋아요 반응 (fingerprint 기반 중복 방지)
 // ============================================
 

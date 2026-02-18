@@ -1,8 +1,38 @@
 'use client';
 
-import { KeyboardEvent, useCallback, useEffect, useRef, useState } from 'react';
+import { KeyboardEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowUp, Sparkles } from 'lucide-react';
+
+// 간단한 브라우저 fingerprint 생성
+function generateFingerprint(): string {
+  if (typeof window === 'undefined') return 'server';
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  if (ctx) {
+    ctx.textBaseline = 'top';
+    ctx.font = '14px Arial';
+    ctx.fillText('fingerprint', 2, 2);
+  }
+  const canvasData = canvas.toDataURL();
+  const data = [
+    navigator.userAgent,
+    navigator.language,
+    screen.width,
+    screen.height,
+    screen.colorDepth,
+    new Date().getTimezoneOffset(),
+    canvasData.slice(-50),
+  ].join('|');
+  // Simple hash
+  let hash = 0;
+  for (let i = 0; i < data.length; i++) {
+    const char = data.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash;
+  }
+  return Math.abs(hash).toString(36);
+}
 
 interface TerminalLine {
   id: number;
@@ -127,14 +157,17 @@ const COMMANDS: Record<string, () => { lines: string[]; isAscii?: boolean }> = {
 
 export const InteractiveTerminal = () => {
   const [lines, setLines] = useState<TerminalLine[]>([
-    { id: 0, type: 'system', content: '안녕하세요! 저는 지섭님의 포트폴리오를 안내하는 AI예요.' },
-    { id: 1, type: 'system', content: '프로젝트, 경력, 기술 스택 등 궁금한 거 편하게 물어보세요 :)' },
+    { id: 0, type: 'system', content: '안녕하세요! 저에 대해 궁금한 거 편하게 물어보세요 :)' },
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
   const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
-  const lineIdRef = useRef(2);
+  const [remaining, setRemaining] = useState<number | null>(null);
+  const [rateLimited, setRateLimited] = useState(false);
+  const lineIdRef = useRef(1);
+  
+  const fingerprint = useMemo(() => generateFingerprint(), []);
   
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const terminalRef = useRef<HTMLDivElement>(null);
@@ -228,6 +261,11 @@ export const InteractiveTerminal = () => {
   }, [addLine, typeLines]);
 
   const sendToAI = useCallback(async (message: string) => {
+    if (rateLimited) {
+      addLine('system', '⚠ 오늘 대화 횟수를 모두 사용했어요. 내일 다시 만나요!');
+      return;
+    }
+    
     setIsLoading(true);
     
     // Add thinking indicator
@@ -240,13 +278,29 @@ export const InteractiveTerminal = () => {
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: newChatHistory }),
+        body: JSON.stringify({ messages: newChatHistory, fingerprint }),
       });
+      
+      const data = await response.json();
+      
+      // Rate limit exceeded
+      if (response.status === 429) {
+        setRateLimited(true);
+        setRemaining(0);
+        setLines(prev => prev.filter(l => l.id !== thinkingId));
+        addLine('system', `⚠ ${data.message || '오늘 대화 횟수를 모두 사용했어요.'}`);
+        setIsLoading(false);
+        return;
+      }
       
       if (!response.ok) throw new Error('API request failed');
       
-      const data = await response.json();
       const aiResponse = data.response || '응답을 생성하지 못했어요.';
+      
+      // Update remaining count
+      if (typeof data.remaining === 'number') {
+        setRemaining(data.remaining);
+      }
       
       // Remove thinking indicator
       setLines(prev => prev.filter(l => l.id !== thinkingId));
@@ -264,7 +318,7 @@ export const InteractiveTerminal = () => {
     }
     
     setIsLoading(false);
-  }, [chatHistory, getNextId, addLine, typeLines]);
+  }, [chatHistory, fingerprint, rateLimited, getNextId, addLine, typeLines]);
 
   const handleSubmit = useCallback(async () => {
     const trimmed = input.trim();
@@ -395,6 +449,11 @@ export const InteractiveTerminal = () => {
           <span className="text-[10px] text-zinc-600">
             /help · 명령어 보기
           </span>
+          {remaining !== null && (
+            <span className={`text-[10px] ${remaining <= 10 ? 'text-amber-500' : 'text-zinc-600'}`}>
+              오늘 {remaining}회 남음
+            </span>
+          )}
           <span className="text-[10px] text-zinc-600">
             Shift+Enter · 줄바꿈
           </span>
