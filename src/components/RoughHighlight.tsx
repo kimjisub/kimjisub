@@ -66,7 +66,13 @@ export const RoughHighlight = ({
   }, [type, resolvedTheme]);
 
   useEffect(() => {
-    setMounted(true);
+    // Wait for layout to stabilize before mounting
+    const timeoutId = requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        setMounted(true);
+      });
+    });
+    return () => cancelAnimationFrame(timeoutId);
   }, []);
 
   // Intersection Observer for scroll trigger
@@ -100,27 +106,32 @@ export const RoughHighlight = ({
       annotationRef.current = null;
     }
 
-    // 새 annotation 생성
-    annotationRef.current = annotate(elementRef.current, {
-      type,
-      color: finalColor,
-      animate,
-      animationDuration,
-      strokeWidth,
-      padding,
-      multiline,
-      iterations,
-      brackets,
+    // Wait for layout to be stable before creating annotation
+    const rafId = requestAnimationFrame(() => {
+      if (!elementRef.current) return;
+      
+      // 새 annotation 생성
+      annotationRef.current = annotate(elementRef.current, {
+        type,
+        color: finalColor,
+        animate,
+        animationDuration,
+        strokeWidth,
+        padding,
+        multiline,
+        iterations,
+        brackets,
+      });
+
+      if (shouldShow) {
+        setTimeout(() => {
+          annotationRef.current?.show();
+        }, delay);
+      }
     });
 
-    if (shouldShow) {
-      const timeoutId = setTimeout(() => {
-        annotationRef.current?.show();
-      }, delay);
-      return () => clearTimeout(timeoutId);
-    }
-
     return () => {
+      cancelAnimationFrame(rafId);
       annotationRef.current?.remove();
     };
   }, [
