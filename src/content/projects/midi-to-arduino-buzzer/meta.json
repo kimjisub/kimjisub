@@ -5,7 +5,7 @@
   "description": ".mid 파일을 이용하여 아두이노 부저 코드 생성",
   "date": {
     "start": "2015-07-31",
-    "end": null
+    "end": "2015-07-31"
   },
   "github": "https://github.com/kimjisub/Midi-to-Arduino-buzzer",
   "youtube": "https://www.youtube.com/watch?v=1i9ZNHit6MA",

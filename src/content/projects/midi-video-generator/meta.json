@@ -5,7 +5,7 @@
   "description": ".mid 형태의 음악을 영상으로 변환",
   "date": {
     "start": "2020-01-01",
-    "end": null
+    "end": "2020-01-01"
   },
   "github": "https://github.com/kimjisub/Midi-Video-Generator",
   "youtube": "https://www.youtube.com/watch?v=vkOKSzTwUYY",

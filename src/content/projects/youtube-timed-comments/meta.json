@@ -5,7 +5,7 @@
   "description": "유튜브 댓글을 이용한 확장 프로그램",
   "date": {
     "start": "2021-08-24",
-    "end": null
+    "end": "2021-08-24"
   },
   "github": "https://github.com/kimjisub/youtube-timed-comment",
   "youtube": null,

@@ -156,15 +156,13 @@ const ProjectPage = async (props: { params: Params }) => {
 						<DataList.Item>
 							<DataList.Label minWidth="88px">날짜</DataList.Label>
 							<DataList.Value>
-								{project.date.start && project.date.end ? (
+								{project.date.start ? (
 									<div>
-										{`${format(project.date.start, 'yyyy-MM-dd')} ~ ${format(
-											project.date.end,
-											'yyyy-MM-dd',
-										)}`}
+										{format(project.date.start, 'yyyy-MM-dd')}
+										{project.date.end && project.date.end !== project.date.start && (
+											<> ~ {format(project.date.end, 'yyyy-MM-dd')}</>
+										)}
 									</div>
-								) : project.date.start ? (
-									<div>{format(project.date.start, 'yyyy-MM-dd')}</div>
 								) : null}
 							</DataList.Value>
 						</DataList.Item>

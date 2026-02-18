@@ -5,7 +5,7 @@
   "description": "스크립트를 영상으로 자동 변환",
   "date": {
     "start": "2020-10-10",
-    "end": null
+    "end": "2020-10-10"
   },
   "github": "https://github.com/kimjisub/text-to-video",
   "youtube": null,

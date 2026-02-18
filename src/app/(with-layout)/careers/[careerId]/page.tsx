@@ -107,15 +107,13 @@ const CareerPage = async (props: { params: Params }) => {
 							<DataList.Item>
 								<DataList.Label minWidth="88px">날짜</DataList.Label>
 								<DataList.Value>
-									{career.date.start && career.date.end ? (
+									{career.date.start ? (
 										<div>
-											{`${format(career.date.start, 'yyyy-MM-dd')} ~ ${format(
-												career.date.end,
-												'yyyy-MM-dd',
-											)}`}
+											{format(career.date.start, 'yyyy-MM-dd')}
+											{career.date.end && career.date.end !== career.date.start && (
+												<> ~ {format(career.date.end, 'yyyy-MM-dd')}</>
+											)}
 										</div>
-									) : career.date.start ? (
-										<div>{format(career.date.start, 'yyyy-MM-dd')}</div>
 									) : null}
 								</DataList.Value>
 							</DataList.Item>
