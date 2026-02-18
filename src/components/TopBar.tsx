@@ -63,7 +63,9 @@ const TopBar: React.FC = () => {
   return (
     <>
       <nav
+      id="navigation"
       aria-label="메인 내비게이션"
+      tabIndex={-1}
       className={`fixed top-0 w-full h-14 z-50 border-b border-border transition-transform duration-200 ${
         navBarHidden ? '-translate-y-full' : ''
       }`}

@@ -18,6 +18,7 @@ import { KeyboardShortcutsWrapper } from '@/components/KeyboardShortcutsWrapper'
 import { AnimatePresenceWrapper } from '@/components/motion/AnimatePresenceWrapper';
 import ScrollProgressIndicator from '@/components/ScrollProgressIndicator';
 import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration';
+import { SkipToContent } from '@/components/SkipToContent';
 import SpotlightEffect from '@/components/SpotlightEffect';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import TopBar from '@/components/TopBar';
@@ -109,9 +110,10 @@ export default function RootLayout({
 			<AppInfoProvider>
 				<body className="font-sans bg-background text-foreground antialiased">
 					<ThemeProvider>
+						<SkipToContent />
 						<ServiceWorkerRegistration />
 						<CommandPaletteWrapper />
-					<KeyboardShortcutsWrapper />
+						<KeyboardShortcutsWrapper />
 						<Preloader />
 						<GrainOverlay />
 						<SpotlightEffect />
@@ -121,7 +123,7 @@ export default function RootLayout({
 						<FloatingSocialSidebar />
 						<div className="min-h-screen flex flex-col">
 							<TopBar />
-							<main className="flex-grow">
+							<main id="main-content" className="flex-grow" tabIndex={-1}>
 								<AnimatePresenceWrapper>
 									{children}
 								</AnimatePresenceWrapper>

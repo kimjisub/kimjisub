@@ -315,3 +315,51 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* ── Accessibility: Focus Visible ────────────────────────────────── */
+
+/* Skip to content - only visible on focus */
+.sr-only:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Selection color for better readability */
+::selection {
+  background-color: color-mix(in srgb, var(--accent) 30%, transparent);
+  color: var(--foreground);
+}
+
+/* High contrast focus for keyboard users */
+@media (prefers-contrast: high) {
+  *:focus-visible {
+    outline: 3px solid currentColor !important;
+    outline-offset: 2px;
+  }
+}
+
+/* ── Accessibility: Skip Link ──────────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -2.5rem;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
