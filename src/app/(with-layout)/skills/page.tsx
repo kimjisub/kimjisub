@@ -51,8 +51,8 @@ export default async function SkillsPage() {
   ];
 
   return (
-    <section className="py-24 px-6 max-w-4xl mx-auto">
-      <header className="mb-16">
+    <section className="py-12 md:py-24 px-4 md:px-6 max-w-4xl mx-auto">
+      <header className="mb-8 md:mb-16">
         <AnimatedTitle className="font-serif text-3xl md:text-4xl text-foreground mb-4 italic">
           Skills
         </AnimatedTitle>
@@ -64,7 +64,7 @@ export default async function SkillsPage() {
       </header>
 
       {/* Radar Chart */}
-      <AnimatedSection delay={0.15} className="mb-20">
+      <AnimatedSection delay={0.15} className="mb-12 md:mb-20">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-10">
           <div className="flex-shrink-0">
             <SkillsRadarChart skills={skills} size={320} />

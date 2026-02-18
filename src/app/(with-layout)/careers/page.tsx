@@ -32,7 +32,7 @@ export default async function CareersPage() {
   const { careers, fetchedAt } = await getCareers();
   
   return (
-    <section className="py-24 px-6 max-w-5xl mx-auto">
+    <section className="py-12 md:py-24 px-4 md:px-6 max-w-5xl mx-auto">
       <CareersView careers={careers} />
 
       <DebugView>

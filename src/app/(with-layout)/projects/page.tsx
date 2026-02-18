@@ -32,9 +32,9 @@ export default async function ProjectsPage() {
   const { projects, fetchedAt } = await getProjects();
 
   return (
-    <section className="py-24 max-w-7xl mx-auto">
+    <section className="py-12 md:py-24 max-w-7xl mx-auto px-4 md:px-6">
       {/* 헤더 */}
-      <header className="mb-12 px-6">
+      <header className="mb-8 md:mb-12">
         <AnimatedTitle className="font-serif text-3xl md:text-4xl text-foreground mb-4 italic">
           Projects
         </AnimatedTitle>
@@ -51,7 +51,7 @@ export default async function ProjectsPage() {
       </AnimatedSection>
 
       <DebugView>
-        <Text className="text-muted-foreground text-sm px-6">
+        <Text className="text-muted-foreground text-sm">
           {format(fetchedAt, 'yyyy-MM-dd HH:mm:ss')}
         </Text>
       </DebugView>

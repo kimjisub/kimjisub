@@ -127,14 +127,14 @@ const ProjectPage = async (props: { params: Params }) => {
 	};
 
 	return (
-		<div className="py-24 px-6 max-w-7xl mx-auto">
+		<div className="py-12 md:py-24 px-4 md:px-6 max-w-7xl mx-auto">
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify(creativeWorkSchema),
 				}}
 			/>
-			<div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+			<div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
 				<section className="col-span-3">
 					<div className="flex items-center space-x-3 mb-8">
 						{icon}

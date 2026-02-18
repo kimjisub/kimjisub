@@ -12,7 +12,7 @@ interface WorkItemProps {
 
 const WorkItem = ({ title, period, role, description, details }: WorkItemProps) => (
   <div>
-    <div className="flex items-baseline gap-4 mb-4">
+    <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 mb-4">
       <h3 className="text-xl font-medium text-foreground">{title}</h3>
       <span className="text-sm text-muted-foreground">{period}</span>
     </div>
