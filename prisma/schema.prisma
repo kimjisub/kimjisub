@@ -1,0 +1,173 @@
+// Prisma Schema for kimjisub.com
+// Database: Supabase (PostgreSQL)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  // URL은 prisma.config.ts에서 설정 (Prisma 7+)
+}
+
+// ============================================
+// 블로그 관련
+// ============================================
+
+/// 블로그 게시글 조회 기록 (fingerprint 기반 중복 방지)
+model PageView {
+  id          String   @id @default(cuid())
+  slug        String
+  fingerprint String   // browser fingerprint
+  
+  createdAt   DateTime @default(now()) @map("created_at")
+  
+  @@unique([slug, fingerprint])  // 같은 사람이 같은 글 중복 조회 방지
+  @@index([slug])
+  @@map("page_views")
+}
+
+/// 블로그 댓글 (대댓글 지원)
+model Comment {
+  id        String   @id @default(cuid())
+  postSlug  String   @map("post_slug")
+  
+  // 대댓글 관계
+  parentId  String?  @map("parent_id")
+  parent    Comment? @relation("CommentReplies", fields: [parentId], references: [id], onDelete: Cascade)
+  replies   Comment[] @relation("CommentReplies")
+  
+  // 작성자 정보
+  authorName  String @map("author_name")
+  authorEmail String? @map("author_email")  // 선택적, Gravatar용
+  
+  content   String
+  
+  // 상태 - 기본 공개 (검토 불필요)
+  isApproved Boolean @default(true) @map("is_approved")
+  
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([postSlug])
+  @@index([parentId])
+  @@map("comments")
+}
+
+// ============================================
+// 추천사 (Testimonials)
+// ============================================
+
+enum TestimonialStatus {
+  PENDING   // 검토 대기
+  APPROVED  // 승인됨
+  REJECTED  // 거절됨
+}
+
+/// 추천사 - 방문자가 작성, 관리자가 검토 후 공개
+model Testimonial {
+  id        String   @id @default(cuid())
+  
+  // 작성자 정보
+  authorName    String  @map("author_name")
+  authorTitle   String? @map("author_title")   // 직함/소속
+  authorCompany String? @map("author_company") // 회사명
+  authorEmail   String? @map("author_email")   // 비공개 저장, 연락용
+  authorUrl     String? @map("author_url")     // 링크드인 등
+  
+  // 내용
+  content       String
+  relationship  String?  // 어떤 관계인지 (동료, 클라이언트 등)
+  
+  // 상태
+  status    TestimonialStatus @default(PENDING)
+  
+  // 공개 순서 (승인된 것 중 정렬용)
+  displayOrder Int? @map("display_order")
+  
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  
+  @@index([status])
+  @@map("testimonials")
+}
+
+// ============================================
+// 컨택 폼
+// ============================================
+
+enum ContactStatus {
+  NEW       // 새 문의
+  READ      // 확인함
+  REPLIED   // 답변함
+  ARCHIVED  // 보관
+}
+
+/// 컨택 폼 제출
+model Contact {
+  id        String   @id @default(cuid())
+  
+  name      String
+  email     String
+  company   String?
+  subject   String?
+  message   String
+  
+  status    ContactStatus @default(NEW)
+  
+  // 메타데이터
+  userAgent String? @map("user_agent")
+  ipAddress String? @map("ip_address")  // 스팸 방지용
+  
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([status])
+  @@index([email])
+  @@map("contacts")
+}
+
+// ============================================
+// Agent 세션 (터미널 AI 대화)
+// ============================================
+
+/// Agent 세션
+model AgentSession {
+  id          String   @id @default(cuid())
+  sessionId   String   @unique @map("session_id")  // 클라이언트에서 생성한 고유 ID
+  
+  // 메시지 히스토리 (JSON 배열)
+  messages    Json     @default("[]")
+  
+  // 메타데이터
+  userAgent   String?  @map("user_agent")
+  
+  // 통계
+  messageCount Int     @default(0) @map("message_count")
+  
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+  
+  @@index([createdAt])
+  @@map("agent_sessions")
+}
+
+// ============================================
+// 좋아요 반응 (fingerprint 기반 중복 방지)
+// ============================================
+
+/// 콘텐츠 좋아요
+model Reaction {
+  id          String   @id @default(cuid())
+  contentType String   @map("content_type")  // project, skill, career, blog
+  contentSlug String   @map("content_slug")
+  
+  // 익명 사용자 식별 (browser fingerprint)
+  fingerprint String
+  
+  createdAt   DateTime @default(now()) @map("created_at")
+  
+  @@unique([contentType, contentSlug, fingerprint])  // 같은 사람이 같은 콘텐츠 중복 좋아요 방지
+  @@index([contentType, contentSlug])
+  @@map("reactions")
+}
