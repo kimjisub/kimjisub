@@ -134,7 +134,7 @@ export const InteractiveTerminal = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
   const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
-  const [lineIdCounter, setLineIdCounter] = useState(2);
+  const lineIdRef = useRef(2);
   
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const terminalRef = useRef<HTMLDivElement>(null);
@@ -163,19 +163,23 @@ export const InteractiveTerminal = () => {
     }
   }, [input]);
 
+  const getNextId = useCallback(() => {
+    const id = lineIdRef.current;
+    lineIdRef.current += 1;
+    return id;
+  }, []);
+
   const addLine = useCallback((type: TerminalLine['type'], content: string) => {
-    const newId = lineIdCounter;
-    setLineIdCounter(prev => prev + 1);
+    const newId = getNextId();
     setLines(prev => [...prev, { id: newId, type, content }]);
     return newId;
-  }, [lineIdCounter]);
+  }, [getNextId]);
 
   const typeLines = useCallback(async (outputLines: string[], type: TerminalLine['type'] = 'assistant', isAscii?: boolean) => {
     setIsTyping(true);
     
     for (const line of outputLines) {
-      const newId = lineIdCounter;
-      setLineIdCounter(prev => prev + 1);
+      const newId = getNextId();
       
       if (isAscii || line.includes('━') || line.includes('─') || line.includes('██')) {
         setLines(prev => [...prev, { id: newId, type: isAscii ? 'ascii' : type, content: line }]);
@@ -200,16 +204,16 @@ export const InteractiveTerminal = () => {
     }
     
     setIsTyping(false);
-  }, [lineIdCounter]);
+  }, [getNextId]);
 
   const handleCommand = useCallback(async (cmd: string) => {
     const cmdName = cmd.slice(1).toLowerCase().trim();
     
     if (cmdName === 'clear') {
+      lineIdRef.current = 1;
       setLines([
         { id: 0, type: 'system', content: '터미널이 초기화되었습니다.' },
       ]);
-      setLineIdCounter(1);
       setChatHistory([]);
       return;
     }
@@ -227,8 +231,7 @@ export const InteractiveTerminal = () => {
     setIsLoading(true);
     
     // Add thinking indicator
-    const thinkingId = lineIdCounter;
-    setLineIdCounter(prev => prev + 1);
+    const thinkingId = getNextId();
     setLines(prev => [...prev, { id: thinkingId, type: 'system', content: '생각 중...' }]);
     
     const newChatHistory: ChatMessage[] = [...chatHistory, { role: 'user', content: message }];
@@ -261,7 +264,7 @@ export const InteractiveTerminal = () => {
     }
     
     setIsLoading(false);
-  }, [chatHistory, lineIdCounter, addLine, typeLines]);
+  }, [chatHistory, getNextId, addLine, typeLines]);
 
   const handleSubmit = useCallback(async () => {
     const trimmed = input.trim();
