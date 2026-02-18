@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { type SkillT } from '@/api/notion/skills';
 import { IconSlugView } from '@/components/IconSlugView';
 import { SkillIconWrapper } from '@/components/introduce/SkillIconWrapper';
+import { SafeSkillIcon } from '@/components/SafeSkillIcon';
 
 // ── Variants ──────────────────────────────────────────────
 const containerVariants: Variants = {
@@ -53,12 +54,7 @@ export const SkillsStaggerGrid = ({ skills }: SkillsStaggerGridProps) => {
         <motion.div key={skill.id} variants={itemVariants}>
           <Link href={`/skills/${skill.id}`}>
             <SkillIconWrapper>
-              <IconSlugView
-                className="w-8 h-8"
-                title={skill.title}
-                slug={skill.slug}
-                color={skill.iconColor}
-              />
+              <SafeSkillIcon skill={skill} />
             </SkillIconWrapper>
           </Link>
         </motion.div>

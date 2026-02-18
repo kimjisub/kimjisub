@@ -73,14 +73,34 @@ export interface IconSlugSvgProps {
 
 export const IconSlugSvg: React.FC<IconSlugSvgProps> = ({ slugData }) => {
   if (slugData.type === 'custom') {
-    return (
-      <slugData.component
-        color="#fff"
-        width={32}
-        height={32}
-        viewBox="0 0 24 24"
-      />
-    );
+    try {
+      const Component = slugData.component;
+      // Check if it's a valid React component (function or class)
+      if (typeof Component === 'function') {
+        return (
+          <Component
+            color="#fff"
+            width={32}
+            height={32}
+            viewBox="0 0 24 24"
+          />
+        );
+      }
+      // If it's an object (Next.js Image-like import), render fallback
+      console.warn(`IconSlugSvg: Invalid component for slug "${slugData.slug}"`);
+      return (
+        <span className="w-8 h-8 flex items-center justify-center text-white text-xs">
+          {slugData.slug.slice(0, 2).toUpperCase()}
+        </span>
+      );
+    } catch (e) {
+      console.error(`IconSlugSvg error for "${slugData.slug}":`, e);
+      return (
+        <span className="w-8 h-8 flex items-center justify-center text-white text-xs">
+          {slugData.slug.slice(0, 2).toUpperCase()}
+        </span>
+      );
+    }
   }
 
   if (slugData.type === 'simpleIcon') {
@@ -97,8 +117,8 @@ export const IconSlugSvg: React.FC<IconSlugSvgProps> = ({ slugData }) => {
   }
 
   return (
-    <span className={`w-8 h-8 items-center justify-center content-center`}>
-      <Text>{slugData.slug}</Text>
+    <span className="w-8 h-8 flex items-center justify-center text-white text-xs">
+      {slugData.slug.slice(0, 2).toUpperCase()}
     </span>
   );
 };
