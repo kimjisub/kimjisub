@@ -66,13 +66,17 @@ export const RoughHighlight = ({
   }, [type, resolvedTheme]);
 
   useEffect(() => {
-    // Wait for layout to stabilize before mounting
-    const timeoutId = requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        setMounted(true);
-      });
-    });
-    return () => cancelAnimationFrame(timeoutId);
+    // Wait for fonts to load and layout to stabilize
+    const init = async () => {
+      // Wait for fonts
+      if (document.fonts?.ready) {
+        await document.fonts.ready;
+      }
+      // Additional delay for layout stability
+      await new Promise(resolve => setTimeout(resolve, 100));
+      setMounted(true);
+    };
+    init();
   }, []);
 
   // Intersection Observer for scroll trigger
