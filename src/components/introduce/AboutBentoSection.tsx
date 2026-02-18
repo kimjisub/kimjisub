@@ -301,7 +301,7 @@ function MilestoneCard() {
   return (
     <BentoCard size="1x1" accent>
       <div 
-        className="h-full flex flex-col"
+        className="flex flex-col"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -316,28 +316,17 @@ function MilestoneCard() {
           </span>
         </div>
 
-        {/* Content with animation */}
-        <div className="flex-1 relative overflow-hidden">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={current}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3, ease: 'easeOut' }}
-              className="absolute inset-0"
-            >
-              <div className="flex items-center gap-2 mb-1">
-                <Icon className={`w-5 h-5 ${milestone.color}`} />
-                <span className="text-[10px] text-muted-foreground/60">{milestone.year}</span>
-              </div>
-              <p className={`text-3xl font-bold tabular-nums ${milestone.color}`}>
-                {milestone.value.toLocaleString()}{milestone.suffix}
-              </p>
-              <p className="text-sm text-foreground font-medium mt-1">{milestone.label}</p>
-              <p className="text-xs text-muted-foreground mt-0.5">{milestone.sublabel}</p>
-            </motion.div>
-          </AnimatePresence>
+        {/* Content */}
+        <div className="min-h-[100px]">
+          <div className="flex items-center gap-2 mb-1">
+            <Icon className={`w-5 h-5 ${milestone.color}`} />
+            <span className="text-[10px] text-muted-foreground/60">{milestone.year}</span>
+          </div>
+          <p className={`text-3xl font-bold tabular-nums ${milestone.color}`}>
+            {milestone.value.toLocaleString()}{milestone.suffix}
+          </p>
+          <p className="text-sm text-foreground font-medium mt-1">{milestone.label}</p>
+          <p className="text-xs text-muted-foreground mt-0.5">{milestone.sublabel}</p>
         </div>
 
         {/* Dots indicator */}

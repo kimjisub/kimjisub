@@ -88,10 +88,11 @@ export function BentoGrid({ children, className = '', cols = 4 }: BentoGridProps
   return (
     <div
       className={[
-        'grid gap-4 auto-rows-[minmax(120px,auto)]',
+        'grid gap-4',
         colClass,
         className,
       ].join(' ')}
+      style={{ gridAutoRows: 'minmax(180px, auto)' }}
     >
       {children}
     </div>
