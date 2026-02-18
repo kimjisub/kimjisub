@@ -29,15 +29,33 @@ export async function PATCH(request: NextRequest) {
   }
 
   try {
-    const { id, status, displayOrder } = await request.json();
+    const { 
+      id, 
+      status, 
+      displayOrder,
+      authorName,
+      authorTitle,
+      authorCompany,
+      authorEmail,
+      authorUrl,
+      content,
+      relationship,
+    } = await request.json();
 
     if (!id) {
       return NextResponse.json({ error: "id is required" }, { status: 400 });
     }
 
     const updateData: Record<string, unknown> = {};
-    if (status) updateData.status = status;
+    if (status !== undefined) updateData.status = status;
     if (displayOrder !== undefined) updateData.displayOrder = displayOrder;
+    if (authorName !== undefined) updateData.authorName = authorName;
+    if (authorTitle !== undefined) updateData.authorTitle = authorTitle || null;
+    if (authorCompany !== undefined) updateData.authorCompany = authorCompany || null;
+    if (authorEmail !== undefined) updateData.authorEmail = authorEmail || null;
+    if (authorUrl !== undefined) updateData.authorUrl = authorUrl || null;
+    if (content !== undefined) updateData.content = content;
+    if (relationship !== undefined) updateData.relationship = relationship || null;
 
     const testimonial = await prisma.testimonial.update({
       where: { id },

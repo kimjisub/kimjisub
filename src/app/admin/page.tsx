@@ -14,6 +14,7 @@ import {
   X,
   Trash2,
   ExternalLink,
+  Pencil,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -82,6 +83,9 @@ export default function AdminPage() {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [contacts, setContacts] = useState<Contact[]>([]);
   const [comments, setComments] = useState<Comment[]>([]);
+  
+  // Edit modal
+  const [editingTestimonial, setEditingTestimonial] = useState<Testimonial | null>(null);
 
   useEffect(() => {
     checkAuth();
@@ -141,12 +145,22 @@ export default function AdminPage() {
     }
   };
 
-  const updateTestimonial = async (id: string, status: string) => {
+  const updateTestimonialStatus = async (id: string, status: string) => {
     await fetch("/api/admin/testimonials", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id, status }),
     });
+    fetchData();
+  };
+
+  const saveTestimonial = async (data: Partial<Testimonial> & { id: string }) => {
+    await fetch("/api/admin/testimonials", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    setEditingTestimonial(null);
     fetchData();
   };
 
@@ -433,10 +447,17 @@ export default function AdminPage() {
                     </div>
                   </div>
                   <p className="text-gray-300 mb-4 whitespace-pre-wrap">{t.content}</p>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <button
+                      onClick={() => setEditingTestimonial(t)}
+                      className="flex items-center gap-1 px-3 py-1.5 bg-blue-500/20 text-blue-400 
+                                 rounded-lg hover:bg-blue-500/30 transition-colors"
+                    >
+                      <Pencil className="w-4 h-4" /> 수정
+                    </button>
                     {t.status !== "APPROVED" && (
                       <button
-                        onClick={() => updateTestimonial(t.id, "APPROVED")}
+                        onClick={() => updateTestimonialStatus(t.id, "APPROVED")}
                         className="flex items-center gap-1 px-3 py-1.5 bg-green-500/20 text-green-400 
                                    rounded-lg hover:bg-green-500/30 transition-colors"
                       >
@@ -445,7 +466,7 @@ export default function AdminPage() {
                     )}
                     {t.status !== "REJECTED" && (
                       <button
-                        onClick={() => updateTestimonial(t.id, "REJECTED")}
+                        onClick={() => updateTestimonialStatus(t.id, "REJECTED")}
                         className="flex items-center gap-1 px-3 py-1.5 bg-red-500/20 text-red-400 
                                    rounded-lg hover:bg-red-500/30 transition-colors"
                       >
@@ -568,6 +589,190 @@ export default function AdminPage() {
             )}
           </div>
         )}
+      </div>
+
+      {/* Edit Testimonial Modal */}
+      {editingTestimonial && (
+        <TestimonialEditModal
+          testimonial={editingTestimonial}
+          onSave={saveTestimonial}
+          onClose={() => setEditingTestimonial(null)}
+        />
+      )}
+    </div>
+  );
+}
+
+function TestimonialEditModal({
+  testimonial,
+  onSave,
+  onClose,
+}: {
+  testimonial: Testimonial;
+  onSave: (data: Partial<Testimonial> & { id: string }) => void;
+  onClose: () => void;
+}) {
+  const [form, setForm] = useState({
+    authorName: testimonial.authorName,
+    authorTitle: testimonial.authorTitle || "",
+    authorCompany: testimonial.authorCompany || "",
+    authorEmail: testimonial.authorEmail || "",
+    authorUrl: testimonial.authorUrl || "",
+    content: testimonial.content,
+    relationship: testimonial.relationship || "",
+    status: testimonial.status,
+    displayOrder: testimonial.displayOrder ?? "",
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    onSave({
+      id: testimonial.id,
+      ...form,
+      displayOrder: form.displayOrder === "" ? undefined : Number(form.displayOrder),
+    });
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
+      <div className="relative w-full max-w-2xl bg-[#1E293B] border border-white/10 rounded-2xl p-6 shadow-xl max-h-[90vh] overflow-y-auto">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 p-2 text-gray-400 hover:text-white transition-colors"
+        >
+          <X className="w-5 h-5" />
+        </button>
+
+        <h3 className="text-xl font-semibold text-white mb-6">추천사 수정</h3>
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-1">이름 *</label>
+              <input
+                type="text"
+                required
+                value={form.authorName}
+                onChange={(e) => setForm({ ...form, authorName: e.target.value })}
+                className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg 
+                           text-white focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-1">이메일</label>
+              <input
+                type="email"
+                value={form.authorEmail}
+                onChange={(e) => setForm({ ...form, authorEmail: e.target.value })}
+                className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg 
+                           text-white focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-1">직함</label>
+              <input
+                type="text"
+                value={form.authorTitle}
+                onChange={(e) => setForm({ ...form, authorTitle: e.target.value })}
+                className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg 
+                           text-white focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-1">회사</label>
+              <input
+                type="text"
+                value={form.authorCompany}
+                onChange={(e) => setForm({ ...form, authorCompany: e.target.value })}
+                className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg 
+                           text-white focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-300 mb-1">링크 (URL)</label>
+            <input
+              type="url"
+              value={form.authorUrl}
+              onChange={(e) => setForm({ ...form, authorUrl: e.target.value })}
+              className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg 
+                         text-white focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+              placeholder="https://..."
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-300 mb-1">관계</label>
+            <input
+              type="text"
+              value={form.relationship}
+              onChange={(e) => setForm({ ...form, relationship: e.target.value })}
+              className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg 
+                         text-white focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+              placeholder="전 직장 동료, 프로젝트 협업 등"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-300 mb-1">추천사 내용 *</label>
+            <textarea
+              required
+              rows={4}
+              value={form.content}
+              onChange={(e) => setForm({ ...form, content: e.target.value })}
+              className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg 
+                         text-white resize-none focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+            />
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-1">상태</label>
+              <select
+                value={form.status}
+                onChange={(e) => setForm({ ...form, status: e.target.value as Testimonial["status"] })}
+                className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg 
+                           text-white focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+              >
+                <option value="PENDING">PENDING</option>
+                <option value="APPROVED">APPROVED</option>
+                <option value="REJECTED">REJECTED</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-1">표시 순서</label>
+              <input
+                type="number"
+                value={form.displayOrder}
+                onChange={(e) => setForm({ ...form, displayOrder: e.target.value })}
+                className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg 
+                           text-white focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+                placeholder="숫자 (낮을수록 먼저)"
+              />
+            </div>
+          </div>
+
+          <div className="flex gap-3 pt-4">
+            <button
+              type="button"
+              onClick={onClose}
+              className="flex-1 py-2.5 bg-white/5 text-gray-300 rounded-lg hover:bg-white/10 transition-colors"
+            >
+              취소
+            </button>
+            <button
+              type="submit"
+              className="flex-1 py-2.5 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+            >
+              저장
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );
