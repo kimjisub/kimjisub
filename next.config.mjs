@@ -1,8 +1,22 @@
-import createMDX from '@next/mdx';
-import rehypePrismPlus from 'rehype-prism-plus';
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Next.js 16: Turbopack configuration
+  turbopack: {
+    rules: {
+      '*.mdx': {
+        loaders: ['@mdx-js/loader'],
+        as: '*.js',
+      },
+      '*.md': {
+        loaders: ['@mdx-js/loader'],
+        as: '*.js',
+      },
+    },
+  },
+  // Next.js 16: Allow dev origins for Tailscale
+  allowedDevOrigins: [
+    'kimjisub-openclaw.tail07a0c6.ts.net',
+  ],
   async headers() {
     return [
       {
@@ -43,48 +57,37 @@ const nextConfig = {
       },
     ],
   },
+  // Webpack config (fallback for --webpack mode)
   webpack: config => {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find(rule =>
       rule.test?.test?.('.svg'),
     );
 
-    config.module.rules.push(
-      // Reapply the existing rule, but only for svg imports ending in ?url
-      {
-        ...fileLoaderRule,
-        test: /\.svg$/i,
-        resourceQuery: /url/, // *.svg?url
-      },
-      // Convert all other *.svg imports to React components
-      {
-        test: /\.svg$/i,
-        issuer: fileLoaderRule.issuer,
-        resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] }, // exclude if *.svg?url
-        use: ['@svgr/webpack'],
-      },
-      // Raw loader
-      {
-        test: /\.svg$/i,
-        issuer: fileLoaderRule.issuer,
-        use: ['raw-loader'],
-        resourceQuery: /raw/, // *.svg?raw
-      },
-    );
+    if (fileLoaderRule) {
+      config.module.rules.push(
+        // Reapply the existing rule, but only for svg imports ending in ?url
+        {
+          ...fileLoaderRule,
+          test: /\.svg$/i,
+          resourceQuery: /url/, // *.svg?url
+        },
+        // Convert all other *.svg imports to React components
+        {
+          test: /\.svg$/i,
+          issuer: fileLoaderRule.issuer,
+          resourceQuery: { not: [...(fileLoaderRule.resourceQuery?.not || []), /url/] },
+          use: ['@svgr/webpack'],
+        },
+      );
 
-    // Modify the file loader rule to ignore *.svg, since we have it handled now.
-    fileLoaderRule.exclude = /\.svg$/i;
+      // Modify the file loader rule to ignore *.svg
+      fileLoaderRule.exclude = /\.svg$/i;
+    }
 
     return config;
   },
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
 };
 
-const withMDX = createMDX({
-	extension: /\.(md|mdx)$/,
-	options: {
-		rehypePlugins: [[rehypePrismPlus, { ignoreMissing: true }]],
-	},
-});
-
-export default withMDX(nextConfig);
+export default nextConfig;
