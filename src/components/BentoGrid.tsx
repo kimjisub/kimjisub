@@ -17,11 +17,12 @@ export interface BentoCardProps {
   accent?: boolean;
 }
 
+// Note: col-span은 wrapper에서 제어, BentoCard는 내부 스타일만 담당
 const sizeClasses: Record<BentoCardSize, string> = {
-  '1x1': 'col-span-1 row-span-1',
-  '2x1': 'col-span-2 row-span-1',
-  '1x2': 'col-span-1 row-span-2',
-  '2x2': 'col-span-2 row-span-2',
+  '1x1': '',
+  '2x1': '',
+  '1x2': '',
+  '2x2': '',
 };
 
 /**

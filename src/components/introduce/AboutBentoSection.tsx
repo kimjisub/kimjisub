@@ -102,12 +102,12 @@ function RoleCard() {
       <p className="text-xs text-muted-foreground uppercase tracking-widest mb-3">Current Roles</p>
       <div className="flex flex-col gap-3">
         {roles.map(({ company, role, badge, color }) => (
-          <div key={company} className="flex items-center justify-between gap-2">
+          <div key={company} className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
             <div>
               <span className="font-semibold text-foreground text-sm">{company}</span>
               <span className="text-muted-foreground text-xs ml-2">— {role}</span>
             </div>
-            <span className={`shrink-0 text-[10px] font-medium px-2 py-0.5 rounded-full border ${color}`}>
+            <span className={`self-start sm:self-auto shrink-0 text-[10px] font-medium px-2 py-0.5 rounded-full border ${color}`}>
               {badge}
             </span>
           </div>
@@ -208,20 +208,20 @@ export function AboutBentoSection() {
             Mobile (1-col): stacked.
           */}
           <BentoGrid cols={4}>
-            <motion.div variants={item} className="col-span-1 row-span-1">
+            <motion.div variants={item} className="col-span-1">
               <LocationCard />
             </motion.div>
-            <motion.div variants={item} className="col-span-2 row-span-1 sm:col-span-2">
+            <motion.div variants={item} className="col-span-1 sm:col-span-2">
               <RoleCard />
             </motion.div>
-            <motion.div variants={item} className="col-span-1 row-span-1">
+            <motion.div variants={item} className="col-span-1">
               <MilestoneCard />
             </motion.div>
 
-            <motion.div variants={item} className="col-span-1 row-span-1">
+            <motion.div variants={item} className="col-span-1">
               <InterestCard />
             </motion.div>
-            <motion.div variants={item} className="col-span-2 row-span-1 sm:col-span-2">
+            <motion.div variants={item} className="col-span-1 sm:col-span-2">
               <TechStackCard />
             </motion.div>
           </BentoGrid>
