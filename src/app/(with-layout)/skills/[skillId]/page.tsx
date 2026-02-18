@@ -19,6 +19,7 @@ const EXCLUDED_SKILL_IDS = [
 	'e1dd526d-97da-424a-b1dc-e7ffd5fbc26d', // Element type invalid error during prerender
 	'681343ff-92ca-42c7-a073-7f72ef77e7ef', // Element type invalid error during prerender
 	'b0dae757-f63f-4523-880a-116d4039afa6', // Element type invalid error during prerender
+	'd13c7309-6784-432b-b787-dea741b28eb3', // Element type invalid error during prerender
 ];
 
 export async function generateStaticParams() {
