@@ -2,17 +2,13 @@
 
 import { KeyboardEvent, useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { ArrowUp, Command, Sparkles, Terminal, User } from 'lucide-react';
 
-interface TerminalLine {
+interface Message {
   id: number;
-  type: 'input' | 'output' | 'ascii' | 'ai' | 'thinking';
+  type: 'user' | 'assistant' | 'system' | 'command';
   content: string;
   isTyping?: boolean;
-}
-
-interface CommandOutput {
-  lines: string[];
-  isAscii?: boolean;
 }
 
 interface ChatMessage {
@@ -20,247 +16,142 @@ interface ChatMessage {
   content: string;
 }
 
-const NEOFETCH_ASCII = `
-   ██╗  ██╗██╗███╗   ███╗     ██╗██╗███████╗██╗   ██╗██████╗ 
-   ██║ ██╔╝██║████╗ ████║     ██║██║██╔════╝██║   ██║██╔══██╗
-   █████╔╝ ██║██╔████╔██║     ██║██║███████╗██║   ██║██████╔╝
-   ██╔═██╗ ██║██║╚██╔╝██║██   ██║██║╚════██║██║   ██║██╔══██╗
-   ██║  ██╗██║██║ ╚═╝ ██║╚█████╔╝██║███████║╚██████╔╝██████╔╝
-   ╚═╝  ╚═╝╚═╝╚═╝     ╚═╝ ╚════╝ ╚═╝╚══════╝ ╚═════╝ ╚═════╝ 
-`;
+const WELCOME_MESSAGES: Message[] = [
+  { id: 0, type: 'system', content: '김지섭의 AI 포트폴리오에 오신 걸 환영합니다 👋' },
+  { id: 1, type: 'system', content: '궁금한 점을 자유롭게 물어보세요. /help로 명령어도 확인할 수 있어요.' },
+];
 
-const commands: Record<string, () => CommandOutput> = {
-  help: () => ({
-    lines: [
-      '┌─────────────────────────────────────────────┐',
-      '│           Available Commands                │',
-      '├─────────────────────────────────────────────┤',
-      '│  /help      - Show this help message        │',
-      '│  /about     - About me                      │',
-      '│  /skills    - My tech stack                 │',
-      '│  /projects  - Featured projects             │',
-      '│  /contact   - Get in touch                  │',
-      '│  /neofetch  - System info (fun)             │',
-      '│  /whoami    - Who am I?                     │',
-      '│  /clear     - Clear terminal                │',
-      '│  /history   - Command history               │',
-      '├─────────────────────────────────────────────┤',
-      '│  Or just type naturally to chat with AI!   │',
-      '│  Try: "What projects have you worked on?"  │',
-      '└─────────────────────────────────────────────┘',
-    ],
-  }),
-  
-  about: () => ({
-    lines: [
-      '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
-      '  Kim Jisub (김지섭)',
-      '  CTO & Product Engineer',
-      '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
-      '',
-      '  • Started coding when my app hit 5M+ downloads',
-      '  • That app was UniPad (made in middle school)',
-      '  • Currently CTO @ Alpaon (Industrial IoT)',
-      '  • Product Engineer @ Candid (Recruiting Platform)',
-      '  • Studying CS @ Hankuk Univ. of Foreign Studies',
-      '  • Alumnus of Hankuk Digital Media High School',
-      '',
-      '  I don\'t just write code.',
-      '  I care about how products are used.',
-      '',
-    ],
-  }),
-  
-  skills: () => ({
-    lines: [
-      '┌──────────────────────────────────────────────┐',
-      '│              Tech Stack                      │',
-      '├──────────────────────────────────────────────┤',
-      '│                                              │',
-      '│  Frontend     │  React, Next.js, TypeScript  │',
-      '│               │  Vue.js, Tailwind CSS        │',
-      '│                                              │',
-      '│  Backend      │  Node.js, NestJS, Python     │',
-      '│               │  FastAPI, PostgreSQL         │',
-      '│                                              │',
-      '│  Mobile       │  Android (Kotlin/Java)       │',
-      '│               │  React Native, Flutter       │',
-      '│                                              │',
-      '│  DevOps       │  Docker, Kubernetes, AWS     │',
-      '│               │  CI/CD, Terraform            │',
-      '│                                              │',
-      '│  AI/ML        │  LLM Integration, RAG        │',
-      '│               │  OpenAI, LangChain           │',
-      '│                                              │',
-      '└──────────────────────────────────────────────┘',
-    ],
-  }),
-  
-  projects: () => ({
-    lines: [
-      '',
-      '  ╔══════════════════════════════════════════════════════╗',
-      '  ║                  Featured Projects                   ║',
-      '  ╚══════════════════════════════════════════════════════╝',
-      '',
-      '  [1] UniPad',
-      '      Launchpad simulator with 5M+ downloads',
-      '      → https://play.google.com/store/apps/details?id=com.kimjisub.launchpad',
-      '',
-      '  [2] Alpaon IoT Platform',
-      '      Industrial IoT monitoring system',
-      '      → https://alpaon.com',
-      '',
-      '  [3] Candid',
-      '      AI-powered recruiting platform',
-      '      → https://candid.co.kr',
-      '',
-      '  [4] GitHub',
-      '      More projects on my GitHub',
-      '      → https://github.com/kimjisub',
-      '',
-    ],
-  }),
-  
-  contact: () => ({
-    lines: [
-      '',
-      '  ┌─────────────────────────────────────────┐',
-      '  │            Contact Information          │',
-      '  └─────────────────────────────────────────┘',
-      '',
-      '    📧 Email    : 0226daniel@gmail.com',
-      '    💼 LinkedIn : linkedin.com/in/kimjisub',
-      '    🐙 GitHub   : github.com/kimjisub',
-      '    🌐 Website  : kimjisub.com',
-      '',
-      '    Feel free to reach out!',
-      '',
-    ],
-  }),
-  
-  neofetch: () => ({
-    lines: [
-      NEOFETCH_ASCII,
-      '',
-      '  ┌──────────────────────────────────────────┐',
-      '  │  jisub@portfolio                         │',
-      '  ├──────────────────────────────────────────┤',
-      '  │  OS        │ Human 1.0 (Developer Mode)  │',
-      '  │  Host      │ South Korea                 │',
-      '  │  Kernel    │ Caffeinated-6.0-LTS         │',
-      '  │  Uptime    │ 25+ years                   │',
-      '  │  Packages  │ npm, pip, brew, apt         │',
-      '  │  Shell     │ zsh + oh-my-zsh             │',
-      '  │  Editor    │ VS Code / Cursor            │',
-      '  │  Terminal  │ iTerm2 / Warp               │',
-      '  │  Theme     │ Dark Mode Forever           │',
-      '  │  CPU       │ Caffeine-powered Brain      │',
-      '  │  Memory    │ 99% used by side projects   │',
-      '  └──────────────────────────────────────────┘',
-      '',
-    ],
-    isAscii: true,
-  }),
-  
-  whoami: () => ({
-    lines: [
-      '',
-      '  > Kim Jisub (김지섭)',
-      '  > CTO & Co-founder @ Alpaon',
-      '  > Product Engineer @ Candid',
-      '  > CS Student @ HUFS',
-      '',
-      '  Status: Building cool stuff ⚡',
-      '',
-    ],
-  }),
+const COMMANDS: Record<string, () => string[]> = {
+  help: () => [
+    '📋 **사용 가능한 명령어**',
+    '',
+    '`/about` - 저에 대해',
+    '`/skills` - 기술 스택',
+    '`/projects` - 주요 프로젝트',
+    '`/contact` - 연락처',
+    '`/clear` - 대화 초기화',
+    '',
+    '또는 자연어로 질문해보세요!',
+    '예: "어떤 프로젝트 해봤어요?"',
+  ],
+  about: () => [
+    '👋 **김지섭 (Jisub Kim)**',
+    '',
+    '• Alpaon CTO & 코파운더 (산업용 IoT)',
+    '• Candid Product Engineer (스타트업 채용)',
+    '• 한국외대 컴공 졸업 예정',
+    '',
+    '중학생 때 만든 UniPad가 1,000만 다운로드를 넘으면서',
+    '이 길이 내 길이구나 확신하게 됐어요.',
+    '',
+    '"코드 작성"보다 "돌아가는 시스템 만들기"를 좋아합니다.',
+  ],
+  skills: () => [
+    '🛠️ **기술 스택**',
+    '',
+    '**Frontend**: React, Next.js, TypeScript, Vue.js',
+    '**Backend**: Node.js, NestJS, Python, FastAPI',
+    '**Mobile**: Android (Kotlin), React Native',
+    '**DevOps**: Docker, K8s, AWS, Terraform',
+    '**AI/ML**: LLM Integration, RAG, 추천시스템',
+    '**Firmware**: C/C++ (펌웨어 개발)',
+  ],
+  projects: () => [
+    '🚀 **주요 프로젝트**',
+    '',
+    '**UniPad** - 1,000만+ 다운로드 런치패드 앱',
+    '→ 중학생 때 개발, 광고 수익으로 대기업 초봉급 월수입',
+    '',
+    '**AlpaConnect** - 산업용 PLC 클라우드 연결',
+    '→ 원격 모니터링/제어, LLM 기반 대화형 제어',
+    '',
+    '**Candid AI** - 스타트업 채용 추천 시스템',
+    '→ 2-stage 추천, AI Agent 개발',
+  ],
+  contact: () => [
+    '📬 **연락처**',
+    '',
+    '• Email: 0226daniel@gmail.com',
+    '• GitHub: github.com/kimjisub',
+    '• LinkedIn: linkedin.com/in/kimjisub',
+    '',
+    '협업이나 문의는 편하게 연락주세요!',
+  ],
 };
 
 export const InteractiveTerminal = () => {
-  const [lines, setLines] = useState<TerminalLine[]>([
-    { id: 0, type: 'output', content: 'Welcome to Jisub\'s AI-powered portfolio terminal! 🚀' },
-    { id: 1, type: 'output', content: '' },
-    { id: 2, type: 'output', content: 'Type naturally to chat with AI, or use /commands.' },
-    { id: 3, type: 'output', content: 'Try: "Tell me about your experience" or /help' },
-    { id: 4, type: 'output', content: '' },
-  ]);
-  const [currentInput, setCurrentInput] = useState('');
-  const [commandHistory, setCommandHistory] = useState<string[]>([]);
-  const [historyIndex, setHistoryIndex] = useState(-1);
-  const [lineIdCounter, setLineIdCounter] = useState(5);
-  const [isTyping, setIsTyping] = useState(false);
-  const [isWaitingAI, setIsWaitingAI] = useState(false);
+  const [messages, setMessages] = useState<Message[]>(WELCOME_MESSAGES);
+  const [input, setInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
+  const [messageIdCounter, setMessageIdCounter] = useState(2);
   
-  const inputRef = useRef<HTMLInputElement>(null);
-  const terminalRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
   
   const scrollToBottom = useCallback(() => {
-    if (terminalRef.current) {
-      terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
-    }
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, []);
   
   useEffect(() => {
     scrollToBottom();
-  }, [lines, scrollToBottom]);
-  
-  useEffect(() => {
-    if (!isTyping && !isWaitingAI) {
-      inputRef.current?.focus();
-    }
-  }, [isTyping, isWaitingAI]);
-  
-  const typeOutput = useCallback(async (outputLines: string[], startId: number, isAscii?: boolean, type: 'output' | 'ai' = 'output') => {
-    setIsTyping(true);
-    
-    for (let i = 0; i < outputLines.length; i++) {
-      const line = outputLines[i];
-      const lineId = startId + i;
-      
-      if (isAscii || line.includes('╔') || line.includes('═') || line.includes('┌') || line.includes('─') || line.includes('│') || line.includes('└') || line.includes('┘') || line.includes('━')) {
-        setLines(prev => [...prev, { 
-          id: lineId, 
-          type: isAscii ? 'ascii' : type, 
-          content: line 
-        }]);
-        await new Promise(resolve => setTimeout(resolve, 20));
-      } else if (line.trim() === '') {
-        setLines(prev => [...prev, { id: lineId, type, content: '' }]);
-        await new Promise(resolve => setTimeout(resolve, 10));
-      } else {
-        let displayedContent = '';
-        setLines(prev => [...prev, { id: lineId, type, content: '', isTyping: true }]);
-        
-        for (let j = 0; j < line.length; j++) {
-          displayedContent += line[j];
-          const content = displayedContent;
-          setLines(prev => prev.map(l => 
-            l.id === lineId ? { ...l, content } : l
-          ));
-          await new Promise(resolve => setTimeout(resolve, type === 'ai' ? 12 : 8));
-        }
-        
-        setLines(prev => prev.map(l => 
-          l.id === lineId ? { ...l, isTyping: false } : l
-        ));
-      }
-    }
-    
-    setIsTyping(false);
-  }, []);
+  }, [messages, scrollToBottom]);
 
-  const sendToAI = useCallback(async (message: string, inputLineId: number) => {
-    setIsWaitingAI(true);
+  // Auto-resize textarea
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.style.height = 'auto';
+      inputRef.current.style.height = `${Math.min(inputRef.current.scrollHeight, 120)}px`;
+    }
+  }, [input]);
+
+  const addMessage = useCallback((type: Message['type'], content: string) => {
+    const newId = messageIdCounter;
+    setMessageIdCounter(prev => prev + 1);
+    setMessages(prev => [...prev, { id: newId, type, content }]);
+    return newId;
+  }, [messageIdCounter]);
+
+  const typeMessage = useCallback(async (content: string) => {
+    const newId = messageIdCounter;
+    setMessageIdCounter(prev => prev + 1);
     
-    // Add thinking indicator
-    const thinkingId = inputLineId + 1;
-    setLines(prev => [...prev, { 
-      id: thinkingId, 
-      type: 'thinking', 
-      content: '🤔 Thinking...' 
-    }]);
+    setMessages(prev => [...prev, { id: newId, type: 'assistant', content: '', isTyping: true }]);
+    
+    // Type character by character
+    for (let i = 0; i <= content.length; i++) {
+      await new Promise(resolve => setTimeout(resolve, 12));
+      setMessages(prev => prev.map(m => 
+        m.id === newId ? { ...m, content: content.slice(0, i) } : m
+      ));
+    }
+    
+    setMessages(prev => prev.map(m => 
+      m.id === newId ? { ...m, isTyping: false } : m
+    ));
+  }, [messageIdCounter]);
+
+  const handleCommand = useCallback(async (cmd: string) => {
+    const cmdName = cmd.slice(1).toLowerCase().trim();
+    
+    if (cmdName === 'clear') {
+      setMessages(WELCOME_MESSAGES);
+      setMessageIdCounter(2);
+      setChatHistory([]);
+      return;
+    }
+    
+    const commandFn = COMMANDS[cmdName];
+    if (commandFn) {
+      const output = commandFn().join('\n');
+      await typeMessage(output);
+    } else {
+      addMessage('system', `알 수 없는 명령어: /${cmdName}. /help로 명령어를 확인하세요.`);
+    }
+  }, [addMessage, typeMessage]);
+
+  const sendToAI = useCallback(async (message: string) => {
+    setIsLoading(true);
     
     const newChatHistory: ChatMessage[] = [...chatHistory, { role: 'user', content: message }];
     
@@ -271,248 +162,180 @@ export const InteractiveTerminal = () => {
         body: JSON.stringify({ messages: newChatHistory }),
       });
       
-      if (!response.ok) {
-        throw new Error('API request failed');
-      }
+      if (!response.ok) throw new Error('API request failed');
       
       const data = await response.json();
-      const aiResponse = data.response || 'Sorry, I couldn\'t generate a response.';
+      const aiResponse = data.response || '응답을 생성하지 못했어요.';
       
-      // Remove thinking indicator
-      setLines(prev => prev.filter(l => l.id !== thinkingId));
-      
-      // Update chat history
       setChatHistory([...newChatHistory, { role: 'assistant', content: aiResponse }]);
-      
-      // Type AI response
-      const responseLines = aiResponse.split('\n');
-      await typeOutput(responseLines, thinkingId, false, 'ai');
-      setLineIdCounter(prev => prev + responseLines.length + 1);
+      await typeMessage(aiResponse);
       
     } catch (error) {
       console.error('AI chat error:', error);
-      setLines(prev => prev.filter(l => l.id !== thinkingId));
-      setLines(prev => [...prev, { 
-        id: thinkingId, 
-        type: 'output', 
-        content: '  ⚠️ Failed to get AI response. Try /help for commands.' 
-      }]);
-      setLineIdCounter(prev => prev + 2);
+      addMessage('system', '⚠️ 응답을 가져오는 데 실패했어요. 잠시 후 다시 시도해주세요.');
     }
     
-    setIsWaitingAI(false);
-  }, [chatHistory, typeOutput]);
-  
-  const handleCommand = useCallback(async (cmd: string) => {
-    const trimmedCmd = cmd.trim();
-    const inputLineId = lineIdCounter;
+    setIsLoading(false);
+  }, [chatHistory, addMessage, typeMessage]);
+
+  const handleSubmit = useCallback(async () => {
+    const trimmed = input.trim();
+    if (!trimmed || isLoading) return;
     
-    // Add input line
-    setLines(prev => [...prev, { id: inputLineId, type: 'input', content: cmd }]);
-    setLineIdCounter(prev => prev + 1);
+    setInput('');
+    addMessage('user', trimmed);
     
-    if (trimmedCmd === '') {
-      return;
-    }
-    
-    // Add to history
-    if (trimmedCmd !== commandHistory[0]) {
-      setCommandHistory(prev => [trimmedCmd, ...prev.slice(0, 49)]);
-    }
-    setHistoryIndex(-1);
-    
-    // Check if it's a slash command
-    if (trimmedCmd.startsWith('/')) {
-      const cmdName = trimmedCmd.slice(1).toLowerCase();
-      
-      if (cmdName === 'clear') {
-        setLines([]);
-        setLineIdCounter(0);
-        setChatHistory([]);
-        setTimeout(() => inputRef.current?.focus(), 0);
-        return;
-      }
-      
-      if (cmdName === 'history') {
-        const historyOutput: CommandOutput = {
-          lines: [
-            '',
-            '  Command History:',
-            ...commandHistory.slice(0, 10).map((h, i) => `    ${i + 1}. ${h}`),
-            '',
-          ],
-        };
-        await typeOutput(historyOutput.lines, inputLineId + 1);
-        setLineIdCounter(prev => prev + historyOutput.lines.length + 1);
-        return;
-      }
-      
-      const commandFn = commands[cmdName];
-      
-      if (commandFn) {
-        const output = commandFn();
-        await typeOutput(output.lines, inputLineId + 1, output.isAscii);
-        setLineIdCounter(prev => prev + output.lines.length + 1);
-      } else {
-        const errorLines = [
-          `  Command not found: /${cmdName}`,
-          '  Type /help for available commands.',
-          '',
-        ];
-        await typeOutput(errorLines, inputLineId + 1);
-        setLineIdCounter(prev => prev + errorLines.length + 1);
-      }
+    if (trimmed.startsWith('/')) {
+      await handleCommand(trimmed);
     } else {
-      // Natural language - send to AI
-      await sendToAI(trimmedCmd, inputLineId);
+      await sendToAI(trimmed);
     }
-  }, [lineIdCounter, commandHistory, typeOutput, sendToAI]);
-  
-  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (isTyping || isWaitingAI) {
+  }, [input, isLoading, addMessage, handleCommand, sendToAI]);
+
+  const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      return;
-    }
-    
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      void handleCommand(currentInput);
-      setCurrentInput('');
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      if (commandHistory.length > 0 && historyIndex < commandHistory.length - 1) {
-        const newIndex = historyIndex + 1;
-        setHistoryIndex(newIndex);
-        setCurrentInput(commandHistory[newIndex]);
-      }
-    } else if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      if (historyIndex > 0) {
-        const newIndex = historyIndex - 1;
-        setHistoryIndex(newIndex);
-        setCurrentInput(commandHistory[newIndex]);
-      } else if (historyIndex === 0) {
-        setHistoryIndex(-1);
-        setCurrentInput('');
-      }
-    } else if (e.key === 'l' && e.ctrlKey) {
-      e.preventDefault();
-      setLines([]);
-      setLineIdCounter(0);
-      setChatHistory([]);
+      void handleSubmit();
     }
   };
-  
-  const focusInput = () => {
-    inputRef.current?.focus();
+
+  const renderContent = (content: string) => {
+    // Simple markdown-like rendering
+    return content.split('\n').map((line, i) => {
+      let processed = line;
+      // Bold
+      processed = processed.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      // Code
+      processed = processed.replace(/`(.+?)`/g, '<code class="bg-muted px-1.5 py-0.5 rounded text-xs">$1</code>');
+      // Links
+      processed = processed.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" class="text-accent hover:underline">$1</a>');
+      
+      return (
+        <span key={i} className="block" dangerouslySetInnerHTML={{ __html: processed || '&nbsp;' }} />
+      );
+    });
   };
-  
+
   return (
-    <div 
-      className="w-full max-w-3xl mx-auto rounded-lg overflow-hidden shadow-2xl border border-border"
-      onClick={focusInput}
-    >
-      {/* Terminal Header */}
-      <div className="flex items-center gap-2 px-4 py-3 bg-secondary border-b border-border">
-        <div className="flex gap-2">
-          <div className="w-3 h-3 rounded-full bg-red-500/80" />
-          <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-          <div className="w-3 h-3 rounded-full bg-green-500/80" />
+    <div className="w-full max-w-2xl mx-auto">
+      {/* Header */}
+      <div className="flex items-center gap-3 mb-4">
+        <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-accent/10 text-accent">
+          <Sparkles className="w-5 h-5" />
         </div>
-        <span className="text-sm text-muted-foreground ml-2 font-mono">
-          jisub@portfolio ~ <span className="text-accent">AI chat enabled</span>
-        </span>
+        <div>
+          <h3 className="font-medium text-foreground">AI로 저에 대해 물어보세요</h3>
+          <p className="text-xs text-muted-foreground">Claude가 저를 대신해 답변해드려요</p>
+        </div>
       </div>
-      
-      {/* Terminal Body */}
-      <div 
-        ref={terminalRef}
-        className="bg-zinc-900 dark:bg-zinc-950 p-4 h-[400px] overflow-y-auto font-mono text-sm cursor-text"
-        style={{ scrollBehavior: 'smooth' }}
-      >
-        <AnimatePresence mode="popLayout">
-          {lines.map((line) => (
+
+      {/* Chat Container */}
+      <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-lg">
+        {/* Messages Area */}
+        <div className="h-[400px] overflow-y-auto p-4 space-y-4">
+          <AnimatePresence mode="popLayout">
+            {messages.map((msg) => (
+              <motion.div
+                key={msg.id}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.2 }}
+                className={`flex gap-3 ${msg.type === 'user' ? 'flex-row-reverse' : ''}`}
+              >
+                {/* Avatar */}
+                {msg.type !== 'system' && (
+                  <div className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center ${
+                    msg.type === 'user' 
+                      ? 'bg-accent text-accent-foreground' 
+                      : msg.type === 'command'
+                      ? 'bg-secondary text-secondary-foreground'
+                      : 'bg-emerald-500/10 text-emerald-500'
+                  }`}>
+                    {msg.type === 'user' ? (
+                      <User className="w-4 h-4" />
+                    ) : msg.type === 'command' ? (
+                      <Terminal className="w-4 h-4" />
+                    ) : (
+                      <Sparkles className="w-4 h-4" />
+                    )}
+                  </div>
+                )}
+                
+                {/* Message Bubble */}
+                <div className={`max-w-[80%] ${
+                  msg.type === 'system' 
+                    ? 'w-full text-center text-sm text-muted-foreground py-2' 
+                    : msg.type === 'user'
+                    ? 'bg-accent text-accent-foreground rounded-2xl rounded-tr-md px-4 py-2.5'
+                    : 'bg-secondary/50 rounded-2xl rounded-tl-md px-4 py-2.5'
+                }`}>
+                  <div className="text-sm leading-relaxed">
+                    {renderContent(msg.content)}
+                    {msg.isTyping && (
+                      <span className="inline-block w-1.5 h-4 bg-current ml-0.5 animate-pulse rounded-sm" />
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+          
+          {isLoading && (
             <motion.div
-              key={line.id}
-              initial={{ opacity: 0, y: 5 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.1 }}
-              className={`
-                whitespace-pre-wrap break-all
-                ${line.type === 'input' ? 'text-accent' : ''}
-                ${line.type === 'output' ? 'text-zinc-300' : ''}
-                ${line.type === 'ascii' ? 'text-accent font-bold' : ''}
-                ${line.type === 'ai' ? 'text-emerald-400' : ''}
-                ${line.type === 'thinking' ? 'text-yellow-400 animate-pulse' : ''}
-              `}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="flex gap-3"
             >
-              {line.type === 'input' && (
-                <span className="text-accent">
-                  <span className="text-blue-400">jisub</span>
-                  <span className="text-zinc-500">@</span>
-                  <span className="text-green-400">portfolio</span>
-                  <span className="text-zinc-500">:</span>
-                  <span className="text-blue-300">~</span>
-                  <span className="text-zinc-500">$</span>
-                  <span className="text-zinc-100"> {line.content}</span>
-                </span>
-              )}
-              {line.type === 'ai' && (
-                <span>
-                  <span className="text-emerald-500">◆ </span>
-                  {line.content}
-                  {line.isTyping && (
-                    <span className="inline-block w-2 h-4 bg-emerald-400 ml-0.5 animate-pulse" />
-                  )}
-                </span>
-              )}
-              {line.type !== 'input' && line.type !== 'ai' && (
-                <>
-                  {line.content}
-                  {line.isTyping && (
-                    <span className="inline-block w-2 h-4 bg-accent ml-0.5 animate-pulse" />
-                  )}
-                </>
-              )}
+              <div className="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
+                <Sparkles className="w-4 h-4" />
+              </div>
+              <div className="bg-secondary/50 rounded-2xl rounded-tl-md px-4 py-3">
+                <div className="flex gap-1">
+                  <span className="w-2 h-2 bg-muted-foreground/50 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                  <span className="w-2 h-2 bg-muted-foreground/50 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                  <span className="w-2 h-2 bg-muted-foreground/50 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                </div>
+              </div>
             </motion.div>
-          ))}
-        </AnimatePresence>
-        
-        {/* Input Line */}
-        {!isTyping && !isWaitingAI && (
-          <div className="flex items-center text-accent">
-            <span className="text-blue-400">jisub</span>
-            <span className="text-zinc-500">@</span>
-            <span className="text-green-400">portfolio</span>
-            <span className="text-zinc-500">:</span>
-            <span className="text-blue-300">~</span>
-            <span className="text-zinc-500">$</span>
-            <span className="text-zinc-100 ml-1">{currentInput}</span>
-            <span className="inline-block w-2 h-5 bg-accent ml-0.5 animate-[pulse_1s_infinite]" />
-            <input
-              ref={inputRef}
-              type="text"
-              value={currentInput}
-              onChange={(e) => setCurrentInput(e.target.value)}
-              onKeyDown={handleKeyDown}
-              className="absolute opacity-0 w-0 h-0"
-              autoCapitalize="none"
-              autoCorrect="off"
-              autoComplete="off"
-              spellCheck={false}
-            />
+          )}
+          
+          <div ref={messagesEndRef} />
+        </div>
+
+        {/* Input Area */}
+        <div className="border-t border-border p-3 bg-background/50">
+          <div className="flex items-end gap-2">
+            <div className="flex-1 relative">
+              <textarea
+                ref={inputRef}
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={handleKeyDown}
+                placeholder="메시지를 입력하세요..."
+                disabled={isLoading}
+                rows={1}
+                className="w-full resize-none bg-secondary/50 border border-border rounded-xl px-4 py-3 pr-12 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 disabled:opacity-50 transition-all"
+                style={{ minHeight: '48px', maxHeight: '120px' }}
+              />
+              <div className="absolute right-3 bottom-3 text-xs text-muted-foreground/50 pointer-events-none hidden sm:flex items-center gap-1">
+                <Command className="w-3 h-3" />
+                <span>K</span>
+              </div>
+            </div>
+            <motion.button
+              onClick={() => void handleSubmit()}
+              disabled={!input.trim() || isLoading}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="shrink-0 w-11 h-11 rounded-xl bg-accent text-accent-foreground flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
+            >
+              <ArrowUp className="w-5 h-5" />
+            </motion.button>
           </div>
-        )}
-      </div>
-      
-      {/* Mobile hint */}
-      <div className="bg-secondary px-4 py-2 border-t border-border flex items-center justify-between">
-        <span className="text-xs text-muted-foreground">
-          Chat naturally or use /commands • ↑↓ history
-        </span>
-        <span className="text-xs text-muted-foreground hidden sm:block">
-          Try: <code className="bg-muted px-1 rounded">What do you do?</code>
-        </span>
+          <p className="text-[10px] text-muted-foreground/50 mt-2 text-center">
+            /help로 명령어 보기 • Shift+Enter로 줄바꿈
+          </p>
+        </div>
       </div>
     </div>
   );

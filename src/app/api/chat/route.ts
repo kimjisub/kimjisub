@@ -109,7 +109,7 @@ export async function POST(request: NextRequest) {
     });
 
     const response = await client.messages.create({
-      model: 'claude-3-5-haiku-latest',
+      model: 'claude-3-5-haiku-20241022',
       max_tokens: 1024,
       system: SYSTEM_PROMPT,
       messages: messages.map((m: { role: string; content: string }) => ({
