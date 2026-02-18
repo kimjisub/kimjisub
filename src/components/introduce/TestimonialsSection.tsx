@@ -448,12 +448,16 @@ export function TestimonialsSection() {
         const res = await fetch('/api/testimonials');
         if (res.ok) {
           const data = await res.json();
-          if (data.length > 0) {
+          if (Array.isArray(data) && data.length > 0) {
             setTestimonials(data);
             setIsEmpty(false);
           } else {
             setIsEmpty(true);
           }
+        } else {
+          // API error
+          console.error('Failed to fetch testimonials:', res.status);
+          setIsEmpty(true);
         }
       } catch (error) {
         console.error('Failed to fetch testimonials:', error);
