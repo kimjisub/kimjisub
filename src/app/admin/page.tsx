@@ -2,6 +2,23 @@
 
 import { useState, useEffect } from "react";
 import {
+  DndContext,
+  closestCenter,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+  DragEndEvent,
+} from "@dnd-kit/core";
+import {
+  arrayMove,
+  SortableContext,
+  sortableKeyboardCoordinates,
+  useSortable,
+  verticalListSortingStrategy,
+} from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
+import {
   Lock,
   LogOut,
   BarChart3,
@@ -15,10 +32,12 @@ import {
   Trash2,
   ExternalLink,
   Pencil,
+  GripVertical,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type Tab = "dashboard" | "testimonials" | "contacts" | "comments";
+type TestimonialFilter = "all" | "PENDING" | "APPROVED" | "REJECTED";
 
 interface Stats {
   totalViews: number;
@@ -84,8 +103,19 @@ export default function AdminPage() {
   const [contacts, setContacts] = useState<Contact[]>([]);
   const [comments, setComments] = useState<Comment[]>([]);
   
+  // Testimonial filter
+  const [testimonialFilter, setTestimonialFilter] = useState<TestimonialFilter>("all");
+  
   // Edit modal
   const [editingTestimonial, setEditingTestimonial] = useState<Testimonial | null>(null);
+
+  // DnD sensors
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
 
   useEffect(() => {
     checkAuth();
@@ -135,7 +165,25 @@ export default function AdminPage() {
       if (res.ok) setStats(await res.json());
     } else if (activeTab === "testimonials") {
       const res = await fetch("/api/admin/testimonials");
-      if (res.ok) setTestimonials(await res.json());
+      if (res.ok) {
+        const data = await res.json();
+        // Sort approved ones by displayOrder
+        const sorted = data.sort((a: Testimonial, b: Testimonial) => {
+          // First sort by status (PENDING first, then APPROVED, then REJECTED)
+          const statusOrder = { PENDING: 0, APPROVED: 1, REJECTED: 2 };
+          if (statusOrder[a.status] !== statusOrder[b.status]) {
+            return statusOrder[a.status] - statusOrder[b.status];
+          }
+          // Within same status, sort by displayOrder (nulls last) then createdAt
+          if (a.status === "APPROVED") {
+            const orderA = a.displayOrder ?? Infinity;
+            const orderB = b.displayOrder ?? Infinity;
+            if (orderA !== orderB) return orderA - orderB;
+          }
+          return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+        });
+        setTestimonials(sorted);
+      }
     } else if (activeTab === "contacts") {
       const res = await fetch("/api/admin/contacts");
       if (res.ok) setContacts(await res.json());
@@ -172,6 +220,40 @@ export default function AdminPage() {
       body: JSON.stringify({ id }),
     });
     fetchData();
+  };
+
+  const handleDragEnd = async (event: DragEndEvent) => {
+    const { active, over } = event;
+
+    if (over && active.id !== over.id) {
+      const approvedItems = testimonials.filter((t) => t.status === "APPROVED");
+      const oldIndex = approvedItems.findIndex((t) => t.id === active.id);
+      const newIndex = approvedItems.findIndex((t) => t.id === over.id);
+
+      if (oldIndex !== -1 && newIndex !== -1) {
+        const newOrder = arrayMove(approvedItems, oldIndex, newIndex);
+        
+        // Update local state immediately for responsiveness
+        const newTestimonials = testimonials.map((t) => {
+          if (t.status !== "APPROVED") return t;
+          const idx = newOrder.findIndex((n) => n.id === t.id);
+          return { ...t, displayOrder: idx };
+        });
+        setTestimonials(newTestimonials);
+
+        // Save to server
+        const items = newOrder.map((item, index) => ({
+          id: item.id,
+          displayOrder: index,
+        }));
+
+        await fetch("/api/admin/testimonials/reorder", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ items }),
+        });
+      }
+    }
   };
 
   const updateContact = async (id: string, status: string) => {
@@ -221,6 +303,13 @@ export default function AdminPage() {
       minute: "2-digit",
     });
   };
+
+  // Filter testimonials
+  const filteredTestimonials = testimonialFilter === "all" 
+    ? testimonials 
+    : testimonials.filter((t) => t.status === testimonialFilter);
+  
+  const approvedTestimonials = testimonials.filter((t) => t.status === "APPROVED");
 
   // Loading
   if (authenticated === null) {
@@ -382,107 +471,77 @@ export default function AdminPage() {
         {/* Testimonials */}
         {activeTab === "testimonials" && (
           <div className="space-y-4">
-            {testimonials.length === 0 ? (
-              <div className="text-center py-12 text-gray-500">추천사가 없습니다</div>
-            ) : (
-              testimonials.map((t) => (
-                <div
-                  key={t.id}
+            {/* Filter tabs */}
+            <div className="flex gap-2 mb-4">
+              {(["all", "PENDING", "APPROVED", "REJECTED"] as TestimonialFilter[]).map((filter) => (
+                <button
+                  key={filter}
+                  onClick={() => setTestimonialFilter(filter)}
                   className={cn(
-                    "p-6 rounded-xl border",
-                    t.status === "PENDING"
-                      ? "bg-yellow-500/10 border-yellow-500/30"
-                      : t.status === "APPROVED"
-                      ? "bg-green-500/10 border-green-500/30"
-                      : "bg-red-500/10 border-red-500/30"
+                    "px-3 py-1.5 rounded-lg text-sm transition-colors",
+                    testimonialFilter === filter
+                      ? "bg-white/20 text-white"
+                      : "bg-white/5 text-gray-400 hover:text-white"
                   )}
                 >
-                  <div className="flex items-start justify-between gap-4 mb-4">
-                    <div>
-                      <div className="font-medium text-white">{t.authorName}</div>
-                      {t.authorTitle && (
-                        <div className="text-sm text-gray-400">
-                          {t.authorTitle}
-                          {t.authorCompany && ` @ ${t.authorCompany}`}
-                        </div>
-                      )}
-                      {t.authorEmail && (
-                        <div className="text-sm text-gray-500">{t.authorEmail}</div>
-                      )}
-                      {t.authorUrl && (
-                        <a 
-                          href={t.authorUrl} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-sm text-blue-400 hover:underline"
-                        >
-                          {t.authorUrl}
-                        </a>
-                      )}
-                      {t.relationship && (
-                        <div className="text-sm text-gray-500 italic mt-1">
-                          관계: {t.relationship}
-                        </div>
-                      )}
-                    </div>
-                    <div className="flex flex-col items-end gap-2">
-                      <span
-                        className={cn(
-                          "px-2 py-1 text-xs rounded",
-                          t.status === "PENDING" && "bg-yellow-500/20 text-yellow-400",
-                          t.status === "APPROVED" && "bg-green-500/20 text-green-400",
-                          t.status === "REJECTED" && "bg-red-500/20 text-red-400"
-                        )}
-                      >
-                        {t.status}
-                      </span>
-                      <span className="text-xs text-gray-500">
-                        {formatDate(t.createdAt)}
-                      </span>
-                      {t.displayOrder !== undefined && t.displayOrder !== null && (
-                        <span className="text-xs text-gray-500">
-                          순서: {t.displayOrder}
-                        </span>
-                      )}
-                    </div>
+                  {filter === "all" ? "전체" : filter}
+                  <span className="ml-1 text-xs opacity-60">
+                    ({filter === "all" 
+                      ? testimonials.length 
+                      : testimonials.filter(t => t.status === filter).length})
+                  </span>
+                </button>
+              ))}
+            </div>
+
+            {/* Drag hint for approved */}
+            {testimonialFilter === "APPROVED" && approvedTestimonials.length > 1 && (
+              <div className="text-sm text-gray-500 mb-2">
+                💡 드래그하여 순서를 변경할 수 있습니다
+              </div>
+            )}
+
+            {filteredTestimonials.length === 0 ? (
+              <div className="text-center py-12 text-gray-500">추천사가 없습니다</div>
+            ) : testimonialFilter === "APPROVED" ? (
+              // Sortable list for approved testimonials
+              <DndContext
+                sensors={sensors}
+                collisionDetection={closestCenter}
+                onDragEnd={handleDragEnd}
+              >
+                <SortableContext
+                  items={approvedTestimonials.map((t) => t.id)}
+                  strategy={verticalListSortingStrategy}
+                >
+                  <div className="space-y-4">
+                    {approvedTestimonials.map((t) => (
+                      <SortableTestimonialCard
+                        key={t.id}
+                        testimonial={t}
+                        onEdit={() => setEditingTestimonial(t)}
+                        onStatusChange={updateTestimonialStatus}
+                        onDelete={deleteTestimonial}
+                        formatDate={formatDate}
+                      />
+                    ))}
                   </div>
-                  <p className="text-gray-300 mb-4 whitespace-pre-wrap">{t.content}</p>
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <button
-                      onClick={() => setEditingTestimonial(t)}
-                      className="flex items-center gap-1 px-3 py-1.5 bg-blue-500/20 text-blue-400 
-                                 rounded-lg hover:bg-blue-500/30 transition-colors"
-                    >
-                      <Pencil className="w-4 h-4" /> 수정
-                    </button>
-                    {t.status !== "APPROVED" && (
-                      <button
-                        onClick={() => updateTestimonialStatus(t.id, "APPROVED")}
-                        className="flex items-center gap-1 px-3 py-1.5 bg-green-500/20 text-green-400 
-                                   rounded-lg hover:bg-green-500/30 transition-colors"
-                      >
-                        <Check className="w-4 h-4" /> 승인
-                      </button>
-                    )}
-                    {t.status !== "REJECTED" && (
-                      <button
-                        onClick={() => updateTestimonialStatus(t.id, "REJECTED")}
-                        className="flex items-center gap-1 px-3 py-1.5 bg-red-500/20 text-red-400 
-                                   rounded-lg hover:bg-red-500/30 transition-colors"
-                      >
-                        <X className="w-4 h-4" /> 거절
-                      </button>
-                    )}
-                    <button
-                      onClick={() => deleteTestimonial(t.id)}
-                      className="flex items-center gap-1 px-3 py-1.5 bg-white/5 text-gray-400 
-                                 rounded-lg hover:bg-white/10 transition-colors"
-                    >
-                      <Trash2 className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
-              ))
+                </SortableContext>
+              </DndContext>
+            ) : (
+              // Regular list for other filters
+              <div className="space-y-4">
+                {filteredTestimonials.map((t) => (
+                  <TestimonialCard
+                    key={t.id}
+                    testimonial={t}
+                    onEdit={() => setEditingTestimonial(t)}
+                    onStatusChange={updateTestimonialStatus}
+                    onDelete={deleteTestimonial}
+                    formatDate={formatDate}
+                  />
+                ))}
+              </div>
             )}
           </div>
         )}
@@ -599,6 +658,185 @@ export default function AdminPage() {
           onClose={() => setEditingTestimonial(null)}
         />
       )}
+    </div>
+  );
+}
+
+// Sortable testimonial card (for drag & drop)
+function SortableTestimonialCard({
+  testimonial,
+  onEdit,
+  onStatusChange,
+  onDelete,
+  formatDate,
+}: {
+  testimonial: Testimonial;
+  onEdit: () => void;
+  onStatusChange: (id: string, status: string) => void;
+  onDelete: (id: string) => void;
+  formatDate: (date: string) => string;
+}) {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id: testimonial.id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1,
+  };
+
+  return (
+    <div ref={setNodeRef} style={style}>
+      <TestimonialCard
+        testimonial={testimonial}
+        onEdit={onEdit}
+        onStatusChange={onStatusChange}
+        onDelete={onDelete}
+        formatDate={formatDate}
+        dragHandleProps={{ ...attributes, ...listeners }}
+        isDragging={isDragging}
+      />
+    </div>
+  );
+}
+
+// Testimonial card component
+function TestimonialCard({
+  testimonial: t,
+  onEdit,
+  onStatusChange,
+  onDelete,
+  formatDate,
+  dragHandleProps,
+  isDragging,
+}: {
+  testimonial: Testimonial;
+  onEdit: () => void;
+  onStatusChange: (id: string, status: string) => void;
+  onDelete: (id: string) => void;
+  formatDate: (date: string) => string;
+  dragHandleProps?: Record<string, unknown>;
+  isDragging?: boolean;
+}) {
+  return (
+    <div
+      className={cn(
+        "p-6 rounded-xl border",
+        t.status === "PENDING"
+          ? "bg-yellow-500/10 border-yellow-500/30"
+          : t.status === "APPROVED"
+          ? "bg-green-500/10 border-green-500/30"
+          : "bg-red-500/10 border-red-500/30",
+        isDragging && "shadow-xl"
+      )}
+    >
+      <div className="flex items-start justify-between gap-4 mb-4">
+        <div className="flex items-start gap-3">
+          {/* Drag handle (only for approved) */}
+          {dragHandleProps && (
+            <button
+              {...dragHandleProps}
+              className="mt-1 p-1 text-gray-500 hover:text-white cursor-grab active:cursor-grabbing"
+            >
+              <GripVertical className="w-5 h-5" />
+            </button>
+          )}
+          <div>
+            <div className="font-medium text-white">{t.authorName}</div>
+            {t.authorTitle && (
+              <div className="text-sm text-gray-400">
+                {t.authorTitle}
+                {t.authorCompany && ` @ ${t.authorCompany}`}
+              </div>
+            )}
+            {t.authorEmail && (
+              <div className="text-sm text-gray-500">{t.authorEmail}</div>
+            )}
+            {t.authorUrl && (
+              <a 
+                href={t.authorUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm text-blue-400 hover:underline"
+              >
+                {t.authorUrl}
+              </a>
+            )}
+            {t.relationship && (
+              <div className="text-sm text-gray-500 italic mt-1">
+                관계: {t.relationship}
+              </div>
+            )}
+          </div>
+        </div>
+        <div className="flex flex-col items-end gap-2">
+          <span
+            className={cn(
+              "px-2 py-1 text-xs rounded",
+              t.status === "PENDING" && "bg-yellow-500/20 text-yellow-400",
+              t.status === "APPROVED" && "bg-green-500/20 text-green-400",
+              t.status === "REJECTED" && "bg-red-500/20 text-red-400"
+            )}
+          >
+            {t.status}
+          </span>
+          <span className="text-xs text-gray-500">
+            {formatDate(t.createdAt)}
+          </span>
+          {t.displayOrder !== undefined && t.displayOrder !== null && (
+            <span className="text-xs text-gray-500">
+              #{t.displayOrder + 1}
+            </span>
+          )}
+        </div>
+      </div>
+      <p className={cn(
+        "text-gray-300 mb-4 whitespace-pre-wrap",
+        dragHandleProps && "ml-8" // Indent content when drag handle present
+      )}>{t.content}</p>
+      <div className={cn(
+        "flex items-center gap-2 flex-wrap",
+        dragHandleProps && "ml-8"
+      )}>
+        <button
+          onClick={onEdit}
+          className="flex items-center gap-1 px-3 py-1.5 bg-blue-500/20 text-blue-400 
+                     rounded-lg hover:bg-blue-500/30 transition-colors"
+        >
+          <Pencil className="w-4 h-4" /> 수정
+        </button>
+        {t.status !== "APPROVED" && (
+          <button
+            onClick={() => onStatusChange(t.id, "APPROVED")}
+            className="flex items-center gap-1 px-3 py-1.5 bg-green-500/20 text-green-400 
+                       rounded-lg hover:bg-green-500/30 transition-colors"
+          >
+            <Check className="w-4 h-4" /> 승인
+          </button>
+        )}
+        {t.status !== "REJECTED" && (
+          <button
+            onClick={() => onStatusChange(t.id, "REJECTED")}
+            className="flex items-center gap-1 px-3 py-1.5 bg-red-500/20 text-red-400 
+                       rounded-lg hover:bg-red-500/30 transition-colors"
+          >
+            <X className="w-4 h-4" /> 거절
+          </button>
+        )}
+        <button
+          onClick={() => onDelete(t.id)}
+          className="flex items-center gap-1 px-3 py-1.5 bg-white/5 text-gray-400 
+                     rounded-lg hover:bg-white/10 transition-colors"
+        >
+          <Trash2 className="w-4 h-4" />
+        </button>
+      </div>
     </div>
   );
 }
