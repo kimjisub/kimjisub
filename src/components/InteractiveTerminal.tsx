@@ -195,6 +195,13 @@ export const InteractiveTerminal = () => {
     scrollToBottom();
   }, [lines, scrollToBottom]);
   
+  // 타이핑이 끝나면 자동으로 input에 포커스
+  useEffect(() => {
+    if (!isTyping) {
+      inputRef.current?.focus();
+    }
+  }, [isTyping]);
+  
   const typeOutput = useCallback(async (outputLines: string[], startId: number, isAscii?: boolean) => {
     setIsTyping(true);
     
@@ -258,6 +265,8 @@ export const InteractiveTerminal = () => {
     if (trimmedCmd === 'clear') {
       setLines([]);
       setLineIdCounter(0);
+      // 포커스 유지
+      setTimeout(() => inputRef.current?.focus(), 0);
       return;
     }
     

@@ -19,7 +19,7 @@ const FEATURED_CATEGORIES = [
   {
     title: 'Backend',
     accent: '#34d399',
-    skills: ['Python', 'Node.js', 'FastAPI'],
+    skills: ['Node.js', 'NestJS', 'Python', 'FastAPI'],
   },
   {
     title: 'DevOps',

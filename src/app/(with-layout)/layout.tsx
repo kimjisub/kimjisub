@@ -9,7 +9,8 @@ import '../globals.css';
 
 import BackToTop from '@/components/BackToTop';
 import { CommandPaletteWrapper } from '@/components/CommandPaletteWrapper';
-import CustomCursor from '@/components/CustomCursor';
+// CustomCursor disabled - 기본 커서 사용
+// import CustomCursor from '@/components/CustomCursor';
 import FloatingSocialSidebar from '@/components/FloatingSocialSidebar';
 import Footer from '@/components/Footer';
 import GrainOverlay from '@/components/GrainOverlay';
@@ -121,7 +122,7 @@ export default function RootLayout({
 						<SpotlightEffect />
 						<ScrollProgressIndicator />
 						<BackToTop />
-						<CustomCursor />
+						{/* <CustomCursor /> */}
 						<FloatingSocialSidebar />
 						<div className="min-h-screen flex flex-col">
 							<TopBar />

@@ -93,8 +93,8 @@ function LocationCard() {
 /** 💼 현재 역할 — 2×1 */
 function RoleCard() {
   const roles = [
-    { company: 'Candid', role: 'Product Engineer', badge: 'sole engineer', color: 'bg-blue-500/10 text-blue-400 border-blue-400/20' },
     { company: 'Alpaon', role: 'CTO · Co-founder', badge: 'IoT & Cloud', color: 'bg-accent/10 text-accent border-accent/20' },
+    { company: 'Candid', role: 'Product Engineer', badge: 'sole engineer', color: 'bg-blue-500/10 text-blue-400 border-blue-400/20' },
   ];
 
   return (
@@ -136,24 +136,7 @@ function InterestCard() {
   );
 }
 
-/** 📚 학력 — 1×1 */
-function EducationCard() {
-  return (
-    <BentoCard size="1x1">
-      <p className="text-xs text-muted-foreground uppercase tracking-widest mb-3">Education</p>
-      <div className="space-y-2">
-        <div>
-          <p className="text-sm font-semibold text-foreground leading-tight">한국외국어대학교</p>
-          <p className="text-xs text-muted-foreground">컴퓨터공학과 · 졸업 예정 2026</p>
-        </div>
-        <div className="border-t border-border pt-2">
-          <p className="text-xs text-foreground font-medium">한국디지털미디어고</p>
-          <p className="text-xs text-muted-foreground">해킹방어과 · 정보올림피아드 🥇</p>
-        </div>
-      </div>
-    </BentoCard>
-  );
-}
+/* EducationCard removed */
 
 /** 🔧 기술 스택 — 2×1 */
 function TechStackCard() {
@@ -181,32 +164,7 @@ function TechStackCard() {
   );
 }
 
-/** ☕ 취미 — 1×2 */
-function HobbyCard() {
-  const hobbies = [
-    { emoji: '🎮', label: '오버워치', desc: 'DPS 원딜러' },
-    { emoji: '☕', label: '카페 탐방', desc: '아메리카노 블랙' },
-    { emoji: '👥', label: '사람 만나기', desc: '새로운 인연' },
-    { emoji: '📖', label: '독서', desc: '기술 · 철학' },
-  ];
-
-  return (
-    <BentoCard size="1x2">
-      <p className="text-xs text-muted-foreground uppercase tracking-widest mb-3">Hobbies</p>
-      <div className="flex flex-col gap-3 h-full">
-        {hobbies.map(({ emoji, label, desc }) => (
-          <div key={label} className="flex items-center gap-3">
-            <span className="text-xl w-8 text-center">{emoji}</span>
-            <div className="min-w-0">
-              <p className="text-sm font-medium text-foreground leading-none">{label}</p>
-              <p className="text-xs text-muted-foreground mt-0.5">{desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </BentoCard>
-  );
-}
+/* HobbyCard removed */
 
 /** 🌱 UniPad 성과 — 1×1 */
 function MilestoneCard() {
@@ -243,9 +201,8 @@ export function AboutBentoSection() {
         >
           {/*
             Desktop layout (lg: 4-col grid):
-            Row 1: [Location 1x1] [Role 2x1         ] [Hobby 1x2 (spans rows)]
+            Row 1: [Location 1x1] [Role 2x1         ] [Milestone 1x1]
             Row 2: [Interest 1x1] [Tech Stack 2x1   ]
-            Row 3: [Education 1x1] [Milestone 1x1   ]
 
             Tablet (sm: 2-col): cards reflow naturally.
             Mobile (1-col): stacked.
@@ -257,9 +214,8 @@ export function AboutBentoSection() {
             <motion.div variants={item} className="col-span-2 row-span-1 sm:col-span-2">
               <RoleCard />
             </motion.div>
-            {/* Hobby spans 2 rows on lg, sits normally on smaller screens */}
-            <motion.div variants={item} className="col-span-1 row-span-2 hidden lg:block">
-              <HobbyCard />
+            <motion.div variants={item} className="col-span-1 row-span-1">
+              <MilestoneCard />
             </motion.div>
 
             <motion.div variants={item} className="col-span-1 row-span-1">
@@ -267,17 +223,6 @@ export function AboutBentoSection() {
             </motion.div>
             <motion.div variants={item} className="col-span-2 row-span-1 sm:col-span-2">
               <TechStackCard />
-            </motion.div>
-
-            <motion.div variants={item} className="col-span-1 row-span-1">
-              <EducationCard />
-            </motion.div>
-            <motion.div variants={item} className="col-span-1 row-span-1">
-              <MilestoneCard />
-            </motion.div>
-            {/* Hobby visible on mobile/tablet here */}
-            <motion.div variants={item} className="col-span-1 row-span-1 lg:hidden">
-              <HobbyCard />
             </motion.div>
           </BentoGrid>
         </motion.div>

@@ -55,13 +55,13 @@ export default async function GithubSection() {
           </div>
         </AnimatedSection>
 
-        {/* Contribution Heatmap */}
+        {/* Contribution Heatmap - 최신 년도가 위로 */}
         <AnimatedSection delay={0.2}>
           <div className="flex flex-col items-center gap-y-2">
-            {contributions.map((contribution, index) => (
+            {[...contributions].reverse().map((contribution, index) => (
               <div key={contribution.from.toString()} className="flex flex-row items-center w-fit">
                 <span className="text-xs text-muted-foreground w-12 text-right mr-3 tabular-nums">
-                  {years[index]}
+                  {years[years.length - 1 - index]}
                 </span>
                 <GitHubHitmap
                   data={contribution.data}

@@ -234,14 +234,22 @@ export function TestimonialsSection() {
         >
           Testimonials
         </motion.h2>
-        <motion.p
-          className="text-muted-foreground text-sm mb-10"
+        <motion.div
+          className="flex items-center justify-between mb-10"
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
           transition={{ duration: 0.5, delay: 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          함께 일한 분들의 이야기
-        </motion.p>
+          <p className="text-muted-foreground text-sm">
+            함께 일한 분들의 이야기
+          </p>
+          <a
+            href="mailto:0226daniel@gmail.com?subject=[추천사] 김지섭과 함께 일한 경험&body=안녕하세요!%0A%0A김지섭과 함께 일한 경험을 공유해주세요.%0A%0A---%0A이름:%0A직함/회사:%0A추천사 내용:%0A%0A(작성해주신 추천사는 포트폴리오에 게시될 수 있습니다)"
+            className="text-xs text-muted-foreground hover:text-foreground transition-colors underline underline-offset-2"
+          >
+            추천사 작성하기 →
+          </a>
+        </motion.div>
 
         {/* Carousel */}
         <motion.div

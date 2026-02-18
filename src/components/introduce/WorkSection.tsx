@@ -51,6 +51,26 @@ export const WorkSection = () => {
       ],
     },
     {
+      title: 'SiliconBridge',
+      period: '2022 — 2023',
+      role: 'Software Engineer',
+      description: '반도체 설계 자동화 솔루션 회사입니다.',
+      details: [
+        'EDA 도구 개발 및 반도체 설계 워크플로우 자동화.',
+        'Python/C++ 기반 설계 검증 툴 개발.',
+      ],
+    },
+    {
+      title: 'VPlate',
+      period: '2021 — 2022',
+      role: 'Software Engineer',
+      description: 'AI 기반 영상 편집 플랫폼입니다.',
+      details: [
+        'AI 영상 분석 및 자동 편집 기능 개발.',
+        '대용량 미디어 처리 파이프라인 구축.',
+      ],
+    },
+    {
       title: 'UniPad',
       period: '2016 — 2020',
       role: 'Founder',
