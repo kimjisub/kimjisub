@@ -1,16 +1,53 @@
 /**
- * Prebuild script: 역방향 관계 그래프 생성
+ * Prebuild script: 역방향 관계 그래프 생성 + 심링크 설정
  *
- * Projects → Skills/Careers 관계를 읽어서 역방향 관계 계산
- * - skill.projectsUsingAsSkill: 이 스킬을 techSkills로 사용하는 프로젝트들
- * - skill.projectsUsingAsLanguage: 이 스킬을 languages로 사용하는 프로젝트들
- * - career.relatedProjects: 이 커리어와 연결된 프로젝트들
+ * 1. public/content → src/content 심링크 생성 (이미지 서빙용)
+ * 2. Projects → Skills/Careers 관계를 읽어서 역방향 관계 계산
+ *    - skill.projectsUsingAsSkill: 이 스킬을 techSkills로 사용하는 프로젝트들
+ *    - skill.projectsUsingAsLanguage: 이 스킬을 languages로 사용하는 프로젝트들
+ *    - career.relatedProjects: 이 커리어와 연결된 프로젝트들
  *
  * Usage: tsx scripts/build-relations.ts
  */
 
 import * as fs from 'fs';
 import * as path from 'path';
+
+// ============================================
+// 1. 심링크 설정 (public/content → src/content)
+// ============================================
+function ensureContentSymlink() {
+  const publicDir = path.join(__dirname, '../public');
+  const symlinkPath = path.join(publicDir, 'content');
+  const targetPath = '../src/content';  // public 기준 상대 경로
+
+  // public 폴더 없으면 생성
+  if (!fs.existsSync(publicDir)) {
+    fs.mkdirSync(publicDir, { recursive: true });
+  }
+
+  // 기존 심링크/파일 확인
+  if (fs.existsSync(symlinkPath)) {
+    const stats = fs.lstatSync(symlinkPath);
+    if (stats.isSymbolicLink()) {
+      const currentTarget = fs.readlinkSync(symlinkPath);
+      if (currentTarget === targetPath) {
+        console.log('✅ Symlink already exists: public/content → src/content');
+        return;
+      }
+      // 잘못된 심링크면 삭제
+      fs.unlinkSync(symlinkPath);
+    } else {
+      // 심링크가 아니면 (실제 폴더/파일) 에러
+      console.error('❌ public/content exists but is not a symlink. Please remove it manually.');
+      process.exit(1);
+    }
+  }
+
+  // 심링크 생성
+  fs.symlinkSync(targetPath, symlinkPath, 'dir');
+  console.log('✅ Created symlink: public/content → src/content');
+}
 
 const CONTENT_DIR = path.join(__dirname, '../src/content');
 
@@ -205,7 +242,14 @@ function updateCareerMetas(graph: RelationGraph): number {
 }
 
 async function main() {
-  console.log('🔗 Building relation graph...\n');
+  console.log('🔧 Prebuild starting...\n');
+
+  // 1. 심링크 설정
+  ensureContentSymlink();
+  console.log('');
+
+  // 2. 관계 그래프 빌드
+  console.log('🔗 Building relation graph...');
 
   // 1. 모든 프로젝트 로드
   const projects = loadAllProjects();
