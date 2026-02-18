@@ -1,0 +1,41 @@
+{
+  "id": "dd3d53cf-94ce-41c5-bf38-309a4da791bf",
+  "slug": "arai",
+  "title": "ARAI",
+  "description": "AR 기반으로 제어가 가능한 IoT",
+  "date": {
+    "start": "2019-06-01",
+    "end": null
+  },
+  "github": null,
+  "youtube": null,
+  "url": null,
+  "importance": "중간",
+  "tags": [],
+  "categories": [
+    {
+      "name": "팀 프로젝트",
+      "color": "green"
+    }
+  ],
+  "assignedTasks": [],
+  "techSkills": [
+    "ai",
+    "arduino",
+    "firebase",
+    "ar",
+    "pwa"
+  ],
+  "languages": [
+    "html",
+    "css3",
+    "javascript",
+    "c-c"
+  ],
+  "relatedCareers": [
+    "2019-angelhack-hackathon"
+  ],
+  "iconUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/9066bc7b-131c-4417-980a-0602296fc155/logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SHYHFULZ%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090939Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIB3nQaPw8kexcZddc%2B%2BpfaPhbaOhBAsfey2URaYS%2Fj81AiACRRcrRP96MnOc2Ime7KJiBHzmKrD4uaan8%2FK662G7ZCr%2FAwhgEAAaDDYzNzQyMzE4MzgwNSIMrI60Kt3HJJ7LZFnnKtwDw9737ejSLTFz0KwQTJUflVZZehXKCDjAvn%2Bv89Au2Om7WrGykH5lFRHyP%2BLR492yfOf%2B5xRFaWaSvSRFXgv6qmAVrL84xWedJOn6x3t6lRH04CC4%2BIp%2Btu2Tua734jUmQGyKtvYwWGOjx3ReQ1QvbMntI7z1UwxGVsBsxZBUjiNMuNGLW%2BAcwl0u39rJe%2FNqhiMLYwPfTcjnUEW0woixF7Ws1g0scHlFlN%2BXgqMWRQhK0tuAiP361tT0aeJtDhy9TT28kMW5EB7w65jg3smcoDk6BE1%2BpAkjZ%2B31pbZStGqm%2Fmkzqe5GAaTV1KtFUU2QLjLYZi45TfMhSgUbHbLcZylZ1MvKl5xgjGGhwYzK516glu%2FCUn5lJdworXWHY8RWt8qSoH%2BQWFN%2BAmFsVLWfEY8oX1OMT3YvxfEvWcFxUrAQyzg8GJLsD1Hbgle2uPph2cLslIEE%2Fk%2BOUOphFoI6Cie9PgSufrXPat9NKbJWhkQL7rooRmtVcqdS1Z4ezAzpL1XuTM3kxUuYElNnd%2Bw9Y4Qwi5btKrTZUTRn1vvcEu3i%2FX5dIoV6j6%2BGMZ%2BhV9fvUFHjSAmAIZlNAlaIGdW9r6IopxCX5NHgSmYctAx3cWpA7ARB2tot%2FfnO%2FRsw%2B8LVzAY6pgGBWp84p9e9%2FeYGepIxkXM%2BDLhUzyIDo%2BT%2BXy9GZRtpGZ%2FGXPHLd%2B8uPBlkHQO4OygLOUOZ0Yfod3nc%2F%2FdaYF0mKwmNO8n0lHeYJHcnR9DNb26pvoLfIbQCKmDNo6v%2BnwzVl9V77EvoqmkdkcphYld4FQqfNkoq7Vka7OJ9rVUprpUp5rdPEHLitYIvG7v%2B053MGC%2BiN7U0%2Bev6Bz3UX95dr060HBUL&X-Amz-Signature=607af25aaf27ea43d7e54448f8b662c9eb2d2659d68ea7948d9ceac0e073e7c9&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "iconEmoji": null,
+  "coverUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/a9e8b0f1-9d71-40a7-a3f6-797ee29d6235/1179_51101_0_yIaxIT.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SHYHFULZ%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090939Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIB3nQaPw8kexcZddc%2B%2BpfaPhbaOhBAsfey2URaYS%2Fj81AiACRRcrRP96MnOc2Ime7KJiBHzmKrD4uaan8%2FK662G7ZCr%2FAwhgEAAaDDYzNzQyMzE4MzgwNSIMrI60Kt3HJJ7LZFnnKtwDw9737ejSLTFz0KwQTJUflVZZehXKCDjAvn%2Bv89Au2Om7WrGykH5lFRHyP%2BLR492yfOf%2B5xRFaWaSvSRFXgv6qmAVrL84xWedJOn6x3t6lRH04CC4%2BIp%2Btu2Tua734jUmQGyKtvYwWGOjx3ReQ1QvbMntI7z1UwxGVsBsxZBUjiNMuNGLW%2BAcwl0u39rJe%2FNqhiMLYwPfTcjnUEW0woixF7Ws1g0scHlFlN%2BXgqMWRQhK0tuAiP361tT0aeJtDhy9TT28kMW5EB7w65jg3smcoDk6BE1%2BpAkjZ%2B31pbZStGqm%2Fmkzqe5GAaTV1KtFUU2QLjLYZi45TfMhSgUbHbLcZylZ1MvKl5xgjGGhwYzK516glu%2FCUn5lJdworXWHY8RWt8qSoH%2BQWFN%2BAmFsVLWfEY8oX1OMT3YvxfEvWcFxUrAQyzg8GJLsD1Hbgle2uPph2cLslIEE%2Fk%2BOUOphFoI6Cie9PgSufrXPat9NKbJWhkQL7rooRmtVcqdS1Z4ezAzpL1XuTM3kxUuYElNnd%2Bw9Y4Qwi5btKrTZUTRn1vvcEu3i%2FX5dIoV6j6%2BGMZ%2BhV9fvUFHjSAmAIZlNAlaIGdW9r6IopxCX5NHgSmYctAx3cWpA7ARB2tot%2FfnO%2FRsw%2B8LVzAY6pgGBWp84p9e9%2FeYGepIxkXM%2BDLhUzyIDo%2BT%2BXy9GZRtpGZ%2FGXPHLd%2B8uPBlkHQO4OygLOUOZ0Yfod3nc%2F%2FdaYF0mKwmNO8n0lHeYJHcnR9DNb26pvoLfIbQCKmDNo6v%2BnwzVl9V77EvoqmkdkcphYld4FQqfNkoq7Vka7OJ9rVUprpUp5rdPEHLitYIvG7v%2B053MGC%2BiN7U0%2Bev6Bz3UX95dr060HBUL&X-Amz-Signature=9e6c070a78ef34476e36d360c98af6e89594ef9bf964125b5e10bce2837977eb&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+}

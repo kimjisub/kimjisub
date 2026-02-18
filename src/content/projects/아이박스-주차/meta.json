@@ -1,0 +1,59 @@
+{
+  "id": "3c9f2d34-a501-46a5-b644-43a316904b1e",
+  "slug": "아이박스-주차",
+  "title": "아이박스 주차",
+  "description": "주차장 통합 전산 시스템",
+  "date": {
+    "start": "2020-07-01",
+    "end": "2025-12-31"
+  },
+  "github": null,
+  "youtube": null,
+  "url": null,
+  "importance": "4",
+  "tags": [
+    {
+      "name": "회사",
+      "color": "red"
+    },
+    {
+      "name": "출시됨",
+      "color": "blue"
+    }
+  ],
+  "categories": [
+    {
+      "name": "외주",
+      "color": "brown"
+    }
+  ],
+  "assignedTasks": [
+    {
+      "name": "개발",
+      "color": "blue"
+    }
+  ],
+  "techSkills": [
+    "aws-s3",
+    "pwa",
+    "react",
+    "docker",
+    "shell",
+    "nodejs",
+    "github-actions",
+    "mongodb",
+    "react-native",
+    "fastlane",
+    "linear-app"
+  ],
+  "languages": [
+    "html",
+    "css3",
+    "javascript",
+    "typescript"
+  ],
+  "relatedCareers": [],
+  "iconUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/021286cc-0842-4acd-ad8d-d18aa43ad0a1/eyevacs_icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SHYHFULZ%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090939Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIB3nQaPw8kexcZddc%2B%2BpfaPhbaOhBAsfey2URaYS%2Fj81AiACRRcrRP96MnOc2Ime7KJiBHzmKrD4uaan8%2FK662G7ZCr%2FAwhgEAAaDDYzNzQyMzE4MzgwNSIMrI60Kt3HJJ7LZFnnKtwDw9737ejSLTFz0KwQTJUflVZZehXKCDjAvn%2Bv89Au2Om7WrGykH5lFRHyP%2BLR492yfOf%2B5xRFaWaSvSRFXgv6qmAVrL84xWedJOn6x3t6lRH04CC4%2BIp%2Btu2Tua734jUmQGyKtvYwWGOjx3ReQ1QvbMntI7z1UwxGVsBsxZBUjiNMuNGLW%2BAcwl0u39rJe%2FNqhiMLYwPfTcjnUEW0woixF7Ws1g0scHlFlN%2BXgqMWRQhK0tuAiP361tT0aeJtDhy9TT28kMW5EB7w65jg3smcoDk6BE1%2BpAkjZ%2B31pbZStGqm%2Fmkzqe5GAaTV1KtFUU2QLjLYZi45TfMhSgUbHbLcZylZ1MvKl5xgjGGhwYzK516glu%2FCUn5lJdworXWHY8RWt8qSoH%2BQWFN%2BAmFsVLWfEY8oX1OMT3YvxfEvWcFxUrAQyzg8GJLsD1Hbgle2uPph2cLslIEE%2Fk%2BOUOphFoI6Cie9PgSufrXPat9NKbJWhkQL7rooRmtVcqdS1Z4ezAzpL1XuTM3kxUuYElNnd%2Bw9Y4Qwi5btKrTZUTRn1vvcEu3i%2FX5dIoV6j6%2BGMZ%2BhV9fvUFHjSAmAIZlNAlaIGdW9r6IopxCX5NHgSmYctAx3cWpA7ARB2tot%2FfnO%2FRsw%2B8LVzAY6pgGBWp84p9e9%2FeYGepIxkXM%2BDLhUzyIDo%2BT%2BXy9GZRtpGZ%2FGXPHLd%2B8uPBlkHQO4OygLOUOZ0Yfod3nc%2F%2FdaYF0mKwmNO8n0lHeYJHcnR9DNb26pvoLfIbQCKmDNo6v%2BnwzVl9V77EvoqmkdkcphYld4FQqfNkoq7Vka7OJ9rVUprpUp5rdPEHLitYIvG7v%2B053MGC%2BiN7U0%2Bev6Bz3UX95dr060HBUL&X-Amz-Signature=75c0867271313ff1b2bfa3349670e945095ddead252024effe084d6dd40e006f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "iconEmoji": null,
+  "coverUrl": null
+}

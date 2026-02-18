@@ -1,0 +1,26 @@
+{
+  "id": "bf3f3cf8-cbdb-4e03-b59b-adb57f2c301b",
+  "slug": "uwp",
+  "title": "UWP",
+  "iconSlug": "windows",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "기술"
+  ],
+  "proficiency": "1. 초보",
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [
+    "e198334b-696c-4440-bf12-833f39d201ca"
+  ],
+  "usedInProjects": [
+    "94abf410-d23e-4253-8e66-d6fe06d07fd0"
+  ],
+  "usedAsLanguage": [],
+  "usageCount": 1,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

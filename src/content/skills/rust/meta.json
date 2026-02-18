@@ -1,0 +1,24 @@
+{
+  "id": "dc3106e0-99e9-497d-838a-28ce907e01b4",
+  "slug": "rust",
+  "title": "Rust",
+  "iconSlug": "rust",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "언어"
+  ],
+  "proficiency": "0. 입문",
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [
+    "bc414082-79bf-46a2-ad38-46e180329b47"
+  ],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

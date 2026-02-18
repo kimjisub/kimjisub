@@ -1,0 +1,22 @@
+{
+  "id": "ba4b4ac3-8924-4ade-82f0-274d62c674e9",
+  "slug": "gradle",
+  "title": "Gradle",
+  "iconSlug": "gradle",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "기술"
+  ],
+  "proficiency": null,
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

@@ -1,0 +1,36 @@
+{
+  "id": "f8eaf004-c9ef-40d0-8512-fb0e49f06a88",
+  "slug": "카카오톡-채팅-분석기",
+  "title": "카카오톡 채팅 분석기",
+  "description": "대화 시간대, 점유도, 자주 말한 단어 분서거",
+  "date": {
+    "start": "2015-04-10",
+    "end": null
+  },
+  "github": null,
+  "youtube": "https://www.youtube.com/watch?v=aGwG8mh9QE4",
+  "url": null,
+  "importance": "낮음",
+  "tags": [],
+  "categories": [
+    {
+      "name": "개인 프로젝트",
+      "color": "red"
+    }
+  ],
+  "assignedTasks": [],
+  "techSkills": [
+    "android",
+    "shell"
+  ],
+  "languages": [
+    "c-c",
+    "java"
+  ],
+  "relatedCareers": [
+    "영재교육원-개인주제탐구발표대회"
+  ],
+  "iconUrl": null,
+  "iconEmoji": "💬",
+  "coverUrl": null
+}

@@ -1,0 +1,36 @@
+{
+  "id": "29055678-f315-4668-940b-973aff964c4b",
+  "slug": "대한민국-sw-융합-해커톤",
+  "title": "대한민국 SW 융합 해커톤",
+  "description": null,
+  "date": {
+    "start": "2018-08-31",
+    "end": "2018-09-01"
+  },
+  "institutions": [],
+  "categories": [
+    {
+      "name": "해커톤",
+      "color": "red"
+    }
+  ],
+  "assignedTasks": [
+    {
+      "name": "개발",
+      "color": "yellow"
+    },
+    {
+      "name": "기획",
+      "color": "pink"
+    }
+  ],
+  "importance": "낮음",
+  "url": null,
+  "awardsAndCertifications": null,
+  "relatedProjects": [
+    "d041a673-7348-4dd0-aa72-2e56065036f1"
+  ],
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

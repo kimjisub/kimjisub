@@ -1,0 +1,22 @@
+{
+  "id": "2f5d49b9-9ad9-4284-9b6b-a3f9d9ceca56",
+  "slug": "kibana",
+  "title": "kibana",
+  "iconSlug": "kibana",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "기술"
+  ],
+  "proficiency": null,
+  "visible": true,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

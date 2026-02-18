@@ -1,0 +1,32 @@
+{
+  "id": "9533de9d-1230-4c07-8cf9-57e3547469c5",
+  "slug": "hufs-cs-cloud",
+  "title": "HUFS CS Cloud",
+  "description": "컴퓨터공학과 학생들을 위해서 ubuntu 인스턴스를 제공하는 교내 Cloud 서비스",
+  "date": {
+    "start": "2024-03-07",
+    "end": null
+  },
+  "github": null,
+  "youtube": null,
+  "url": null,
+  "importance": "중간",
+  "tags": [],
+  "categories": [
+    {
+      "name": "팀 프로젝트",
+      "color": "green"
+    }
+  ],
+  "assignedTasks": [],
+  "techSkills": [
+    "kubernetes"
+  ],
+  "languages": [
+    "shell"
+  ],
+  "relatedCareers": [],
+  "iconUrl": null,
+  "iconEmoji": "☁️",
+  "coverUrl": null
+}

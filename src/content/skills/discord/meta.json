@@ -1,0 +1,22 @@
+{
+  "id": "cac78a6c-c9aa-4ea8-b40a-0c074ea51eeb",
+  "slug": "discord",
+  "title": "discord",
+  "iconSlug": "discord",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "협업/문서"
+  ],
+  "proficiency": null,
+  "visible": true,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

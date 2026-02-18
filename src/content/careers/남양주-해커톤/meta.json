@@ -1,0 +1,41 @@
+{
+  "id": "fde68f8d-e2d5-4e93-8821-a25b3af556b4",
+  "slug": "남양주-해커톤",
+  "title": "남양주 해커톤",
+  "description": null,
+  "date": {
+    "start": "2018-08-11",
+    "end": "2018-08-12"
+  },
+  "institutions": [
+    {
+      "name": "남양주",
+      "color": "red"
+    }
+  ],
+  "categories": [
+    {
+      "name": "해커톤",
+      "color": "red"
+    }
+  ],
+  "assignedTasks": [
+    {
+      "name": "개발",
+      "color": "yellow"
+    },
+    {
+      "name": "기획",
+      "color": "pink"
+    }
+  ],
+  "importance": "낮음",
+  "url": null,
+  "awardsAndCertifications": null,
+  "relatedProjects": [
+    "8fda43a6-b6cb-495f-8256-898cd2e66b03"
+  ],
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

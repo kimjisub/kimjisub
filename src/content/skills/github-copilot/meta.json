@@ -1,0 +1,22 @@
+{
+  "id": "ed9f121a-6713-4d62-80a2-2410835b498f",
+  "slug": "github-copilot",
+  "title": "Github Copilot",
+  "iconSlug": "githubcopilot",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "기술"
+  ],
+  "proficiency": null,
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

@@ -1,0 +1,1887 @@
+{
+  "cd184eb4-9748-4402-b83c-518b1ccc8f7b": {
+    "id": "cd184eb4-9748-4402-b83c-518b1ccc8f7b",
+    "slug": "aws-solution-focused-immersion-day-eks",
+    "title": "AWS Solution Focused Immersion Day - EKS",
+    "description": null,
+    "date": {
+      "start": "2024-05-28",
+      "end": null
+    },
+    "institutions": [],
+    "categories": [],
+    "assignedTasks": [],
+    "importance": null,
+    "url": null,
+    "awardsAndCertifications": null,
+    "relatedProjects": [],
+    "iconUrl": null,
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "1373b1b1-c9dc-804b-83c4-db0aab219aba": {
+    "id": "1373b1b1-c9dc-804b-83c4-db0aab219aba",
+    "slug": "한국디지털미디어고등학교-졸업생-세미나",
+    "title": "한국디지털미디어고등학교 졸업생 세미나",
+    "description": null,
+    "date": {
+      "start": "2024-05-15",
+      "end": null
+    },
+    "institutions": [
+      {
+        "name": "한국디지털미디어고등학교",
+        "color": "pink"
+      }
+    ],
+    "categories": [
+      {
+        "name": "세미나",
+        "color": "gray"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "발표",
+        "color": "gray"
+      }
+    ],
+    "importance": "낮음",
+    "url": null,
+    "awardsAndCertifications": null,
+    "relatedProjects": [],
+    "iconUrl": null,
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "1383b1b1-c9dc-8088-8d22-c276097b71c9": {
+    "id": "1383b1b1-c9dc-8088-8d22-c276097b71c9",
+    "slug": "코드잇-부스트-1기-운영진",
+    "title": "코드잇 부스트 1기 운영진",
+    "description": null,
+    "date": {
+      "start": "2024-05-04",
+      "end": null
+    },
+    "institutions": [
+      {
+        "name": "Codeit",
+        "color": "brown"
+      }
+    ],
+    "categories": [
+      {
+        "name": "교육",
+        "color": "purple"
+      }
+    ],
+    "assignedTasks": [],
+    "importance": null,
+    "url": null,
+    "awardsAndCertifications": null,
+    "relatedProjects": [],
+    "iconUrl": null,
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "9ee7bba9-a4c5-41f2-82ed-b5a27ca1cc90": {
+    "id": "9ee7bba9-a4c5-41f2-82ed-b5a27ca1cc90",
+    "slug": "한국지도자육성장학재단-54기",
+    "title": "한국지도자육성장학재단 54기",
+    "description": "4학기 전액장학",
+    "date": {
+      "start": "2024-03-01",
+      "end": "2025-12-31"
+    },
+    "institutions": [],
+    "categories": [],
+    "assignedTasks": [],
+    "importance": null,
+    "url": null,
+    "awardsAndCertifications": null,
+    "relatedProjects": [],
+    "iconUrl": null,
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "32e22a34-d0b0-4b9d-a411-5a6b0c2437f3": {
+    "id": "32e22a34-d0b0-4b9d-a411-5a6b0c2437f3",
+    "slug": "1st-generative-ai-ideathon",
+    "title": "1st Generative AI Ideathon",
+    "description": null,
+    "date": {
+      "start": "2023-12-02",
+      "end": "2023-12-03"
+    },
+    "institutions": [
+      {
+        "name": "Wrtn",
+        "color": "blue"
+      }
+    ],
+    "categories": [
+      {
+        "name": "해커톤",
+        "color": "red"
+      }
+    ],
+    "assignedTasks": [],
+    "importance": null,
+    "url": null,
+    "awardsAndCertifications": null,
+    "relatedProjects": [
+      "be36aef1-f29e-4071-bfd4-fa64bbb6f453"
+    ],
+    "iconUrl": null,
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "41fbb53e-a2b0-46fe-a425-48f33db6b632": {
+    "id": "41fbb53e-a2b0-46fe-a425-48f33db6b632",
+    "slug": "hufs-창업아이디어경진대회",
+    "title": "HUFS 창업아이디어경진대회",
+    "description": null,
+    "date": {
+      "start": "2023-12-01",
+      "end": null
+    },
+    "institutions": [
+      {
+        "name": "한국외국어대학교",
+        "color": "pink"
+      }
+    ],
+    "categories": [
+      {
+        "name": "공모전",
+        "color": "orange"
+      }
+    ],
+    "assignedTasks": [],
+    "importance": null,
+    "url": null,
+    "awardsAndCertifications": "대상",
+    "relatedProjects": [
+      "f8408212-01e1-4ca5-ae9b-0aff52122cff"
+    ],
+    "iconUrl": null,
+    "iconEmoji": "💡",
+    "coverUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/bc5ac9ec-b6ee-4a49-bff6-f36109658a01/IMG_5695.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=25d8162fc89a0c4066db8b0a815414ca1ff01bc4f95ab8e441d6a080ac332a91&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  },
+  "afc8beac-5991-4152-954b-a2d5c24e5ddc": {
+    "id": "afc8beac-5991-4152-954b-a2d5c24e5ddc",
+    "slug": "제-5회-hufs-code-festival",
+    "title": "제 5회 HUFS Code Festival",
+    "description": null,
+    "date": {
+      "start": "2023-11-23",
+      "end": null
+    },
+    "institutions": [
+      {
+        "name": "한국외국어대학교 AI 교육원",
+        "color": "pink"
+      }
+    ],
+    "categories": [],
+    "assignedTasks": [],
+    "importance": null,
+    "url": null,
+    "awardsAndCertifications": null,
+    "relatedProjects": [],
+    "iconUrl": null,
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "b0d62388-6d2d-4c27-b481-e23d898b86ad": {
+    "id": "b0d62388-6d2d-4c27-b481-e23d898b86ad",
+    "slug": "ir피칭-경진대회",
+    "title": "IR피칭 경진대회",
+    "description": null,
+    "date": {
+      "start": "2023-11-03",
+      "end": "2023-11-04"
+    },
+    "institutions": [
+      {
+        "name": "한국외국어대학교",
+        "color": "pink"
+      },
+      {
+        "name": "슘페터",
+        "color": "green"
+      }
+    ],
+    "categories": [
+      {
+        "name": "캠프",
+        "color": "green"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "중간",
+    "url": null,
+    "awardsAndCertifications": "대상",
+    "relatedProjects": [
+      "f8408212-01e1-4ca5-ae9b-0aff52122cff"
+    ],
+    "iconUrl": null,
+    "iconEmoji": "⛺",
+    "coverUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/549b075c-83dc-434d-8ac0-1e276674e5f2/Untitled.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=064bb06787aea2744790f31102d3d904c1cf9cb63ba9f9b3301a642b899c731d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  },
+  "14161dfd-8efd-4ba9-a52a-cfea0275d55e": {
+    "id": "14161dfd-8efd-4ba9-a52a-cfea0275d55e",
+    "slug": "벤처-스타트업-아카데미-해커톤",
+    "title": "벤처·스타트업 아카데미 해커톤",
+    "description": null,
+    "date": {
+      "start": "2023-08-29",
+      "end": "2023-08-30"
+    },
+    "institutions": [
+      {
+        "name": "중소벤처기업부",
+        "color": "red"
+      },
+      {
+        "name": "한국 스타트업 포럼",
+        "color": "green"
+      }
+    ],
+    "categories": [
+      {
+        "name": "해커톤",
+        "color": "red"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      },
+      {
+        "name": "디자인",
+        "color": "green"
+      }
+    ],
+    "importance": "낮음",
+    "url": null,
+    "awardsAndCertifications": null,
+    "relatedProjects": [
+      "4921b020-aaf8-4482-bfef-4976499dde2e"
+    ],
+    "iconUrl": null,
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "1383b1b1-c9dc-80a7-87c2-c15eb9f3f13f": {
+    "id": "1383b1b1-c9dc-80a7-87c2-c15eb9f3f13f",
+    "slug": "alpaon-llc",
+    "title": "Alpaon LLC.",
+    "description": "IDC, IoT, PCB, SaaS 등의 기술력으로 각종 서비스를 만들어나갑니다.",
+    "date": {
+      "start": "2023-08-01",
+      "end": null
+    },
+    "institutions": [],
+    "categories": [
+      {
+        "name": "사업",
+        "color": "blue"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "CTO",
+        "color": "brown"
+      }
+    ],
+    "importance": "매우 높음",
+    "url": null,
+    "awardsAndCertifications": null,
+    "relatedProjects": [],
+    "iconUrl": null,
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "ca75ef79-2c62-4926-af1a-7b5608e36d12": {
+    "id": "ca75ef79-2c62-4926-af1a-7b5608e36d12",
+    "slug": "hufsummer-hackathon",
+    "title": "HUFSummer Hackathon",
+    "description": null,
+    "date": {
+      "start": "2023-06-23",
+      "end": "2023-06-24"
+    },
+    "institutions": [
+      {
+        "name": "GDSC",
+        "color": "blue"
+      },
+      {
+        "name": "한국외국어대학교 AI 교육원",
+        "color": "pink"
+      },
+      {
+        "name": "Google Developers",
+        "color": "blue"
+      }
+    ],
+    "categories": [
+      {
+        "name": "해커톤",
+        "color": "red"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      },
+      {
+        "name": "디자인",
+        "color": "green"
+      }
+    ],
+    "importance": "중간",
+    "url": null,
+    "awardsAndCertifications": "한국외국어대학교총장상 (대상)",
+    "relatedProjects": [
+      "6a12c934-4914-47fe-99ca-faaebc1a04d8"
+    ],
+    "iconUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/23207daa-9da2-4b4a-b04f-4a684056a764/image.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=61260ff6e17f7e96e3f7dcee921a97cc788d1b5687019e227a39ecda93de05ab&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "iconEmoji": null,
+    "coverUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/03d5899f-a401-40bb-94ac-40e783300be2/IMG_4459.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=c3fe4baeb3031d9c32c6da897a9f6112faeff4569fbca2b854c6601b67e29ed6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  },
+  "1383b1b1-c9dc-8053-9783-d2945bf7abfd": {
+    "id": "1383b1b1-c9dc-8053-9783-d2945bf7abfd",
+    "slug": "ids-lab",
+    "title": "IDS Lab",
+    "description": null,
+    "date": {
+      "start": "2023-04-28",
+      "end": "2023-12-31"
+    },
+    "institutions": [
+      {
+        "name": "한국외국어대학교",
+        "color": "pink"
+      }
+    ],
+    "categories": [
+      {
+        "name": "연구",
+        "color": "yellow"
+      }
+    ],
+    "assignedTasks": [],
+    "importance": null,
+    "url": null,
+    "awardsAndCertifications": null,
+    "relatedProjects": [],
+    "iconUrl": null,
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "39343b25-6514-4fb1-8732-003acf0a23f3": {
+    "id": "39343b25-6514-4fb1-8732-003acf0a23f3",
+    "slug": "1784-스쿨혁명-인공지능-캠프",
+    "title": "1784 스쿨혁명 인공지능 캠프",
+    "description": "초등학생을 대상으로 인공지능 로봇 교육봉사",
+    "date": {
+      "start": "2023-02-06",
+      "end": "2023-02-07"
+    },
+    "institutions": [
+      {
+        "name": "디지털새싹",
+        "color": "green"
+      },
+      {
+        "name": "소프트웨어야 놀자",
+        "color": "green"
+      },
+      {
+        "name": "네이버 커넥트",
+        "color": "blue"
+      }
+    ],
+    "categories": [
+      {
+        "name": "교육",
+        "color": "purple"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "교육",
+        "color": "red"
+      },
+      {
+        "name": "커리큘럼 제작",
+        "color": "blue"
+      }
+    ],
+    "importance": null,
+    "url": null,
+    "awardsAndCertifications": null,
+    "relatedProjects": [],
+    "iconUrl": null,
+    "iconEmoji": "🎓",
+    "coverUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/972fee42-0286-4bd9-8568-7aea95294da3/IMG_0365_Original.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=e465c3fd77ee379084be4ad8289f2f735b7aee553e7c7f76259fe10ce745217e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  },
+  "cf34e57d-33b1-44b7-bc56-2db17cb67b6a": {
+    "id": "cf34e57d-33b1-44b7-bc56-2db17cb67b6a",
+    "slug": "osam-국방부-해커톤",
+    "title": "OSAM 국방부 해커톤",
+    "description": null,
+    "date": {
+      "start": "2021-08-21",
+      "end": null
+    },
+    "institutions": [],
+    "categories": [
+      {
+        "name": "해커톤",
+        "color": "red"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      }
+    ],
+    "importance": null,
+    "url": null,
+    "awardsAndCertifications": null,
+    "relatedProjects": [],
+    "iconUrl": null,
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "07a7bf84-45bc-4669-b836-7ca8790bebd3": {
+    "id": "07a7bf84-45bc-4669-b836-7ca8790bebd3",
+    "slug": "파이썬-교육",
+    "title": "파이썬 교육",
+    "description": null,
+    "date": {
+      "start": "2020-10-16",
+      "end": null
+    },
+    "institutions": [
+      {
+        "name": "한국외대 SW 봉사단",
+        "color": "pink"
+      }
+    ],
+    "categories": [
+      {
+        "name": "교육",
+        "color": "purple"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "커리큘럼 제작",
+        "color": "blue"
+      },
+      {
+        "name": "도우미",
+        "color": "orange"
+      }
+    ],
+    "importance": null,
+    "url": null,
+    "awardsAndCertifications": null,
+    "relatedProjects": [],
+    "iconUrl": null,
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "e0a35e1e-9ff1-4714-82f7-205fc76001e6": {
+    "id": "e0a35e1e-9ff1-4714-82f7-205fc76001e6",
+    "slug": "sw-진로설계-세미나-아두이노",
+    "title": "SW 진로설계 세미나 + 아두이노",
+    "description": null,
+    "date": {
+      "start": "2020-10-06",
+      "end": null
+    },
+    "institutions": [
+      {
+        "name": "한국외대 SW 봉사단",
+        "color": "pink"
+      }
+    ],
+    "categories": [
+      {
+        "name": "교육",
+        "color": "purple"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "커리큘럼 제작",
+        "color": "blue"
+      },
+      {
+        "name": "교육",
+        "color": "red"
+      }
+    ],
+    "importance": null,
+    "url": null,
+    "awardsAndCertifications": null,
+    "relatedProjects": [],
+    "iconUrl": null,
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "deda62c8-0d3d-4805-bf5f-b156f179ef68": {
+    "id": "deda62c8-0d3d-4805-bf5f-b156f179ef68",
+    "slug": "hello-new-world",
+    "title": "Hello New() World",
+    "description": "신세계 주최 해커톤",
+    "date": {
+      "start": "2019-07-19",
+      "end": "2019-07-20"
+    },
+    "institutions": [
+      {
+        "name": "신세계아이엔씨",
+        "color": "blue"
+      },
+      {
+        "name": "함께일하는재단",
+        "color": "green"
+      }
+    ],
+    "categories": [
+      {
+        "name": "해커톤",
+        "color": "red"
+      },
+      {
+        "name": "공모전",
+        "color": "orange"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "중간",
+    "url": "http://hellonewworld.co.kr/bbs/board.php?bo_table=33&wr_id=2",
+    "awardsAndCertifications": "최우수상",
+    "relatedProjects": [
+      "8633e484-74fb-484f-931b-af6286fc7418"
+    ],
+    "iconUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/f8a71c9f-7a75-4500-8644-f0745dc7a36a/logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=db0110515c759e5cd3f153030faa3a308d9bce5f773ef6f6bb115dffc6346065&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "iconEmoji": null,
+    "coverUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/4907acf9-89b9-4582-ae32-a871b3e79283/1179_48104_0__aUKrh.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=aee83b82e4d353e41cb1beba0aac08c08d72c4f73a49d7bb649e0d1bf95c4d4f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  },
+  "89469a5f-20fa-496a-9504-32a037875528": {
+    "id": "89469a5f-20fa-496a-9504-32a037875528",
+    "slug": "국가슈퍼컴퓨팅-청소년-캠프",
+    "title": "국가슈퍼컴퓨팅 청소년 캠프",
+    "description": null,
+    "date": {
+      "start": "2019-07-15",
+      "end": "2019-07-19"
+    },
+    "institutions": [
+      {
+        "name": "UNIST",
+        "color": "pink"
+      }
+    ],
+    "categories": [
+      {
+        "name": "캠프",
+        "color": "green"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "높음",
+    "url": null,
+    "awardsAndCertifications": "울산과학기술원 총장상",
+    "relatedProjects": [],
+    "iconUrl": null,
+    "iconEmoji": "⛺",
+    "coverUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/0440a806-7e8e-4314-a5fe-6b1f2af61d71/1179_43301_0_rnfjOr_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=c88bf10283b9c6780f9768df1e27e2a2ac925740e0163c3686d51ab30379f21f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  },
+  "e7fbf93d-f2e3-4a60-92b5-246790eabab5": {
+    "id": "e7fbf93d-f2e3-4a60-92b5-246790eabab5",
+    "slug": "2019-angelhack-hackathon",
+    "title": "2019 AngelHack Hackathon",
+    "description": null,
+    "date": {
+      "start": "2019-06-01",
+      "end": "2019-06-02"
+    },
+    "institutions": [
+      {
+        "name": "AngelHack",
+        "color": "default"
+      }
+    ],
+    "categories": [
+      {
+        "name": "해커톤",
+        "color": "red"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "중간",
+    "url": null,
+    "awardsAndCertifications": "LG U+ Track Winner",
+    "relatedProjects": [
+      "dd3d53cf-94ce-41c5-bf38-309a4da791bf"
+    ],
+    "iconUrl": null,
+    "iconEmoji": "👼",
+    "coverUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/0d2b62d8-49b6-4619-a972-8387f87a5e33/1179_51101_0_yIaxIT.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=e01894b3a6bcc0eaf4073a75777da540b0cc8a29560f1b3be2d024c5be6f6115&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  },
+  "da2074ac-3656-4592-8a73-d0dd3e5fd1b7": {
+    "id": "da2074ac-3656-4592-8a73-d0dd3e5fd1b7",
+    "slug": "방송영상-뉴미디어-콘텐츠-아이디어톤",
+    "title": "방송영상 뉴미디어 콘텐츠 아이디어톤",
+    "description": null,
+    "date": {
+      "start": "2019-03-29",
+      "end": "2019-03-30"
+    },
+    "institutions": [],
+    "categories": [
+      {
+        "name": "해커톤",
+        "color": "red"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "중간",
+    "url": null,
+    "awardsAndCertifications": "최우수상",
+    "relatedProjects": [],
+    "iconUrl": null,
+    "iconEmoji": "📺",
+    "coverUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/40a6eb10-fa66-460e-a520-f8a4a5f9af23/EB0E54FC-03CC-479D-9CD4-A0D930B64587_1_105_c.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=70ac6e0a892a7531f8512ff72d82a3fb6de47fff5b2bdf501dba0400949e9db1&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  },
+  "de7e634c-720e-447a-8b29-3452f2683b5f": {
+    "id": "de7e634c-720e-447a-8b29-3452f2683b5f",
+    "slug": "dmz-해커톤",
+    "title": "DMZ 해커톤",
+    "description": null,
+    "date": {
+      "start": "2019-01-23",
+      "end": "2019-01-25"
+    },
+    "institutions": [
+      {
+        "name": "DMZ Hackathon",
+        "color": "default"
+      }
+    ],
+    "categories": [
+      {
+        "name": "해커톤",
+        "color": "red"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "낮음",
+    "url": null,
+    "awardsAndCertifications": "우수상",
+    "relatedProjects": [
+      "ad7b67e5-f69e-4177-b130-afa16eadd5be"
+    ],
+    "iconUrl": null,
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "c65f40a3-12fb-438a-8afb-4ab60ac814f6": {
+    "id": "c65f40a3-12fb-438a-8afb-4ab60ac814f6",
+    "slug": "2018-대한민국-청소년-창업경진대회",
+    "title": "2018 대한민국 청소년 창업경진대회",
+    "description": null,
+    "date": {
+      "start": "2019-01-15",
+      "end": null
+    },
+    "institutions": [
+      {
+        "name": "YEEP",
+        "color": "yellow"
+      }
+    ],
+    "categories": [
+      {
+        "name": "부스운영",
+        "color": "pink"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "중간",
+    "url": null,
+    "awardsAndCertifications": "기업가정신상",
+    "relatedProjects": [
+      "72fff05b-7e1a-47ae-a3df-543ae5e8a57a",
+      "10722f86-9794-4ec2-bb11-5b92a16970e5",
+      "f9cda467-4e16-4a41-b99a-7e915db4c181"
+    ],
+    "iconUrl": null,
+    "iconEmoji": "🏆",
+    "coverUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/11f887ea-bb0a-4f13-bd09-c69ccb8abd4a/1179_49302_0_WR-NTM.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=be8e8360bc20b67763168a3b08c61c2cf7bca94b0c8696273252a9a3798cf753&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  },
+  "0efa438c-617f-46b4-bd48-18903013d80f": {
+    "id": "0efa438c-617f-46b4-bd48-18903013d80f",
+    "slug": "the-vplanet-inc",
+    "title": "The Vplanet Inc.",
+    "description": null,
+    "date": {
+      "start": "2019-01-09",
+      "end": "2019-09-11"
+    },
+    "institutions": [],
+    "categories": [
+      {
+        "name": "회사",
+        "color": "brown"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": null,
+    "url": null,
+    "awardsAndCertifications": null,
+    "relatedProjects": [
+      "8abeb85b-6efe-464c-a035-8f69b4bcf282"
+    ],
+    "iconUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/9110d6d5-7488-4e18-b9e1-49d921c57558/download.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=b1aede5e575606f260567ce0822af1074ecf01234890f49b4318fa21ed5529ee&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "25a7c61f-887c-47ae-ad63-a68e5759489b": {
+    "id": "25a7c61f-887c-47ae-ad63-a68e5759489b",
+    "slug": "설리번-오빠-rc카-뽑았다",
+    "title": "설리번 '오빠 RC카 뽑았다'",
+    "description": null,
+    "date": {
+      "start": "2019-01-05",
+      "end": "2019-01-27"
+    },
+    "institutions": [
+      {
+        "name": "설리번 프로젝트",
+        "color": "green"
+      }
+    ],
+    "categories": [
+      {
+        "name": "교육",
+        "color": "purple"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "커리큘럼 제작",
+        "color": "blue"
+      },
+      {
+        "name": "교육",
+        "color": "red"
+      }
+    ],
+    "importance": null,
+    "url": null,
+    "awardsAndCertifications": null,
+    "relatedProjects": [],
+    "iconUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/3584bdfe-1538-4215-aea0-9747b21359b2/download-1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=e104988929948aa3001f8a81f3d4cc67081cfe0d73b1930c6b31b2f0b06b5416&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "3bbe06ca-d551-4eb2-bbaa-42a4ef882e0f": {
+    "id": "3bbe06ca-d551-4eb2-bbaa-42a4ef882e0f",
+    "slug": "비즈쿨성과발표-우수동아리",
+    "title": "비즈쿨성과발표 우수동아리",
+    "description": null,
+    "date": {
+      "start": "2018-12-28",
+      "end": null
+    },
+    "institutions": [
+      {
+        "name": "한국디지털미디어고등학교",
+        "color": "pink"
+      }
+    ],
+    "categories": [
+      {
+        "name": "부스운영",
+        "color": "pink"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "중간",
+    "url": null,
+    "awardsAndCertifications": "동상",
+    "relatedProjects": [],
+    "iconUrl": null,
+    "iconEmoji": "💼",
+    "coverUrl": null
+  },
+  "f94d52d8-d31b-4040-a0ef-3378e73cc1da": {
+    "id": "f94d52d8-d31b-4040-a0ef-3378e73cc1da",
+    "slug": "창의-it-공모전",
+    "title": "창의 IT 공모전",
+    "description": null,
+    "date": {
+      "start": "2018-12-27",
+      "end": null
+    },
+    "institutions": [
+      {
+        "name": "한국디지털미디어고등학교",
+        "color": "pink"
+      }
+    ],
+    "categories": [
+      {
+        "name": "공모전",
+        "color": "orange"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "중간",
+    "url": null,
+    "awardsAndCertifications": "장려상",
+    "relatedProjects": [],
+    "iconUrl": null,
+    "iconEmoji": "🎆",
+    "coverUrl": null
+  },
+  "1e449861-3743-43ee-b5a6-21b3e32e77df": {
+    "id": "1e449861-3743-43ee-b5a6-21b3e32e77df",
+    "slug": "if-해커톤",
+    "title": "IF 해커톤",
+    "description": null,
+    "date": {
+      "start": "2018-11-10",
+      "end": "2018-11-11"
+    },
+    "institutions": [
+      {
+        "name": "라임프랜즈",
+        "color": "blue"
+      }
+    ],
+    "categories": [
+      {
+        "name": "해커톤",
+        "color": "red"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "중간",
+    "url": null,
+    "awardsAndCertifications": "사회혁신상(대상)",
+    "relatedProjects": [
+      "8186aec8-ed5a-44b7-b17a-4ba595a16fe3"
+    ],
+    "iconUrl": null,
+    "iconEmoji": "🏆",
+    "coverUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/db52c6dc-91a5-417f-b114-83e1d3880af2/KakaoTalk_20200319_233901770.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=032bd47d6f3cbad49e3c72eca6bd5a431a9a8aaf69cc384ac618b487bcbdc43d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  },
+  "56ae8dd3-74ef-4b6d-b63e-03535d3a271b": {
+    "id": "56ae8dd3-74ef-4b6d-b63e-03535d3a271b",
+    "slug": "청소년-비즈쿨-페스티벌",
+    "title": "청소년 비즈쿨 페스티벌",
+    "description": null,
+    "date": {
+      "start": "2018-11-10",
+      "end": null
+    },
+    "institutions": [
+      {
+        "name": "중소벤처기업부",
+        "color": "red"
+      },
+      {
+        "name": "창업진흥원",
+        "color": "red"
+      },
+      {
+        "name": "교육부",
+        "color": "red"
+      }
+    ],
+    "categories": [
+      {
+        "name": "부스운영",
+        "color": "pink"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "높음",
+    "url": null,
+    "awardsAndCertifications": "우수상",
+    "relatedProjects": [
+      "72fff05b-7e1a-47ae-a3df-543ae5e8a57a",
+      "10722f86-9794-4ec2-bb11-5b92a16970e5",
+      "f9cda467-4e16-4a41-b99a-7e915db4c181"
+    ],
+    "iconUrl": null,
+    "iconEmoji": "🎊",
+    "coverUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/9f3e8b20-1737-46c6-a2a0-2d043d913537/1179_49702_0_wr2Vi0.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=4f385605fbc2be9f716fbc7d07e2dc306a77b0166d5ce386b447270a757c0993&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  },
+  "be750e1e-c461-4aad-9ada-7cdc516f10fa": {
+    "id": "be750e1e-c461-4aad-9ada-7cdc516f10fa",
+    "slug": "불법-스포츠-도박-근절-해커톤",
+    "title": "불법 스포츠 도박 근절 해커톤",
+    "description": null,
+    "date": {
+      "start": "2018-11-03",
+      "end": "2018-11-04"
+    },
+    "institutions": [
+      {
+        "name": "국민체육진흥공단",
+        "color": "red"
+      }
+    ],
+    "categories": [
+      {
+        "name": "해커톤",
+        "color": "red"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "중간",
+    "url": null,
+    "awardsAndCertifications": "최우수상",
+    "relatedProjects": [
+      "31fcdff2-b969-47bc-b2f6-681122fe2215"
+    ],
+    "iconUrl": null,
+    "iconEmoji": "✋",
+    "coverUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/bdb0dea8-5fd7-40f4-a7a6-78f95a1963f2/1179_49401_0_7eQFlP.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=1ed8be31abc9216b4bd282a77ffe6e73d9f0d2ff2c69d3224b05e3b5c879dfa6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  },
+  "41d72e17-deb7-4d1b-8cdb-860a3d008187": {
+    "id": "41d72e17-deb7-4d1b-8cdb-860a3d008187",
+    "slug": "디미고-해커톤",
+    "title": "디미고 해커톤",
+    "description": null,
+    "date": {
+      "start": "2018-10-26",
+      "end": "2018-10-27"
+    },
+    "institutions": [
+      {
+        "name": "한국디지털미디어고등학교",
+        "color": "pink"
+      }
+    ],
+    "categories": [
+      {
+        "name": "해커톤",
+        "color": "red"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "중간",
+    "url": null,
+    "awardsAndCertifications": "동상(취소됨)",
+    "relatedProjects": [
+      "f0499ae1-e215-4aaf-8066-fcd9428be8c8"
+    ],
+    "iconUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/c1ed76c9-c87b-4616-9731-964a831359fc/download-1.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=15db6ebf382b12ea42ea6193ae7864931d281ac57bcc2fa295bf07034d4e1df5&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "b8a6bf29-d61a-457b-941a-170a99b0a29a": {
+    "id": "b8a6bf29-d61a-457b-941a-170a99b0a29a",
+    "slug": "ict-메이커톤",
+    "title": "ICT 메이커톤",
+    "description": null,
+    "date": {
+      "start": "2018-10-20",
+      "end": "2018-10-21"
+    },
+    "institutions": [
+      {
+        "name": "동탄중앙이음터",
+        "color": "yellow"
+      }
+    ],
+    "categories": [
+      {
+        "name": "해커톤",
+        "color": "red"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "낮음",
+    "url": null,
+    "awardsAndCertifications": "대상",
+    "relatedProjects": [
+      "3488f0b9-da37-4809-8d14-1d573d663fac"
+    ],
+    "iconUrl": null,
+    "iconEmoji": "🤖",
+    "coverUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/fa5c1853-1639-44f7-a426-b5656de2e829/1179_49101_0_AeCSEU.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=5b18961b3cda09437b34ba28ff44b5b448425a54327e948f2e00b7ca3ef8424b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  },
+  "43d36b20-c680-4663-b9ac-d36b24a94f13": {
+    "id": "43d36b20-c680-4663-b9ac-d36b24a94f13",
+    "slug": "inapse-hackathon",
+    "title": "INAPSE HACKATHON",
+    "description": null,
+    "date": {
+      "start": "2018-10-13",
+      "end": "2018-10-14"
+    },
+    "institutions": [],
+    "categories": [
+      {
+        "name": "해커톤",
+        "color": "red"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "낮음",
+    "url": null,
+    "awardsAndCertifications": null,
+    "relatedProjects": [
+      "94abf410-d23e-4253-8e66-d6fe06d07fd0"
+    ],
+    "iconUrl": null,
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "e5b7b55a-a297-4283-9a2d-5fda94ce569d": {
+    "id": "e5b7b55a-a297-4283-9a2d-5fda94ce569d",
+    "slug": "stac-스마틴앱챌린지",
+    "title": "STAC 스마틴앱챌린지",
+    "description": null,
+    "date": {
+      "start": "2018-09-29",
+      "end": null
+    },
+    "institutions": [
+      {
+        "name": "SK 플래닛",
+        "color": "blue"
+      }
+    ],
+    "categories": [
+      {
+        "name": "공모전",
+        "color": "orange"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "높음",
+    "url": null,
+    "awardsAndCertifications": "우수상",
+    "relatedProjects": [
+      "10722f86-9794-4ec2-bb11-5b92a16970e5"
+    ],
+    "iconUrl": null,
+    "iconEmoji": "📱",
+    "coverUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/49bce0c9-f915-45db-847a-710cc3cea012/1179_40201_0_fPHe6r.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=4815212182f9ced54687c33e54887450f3dc79538e4002f2e80eade2e9ef15c1&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  },
+  "29055678-f315-4668-940b-973aff964c4b": {
+    "id": "29055678-f315-4668-940b-973aff964c4b",
+    "slug": "대한민국-sw-융합-해커톤",
+    "title": "대한민국 SW 융합 해커톤",
+    "description": null,
+    "date": {
+      "start": "2018-08-31",
+      "end": "2018-09-01"
+    },
+    "institutions": [],
+    "categories": [
+      {
+        "name": "해커톤",
+        "color": "red"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "낮음",
+    "url": null,
+    "awardsAndCertifications": null,
+    "relatedProjects": [
+      "d041a673-7348-4dd0-aa72-2e56065036f1"
+    ],
+    "iconUrl": null,
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "479e58ac-c767-4790-afc6-dd224bd77d9b": {
+    "id": "479e58ac-c767-4790-afc6-dd224bd77d9b",
+    "slug": "학생창업유망팀-300-우수-동아리",
+    "title": "학생창업유망팀 300+ 우수 동아리",
+    "description": null,
+    "date": {
+      "start": "2018-08-29",
+      "end": null
+    },
+    "institutions": [
+      {
+        "name": "YEEP",
+        "color": "yellow"
+      }
+    ],
+    "categories": [
+      {
+        "name": "부스운영",
+        "color": "pink"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "중간",
+    "url": null,
+    "awardsAndCertifications": "우수동아리 선정",
+    "relatedProjects": [
+      "72fff05b-7e1a-47ae-a3df-543ae5e8a57a",
+      "10722f86-9794-4ec2-bb11-5b92a16970e5",
+      "f9cda467-4e16-4a41-b99a-7e915db4c181"
+    ],
+    "iconUrl": null,
+    "iconEmoji": "👥",
+    "coverUrl": null
+  },
+  "61aef909-0211-456a-ae3f-0a279a1e2f87": {
+    "id": "61aef909-0211-456a-ae3f-0a279a1e2f87",
+    "slug": "제-16회-앱잼",
+    "title": "제 16회 앱잼",
+    "description": null,
+    "date": {
+      "start": "2018-08-18",
+      "end": "2018-08-19"
+    },
+    "institutions": [
+      {
+        "name": "SK techx",
+        "color": "blue"
+      },
+      {
+        "name": "서울디지털재단",
+        "color": "green"
+      }
+    ],
+    "categories": [
+      {
+        "name": "해커톤",
+        "color": "red"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "낮음",
+    "url": null,
+    "awardsAndCertifications": null,
+    "relatedProjects": [
+      "1991cd92-201b-4909-871c-fba3d19d366b"
+    ],
+    "iconUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/e3cb8c39-71f8-4072-95e2-b303ac398413/s.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=03d01c1a83857217e446b33db249771190e400df812b343931ab04f035eba843&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "fde68f8d-e2d5-4e93-8821-a25b3af556b4": {
+    "id": "fde68f8d-e2d5-4e93-8821-a25b3af556b4",
+    "slug": "남양주-해커톤",
+    "title": "남양주 해커톤",
+    "description": null,
+    "date": {
+      "start": "2018-08-11",
+      "end": "2018-08-12"
+    },
+    "institutions": [
+      {
+        "name": "남양주",
+        "color": "red"
+      }
+    ],
+    "categories": [
+      {
+        "name": "해커톤",
+        "color": "red"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "낮음",
+    "url": null,
+    "awardsAndCertifications": null,
+    "relatedProjects": [
+      "8fda43a6-b6cb-495f-8256-898cd2e66b03"
+    ],
+    "iconUrl": null,
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "429bbe1b-4253-4d22-a01c-08308d19024f": {
+    "id": "429bbe1b-4253-4d22-a01c-08308d19024f",
+    "slug": "hello-new-world",
+    "title": "Hello New() World",
+    "description": null,
+    "date": {
+      "start": "2018-07-13",
+      "end": "2018-07-14"
+    },
+    "institutions": [
+      {
+        "name": "신세계아이엔씨",
+        "color": "blue"
+      },
+      {
+        "name": "함께일하는재단",
+        "color": "green"
+      }
+    ],
+    "categories": [
+      {
+        "name": "해커톤",
+        "color": "red"
+      },
+      {
+        "name": "공모전",
+        "color": "orange"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "높음",
+    "url": "http://hellonewworld.co.kr/bbs/board.php?bo_table=34&wr_id=4",
+    "awardsAndCertifications": "우수상",
+    "relatedProjects": [
+      "f9cda467-4e16-4a41-b99a-7e915db4c181"
+    ],
+    "iconUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/f9542b95-4d72-450d-a7ab-5f5d48e078f5/logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=28ee6a090c9f6dca635fa5c6c3ae61503f4092bb4d691905b291a1e64b177160&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "iconEmoji": null,
+    "coverUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/678cdf52-baf9-4ff4-bb38-9a18c2590d99/30878597_TwAmqnUH_b50df29e4832e9a784c10a9305daeb4429a5d83f.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=37b7a70b20adcc2f4f932392b112915f8d9870d621d0f7705206097b83494d16&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  },
+  "87bd18af-8515-4c14-a7df-40dcb2dae553": {
+    "id": "87bd18af-8515-4c14-a7df-40dcb2dae553",
+    "slug": "산업-현장-안전-메이커톤",
+    "title": "산업 현장 안전 메이커톤",
+    "description": null,
+    "date": {
+      "start": "2018-05-11",
+      "end": "2018-05-12"
+    },
+    "institutions": [
+      {
+        "name": "경기지방중소벤처기업청",
+        "color": "red"
+      }
+    ],
+    "categories": [
+      {
+        "name": "해커톤",
+        "color": "red"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "중간",
+    "url": null,
+    "awardsAndCertifications": "대상",
+    "relatedProjects": [
+      "86bf901d-caa9-424a-90f0-02da3d8f1bea"
+    ],
+    "iconUrl": null,
+    "iconEmoji": "🛠️",
+    "coverUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/19495382-dcc8-461b-87aa-c32235793d08/1179_41302_0_jd7DnH.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=2e687bb7f3ba6ed4a6e3326408b685035ace10c7381f99c443178e1375ce9e83&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  },
+  "a998b222-5541-4aae-baee-0cfa75664867": {
+    "id": "a998b222-5541-4aae-baee-0cfa75664867",
+    "slug": "제-15회-앱잼",
+    "title": "제 15회 앱잼",
+    "description": null,
+    "date": {
+      "start": "2018-03-31",
+      "end": "2018-04-01"
+    },
+    "institutions": [
+      {
+        "name": "SK techx",
+        "color": "blue"
+      },
+      {
+        "name": "서울디지털재단",
+        "color": "green"
+      },
+      {
+        "name": "Unity",
+        "color": "blue"
+      }
+    ],
+    "categories": [
+      {
+        "name": "해커톤",
+        "color": "red"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "중간",
+    "url": null,
+    "awardsAndCertifications": "미래산업 부문 최우수상",
+    "relatedProjects": [
+      "10722f86-9794-4ec2-bb11-5b92a16970e5"
+    ],
+    "iconUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/92249130-3ac8-4138-bba6-b8163b92046d/s.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090816Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=3e10f2b97a52645bbda558f539c12f035f53894f018a1dcfd69b76ac667efa2e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "iconEmoji": null,
+    "coverUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/9fe63a8f-3d9b-40d3-9ba6-9effa99b9537/1179_43201_0_qMz31D.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090816Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=5c8249cae8a594b5ae5948cb3864d52360ac0c7c7227233ed61bae409f5a7bd2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  },
+  "80c918f4-8ead-4409-ba3d-a3d54fbd41de": {
+    "id": "80c918f4-8ead-4409-ba3d-a3d54fbd41de",
+    "slug": "설리번-게임으로-배우는-웹해킹",
+    "title": "설리번 '게임으로 배우는 웹해킹'",
+    "description": null,
+    "date": {
+      "start": "2018-01-08",
+      "end": "2018-02-02"
+    },
+    "institutions": [
+      {
+        "name": "설리번 프로젝트",
+        "color": "green"
+      }
+    ],
+    "categories": [
+      {
+        "name": "교육",
+        "color": "purple"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "커리큘럼 제작",
+        "color": "blue"
+      },
+      {
+        "name": "교육",
+        "color": "red"
+      }
+    ],
+    "importance": null,
+    "url": null,
+    "awardsAndCertifications": null,
+    "relatedProjects": [],
+    "iconUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/5c2ad22c-e682-4e2c-9d38-d054c0a83014/download-1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=7aafa3aadb531c502b0b7135f64fb77e577ca9e3ae8849d912c5527c1b8b3f61&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "e1f0fc05-8023-4141-9469-64b5a78d7db8": {
+    "id": "e1f0fc05-8023-4141-9469-64b5a78d7db8",
+    "slug": "제-14회-앱잼",
+    "title": "제 14회 앱잼",
+    "description": null,
+    "date": {
+      "start": "2017-12-16",
+      "end": "2017-12-17"
+    },
+    "institutions": [
+      {
+        "name": "SK techx",
+        "color": "blue"
+      },
+      {
+        "name": "서울디지털재단",
+        "color": "green"
+      },
+      {
+        "name": "아산나눔재단",
+        "color": "green"
+      }
+    ],
+    "categories": [
+      {
+        "name": "해커톤",
+        "color": "red"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "중간",
+    "url": null,
+    "awardsAndCertifications": "미래산업 부문 최우수상",
+    "relatedProjects": [
+      "b67749b7-f3f1-4939-a51b-bcae543b0ae3"
+    ],
+    "iconUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/ea632b7e-b3d0-4825-9153-75e7ffbfa09b/s.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090816Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=cc701fecaa4ece2e57b7ff093714ffa33872f5d9fa29c9f9e51393c33d0444ea&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "iconEmoji": null,
+    "coverUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/caae21d7-8793-49e8-a605-05209594caf1/1179_43201_0_2BhM7p.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090816Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=9a536a2454c57ab33b01120da0f115e08c5a04bb289a28e10df83127de8fe204&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  },
+  "d16b1aab-7960-4878-9fd9-17756f3b3484": {
+    "id": "d16b1aab-7960-4878-9fd9-17756f3b3484",
+    "slug": "한국디지털미디어고등학교-장학",
+    "title": "한국디지털미디어고등학교 장학",
+    "description": null,
+    "date": {
+      "start": "2017-03-02",
+      "end": null
+    },
+    "institutions": [
+      {
+        "name": "한국디지털미디어고등학교",
+        "color": "pink"
+      }
+    ],
+    "categories": [],
+    "assignedTasks": [],
+    "importance": null,
+    "url": null,
+    "awardsAndCertifications": null,
+    "relatedProjects": [],
+    "iconUrl": null,
+    "iconEmoji": null,
+    "coverUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/b82e849f-7238-4da5-983d-c5b831a9d03e/KakaoTalk_Photo_2023-11-20-22-18-16.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=ead72ff6b6a3f66ba7765aa69a63740c8e27cbf485b718cd05365991157d804b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  },
+  "ed734136-883f-4c76-9df7-0cb71bb05991": {
+    "id": "ed734136-883f-4c76-9df7-0cb71bb05991",
+    "slug": "대전교육정보원-정보-고급-수료",
+    "title": "대전교육정보원 정보 고급 수료",
+    "description": null,
+    "date": {
+      "start": "2016-12-31",
+      "end": null
+    },
+    "institutions": [
+      {
+        "name": "대전교육정보원 영재교육원",
+        "color": "red"
+      }
+    ],
+    "categories": [
+      {
+        "name": "수료",
+        "color": "default"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "중간",
+    "url": null,
+    "awardsAndCertifications": "고급",
+    "relatedProjects": [],
+    "iconUrl": null,
+    "iconEmoji": "💼",
+    "coverUrl": null
+  },
+  "1373b1b1-c9dc-8033-b47c-e0632d7b68d1": {
+    "id": "1373b1b1-c9dc-8033-b47c-e0632d7b68d1",
+    "slug": "2016-it-교육지원-컨퍼런스",
+    "title": "2016 IT 교육지원 컨퍼런스",
+    "description": null,
+    "date": {
+      "start": "2016-11-22",
+      "end": null
+    },
+    "institutions": [
+      {
+        "name": "전자신문",
+        "color": "purple"
+      },
+      {
+        "name": "교육부",
+        "color": "red"
+      },
+      {
+        "name": "한국교육학술정보원",
+        "color": "orange"
+      }
+    ],
+    "categories": [
+      {
+        "name": "장학",
+        "color": "blue"
+      }
+    ],
+    "assignedTasks": [],
+    "importance": null,
+    "url": null,
+    "awardsAndCertifications": null,
+    "relatedProjects": [],
+    "iconUrl": null,
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "cf1cc337-b1f9-464c-803a-8cbd7d56567f": {
+    "id": "cf1cc337-b1f9-464c-803a-8cbd7d56567f",
+    "slug": "제-33회-정보올림피아드-공모-부문",
+    "title": "제 33회 정보올림피아드 공모 부문",
+    "description": null,
+    "date": {
+      "start": "2016-07-01",
+      "end": null
+    },
+    "institutions": [
+      {
+        "name": "KOI",
+        "color": "red"
+      }
+    ],
+    "categories": [
+      {
+        "name": "공모전",
+        "color": "orange"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "중간",
+    "url": null,
+    "awardsAndCertifications": "전국 금상",
+    "relatedProjects": [
+      "72fff05b-7e1a-47ae-a3df-543ae5e8a57a"
+    ],
+    "iconUrl": null,
+    "iconEmoji": "🏆",
+    "coverUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/affdc641-67ba-4246-9e8b-f6e87b118e85/IMG_0207.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=624069a122684876c92df49c7530a73aa9c0cfa3da5bc18b20e521aa6a3397dd&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  },
+  "babf869c-f6a3-4b1c-9d5f-00d61470fa30": {
+    "id": "babf869c-f6a3-4b1c-9d5f-00d61470fa30",
+    "slug": "대전교육정보원-정보-중급-수료",
+    "title": "대전교육정보원 정보 중급 수료",
+    "description": null,
+    "date": {
+      "start": "2015-12-31",
+      "end": null
+    },
+    "institutions": [
+      {
+        "name": "대전교육정보원 영재교육원",
+        "color": "red"
+      }
+    ],
+    "categories": [
+      {
+        "name": "수료",
+        "color": "default"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      }
+    ],
+    "importance": "중간",
+    "url": null,
+    "awardsAndCertifications": "중급",
+    "relatedProjects": [],
+    "iconUrl": null,
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "0e492ad6-4b98-4292-9900-8e92f35596c0": {
+    "id": "0e492ad6-4b98-4292-9900-8e92f35596c0",
+    "slug": "영재교육원-개인주제탐구발표대회",
+    "title": "영재교육원 개인주제탐구발표대회",
+    "description": null,
+    "date": {
+      "start": "2015-11-01",
+      "end": null
+    },
+    "institutions": [
+      {
+        "name": "대전교육정보원 영재교육원",
+        "color": "red"
+      }
+    ],
+    "categories": [
+      {
+        "name": "공모전",
+        "color": "orange"
+      }
+    ],
+    "assignedTasks": [
+      {
+        "name": "개발",
+        "color": "yellow"
+      },
+      {
+        "name": "기획",
+        "color": "pink"
+      }
+    ],
+    "importance": "낮음",
+    "url": null,
+    "awardsAndCertifications": "금상",
+    "relatedProjects": [
+      "f8eaf004-c9ef-40d0-8512-fb0e49f06a88"
+    ],
+    "iconUrl": null,
+    "iconEmoji": null,
+    "coverUrl": null
+  },
+  "63e9ec4b-3368-41ef-8e54-50b0a55640a2": {
+    "id": "63e9ec4b-3368-41ef-8e54-50b0a55640a2",
+    "slug": "대전-영재-페스티벌",
+    "title": "대전 영재 페스티벌",
+    "description": null,
+    "date": {
+      "start": "2015-10-23",
+      "end": null
+    },
+    "institutions": [
+      {
+        "name": "대전광역시",
+        "color": "red"
+      }
+    ],
+    "categories": [
+      {
+        "name": "부스운영",
+        "color": "pink"
+      }
+    ],
+    "assignedTasks": [],
+    "importance": "낮음",
+    "url": null,
+    "awardsAndCertifications": "동상",
+    "relatedProjects": [],
+    "iconUrl": null,
+    "iconEmoji": null,
+    "coverUrl": null
+  }
+}

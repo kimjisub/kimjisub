@@ -1,0 +1,24 @@
+{
+  "id": "8727405e-9650-436f-8628-601b24bd12bc",
+  "slug": "kafka",
+  "title": "Kafka",
+  "iconSlug": "apachekafka",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "프로토콜"
+  ],
+  "proficiency": "2. 중급",
+  "visible": true,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [
+    "9b184a99-0538-4f90-b2a7-ca94b4e5127c"
+  ],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

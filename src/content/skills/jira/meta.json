@@ -1,0 +1,22 @@
+{
+  "id": "72c087b5-c383-4cd9-900e-170eb5435525",
+  "slug": "jira",
+  "title": "Jira",
+  "iconSlug": "jira",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "협업/문서"
+  ],
+  "proficiency": null,
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

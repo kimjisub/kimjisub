@@ -1,0 +1,38 @@
+{
+  "id": "20644d3b-b8de-43b8-84a8-09c461058fcc",
+  "slug": "출결관리-시스템",
+  "title": "출결관리 시스템",
+  "description": "회사/학원 출결 관리 시스템",
+  "date": {
+    "start": "2020-09-28",
+    "end": null
+  },
+  "github": null,
+  "youtube": null,
+  "url": null,
+  "importance": "중간",
+  "tags": [],
+  "categories": [
+    {
+      "name": "외주",
+      "color": "brown"
+    }
+  ],
+  "assignedTasks": [
+    {
+      "name": "개발",
+      "color": "blue"
+    }
+  ],
+  "techSkills": [
+    "android",
+    "kotlin"
+  ],
+  "languages": [
+    "kotlin"
+  ],
+  "relatedCareers": [],
+  "iconUrl": null,
+  "iconEmoji": "🎒",
+  "coverUrl": null
+}

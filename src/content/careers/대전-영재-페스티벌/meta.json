@@ -1,0 +1,30 @@
+{
+  "id": "63e9ec4b-3368-41ef-8e54-50b0a55640a2",
+  "slug": "대전-영재-페스티벌",
+  "title": "대전 영재 페스티벌",
+  "description": null,
+  "date": {
+    "start": "2015-10-23",
+    "end": null
+  },
+  "institutions": [
+    {
+      "name": "대전광역시",
+      "color": "red"
+    }
+  ],
+  "categories": [
+    {
+      "name": "부스운영",
+      "color": "pink"
+    }
+  ],
+  "assignedTasks": [],
+  "importance": "낮음",
+  "url": null,
+  "awardsAndCertifications": "동상",
+  "relatedProjects": [],
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

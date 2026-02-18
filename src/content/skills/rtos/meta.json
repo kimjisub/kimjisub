@@ -1,0 +1,24 @@
+{
+  "id": "b52093c8-a9d8-47ae-9ee2-74ad1c13fe63",
+  "slug": "rtos",
+  "title": "RTOS",
+  "iconSlug": "rtos",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "하드웨어"
+  ],
+  "proficiency": "1. 초보",
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [
+    "f8408212-01e1-4ca5-ae9b-0aff52122cff"
+  ],
+  "usedAsLanguage": [],
+  "usageCount": 1,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

@@ -1,0 +1,37 @@
+{
+  "id": "be36aef1-f29e-4071-bfd4-fa64bbb6f453",
+  "slug": "wrtn-magic",
+  "title": "Wrtn Magic",
+  "description": null,
+  "date": {
+    "start": "2023-12-02",
+    "end": "2023-12-03"
+  },
+  "github": null,
+  "youtube": null,
+  "url": null,
+  "importance": null,
+  "tags": [],
+  "categories": [
+    {
+      "name": "팀 프로젝트",
+      "color": "green"
+    }
+  ],
+  "assignedTasks": [
+    {
+      "name": "기획",
+      "color": "yellow"
+    }
+  ],
+  "techSkills": [
+    "figma"
+  ],
+  "languages": [],
+  "relatedCareers": [
+    "1st-generative-ai-ideathon"
+  ],
+  "iconUrl": null,
+  "iconEmoji": "🪄",
+  "coverUrl": null
+}

@@ -1,0 +1,32 @@
+{
+  "id": "7b876528-6abb-4c3d-bdd3-9126ad84ee1e",
+  "slug": "vue",
+  "title": "Vue",
+  "iconSlug": "vuedotjs",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "기술"
+  ],
+  "proficiency": "0. 입문",
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [
+    "5118e5a2-987a-4bf9-ac1f-c1c55c138b23",
+    "6f19d4e2-daef-466d-8616-4dc553efdd0f"
+  ],
+  "usedInProjects": [
+    "10722f86-9794-4ec2-bb11-5b92a16970e5",
+    "86bf901d-caa9-424a-90f0-02da3d8f1bea",
+    "f9cda467-4e16-4a41-b99a-7e915db4c181",
+    "d041a673-7348-4dd0-aa72-2e56065036f1",
+    "94abf410-d23e-4253-8e66-d6fe06d07fd0",
+    "31fcdff2-b969-47bc-b2f6-681122fe2215"
+  ],
+  "usedAsLanguage": [],
+  "usageCount": 6,
+  "iconUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/11b8f92c-5783-4e3b-beaa-43a558286034/vue.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WG2N3SFP%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090752Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGgb2gfThpAYsuIxplgyHgJStJkoXGGrpr0GR9IUsU9aAiBC9T87S1upCYFXna4QnECpzQW%2BtME7%2B7m8OjgzjbAaXir%2FAwhgEAAaDDYzNzQyMzE4MzgwNSIM8bSPkbCdqcKSI6VJKtwDKpnoBATsf%2BZ2kKjFHHs6d5DXGzJEC9fjVnDgbxC2Wb5YpJK3XR1dOBpJELNXkkdhqmN3sF%2BTZq1wX1sFEzj2VIKWmKf8eu8ahpO9%2F3YB%2FJr7ybojkA1KNQZMv0j8TEZ%2FrU9nIXlWAf629MCTu8%2B7RB%2BbB5wgHjowXIgcy%2Fryotg9eiP5lmqNouKdfXovs6%2BNngvCkBLeCS2JJ8WmAY8upicuWVo%2BlydmGVFaUZ8P%2BZgvGbHh1vwf7sE44j9whpkZCo1v3PqLeOlGAYt9h6J%2BXZuO3iZyCmWuhQ5KQZ8LCgN3EgSPBX0mZDFmPa5R6yvUXQiolyDZcAs2RWgCFWETBglALegpcQlRe5p8qXRaGQ69M59F61P0nys4braZwLRXaVis9gmWlsylUiLiFLxO4NaihbaKSdef3hBTbObMX6s9iUG9ASO6wShaQl80sZB9Q%2BLtgvX9DQ6JH4a%2FHj8u2TGekK9L183ASTpnzRkIyVUqOd4UOwk0ESc7s%2BRKFfNfIGdFc2lol%2B7DkLk7jncnhWz2eBQSqrw9nI4kX9m8yWFR6KJiDMLjmT%2B5Wl5xeQndA04GiuG2oPXInAo33wITRFcr1OpCXbmsGM0YPn5jn2pqPW2UzUvPkwKBFmsw7cLVzAY6pgFuLU8uv9a0lrFlyQ8AJQyr%2BFm5Im8ZkCVzzK7si7fCw%2FzBYoe79NPCz8fyoqAC9eIlzS3zxjLnlyqdHq4%2BCPjKfbhSfRBeQxa%2F2OaNHJ3oVUsIU8oasi%2BHTTOGRgzRBEKn3R4%2FW%2BMisFnPeHqsH4YCmqvdFNol%2BodNrsob8teh5p%2FH0qYuEelTR2MkZRkwHEoLHy%2B6sUuNDMIB%2F1Mq2Zpi9qQD1jvx&X-Amz-Signature=edc4199aac940a19d3aad4b863695aa7723b178b234e59a48e06b05fa4009f68&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "iconEmoji": null,
+  "coverUrl": null
+}

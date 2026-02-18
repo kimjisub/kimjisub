@@ -1,0 +1,22 @@
+{
+  "id": "90d4ec3d-f6df-43a9-99c7-3db69a43b877",
+  "slug": "obsidian",
+  "title": "obsidian",
+  "iconSlug": "obsidian",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "협업/문서"
+  ],
+  "proficiency": null,
+  "visible": true,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

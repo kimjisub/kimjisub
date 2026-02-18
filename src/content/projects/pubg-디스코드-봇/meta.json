@@ -1,0 +1,33 @@
+{
+  "id": "a49029e3-a8a4-4995-9df1-adc9a2fe9ec8",
+  "slug": "pubg-디스코드-봇",
+  "title": "PUBG 디스코드 봇",
+  "description": "배틀그라운드 팀원 모집을 위한 디스코드 봇",
+  "date": {
+    "start": "2018-01-28",
+    "end": null
+  },
+  "github": null,
+  "youtube": "https://www.youtube.com/watch?v=Gf20Sz-uLm8",
+  "url": null,
+  "importance": "낮음",
+  "tags": [],
+  "categories": [
+    {
+      "name": "팀 프로젝트",
+      "color": "green"
+    }
+  ],
+  "assignedTasks": [],
+  "techSkills": [
+    "discord-bot",
+    "socket-io"
+  ],
+  "languages": [
+    "javascript"
+  ],
+  "relatedCareers": [],
+  "iconUrl": null,
+  "iconEmoji": "🔫",
+  "coverUrl": null
+}

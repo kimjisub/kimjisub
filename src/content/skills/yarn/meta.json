@@ -1,0 +1,22 @@
+{
+  "id": "eb1d5005-bea9-4de2-9754-1c166b12f2c2",
+  "slug": "yarn",
+  "title": "Yarn",
+  "iconSlug": "yarn",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "기술"
+  ],
+  "proficiency": null,
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

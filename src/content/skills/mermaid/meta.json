@@ -1,0 +1,22 @@
+{
+  "id": "34d64729-958c-44ae-a1da-bb5240f72549",
+  "slug": "mermaid",
+  "title": "mermaid",
+  "iconSlug": "mermaid",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "협업/문서"
+  ],
+  "proficiency": null,
+  "visible": true,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

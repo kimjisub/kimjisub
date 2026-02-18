@@ -1,0 +1,22 @@
+{
+  "id": "d57c0a36-260c-4617-ba97-fbc5d4c3a188",
+  "slug": "google-play",
+  "title": "Google Play",
+  "iconSlug": "googleplay",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "CI/CD"
+  ],
+  "proficiency": "2. 중급",
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

@@ -1,0 +1,32 @@
+{
+  "id": "32e22a34-d0b0-4b9d-a411-5a6b0c2437f3",
+  "slug": "1st-generative-ai-ideathon",
+  "title": "1st Generative AI Ideathon",
+  "description": null,
+  "date": {
+    "start": "2023-12-02",
+    "end": "2023-12-03"
+  },
+  "institutions": [
+    {
+      "name": "Wrtn",
+      "color": "blue"
+    }
+  ],
+  "categories": [
+    {
+      "name": "해커톤",
+      "color": "red"
+    }
+  ],
+  "assignedTasks": [],
+  "importance": null,
+  "url": null,
+  "awardsAndCertifications": null,
+  "relatedProjects": [
+    "be36aef1-f29e-4071-bfd4-fa64bbb6f453"
+  ],
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

@@ -1,0 +1,42 @@
+{
+  "id": "65180841-fa86-49b6-9602-679c23536fb8",
+  "slug": "firebase",
+  "title": "Firebase",
+  "iconSlug": "firebase",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "기술"
+  ],
+  "proficiency": "3. 상급",
+  "visible": true,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [
+    "5118e5a2-987a-4bf9-ac1f-c1c55c138b23",
+    "6f19d4e2-daef-466d-8616-4dc553efdd0f"
+  ],
+  "usedInProjects": [
+    "72fff05b-7e1a-47ae-a3df-543ae5e8a57a",
+    "10722f86-9794-4ec2-bb11-5b92a16970e5",
+    "d041a673-7348-4dd0-aa72-2e56065036f1",
+    "dd3d53cf-94ce-41c5-bf38-309a4da791bf",
+    "8633e484-74fb-484f-931b-af6286fc7418",
+    "07b08690-a37c-421f-8a80-b13d3824549a",
+    "9e91657b-3c21-4a8f-8955-ab70fea7fdd7",
+    "86bf901d-caa9-424a-90f0-02da3d8f1bea",
+    "8fda43a6-b6cb-495f-8256-898cd2e66b03",
+    "f0499ae1-e215-4aaf-8066-fcd9428be8c8",
+    "1341a9fd-f7bb-43ed-81c3-07ae0ff07d07",
+    "feb5779b-9e0d-4b8f-9aa1-e7a7a393c0cf",
+    "fc27ac72-fb10-462c-865a-bc3ce55513f2",
+    "4921b020-aaf8-4482-bfef-4976499dde2e",
+    "f8408212-01e1-4ca5-ae9b-0aff52122cff",
+    "4b1c905e-56cf-4bc8-915d-c768337edf4e"
+  ],
+  "usedAsLanguage": [],
+  "usageCount": 16,
+  "iconUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/994eb471-c815-4c7d-81a7-11cb0bdbbf32/firebase.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WG2N3SFP%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090749Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGgb2gfThpAYsuIxplgyHgJStJkoXGGrpr0GR9IUsU9aAiBC9T87S1upCYFXna4QnECpzQW%2BtME7%2B7m8OjgzjbAaXir%2FAwhgEAAaDDYzNzQyMzE4MzgwNSIM8bSPkbCdqcKSI6VJKtwDKpnoBATsf%2BZ2kKjFHHs6d5DXGzJEC9fjVnDgbxC2Wb5YpJK3XR1dOBpJELNXkkdhqmN3sF%2BTZq1wX1sFEzj2VIKWmKf8eu8ahpO9%2F3YB%2FJr7ybojkA1KNQZMv0j8TEZ%2FrU9nIXlWAf629MCTu8%2B7RB%2BbB5wgHjowXIgcy%2Fryotg9eiP5lmqNouKdfXovs6%2BNngvCkBLeCS2JJ8WmAY8upicuWVo%2BlydmGVFaUZ8P%2BZgvGbHh1vwf7sE44j9whpkZCo1v3PqLeOlGAYt9h6J%2BXZuO3iZyCmWuhQ5KQZ8LCgN3EgSPBX0mZDFmPa5R6yvUXQiolyDZcAs2RWgCFWETBglALegpcQlRe5p8qXRaGQ69M59F61P0nys4braZwLRXaVis9gmWlsylUiLiFLxO4NaihbaKSdef3hBTbObMX6s9iUG9ASO6wShaQl80sZB9Q%2BLtgvX9DQ6JH4a%2FHj8u2TGekK9L183ASTpnzRkIyVUqOd4UOwk0ESc7s%2BRKFfNfIGdFc2lol%2B7DkLk7jncnhWz2eBQSqrw9nI4kX9m8yWFR6KJiDMLjmT%2B5Wl5xeQndA04GiuG2oPXInAo33wITRFcr1OpCXbmsGM0YPn5jn2pqPW2UzUvPkwKBFmsw7cLVzAY6pgFuLU8uv9a0lrFlyQ8AJQyr%2BFm5Im8ZkCVzzK7si7fCw%2FzBYoe79NPCz8fyoqAC9eIlzS3zxjLnlyqdHq4%2BCPjKfbhSfRBeQxa%2F2OaNHJ3oVUsIU8oasi%2BHTTOGRgzRBEKn3R4%2FW%2BMisFnPeHqsH4YCmqvdFNol%2BodNrsob8teh5p%2FH0qYuEelTR2MkZRkwHEoLHy%2B6sUuNDMIB%2F1Mq2Zpi9qQD1jvx&X-Amz-Signature=8a6cc6dd56a16d67be002bfd2273230361af6c562a36898f17e85ed1358b1eb0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "iconEmoji": null,
+  "coverUrl": null
+}

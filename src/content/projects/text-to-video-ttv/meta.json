@@ -1,0 +1,28 @@
+{
+  "id": "848853fe-256a-45ed-9272-2a25d8f80854",
+  "slug": "text-to-video-ttv",
+  "title": "Text to Video : TTV",
+  "description": "스크립트를 영상으로 자동 변환",
+  "date": {
+    "start": "2020-10-10",
+    "end": null
+  },
+  "github": "https://github.com/kimjisub/text-to-video",
+  "youtube": null,
+  "url": null,
+  "importance": "낮음",
+  "tags": [],
+  "categories": [
+    {
+      "name": "팀 프로젝트",
+      "color": "green"
+    }
+  ],
+  "assignedTasks": [],
+  "techSkills": [],
+  "languages": [],
+  "relatedCareers": [],
+  "iconUrl": null,
+  "iconEmoji": "📽️",
+  "coverUrl": null
+}

@@ -1,0 +1,28 @@
+{
+  "id": "2a195f24-b492-40ae-b30f-1d18b80e5ab2",
+  "slug": "naiclova",
+  "title": "NaiClova",
+  "description": null,
+  "date": {
+    "start": "2018-10-26",
+    "end": null
+  },
+  "github": null,
+  "youtube": null,
+  "url": null,
+  "importance": "낮음",
+  "tags": [],
+  "categories": [
+    {
+      "name": "팀 프로젝트",
+      "color": "green"
+    }
+  ],
+  "assignedTasks": [],
+  "techSkills": [],
+  "languages": [],
+  "relatedCareers": [],
+  "iconUrl": null,
+  "iconEmoji": "🛠️",
+  "coverUrl": null
+}

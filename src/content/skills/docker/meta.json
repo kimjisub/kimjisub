@@ -1,0 +1,27 @@
+{
+  "id": "af38d235-fb79-41b7-81eb-65b0848f5e74",
+  "slug": "docker",
+  "title": "Docker",
+  "iconSlug": "docker",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "Infra"
+  ],
+  "proficiency": "2. 중급",
+  "visible": true,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [
+    "1341a9fd-f7bb-43ed-81c3-07ae0ff07d07",
+    "3c9f2d34-a501-46a5-b644-43a316904b1e",
+    "f8408212-01e1-4ca5-ae9b-0aff52122cff",
+    "4b1c905e-56cf-4bc8-915d-c768337edf4e"
+  ],
+  "usedAsLanguage": [],
+  "usageCount": 4,
+  "iconUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/5d3a354a-e8d2-4fda-8a2f-c16b2e9fa7c9/docker.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662SCD5H3L%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090753Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDiRLKUtnWwON2zhXGO2Qf4mC3mFBgPBnijKdmI6kX5ugIhAJUkIK%2B80Tw3HDydu5oj%2B3TXGBa5nhmB3mQ%2FJr5CE%2F9gKv8DCGAQABoMNjM3NDIzMTgzODA1IgyP0xciYLv0eU1QJ4Iq3AMc8DERxtyiQap69%2FG5b7WhXS9tmLM5dJyYNel8VblXtccnYGMryvASfz74DtoAMNQHpKH9%2BkRZu6sp1aRMsn32ebR24G3jslQAfK1EM%2FriFTfb3fd5AECvvv4g3acoqjD4vEeq80fZsWQSeZrHkt9Cyl35SmfOdnp%2Ber8PJUZj%2BjTWIRdv6iKtqgvulzi1fNlKDIhr7yfghZZH0DHRdB4iKqzO5m8%2FAxdpfSLynuMrcSK8tX48PhB7%2Fdd0ct35IMZNk8b6GogeFYQ7z9JWBsGBX5EoIhnu%2F3w9%2FA8StUBF7aFG2zTa2E6Zrc%2FkqIuMz0EMHhj4lOceYc6wBWn%2FM0LoIVa49Aa%2BGzIGMCl2Pg%2B4Ykgr14D7wDohyrqlG2mr9ns981fPUfOcd%2Bh0mtiaGkyuaoNJmn1Pv5ut6rz60dJTk%2FPf6ONROdv5bQrrEuSvy45Uxx5IvQ5mRCrh8NLjZfZkIH%2FJAYYRuwEtngRsbqNzDJv9pI3%2FIKmUdc0UE0DI8f4KfFZVLw3OR9lXxzR9dhT4WWW%2F%2Fkmy0iHx1cTQxhiARqSkLhjXk9cUevpxJlnHIj0bzfmNGA2PXhIr3paRKRSRSD0cvr%2FcY%2BhhmZxURzlLsE2FINmpmLRaKnJeHzDcw9XMBjqkAQ7wwBL%2FATdLeMdhZbtBLUxOX%2FNldoQ56QrdYiIdDnYmtRL%2BKmbeXsd55zdvtvmB3xMR1QBpnomUxD6uqURAM%2BOBGV2%2BYZUMYFNqTjY1Kk6veggRGLFzA4%2FKdqaiCahx9ryuAL36Dvv6L5etmKbyona%2FqNbNg7hA%2BHnpGnOgORHzWQNy%2BihD8ljWksV9n61Ous3FGkNBl2Rbz1zZ1LZf0OJDWSN%2B&X-Amz-Signature=e43bd1ab80cdb6e646011cc864fd520bc70426aaa624b086d66521538a34bbbe&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "iconEmoji": null,
+  "coverUrl": null
+}

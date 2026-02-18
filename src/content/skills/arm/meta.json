@@ -1,0 +1,24 @@
+{
+  "id": "cd70d304-840c-4418-a897-f6cd9f7846e6",
+  "slug": "arm",
+  "title": "Arm",
+  "iconSlug": "arm",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "하드웨어"
+  ],
+  "proficiency": "0. 입문",
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [
+    "f8408212-01e1-4ca5-ae9b-0aff52122cff"
+  ],
+  "usedAsLanguage": [],
+  "usageCount": 1,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

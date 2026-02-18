@@ -1,0 +1,24 @@
+{
+  "id": "d6a13ecc-8f10-4826-af78-4cf126c2d463",
+  "slug": "google-admob",
+  "title": "Google AdMob",
+  "iconSlug": "googleadmob",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "기술"
+  ],
+  "proficiency": "2. 중급",
+  "visible": true,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [
+    "4b1c905e-56cf-4bc8-915d-c768337edf4e"
+  ],
+  "usedAsLanguage": [],
+  "usageCount": 1,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

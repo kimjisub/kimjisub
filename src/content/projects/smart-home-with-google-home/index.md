@@ -1,0 +1,14 @@
+---
+title: "Smart Home With Google Home"
+date: "2020-04"
+github: ""
+url: ""
+---
+
+# Smart Home With Google Home
+
+Google Home 활용 IoT 개발
+
+## 기획 의도
+
+그동안 다양한 대회외 프로젝트를 진행하면서 인공지능 스피커와 IoT 장비들을 만들고, 서로 연동하는 작업들은 많이 해봤지만 실제로 사용하는 데에는 무리가 많이 있었습니다. (작성중)

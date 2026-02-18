@@ -1,0 +1,24 @@
+{
+  "id": "dd338fcc-8b50-4833-9543-c301357e85a3",
+  "slug": "ifttt",
+  "title": "IFTTT",
+  "iconSlug": "ifttt",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "기술"
+  ],
+  "proficiency": "1. 초보",
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [
+    "1341a9fd-f7bb-43ed-81c3-07ae0ff07d07"
+  ],
+  "usedAsLanguage": [],
+  "usageCount": 1,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

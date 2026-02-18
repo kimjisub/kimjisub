@@ -1,0 +1,22 @@
+{
+  "id": "d665bd26-9fa8-4691-ae4a-8589706bc4c9",
+  "slug": "mqtt",
+  "title": "MQTT",
+  "iconSlug": "mqtt",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "프로토콜"
+  ],
+  "proficiency": "2. 중급",
+  "visible": true,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

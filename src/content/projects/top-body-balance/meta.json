@@ -1,0 +1,39 @@
+{
+  "id": "fc27ac72-fb10-462c-865a-bc3ce55513f2",
+  "slug": "top-body-balance",
+  "title": "Top Body Balance",
+  "description": "노안 방지를 위한 눈 스트레칭",
+  "date": {
+    "start": "2022-01-20",
+    "end": null
+  },
+  "github": null,
+  "youtube": null,
+  "url": null,
+  "importance": "낮음",
+  "tags": [],
+  "categories": [
+    {
+      "name": "외주",
+      "color": "brown"
+    }
+  ],
+  "assignedTasks": [
+    {
+      "name": "개발",
+      "color": "blue"
+    }
+  ],
+  "techSkills": [
+    "android",
+    "firebase",
+    "kotlin"
+  ],
+  "languages": [
+    "kotlin"
+  ],
+  "relatedCareers": [],
+  "iconUrl": null,
+  "iconEmoji": "👀",
+  "coverUrl": null
+}

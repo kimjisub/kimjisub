@@ -1,0 +1,30 @@
+{
+  "id": "1383b1b1-c9dc-80a7-87c2-c15eb9f3f13f",
+  "slug": "alpaon-llc",
+  "title": "Alpaon LLC.",
+  "description": "IDC, IoT, PCB, SaaS 등의 기술력으로 각종 서비스를 만들어나갑니다.",
+  "date": {
+    "start": "2023-08-01",
+    "end": null
+  },
+  "institutions": [],
+  "categories": [
+    {
+      "name": "사업",
+      "color": "blue"
+    }
+  ],
+  "assignedTasks": [
+    {
+      "name": "CTO",
+      "color": "brown"
+    }
+  ],
+  "importance": "매우 높음",
+  "url": null,
+  "awardsAndCertifications": null,
+  "relatedProjects": [],
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

@@ -1,0 +1,22 @@
+{
+  "id": "6cf05c3b-e50a-47e7-b7ba-864f4495e493",
+  "slug": "dell",
+  "title": "dell",
+  "iconSlug": "dell",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "Infra"
+  ],
+  "proficiency": "1. 초보",
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

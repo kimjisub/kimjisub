@@ -1,0 +1,24 @@
+{
+  "id": "51d42d09-1be8-4191-b06b-6a8271599e47",
+  "slug": "jwt",
+  "title": "JWT",
+  "iconSlug": "jsonwebtokens",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "기술"
+  ],
+  "proficiency": null,
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [
+    "f748de77-df24-4e13-8b22-cdaf497b4493"
+  ],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

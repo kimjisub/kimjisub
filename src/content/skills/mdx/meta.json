@@ -1,0 +1,23 @@
+{
+  "id": "1cc358d2-004a-475b-bbc7-a3a7edec57ae",
+  "slug": "mdx",
+  "title": "MDX",
+  "iconSlug": "mdx",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "기술",
+    "협업/문서"
+  ],
+  "proficiency": null,
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

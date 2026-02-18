@@ -1,0 +1,32 @@
+{
+  "id": "9f2e48ba-d4b3-40e6-8a22-61ddbcd1b590",
+  "slug": "dutchpay-안드로이드",
+  "title": "DutchPay 안드로이드",
+  "description": "친구들과의 여행에서 복잡한 더치페이 계산",
+  "date": {
+    "start": "2015-07-19",
+    "end": null
+  },
+  "github": null,
+  "youtube": "https://www.youtube.com/watch?v=Io0mNxaNJnw",
+  "url": null,
+  "importance": "낮음",
+  "tags": [],
+  "categories": [
+    {
+      "name": "개인 프로젝트",
+      "color": "red"
+    }
+  ],
+  "assignedTasks": [],
+  "techSkills": [
+    "android"
+  ],
+  "languages": [
+    "java"
+  ],
+  "relatedCareers": [],
+  "iconUrl": null,
+  "iconEmoji": "💰",
+  "coverUrl": null
+}

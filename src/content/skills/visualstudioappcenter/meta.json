@@ -1,0 +1,22 @@
+{
+  "id": "042d40b6-9d15-43f4-9b6d-7f370dc83d0d",
+  "slug": "visualstudioappcenter",
+  "title": "visualstudioappcenter",
+  "iconSlug": "visualstudioappcenter",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "CI/CD"
+  ],
+  "proficiency": "1. 초보",
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

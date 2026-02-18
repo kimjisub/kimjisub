@@ -1,0 +1,41 @@
+{
+  "id": "1343b1b1-c9dc-80c2-afb4-cb11be99f380",
+  "slug": "jisub-kim",
+  "title": "jisub.kim",
+  "description": null,
+  "date": {
+    "start": "2024-11-01",
+    "end": null
+  },
+  "github": null,
+  "youtube": null,
+  "url": null,
+  "importance": null,
+  "tags": [],
+  "categories": [
+    {
+      "name": "개인 프로젝트",
+      "color": "red"
+    }
+  ],
+  "assignedTasks": [
+    {
+      "name": "기획",
+      "color": "yellow"
+    },
+    {
+      "name": "개발",
+      "color": "blue"
+    },
+    {
+      "name": "디자인",
+      "color": "orange"
+    }
+  ],
+  "techSkills": [],
+  "languages": [],
+  "relatedCareers": [],
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

@@ -1,0 +1,22 @@
+{
+  "id": "1f16a325-bf45-4fcd-a9e6-0037dda9f3f2",
+  "slug": "jest",
+  "title": "jest",
+  "iconSlug": "jest",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "CI/CD"
+  ],
+  "proficiency": "2. 중급",
+  "visible": true,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

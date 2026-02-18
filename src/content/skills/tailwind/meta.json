@@ -1,0 +1,25 @@
+{
+  "id": "8ed1788e-dc45-4b14-bbe5-2537aac03827",
+  "slug": "tailwind",
+  "title": "Tailwind",
+  "iconSlug": "tailwindcss",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "기술"
+  ],
+  "proficiency": "1. 초보",
+  "visible": true,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [
+    "c13a7131-0a16-4749-abc5-a48f31ddb9c7",
+    "a572a292-56a1-442b-a6c8-51c899c8e48d"
+  ],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

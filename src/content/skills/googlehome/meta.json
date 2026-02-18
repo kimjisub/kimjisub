@@ -1,0 +1,22 @@
+{
+  "id": "de4d4d43-3e8c-469e-a614-679d259be6ec",
+  "slug": "googlehome",
+  "title": "googlehome",
+  "iconSlug": "googlehome",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "기술"
+  ],
+  "proficiency": null,
+  "visible": true,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

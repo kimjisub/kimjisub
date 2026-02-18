@@ -1,0 +1,37 @@
+{
+  "id": "4a111b87-b88d-482b-89da-960d66b51a00",
+  "slug": "python",
+  "title": "Python",
+  "iconSlug": "python",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "언어"
+  ],
+  "proficiency": "2. 중급",
+  "visible": true,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [
+    "e1dd526d-97da-424a-b1dc-e7ffd5fbc26d",
+    "55d86e86-df3c-42fd-9ea0-883123716a4e",
+    "0964ed17-2859-4b92-a8d6-7bc4693b37bf",
+    "59d00089-4e4a-473a-8cba-63e5d047b45a"
+  ],
+  "usedInProjects": [
+    "0d3ef853-bbab-4075-a890-8e416b9aaea6",
+    "78676ebc-6742-4b2c-b0b5-10461dbc0d9c"
+  ],
+  "usedAsLanguage": [
+    "0d3ef853-bbab-4075-a890-8e416b9aaea6",
+    "78676ebc-6742-4b2c-b0b5-10461dbc0d9c",
+    "0371c463-7d0e-4c0b-8b61-f546160c9982",
+    "d041a673-7348-4dd0-aa72-2e56065036f1",
+    "8fda43a6-b6cb-495f-8256-898cd2e66b03",
+    "86bf901d-caa9-424a-90f0-02da3d8f1bea"
+  ],
+  "usageCount": 2,
+  "iconUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/a689f80e-ec3d-4de3-ad21-2ca763a9d61c/python.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WG2N3SFP%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090749Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGgb2gfThpAYsuIxplgyHgJStJkoXGGrpr0GR9IUsU9aAiBC9T87S1upCYFXna4QnECpzQW%2BtME7%2B7m8OjgzjbAaXir%2FAwhgEAAaDDYzNzQyMzE4MzgwNSIM8bSPkbCdqcKSI6VJKtwDKpnoBATsf%2BZ2kKjFHHs6d5DXGzJEC9fjVnDgbxC2Wb5YpJK3XR1dOBpJELNXkkdhqmN3sF%2BTZq1wX1sFEzj2VIKWmKf8eu8ahpO9%2F3YB%2FJr7ybojkA1KNQZMv0j8TEZ%2FrU9nIXlWAf629MCTu8%2B7RB%2BbB5wgHjowXIgcy%2Fryotg9eiP5lmqNouKdfXovs6%2BNngvCkBLeCS2JJ8WmAY8upicuWVo%2BlydmGVFaUZ8P%2BZgvGbHh1vwf7sE44j9whpkZCo1v3PqLeOlGAYt9h6J%2BXZuO3iZyCmWuhQ5KQZ8LCgN3EgSPBX0mZDFmPa5R6yvUXQiolyDZcAs2RWgCFWETBglALegpcQlRe5p8qXRaGQ69M59F61P0nys4braZwLRXaVis9gmWlsylUiLiFLxO4NaihbaKSdef3hBTbObMX6s9iUG9ASO6wShaQl80sZB9Q%2BLtgvX9DQ6JH4a%2FHj8u2TGekK9L183ASTpnzRkIyVUqOd4UOwk0ESc7s%2BRKFfNfIGdFc2lol%2B7DkLk7jncnhWz2eBQSqrw9nI4kX9m8yWFR6KJiDMLjmT%2B5Wl5xeQndA04GiuG2oPXInAo33wITRFcr1OpCXbmsGM0YPn5jn2pqPW2UzUvPkwKBFmsw7cLVzAY6pgFuLU8uv9a0lrFlyQ8AJQyr%2BFm5Im8ZkCVzzK7si7fCw%2FzBYoe79NPCz8fyoqAC9eIlzS3zxjLnlyqdHq4%2BCPjKfbhSfRBeQxa%2F2OaNHJ3oVUsIU8oasi%2BHTTOGRgzRBEKn3R4%2FW%2BMisFnPeHqsH4YCmqvdFNol%2BodNrsob8teh5p%2FH0qYuEelTR2MkZRkwHEoLHy%2B6sUuNDMIB%2F1Mq2Zpi9qQD1jvx&X-Amz-Signature=66c9e4035e80239df7245d79ab4ebb404265df571c6aec9bf6cb363a002cddd6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "iconEmoji": null,
+  "coverUrl": null
+}

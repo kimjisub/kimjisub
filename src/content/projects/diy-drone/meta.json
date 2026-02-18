@@ -1,0 +1,58 @@
+{
+  "id": "78676ebc-6742-4b2c-b0b5-10461dbc0d9c",
+  "slug": "diy-drone",
+  "title": "DIY Drone",
+  "description": "0부터 시작하는 드론 DIY",
+  "date": {
+    "start": "2022-08-01",
+    "end": null
+  },
+  "github": null,
+  "youtube": null,
+  "url": null,
+  "importance": "높음",
+  "tags": [],
+  "categories": [
+    {
+      "name": "팀 프로젝트",
+      "color": "green"
+    }
+  ],
+  "assignedTasks": [
+    {
+      "name": "책임자",
+      "color": "red"
+    },
+    {
+      "name": "기획",
+      "color": "yellow"
+    },
+    {
+      "name": "개발",
+      "color": "blue"
+    },
+    {
+      "name": "디자인",
+      "color": "orange"
+    }
+  ],
+  "techSkills": [
+    "esp32",
+    "raspberrypi",
+    "react",
+    "typescript",
+    "html",
+    "python",
+    "easyeda"
+  ],
+  "languages": [
+    "typescript",
+    "html",
+    "css3",
+    "python"
+  ],
+  "relatedCareers": [],
+  "iconUrl": null,
+  "iconEmoji": "🚁",
+  "coverUrl": null
+}

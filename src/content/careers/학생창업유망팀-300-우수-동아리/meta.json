@@ -1,0 +1,43 @@
+{
+  "id": "479e58ac-c767-4790-afc6-dd224bd77d9b",
+  "slug": "학생창업유망팀-300-우수-동아리",
+  "title": "학생창업유망팀 300+ 우수 동아리",
+  "description": null,
+  "date": {
+    "start": "2018-08-29",
+    "end": null
+  },
+  "institutions": [
+    {
+      "name": "YEEP",
+      "color": "yellow"
+    }
+  ],
+  "categories": [
+    {
+      "name": "부스운영",
+      "color": "pink"
+    }
+  ],
+  "assignedTasks": [
+    {
+      "name": "개발",
+      "color": "yellow"
+    },
+    {
+      "name": "기획",
+      "color": "pink"
+    }
+  ],
+  "importance": "중간",
+  "url": null,
+  "awardsAndCertifications": "우수동아리 선정",
+  "relatedProjects": [
+    "72fff05b-7e1a-47ae-a3df-543ae5e8a57a",
+    "10722f86-9794-4ec2-bb11-5b92a16970e5",
+    "f9cda467-4e16-4a41-b99a-7e915db4c181"
+  ],
+  "iconUrl": null,
+  "iconEmoji": "👥",
+  "coverUrl": null
+}

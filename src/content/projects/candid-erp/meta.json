@@ -1,0 +1,40 @@
+{
+  "id": "2913b1b1-c9dc-804b-a4c6-c18c853331e6",
+  "slug": "candid-erp",
+  "title": "Candid ERP",
+  "description": null,
+  "date": {
+    "start": "2025-08-13",
+    "end": null
+  },
+  "github": null,
+  "youtube": null,
+  "url": null,
+  "importance": null,
+  "tags": [],
+  "categories": [],
+  "assignedTasks": [
+    {
+      "name": "책임자",
+      "color": "red"
+    },
+    {
+      "name": "기획",
+      "color": "yellow"
+    },
+    {
+      "name": "개발",
+      "color": "blue"
+    },
+    {
+      "name": "디자인",
+      "color": "orange"
+    }
+  ],
+  "techSkills": [],
+  "languages": [],
+  "relatedCareers": [],
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

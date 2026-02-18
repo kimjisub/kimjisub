@@ -1,0 +1,25 @@
+{
+  "id": "f748de77-df24-4e13-8b22-cdaf497b4493",
+  "slug": "json",
+  "title": "JSON",
+  "iconSlug": "json",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "언어"
+  ],
+  "proficiency": null,
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [
+    "5118e5a2-987a-4bf9-ac1f-c1c55c138b23",
+    "51d42d09-1be8-4191-b06b-6a8271599e47"
+  ],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

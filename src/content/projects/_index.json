@@ -1,0 +1,1084 @@
+[
+  {
+    "id": "72fff05b-7e1a-47ae-a3df-543ae5e8a57a",
+    "slug": "unipad",
+    "title": "UniPad",
+    "description": "500+만 다운로드를 달성한 런치패드 기반의 연주형 리듬게임",
+    "date": {
+      "start": "2016-02-16",
+      "end": null
+    },
+    "categories": [
+      "개인 프로젝트",
+      "오픈소스"
+    ],
+    "tags": [
+      "오픈소스",
+      "출시됨"
+    ],
+    "importance": "1",
+    "github": "https://github.com/kimjisub/unipad-android",
+    "url": "https://play.google.com/store/apps/details?id=com.kimjisub.launchpad&hl=ko"
+  },
+  {
+    "id": "f8408212-01e1-4ca5-ae9b-0aff52122cff",
+    "slug": "alpaconnect",
+    "title": "AlpaConnect",
+    "description": "산업용 Cloud IoT",
+    "date": {
+      "start": "2023-06-01",
+      "end": null
+    },
+    "categories": [
+      "사업"
+    ],
+    "tags": [
+      "출시됨",
+      "창업"
+    ],
+    "importance": "2",
+    "github": null,
+    "url": "https://alpaconnect.com"
+  },
+  {
+    "id": "feb5779b-9e0d-4b8f-9aa1-e7a7a393c0cf",
+    "slug": "mopl",
+    "title": "Mopl",
+    "description": "한화비전에서  운영하는 아파트 관리 솔루션",
+    "date": {
+      "start": "2022-09-01",
+      "end": "2023-07-31"
+    },
+    "categories": [
+      "외주"
+    ],
+    "tags": [
+      "출시됨",
+      "회사"
+    ],
+    "importance": "3",
+    "github": null,
+    "url": "https://play.google.com/store/apps/details?id=com.hanwha.mopl"
+  },
+  {
+    "id": "3c9f2d34-a501-46a5-b644-43a316904b1e",
+    "slug": "아이박스-주차",
+    "title": "아이박스 주차",
+    "description": "주차장 통합 전산 시스템",
+    "date": {
+      "start": "2020-07-01",
+      "end": "2025-12-31"
+    },
+    "categories": [
+      "외주"
+    ],
+    "tags": [
+      "회사",
+      "출시됨"
+    ],
+    "importance": "4",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "e893af80-0b86-4c5c-99b5-52cb8f51a78f",
+    "slug": "디미고라이프",
+    "title": "디미고라이프",
+    "description": "디미고 학생을 위한 전산 서비스",
+    "date": {
+      "start": "2018-04-23",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [
+      "출시됨"
+    ],
+    "importance": "5",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "8abeb85b-6efe-464c-a035-8f69b4bcf282",
+    "slug": "vplate",
+    "title": "Vplate",
+    "description": "마케팅 영상 제작 플랫폼",
+    "date": {
+      "start": "2019-01-09",
+      "end": "2019-09-11"
+    },
+    "categories": [
+      "회사"
+    ],
+    "tags": [
+      "출시됨",
+      "회사"
+    ],
+    "importance": "6",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "4b1c905e-56cf-4bc8-915d-c768337edf4e",
+    "slug": "eyevacs4",
+    "title": "Eyevacs4",
+    "description": "아파트 통합 관리 솔루션",
+    "date": {
+      "start": "2023-08-01",
+      "end": null
+    },
+    "categories": [
+      "회사"
+    ],
+    "tags": [],
+    "importance": "높음",
+    "github": null,
+    "url": "https://www.eyevacs.com"
+  },
+  {
+    "id": "60eb508d-c631-45b0-a580-225873bedb7c",
+    "slug": "video-skipper",
+    "title": "Video Skipper",
+    "description": "영상의 공백 부분을 지워주는 오픈소스",
+    "date": {
+      "start": "2023-04-28",
+      "end": null
+    },
+    "categories": [
+      "오픈소스",
+      "팀 프로젝트"
+    ],
+    "tags": [
+      "오픈소스"
+    ],
+    "importance": "높음",
+    "github": "https://github.com/kimjisub/video-skipper",
+    "url": "https://www.npmjs.com/package/video-skipper"
+  },
+  {
+    "id": "78676ebc-6742-4b2c-b0b5-10461dbc0d9c",
+    "slug": "diy-drone",
+    "title": "DIY Drone",
+    "description": "0부터 시작하는 드론 DIY",
+    "date": {
+      "start": "2022-08-01",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "높음",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "1341a9fd-f7bb-43ed-81c3-07ae0ff07d07",
+    "slug": "smart-home-with-google-home",
+    "title": "Smart Home With Google Home",
+    "description": "Google Home 활용 IoT 개발",
+    "date": {
+      "start": "2020-04-12",
+      "end": null
+    },
+    "categories": [
+      "개인 프로젝트"
+    ],
+    "tags": [],
+    "importance": "높음",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "07b08690-a37c-421f-8a80-b13d3824549a",
+    "slug": "dutchpay-웹",
+    "title": "DutchPay 웹",
+    "description": "더치페이 계산기",
+    "date": {
+      "start": "2020-02-05",
+      "end": null
+    },
+    "categories": [
+      "개인 프로젝트"
+    ],
+    "tags": [
+      "출시됨",
+      "오픈소스"
+    ],
+    "importance": "높음",
+    "github": "https://github.com/kimjisub/dutchpay.jisub.kim",
+    "url": "https://dutchpay.jisub.kim"
+  },
+  {
+    "id": "10aae47d-992a-44f0-85ff-50a30aba8cc5",
+    "slug": "silent-cutter",
+    "title": "Silent Cutter",
+    "description": "영상의 공백 부분을 지워주는 오픈소스",
+    "date": {
+      "start": "2019-09-24",
+      "end": null
+    },
+    "categories": [
+      "개인 프로젝트",
+      "오픈소스"
+    ],
+    "tags": [
+      "오픈소스"
+    ],
+    "importance": "높음",
+    "github": "https://github.com/kimjisub/Silent-Cutter",
+    "url": null
+  },
+  {
+    "id": "b0ad0c42-bd9c-45a9-8ff9-33ed9dd82dad",
+    "slug": "midi-video-generator",
+    "title": "Midi Video Generator",
+    "description": ".mid 형태의 음악을 영상으로 변환",
+    "date": {
+      "start": "2020-01-01",
+      "end": null
+    },
+    "categories": [
+      "개인 프로젝트",
+      "오픈소스"
+    ],
+    "tags": [
+      "오픈소스"
+    ],
+    "importance": "높음",
+    "github": "https://github.com/kimjisub/Midi-Video-Generator",
+    "url": null
+  },
+  {
+    "id": "10722f86-9794-4ec2-bb11-5b92a16970e5",
+    "slug": "canetis",
+    "title": "CANETIS",
+    "description": "시각 장애우를 위한 실내 전용 위치 알림 IoT 서비스",
+    "date": {
+      "start": "2018-03-31",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "높음",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "156b6809-90c7-4a83-9751-6f82331c3030",
+    "slug": "hufs-스터디룸-예약-시스템",
+    "title": "HUFS  스터디룸 예약 시스템",
+    "description": null,
+    "date": {
+      "start": "2024-02-01",
+      "end": "2024-12-31"
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "중간",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "9533de9d-1230-4c07-8cf9-57e3547469c5",
+    "slug": "hufs-cs-cloud",
+    "title": "HUFS CS Cloud",
+    "description": "컴퓨터공학과 학생들을 위해서 ubuntu 인스턴스를 제공하는 교내 Cloud 서비스",
+    "date": {
+      "start": "2024-03-07",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "중간",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "917a67d4-dae7-4a04-a756-c0f96f562a32",
+    "slug": "youtube-timed-comments",
+    "title": "Youtube Timed Comments",
+    "description": "유튜브 댓글을 이용한 확장 프로그램",
+    "date": {
+      "start": "2021-08-24",
+      "end": null
+    },
+    "categories": [
+      "개인 프로젝트",
+      "오픈소스"
+    ],
+    "tags": [
+      "오픈소스"
+    ],
+    "importance": "중간",
+    "github": "https://github.com/kimjisub/youtube-timed-comment",
+    "url": null
+  },
+  {
+    "id": "ed9a0f96-eb1a-42e8-9ffd-74c9ebfe093e",
+    "slug": "notion-desktop-app",
+    "title": "Notion Desktop App",
+    "description": "Windows를 위한 Notion 앱",
+    "date": {
+      "start": "2021-10-08",
+      "end": null
+    },
+    "categories": [
+      "개인 프로젝트",
+      "오픈소스"
+    ],
+    "tags": [
+      "오픈소스"
+    ],
+    "importance": "중간",
+    "github": "https://github.com/kimjisub/notion-desktop-app",
+    "url": null
+  },
+  {
+    "id": "0a86bbcb-cbe2-4c0a-bcaf-a11a9d67506f",
+    "slug": "행명서",
+    "title": "행명서",
+    "description": "근무표 자동 작성기",
+    "date": {
+      "start": "2021-08-21",
+      "end": null
+    },
+    "categories": [
+      "개인 프로젝트"
+    ],
+    "tags": [],
+    "importance": "중간",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "20644d3b-b8de-43b8-84a8-09c461058fcc",
+    "slug": "출결관리-시스템",
+    "title": "출결관리 시스템",
+    "description": "회사/학원 출결 관리 시스템",
+    "date": {
+      "start": "2020-09-28",
+      "end": null
+    },
+    "categories": [
+      "외주"
+    ],
+    "tags": [],
+    "importance": "중간",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "38f4b86f-c53f-4712-b095-f879da6c831b",
+    "slug": "숫자-인식-ai",
+    "title": "숫자 인식 AI",
+    "description": "라이브러리 없이 신경망 직접 구축",
+    "date": {
+      "start": "2017-06-26",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "중간",
+    "github": "https://github.com/kimjisub/Number-Awareness-AI",
+    "url": null
+  },
+  {
+    "id": "ad7b67e5-f69e-4177-b130-afa16eadd5be",
+    "slug": "잔그림",
+    "title": "잔그림",
+    "description": "점점 벌어지는 북한과의 문화 차이를 극복하기 위한 그림 맞추기 형태의 게임",
+    "date": {
+      "start": "2019-01-24",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "중간",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "8633e484-74fb-484f-931b-af6286fc7418",
+    "slug": "windhope",
+    "title": "WindHope",
+    "description": "공기질 분석을 통한 자동 환기 시스템",
+    "date": {
+      "start": "2019-10-21",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "중간",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "dd3d53cf-94ce-41c5-bf38-309a4da791bf",
+    "slug": "arai",
+    "title": "ARAI",
+    "description": "AR 기반으로 제어가 가능한 IoT",
+    "date": {
+      "start": "2019-06-01",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "중간",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "94abf410-d23e-4253-8e66-d6fe06d07fd0",
+    "slug": "hana",
+    "title": "HANA",
+    "description": "일상에 지친 현대인을 위해 위로와 힘을 전하는 글귀 플랫폼",
+    "date": {
+      "start": "2018-10-13",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "중간",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "f9cda467-4e16-4a41-b99a-7e915db4c181",
+    "slug": "luna-coding",
+    "title": "LUNA Coding",
+    "description": "정기구독형 코딩교육 플랫폼",
+    "date": {
+      "start": "2018-07-13",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "중간",
+    "github": null,
+    "url": "https://luna.codes"
+  },
+  {
+    "id": "2913b1b1-c9dc-80b1-b66b-cb00b03c8b70",
+    "slug": "spotify-stopwatch-방송",
+    "title": "Spotify Stopwatch (방송)",
+    "description": null,
+    "date": {
+      "start": "2025-10-19",
+      "end": null
+    },
+    "categories": [],
+    "tags": [],
+    "importance": "낮음",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "4921b020-aaf8-4482-bfef-4976499dde2e",
+    "slug": "eventify",
+    "title": "EVENTIFY",
+    "description": "트래픽이 몰리는 티켓팅 전용 SAAS 서비스",
+    "date": {
+      "start": "2023-08-29",
+      "end": "2023-08-30"
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "6a12c934-4914-47fe-99ca-faaebc1a04d8",
+    "slug": "careero",
+    "title": "Careero",
+    "description": "인생 목표를 위한 네비게이션",
+    "date": {
+      "start": "2023-06-23",
+      "end": "2023-06-24"
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": "https://github.com/kimjisub/careero",
+    "url": null
+  },
+  {
+    "id": "fc27ac72-fb10-462c-865a-bc3ce55513f2",
+    "slug": "top-body-balance",
+    "title": "Top Body Balance",
+    "description": "노안 방지를 위한 눈 스트레칭",
+    "date": {
+      "start": "2022-01-20",
+      "end": null
+    },
+    "categories": [
+      "외주"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "0d3ef853-bbab-4075-a890-8e416b9aaea6",
+    "slug": "리틱-점자모션그래픽프로젝트",
+    "title": "리틱 점자모션그래픽프로젝트",
+    "description": "점자로 모션그래픽 구현",
+    "date": {
+      "start": "2022-09-17",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "848853fe-256a-45ed-9272-2a25d8f80854",
+    "slug": "text-to-video-ttv",
+    "title": "Text to Video : TTV",
+    "description": "스크립트를 영상으로 자동 변환",
+    "date": {
+      "start": "2020-10-10",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": "https://github.com/kimjisub/text-to-video",
+    "url": null
+  },
+  {
+    "id": "e4c2a9e0-424c-4d4f-9f5f-9efd2e05c957",
+    "slug": "toothpaste-roll",
+    "title": "Toothpaste Roll",
+    "description": "남은 치약까지 짜주는 장치",
+    "date": {
+      "start": "2020-07-20",
+      "end": null
+    },
+    "categories": [
+      "개인 프로젝트"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": null,
+    "url": "https://www.thingiverse.com/thing:4547503"
+  },
+  {
+    "id": "e967da7b-3dd1-401b-b8d3-e6bacdaf00d2",
+    "slug": "utlilty-blade-slider-case",
+    "title": "Utlilty Blade Slider Case",
+    "description": "슬라이드 구조의 칼집",
+    "date": {
+      "start": "2020-06-10",
+      "end": null
+    },
+    "categories": [
+      "개인 프로젝트"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": null,
+    "url": "https://www.thingiverse.com/thing:4441240"
+  },
+  {
+    "id": "9e91657b-3c21-4a8f-8955-ab70fea7fdd7",
+    "slug": "youtogether",
+    "title": "Youtogether",
+    "description": "멀리 있는 친구와 유튜브 같이보기",
+    "date": {
+      "start": "2020-03-07",
+      "end": null
+    },
+    "categories": [
+      "개인 프로젝트",
+      "오픈소스"
+    ],
+    "tags": [
+      "오픈소스"
+    ],
+    "importance": "낮음",
+    "github": "https://github.com/kimjisub/Youtogether",
+    "url": null
+  },
+  {
+    "id": "0375584f-a78a-4daa-b31a-40dddec017e4",
+    "slug": "the-block",
+    "title": "The Block",
+    "description": "C언어를 공부하며 만든 첫 프로젝트",
+    "date": {
+      "start": "2015-02-08",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "cdee7253-d5de-4cdc-930a-3255d57a0c4c",
+    "slug": "midi-to-arduino-buzzer",
+    "title": "Midi to Arduino buzzer",
+    "description": ".mid 파일을 이용하여 아두이노 부저 코드 생성",
+    "date": {
+      "start": "2015-07-31",
+      "end": null
+    },
+    "categories": [
+      "개인 프로젝트",
+      "오픈소스"
+    ],
+    "tags": [
+      "오픈소스"
+    ],
+    "importance": "낮음",
+    "github": "https://github.com/kimjisub/Midi-to-Arduino-buzzer",
+    "url": null
+  },
+  {
+    "id": "276499ec-3d2a-4016-8de8-d353e21f51c1",
+    "slug": "powder-physics",
+    "title": "Powder Physics",
+    "description": "물, 불, 나무, 식물, 수증기, 벽 등 다양한 물체 시뮬레이션",
+    "date": {
+      "start": "2017-06-29",
+      "end": null
+    },
+    "categories": [
+      "개인 프로젝트"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": "https://github.com/kimjisub/Powder-Physics",
+    "url": null
+  },
+  {
+    "id": "9f2e48ba-d4b3-40e6-8a22-61ddbcd1b590",
+    "slug": "dutchpay-안드로이드",
+    "title": "DutchPay 안드로이드",
+    "description": "친구들과의 여행에서 복잡한 더치페이 계산",
+    "date": {
+      "start": "2015-07-19",
+      "end": null
+    },
+    "categories": [
+      "개인 프로젝트"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "a49029e3-a8a4-4995-9df1-adc9a2fe9ec8",
+    "slug": "pubg-디스코드-봇",
+    "title": "PUBG 디스코드 봇",
+    "description": "배틀그라운드 팀원 모집을 위한 디스코드 봇",
+    "date": {
+      "start": "2018-01-28",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "f8eaf004-c9ef-40d0-8512-fb0e49f06a88",
+    "slug": "카카오톡-채팅-분석기",
+    "title": "카카오톡 채팅 분석기",
+    "description": "대화 시간대, 점유도, 자주 말한 단어 분서거",
+    "date": {
+      "start": "2015-04-10",
+      "end": null
+    },
+    "categories": [
+      "개인 프로젝트"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "0371c463-7d0e-4c0b-8b61-f546160c9982",
+    "slug": "비탈길-vitalgheal",
+    "title": "비탈길: VitalGHeal",
+    "description": "기숙 학생들을 위한 증상에 따른 보건 가이드라인 마련 프로젝트",
+    "date": {
+      "start": "2019-05-17",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "2a195f24-b492-40ae-b30f-1d18b80e5ab2",
+    "slug": "naiclova",
+    "title": "NaiClova",
+    "description": null,
+    "date": {
+      "start": "2018-10-26",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "5b112096-4e06-4cc5-a2bb-689245d8f9ff",
+    "slug": "took",
+    "title": "Took",
+    "description": "종이 번호표의 환경 문제 개선을 위한 온라인 영수증",
+    "date": {
+      "start": "2019-08-31",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "31fcdff2-b969-47bc-b2f6-681122fe2215",
+    "slug": "포문",
+    "title": "포문(砲門)",
+    "description": " 불법 스포츠 도박 근절",
+    "date": {
+      "start": "2018-11-03",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "3488f0b9-da37-4809-8d14-1d573d663fac",
+    "slug": "열람실-관리-자동화",
+    "title": "열람실 관리 자동화",
+    "description": null,
+    "date": {
+      "start": "2018-10-20",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "8186aec8-ed5a-44b7-b17a-4ba595a16fe3",
+    "slug": "nasuel",
+    "title": "Nasuel",
+    "description": "사회적 약자분들을 위한 인공지능 비서 IoT 서비스",
+    "date": {
+      "start": "2018-11-10",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "f0499ae1-e215-4aaf-8066-fcd9428be8c8",
+    "slug": "stella",
+    "title": "STELLA",
+    "description": "모두를 위한 인공지능 비서",
+    "date": {
+      "start": "2018-10-26",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "d041a673-7348-4dd0-aa72-2e56065036f1",
+    "slug": "chain-post",
+    "title": "Chain Post",
+    "description": "블록체인 기술 기반의 택배 서비스",
+    "date": {
+      "start": "2018-08-30",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "1991cd92-201b-4909-871c-fba3d19d366b",
+    "slug": "sorok",
+    "title": "Sorok",
+    "description": "모듈형 IoT 통합 플랫폼",
+    "date": {
+      "start": "2018-08-18",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "8fda43a6-b6cb-495f-8256-898cd2e66b03",
+    "slug": "smart-pot",
+    "title": "Smart Pot",
+    "description": "화분 형태의 AI 비서",
+    "date": {
+      "start": "2018-08-11",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "86bf901d-caa9-424a-90f0-02da3d8f1bea",
+    "slug": "sospitas",
+    "title": "Sospitas",
+    "description": "근무 환경 개선 모니터링 솔루션",
+    "date": {
+      "start": "2018-05-11",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "b67749b7-f3f1-4939-a51b-bcae543b0ae3",
+    "slug": "산울림",
+    "title": "산울림",
+    "description": "불법 벌목 방지를 위한 3D 사운드 매핑 솔루션",
+    "date": {
+      "start": "2017-12-17",
+      "end": null
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": "낮음",
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "2913b1b1-c9dc-804b-a4c6-c18c853331e6",
+    "slug": "candid-erp",
+    "title": "Candid ERP",
+    "description": null,
+    "date": {
+      "start": "2025-08-13",
+      "end": null
+    },
+    "categories": [],
+    "tags": [],
+    "importance": null,
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "2913b1b1-c9dc-8032-a75e-c93c889702f3",
+    "slug": "untitled",
+    "title": "Untitled",
+    "description": null,
+    "date": {
+      "start": null,
+      "end": null
+    },
+    "categories": [],
+    "tags": [],
+    "importance": null,
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "2013b1b1-c9dc-8063-8540-f260066d1be3",
+    "slug": "테마주-graph-분석도구",
+    "title": "테마주 Graph 분석도구",
+    "description": "Graph Mining 팀 프로젝트",
+    "date": {
+      "start": "2025-05-28",
+      "end": null
+    },
+    "categories": [],
+    "tags": [],
+    "importance": null,
+    "github": "https://github.com/bohblue2/theme-guide",
+    "url": null
+  },
+  {
+    "id": "1383b1b1-c9dc-8041-bc56-dd7daa051238",
+    "slug": "synapus",
+    "title": "Synapus",
+    "description": "IDC 서버 사업",
+    "date": {
+      "start": "2024-11-01",
+      "end": null
+    },
+    "categories": [],
+    "tags": [],
+    "importance": null,
+    "github": null,
+    "url": "https://synap.us"
+  },
+  {
+    "id": "1343b1b1-c9dc-80c2-afb4-cb11be99f380",
+    "slug": "jisub-kim",
+    "title": "jisub.kim",
+    "description": null,
+    "date": {
+      "start": "2024-11-01",
+      "end": null
+    },
+    "categories": [
+      "개인 프로젝트"
+    ],
+    "tags": [],
+    "importance": null,
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "7ef21816-d2c7-4220-824b-3b6e6cb421e2",
+    "slug": "wekick",
+    "title": "WeKick",
+    "description": null,
+    "date": {
+      "start": "2024-07-09",
+      "end": "2024-08-31"
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": null,
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "52787c62-5958-4331-b815-fd980fad3543",
+    "slug": "sambench",
+    "title": "SAMBench",
+    "description": null,
+    "date": {
+      "start": "2024-05-31",
+      "end": null
+    },
+    "categories": [],
+    "tags": [],
+    "importance": null,
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "92cd22a7-0b28-44a5-8b18-ed7fb3cd7e99",
+    "slug": "edge-switch",
+    "title": "EDGE Switch",
+    "description": null,
+    "date": {
+      "start": "2024-05-11",
+      "end": null
+    },
+    "categories": [],
+    "tags": [],
+    "importance": null,
+    "github": null,
+    "url": null
+  },
+  {
+    "id": "be36aef1-f29e-4071-bfd4-fa64bbb6f453",
+    "slug": "wrtn-magic",
+    "title": "Wrtn Magic",
+    "description": null,
+    "date": {
+      "start": "2023-12-02",
+      "end": "2023-12-03"
+    },
+    "categories": [
+      "팀 프로젝트"
+    ],
+    "tags": [],
+    "importance": null,
+    "github": null,
+    "url": null
+  }
+]

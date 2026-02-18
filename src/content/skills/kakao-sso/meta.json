@@ -1,0 +1,22 @@
+{
+  "id": "c69ebe85-3dfb-4d58-b766-d3a1dd4b33bc",
+  "slug": "kakao-sso",
+  "title": "Kakao SSO",
+  "iconSlug": "kakaotalk",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "기술"
+  ],
+  "proficiency": "2. 중급",
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

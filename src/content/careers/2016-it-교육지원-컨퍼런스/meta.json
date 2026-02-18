@@ -1,0 +1,38 @@
+{
+  "id": "1373b1b1-c9dc-8033-b47c-e0632d7b68d1",
+  "slug": "2016-it-교육지원-컨퍼런스",
+  "title": "2016 IT 교육지원 컨퍼런스",
+  "description": null,
+  "date": {
+    "start": "2016-11-22",
+    "end": null
+  },
+  "institutions": [
+    {
+      "name": "전자신문",
+      "color": "purple"
+    },
+    {
+      "name": "교육부",
+      "color": "red"
+    },
+    {
+      "name": "한국교육학술정보원",
+      "color": "orange"
+    }
+  ],
+  "categories": [
+    {
+      "name": "장학",
+      "color": "blue"
+    }
+  ],
+  "assignedTasks": [],
+  "importance": null,
+  "url": null,
+  "awardsAndCertifications": null,
+  "relatedProjects": [],
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

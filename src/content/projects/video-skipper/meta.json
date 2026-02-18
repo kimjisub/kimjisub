@@ -1,0 +1,56 @@
+{
+  "id": "60eb508d-c631-45b0-a580-225873bedb7c",
+  "slug": "video-skipper",
+  "title": "Video Skipper",
+  "description": "영상의 공백 부분을 지워주는 오픈소스",
+  "date": {
+    "start": "2023-04-28",
+    "end": null
+  },
+  "github": "https://github.com/kimjisub/video-skipper",
+  "youtube": null,
+  "url": "https://www.npmjs.com/package/video-skipper",
+  "importance": "높음",
+  "tags": [
+    {
+      "name": "오픈소스",
+      "color": "default"
+    }
+  ],
+  "categories": [
+    {
+      "name": "오픈소스",
+      "color": "yellow"
+    },
+    {
+      "name": "팀 프로젝트",
+      "color": "green"
+    }
+  ],
+  "assignedTasks": [
+    {
+      "name": "책임자",
+      "color": "red"
+    },
+    {
+      "name": "기획",
+      "color": "yellow"
+    },
+    {
+      "name": "개발",
+      "color": "blue"
+    }
+  ],
+  "techSkills": [
+    "nodejs",
+    "ffmpeg",
+    "wasm"
+  ],
+  "languages": [
+    "typescript"
+  ],
+  "relatedCareers": [],
+  "iconUrl": null,
+  "iconEmoji": "🔇",
+  "coverUrl": null
+}

@@ -1,0 +1,41 @@
+{
+  "id": "a18fd511-b9f4-42d1-b529-2423c75bb8f4",
+  "slug": "android",
+  "title": "Android",
+  "iconSlug": "android",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "OS"
+  ],
+  "proficiency": "3. 상급",
+  "visible": true,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [
+    "08bcbabe-1cc1-4254-8cf8-32604eefed49",
+    "681343ff-92ca-42c7-a073-7f72ef77e7ef",
+    "93b5f8e9-1b2e-49c9-b8cb-3582c47bad1a",
+    "8b76e911-93c0-4f42-b56f-4cb55702f334"
+  ],
+  "usedInProjects": [
+    "f8eaf004-c9ef-40d0-8512-fb0e49f06a88",
+    "9f2e48ba-d4b3-40e6-8a22-61ddbcd1b590",
+    "72fff05b-7e1a-47ae-a3df-543ae5e8a57a",
+    "10722f86-9794-4ec2-bb11-5b92a16970e5",
+    "d041a673-7348-4dd0-aa72-2e56065036f1",
+    "94abf410-d23e-4253-8e66-d6fe06d07fd0",
+    "86bf901d-caa9-424a-90f0-02da3d8f1bea",
+    "8fda43a6-b6cb-495f-8256-898cd2e66b03",
+    "f0499ae1-e215-4aaf-8066-fcd9428be8c8",
+    "0371c463-7d0e-4c0b-8b61-f546160c9982",
+    "20644d3b-b8de-43b8-84a8-09c461058fcc",
+    "feb5779b-9e0d-4b8f-9aa1-e7a7a393c0cf",
+    "fc27ac72-fb10-462c-865a-bc3ce55513f2"
+  ],
+  "usedAsLanguage": [],
+  "usageCount": 13,
+  "iconUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/12477ef2-10bd-4b89-9665-87812e80f7aa/download.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662SCD5H3L%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090753Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDiRLKUtnWwON2zhXGO2Qf4mC3mFBgPBnijKdmI6kX5ugIhAJUkIK%2B80Tw3HDydu5oj%2B3TXGBa5nhmB3mQ%2FJr5CE%2F9gKv8DCGAQABoMNjM3NDIzMTgzODA1IgyP0xciYLv0eU1QJ4Iq3AMc8DERxtyiQap69%2FG5b7WhXS9tmLM5dJyYNel8VblXtccnYGMryvASfz74DtoAMNQHpKH9%2BkRZu6sp1aRMsn32ebR24G3jslQAfK1EM%2FriFTfb3fd5AECvvv4g3acoqjD4vEeq80fZsWQSeZrHkt9Cyl35SmfOdnp%2Ber8PJUZj%2BjTWIRdv6iKtqgvulzi1fNlKDIhr7yfghZZH0DHRdB4iKqzO5m8%2FAxdpfSLynuMrcSK8tX48PhB7%2Fdd0ct35IMZNk8b6GogeFYQ7z9JWBsGBX5EoIhnu%2F3w9%2FA8StUBF7aFG2zTa2E6Zrc%2FkqIuMz0EMHhj4lOceYc6wBWn%2FM0LoIVa49Aa%2BGzIGMCl2Pg%2B4Ykgr14D7wDohyrqlG2mr9ns981fPUfOcd%2Bh0mtiaGkyuaoNJmn1Pv5ut6rz60dJTk%2FPf6ONROdv5bQrrEuSvy45Uxx5IvQ5mRCrh8NLjZfZkIH%2FJAYYRuwEtngRsbqNzDJv9pI3%2FIKmUdc0UE0DI8f4KfFZVLw3OR9lXxzR9dhT4WWW%2F%2Fkmy0iHx1cTQxhiARqSkLhjXk9cUevpxJlnHIj0bzfmNGA2PXhIr3paRKRSRSD0cvr%2FcY%2BhhmZxURzlLsE2FINmpmLRaKnJeHzDcw9XMBjqkAQ7wwBL%2FATdLeMdhZbtBLUxOX%2FNldoQ56QrdYiIdDnYmtRL%2BKmbeXsd55zdvtvmB3xMR1QBpnomUxD6uqURAM%2BOBGV2%2BYZUMYFNqTjY1Kk6veggRGLFzA4%2FKdqaiCahx9ryuAL36Dvv6L5etmKbyona%2FqNbNg7hA%2BHnpGnOgORHzWQNy%2BihD8ljWksV9n61Ous3FGkNBl2Rbz1zZ1LZf0OJDWSN%2B&X-Amz-Signature=bca8bb559bbe17fe87ceb9590261d7efb2cc9b7e6cd561238ad3e71c6ce05173&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "iconEmoji": null,
+  "coverUrl": null
+}

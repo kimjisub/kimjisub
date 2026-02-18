@@ -1,0 +1,22 @@
+{
+  "id": "3461be36-c2c3-47f5-9663-71778f065cff",
+  "slug": "gitkaraken",
+  "title": "GitKaraken",
+  "iconSlug": "gitkraken",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "개발 도구"
+  ],
+  "proficiency": "3. 상급",
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

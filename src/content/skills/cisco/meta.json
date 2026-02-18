@@ -1,0 +1,22 @@
+{
+  "id": "0ddb4259-f5e7-4d6f-b290-b15e7ecdddde",
+  "slug": "cisco",
+  "title": "cisco",
+  "iconSlug": "cisco",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "Infra"
+  ],
+  "proficiency": "0. 입문",
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

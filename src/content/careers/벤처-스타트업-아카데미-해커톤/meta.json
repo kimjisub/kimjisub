@@ -1,0 +1,49 @@
+{
+  "id": "14161dfd-8efd-4ba9-a52a-cfea0275d55e",
+  "slug": "벤처-스타트업-아카데미-해커톤",
+  "title": "벤처·스타트업 아카데미 해커톤",
+  "description": null,
+  "date": {
+    "start": "2023-08-29",
+    "end": "2023-08-30"
+  },
+  "institutions": [
+    {
+      "name": "중소벤처기업부",
+      "color": "red"
+    },
+    {
+      "name": "한국 스타트업 포럼",
+      "color": "green"
+    }
+  ],
+  "categories": [
+    {
+      "name": "해커톤",
+      "color": "red"
+    }
+  ],
+  "assignedTasks": [
+    {
+      "name": "개발",
+      "color": "yellow"
+    },
+    {
+      "name": "기획",
+      "color": "pink"
+    },
+    {
+      "name": "디자인",
+      "color": "green"
+    }
+  ],
+  "importance": "낮음",
+  "url": null,
+  "awardsAndCertifications": null,
+  "relatedProjects": [
+    "4921b020-aaf8-4482-bfef-4976499dde2e"
+  ],
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

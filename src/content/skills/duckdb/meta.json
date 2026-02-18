@@ -1,0 +1,22 @@
+{
+  "id": "594494ff-73a6-49e6-a1a2-dfcd3ef89241",
+  "slug": "duckdb",
+  "title": "DuckDB",
+  "iconSlug": "duckdb",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "DB"
+  ],
+  "proficiency": "2. 중급",
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

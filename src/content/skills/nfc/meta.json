@@ -1,0 +1,22 @@
+{
+  "id": "25f88206-8412-453a-898a-e42911d19554",
+  "slug": "nfc",
+  "title": "nfc",
+  "iconSlug": "nfc",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "프로토콜"
+  ],
+  "proficiency": null,
+  "visible": true,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

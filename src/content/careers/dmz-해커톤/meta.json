@@ -1,0 +1,41 @@
+{
+  "id": "de7e634c-720e-447a-8b29-3452f2683b5f",
+  "slug": "dmz-해커톤",
+  "title": "DMZ 해커톤",
+  "description": null,
+  "date": {
+    "start": "2019-01-23",
+    "end": "2019-01-25"
+  },
+  "institutions": [
+    {
+      "name": "DMZ Hackathon",
+      "color": "default"
+    }
+  ],
+  "categories": [
+    {
+      "name": "해커톤",
+      "color": "red"
+    }
+  ],
+  "assignedTasks": [
+    {
+      "name": "개발",
+      "color": "yellow"
+    },
+    {
+      "name": "기획",
+      "color": "pink"
+    }
+  ],
+  "importance": "낮음",
+  "url": null,
+  "awardsAndCertifications": "우수상",
+  "relatedProjects": [
+    "ad7b67e5-f69e-4177-b130-afa16eadd5be"
+  ],
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

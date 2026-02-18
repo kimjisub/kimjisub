@@ -1,0 +1,39 @@
+{
+  "id": "25a7c61f-887c-47ae-ad63-a68e5759489b",
+  "slug": "설리번-오빠-rc카-뽑았다",
+  "title": "설리번 '오빠 RC카 뽑았다'",
+  "description": null,
+  "date": {
+    "start": "2019-01-05",
+    "end": "2019-01-27"
+  },
+  "institutions": [
+    {
+      "name": "설리번 프로젝트",
+      "color": "green"
+    }
+  ],
+  "categories": [
+    {
+      "name": "교육",
+      "color": "purple"
+    }
+  ],
+  "assignedTasks": [
+    {
+      "name": "커리큘럼 제작",
+      "color": "blue"
+    },
+    {
+      "name": "교육",
+      "color": "red"
+    }
+  ],
+  "importance": null,
+  "url": null,
+  "awardsAndCertifications": null,
+  "relatedProjects": [],
+  "iconUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/3584bdfe-1538-4215-aea0-9747b21359b2/download-1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666FIG5SEL%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCdfhBQBTvVwoGy0480lNvzkic%2B6PGcxlFGHOGsZAtJiQIhANbDKdH%2B6UHAk0cp8Ru8ivp3fUjTdc1CC%2F%2B8obg7a%2B9jKv8DCGAQABoMNjM3NDIzMTgzODA1IgyL6t%2F17XROAxyKwOMq3ANPGA%2FDFsma%2FKwsU6%2FScs6l6clGTO35nspW7gD2PGfrilG12AbVoSAL%2BtaGzM1SfXBRB620sMgnGDu65Wmvekrza3N5SCopPLqqPkW1r1SODT2M6vL77%2BJ12fry4KJe1LrCdWIi%2Bt6jJ57BwYjPG3Tni5IB1IAdYA4y8%2FkQfI4jfwgtgdu3CqXvSuIdQhDDs4oeIpddFjg%2FyyJEvufnjzk4phs1R7%2BUiQrnU%2FoN6yr1Plk9xQzzd%2B3mW3MgssLAyiSJH3qi3NZns7MM%2F8G5ckeg7RAq4uaY1q52NJ6fIAbDfdmuuYhTEtix4if2vGfYuW4akTNgRpYkDKwd4Y171W35LAqKV6Ysb4mi%2BNZHTq4uPkWGICeJXI0%2BRV2EtpWlMZVmDQhTIkSiKVXUWSY7UXHB9LF3vOzbaa1Rw2VFgUQso7a1cMty88FW4eKzZZGhndJ59UesnBUReUutodcpqtgz5uzbCAYJcJDNnzHIbt29FINxXsQ403TWFtVnefcuoLJ4BqVu6DS6GxgbUMEXmv7rHT2lTW6ilR95h7J4yyFO7JI6twh%2B0Hxo%2FszZM2gAlZ71e3z9AWqhG%2FFfJIl3pDNPVTFHn9ds25U4apDgdQftmnk9QfR1zz9hMFBozzDjwtXMBjqkAchtqy%2BMi%2FMj3Ga5MyDenC%2FLqpagkPthMTGds3kER4Qqk3aFpOEKPjmSycjXDlFuOFuUmikBimU2%2Fcj5UO6fPz8NhqcezdNyeoRasMC1Jz%2BIsvW2xbB43QkcOc43x2G407Pl4Ftqa8MEp3Rn92uIVQPmjsRo9Y5SduJ9IMXmSWmhxfBnkHq9CDwaV4h3bbHrBu%2B9%2FRniX4GOi%2FoM%2BkAkp1aMaexF&X-Amz-Signature=e104988929948aa3001f8a81f3d4cc67081cfe0d73b1930c6b31b2f0b06b5416&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "iconEmoji": null,
+  "coverUrl": null
+}

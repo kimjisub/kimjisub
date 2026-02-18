@@ -1,0 +1,24 @@
+{
+  "id": "4a4c9239-b285-48f3-a4c6-6192aba4cffe",
+  "slug": "curl",
+  "title": "curl",
+  "iconSlug": "curl",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "기술"
+  ],
+  "proficiency": null,
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [
+    "e1dd526d-97da-424a-b1dc-e7ffd5fbc26d"
+  ],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

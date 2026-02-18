@@ -1,0 +1,22 @@
+{
+  "id": "cd0c3e10-abca-48f0-9392-78df945616b4",
+  "slug": "appstore",
+  "title": "Appstore",
+  "iconSlug": "appstore",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "CI/CD"
+  ],
+  "proficiency": "2. 중급",
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

@@ -1,0 +1,28 @@
+{
+  "id": "0a86bbcb-cbe2-4c0a-bcaf-a11a9d67506f",
+  "slug": "행명서",
+  "title": "행명서",
+  "description": "근무표 자동 작성기",
+  "date": {
+    "start": "2021-08-21",
+    "end": null
+  },
+  "github": null,
+  "youtube": null,
+  "url": null,
+  "importance": "중간",
+  "tags": [],
+  "categories": [
+    {
+      "name": "개인 프로젝트",
+      "color": "red"
+    }
+  ],
+  "assignedTasks": [],
+  "techSkills": [],
+  "languages": [],
+  "relatedCareers": [],
+  "iconUrl": null,
+  "iconEmoji": "📅",
+  "coverUrl": null
+}

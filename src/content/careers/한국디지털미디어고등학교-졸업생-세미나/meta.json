@@ -1,0 +1,35 @@
+{
+  "id": "1373b1b1-c9dc-804b-83c4-db0aab219aba",
+  "slug": "한국디지털미디어고등학교-졸업생-세미나",
+  "title": "한국디지털미디어고등학교 졸업생 세미나",
+  "description": null,
+  "date": {
+    "start": "2024-05-15",
+    "end": null
+  },
+  "institutions": [
+    {
+      "name": "한국디지털미디어고등학교",
+      "color": "pink"
+    }
+  ],
+  "categories": [
+    {
+      "name": "세미나",
+      "color": "gray"
+    }
+  ],
+  "assignedTasks": [
+    {
+      "name": "발표",
+      "color": "gray"
+    }
+  ],
+  "importance": "낮음",
+  "url": null,
+  "awardsAndCertifications": null,
+  "relatedProjects": [],
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

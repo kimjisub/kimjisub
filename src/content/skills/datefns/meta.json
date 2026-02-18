@@ -1,0 +1,25 @@
+{
+  "id": "4b865f0f-1d4b-4322-b315-5ae93684908e",
+  "slug": "datefns",
+  "title": "datefns",
+  "iconSlug": "datefns",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "기술"
+  ],
+  "proficiency": null,
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [
+    "5118e5a2-987a-4bf9-ac1f-c1c55c138b23",
+    "6f19d4e2-daef-466d-8616-4dc553efdd0f"
+  ],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

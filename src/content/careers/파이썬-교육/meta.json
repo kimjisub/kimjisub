@@ -1,0 +1,39 @@
+{
+  "id": "07a7bf84-45bc-4669-b836-7ca8790bebd3",
+  "slug": "파이썬-교육",
+  "title": "파이썬 교육",
+  "description": null,
+  "date": {
+    "start": "2020-10-16",
+    "end": null
+  },
+  "institutions": [
+    {
+      "name": "한국외대 SW 봉사단",
+      "color": "pink"
+    }
+  ],
+  "categories": [
+    {
+      "name": "교육",
+      "color": "purple"
+    }
+  ],
+  "assignedTasks": [
+    {
+      "name": "커리큘럼 제작",
+      "color": "blue"
+    },
+    {
+      "name": "도우미",
+      "color": "orange"
+    }
+  ],
+  "importance": null,
+  "url": null,
+  "awardsAndCertifications": null,
+  "relatedProjects": [],
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

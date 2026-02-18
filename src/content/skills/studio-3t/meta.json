@@ -1,0 +1,22 @@
+{
+  "id": "5cd5e1fc-de49-4453-b45d-ebde1bc3b2b4",
+  "slug": "studio-3t",
+  "title": "Studio 3T",
+  "iconSlug": "studio3t",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "개발 도구"
+  ],
+  "proficiency": null,
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

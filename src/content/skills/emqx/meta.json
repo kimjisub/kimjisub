@@ -1,0 +1,22 @@
+{
+  "id": "d13c7309-6784-432b-b787-dea741b28eb3",
+  "slug": "emqx",
+  "title": "EMQX",
+  "iconSlug": "emqx",
+  "iconColor": "47ac77",
+  "description": null,
+  "category": [
+    "프로토콜"
+  ],
+  "proficiency": null,
+  "visible": true,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

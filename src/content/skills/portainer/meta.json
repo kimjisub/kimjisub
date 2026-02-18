@@ -1,0 +1,22 @@
+{
+  "id": "e852a404-dd8b-4c8b-b148-30262fe208a5",
+  "slug": "portainer",
+  "title": "Portainer",
+  "iconSlug": "portainer",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "Infra"
+  ],
+  "proficiency": null,
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

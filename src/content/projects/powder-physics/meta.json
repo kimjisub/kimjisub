@@ -1,0 +1,30 @@
+{
+  "id": "276499ec-3d2a-4016-8de8-d353e21f51c1",
+  "slug": "powder-physics",
+  "title": "Powder Physics",
+  "description": "물, 불, 나무, 식물, 수증기, 벽 등 다양한 물체 시뮬레이션",
+  "date": {
+    "start": "2017-06-29",
+    "end": null
+  },
+  "github": "https://github.com/kimjisub/Powder-Physics",
+  "youtube": null,
+  "url": null,
+  "importance": "낮음",
+  "tags": [],
+  "categories": [
+    {
+      "name": "개인 프로젝트",
+      "color": "red"
+    }
+  ],
+  "assignedTasks": [],
+  "techSkills": [],
+  "languages": [
+    "java"
+  ],
+  "relatedCareers": [],
+  "iconUrl": null,
+  "iconEmoji": "💦",
+  "coverUrl": null
+}

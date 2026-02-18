@@ -1,0 +1,43 @@
+{
+  "id": "3488f0b9-da37-4809-8d14-1d573d663fac",
+  "slug": "열람실-관리-자동화",
+  "title": "열람실 관리 자동화",
+  "description": null,
+  "date": {
+    "start": "2018-10-20",
+    "end": null
+  },
+  "github": null,
+  "youtube": null,
+  "url": null,
+  "importance": "낮음",
+  "tags": [],
+  "categories": [
+    {
+      "name": "팀 프로젝트",
+      "color": "green"
+    }
+  ],
+  "assignedTasks": [
+    {
+      "name": "기획",
+      "color": "yellow"
+    },
+    {
+      "name": "개발",
+      "color": "blue"
+    }
+  ],
+  "techSkills": [
+    "arduino"
+  ],
+  "languages": [
+    "c-c"
+  ],
+  "relatedCareers": [
+    "ict-메이커톤"
+  ],
+  "iconUrl": null,
+  "iconEmoji": "📚",
+  "coverUrl": null
+}

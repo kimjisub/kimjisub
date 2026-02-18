@@ -1,0 +1,27 @@
+{
+  "id": "d87c46e6-06e4-4d58-a1ba-a438e3ca50f7",
+  "slug": "i18next",
+  "title": "i18next",
+  "iconSlug": "i18next",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "기술"
+  ],
+  "proficiency": "2. 중급",
+  "visible": true,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [
+    "5118e5a2-987a-4bf9-ac1f-c1c55c138b23",
+    "6f19d4e2-daef-466d-8616-4dc553efdd0f"
+  ],
+  "usedInProjects": [
+    "4b1c905e-56cf-4bc8-915d-c768337edf4e"
+  ],
+  "usedAsLanguage": [],
+  "usageCount": 1,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

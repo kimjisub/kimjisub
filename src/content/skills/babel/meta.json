@@ -1,0 +1,24 @@
+{
+  "id": "aac46216-e8eb-4e50-8b99-2db6aeb422f0",
+  "slug": "babel",
+  "title": "babel",
+  "iconSlug": "babel",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "기술"
+  ],
+  "proficiency": null,
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [
+    "c13a7131-0a16-4749-abc5-a48f31ddb9c7"
+  ],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

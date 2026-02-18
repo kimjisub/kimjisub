@@ -1,0 +1,25 @@
+{
+  "id": "aad5bd9c-4558-4677-9c85-a72bc254445a",
+  "slug": "fastlane",
+  "title": "Fastlane",
+  "iconSlug": "fastlane",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "CI/CD"
+  ],
+  "proficiency": "2. 중급",
+  "visible": true,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [
+    "f8408212-01e1-4ca5-ae9b-0aff52122cff",
+    "3c9f2d34-a501-46a5-b644-43a316904b1e"
+  ],
+  "usedAsLanguage": [],
+  "usageCount": 2,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

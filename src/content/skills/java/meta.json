@@ -1,0 +1,39 @@
+{
+  "id": "681343ff-92ca-42c7-a073-7f72ef77e7ef",
+  "slug": "java",
+  "title": "Java",
+  "iconSlug": "java",
+  "iconColor": "dd553a",
+  "description": null,
+  "category": [
+    "언어"
+  ],
+  "proficiency": "3. 상급",
+  "visible": true,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [
+    "a18fd511-b9f4-42d1-b529-2423c75bb8f4",
+    "e1dd526d-97da-424a-b1dc-e7ffd5fbc26d"
+  ],
+  "usedInProjects": [],
+  "usedAsLanguage": [
+    "0371c463-7d0e-4c0b-8b61-f546160c9982",
+    "f0499ae1-e215-4aaf-8066-fcd9428be8c8",
+    "d041a673-7348-4dd0-aa72-2e56065036f1",
+    "8fda43a6-b6cb-495f-8256-898cd2e66b03",
+    "86bf901d-caa9-424a-90f0-02da3d8f1bea",
+    "10722f86-9794-4ec2-bb11-5b92a16970e5",
+    "276499ec-3d2a-4016-8de8-d353e21f51c1",
+    "38f4b86f-c53f-4712-b095-f879da6c831b",
+    "72fff05b-7e1a-47ae-a3df-543ae5e8a57a",
+    "cdee7253-d5de-4cdc-930a-3255d57a0c4c",
+    "9f2e48ba-d4b3-40e6-8a22-61ddbcd1b590",
+    "f8eaf004-c9ef-40d0-8512-fb0e49f06a88",
+    "156b6809-90c7-4a83-9751-6f82331c3030"
+  ],
+  "usageCount": 0,
+  "iconUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/891eb73a-5ea6-4f54-b0be-e42d322a15d8/java.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WG2N3SFP%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090749Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGgb2gfThpAYsuIxplgyHgJStJkoXGGrpr0GR9IUsU9aAiBC9T87S1upCYFXna4QnECpzQW%2BtME7%2B7m8OjgzjbAaXir%2FAwhgEAAaDDYzNzQyMzE4MzgwNSIM8bSPkbCdqcKSI6VJKtwDKpnoBATsf%2BZ2kKjFHHs6d5DXGzJEC9fjVnDgbxC2Wb5YpJK3XR1dOBpJELNXkkdhqmN3sF%2BTZq1wX1sFEzj2VIKWmKf8eu8ahpO9%2F3YB%2FJr7ybojkA1KNQZMv0j8TEZ%2FrU9nIXlWAf629MCTu8%2B7RB%2BbB5wgHjowXIgcy%2Fryotg9eiP5lmqNouKdfXovs6%2BNngvCkBLeCS2JJ8WmAY8upicuWVo%2BlydmGVFaUZ8P%2BZgvGbHh1vwf7sE44j9whpkZCo1v3PqLeOlGAYt9h6J%2BXZuO3iZyCmWuhQ5KQZ8LCgN3EgSPBX0mZDFmPa5R6yvUXQiolyDZcAs2RWgCFWETBglALegpcQlRe5p8qXRaGQ69M59F61P0nys4braZwLRXaVis9gmWlsylUiLiFLxO4NaihbaKSdef3hBTbObMX6s9iUG9ASO6wShaQl80sZB9Q%2BLtgvX9DQ6JH4a%2FHj8u2TGekK9L183ASTpnzRkIyVUqOd4UOwk0ESc7s%2BRKFfNfIGdFc2lol%2B7DkLk7jncnhWz2eBQSqrw9nI4kX9m8yWFR6KJiDMLjmT%2B5Wl5xeQndA04GiuG2oPXInAo33wITRFcr1OpCXbmsGM0YPn5jn2pqPW2UzUvPkwKBFmsw7cLVzAY6pgFuLU8uv9a0lrFlyQ8AJQyr%2BFm5Im8ZkCVzzK7si7fCw%2FzBYoe79NPCz8fyoqAC9eIlzS3zxjLnlyqdHq4%2BCPjKfbhSfRBeQxa%2F2OaNHJ3oVUsIU8oasi%2BHTTOGRgzRBEKn3R4%2FW%2BMisFnPeHqsH4YCmqvdFNol%2BodNrsob8teh5p%2FH0qYuEelTR2MkZRkwHEoLHy%2B6sUuNDMIB%2F1Mq2Zpi9qQD1jvx&X-Amz-Signature=606a01ebd10c834ea2433780eeab86201281523b20ebce1f027d2439c4ece258&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "iconEmoji": null,
+  "coverUrl": null
+}

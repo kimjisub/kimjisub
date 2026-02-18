@@ -1,0 +1,53 @@
+{
+  "id": "4921b020-aaf8-4482-bfef-4976499dde2e",
+  "slug": "eventify",
+  "title": "EVENTIFY",
+  "description": "트래픽이 몰리는 티켓팅 전용 SAAS 서비스",
+  "date": {
+    "start": "2023-08-29",
+    "end": "2023-08-30"
+  },
+  "github": null,
+  "youtube": null,
+  "url": null,
+  "importance": "낮음",
+  "tags": [],
+  "categories": [
+    {
+      "name": "팀 프로젝트",
+      "color": "green"
+    }
+  ],
+  "assignedTasks": [
+    {
+      "name": "책임자",
+      "color": "red"
+    },
+    {
+      "name": "기획",
+      "color": "yellow"
+    },
+    {
+      "name": "개발",
+      "color": "blue"
+    },
+    {
+      "name": "디자인",
+      "color": "orange"
+    }
+  ],
+  "techSkills": [
+    "nodejs",
+    "firebase",
+    "react"
+  ],
+  "languages": [
+    "typescript"
+  ],
+  "relatedCareers": [
+    "벤처-스타트업-아카데미-해커톤"
+  ],
+  "iconUrl": null,
+  "iconEmoji": "🎊",
+  "coverUrl": null
+}

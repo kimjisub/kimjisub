@@ -1,0 +1,22 @@
+{
+  "id": "750dfb35-dc64-4947-9c37-59a2e6dfc84f",
+  "slug": "alpine-linux",
+  "title": "Alpine Linux",
+  "iconSlug": "alpinelinux",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "OS"
+  ],
+  "proficiency": "2. 중급",
+  "visible": true,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

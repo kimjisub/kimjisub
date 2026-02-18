@@ -1,0 +1,22 @@
+{
+  "id": "3fb1154e-6de9-4dd6-a331-89a3b934bf1b",
+  "slug": "terraform",
+  "title": "Terraform",
+  "iconSlug": "terraform",
+  "iconColor": null,
+  "description": null,
+  "category": [
+    "Infra"
+  ],
+  "proficiency": "0. 입문",
+  "visible": false,
+  "parentSkills": [],
+  "childSkills": [],
+  "relatedSkills": [],
+  "usedInProjects": [],
+  "usedAsLanguage": [],
+  "usageCount": 0,
+  "iconUrl": null,
+  "iconEmoji": null,
+  "coverUrl": null
+}

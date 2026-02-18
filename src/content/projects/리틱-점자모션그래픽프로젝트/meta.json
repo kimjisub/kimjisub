@@ -1,0 +1,41 @@
+{
+  "id": "0d3ef853-bbab-4075-a890-8e416b9aaea6",
+  "slug": "리틱-점자모션그래픽프로젝트",
+  "title": "리틱 점자모션그래픽프로젝트",
+  "description": "점자로 모션그래픽 구현",
+  "date": {
+    "start": "2022-09-17",
+    "end": null
+  },
+  "github": null,
+  "youtube": null,
+  "url": null,
+  "importance": "낮음",
+  "tags": [],
+  "categories": [
+    {
+      "name": "팀 프로젝트",
+      "color": "green"
+    }
+  ],
+  "assignedTasks": [
+    {
+      "name": "개발",
+      "color": "blue"
+    },
+    {
+      "name": "책임자",
+      "color": "red"
+    }
+  ],
+  "techSkills": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "relatedCareers": [],
+  "iconUrl": null,
+  "iconEmoji": "🧑‍🦯",
+  "coverUrl": null
+}

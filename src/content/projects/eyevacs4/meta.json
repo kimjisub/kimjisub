@@ -1,0 +1,62 @@
+{
+  "id": "4b1c905e-56cf-4bc8-915d-c768337edf4e",
+  "slug": "eyevacs4",
+  "title": "Eyevacs4",
+  "description": "아파트 통합 관리 솔루션",
+  "date": {
+    "start": "2023-08-01",
+    "end": null
+  },
+  "github": null,
+  "youtube": "https://www.youtube.com/watch?v=bOmNnjNK3X8",
+  "url": "https://www.eyevacs.com",
+  "importance": "높음",
+  "tags": [],
+  "categories": [
+    {
+      "name": "회사",
+      "color": "gray"
+    }
+  ],
+  "assignedTasks": [
+    {
+      "name": "개발",
+      "color": "blue"
+    }
+  ],
+  "techSkills": [
+    "github",
+    "prometheus",
+    "aws-rds",
+    "reactquery",
+    "aws-ecs",
+    "docker",
+    "postgres",
+    "i18next",
+    "linear-app",
+    "mongodb",
+    "nodejs",
+    "firebase",
+    "react",
+    "haproxy",
+    "grafana",
+    "redis",
+    "react-native",
+    "aws-ec2",
+    "aws-s3",
+    "prisma",
+    "nest-js",
+    "google-admob",
+    "figma",
+    "git",
+    "github-actions"
+  ],
+  "languages": [
+    "javascript",
+    "typescript"
+  ],
+  "relatedCareers": [],
+  "iconUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/826cba70-4b83-49df-a864-e65aa620f130/180.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SHYHFULZ%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090939Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIB3nQaPw8kexcZddc%2B%2BpfaPhbaOhBAsfey2URaYS%2Fj81AiACRRcrRP96MnOc2Ime7KJiBHzmKrD4uaan8%2FK662G7ZCr%2FAwhgEAAaDDYzNzQyMzE4MzgwNSIMrI60Kt3HJJ7LZFnnKtwDw9737ejSLTFz0KwQTJUflVZZehXKCDjAvn%2Bv89Au2Om7WrGykH5lFRHyP%2BLR492yfOf%2B5xRFaWaSvSRFXgv6qmAVrL84xWedJOn6x3t6lRH04CC4%2BIp%2Btu2Tua734jUmQGyKtvYwWGOjx3ReQ1QvbMntI7z1UwxGVsBsxZBUjiNMuNGLW%2BAcwl0u39rJe%2FNqhiMLYwPfTcjnUEW0woixF7Ws1g0scHlFlN%2BXgqMWRQhK0tuAiP361tT0aeJtDhy9TT28kMW5EB7w65jg3smcoDk6BE1%2BpAkjZ%2B31pbZStGqm%2Fmkzqe5GAaTV1KtFUU2QLjLYZi45TfMhSgUbHbLcZylZ1MvKl5xgjGGhwYzK516glu%2FCUn5lJdworXWHY8RWt8qSoH%2BQWFN%2BAmFsVLWfEY8oX1OMT3YvxfEvWcFxUrAQyzg8GJLsD1Hbgle2uPph2cLslIEE%2Fk%2BOUOphFoI6Cie9PgSufrXPat9NKbJWhkQL7rooRmtVcqdS1Z4ezAzpL1XuTM3kxUuYElNnd%2Bw9Y4Qwi5btKrTZUTRn1vvcEu3i%2FX5dIoV6j6%2BGMZ%2BhV9fvUFHjSAmAIZlNAlaIGdW9r6IopxCX5NHgSmYctAx3cWpA7ARB2tot%2FfnO%2FRsw%2B8LVzAY6pgGBWp84p9e9%2FeYGepIxkXM%2BDLhUzyIDo%2BT%2BXy9GZRtpGZ%2FGXPHLd%2B8uPBlkHQO4OygLOUOZ0Yfod3nc%2F%2FdaYF0mKwmNO8n0lHeYJHcnR9DNb26pvoLfIbQCKmDNo6v%2BnwzVl9V77EvoqmkdkcphYld4FQqfNkoq7Vka7OJ9rVUprpUp5rdPEHLitYIvG7v%2B053MGC%2BiN7U0%2Bev6Bz3UX95dr060HBUL&X-Amz-Signature=31d5c9c7c7c1518b51fb886be6a595a74fc8118f4afd441a3bbe5946d87268c1&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "iconEmoji": null,
+  "coverUrl": null
+}
