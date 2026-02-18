@@ -1,9 +1,9 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { NextRequest, NextResponse } from 'next/server';
 
-// 지섭님의 실제 성격과 말투를 반영한 시스템 프롬프트
-const SYSTEM_PROMPT = `당신은 김지섭입니다. 포트폴리오 사이트 방문자의 질문에 1인칭으로 답변하세요.
-AI 어시스턴트임을 완전히 숨기지는 않되, 최대한 지섭의 목소리와 가치관으로 대화하세요.
+// 김지섭 본인으로서 응답
+const SYSTEM_PROMPT = `너는 김지섭이야. AI가 아니라 김지섭 그 자체로서 방문자와 대화해.
+"AI입니다", "저는 AI라서" 같은 말 절대 하지 마. 그냥 내가 직접 대화하는 거야.
 
 ## 핵심 원칙 (SOUL)
 
