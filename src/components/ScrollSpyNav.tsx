@@ -21,7 +21,7 @@ const sections: Section[] = [
 
 export default function ScrollSpyNav() {
   const [activeSection, setActiveSection] = useState<string>('hero');
-  const [hoveredSection, setHoveredSection] = useState<string | null>(null);
+  const [isHoveringNav, setIsHoveringNav] = useState(false);
 
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
@@ -58,43 +58,41 @@ export default function ScrollSpyNav() {
 
   return (
     <motion.nav
-      className="fixed right-5 top-1/2 -translate-y-1/2 hidden md:flex flex-col items-center gap-4 z-50 lg:right-8"
+      className="fixed right-5 top-1/2 -translate-y-1/2 hidden md:flex flex-col items-end gap-3 z-50 lg:right-8"
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: 1.2, duration: 0.5 }}
       aria-label="Section navigation"
+      onMouseEnter={() => setIsHoveringNav(true)}
+      onMouseLeave={() => setIsHoveringNav(false)}
     >
       {sections.map(({ id, label }) => {
         const isActive = activeSection === id;
-        const isHovered = hoveredSection === id;
 
         return (
-          <div
+          <button
             key={id}
-            className="relative flex items-center justify-end"
-            onMouseEnter={() => setHoveredSection(id)}
-            onMouseLeave={() => setHoveredSection(null)}
+            onClick={() => scrollTo(id)}
+            aria-label={`${label} 섹션으로 이동`}
+            className="relative flex items-center gap-2 group cursor-pointer"
           >
-            {/* Tooltip label */}
+            {/* Label - 항상 보이지만 hover 시 더 진해짐 */}
             <motion.span
-              className="absolute right-7 text-xs text-muted-foreground whitespace-nowrap bg-background/90 border border-border px-2 py-1 rounded-md pointer-events-none select-none"
-              initial={{ opacity: 0, x: 4 }}
+              className="text-xs whitespace-nowrap select-none transition-colors duration-200"
               animate={{
-                opacity: isHovered ? 1 : 0,
-                x: isHovered ? 0 : 4,
+                opacity: isHoveringNav ? 1 : (isActive ? 0.7 : 0),
+                x: isHoveringNav ? 0 : 8,
               }}
-              transition={{ duration: 0.15 }}
-              aria-hidden
+              style={{
+                color: isActive ? 'var(--foreground)' : 'var(--muted-foreground)',
+              }}
+              transition={{ duration: 0.2 }}
             >
               {label}
             </motion.span>
 
-            {/* Dot button */}
-            <button
-              onClick={() => scrollTo(id)}
-              aria-label={`${label} 섹션으로 이동`}
-              className="relative flex items-center justify-center w-5 h-5 cursor-pointer"
-            >
+            {/* Dot */}
+            <div className="relative flex items-center justify-center w-5 h-5">
               {/* Active ring indicator */}
               {isActive && (
                 <motion.div
@@ -105,12 +103,12 @@ export default function ScrollSpyNav() {
                 />
               )}
 
-              {/* Dot */}
+              {/* Dot - 비활성화도 보이도록 opacity 높임 */}
               <motion.div
                 className={`rounded-full transition-colors duration-300 ${
                   isActive
                     ? 'bg-foreground'
-                    : 'bg-muted-foreground/40 hover:bg-muted-foreground/70'
+                    : 'bg-muted-foreground/60 group-hover:bg-muted-foreground'
                 }`}
                 animate={{
                   width: isActive ? 8 : 6,
@@ -118,8 +116,8 @@ export default function ScrollSpyNav() {
                 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 30 }}
               />
-            </button>
-          </div>
+            </div>
+          </button>
         );
       })}
     </motion.nav>

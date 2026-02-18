@@ -77,12 +77,16 @@ export const TypewriterEffect = ({
   // Cursor blinks faster while typing/deleting, slower while pausing
   const cursorBlinkDuration = phase === 'pausing' ? 0.6 : 0.4;
 
+  // 가장 긴 텍스트의 길이를 기준으로 최소 너비 설정
+  const maxTextLength = Math.max(...texts.map(t => t.length));
+
   return (
     <span
       className={`inline-flex items-baseline ${className}`}
       aria-label={texts[currentIndex]}
+      style={{ minWidth: `${maxTextLength * 0.6}em` }}
     >
-      <span>{displayed}</span>
+      <span>{displayed || '\u00A0'}</span>
 
       {/* framer-motion cursor blink */}
       <motion.span

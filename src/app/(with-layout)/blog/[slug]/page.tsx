@@ -64,7 +64,7 @@ export default async function Page({
       <div className="flex gap-12">
         <div className="flex-1 max-w-4xl">
           <BlogPostHeader meta={meta} />
-          <article className="prose prose-lg prose-invert max-w-none prose-headings:font-serif prose-headings:font-normal prose-a:text-accent prose-a:no-underline hover:prose-a:underline">
+          <article className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-sans prose-headings:font-medium prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-p:text-foreground prose-li:text-foreground prose-strong:text-foreground">
             <MDXContent />
           </article>
         </div>

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 // 메인 페이지 섹션 IDs (순서 중요)
 const SECTION_IDS = ['hero', 'about', 'terminal', 'work', 'skills', 'blog', 'testimonials', 'contact'];
@@ -19,6 +20,9 @@ const SECTION_NAMES: Record<string, string> = {
 };
 
 export function SectionNavigation() {
+  const pathname = usePathname();
+  const isMainPage = pathname === '/';
+  
   const [showHint, setShowHint] = useState(false);
   const [currentSection, setCurrentSection] = useState<string | null>(null);
   const [direction, setDirection] = useState<'up' | 'down'>('down');
@@ -82,8 +86,10 @@ export function SectionNavigation() {
     }
   }, [findCurrentSection, scrollToSection]);
 
-  // 키보드 이벤트 핸들러
+  // 키보드 이벤트 핸들러 - 메인 페이지에서만 동작
   useEffect(() => {
+    if (!isMainPage) return;
+    
     const handleKeyDown = (e: KeyboardEvent) => {
       // 입력 필드에서는 무시
       const target = e.target as HTMLElement;
@@ -124,7 +130,10 @@ export function SectionNavigation() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [navigateSection, scrollToSection]);
+  }, [isMainPage, navigateSection, scrollToSection]);
+
+  // 메인 페이지가 아니면 렌더링하지 않음
+  if (!isMainPage) return null;
 
   return (
     <AnimatePresence>

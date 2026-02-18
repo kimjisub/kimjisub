@@ -73,6 +73,7 @@ const TimelineItem = ({ career }: TimelineItemProps) => {
   const [hovered, setHovered] = useState(false);
 
   const isOngoing = !career.date.end;
+  const hasCoverImage = !!career.coverImageUrl;
 
   const icon = career.iconUrl ? (
     <Image
@@ -150,102 +151,106 @@ const TimelineItem = ({ career }: TimelineItemProps) => {
             animate={hovered ? { y: -2 } : { y: 0 }}
             transition={{ duration: 0.2 }}
           >
-            {/* Cover image */}
-            {career.coverImageUrl && (
-              <div className="relative overflow-hidden">
-                <div className="aspect-[16/9]">
-                  <BlurImage
-                    className={`w-full h-full transition-transform duration-500 ${
-                      hovered ? 'scale-105' : 'scale-100'
-                    }`}
-                    width={480}
-                    height={270}
-                    src={career.coverImageUrl}
-                    alt={`${career.title} 커버 이미지`}
-                    sizes="(max-width: 768px) 100vw, 600px"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                {/* Ongoing badge */}
-                {isOngoing && (
-                  <span className="absolute top-3 right-3 px-2 py-0.5 bg-accent text-accent-foreground text-xs font-medium rounded-full">
-                    진행 중
-                  </span>
-                )}
-              </div>
-            )}
-
-            <div className="p-4 md:p-5">
-              {/* Date */}
-              <p className="text-xs text-muted-foreground mb-2 font-mono tracking-wide">
-                {formatDateRange()}
-              </p>
-
-              {/* Title */}
-              <h3
-                className={`font-medium flex items-center gap-2 mb-1 transition-colors duration-200 ${
-                  hovered ? 'text-accent' : 'text-foreground'
-                }`}
-              >
-                {icon}
-                <span className="line-clamp-1">{career.title}</span>
-                {isOngoing && !career.coverImageUrl && (
-                  <span className="ml-auto shrink-0 px-2 py-0.5 bg-accent text-accent-foreground text-xs font-medium rounded-full">
-                    진행 중
-                  </span>
-                )}
-              </h3>
-
-              {/* Description */}
-              {career.description && (
-                <p className="text-sm text-muted-foreground line-clamp-2 mb-2">
-                  {career.description}
+            {/* 이미지가 있으면 우측에 작게 배치 */}
+            <div className={`${hasCoverImage ? 'flex' : ''}`}>
+              {/* 텍스트 컨텐츠 */}
+              <div className={`p-4 md:p-5 ${hasCoverImage ? 'flex-1' : ''}`}>
+                {/* Date */}
+                <p className="text-xs text-muted-foreground mb-2 font-mono tracking-wide">
+                  {formatDateRange()}
                 </p>
-              )}
 
-              {/* Categories */}
-              {career.categories && career.categories.length > 0 && (
-                <div className="flex flex-wrap gap-1.5 mt-2">
-                  {career.categories.slice(0, 3).map((cat) => (
-                    <span
-                      key={cat.name}
-                      className="px-2 py-0.5 text-xs rounded-full bg-secondary text-secondary-foreground"
-                    >
-                      {cat.name}
+                {/* Title */}
+                <h3
+                  className={`font-medium flex items-center gap-2 mb-1 transition-colors duration-200 ${
+                    hovered ? 'text-accent' : 'text-foreground'
+                  }`}
+                >
+                  {icon}
+                  <span className="line-clamp-1">{career.title}</span>
+                  {isOngoing && (
+                    <span className="ml-auto shrink-0 px-2 py-0.5 bg-accent text-accent-foreground text-xs font-medium rounded-full">
+                      진행 중
                     </span>
-                  ))}
-                </div>
-              )}
+                  )}
+                </h3>
 
-              {/* Expandable details on hover */}
-              <AnimatePresence initial={false}>
-                {hovered && detailTags.length > 0 && (
-                  <motion.div
-                    key="details"
-                    variants={expandVariants}
-                    initial="collapsed"
-                    animate="expanded"
-                    exit="collapsed"
-                    className="overflow-hidden"
-                  >
-                    <div className="pt-3 mt-3 border-t border-border/60">
-                      <p className="text-xs text-muted-foreground mb-1.5 font-medium uppercase tracking-wider">
-                        상세 정보
-                      </p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {detailTags.map((tag) => (
-                          <span
-                            key={tag.name}
-                            className="px-2 py-0.5 text-xs rounded-full border border-accent/30 text-accent bg-accent/10"
-                          >
-                            {tag.name}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
+                {/* Description */}
+                {career.description && (
+                  <p className="text-sm text-muted-foreground line-clamp-2 mb-2">
+                    {career.description}
+                  </p>
                 )}
-              </AnimatePresence>
+
+                {/* Categories */}
+                {career.categories && career.categories.length > 0 && (
+                  <div className="flex flex-wrap gap-1.5 mt-2">
+                    {career.categories.slice(0, 3).map((cat) => (
+                      <span
+                        key={cat.name}
+                        className="px-2 py-0.5 text-xs rounded-full bg-secondary text-secondary-foreground"
+                      >
+                        {cat.name}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {/* Expandable details on hover */}
+                <AnimatePresence initial={false}>
+                  {hovered && detailTags.length > 0 && (
+                    <motion.div
+                      key="details"
+                      variants={expandVariants}
+                      initial="collapsed"
+                      animate="expanded"
+                      exit="collapsed"
+                      className="overflow-hidden"
+                    >
+                      <div className="pt-3 mt-3 border-t border-border/60">
+                        <p className="text-xs text-muted-foreground mb-1.5 font-medium uppercase tracking-wider">
+                          상세 정보
+                        </p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {detailTags.map((tag) => (
+                            <span
+                              key={tag.name}
+                              className="px-2 py-0.5 text-xs rounded-full border border-accent/30 text-accent bg-accent/10"
+                            >
+                              {tag.name}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Cover image - 우측에 작게 배치, hover 시 확장 */}
+              {hasCoverImage && (
+                <motion.div 
+                  className="relative overflow-hidden shrink-0"
+                  animate={{
+                    width: hovered ? 200 : 120,
+                  }}
+                  transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+                >
+                  <div className="h-full">
+                    <BlurImage
+                      className={`w-full h-full object-cover transition-transform duration-500 ${
+                        hovered ? 'scale-105' : 'scale-100'
+                      }`}
+                      width={200}
+                      height={150}
+                      src={career.coverImageUrl!}
+                      alt={`${career.title} 커버 이미지`}
+                      sizes="200px"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-l from-transparent to-card/20" />
+                </motion.div>
+              )}
             </div>
           </motion.article>
         </Link>

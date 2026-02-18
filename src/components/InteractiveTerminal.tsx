@@ -414,7 +414,11 @@ export const InteractiveTerminal = () => {
               ref={inputRef}
               type="text"
               value={currentInput}
-              onChange={(e) => setCurrentInput(e.target.value)}
+              onChange={(e) => {
+                // 영어, 숫자, 기본 특수문자만 허용
+                const filtered = e.target.value.replace(/[^a-zA-Z0-9\s\-_.:/?&=+@#!$%^*()[\]{}<>'"`,;\\|~]/g, '');
+                setCurrentInput(filtered);
+              }}
               onKeyDown={handleKeyDown}
               className="absolute opacity-0 w-0 h-0"
               autoCapitalize="none"

@@ -5,7 +5,6 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import {
 	faArrowRight,
 	faBriefcase,
-	faCircle,
 	faEnvelope,
 	faFileCode,
 	faFolderOpen,
@@ -51,13 +50,6 @@ const navLinks = [
 	{ href: '/blog', label: 'Blog', icon: faFileCode },
 ];
 
-const techStack = [
-	{ label: 'Next.js', url: 'https://nextjs.org' },
-	{ label: 'TypeScript', url: 'https://typescriptlang.org' },
-	{ label: 'Framer Motion', url: 'https://framer.com/motion' },
-	{ label: 'Tailwind CSS', url: 'https://tailwindcss.com' },
-];
-
 const siteStats = [
 	{ label: 'Projects', value: 20, suffix: '+' },
 	{ label: 'Blog Posts', value: 15, suffix: '+' },
@@ -66,10 +58,9 @@ const siteStats = [
 
 // Current activity config — edit here to update status
 const currentActivity = {
-	role: 'Building at Candid',
-	available: true,
-	availableLabel: 'Available for freelance',
-	updatedAt: '2025',
+	role: 'CTO @ Alpaon',
+	secondaryRole: 'Product Engineer @ Candid',
+	updatedAt: '2026',
 };
 
 // ─── Variants ───────────────────────────────────────────────────────────────
@@ -127,16 +118,8 @@ function StatCounter({
 	);
 }
 
-/** Current activity + availability badge */
+/** Current activity widget */
 function CurrentWidget() {
-	const [pulse, setPulse] = useState(true);
-
-	// Blink-stop after a few seconds to be subtle
-	useEffect(() => {
-		const t = setTimeout(() => setPulse(false), 6000);
-		return () => clearTimeout(t);
-	}, []);
-
 	return (
 		<motion.div
 			variants={itemVariants}
@@ -146,7 +129,7 @@ function CurrentWidget() {
 				Currently
 			</p>
 
-			{/* Role */}
+			{/* Primary Role */}
 			<div className="flex items-center gap-2">
 				<FontAwesomeIcon
 					icon={faBriefcase}
@@ -157,27 +140,14 @@ function CurrentWidget() {
 				</span>
 			</div>
 
-			{/* Availability */}
+			{/* Secondary Role */}
 			<div className="flex items-center gap-2">
-				<span className="relative flex h-2 w-2 shrink-0">
-					{currentActivity.available && pulse && (
-						<span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-					)}
-					<FontAwesomeIcon
-						icon={faCircle}
-						className={`h-2 w-2 ${
-							currentActivity.available ? 'text-emerald-400' : 'text-muted-foreground/40'
-						}`}
-					/>
-				</span>
-				<span
-					className={`text-xs ${
-						currentActivity.available
-							? 'text-emerald-400/90'
-							: 'text-muted-foreground/50'
-					}`}
-				>
-					{currentActivity.availableLabel}
+				<FontAwesomeIcon
+					icon={faBriefcase}
+					className="h-3 w-3 text-muted-foreground/50 shrink-0"
+				/>
+				<span className="text-xs text-muted-foreground">
+					{currentActivity.secondaryRole}
 				</span>
 			</div>
 
@@ -354,29 +324,10 @@ export default function Footer() {
 						variants={itemVariants}
 						className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6"
 					>
-						{/* Left: copyright + tech stack */}
+						{/* Left: copyright */}
 						<div className="flex flex-col gap-2">
 							<p className="text-xs text-muted-foreground">
 								© {currentYear} Jisub Kim. All rights reserved.
-							</p>
-							<p className="text-xs text-muted-foreground/70 flex flex-wrap gap-1 items-center">
-								Built with{' '}
-								{techStack.map((tech, i) => (
-									<span key={tech.label}>
-										<a
-											href={tech.url}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="relative group hover:text-accent transition-colors"
-										>
-											{tech.label}
-											<span className="absolute -bottom-px left-0 h-px w-0 bg-accent/60 transition-all duration-300 group-hover:w-full" />
-										</a>
-										{i < techStack.length - 1 && (
-											<span className="mx-0.5 opacity-50">·</span>
-										)}
-									</span>
-								))}
 							</p>
 						</div>
 

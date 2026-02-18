@@ -4,7 +4,6 @@ import React, { useMemo, useRef,useState } from 'react';
 import { AnimatePresence, motion, useInView, type Variants } from 'framer-motion';
 
 import { type ProjectT } from '@/api/notion/projects';
-import { ProjectCarousel } from '@/components/ProjectCarousel';
 import { ProjectItem } from '@/components/ProjectItem';
 
 interface ProjectsClientProps {
@@ -197,27 +196,8 @@ export const ProjectsClient = ({ projects }: ProjectsClientProps) => {
         </motion.p>
       </div>
 
-      {/* ── 데스크탑: 캐러셀 ── */}
-      <div className="hidden md:block">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeFilter}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-          >
-            {filteredProjects.length > 0 ? (
-              <ProjectCarousel projects={filteredProjects} />
-            ) : (
-              <EmptyState />
-            )}
-          </motion.div>
-        </AnimatePresence>
-      </div>
-
-      {/* ── 모바일: 세로 그리드 (staggerChildren + whileInView) ── */}
-      <div ref={mobileListRef} className="md:hidden px-6">
+      {/* ── 프로젝트 그리드 (데스크탑 + 모바일 통합) ── */}
+      <div ref={mobileListRef} className="px-6">
         <AnimatePresence mode="wait">
           {filteredProjects.length > 0 ? (
             <motion.div
@@ -226,12 +206,12 @@ export const ProjectsClient = ({ projects }: ProjectsClientProps) => {
               initial="hidden"
               animate={isMobileInView ? 'visible' : 'hidden'}
               exit={{ opacity: 0, transition: { duration: 0.15 } }}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
             >
               {filteredProjects.map((project) => (
                 <motion.div
                   key={project.id}
                   variants={mobileItemVariants}
-                  className="mb-6"
                 >
                   <ProjectItem project={project} />
                 </motion.div>

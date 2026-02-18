@@ -17,8 +17,6 @@ const socialLinks = [
 	},
 ];
 
-const email = '0226daniel@gmail.com';
-
 export default function FloatingSocialSidebar() {
 	return (
 		<>
@@ -63,32 +61,6 @@ export default function FloatingSocialSidebar() {
 				/>
 			</motion.div>
 
-			{/* Right Side - Email */}
-			<motion.div
-				className="fixed right-6 bottom-0 hidden md:flex flex-col items-center gap-6 z-50 lg:right-10"
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
-				transition={{ delay: 1, duration: 0.5 }}
-			>
-				<motion.a
-					href={`mailto:${email}`}
-					aria-label={`이메일 보내기: ${email}`}
-					className="font-mono text-xs tracking-widest text-muted-foreground hover:text-primary hover:-translate-y-1 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:rounded-sm focus-visible:outline-none transition-all duration-200"
-					style={{ writingMode: 'vertical-rl' }}
-					initial={{ opacity: 0, y: 20 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ delay: 1.3, duration: 0.3 }}
-				>
-					{email}
-				</motion.a>
-				<motion.div
-					className="w-px h-24 bg-muted-foreground/50"
-					initial={{ scaleY: 0 }}
-					animate={{ scaleY: 1 }}
-					transition={{ delay: 1.5, duration: 0.5 }}
-					style={{ transformOrigin: 'top' }}
-				/>
-			</motion.div>
 		</>
 	);
 }
