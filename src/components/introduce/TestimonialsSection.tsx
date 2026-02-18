@@ -545,20 +545,20 @@ export function TestimonialsSection() {
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
               transition={{ duration: 0.5, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="relative rounded-2xl border border-dashed border-border bg-card/50 p-12 text-center"
+              className="relative rounded-2xl border border-dashed border-white/20 bg-white/5 p-12 text-center"
             >
-              <QuoteIcon className="w-16 h-16 mx-auto mb-6 text-foreground/10" />
-              <h3 className="text-xl font-semibold text-foreground mb-2">
+              <QuoteIcon className="w-16 h-16 mx-auto mb-6 text-white/20" />
+              <h3 className="text-xl font-semibold text-white mb-2">
                 첫 번째 추천사를 기다리고 있어요
               </h3>
-              <p className="text-muted-foreground mb-8 max-w-md mx-auto">
+              <p className="text-gray-400 mb-8 max-w-md mx-auto">
                 김지섭과 함께 일한 경험이 있으시다면, 
                 추천사를 작성해주세요. 소중한 피드백이 됩니다.
               </p>
               <button
                 onClick={() => setShowForm(true)}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground 
-                           rounded-xl font-medium hover:bg-accent/90 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 text-white 
+                           rounded-xl font-medium hover:bg-green-600 transition-colors"
               >
                 ✍️ 추천사 작성하기
               </button>
