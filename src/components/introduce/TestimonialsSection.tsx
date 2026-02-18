@@ -18,7 +18,7 @@ function Avatar({ testimonial }: { testimonial: Testimonial }) {
 
   if (testimonial.avatar) {
     return (
-      // eslint-disable-next-line @next/next/no-img-element
+      
       <img
         src={testimonial.avatar}
         alt={testimonial.name}

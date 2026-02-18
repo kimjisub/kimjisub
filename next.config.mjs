@@ -11,6 +11,10 @@ const nextConfig = {
         loaders: ['@mdx-js/loader'],
         as: '*.js',
       },
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
+      },
     },
   },
   // Next.js 16: Allow dev origins for Tailscale

@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode,useEffect, useRef, useState } from 'react';
+import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import { useTheme } from 'next-themes';
 import { annotate } from 'rough-notation';
 
@@ -54,7 +54,7 @@ export const RoughHighlight = ({
   const [mounted, setMounted] = useState(false);
 
   // 테마별 기본 색상
-  const getDefaultColor = () => {
+  const getDefaultColor = useCallback(() => {
     if (type === 'highlight') {
       return resolvedTheme === 'dark' 
         ? 'rgba(255, 215, 0, 0.3)' // 골드 (다크모드)
@@ -63,7 +63,7 @@ export const RoughHighlight = ({
     return resolvedTheme === 'dark' 
       ? 'rgba(147, 197, 253, 0.8)' // 밝은 파랑 (다크모드)
       : 'rgba(59, 130, 246, 0.8)'; // 파랑 (라이트모드)
-  };
+  }, [type, resolvedTheme]);
 
   useEffect(() => {
     setMounted(true);
@@ -138,6 +138,8 @@ export const RoughHighlight = ({
     multiline,
     iterations,
     delay,
+    brackets,
+    getDefaultColor,
   ]);
 
   return (

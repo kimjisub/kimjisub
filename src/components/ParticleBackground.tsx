@@ -284,7 +284,7 @@ export const ParticleBackground = memo(function ParticleBackground() {
 
     // iOS 13+ requires permission
     const requestOrientationPermission = async () => {
-      /* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */
+      /* eslint-disable @typescript-eslint/no-explicit-any */
       const DeviceOrientationEventAny = DeviceOrientationEvent as any;
       if (typeof DeviceOrientationEventAny.requestPermission === 'function') {
         try {
@@ -298,7 +298,7 @@ export const ParticleBackground = memo(function ParticleBackground() {
       } else {
         window.addEventListener('deviceorientation', onOrientation);
       }
-      /* eslint-enable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */
+      /* eslint-enable @typescript-eslint/no-explicit-any */
     };
 
     // ── ResizeObserver ───────────────────

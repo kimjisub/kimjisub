@@ -84,7 +84,7 @@ export default async function BlogPreviewSection() {
                   {meta.image && (
                     <div className="relative w-full aspect-video overflow-hidden bg-muted">
                       {/* Next.js Image 대신 img 사용 (외부 URL 허용 범위 불확실) */}
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      
                       <img
                         src={meta.image}
                         alt={meta.title}

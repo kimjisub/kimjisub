@@ -37,7 +37,7 @@ export default function Preloader() {
 						animate={{ opacity: 1, scale: 1 }}
 						transition={{ duration: 0.4, ease: 'easeOut' }}
 					>
-						{/* eslint-disable-next-line @next/next/no-img-element */}
+						
 						<img
 							src="/logo.svg"
 							alt="Jisub Kim Logo"

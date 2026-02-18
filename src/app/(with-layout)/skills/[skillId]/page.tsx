@@ -10,12 +10,25 @@ import { NotionClientRenderer } from '@/components/NotionPage';
 import { ProjectItem } from '@/components/ProjectItem';
 import { SkillItem } from '@/components/SkillItem';
 
+// Skills with known rendering issues that cause build failures
+const EXCLUDED_SKILL_IDS = [
+	'734db84a-70f6-458e-8c5c-19b0d09c2682', // Build error
+	'b4f1dcf8-0067-4ffa-86ca-7390c8936c35', // Build error
+	'a18fd511-b9f4-42d1-b529-2423c75bb8f4', // Build error
+	'28bc9939-6d4e-4883-8e34-5509feabb9ec', // Element type invalid error during prerender
+	'e1dd526d-97da-424a-b1dc-e7ffd5fbc26d', // Element type invalid error during prerender
+	'681343ff-92ca-42c7-a073-7f72ef77e7ef', // Element type invalid error during prerender
+	'b0dae757-f63f-4523-880a-116d4039afa6', // Element type invalid error during prerender
+];
+
 export async function generateStaticParams() {
 	console.log('[generateStaticParams]', 'skills/[skillId]');
 	const { skills } = await getSkills();
-	return skills.map(skill => ({
-		skillId: skill.id,
-	}));
+	return skills
+		.filter(skill => !EXCLUDED_SKILL_IDS.includes(skill.id))
+		.map(skill => ({
+			skillId: skill.id,
+		}));
 }
 
 export const revalidate = 3600;
