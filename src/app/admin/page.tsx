@@ -41,8 +41,11 @@ interface Testimonial {
   authorTitle?: string;
   authorCompany?: string;
   authorEmail?: string;
+  authorUrl?: string;
   content: string;
+  relationship?: string;
   status: "PENDING" | "APPROVED" | "REJECTED";
+  displayOrder?: number;
   createdAt: string;
 }
 
@@ -392,8 +395,23 @@ export default function AdminPage() {
                       {t.authorEmail && (
                         <div className="text-sm text-gray-500">{t.authorEmail}</div>
                       )}
+                      {t.authorUrl && (
+                        <a 
+                          href={t.authorUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-sm text-blue-400 hover:underline"
+                        >
+                          {t.authorUrl}
+                        </a>
+                      )}
+                      {t.relationship && (
+                        <div className="text-sm text-gray-500 italic mt-1">
+                          관계: {t.relationship}
+                        </div>
+                      )}
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-col items-end gap-2">
                       <span
                         className={cn(
                           "px-2 py-1 text-xs rounded",
@@ -404,9 +422,17 @@ export default function AdminPage() {
                       >
                         {t.status}
                       </span>
+                      <span className="text-xs text-gray-500">
+                        {formatDate(t.createdAt)}
+                      </span>
+                      {t.displayOrder !== undefined && t.displayOrder !== null && (
+                        <span className="text-xs text-gray-500">
+                          순서: {t.displayOrder}
+                        </span>
+                      )}
                     </div>
                   </div>
-                  <p className="text-gray-300 mb-4">{t.content}</p>
+                  <p className="text-gray-300 mb-4 whitespace-pre-wrap">{t.content}</p>
                   <div className="flex items-center gap-2">
                     {t.status !== "APPROVED" && (
                       <button
