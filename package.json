@@ -13,6 +13,7 @@
     "icons": "node scripts/simple-icon-badge.js | pbcopy"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.76.0",
     "@eslint/eslintrc": "^3.3.3",
     "@eslint/js": "^10.0.1",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",

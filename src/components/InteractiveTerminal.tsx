@@ -1,11 +1,11 @@
 'use client';
 
-import { KeyboardEvent,useCallback, useEffect, useRef, useState } from 'react';
-import { AnimatePresence,motion } from 'framer-motion';
+import { KeyboardEvent, useCallback, useEffect, useRef, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 interface TerminalLine {
   id: number;
-  type: 'input' | 'output' | 'ascii';
+  type: 'input' | 'output' | 'ascii' | 'ai' | 'thinking';
   content: string;
   isTyping?: boolean;
 }
@@ -13,6 +13,11 @@ interface TerminalLine {
 interface CommandOutput {
   lines: string[];
   isAscii?: boolean;
+}
+
+interface ChatMessage {
+  role: 'user' | 'assistant';
+  content: string;
 }
 
 const NEOFETCH_ASCII = `
@@ -30,15 +35,18 @@ const commands: Record<string, () => CommandOutput> = {
       '┌─────────────────────────────────────────────┐',
       '│           Available Commands                │',
       '├─────────────────────────────────────────────┤',
-      '│  help      - Show this help message         │',
-      '│  about     - About me                       │',
-      '│  skills    - My tech stack                  │',
-      '│  projects  - Featured projects              │',
-      '│  contact   - Get in touch                   │',
-      '│  neofetch  - System info (fun)              │',
-      '│  whoami    - Who am I?                      │',
-      '│  clear     - Clear terminal                 │',
-      '│  history   - Command history                │',
+      '│  /help      - Show this help message        │',
+      '│  /about     - About me                      │',
+      '│  /skills    - My tech stack                 │',
+      '│  /projects  - Featured projects             │',
+      '│  /contact   - Get in touch                  │',
+      '│  /neofetch  - System info (fun)             │',
+      '│  /whoami    - Who am I?                     │',
+      '│  /clear     - Clear terminal                │',
+      '│  /history   - Command history               │',
+      '├─────────────────────────────────────────────┤',
+      '│  Or just type naturally to chat with AI!   │',
+      '│  Try: "What projects have you worked on?"  │',
       '└─────────────────────────────────────────────┘',
     ],
   }),
@@ -47,13 +55,13 @@ const commands: Record<string, () => CommandOutput> = {
     lines: [
       '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
       '  Kim Jisub (김지섭)',
-      '  Full-Stack Developer & Entrepreneur',
+      '  CTO & Product Engineer',
       '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
       '',
       '  • Started coding when my app hit 5M+ downloads',
       '  • That app was UniPad (made in middle school)',
       '  • Currently CTO @ Alpaon (Industrial IoT)',
-      '  • Solo Engineer @ Candid (Recruiting Platform)',
+      '  • Product Engineer @ Candid (Recruiting Platform)',
       '  • Studying CS @ Hankuk Univ. of Foreign Studies',
       '  • Alumnus of Hankuk Digital Media High School',
       '',
@@ -159,9 +167,8 @@ const commands: Record<string, () => CommandOutput> = {
     lines: [
       '',
       '  > Kim Jisub (김지섭)',
-      '  > Full-Stack Developer',
       '  > CTO & Co-founder @ Alpaon',
-      '  > Software Engineer @ Candid',
+      '  > Product Engineer @ Candid',
       '  > CS Student @ HUFS',
       '',
       '  Status: Building cool stuff ⚡',
@@ -172,15 +179,19 @@ const commands: Record<string, () => CommandOutput> = {
 
 export const InteractiveTerminal = () => {
   const [lines, setLines] = useState<TerminalLine[]>([
-    { id: 0, type: 'output', content: 'Welcome to Kim Jisub\'s portfolio terminal!' },
-    { id: 1, type: 'output', content: 'Type "help" to see available commands.' },
-    { id: 2, type: 'output', content: '' },
+    { id: 0, type: 'output', content: 'Welcome to Jisub\'s AI-powered portfolio terminal! 🚀' },
+    { id: 1, type: 'output', content: '' },
+    { id: 2, type: 'output', content: 'Type naturally to chat with AI, or use /commands.' },
+    { id: 3, type: 'output', content: 'Try: "Tell me about your experience" or /help' },
+    { id: 4, type: 'output', content: '' },
   ]);
   const [currentInput, setCurrentInput] = useState('');
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
-  const [lineIdCounter, setLineIdCounter] = useState(3);
+  const [lineIdCounter, setLineIdCounter] = useState(5);
   const [isTyping, setIsTyping] = useState(false);
+  const [isWaitingAI, setIsWaitingAI] = useState(false);
+  const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
   
   const inputRef = useRef<HTMLInputElement>(null);
   const terminalRef = useRef<HTMLDivElement>(null);
@@ -195,14 +206,13 @@ export const InteractiveTerminal = () => {
     scrollToBottom();
   }, [lines, scrollToBottom]);
   
-  // 타이핑이 끝나면 자동으로 input에 포커스
   useEffect(() => {
-    if (!isTyping) {
+    if (!isTyping && !isWaitingAI) {
       inputRef.current?.focus();
     }
-  }, [isTyping]);
+  }, [isTyping, isWaitingAI]);
   
-  const typeOutput = useCallback(async (outputLines: string[], startId: number, isAscii?: boolean) => {
+  const typeOutput = useCallback(async (outputLines: string[], startId: number, isAscii?: boolean, type: 'output' | 'ai' = 'output') => {
     setIsTyping(true);
     
     for (let i = 0; i < outputLines.length; i++) {
@@ -210,21 +220,18 @@ export const InteractiveTerminal = () => {
       const lineId = startId + i;
       
       if (isAscii || line.includes('╔') || line.includes('═') || line.includes('┌') || line.includes('─') || line.includes('│') || line.includes('└') || line.includes('┘') || line.includes('━')) {
-        // ASCII art / box characters - instant display
         setLines(prev => [...prev, { 
           id: lineId, 
-          type: isAscii ? 'ascii' : 'output', 
+          type: isAscii ? 'ascii' : type, 
           content: line 
         }]);
         await new Promise(resolve => setTimeout(resolve, 20));
       } else if (line.trim() === '') {
-        // Empty lines - instant
-        setLines(prev => [...prev, { id: lineId, type: 'output', content: '' }]);
+        setLines(prev => [...prev, { id: lineId, type, content: '' }]);
         await new Promise(resolve => setTimeout(resolve, 10));
       } else {
-        // Regular text - typing effect
         let displayedContent = '';
-        setLines(prev => [...prev, { id: lineId, type: 'output', content: '', isTyping: true }]);
+        setLines(prev => [...prev, { id: lineId, type, content: '', isTyping: true }]);
         
         for (let j = 0; j < line.length; j++) {
           displayedContent += line[j];
@@ -232,7 +239,7 @@ export const InteractiveTerminal = () => {
           setLines(prev => prev.map(l => 
             l.id === lineId ? { ...l, content } : l
           ));
-          await new Promise(resolve => setTimeout(resolve, 8));
+          await new Promise(resolve => setTimeout(resolve, type === 'ai' ? 12 : 8));
         }
         
         setLines(prev => prev.map(l => 
@@ -243,9 +250,61 @@ export const InteractiveTerminal = () => {
     
     setIsTyping(false);
   }, []);
+
+  const sendToAI = useCallback(async (message: string, inputLineId: number) => {
+    setIsWaitingAI(true);
+    
+    // Add thinking indicator
+    const thinkingId = inputLineId + 1;
+    setLines(prev => [...prev, { 
+      id: thinkingId, 
+      type: 'thinking', 
+      content: '🤔 Thinking...' 
+    }]);
+    
+    const newChatHistory: ChatMessage[] = [...chatHistory, { role: 'user', content: message }];
+    
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: newChatHistory }),
+      });
+      
+      if (!response.ok) {
+        throw new Error('API request failed');
+      }
+      
+      const data = await response.json();
+      const aiResponse = data.response || 'Sorry, I couldn\'t generate a response.';
+      
+      // Remove thinking indicator
+      setLines(prev => prev.filter(l => l.id !== thinkingId));
+      
+      // Update chat history
+      setChatHistory([...newChatHistory, { role: 'assistant', content: aiResponse }]);
+      
+      // Type AI response
+      const responseLines = aiResponse.split('\n');
+      await typeOutput(responseLines, thinkingId, false, 'ai');
+      setLineIdCounter(prev => prev + responseLines.length + 1);
+      
+    } catch (error) {
+      console.error('AI chat error:', error);
+      setLines(prev => prev.filter(l => l.id !== thinkingId));
+      setLines(prev => [...prev, { 
+        id: thinkingId, 
+        type: 'output', 
+        content: '  ⚠️ Failed to get AI response. Try /help for commands.' 
+      }]);
+      setLineIdCounter(prev => prev + 2);
+    }
+    
+    setIsWaitingAI(false);
+  }, [chatHistory, typeOutput]);
   
   const handleCommand = useCallback(async (cmd: string) => {
-    const trimmedCmd = cmd.trim().toLowerCase();
+    const trimmedCmd = cmd.trim();
     const inputLineId = lineIdCounter;
     
     // Add input line
@@ -262,47 +321,55 @@ export const InteractiveTerminal = () => {
     }
     setHistoryIndex(-1);
     
-    if (trimmedCmd === 'clear') {
-      setLines([]);
-      setLineIdCounter(0);
-      // 포커스 유지
-      setTimeout(() => inputRef.current?.focus(), 0);
-      return;
-    }
-    
-    if (trimmedCmd === 'history') {
-      const historyOutput: CommandOutput = {
-        lines: [
+    // Check if it's a slash command
+    if (trimmedCmd.startsWith('/')) {
+      const cmdName = trimmedCmd.slice(1).toLowerCase();
+      
+      if (cmdName === 'clear') {
+        setLines([]);
+        setLineIdCounter(0);
+        setChatHistory([]);
+        setTimeout(() => inputRef.current?.focus(), 0);
+        return;
+      }
+      
+      if (cmdName === 'history') {
+        const historyOutput: CommandOutput = {
+          lines: [
+            '',
+            '  Command History:',
+            ...commandHistory.slice(0, 10).map((h, i) => `    ${i + 1}. ${h}`),
+            '',
+          ],
+        };
+        await typeOutput(historyOutput.lines, inputLineId + 1);
+        setLineIdCounter(prev => prev + historyOutput.lines.length + 1);
+        return;
+      }
+      
+      const commandFn = commands[cmdName];
+      
+      if (commandFn) {
+        const output = commandFn();
+        await typeOutput(output.lines, inputLineId + 1, output.isAscii);
+        setLineIdCounter(prev => prev + output.lines.length + 1);
+      } else {
+        const errorLines = [
+          `  Command not found: /${cmdName}`,
+          '  Type /help for available commands.',
           '',
-          '  Command History:',
-          ...commandHistory.slice(0, 10).map((h, i) => `    ${i + 1}. ${h}`),
-          '',
-        ],
-      };
-      await typeOutput(historyOutput.lines, lineIdCounter + 1);
-      setLineIdCounter(prev => prev + historyOutput.lines.length + 1);
-      return;
-    }
-    
-    const commandFn = commands[trimmedCmd];
-    
-    if (commandFn) {
-      const output = commandFn();
-      await typeOutput(output.lines, inputLineId + 1, output.isAscii);
-      setLineIdCounter(prev => prev + output.lines.length + 1);
+        ];
+        await typeOutput(errorLines, inputLineId + 1);
+        setLineIdCounter(prev => prev + errorLines.length + 1);
+      }
     } else {
-      const errorLines = [
-        `  Command not found: ${trimmedCmd}`,
-        '  Type "help" for available commands.',
-        '',
-      ];
-      await typeOutput(errorLines, inputLineId + 1);
-      setLineIdCounter(prev => prev + errorLines.length + 1);
+      // Natural language - send to AI
+      await sendToAI(trimmedCmd, inputLineId);
     }
-  }, [lineIdCounter, commandHistory, typeOutput]);
+  }, [lineIdCounter, commandHistory, typeOutput, sendToAI]);
   
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (isTyping) {
+    if (isTyping || isWaitingAI) {
       e.preventDefault();
       return;
     }
@@ -332,6 +399,7 @@ export const InteractiveTerminal = () => {
       e.preventDefault();
       setLines([]);
       setLineIdCounter(0);
+      setChatHistory([]);
     }
   };
   
@@ -352,7 +420,7 @@ export const InteractiveTerminal = () => {
           <div className="w-3 h-3 rounded-full bg-green-500/80" />
         </div>
         <span className="text-sm text-muted-foreground ml-2 font-mono">
-          jisub@portfolio ~ 
+          jisub@portfolio ~ <span className="text-accent">AI chat enabled</span>
         </span>
       </div>
       
@@ -374,6 +442,8 @@ export const InteractiveTerminal = () => {
                 ${line.type === 'input' ? 'text-accent' : ''}
                 ${line.type === 'output' ? 'text-zinc-300' : ''}
                 ${line.type === 'ascii' ? 'text-accent font-bold' : ''}
+                ${line.type === 'ai' ? 'text-emerald-400' : ''}
+                ${line.type === 'thinking' ? 'text-yellow-400 animate-pulse' : ''}
               `}
             >
               {line.type === 'input' && (
@@ -387,7 +457,16 @@ export const InteractiveTerminal = () => {
                   <span className="text-zinc-100"> {line.content}</span>
                 </span>
               )}
-              {line.type !== 'input' && (
+              {line.type === 'ai' && (
+                <span>
+                  <span className="text-emerald-500">◆ </span>
+                  {line.content}
+                  {line.isTyping && (
+                    <span className="inline-block w-2 h-4 bg-emerald-400 ml-0.5 animate-pulse" />
+                  )}
+                </span>
+              )}
+              {line.type !== 'input' && line.type !== 'ai' && (
                 <>
                   {line.content}
                   {line.isTyping && (
@@ -400,7 +479,7 @@ export const InteractiveTerminal = () => {
         </AnimatePresence>
         
         {/* Input Line */}
-        {!isTyping && (
+        {!isTyping && !isWaitingAI && (
           <div className="flex items-center text-accent">
             <span className="text-blue-400">jisub</span>
             <span className="text-zinc-500">@</span>
@@ -414,11 +493,7 @@ export const InteractiveTerminal = () => {
               ref={inputRef}
               type="text"
               value={currentInput}
-              onChange={(e) => {
-                // 영어, 숫자, 기본 특수문자만 허용
-                const filtered = e.target.value.replace(/[^a-zA-Z0-9\s\-_.:/?&=+@#!$%^*()[\]{}<>'"`,;\\|~]/g, '');
-                setCurrentInput(filtered);
-              }}
+              onChange={(e) => setCurrentInput(e.target.value)}
               onKeyDown={handleKeyDown}
               className="absolute opacity-0 w-0 h-0"
               autoCapitalize="none"
@@ -433,10 +508,10 @@ export const InteractiveTerminal = () => {
       {/* Mobile hint */}
       <div className="bg-secondary px-4 py-2 border-t border-border flex items-center justify-between">
         <span className="text-xs text-muted-foreground">
-          Click to focus • ↑↓ for history • Ctrl+L to clear
+          Chat naturally or use /commands • ↑↓ history
         </span>
         <span className="text-xs text-muted-foreground hidden sm:block">
-          Try: <code className="bg-muted px-1 rounded">neofetch</code>
+          Try: <code className="bg-muted px-1 rounded">What do you do?</code>
         </span>
       </div>
     </div>
