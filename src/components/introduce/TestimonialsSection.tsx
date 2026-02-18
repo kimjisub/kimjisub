@@ -560,7 +560,6 @@ export function TestimonialsSection() {
   return (
     <>
       <section
-        ref={ref}
         className="py-12 md:py-24 border-t border-border"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
@@ -572,7 +571,8 @@ export function TestimonialsSection() {
           <motion.h2
             className="font-serif text-2xl md:text-3xl text-foreground mb-2 italic"
             initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             Testimonials
@@ -580,7 +580,8 @@ export function TestimonialsSection() {
           <motion.div
             className="flex items-center justify-between mb-10"
             initial={{ opacity: 0, y: 16 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             <p className="text-muted-foreground text-sm">
@@ -597,7 +598,8 @@ export function TestimonialsSection() {
           {/* Carousel */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             {/* Card area */}
