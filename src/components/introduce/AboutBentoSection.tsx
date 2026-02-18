@@ -190,8 +190,8 @@ export function AboutBentoSection() {
   const isInView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section className="py-24 border-t border-border" ref={ref}>
-      <div className="max-w-5xl mx-auto px-6">
+    <section className="py-12 md:py-24 border-t border-border" ref={ref}>
+      <div className="max-w-5xl mx-auto px-4 md:px-6">
         <SectionTitle isInView={isInView} />
 
         <motion.div

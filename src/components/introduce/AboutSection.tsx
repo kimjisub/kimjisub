@@ -10,10 +10,10 @@ export const AboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section className="py-24 border-t border-border" ref={ref}>
-      <div className="max-w-4xl mx-auto px-6">
+    <section className="py-12 md:py-24 border-t border-border" ref={ref}>
+      <div className="max-w-4xl mx-auto px-4 md:px-6">
         <motion.h2 
-          className="font-serif text-2xl md:text-3xl text-foreground mb-12 italic"
+          className="font-serif text-2xl md:text-3xl text-foreground mb-8 md:mb-12 italic"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -21,7 +21,7 @@ export const AboutSection = () => {
           About
         </motion.h2>
         
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}

@@ -8,8 +8,8 @@ import { Skeleton } from '@/components/ui/Skeleton';
  */
 export function SkillsSectionSkeleton() {
   return (
-    <section className="py-24 border-t border-border">
-      <div className="max-w-4xl mx-auto px-6">
+    <section className="py-12 md:py-24 border-t border-border">
+      <div className="max-w-4xl mx-auto px-4 md:px-6">
         {/* Title "Stack" */}
         <Skeleton className="h-8 w-20 mb-12" />
 

@@ -37,11 +37,11 @@ export const ContactSectionAnimated = () => {
 
   return (
     <section 
-      className="py-24 border-t border-border" 
+      className="py-12 md:py-24 border-t border-border" 
       ref={ref}
       aria-labelledby="contact-heading"
     >
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-4 md:px-6">
         <motion.h2
           id="contact-heading"
           className="font-serif text-2xl md:text-3xl text-foreground mb-4 italic"

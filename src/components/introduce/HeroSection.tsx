@@ -63,7 +63,7 @@ export const HeroSection = () => {
       <ParticleBackground />
       <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-transparent" />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 py-24">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 py-24">
         {/*
          * Grid layout:
          *   mobile  → single column (image → name → role → desc → links)

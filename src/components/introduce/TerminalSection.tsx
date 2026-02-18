@@ -36,10 +36,10 @@ export const TerminalSection = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section className="py-24 border-t border-border" ref={ref}>
-      <div className="max-w-4xl mx-auto px-6">
+    <section className="py-12 md:py-24 border-t border-border" ref={ref}>
+      <div className="max-w-4xl mx-auto px-4 md:px-6">
         <motion.div
-          className="mb-12"
+          className="mb-8 md:mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}

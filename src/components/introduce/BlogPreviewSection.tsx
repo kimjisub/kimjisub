@@ -54,8 +54,8 @@ export default async function BlogPreviewSection() {
   if (posts.length === 0) return null;
 
   return (
-    <section className="py-24 border-t border-border">
-      <div className="max-w-4xl mx-auto px-6">
+    <section className="py-12 md:py-24 border-t border-border">
+      <div className="max-w-4xl mx-auto px-4 md:px-6">
         {/* 헤더 */}
         <div className="flex items-end justify-between mb-12">
           <AnimatedTitle className="font-serif text-2xl md:text-3xl text-foreground italic">

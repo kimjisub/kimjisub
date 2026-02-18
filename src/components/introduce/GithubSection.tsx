@@ -39,8 +39,8 @@ export default async function GithubSection() {
   ]);
   
   return (
-    <section className="py-24 border-t border-border bg-card/30">
-      <div className="max-w-4xl mx-auto px-6">
+    <section className="py-12 md:py-24 border-t border-border bg-card/30">
+      <div className="max-w-4xl mx-auto px-4 md:px-6">
         <AnimatedTitle className="font-serif text-2xl md:text-3xl text-foreground mb-12 italic">
           Activity
         </AnimatedTitle>

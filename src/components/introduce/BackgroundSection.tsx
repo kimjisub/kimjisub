@@ -4,8 +4,8 @@ import { SectionReveal, SectionRevealItem } from '@/components/SectionReveal';
 
 export const BackgroundSection = () => {
   return (
-    <section className="py-24 border-t border-border">
-      <div className="max-w-4xl mx-auto px-6">
+    <section className="py-12 md:py-24 border-t border-border">
+      <div className="max-w-4xl mx-auto px-4 md:px-6">
         <SectionReveal>
           <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-12 italic">
             Background

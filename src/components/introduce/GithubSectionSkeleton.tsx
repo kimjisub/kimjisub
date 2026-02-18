@@ -12,8 +12,8 @@ export function GithubSectionSkeleton() {
   const years = Array.from({ length: endYear - startYear + 1 }, (_, i) => startYear + i);
 
   return (
-    <section className="py-24 border-t border-border bg-card/30">
-      <div className="max-w-4xl mx-auto px-6">
+    <section className="py-12 md:py-24 border-t border-border bg-card/30">
+      <div className="max-w-4xl mx-auto px-4 md:px-6">
         {/* Title */}
         <Skeleton className="h-8 w-28 mb-12" />
 

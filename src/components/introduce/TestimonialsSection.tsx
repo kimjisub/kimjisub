@@ -218,13 +218,13 @@ export function TestimonialsSection() {
   return (
     <section
       ref={ref}
-      className="py-24 border-t border-border"
+      className="py-12 md:py-24 border-t border-border"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onTouchStart={() => setPaused(true)}
       onTouchEnd={() => setPaused(false)}
     >
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-4 md:px-6">
         {/* Heading */}
         <motion.h2
           className="font-serif text-2xl md:text-3xl text-foreground mb-2 italic"
