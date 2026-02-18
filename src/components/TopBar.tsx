@@ -2,11 +2,11 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { CommandPalette, useCommandPalette } from './CommandPalette';
 import { MagneticLink, MagneticWrapper } from './MagneticButton';
+import { MobileBottomSheet } from './MobileBottomSheet';
 import { ThemeToggle } from './ThemeToggle';
 
 const TopBar: React.FC = () => {
@@ -151,34 +151,30 @@ const TopBar: React.FC = () => {
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
             aria-label={isMenuOpen ? '메뉴 닫기' : '메뉴 열기'}
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded-md"
+            className="w-8 h-8 flex items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
           >
-            {isMenuOpen ? 'Close' : 'Menu'}
+            {isMenuOpen ? (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 6L6 18" />
+                <path d="M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="4" y1="8" x2="20" y2="8" />
+                <line x1="4" y1="16" x2="20" y2="16" />
+              </svg>
+            )}
           </button>
         </div>
       </div>
-
-      {/* Mobile menu */}
-      {isMenuOpen && (
-        <div id="mobile-menu" className="md:hidden bg-background border-b border-border">
-          {links.map((link) => (
-            <Link
-              key={link.path}
-              href={link.path}
-              onClick={() => setIsMenuOpen(false)}
-              aria-current={pathname?.startsWith(link.path) ? 'page' : undefined}
-              className={`block px-6 py-3 text-sm border-b border-border last:border-0 transition-colors ${
-                pathname?.startsWith(link.path)
-                  ? 'text-foreground'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
-      )}
       </nav>
+
+      {/* Mobile Bottom Sheet */}
+      <MobileBottomSheet 
+        isOpen={isMenuOpen} 
+        onClose={() => setIsMenuOpen(false)} 
+        links={links} 
+      />
 
       {/* Command Palette (rendered outside nav to avoid stacking context issues) */}
       <CommandPalette open={cmdOpen} onClose={cmdClose} />
