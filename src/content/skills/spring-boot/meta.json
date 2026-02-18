@@ -20,5 +20,9 @@
   "usageCount": 1,
   "iconUrl": null,
   "iconEmoji": null,
-  "coverUrl": null
+  "coverUrl": null,
+  "projectsUsingAsSkill": [
+    "hufs-스터디룸-예약-시스템"
+  ],
+  "projectsUsingAsLanguage": []
 }

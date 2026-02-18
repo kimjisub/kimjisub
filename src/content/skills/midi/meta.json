@@ -21,5 +21,10 @@
   "usageCount": 2,
   "iconUrl": null,
   "iconEmoji": null,
-  "coverUrl": null
+  "coverUrl": null,
+  "projectsUsingAsSkill": [
+    "midi-to-arduino-buzzer",
+    "midi-video-generator"
+  ],
+  "projectsUsingAsLanguage": []
 }

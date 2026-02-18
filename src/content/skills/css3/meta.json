@@ -44,5 +44,28 @@
   "usageCount": 0,
   "iconUrl": null,
   "iconEmoji": null,
-  "coverUrl": null
+  "coverUrl": null,
+  "projectsUsingAsSkill": [],
+  "projectsUsingAsLanguage": [
+    "arai",
+    "canetis",
+    "chain-post",
+    "diy-drone",
+    "dutchpay-웹",
+    "luna-coding",
+    "midi-video-generator",
+    "mopl",
+    "notion-desktop-app",
+    "smart-home-with-google-home",
+    "sospitas",
+    "stella",
+    "took",
+    "youtogether",
+    "디미고라이프",
+    "비탈길-vitalgheal",
+    "산울림",
+    "아이박스-주차",
+    "잔그림",
+    "포문"
+  ]
 }

@@ -24,5 +24,13 @@
   "usageCount": 5,
   "iconUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/0d700787-3f96-4fd0-9bab-ba5fe58a462b/gcp.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662SCD5H3L%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090754Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDiRLKUtnWwON2zhXGO2Qf4mC3mFBgPBnijKdmI6kX5ugIhAJUkIK%2B80Tw3HDydu5oj%2B3TXGBa5nhmB3mQ%2FJr5CE%2F9gKv8DCGAQABoMNjM3NDIzMTgzODA1IgyP0xciYLv0eU1QJ4Iq3AMc8DERxtyiQap69%2FG5b7WhXS9tmLM5dJyYNel8VblXtccnYGMryvASfz74DtoAMNQHpKH9%2BkRZu6sp1aRMsn32ebR24G3jslQAfK1EM%2FriFTfb3fd5AECvvv4g3acoqjD4vEeq80fZsWQSeZrHkt9Cyl35SmfOdnp%2Ber8PJUZj%2BjTWIRdv6iKtqgvulzi1fNlKDIhr7yfghZZH0DHRdB4iKqzO5m8%2FAxdpfSLynuMrcSK8tX48PhB7%2Fdd0ct35IMZNk8b6GogeFYQ7z9JWBsGBX5EoIhnu%2F3w9%2FA8StUBF7aFG2zTa2E6Zrc%2FkqIuMz0EMHhj4lOceYc6wBWn%2FM0LoIVa49Aa%2BGzIGMCl2Pg%2B4Ykgr14D7wDohyrqlG2mr9ns981fPUfOcd%2Bh0mtiaGkyuaoNJmn1Pv5ut6rz60dJTk%2FPf6ONROdv5bQrrEuSvy45Uxx5IvQ5mRCrh8NLjZfZkIH%2FJAYYRuwEtngRsbqNzDJv9pI3%2FIKmUdc0UE0DI8f4KfFZVLw3OR9lXxzR9dhT4WWW%2F%2Fkmy0iHx1cTQxhiARqSkLhjXk9cUevpxJlnHIj0bzfmNGA2PXhIr3paRKRSRSD0cvr%2FcY%2BhhmZxURzlLsE2FINmpmLRaKnJeHzDcw9XMBjqkAQ7wwBL%2FATdLeMdhZbtBLUxOX%2FNldoQ56QrdYiIdDnYmtRL%2BKmbeXsd55zdvtvmB3xMR1QBpnomUxD6uqURAM%2BOBGV2%2BYZUMYFNqTjY1Kk6veggRGLFzA4%2FKdqaiCahx9ryuAL36Dvv6L5etmKbyona%2FqNbNg7hA%2BHnpGnOgORHzWQNy%2BihD8ljWksV9n61Ous3FGkNBl2Rbz1zZ1LZf0OJDWSN%2B&X-Amz-Signature=e7b7b8105907b2b381b67df0f607934f5d29d40c1a54ae98ffa05faacbca013d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "iconEmoji": null,
-  "coverUrl": null
+  "coverUrl": null,
+  "projectsUsingAsSkill": [
+    "canetis",
+    "smart-home-with-google-home",
+    "smart-pot",
+    "stella",
+    "비탈길-vitalgheal"
+  ],
+  "projectsUsingAsLanguage": []
 }

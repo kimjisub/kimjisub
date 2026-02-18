@@ -21,5 +21,10 @@
   "usageCount": 2,
   "iconUrl": null,
   "iconEmoji": null,
-  "coverUrl": null
+  "coverUrl": null,
+  "projectsUsingAsSkill": [
+    "arai",
+    "숫자-인식-ai"
+  ],
+  "projectsUsingAsLanguage": []
 }

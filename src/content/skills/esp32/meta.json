@@ -23,5 +23,10 @@
   "usageCount": 2,
   "iconUrl": null,
   "iconEmoji": "🔌",
-  "coverUrl": null
+  "coverUrl": null,
+  "projectsUsingAsSkill": [
+    "alpaconnect",
+    "diy-drone"
+  ],
+  "projectsUsingAsLanguage": []
 }

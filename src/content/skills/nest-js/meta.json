@@ -27,5 +27,10 @@
   "usageCount": 2,
   "iconUrl": null,
   "iconEmoji": null,
-  "coverUrl": null
+  "coverUrl": null,
+  "projectsUsingAsSkill": [
+    "alpaconnect",
+    "eyevacs4"
+  ],
+  "projectsUsingAsLanguage": []
 }

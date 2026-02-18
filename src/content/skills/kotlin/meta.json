@@ -31,5 +31,17 @@
   "usageCount": 3,
   "iconUrl": "https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/123b4902-3277-4dc8-93d8-348ce1e8b86b/kotlin.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WG2N3SFP%2F20260218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260218T090744Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGgb2gfThpAYsuIxplgyHgJStJkoXGGrpr0GR9IUsU9aAiBC9T87S1upCYFXna4QnECpzQW%2BtME7%2B7m8OjgzjbAaXir%2FAwhgEAAaDDYzNzQyMzE4MzgwNSIM8bSPkbCdqcKSI6VJKtwDKpnoBATsf%2BZ2kKjFHHs6d5DXGzJEC9fjVnDgbxC2Wb5YpJK3XR1dOBpJELNXkkdhqmN3sF%2BTZq1wX1sFEzj2VIKWmKf8eu8ahpO9%2F3YB%2FJr7ybojkA1KNQZMv0j8TEZ%2FrU9nIXlWAf629MCTu8%2B7RB%2BbB5wgHjowXIgcy%2Fryotg9eiP5lmqNouKdfXovs6%2BNngvCkBLeCS2JJ8WmAY8upicuWVo%2BlydmGVFaUZ8P%2BZgvGbHh1vwf7sE44j9whpkZCo1v3PqLeOlGAYt9h6J%2BXZuO3iZyCmWuhQ5KQZ8LCgN3EgSPBX0mZDFmPa5R6yvUXQiolyDZcAs2RWgCFWETBglALegpcQlRe5p8qXRaGQ69M59F61P0nys4braZwLRXaVis9gmWlsylUiLiFLxO4NaihbaKSdef3hBTbObMX6s9iUG9ASO6wShaQl80sZB9Q%2BLtgvX9DQ6JH4a%2FHj8u2TGekK9L183ASTpnzRkIyVUqOd4UOwk0ESc7s%2BRKFfNfIGdFc2lol%2B7DkLk7jncnhWz2eBQSqrw9nI4kX9m8yWFR6KJiDMLjmT%2B5Wl5xeQndA04GiuG2oPXInAo33wITRFcr1OpCXbmsGM0YPn5jn2pqPW2UzUvPkwKBFmsw7cLVzAY6pgFuLU8uv9a0lrFlyQ8AJQyr%2BFm5Im8ZkCVzzK7si7fCw%2FzBYoe79NPCz8fyoqAC9eIlzS3zxjLnlyqdHq4%2BCPjKfbhSfRBeQxa%2F2OaNHJ3oVUsIU8oasi%2BHTTOGRgzRBEKn3R4%2FW%2BMisFnPeHqsH4YCmqvdFNol%2BodNrsob8teh5p%2FH0qYuEelTR2MkZRkwHEoLHy%2B6sUuNDMIB%2F1Mq2Zpi9qQD1jvx&X-Amz-Signature=623b2900f157d7c2e303b1b588e5463838f14c0f25e0a3ad0c0350990ae60637&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "iconEmoji": null,
-  "coverUrl": null
+  "coverUrl": null,
+  "projectsUsingAsSkill": [
+    "mopl",
+    "top-body-balance",
+    "출결관리-시스템"
+  ],
+  "projectsUsingAsLanguage": [
+    "hana",
+    "mopl",
+    "top-body-balance",
+    "unipad",
+    "출결관리-시스템"
+  ]
 }

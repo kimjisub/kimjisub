@@ -23,5 +23,12 @@
   "usageCount": 4,
   "iconUrl": null,
   "iconEmoji": null,
-  "coverUrl": null
+  "coverUrl": null,
+  "projectsUsingAsSkill": [
+    "alpaconnect",
+    "eyevacs4",
+    "unipad",
+    "아이박스-주차"
+  ],
+  "projectsUsingAsLanguage": []
 }

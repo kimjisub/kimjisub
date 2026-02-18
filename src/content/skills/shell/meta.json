@@ -32,5 +32,14 @@
   "usageCount": 4,
   "iconUrl": null,
   "iconEmoji": null,
-  "coverUrl": null
+  "coverUrl": null,
+  "projectsUsingAsSkill": [
+    "midi-to-arduino-buzzer",
+    "the-block",
+    "아이박스-주차",
+    "카카오톡-채팅-분석기"
+  ],
+  "projectsUsingAsLanguage": [
+    "hufs-cs-cloud"
+  ]
 }

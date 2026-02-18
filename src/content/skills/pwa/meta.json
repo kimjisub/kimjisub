@@ -25,5 +25,10 @@
   "usageCount": 2,
   "iconUrl": null,
   "iconEmoji": null,
-  "coverUrl": null
+  "coverUrl": null,
+  "projectsUsingAsSkill": [
+    "arai",
+    "아이박스-주차"
+  ],
+  "projectsUsingAsLanguage": []
 }

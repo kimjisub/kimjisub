@@ -23,5 +23,12 @@
   "usageCount": 4,
   "iconUrl": null,
   "iconEmoji": null,
-  "coverUrl": null
+  "coverUrl": null,
+  "projectsUsingAsSkill": [
+    "pubg-디스코드-봇",
+    "smart-home-with-google-home",
+    "youtogether",
+    "디미고라이프"
+  ],
+  "projectsUsingAsLanguage": []
 }
