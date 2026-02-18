@@ -1,7 +1,17 @@
 'use client';
 
-import { ReactNode, useEffect, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import { useTheme } from 'next-themes';
+import { annotate } from 'rough-notation';
+
+// rough-notation 타입 정의
+interface RoughAnnotation {
+  isShowing(): boolean;
+  show(): void;
+  hide(): void;
+  remove(): void;
+  _svg?: SVGSVGElement;
+}
 
 type AnnotationType = 'underline' | 'box' | 'circle' | 'highlight' | 'strike-through' | 'crossed-off' | 'bracket';
 
@@ -22,8 +32,6 @@ interface RoughHighlightProps {
   className?: string;
 }
 
-// CSS 기반 하이라이트 (rough-notation 대체)
-// 장점: 항상 요소에 상대적 위치, 스크롤 문제 없음
 export const RoughHighlight = ({
   children,
   type = 'highlight',
@@ -32,21 +40,47 @@ export const RoughHighlight = ({
   animationDuration = 800,
   strokeWidth = 2,
   padding = 2,
+  multiline = true,
+  iterations = 2,
+  brackets = ['left', 'right'],
   show,
   triggerOnView = true,
   delay = 0,
   className = '',
 }: RoughHighlightProps) => {
+  const containerRef = useRef<HTMLSpanElement>(null);
   const elementRef = useRef<HTMLSpanElement>(null);
+  const annotationRef = useRef<RoughAnnotation | null>(null);
   const [isInView, setIsInView] = useState(false);
-  const [shouldShow, setShouldShow] = useState(false);
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-  // Intersection Observer for scroll trigger
-  useEffect(() => {
-    if (!triggerOnView || !elementRef.current) {
-      setShouldShow(true);
-      return;
+  // 테마별 기본 색상
+  const getDefaultColor = useCallback(() => {
+    if (type === 'highlight') {
+      return resolvedTheme === 'dark' 
+        ? 'rgba(255, 215, 0, 0.3)'
+        : 'rgba(255, 215, 0, 0.4)';
     }
+    return resolvedTheme === 'dark' 
+      ? 'rgba(147, 197, 253, 0.8)'
+      : 'rgba(59, 130, 246, 0.8)';
+  }, [type, resolvedTheme]);
+
+  useEffect(() => {
+    const init = async () => {
+      if (document.fonts?.ready) {
+        await document.fonts.ready;
+      }
+      await new Promise(resolve => setTimeout(resolve, 150));
+      setMounted(true);
+    };
+    init();
+  }, []);
+
+  // Intersection Observer
+  useEffect(() => {
+    if (!triggerOnView || !containerRef.current) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -58,127 +92,109 @@ export const RoughHighlight = ({
       { threshold: 0.3, rootMargin: '0px' }
     );
 
-    observer.observe(elementRef.current);
+    observer.observe(containerRef.current);
     return () => observer.disconnect();
-  }, [triggerOnView]);
+  }, [triggerOnView, mounted]);
 
-  // Delay 처리
+  // Annotation 생성 및 SVG 이동
   useEffect(() => {
-    const visible = show !== undefined ? show : (triggerOnView ? isInView : true);
-    if (visible) {
-      const timer = setTimeout(() => setShouldShow(true), delay);
-      return () => clearTimeout(timer);
+    if (!elementRef.current || !containerRef.current || !mounted) return;
+
+    const element = elementRef.current;
+    const container = containerRef.current;
+    const shouldShow = show !== undefined ? show : (triggerOnView ? isInView : true);
+    const finalColor = color || getDefaultColor();
+
+    // 기존 annotation 정리
+    if (annotationRef.current) {
+      annotationRef.current.remove();
+      annotationRef.current = null;
     }
-  }, [show, triggerOnView, isInView, delay]);
 
-  // 타입별 스타일 생성
-  const getStyles = () => {
-    const finalColor = color || 'rgba(255, 215, 0, 0.35)';
-    const duration = animationDuration / 1000;
-    const padValue = typeof padding === 'number' ? padding : padding[0];
+    // 이전 SVG 정리
+    const oldSvg = container.querySelector('svg.rough-annotation');
+    if (oldSvg) oldSvg.remove();
 
-    switch (type) {
-      case 'highlight':
-        return {
-          wrapper: 'relative inline',
-          decoration: `absolute inset-0 -mx-1 -my-0.5 rounded-sm pointer-events-none`,
-          initial: { scaleX: 0, originX: 0 },
-          animate: shouldShow ? { scaleX: 1 } : { scaleX: 0 },
-          style: { backgroundColor: finalColor },
-          transition: { duration, ease: 'easeOut' as const },
-        };
-      
-      case 'underline':
-        return {
-          wrapper: 'relative inline',
-          decoration: `absolute bottom-0 left-0 right-0 pointer-events-none`,
-          initial: { scaleX: 0, originX: 0 },
-          animate: shouldShow ? { scaleX: 1 } : { scaleX: 0 },
-          style: { 
-            height: `${strokeWidth}px`, 
-            backgroundColor: finalColor,
-            bottom: '-2px',
-          },
-          transition: { duration, ease: 'easeOut' as const },
-        };
-      
-      case 'box':
-        return {
-          wrapper: 'relative inline',
-          decoration: `absolute inset-0 pointer-events-none rounded-sm`,
-          initial: { opacity: 0, scale: 0.95 },
-          animate: shouldShow ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 },
-          style: { 
-            border: `${strokeWidth}px solid ${finalColor}`,
-            margin: `-${padValue}px`,
-            padding: `${padValue}px`,
-          },
-          transition: { duration, ease: 'easeOut' as const },
-        };
-      
-      case 'circle':
-        return {
-          wrapper: 'relative inline',
-          decoration: `absolute inset-0 pointer-events-none`,
-          initial: { opacity: 0, scale: 0.8 },
-          animate: shouldShow ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 },
-          style: { 
-            border: `${strokeWidth}px solid ${finalColor}`,
-            borderRadius: '50%',
-            margin: `-${padValue + 4}px -${padValue + 8}px`,
-            padding: `${padValue + 4}px ${padValue + 8}px`,
-          },
-          transition: { duration, ease: 'easeOut' as const },
-        };
-      
-      case 'strike-through':
-      case 'crossed-off':
-        return {
-          wrapper: 'relative inline',
-          decoration: `absolute top-1/2 left-0 right-0 pointer-events-none`,
-          initial: { scaleX: 0, originX: 0 },
-          animate: shouldShow ? { scaleX: 1 } : { scaleX: 0 },
-          style: { 
-            height: `${strokeWidth}px`, 
-            backgroundColor: finalColor,
-            transform: 'translateY(-50%)',
-          },
-          transition: { duration, ease: 'easeOut' as const },
-        };
-      
-      default:
-        return {
-          wrapper: 'relative inline',
-          decoration: '',
-          initial: {},
-          animate: {},
-          style: {},
-          transition: { duration, ease: 'easeOut' as const },
-        };
+    if (!shouldShow) return;
+
+    // 요소 위치 확인
+    const rect = element.getBoundingClientRect();
+    if (rect.width === 0 || rect.height === 0) {
+      const retryTimer = setTimeout(() => {
+        setMounted(m => !m); // 강제 리렌더
+      }, 100);
+      return () => clearTimeout(retryTimer);
     }
-  };
 
-  const styles = getStyles();
+    const showTimer = setTimeout(() => {
+      // Annotation 생성
+      const annotation = annotate(element, {
+        type,
+        color: finalColor,
+        animate,
+        animationDuration,
+        strokeWidth,
+        padding,
+        multiline,
+        iterations,
+        brackets,
+      }) as RoughAnnotation;
+
+      annotationRef.current = annotation;
+      annotation.show();
+
+      // SVG를 body에서 container 내부로 이동
+      requestAnimationFrame(() => {
+        const svg = annotation._svg;
+        if (svg && svg.parentElement === document.body) {
+          // SVG 스타일을 상대 위치로 변경
+          svg.style.position = 'absolute';
+          svg.style.top = '0';
+          svg.style.left = '0';
+          svg.style.pointerEvents = 'none';
+          svg.classList.add('rough-annotation');
+          
+          // container 내부로 이동
+          container.appendChild(svg);
+        }
+      });
+    }, delay);
+
+    return () => {
+      clearTimeout(showTimer);
+      if (annotationRef.current) {
+        annotationRef.current.remove();
+        annotationRef.current = null;
+      }
+    };
+  }, [
+    mounted,
+    isInView,
+    show,
+    triggerOnView,
+    type,
+    color,
+    resolvedTheme,
+    animate,
+    animationDuration,
+    strokeWidth,
+    padding,
+    multiline,
+    iterations,
+    delay,
+    brackets,
+    getDefaultColor,
+  ]);
 
   return (
-    <span ref={elementRef} className={`${styles.wrapper} ${className}`}>
-      <span className="relative z-10">{children}</span>
-      {animate ? (
-        <motion.span
-          className={styles.decoration}
-          style={styles.style}
-          initial={styles.initial}
-          animate={styles.animate}
-          transition={styles.transition}
-        />
-      ) : (
-        shouldShow && (
-          <span 
-            className={styles.decoration}
-            style={styles.style}
-          />
-        )
-      )}
+    <span 
+      ref={containerRef} 
+      className={`relative inline-block ${className}`}
+      style={{ position: 'relative' }}
+    >
+      <span ref={elementRef} className="relative z-10">
+        {children}
+      </span>
     </span>
   );
 };
