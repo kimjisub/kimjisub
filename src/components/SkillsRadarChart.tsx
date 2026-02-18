@@ -383,7 +383,7 @@ export const SkillsRadarChart = ({ skills, size = 340 }: SkillsRadarChartProps) 
           })}
 
           {/* Axis labels */}
-          {axes.map(({ dim, pt, labelPt }) => {
+          {axes.map(({ dim, labelPt }) => {
             const isHovered = hoveredDim === dim.key;
             const anchor = textAnchor(labelPt.x, cx);
             const dy = labelDy(labelPt.y, cy);

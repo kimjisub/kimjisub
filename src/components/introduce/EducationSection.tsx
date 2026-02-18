@@ -70,7 +70,7 @@ export default function EducationSection({
   className?: string;
 }) {
   return (
-    <section className="justify-center items-center">
+    <section className={`justify-center items-center ${className ?? ''}`}>
       <div className="w-full max-w-5xl mx-auto px-4">
         <Title title="Education" subTitle="" />
 

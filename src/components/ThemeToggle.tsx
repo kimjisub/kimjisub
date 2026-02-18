@@ -121,7 +121,7 @@ export function ThemeToggle() {
         setTheme(nextTheme);
       });
 
-      vt.ready.then(() => {
+      void vt.ready.then(() => {
         document.documentElement.animate(
           { clipPath: [clipFrom, clipTo] },
           {
