@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Skeleton, SkeletonBadge, SkeletonText } from '@/components/skeleton';
+import { Skeleton, SkeletonBadge } from '@/components/skeleton';
 import { NotionPageSkeleton } from '@/components/skeleton';
 
 /**

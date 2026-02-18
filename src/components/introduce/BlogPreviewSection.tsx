@@ -1,7 +1,6 @@
 import fs from 'fs';
-import path from 'path';
-
 import Link from 'next/link';
+import path from 'path';
 
 import { AnimatedGridItem, AnimatedSection, AnimatedTitle } from '@/components/motion/AnimatedSection';
 import type { BlogPostMeta } from '@/types/blog';

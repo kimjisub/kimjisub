@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useRef, ReactNode } from 'react';
-import Link from 'next/link';
+import React, { ReactNode,useRef } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
+import Link from 'next/link';
 
 interface MagneticWrapperProps {
   children: ReactNode;

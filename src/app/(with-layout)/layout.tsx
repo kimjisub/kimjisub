@@ -9,15 +9,15 @@ import '../globals.css';
 
 import BackToTop from '@/components/BackToTop';
 import { CommandPaletteWrapper } from '@/components/CommandPaletteWrapper';
-import { KeyboardShortcutsWrapper } from '@/components/KeyboardShortcutsWrapper';
 import CustomCursor from '@/components/CustomCursor';
 import FloatingSocialSidebar from '@/components/FloatingSocialSidebar';
 import Footer from '@/components/Footer';
 import GrainOverlay from '@/components/GrainOverlay';
 import JsonLd from '@/components/JsonLd';
-import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration';
+import { KeyboardShortcutsWrapper } from '@/components/KeyboardShortcutsWrapper';
 import { AnimatePresenceWrapper } from '@/components/motion/AnimatePresenceWrapper';
 import ScrollProgressIndicator from '@/components/ScrollProgressIndicator';
+import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration';
 import SpotlightEffect from '@/components/SpotlightEffect';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import TopBar from '@/components/TopBar';

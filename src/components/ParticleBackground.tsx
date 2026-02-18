@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useCallback, memo } from 'react';
+import { memo,useCallback, useEffect, useRef } from 'react';
 
 /**
  * Mouse-reactive Particle Background

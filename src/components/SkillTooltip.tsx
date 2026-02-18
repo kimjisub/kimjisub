@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useRef,useState } from 'react';
+import { AnimatePresence,motion } from 'framer-motion';
 
 import { SkillT } from '@/api/notion/skills';
 import { IconSlugSvg, slugToData } from '@/components/IconSlugView';

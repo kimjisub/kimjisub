@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { faClock,faGripVertical } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGripVertical, faClock } from '@fortawesome/free-solid-svg-icons';
+import { AnimatePresence,motion } from 'framer-motion';
 
 import { CareerT } from '@/api/notion/careers';
 import { CareerItem } from '@/components/CareerItem';

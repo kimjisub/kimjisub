@@ -1,7 +1,7 @@
 'use client';
 
+import { useEffect, useRef,useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { useState, useEffect, useRef } from 'react';
 
 interface TypewriterEffectProps {
   texts: string[];

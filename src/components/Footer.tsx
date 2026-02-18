@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useRef, useState } from 'react';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import {
 	faArrowRight,
@@ -19,7 +20,6 @@ import {
 	Variants,
 } from 'framer-motion';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
 
 // ─── Data ───────────────────────────────────────────────────────────────────
 

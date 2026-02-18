@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { useInView, useMotionValue, animate } from 'framer-motion';
+import { animate,useInView, useMotionValue } from 'framer-motion';
 
 interface AnimatedCounterProps {
   /** 목표 숫자 (예: 5000000) */

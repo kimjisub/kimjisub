@@ -1,8 +1,8 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
 
 // sessionStorage: 탭/브라우저를 닫으면 초기화 → "세션당 1회" 표시에 적합
 // (localStorage를 쓰면 브라우저를 다시 열어도 표시되지 않음)

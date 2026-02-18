@@ -1,7 +1,7 @@
 'use client';
 
-import Link from 'next/link';
 import { motion, type Variants } from 'framer-motion';
+import Link from 'next/link';
 
 import { type SkillT } from '@/api/notion/skills';
 import { IconSlugView } from '@/components/IconSlugView';

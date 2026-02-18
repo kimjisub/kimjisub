@@ -1,12 +1,12 @@
 'use client';
 
-import { useState, useRef } from 'react';
-import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { useRef,useState } from 'react';
+import { AnimatePresence,motion, useInView } from 'framer-motion';
 
 import { SkillT } from '@/api/notion/skills';
-import { SkillItem } from '@/components/SkillItem';
 import { IconSlugSvg, slugToData } from '@/components/IconSlugView';
-import { SkillTooltip, proficiencyConfig } from '@/components/SkillTooltip';
+import { SkillItem } from '@/components/SkillItem';
+import { proficiencyConfig,SkillTooltip } from '@/components/SkillTooltip';
 
 // ─────────────────────────────────────────────────────────
 // Types

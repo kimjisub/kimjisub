@@ -1,9 +1,8 @@
 'use client';
 
-import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 /* ── floating code snippets ── */
 const CODE_SNIPPETS = [

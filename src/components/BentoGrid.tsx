@@ -1,7 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
+import { motion } from 'framer-motion';
 
 export type BentoCardSize =
   | '1x1' // 1 col × 1 row

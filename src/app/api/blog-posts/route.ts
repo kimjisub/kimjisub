@@ -1,6 +1,6 @@
 import fs from 'fs';
-import path from 'path';
 import { NextResponse } from 'next/server';
+import path from 'path';
 
 import type { BlogPost, BlogPostMeta } from '@/types/blog';
 

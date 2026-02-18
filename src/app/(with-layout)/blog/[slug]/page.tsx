@@ -4,8 +4,8 @@ import type { Metadata } from "next";
 import path from "path";
 
 import BlogPostHeader from "@/components/BlogPostHeader";
-import ReadingProgress from "@/components/ui/ReadingProgress";
 import TableOfContents from "@/components/TableOfContents";
+import ReadingProgress from "@/components/ui/ReadingProgress";
 import type { BlogPostMeta } from "@/types/blog";
 
 export async function generateMetadata({

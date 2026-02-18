@@ -5,8 +5,8 @@ import type { Metadata } from 'next';
 
 import { getProjects } from '@/api/notion/projects';
 import DebugView from '@/components/DebugView';
-import { ProjectsClient } from '@/components/ProjectsClient';
 import { AnimatedSection, AnimatedTitle } from '@/components/motion/AnimatedSection';
+import { ProjectsClient } from '@/components/ProjectsClient';
 
 export const metadata: Metadata = {
 	title: 'Projects',

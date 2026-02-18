@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useRef, useState, ReactNode } from 'react';
-import { annotate } from 'rough-notation';
+import { ReactNode,useEffect, useRef, useState } from 'react';
 import { useTheme } from 'next-themes';
+import { annotate } from 'rough-notation';
 
 // rough-notation 타입 정의
 interface RoughAnnotation {

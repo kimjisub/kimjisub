@@ -1,8 +1,8 @@
 'use client';
 
+import { useEffect,useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import Image from 'next/image';
-import { useRef, useEffect } from 'react';
 
 interface TiltImageProps {
   src: string;

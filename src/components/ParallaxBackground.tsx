@@ -1,7 +1,7 @@
 'use client';
 
 import { memo } from 'react';
-import { motion, useScroll, useTransform, type MotionValue } from 'framer-motion';
+import { motion, type MotionValue,useScroll, useTransform } from 'framer-motion';
 
 /**
  * Scroll-Linked Parallax Background

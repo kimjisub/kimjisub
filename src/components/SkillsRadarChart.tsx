@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useRef, useMemo, useCallback } from 'react';
-import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { useCallback,useMemo, useRef, useState } from 'react';
+import { AnimatePresence,motion, useInView } from 'framer-motion';
 
 import { SkillT } from '@/api/notion/skills';
 

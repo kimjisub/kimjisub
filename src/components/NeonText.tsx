@@ -1,7 +1,7 @@
 'use client';
 
+import { type ReactNode,useEffect, useRef } from 'react';
 import { motion, useAnimationControls } from 'framer-motion';
-import { useEffect, useRef, type ReactNode } from 'react';
 import { useTheme } from 'next-themes';
 
 interface NeonTextProps {

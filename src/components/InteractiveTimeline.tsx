@@ -1,17 +1,17 @@
 'use client';
 
 import React, { useRef, useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import { format } from 'date-fns';
 import {
+  AnimatePresence,
+  cubicBezier,
   motion,
   useInView,
   useScroll,
   useTransform,
-  AnimatePresence,
-  cubicBezier,
 } from 'framer-motion';
-import { format } from 'date-fns';
+import Image from 'next/image';
+import Link from 'next/link';
 
 import { CareerT } from '@/api/notion/careers';
 import { BlurImage } from '@/components/BlurImage';

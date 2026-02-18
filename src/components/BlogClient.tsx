@@ -1,8 +1,8 @@
 'use client';
 
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import type { BlogPost } from '@/types/blog';
 

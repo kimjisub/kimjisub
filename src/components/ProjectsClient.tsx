@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useMemo, useRef } from 'react';
-import { motion, AnimatePresence, useInView, type Variants } from 'framer-motion';
+import React, { useMemo, useRef,useState } from 'react';
+import { AnimatePresence, motion, useInView, type Variants } from 'framer-motion';
 
 import { type ProjectT } from '@/api/notion/projects';
 import { ProjectCarousel } from '@/components/ProjectCarousel';

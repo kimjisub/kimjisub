@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og';
+
 import type { BlogPostMeta } from '@/types/blog';
 
 // Node.js runtime — needed for dynamic MDX import

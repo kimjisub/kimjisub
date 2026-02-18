@@ -1,5 +1,5 @@
-import { ImageResponse } from 'next/og';
 import { format } from 'date-fns';
+import { ImageResponse } from 'next/og';
 
 import { getProject } from '@/api/notion/project';
 

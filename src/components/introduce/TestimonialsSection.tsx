@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion, useInView } from 'framer-motion';
 
-import { testimonials, type Testimonial } from '@/data/testimonials';
+import { type Testimonial,testimonials } from '@/data/testimonials';
 
 /* ─────────────────────────────────────────────
    Avatar — 이미지 없으면 이니셜 폴백

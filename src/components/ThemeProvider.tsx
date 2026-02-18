@@ -3,7 +3,8 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { Theme } from '@radix-ui/themes';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
-import { AccentColorKey, ACCENT_COLORS } from '@/hooks/useAccentColor';
+
+import { ACCENT_COLORS,AccentColorKey } from '@/hooks/useAccentColor';
 
 interface ThemeProviderProps {
   children: ReactNode;

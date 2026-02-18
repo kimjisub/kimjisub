@@ -1,9 +1,10 @@
 'use client';
 
-import { motion, useInView, type Variants } from 'framer-motion';
 import { useRef } from 'react';
-import { BentoCard, BentoGrid } from '@/components/BentoGrid';
+import { motion, useInView, type Variants } from 'framer-motion';
+
 import { AnimatedCounter } from '@/components/AnimatedCounter';
+import { BentoCard, BentoGrid } from '@/components/BentoGrid';
 
 // ── Tech stack icons (simple-icons slugs / emoji fallbacks) ───────────────
 const TECH_STACK = [

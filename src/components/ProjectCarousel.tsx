@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useRef, useState, useEffect, useCallback } from 'react';
-import { motion, useMotionValue, useAnimation, AnimatePresence, type PanInfo } from 'framer-motion';
+import React, { useCallback,useEffect, useRef, useState } from 'react';
+import { motion, type PanInfo,useAnimation, useMotionValue } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 import { type ProjectT } from '@/api/notion/projects';

@@ -2,10 +2,10 @@ import React from 'react';
 
 import GitHubHitmap from '../GithubHitmap';
 import GitHubLanguageStats from '../GitHubLanguageStats';
-import { AnimatedSection, AnimatedTitle } from '../motion/AnimatedSection';
 import { AnimatedNumber } from '../motion/AnimatedNumber';
+import { AnimatedSection, AnimatedTitle } from '../motion/AnimatedSection';
 
-import { getYearlyGithubContributions, getGitHubStats, getGitHubLanguageStats } from '@/api/github';
+import { getGitHubLanguageStats,getGitHubStats, getYearlyGithubContributions } from '@/api/github';
 
 interface StatCardProps {
   value: number;

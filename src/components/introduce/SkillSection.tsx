@@ -2,11 +2,11 @@ import React from 'react';
 import Link from 'next/link';
 
 import { getSkills } from '@/api/notion/skills';
+import { SkillsProgressSection } from '@/components/introduce/SkillsProgressSection';
 import { AnimatedSection } from '@/components/motion/AnimatedSection';
+import { SectionReveal } from '@/components/SectionReveal';
 import { SkillsRadarChart } from '@/components/SkillsRadarChart';
 import { SkillsStaggerGrid } from '@/components/SkillsStaggerGrid';
-import { SectionReveal } from '@/components/SectionReveal';
-import { SkillsProgressSection } from '@/components/introduce/SkillsProgressSection';
 
 export default async function SkillsSection() {
   const { skills } = await getSkills();

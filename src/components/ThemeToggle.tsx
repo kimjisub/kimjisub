@@ -117,7 +117,7 @@ export function ThemeToggle() {
       const clipFrom = `circle(0px at ${x}px ${y}px)`;
       const clipTo   = `circle(${radius}px at ${x}px ${y}px)`;
 
-      const vt = doc.startViewTransition!(() => {
+      const vt = doc.startViewTransition(() => {
         setTheme(nextTheme);
       });
 

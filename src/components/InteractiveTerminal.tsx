@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useRef, useEffect, useCallback, KeyboardEvent } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { KeyboardEvent,useCallback, useEffect, useRef, useState } from 'react';
+import { AnimatePresence,motion } from 'framer-motion';
 
 interface TerminalLine {
   id: number;

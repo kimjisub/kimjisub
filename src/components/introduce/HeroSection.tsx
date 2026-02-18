@@ -1,17 +1,18 @@
 'use client';
 
+import { useCallback,useState } from 'react';
+import { AnimatePresence, motion, type Variants } from 'framer-motion';
+
+import EasterEggs from '@/components/EasterEggs';
+import { GradientText } from '@/components/GradientText';
+import { MagneticLink } from '@/components/MagneticButton';
 import { MeshGradientBackground } from '@/components/MeshGradientBackground';
 import { ParallaxBackground } from '@/components/ParallaxBackground';
 import { ParticleBackground } from '@/components/ParticleBackground';
-import { MagneticLink } from '@/components/MagneticButton';
-import { GradientText } from '@/components/GradientText';
 import { RoughHighlight } from '@/components/RoughHighlight';
 import { TextScramble } from '@/components/TextScramble';
 import { TiltImage } from '@/components/TiltImage';
 import { TypewriterEffect } from '@/components/TypewriterEffect';
-import { motion, AnimatePresence, type Variants } from 'framer-motion';
-import { useState, useCallback } from 'react';
-import EasterEggs from '@/components/EasterEggs';
 
 // ── Stagger Variants ──────────────────────────────────────
 const heroContainerVariants: Variants = {

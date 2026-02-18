@@ -3,9 +3,10 @@ import { Text } from '@radix-ui/themes';
 import { format } from 'date-fns';
 import type { Metadata } from 'next';
 
+import { CareersView } from './CareersView';
+
 import { getCareers } from '@/api/notion/careers';
 import DebugView from '@/components/DebugView';
-import { CareersView } from './CareersView';
 
 export const metadata: Metadata = {
 	title: 'Career',
