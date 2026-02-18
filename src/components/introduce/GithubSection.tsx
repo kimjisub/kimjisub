@@ -55,8 +55,8 @@ export default async function GithubSection() {
           </div>
         </AnimatedSection>
 
-        {/* Contribution Heatmap - 최신 년도가 위로 */}
-        <AnimatedSection delay={0.2}>
+        {/* Contribution Heatmap - 최신 년도가 위로 (모바일에서 숨김) */}
+        <AnimatedSection delay={0.2} className="hidden md:block">
           <div className="flex flex-col items-center gap-y-2">
             {[...contributions].reverse().map((contribution, index) => (
               <div key={contribution.from.toString()} className="flex flex-row items-center w-fit">
