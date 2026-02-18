@@ -33,10 +33,13 @@ import {
   ExternalLink,
   Pencil,
   GripVertical,
+  Newspaper,
+  UserMinus,
+  UserCheck,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type Tab = "dashboard" | "testimonials" | "contacts" | "comments";
+type Tab = "dashboard" | "testimonials" | "contacts" | "comments" | "newsletter";
 type TestimonialFilter = "all" | "PENDING" | "APPROVED" | "REJECTED";
 
 interface Stats {
@@ -91,6 +94,15 @@ interface Comment {
   replies: Comment[];
 }
 
+interface NewsletterSubscriber {
+  id: string;
+  email: string;
+  status: "ACTIVE" | "UNSUBSCRIBED";
+  source?: string;
+  subscribedAt: string;
+  unsubscribedAt?: string;
+}
+
 export default function AdminPage() {
   const [authenticated, setAuthenticated] = useState<boolean | null>(null);
   const [password, setPassword] = useState("");
@@ -102,6 +114,7 @@ export default function AdminPage() {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [contacts, setContacts] = useState<Contact[]>([]);
   const [comments, setComments] = useState<Comment[]>([]);
+  const [subscribers, setSubscribers] = useState<NewsletterSubscriber[]>([]);
   
   // Testimonial filter
   const [testimonialFilter, setTestimonialFilter] = useState<TestimonialFilter>("all");
@@ -190,6 +203,9 @@ export default function AdminPage() {
     } else if (activeTab === "comments") {
       const res = await fetch("/api/admin/comments");
       if (res.ok) setComments(await res.json());
+    } else if (activeTab === "newsletter") {
+      const res = await fetch("/api/admin/newsletter");
+      if (res.ok) setSubscribers(await res.json());
     }
   };
 
@@ -294,6 +310,25 @@ export default function AdminPage() {
     fetchData();
   };
 
+  const updateSubscriberStatus = async (id: string, status: string) => {
+    await fetch("/api/admin/newsletter", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id, status }),
+    });
+    fetchData();
+  };
+
+  const deleteSubscriber = async (id: string) => {
+    if (!confirm("정말 삭제하시겠습니까?")) return;
+    await fetch("/api/admin/newsletter", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id }),
+    });
+    fetchData();
+  };
+
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString("ko-KR", {
       year: "numeric",
@@ -360,6 +395,8 @@ export default function AdminPage() {
   }
 
   // Admin Dashboard
+  const activeSubscribers = subscribers.filter((s) => s.status === "ACTIVE").length;
+  
   const tabs: { id: Tab; label: string; icon: React.ReactNode; badge?: number }[] = [
     { id: "dashboard", label: "대시보드", icon: <BarChart3 className="w-5 h-5" /> },
     {
@@ -375,6 +412,12 @@ export default function AdminPage() {
       badge: stats?.newContacts,
     },
     { id: "comments", label: "댓글", icon: <MessageCircle className="w-5 h-5" /> },
+    { 
+      id: "newsletter", 
+      label: "뉴스레터", 
+      icon: <Newspaper className="w-5 h-5" />,
+      badge: activeSubscribers > 0 ? activeSubscribers : undefined,
+    },
   ];
 
   return (
@@ -645,6 +688,100 @@ export default function AdminPage() {
                   formatDate={formatDate}
                 />
               ))
+            )}
+          </div>
+        )}
+
+        {/* Newsletter */}
+        {activeTab === "newsletter" && (
+          <div className="space-y-4">
+            {/* Stats summary */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+              <div className="p-4 bg-green-500/10 border border-green-500/30 rounded-xl">
+                <div className="text-2xl font-bold text-green-400">
+                  {subscribers.filter(s => s.status === "ACTIVE").length}
+                </div>
+                <div className="text-sm text-gray-400">활성 구독자</div>
+              </div>
+              <div className="p-4 bg-white/5 border border-white/10 rounded-xl">
+                <div className="text-2xl font-bold text-gray-300">
+                  {subscribers.filter(s => s.status === "UNSUBSCRIBED").length}
+                </div>
+                <div className="text-sm text-gray-400">구독 취소</div>
+              </div>
+              <div className="p-4 bg-white/5 border border-white/10 rounded-xl">
+                <div className="text-2xl font-bold text-gray-300">
+                  {subscribers.length}
+                </div>
+                <div className="text-sm text-gray-400">전체</div>
+              </div>
+            </div>
+
+            {subscribers.length === 0 ? (
+              <div className="text-center py-12 text-gray-500">구독자가 없습니다</div>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="text-left border-b border-white/10">
+                      <th className="pb-3 text-sm font-medium text-gray-400">이메일</th>
+                      <th className="pb-3 text-sm font-medium text-gray-400">상태</th>
+                      <th className="pb-3 text-sm font-medium text-gray-400">출처</th>
+                      <th className="pb-3 text-sm font-medium text-gray-400">구독일</th>
+                      <th className="pb-3 text-sm font-medium text-gray-400">액션</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {subscribers.map((sub) => (
+                      <tr key={sub.id} className="border-b border-white/5 hover:bg-white/5">
+                        <td className="py-4 text-white">{sub.email}</td>
+                        <td className="py-4">
+                          <span
+                            className={cn(
+                              "px-2 py-1 text-xs rounded",
+                              sub.status === "ACTIVE"
+                                ? "bg-green-500/20 text-green-400"
+                                : "bg-gray-500/20 text-gray-400"
+                            )}
+                          >
+                            {sub.status}
+                          </span>
+                        </td>
+                        <td className="py-4 text-gray-400">{sub.source || "-"}</td>
+                        <td className="py-4 text-gray-400">{formatDate(sub.subscribedAt)}</td>
+                        <td className="py-4">
+                          <div className="flex items-center gap-2">
+                            {sub.status === "ACTIVE" ? (
+                              <button
+                                onClick={() => updateSubscriberStatus(sub.id, "UNSUBSCRIBED")}
+                                className="p-1.5 text-gray-400 hover:text-red-400 transition-colors"
+                                title="구독 취소"
+                              >
+                                <UserMinus className="w-4 h-4" />
+                              </button>
+                            ) : (
+                              <button
+                                onClick={() => updateSubscriberStatus(sub.id, "ACTIVE")}
+                                className="p-1.5 text-gray-400 hover:text-green-400 transition-colors"
+                                title="구독 복원"
+                              >
+                                <UserCheck className="w-4 h-4" />
+                              </button>
+                            )}
+                            <button
+                              onClick={() => deleteSubscriber(sub.id)}
+                              className="p-1.5 text-gray-400 hover:text-red-400 transition-colors"
+                              title="삭제"
+                            >
+                              <Trash2 className="w-4 h-4" />
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             )}
           </div>
         )}
