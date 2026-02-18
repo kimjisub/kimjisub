@@ -127,8 +127,8 @@ const COMMANDS: Record<string, () => { lines: string[]; isAscii?: boolean }> = {
 
 export const InteractiveTerminal = () => {
   const [lines, setLines] = useState<TerminalLine[]>([
-    { id: 0, type: 'system', content: '김지섭의 AI 포트폴리오 터미널에 오신 걸 환영합니다.' },
-    { id: 1, type: 'system', content: '궁금한 점을 자유롭게 물어보세요. /help로 명령어 확인.' },
+    { id: 0, type: 'system', content: '안녕하세요! 저는 지섭님의 포트폴리오를 안내하는 AI예요.' },
+    { id: 1, type: 'system', content: '프로젝트, 경력, 기술 스택 등 궁금한 거 편하게 물어보세요 :)' },
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
