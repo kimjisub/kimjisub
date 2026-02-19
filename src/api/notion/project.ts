@@ -54,7 +54,15 @@ export const getProject = async (projectId: string) => {
 export const getProjectPage = async (projectId: string) => {
   const decodedId = decodeURIComponent(projectId);
   const projectDir = path.join(CONTENT_DIR, 'projects', decodedId);
-  const mdContent = readMdFile(path.join(projectDir, 'index.md'));
+  let mdContent = readMdFile(path.join(projectDir, 'index.md'));
+  
+  // 상대경로 ./assets/를 절대경로로 변환
+  if (mdContent) {
+    mdContent = mdContent.replace(
+      /\.\/(assets\/[^)\s]+)/g,
+      `/content/projects/${encodeURIComponent(decodedId)}/$1`
+    );
+  }
   
   return {
     // 마크다운 콘텐츠
