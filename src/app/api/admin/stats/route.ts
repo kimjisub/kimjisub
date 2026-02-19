@@ -49,7 +49,7 @@ export async function GET() {
       totalComments,
       pendingTestimonials,
       newContacts,
-      topPages: topPages.map((p) => ({
+      topPages: topPages.map((p: { slug: string; count: bigint }) => ({
         slug: p.slug,
         count: Number(p.count),
       })),
