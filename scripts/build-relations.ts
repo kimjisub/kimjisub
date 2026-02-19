@@ -14,39 +14,58 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 // ============================================
-// 1. 심링크 설정 (public/content → src/content)
+// 1. 콘텐츠 연결 (로컬: 심링크 / Vercel: 복사)
 // ============================================
-function ensureContentSymlink() {
+function ensureContentLink() {
   const publicDir = path.join(__dirname, '../public');
-  const symlinkPath = path.join(publicDir, 'content');
-  const targetPath = '../src/content';  // public 기준 상대 경로
+  const contentDest = path.join(publicDir, 'content');
+  const contentSrc = path.join(__dirname, '../src/content');
+  const relativeTarget = '../src/content';  // 심링크용 상대 경로
+
+  const isVercel = process.env.VERCEL === '1';
 
   // public 폴더 없으면 생성
   if (!fs.existsSync(publicDir)) {
     fs.mkdirSync(publicDir, { recursive: true });
   }
 
-  // 기존 심링크/파일 확인
-  if (fs.existsSync(symlinkPath)) {
-    const stats = fs.lstatSync(symlinkPath);
+  // 기존 content 폴더/심링크 정리
+  if (fs.existsSync(contentDest)) {
+    const stats = fs.lstatSync(contentDest);
     if (stats.isSymbolicLink()) {
-      const currentTarget = fs.readlinkSync(symlinkPath);
-      if (currentTarget === targetPath) {
-        console.log('✅ Symlink already exists: public/content → src/content');
-        return;
+      if (isVercel) {
+        // Vercel에서는 심링크 제거하고 복사로 대체
+        fs.unlinkSync(contentDest);
+      } else {
+        // 로컬: 이미 심링크 있으면 OK
+        const currentTarget = fs.readlinkSync(contentDest);
+        if (currentTarget === relativeTarget) {
+          console.log('✅ Symlink already exists: public/content → src/content');
+          return;
+        }
+        fs.unlinkSync(contentDest);
       }
-      // 잘못된 심링크면 삭제
-      fs.unlinkSync(symlinkPath);
-    } else {
-      // 심링크가 아니면 (실제 폴더/파일) 에러
-      console.error('❌ public/content exists but is not a symlink. Please remove it manually.');
-      process.exit(1);
+    } else if (stats.isDirectory()) {
+      if (isVercel) {
+        console.log('✅ Content directory already exists');
+        return;
+      } else {
+        // 로컬에서 실제 폴더면 에러 (심링크여야 함)
+        console.error('❌ public/content exists but is not a symlink. Please remove it manually.');
+        process.exit(1);
+      }
     }
   }
 
-  // 심링크 생성
-  fs.symlinkSync(targetPath, symlinkPath, 'dir');
-  console.log('✅ Created symlink: public/content → src/content');
+  if (isVercel) {
+    // Vercel: 실제 복사 (심링크 대신)
+    fs.cpSync(contentSrc, contentDest, { recursive: true });
+    console.log('✅ Copied src/content → public/content (Vercel build)');
+  } else {
+    // 로컬: 심링크 생성
+    fs.symlinkSync(relativeTarget, contentDest, 'dir');
+    console.log('✅ Created symlink: public/content → src/content');
+  }
 }
 
 const CONTENT_DIR = path.join(__dirname, '../src/content');
@@ -244,8 +263,8 @@ function updateCareerMetas(graph: RelationGraph): number {
 async function main() {
   console.log('🔧 Prebuild starting...\n');
 
-  // 1. 심링크 설정
-  ensureContentSymlink();
+  // 1. 콘텐츠 연결 (로컬: 심링크 / Vercel: 복사)
+  ensureContentLink();
   console.log('');
 
   // 2. 관계 그래프 빌드
