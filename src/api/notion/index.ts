@@ -21,10 +21,12 @@ export function readJsonFile<T>(filePath: string): T | null {
   }
 }
 
-// MD 파일 읽기 헬퍼
+// MD 파일 읽기 헬퍼 (frontmatter 제거)
 export function readMdFile(filePath: string): string | null {
   try {
-    return fs.readFileSync(filePath, 'utf-8');
+    const content = fs.readFileSync(filePath, 'utf-8');
+    // frontmatter (--- ... ---) 제거
+    return content.replace(/^---[\s\S]*?---\n?/, '');
   } catch {
     return null;
   }
