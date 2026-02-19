@@ -2,6 +2,16 @@
 
 여러 LLM(ChatGPT, Gemini, Claude)에게 동시에 질문하고, 서로의 답변을 교차 검토하며 토론하게 하는 Chrome Extension.
 
+## Screenshots
+
+| Debate | Cross-Debate | Ranking |
+|--------|--------------|---------|
+| ![Debate](./assets/screenshot-debate.png) | ![Cross-Debate](./assets/screenshot-cross-debate.png) | ![Ranking](./assets/screenshot-ranking.png) |
+
+| Conclusion | Settings |
+|------------|----------|
+| ![Conclusion](./assets/screenshot-conclusion.png) | ![Settings](./assets/screenshot-settings.png) |
+
 ## 왜 만들었나?
 
 하나의 LLM만 사용하면 그 모델의 편향이나 한계에 갇히기 쉽다. 같은 질문에 대해 여러 모델의 관점을 비교하고, 서로를 비판하게 하면 더 균형 잡힌 인사이트를 얻을 수 있다.
