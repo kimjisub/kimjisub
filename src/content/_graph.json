@@ -50,6 +50,7 @@
     ],
     "react": [
       "alpaconnect",
+      "crossfire",
       "diy-drone",
       "dutchpay-웹",
       "eventify",
@@ -180,6 +181,11 @@
     "block-chain": [
       "chain-post"
     ],
+    "chrome-extention": [
+      "crossfire",
+      "hana",
+      "youtogether"
+    ],
     "typescript": [
       "diy-drone",
       "mopl"
@@ -245,10 +251,6 @@
     "github-actions": [
       "eyevacs4",
       "아이박스-주차"
-    ],
-    "chrome-extention": [
-      "hana",
-      "youtogether"
     ],
     "uwp": [
       "hana"
@@ -323,6 +325,7 @@
     "typescript": [
       "alpaconnect",
       "careero",
+      "crossfire",
       "diy-drone",
       "eventify",
       "eyevacs4",
@@ -541,5 +544,5 @@
       "포문"
     ]
   },
-  "generatedAt": "2026-02-18T16:05:21.389Z"
+  "generatedAt": "2026-02-19T15:00:14.650Z"
 }

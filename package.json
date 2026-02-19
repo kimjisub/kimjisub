@@ -11,7 +11,8 @@
     "build-and-start": "yarn build && yarn start",
     "lint": "next lint",
     "notion": "node ./scripts/export-notion.js",
-    "icons": "node scripts/simple-icon-badge.js | pbcopy"
+    "icons": "node scripts/simple-icon-badge.js | pbcopy",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.76.0",
