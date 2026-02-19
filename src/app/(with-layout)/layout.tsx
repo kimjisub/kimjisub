@@ -126,7 +126,7 @@ export default function RootLayout({
 						<FloatingSocialSidebar />
 						<div className="min-h-screen flex flex-col">
 							<TopBar />
-							<main id="main-content" className="flex-grow" tabIndex={-1}>
+							<main id="main-content" className="flex-grow pt-14" tabIndex={-1}>
 								<AnimatePresenceWrapper>
 									{children}
 								</AnimatePresenceWrapper>
