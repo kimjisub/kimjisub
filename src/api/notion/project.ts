@@ -38,9 +38,10 @@ export const getProjectsWithRelated = async () => {
 };
 
 export const getProject = async (projectId: string) => {
+  const decodedId = decodeURIComponent(projectId);
   const projectsRes = await getProjectsWithRelated();
   const project = projectsRes.projects.find(
-    project => project.id === projectId,
+    project => project.id === decodedId,
   );
 
   return {
@@ -51,7 +52,8 @@ export const getProject = async (projectId: string) => {
 
 // 페이지 콘텐츠 (마크다운)
 export const getProjectPage = async (projectId: string) => {
-  const projectDir = path.join(CONTENT_DIR, 'projects', projectId);
+  const decodedId = decodeURIComponent(projectId);
+  const projectDir = path.join(CONTENT_DIR, 'projects', decodedId);
   const mdContent = readMdFile(path.join(projectDir, 'index.md'));
   
   return {
