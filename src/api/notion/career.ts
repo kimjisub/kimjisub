@@ -32,8 +32,9 @@ export const getCareersWithRelated = async () => {
 };
 
 export const getCareer = async (careerId: string) => {
+  const decodedId = decodeURIComponent(careerId);
   const careersRes = await getCareersWithRelated();
-  const career = careersRes.careers.find(career => career.id === careerId);
+  const career = careersRes.careers.find(career => career.id === decodedId);
 
   return {
     career,
@@ -43,8 +44,17 @@ export const getCareer = async (careerId: string) => {
 
 // 페이지 콘텐츠 (마크다운)
 export const getCareerPage = async (careerId: string) => {
-  const careerDir = path.join(CONTENT_DIR, 'careers', careerId);
-  const mdContent = readMdFile(path.join(careerDir, 'index.md'));
+  const decodedId = decodeURIComponent(careerId);
+  const careerDir = path.join(CONTENT_DIR, 'careers', decodedId);
+  let mdContent = readMdFile(path.join(careerDir, 'index.md'));
+  
+  // 상대경로 ./assets/를 절대경로로 변환
+  if (mdContent) {
+    mdContent = mdContent.replace(
+      /\.\/(assets\/[^)\s]+)/g,
+      `/content/careers/${encodeURIComponent(decodedId)}/$1`
+    );
+  }
   
   return {
     markdown: mdContent || '',
