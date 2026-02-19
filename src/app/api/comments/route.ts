@@ -77,10 +77,12 @@ export async function GET(request: NextRequest) {
     });
 
     // authorEmail 제거 (공개하지 않음)
-    const sanitized = comments.map((c) => ({
+    type CommentWithReplies = typeof comments[number];
+    type Reply = CommentWithReplies['replies'][number];
+    const sanitized = comments.map((c: CommentWithReplies) => ({
       ...c,
       authorEmail: undefined,
-      replies: c.replies.map((r) => ({ ...r, authorEmail: undefined })),
+      replies: c.replies.map((r: Reply) => ({ ...r, authorEmail: undefined })),
     }));
 
     return NextResponse.json(sanitized);
