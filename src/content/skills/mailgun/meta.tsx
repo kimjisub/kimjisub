@@ -1,0 +1,11 @@
+export const meta = {
+  id: 'mailgun',
+  notionId: '2004680c-5385-4744-87cd-b724ac2ae4ff',
+  title: 'Mailgun',
+  '분류': [
+    '기술',
+  ],
+  iconSlug: 'mailgun',
+  visible: false,
+  '환경 및 기술': 'Mailgun',
+};

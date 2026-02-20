@@ -1,0 +1,12 @@
+export const meta = {
+  id: 'kakao-sso',
+  notionId: 'c69ebe85-3dfb-4d58-b766-d3a1dd4b33bc',
+  title: 'Kakao SSO',
+  '분류': [
+    '기술',
+  ],
+  iconSlug: 'kakaotalk',
+  visible: false,
+  '숙련도': '2. 중급',
+  '환경 및 기술': 'Kakao SSO',
+};

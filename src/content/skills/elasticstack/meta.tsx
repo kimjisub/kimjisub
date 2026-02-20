@@ -1,0 +1,11 @@
+export const meta = {
+  id: 'elasticstack',
+  notionId: '532e4039-9329-4249-8149-505a3e8c2a83',
+  title: 'elasticstack',
+  '분류': [
+    '기술',
+  ],
+  iconSlug: 'elasticstack',
+  visible: true,
+  '환경 및 기술': 'elasticstack',
+};

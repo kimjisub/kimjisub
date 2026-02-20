@@ -1,0 +1,18 @@
+import icon from './assets/icon.webp';
+
+export const meta = {
+  id: 'aws-ecs',
+  notionId: '6e37099c-e0da-4e26-be09-ea71f156b550',
+  title: 'AWS ECS',
+  '분류': [
+    'Infra',
+  ],
+  iconSlug: 'amazonecs',
+  visible: true,
+  '숙련도': '2. 중급',
+  '기술로써 사용된 프로젝트': [
+    '4b1c905e-56cf-4bc8-915d-c768337edf4e',
+  ],
+  '환경 및 기술': 'AWS ECS',
+  icon,
+};

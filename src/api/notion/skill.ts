@@ -63,7 +63,7 @@ export const getSkill = async (skillId: string) => {
   // iconUrl 경로 변환
   const transformedSkill = {
     ...skill,
-    iconUrl: transformAssetUrl(skill.iconUrl, 'skills', skillId),
+    iconUrl: transformAssetUrl(skill.iconUrl, 'skills', skillId) || '',
   };
 
   return {

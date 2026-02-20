@@ -1,0 +1,11 @@
+export const meta = {
+  id: 'editorconfig',
+  notionId: 'b0dae757-f63f-4523-880a-116d4039afa6',
+  title: 'editorconfig',
+  '분류': [
+    '기술',
+  ],
+  iconSlug: 'editorconfig',
+  visible: false,
+  '환경 및 기술': 'editorconfig',
+};

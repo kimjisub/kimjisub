@@ -1,0 +1,18 @@
+import icon from './assets/icon.png';
+
+export const meta = {
+  id: 'kubernetes',
+  notionId: '21324644-fb22-4d10-9b97-ded3c984b401',
+  title: 'kubernetes',
+  '분류': [
+    'Infra',
+  ],
+  iconSlug: 'kubernetes',
+  visible: true,
+  '숙련도': '2. 중급',
+  '기술로써 사용된 프로젝트': [
+    '9533de9d-1230-4c07-8cf9-57e3547469c5',
+  ],
+  '환경 및 기술': 'kubernetes',
+  icon,
+};

@@ -1,0 +1,12 @@
+export const meta = {
+  id: 'arc',
+  notionId: 'e2b1070d-9495-4510-a301-6b764ad2bf65',
+  title: 'Arc',
+  '분류': [
+    '개발 도구',
+  ],
+  iconSlug: 'arc',
+  visible: false,
+  '숙련도': '2. 중급',
+  '환경 및 기술': 'Arc',
+};

@@ -1,0 +1,12 @@
+export const meta = {
+  id: 'dell',
+  notionId: '6cf05c3b-e50a-47e7-b7ba-864f4495e493',
+  title: 'dell',
+  '분류': [
+    'Infra',
+  ],
+  iconSlug: 'dell',
+  visible: false,
+  '숙련도': '1. 초보',
+  '환경 및 기술': 'dell',
+};

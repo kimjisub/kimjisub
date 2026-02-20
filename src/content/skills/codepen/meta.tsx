@@ -1,0 +1,11 @@
+export const meta = {
+  id: 'codepen',
+  notionId: 'f3a00d1e-2ff1-49b3-afb8-84c9aa06ffc5',
+  title: 'codepen',
+  '분류': [
+    'IDE',
+  ],
+  iconSlug: 'codepen',
+  visible: false,
+  '환경 및 기술': 'codepen',
+};

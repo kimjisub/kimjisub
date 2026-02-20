@@ -1,0 +1,11 @@
+export const meta = {
+  id: 'gradle',
+  notionId: 'ba4b4ac3-8924-4ade-82f0-274d62c674e9',
+  title: 'Gradle',
+  '분류': [
+    '기술',
+  ],
+  iconSlug: 'gradle',
+  visible: false,
+  '환경 및 기술': 'Gradle',
+};

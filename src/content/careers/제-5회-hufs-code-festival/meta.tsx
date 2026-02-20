@@ -1,0 +1,12 @@
+export const meta = {
+  id: '제-5회-hufs-code-festival',
+  notionId: 'afc8beac-5991-4152-954b-a2d5c24e5ddc',
+  title: '제 5회 HUFS Code Festival',
+  '기관': [
+    '한국외국어대학교 AI 교육원',
+  ],
+  visible: false,
+  '날짜': '2023-11-23',
+  '수상 순위': '비수상',
+  '이름': '제 5회 HUFS Code Festival',
+};

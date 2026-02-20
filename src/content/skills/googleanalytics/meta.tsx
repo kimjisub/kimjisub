@@ -1,0 +1,11 @@
+export const meta = {
+  id: 'googleanalytics',
+  notionId: '2bfa8a4f-34bc-4cf3-aef6-163ac392b1c9',
+  title: 'googleanalytics',
+  '분류': [
+    '기술',
+  ],
+  iconSlug: 'googleanalytics',
+  visible: true,
+  '환경 및 기술': 'googleanalytics',
+};

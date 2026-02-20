@@ -1,0 +1,11 @@
+export const meta = {
+  id: 'lets-encrypt',
+  notionId: 'c80e726b-e92e-4532-9dcd-a81cae3189f3',
+  title: 'Lets Encrypt',
+  '분류': [
+    'Infra',
+  ],
+  iconSlug: 'letsencrypt',
+  visible: false,
+  '환경 및 기술': 'Lets Encrypt',
+};

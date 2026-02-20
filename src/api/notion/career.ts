@@ -52,8 +52,8 @@ export const getCareer = async (careerId: string) => {
   // iconUrl, coverUrl 경로 변환
   const transformedCareer = {
     ...career,
-    iconUrl: transformAssetUrl(career.iconUrl, 'careers', decodedId),
-    coverUrl: transformAssetUrl(career.coverUrl, 'careers', decodedId),
+    iconUrl: transformAssetUrl(career.iconUrl, 'careers', decodedId) || '',
+    coverUrl: transformAssetUrl(career.coverImageUrl, 'careers', decodedId) || '',
   };
 
   return {

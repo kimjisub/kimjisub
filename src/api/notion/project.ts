@@ -60,8 +60,8 @@ export const getProject = async (projectId: string) => {
   // iconUrl, coverUrl 경로 변환
   const transformedProject = {
     ...project,
-    iconUrl: transformAssetUrl(project.iconUrl, 'projects', decodedId),
-    coverUrl: transformAssetUrl(project.coverUrl, 'projects', decodedId),
+    iconUrl: transformAssetUrl(project.iconUrl, 'projects', decodedId) || '',
+    coverUrl: transformAssetUrl(project.coverImageUrl, 'projects', decodedId) || '',
   };
 
   return {

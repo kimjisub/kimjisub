@@ -1,0 +1,12 @@
+export const meta = {
+  id: 'slack',
+  notionId: 'e3002c13-77ec-44e4-87e3-7a9d9c8b565c',
+  title: 'Slack',
+  '분류': [
+    '협업/문서',
+  ],
+  iconSlug: 'slack',
+  visible: true,
+  '숙련도': '3. 상급',
+  '환경 및 기술': 'Slack',
+};

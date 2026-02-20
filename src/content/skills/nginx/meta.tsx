@@ -1,0 +1,15 @@
+import icon from './assets/icon.svg';
+
+export const meta = {
+  id: 'nginx',
+  notionId: '4fd0bd92-f82d-49b1-a0c5-3012a571f14e',
+  title: 'nginx',
+  '분류': [
+    'Infra',
+  ],
+  iconSlug: 'nginx',
+  visible: true,
+  '숙련도': '2. 중급',
+  '환경 및 기술': 'nginx',
+  icon,
+};

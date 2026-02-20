@@ -1,682 +1,296 @@
 [
   {
-    "id": "cd184eb4-9748-4402-b83c-518b1ccc8f7b",
-    "slug": "aws-solution-focused-immersion-day-eks",
-    "title": "AWS Solution Focused Immersion Day - EKS",
-    "description": null,
-    "date": {
-      "start": "2024-05-28",
-      "end": null
-    },
-    "categories": [],
-    "importance": null
-  },
-  {
-    "id": "1373b1b1-c9dc-804b-83c4-db0aab219aba",
-    "slug": "한국디지털미디어고등학교-졸업생-세미나",
-    "title": "한국디지털미디어고등학교 졸업생 세미나",
-    "description": null,
-    "date": {
-      "start": "2024-05-15",
-      "end": null
-    },
-    "categories": [
-      "세미나"
-    ],
-    "importance": "낮음"
-  },
-  {
-    "id": "1383b1b1-c9dc-8088-8d22-c276097b71c9",
-    "slug": "코드잇-부스트-1기-운영진",
-    "title": "코드잇 부스트 1기 운영진",
-    "description": null,
-    "date": {
-      "start": "2024-05-04",
-      "end": null
-    },
-    "categories": [
-      "교육"
-    ],
-    "importance": null
-  },
-  {
-    "id": "9ee7bba9-a4c5-41f2-82ed-b5a27ca1cc90",
-    "slug": "한국지도자육성장학재단-54기",
-    "title": "한국지도자육성장학재단 54기",
-    "description": "4학기 전액장학",
-    "date": {
-      "start": "2024-03-01",
-      "end": "2025-12-31"
-    },
-    "categories": [],
-    "importance": null
-  },
-  {
-    "id": "32e22a34-d0b0-4b9d-a411-5a6b0c2437f3",
-    "slug": "1st-generative-ai-ideathon",
-    "title": "1st Generative AI Ideathon",
-    "description": null,
-    "date": {
-      "start": "2023-12-02",
-      "end": "2023-12-03"
-    },
-    "categories": [
-      "해커톤"
-    ],
-    "importance": null
-  },
-  {
-    "id": "41fbb53e-a2b0-46fe-a425-48f33db6b632",
-    "slug": "hufs-창업아이디어경진대회",
-    "title": "HUFS 창업아이디어경진대회",
-    "description": null,
-    "date": {
-      "start": "2023-12-01",
-      "end": null
-    },
-    "categories": [
-      "공모전"
-    ],
-    "importance": null
-  },
-  {
-    "id": "afc8beac-5991-4152-954b-a2d5c24e5ddc",
-    "slug": "제-5회-hufs-code-festival",
-    "title": "제 5회 HUFS Code Festival",
-    "description": null,
-    "date": {
-      "start": "2023-11-23",
-      "end": null
-    },
-    "categories": [],
-    "importance": null
-  },
-  {
-    "id": "b0d62388-6d2d-4c27-b481-e23d898b86ad",
-    "slug": "ir피칭-경진대회",
-    "title": "IR피칭 경진대회",
-    "description": null,
-    "date": {
-      "start": "2023-11-03",
-      "end": "2023-11-04"
-    },
-    "categories": [
-      "캠프"
-    ],
-    "importance": "중간"
-  },
-  {
-    "id": "14161dfd-8efd-4ba9-a52a-cfea0275d55e",
-    "slug": "벤처-스타트업-아카데미-해커톤",
-    "title": "벤처·스타트업 아카데미 해커톤",
-    "description": null,
-    "date": {
-      "start": "2023-08-29",
-      "end": "2023-08-30"
-    },
-    "categories": [
-      "해커톤"
-    ],
-    "importance": "낮음"
-  },
-  {
-    "id": "1383b1b1-c9dc-80a7-87c2-c15eb9f3f13f",
-    "slug": "alpaon-llc",
-    "title": "Alpaon LLC.",
-    "description": "IDC, IoT, PCB, SaaS 등의 기술력으로 각종 서비스를 만들어나갑니다.",
-    "date": {
-      "start": "2023-08-01",
-      "end": null
-    },
-    "categories": [
-      "사업"
-    ],
-    "importance": "매우 높음"
-  },
-  {
-    "id": "ca75ef79-2c62-4926-af1a-7b5608e36d12",
-    "slug": "hufsummer-hackathon",
-    "title": "HUFSummer Hackathon",
-    "description": null,
-    "date": {
-      "start": "2023-06-23",
-      "end": "2023-06-24"
-    },
-    "categories": [
-      "해커톤"
-    ],
-    "importance": "중간"
-  },
-  {
-    "id": "1383b1b1-c9dc-8053-9783-d2945bf7abfd",
-    "slug": "ids-lab",
-    "title": "IDS Lab",
-    "description": null,
-    "date": {
-      "start": "2023-04-28",
-      "end": "2023-12-31"
-    },
-    "categories": [
-      "연구"
-    ],
-    "importance": null
-  },
-  {
-    "id": "39343b25-6514-4fb1-8732-003acf0a23f3",
-    "slug": "1784-스쿨혁명-인공지능-캠프",
-    "title": "1784 스쿨혁명 인공지능 캠프",
-    "description": "초등학생을 대상으로 인공지능 로봇 교육봉사",
-    "date": {
-      "start": "2023-02-06",
-      "end": "2023-02-07"
-    },
-    "categories": [
-      "교육"
-    ],
-    "importance": null
-  },
-  {
-    "id": "cf34e57d-33b1-44b7-bc56-2db17cb67b6a",
-    "slug": "osam-국방부-해커톤",
-    "title": "OSAM 국방부 해커톤",
-    "description": null,
-    "date": {
-      "start": "2021-08-21",
-      "end": null
-    },
-    "categories": [
-      "해커톤"
-    ],
-    "importance": null
-  },
-  {
-    "id": "07a7bf84-45bc-4669-b836-7ca8790bebd3",
-    "slug": "파이썬-교육",
+    "id": "파이썬-교육",
     "title": "파이썬 교육",
-    "description": null,
-    "date": {
-      "start": "2020-10-16",
-      "end": null
-    },
-    "categories": [
-      "교육"
-    ],
-    "importance": null
+    "hasIcon": false,
+    "hasCover": false
   },
   {
-    "id": "e0a35e1e-9ff1-4714-82f7-205fc76001e6",
-    "slug": "sw-진로설계-세미나-아두이노",
-    "title": "SW 진로설계 세미나 + 아두이노",
-    "description": null,
-    "date": {
-      "start": "2020-10-06",
-      "end": null
-    },
-    "categories": [
-      "교육"
-    ],
-    "importance": null
-  },
-  {
-    "id": "deda62c8-0d3d-4805-bf5f-b156f179ef68",
-    "slug": "hello-new-world",
-    "title": "Hello New() World",
-    "description": "신세계 주최 해커톤",
-    "date": {
-      "start": "2019-07-19",
-      "end": "2019-07-20"
-    },
-    "categories": [
-      "해커톤",
-      "공모전"
-    ],
-    "importance": "중간"
-  },
-  {
-    "id": "89469a5f-20fa-496a-9504-32a037875528",
-    "slug": "국가슈퍼컴퓨팅-청소년-캠프",
-    "title": "국가슈퍼컴퓨팅 청소년 캠프",
-    "description": null,
-    "date": {
-      "start": "2019-07-15",
-      "end": "2019-07-19"
-    },
-    "categories": [
-      "캠프"
-    ],
-    "importance": "높음"
-  },
-  {
-    "id": "e7fbf93d-f2e3-4a60-92b5-246790eabab5",
-    "slug": "2019-angelhack-hackathon",
-    "title": "2019 AngelHack Hackathon",
-    "description": null,
-    "date": {
-      "start": "2019-06-01",
-      "end": "2019-06-02"
-    },
-    "categories": [
-      "해커톤"
-    ],
-    "importance": "중간"
-  },
-  {
-    "id": "da2074ac-3656-4592-8a73-d0dd3e5fd1b7",
-    "slug": "방송영상-뉴미디어-콘텐츠-아이디어톤",
-    "title": "방송영상 뉴미디어 콘텐츠 아이디어톤",
-    "description": null,
-    "date": {
-      "start": "2019-03-29",
-      "end": "2019-03-30"
-    },
-    "categories": [
-      "해커톤"
-    ],
-    "importance": "중간"
-  },
-  {
-    "id": "de7e634c-720e-447a-8b29-3452f2683b5f",
-    "slug": "dmz-해커톤",
-    "title": "DMZ 해커톤",
-    "description": null,
-    "date": {
-      "start": "2019-01-23",
-      "end": "2019-01-25"
-    },
-    "categories": [
-      "해커톤"
-    ],
-    "importance": "낮음"
-  },
-  {
-    "id": "c65f40a3-12fb-438a-8afb-4ab60ac814f6",
-    "slug": "2018-대한민국-청소년-창업경진대회",
-    "title": "2018 대한민국 청소년 창업경진대회",
-    "description": null,
-    "date": {
-      "start": "2019-01-15",
-      "end": null
-    },
-    "categories": [
-      "부스운영"
-    ],
-    "importance": "중간"
-  },
-  {
-    "id": "0efa438c-617f-46b4-bd48-18903013d80f",
-    "slug": "the-vplanet-inc",
-    "title": "The Vplanet Inc.",
-    "description": null,
-    "date": {
-      "start": "2019-01-09",
-      "end": "2019-09-11"
-    },
-    "categories": [
-      "회사"
-    ],
-    "importance": null
-  },
-  {
-    "id": "25a7c61f-887c-47ae-ad63-a68e5759489b",
-    "slug": "설리번-오빠-rc카-뽑았다",
-    "title": "설리번 '오빠 RC카 뽑았다'",
-    "description": null,
-    "date": {
-      "start": "2019-01-05",
-      "end": "2019-01-27"
-    },
-    "categories": [
-      "교육"
-    ],
-    "importance": null
-  },
-  {
-    "id": "3bbe06ca-d551-4eb2-bbaa-42a4ef882e0f",
-    "slug": "비즈쿨성과발표-우수동아리",
-    "title": "비즈쿨성과발표 우수동아리",
-    "description": null,
-    "date": {
-      "start": "2018-12-28",
-      "end": null
-    },
-    "categories": [
-      "부스운영"
-    ],
-    "importance": "중간"
-  },
-  {
-    "id": "f94d52d8-d31b-4040-a0ef-3378e73cc1da",
-    "slug": "창의-it-공모전",
-    "title": "창의 IT 공모전",
-    "description": null,
-    "date": {
-      "start": "2018-12-27",
-      "end": null
-    },
-    "categories": [
-      "공모전"
-    ],
-    "importance": "중간"
-  },
-  {
-    "id": "1e449861-3743-43ee-b5a6-21b3e32e77df",
-    "slug": "if-해커톤",
-    "title": "IF 해커톤",
-    "description": null,
-    "date": {
-      "start": "2018-11-10",
-      "end": "2018-11-11"
-    },
-    "categories": [
-      "해커톤"
-    ],
-    "importance": "중간"
-  },
-  {
-    "id": "56ae8dd3-74ef-4b6d-b63e-03535d3a271b",
-    "slug": "청소년-비즈쿨-페스티벌",
-    "title": "청소년 비즈쿨 페스티벌",
-    "description": null,
-    "date": {
-      "start": "2018-11-10",
-      "end": null
-    },
-    "categories": [
-      "부스운영"
-    ],
-    "importance": "높음"
-  },
-  {
-    "id": "be750e1e-c461-4aad-9ada-7cdc516f10fa",
-    "slug": "불법-스포츠-도박-근절-해커톤",
-    "title": "불법 스포츠 도박 근절 해커톤",
-    "description": null,
-    "date": {
-      "start": "2018-11-03",
-      "end": "2018-11-04"
-    },
-    "categories": [
-      "해커톤"
-    ],
-    "importance": "중간"
-  },
-  {
-    "id": "41d72e17-deb7-4d1b-8cdb-860a3d008187",
-    "slug": "디미고-해커톤",
-    "title": "디미고 해커톤",
-    "description": null,
-    "date": {
-      "start": "2018-10-26",
-      "end": "2018-10-27"
-    },
-    "categories": [
-      "해커톤"
-    ],
-    "importance": "중간"
-  },
-  {
-    "id": "b8a6bf29-d61a-457b-941a-170a99b0a29a",
-    "slug": "ict-메이커톤",
-    "title": "ICT 메이커톤",
-    "description": null,
-    "date": {
-      "start": "2018-10-20",
-      "end": "2018-10-21"
-    },
-    "categories": [
-      "해커톤"
-    ],
-    "importance": "낮음"
-  },
-  {
-    "id": "43d36b20-c680-4663-b9ac-d36b24a94f13",
-    "slug": "inapse-hackathon",
-    "title": "INAPSE HACKATHON",
-    "description": null,
-    "date": {
-      "start": "2018-10-13",
-      "end": "2018-10-14"
-    },
-    "categories": [
-      "해커톤"
-    ],
-    "importance": "낮음"
-  },
-  {
-    "id": "e5b7b55a-a297-4283-9a2d-5fda94ce569d",
-    "slug": "stac-스마틴앱챌린지",
-    "title": "STAC 스마틴앱챌린지",
-    "description": null,
-    "date": {
-      "start": "2018-09-29",
-      "end": null
-    },
-    "categories": [
-      "공모전"
-    ],
-    "importance": "높음"
-  },
-  {
-    "id": "29055678-f315-4668-940b-973aff964c4b",
-    "slug": "대한민국-sw-융합-해커톤",
-    "title": "대한민국 SW 융합 해커톤",
-    "description": null,
-    "date": {
-      "start": "2018-08-31",
-      "end": "2018-09-01"
-    },
-    "categories": [
-      "해커톤"
-    ],
-    "importance": "낮음"
-  },
-  {
-    "id": "479e58ac-c767-4790-afc6-dd224bd77d9b",
-    "slug": "학생창업유망팀-300-우수-동아리",
-    "title": "학생창업유망팀 300+ 우수 동아리",
-    "description": null,
-    "date": {
-      "start": "2018-08-29",
-      "end": null
-    },
-    "categories": [
-      "부스운영"
-    ],
-    "importance": "중간"
-  },
-  {
-    "id": "61aef909-0211-456a-ae3f-0a279a1e2f87",
-    "slug": "제-16회-앱잼",
-    "title": "제 16회 앱잼",
-    "description": null,
-    "date": {
-      "start": "2018-08-18",
-      "end": "2018-08-19"
-    },
-    "categories": [
-      "해커톤"
-    ],
-    "importance": "낮음"
-  },
-  {
-    "id": "fde68f8d-e2d5-4e93-8821-a25b3af556b4",
-    "slug": "남양주-해커톤",
-    "title": "남양주 해커톤",
-    "description": null,
-    "date": {
-      "start": "2018-08-11",
-      "end": "2018-08-12"
-    },
-    "categories": [
-      "해커톤"
-    ],
-    "importance": "낮음"
-  },
-  {
-    "id": "429bbe1b-4253-4d22-a01c-08308d19024f",
-    "slug": "hello-new-world",
-    "title": "Hello New() World",
-    "description": null,
-    "date": {
-      "start": "2018-07-13",
-      "end": "2018-07-14"
-    },
-    "categories": [
-      "해커톤",
-      "공모전"
-    ],
-    "importance": "높음"
-  },
-  {
-    "id": "87bd18af-8515-4c14-a7df-40dcb2dae553",
-    "slug": "산업-현장-안전-메이커톤",
-    "title": "산업 현장 안전 메이커톤",
-    "description": null,
-    "date": {
-      "start": "2018-05-11",
-      "end": "2018-05-12"
-    },
-    "categories": [
-      "해커톤"
-    ],
-    "importance": "중간"
-  },
-  {
-    "id": "a998b222-5541-4aae-baee-0cfa75664867",
-    "slug": "제-15회-앱잼",
-    "title": "제 15회 앱잼",
-    "description": null,
-    "date": {
-      "start": "2018-03-31",
-      "end": "2018-04-01"
-    },
-    "categories": [
-      "해커톤"
-    ],
-    "importance": "중간"
-  },
-  {
-    "id": "80c918f4-8ead-4409-ba3d-a3d54fbd41de",
-    "slug": "설리번-게임으로-배우는-웹해킹",
-    "title": "설리번 '게임으로 배우는 웹해킹'",
-    "description": null,
-    "date": {
-      "start": "2018-01-08",
-      "end": "2018-02-02"
-    },
-    "categories": [
-      "교육"
-    ],
-    "importance": null
-  },
-  {
-    "id": "e1f0fc05-8023-4141-9469-64b5a78d7db8",
-    "slug": "제-14회-앱잼",
-    "title": "제 14회 앱잼",
-    "description": null,
-    "date": {
-      "start": "2017-12-16",
-      "end": "2017-12-17"
-    },
-    "categories": [
-      "해커톤"
-    ],
-    "importance": "중간"
-  },
-  {
-    "id": "d16b1aab-7960-4878-9fd9-17756f3b3484",
-    "slug": "한국디지털미디어고등학교-장학",
-    "title": "한국디지털미디어고등학교 장학",
-    "description": null,
-    "date": {
-      "start": "2017-03-02",
-      "end": null
-    },
-    "categories": [],
-    "importance": null
-  },
-  {
-    "id": "ed734136-883f-4c76-9df7-0cb71bb05991",
-    "slug": "대전교육정보원-정보-고급-수료",
-    "title": "대전교육정보원 정보 고급 수료",
-    "description": null,
-    "date": {
-      "start": "2016-12-31",
-      "end": null
-    },
-    "categories": [
-      "수료"
-    ],
-    "importance": "중간"
-  },
-  {
-    "id": "1373b1b1-c9dc-8033-b47c-e0632d7b68d1",
-    "slug": "2016-it-교육지원-컨퍼런스",
-    "title": "2016 IT 교육지원 컨퍼런스",
-    "description": null,
-    "date": {
-      "start": "2016-11-22",
-      "end": null
-    },
-    "categories": [
-      "장학"
-    ],
-    "importance": null
-  },
-  {
-    "id": "cf1cc337-b1f9-464c-803a-8cbd7d56567f",
-    "slug": "제-33회-정보올림피아드-공모-부문",
-    "title": "제 33회 정보올림피아드 공모 부문",
-    "description": null,
-    "date": {
-      "start": "2016-07-01",
-      "end": null
-    },
-    "categories": [
-      "공모전"
-    ],
-    "importance": "중간"
-  },
-  {
-    "id": "babf869c-f6a3-4b1c-9d5f-00d61470fa30",
-    "slug": "대전교육정보원-정보-중급-수료",
-    "title": "대전교육정보원 정보 중급 수료",
-    "description": null,
-    "date": {
-      "start": "2015-12-31",
-      "end": null
-    },
-    "categories": [
-      "수료"
-    ],
-    "importance": "중간"
-  },
-  {
-    "id": "0e492ad6-4b98-4292-9900-8e92f35596c0",
-    "slug": "영재교육원-개인주제탐구발표대회",
+    "id": "영재교육원-개인주제탐구발표대회",
     "title": "영재교육원 개인주제탐구발표대회",
-    "description": null,
-    "date": {
-      "start": "2015-11-01",
-      "end": null
-    },
-    "categories": [
-      "공모전"
-    ],
-    "importance": "낮음"
+    "hasIcon": false,
+    "hasCover": false
   },
   {
-    "id": "63e9ec4b-3368-41ef-8e54-50b0a55640a2",
-    "slug": "대전-영재-페스티벌",
+    "id": "the-vplanet-inc",
+    "title": "The Vplanet Inc.",
+    "hasIcon": true,
+    "hasCover": false
+  },
+  {
+    "id": "2016-it-교육지원-컨퍼런스",
+    "title": "2016 IT 교육지원 컨퍼런스",
+    "hasIcon": false,
+    "hasCover": false
+  },
+  {
+    "id": "한국디지털미디어고등학교-졸업생-세미나",
+    "title": "한국디지털미디어고등학교 졸업생 세미나",
+    "hasIcon": false,
+    "hasCover": false
+  },
+  {
+    "id": "ids-lab",
+    "title": "IDS Lab",
+    "hasIcon": false,
+    "hasCover": false
+  },
+  {
+    "id": "코드잇-부스트-1기-운영진",
+    "title": "코드잇 부스트 1기 운영진",
+    "hasIcon": false,
+    "hasCover": false
+  },
+  {
+    "id": "alpaon-llc",
+    "title": "Alpaon LLC.",
+    "hasIcon": false,
+    "hasCover": false
+  },
+  {
+    "id": "벤처-스타트업-아카데미-해커톤",
+    "title": "벤처·스타트업 아카데미 해커톤",
+    "hasIcon": false,
+    "hasCover": false
+  },
+  {
+    "id": "if-해커톤",
+    "title": "IF 해커톤",
+    "hasIcon": false,
+    "hasCover": true
+  },
+  {
+    "id": "설리번-오빠-rc카-뽑았다",
+    "title": "설리번 '오빠 RC카 뽑았다'",
+    "hasIcon": true,
+    "hasCover": false
+  },
+  {
+    "id": "대한민국-sw-융합-해커톤",
+    "title": "대한민국 SW 융합 해커톤",
+    "hasIcon": false,
+    "hasCover": false
+  },
+  {
+    "id": "1st-generative-ai-ideathon",
+    "title": "1st Generative AI Ideathon",
+    "hasIcon": false,
+    "hasCover": false
+  },
+  {
+    "id": "1784-스쿨혁명-인공지능-캠프",
+    "title": "1784 스쿨혁명 인공지능 캠프",
+    "hasIcon": false,
+    "hasCover": true
+  },
+  {
+    "id": "비즈쿨성과발표-우수동아리",
+    "title": "비즈쿨성과발표 우수동아리",
+    "hasIcon": false,
+    "hasCover": false
+  },
+  {
+    "id": "디미고-해커톤",
+    "title": "디미고 해커톤",
+    "hasIcon": true,
+    "hasCover": false
+  },
+  {
+    "id": "hufs-창업아이디어경진대회",
+    "title": "HUFS 창업아이디어경진대회",
+    "hasIcon": false,
+    "hasCover": true
+  },
+  {
+    "id": "hello-new-world",
+    "title": "Hello New() World",
+    "hasIcon": true,
+    "hasCover": true
+  },
+  {
+    "id": "inapse-hackathon",
+    "title": "INAPSE HACKATHON",
+    "hasIcon": false,
+    "hasCover": false
+  },
+  {
+    "id": "학생창업유망팀-300-우수-동아리",
+    "title": "학생창업유망팀 300+ 우수 동아리",
+    "hasIcon": false,
+    "hasCover": false
+  },
+  {
+    "id": "청소년-비즈쿨-페스티벌",
+    "title": "청소년 비즈쿨 페스티벌",
+    "hasIcon": false,
+    "hasCover": true
+  },
+  {
+    "id": "제-16회-앱잼",
+    "title": "제 16회 앱잼",
+    "hasIcon": true,
+    "hasCover": false
+  },
+  {
+    "id": "대전-영재-페스티벌",
     "title": "대전 영재 페스티벌",
-    "description": null,
-    "date": {
-      "start": "2015-10-23",
-      "end": null
-    },
-    "categories": [
-      "부스운영"
-    ],
-    "importance": "낮음"
+    "hasIcon": false,
+    "hasCover": false
+  },
+  {
+    "id": "설리번-게임으로-배우는-웹해킹",
+    "title": "설리번 '게임으로 배우는 웹해킹'",
+    "hasIcon": true,
+    "hasCover": false
+  },
+  {
+    "id": "산업-현장-안전-메이커톤",
+    "title": "산업 현장 안전 메이커톤",
+    "hasIcon": false,
+    "hasCover": true
+  },
+  {
+    "id": "국가슈퍼컴퓨팅-청소년-캠프",
+    "title": "국가슈퍼컴퓨팅 청소년 캠프",
+    "hasIcon": false,
+    "hasCover": true
+  },
+  {
+    "id": "한국지도자육성장학재단-54기",
+    "title": "한국지도자육성장학재단 54기",
+    "hasIcon": false,
+    "hasCover": false
+  },
+  {
+    "id": "제-15회-앱잼",
+    "title": "제 15회 앱잼",
+    "hasIcon": true,
+    "hasCover": true
+  },
+  {
+    "id": "제-5회-hufs-code-festival",
+    "title": "제 5회 HUFS Code Festival",
+    "hasIcon": false,
+    "hasCover": false
+  },
+  {
+    "id": "ir피칭-경진대회",
+    "title": "IR피칭 경진대회",
+    "hasIcon": false,
+    "hasCover": true
+  },
+  {
+    "id": "ict-메이커톤",
+    "title": "ICT 메이커톤",
+    "hasIcon": false,
+    "hasCover": true
+  },
+  {
+    "id": "대전교육정보원-정보-중급-수료",
+    "title": "대전교육정보원 정보 중급 수료",
+    "hasIcon": false,
+    "hasCover": false
+  },
+  {
+    "id": "불법-스포츠-도박-근절-해커톤",
+    "title": "불법 스포츠 도박 근절 해커톤",
+    "hasIcon": false,
+    "hasCover": true
+  },
+  {
+    "id": "2018-대한민국-청소년-창업경진대회",
+    "title": "2018 대한민국 청소년 창업경진대회",
+    "hasIcon": false,
+    "hasCover": true
+  },
+  {
+    "id": "hufsummer-hackathon",
+    "title": "HUFSummer Hackathon",
+    "hasIcon": true,
+    "hasCover": true
+  },
+  {
+    "id": "aws-solution-focused-immersion-day-eks",
+    "title": "AWS Solution Focused Immersion Day - EKS",
+    "hasIcon": false,
+    "hasCover": false
+  },
+  {
+    "id": "제-33회-정보올림피아드-공모-부문",
+    "title": "제 33회 정보올림피아드 공모 부문",
+    "hasIcon": false,
+    "hasCover": true
+  },
+  {
+    "id": "osam-국방부-해커톤",
+    "title": "OSAM 국방부 해커톤",
+    "hasIcon": false,
+    "hasCover": false
+  },
+  {
+    "id": "한국디지털미디어고등학교-장학",
+    "title": "한국디지털미디어고등학교 장학",
+    "hasIcon": false,
+    "hasCover": true
+  },
+  {
+    "id": "방송영상-뉴미디어-콘텐츠-아이디어톤",
+    "title": "방송영상 뉴미디어 콘텐츠 아이디어톤",
+    "hasIcon": false,
+    "hasCover": true
+  },
+  {
+    "id": "dmz-해커톤",
+    "title": "DMZ 해커톤",
+    "hasIcon": false,
+    "hasCover": false
+  },
+  {
+    "id": "hello-new-world",
+    "title": "Hello New() World",
+    "hasIcon": true,
+    "hasCover": true
+  },
+  {
+    "id": "sw-진로설계-세미나-아두이노",
+    "title": "SW 진로설계 세미나 + 아두이노",
+    "hasIcon": false,
+    "hasCover": false
+  },
+  {
+    "id": "제-14회-앱잼",
+    "title": "제 14회 앱잼",
+    "hasIcon": true,
+    "hasCover": true
+  },
+  {
+    "id": "stac-스마틴앱챌린지",
+    "title": "STAC 스마틴앱챌린지",
+    "hasIcon": false,
+    "hasCover": true
+  },
+  {
+    "id": "2019-angelhack-hackathon",
+    "title": "2019 AngelHack Hackathon",
+    "hasIcon": false,
+    "hasCover": true
+  },
+  {
+    "id": "대전교육정보원-정보-고급-수료",
+    "title": "대전교육정보원 정보 고급 수료",
+    "hasIcon": false,
+    "hasCover": true
+  },
+  {
+    "id": "창의-it-공모전",
+    "title": "창의 IT 공모전",
+    "hasIcon": false,
+    "hasCover": false
+  },
+  {
+    "id": "남양주-해커톤",
+    "title": "남양주 해커톤",
+    "hasIcon": false,
+    "hasCover": false
   }
 ]

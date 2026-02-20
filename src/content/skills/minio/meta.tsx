@@ -1,0 +1,11 @@
+export const meta = {
+  id: 'minio',
+  notionId: '4cbdce83-6420-457c-9054-1606c6159738',
+  title: 'Minio',
+  '분류': [
+    'Infra',
+  ],
+  iconSlug: 'minio',
+  visible: false,
+  '환경 및 기술': 'Minio',
+};

@@ -1,0 +1,11 @@
+export const meta = {
+  id: 'jira',
+  notionId: '72c087b5-c383-4cd9-900e-170eb5435525',
+  title: 'Jira',
+  '분류': [
+    '협업/문서',
+  ],
+  iconSlug: 'jira',
+  visible: false,
+  '환경 및 기술': 'Jira',
+};

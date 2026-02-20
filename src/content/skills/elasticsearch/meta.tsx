@@ -1,0 +1,11 @@
+export const meta = {
+  id: 'elasticsearch',
+  notionId: '810de648-10c2-4ed1-b888-c2fe77fe6b67',
+  title: 'elasticsearch',
+  '분류': [
+    '기술',
+  ],
+  iconSlug: 'elasticsearch',
+  visible: true,
+  '환경 및 기술': 'elasticsearch',
+};

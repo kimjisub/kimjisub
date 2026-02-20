@@ -1,0 +1,11 @@
+export const meta = {
+  id: 'blender',
+  notionId: '2d2f638d-af48-488b-98a9-b4c57c8fb5f1',
+  title: 'blender',
+  '분류': [
+    '디자인',
+  ],
+  iconSlug: 'blender',
+  visible: false,
+  '환경 및 기술': 'blender',
+};

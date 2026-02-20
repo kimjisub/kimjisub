@@ -1,0 +1,12 @@
+export const meta = {
+  id: 'marp',
+  notionId: '28bc9939-6d4e-4883-8e34-5509feabb9ec',
+  title: 'Marp',
+  '분류': [
+    '협업/문서',
+  ],
+  iconSlug: 'marp|3785CE',
+  visible: false,
+  '숙련도': '3. 상급',
+  '환경 및 기술': 'Marp',
+};
