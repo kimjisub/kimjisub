@@ -1,72 +1,16 @@
 /**
- * Prebuild script: 역방향 관계 그래프 생성 + 심링크 설정
+ * Prebuild script: 역방향 관계 그래프 생성
  *
- * 1. public/content → src/content 심링크 생성 (이미지 서빙용)
- * 2. Projects → Skills/Careers 관계를 읽어서 역방향 관계 계산
- *    - skill.projectsUsingAsSkill: 이 스킬을 techSkills로 사용하는 프로젝트들
- *    - skill.projectsUsingAsLanguage: 이 스킬을 languages로 사용하는 프로젝트들
- *    - career.relatedProjects: 이 커리어와 연결된 프로젝트들
+ * Projects → Skills/Careers 관계를 읽어서 역방향 관계 계산
+ *   - skill.projectsUsingAsSkill: 이 스킬을 techSkills로 사용하는 프로젝트들
+ *   - skill.projectsUsingAsLanguage: 이 스킬을 languages로 사용하는 프로젝트들
+ *   - career.relatedProjects: 이 커리어와 연결된 프로젝트들
  *
  * Usage: tsx scripts/build-relations.ts
  */
 
 import * as fs from 'fs';
 import * as path from 'path';
-
-// ============================================
-// 1. 콘텐츠 연결 (로컬: 심링크 / Vercel: 복사)
-// ============================================
-function ensureContentLink() {
-  const publicDir = path.join(__dirname, '../public');
-  const contentDest = path.join(publicDir, 'content');
-  const contentSrc = path.join(__dirname, '../src/content');
-  const relativeTarget = '../src/content';  // 심링크용 상대 경로
-
-  const isVercel = process.env.VERCEL === '1';
-
-  // public 폴더 없으면 생성
-  if (!fs.existsSync(publicDir)) {
-    fs.mkdirSync(publicDir, { recursive: true });
-  }
-
-  // 기존 content 폴더/심링크 정리
-  if (fs.existsSync(contentDest)) {
-    const stats = fs.lstatSync(contentDest);
-    if (stats.isSymbolicLink()) {
-      if (isVercel) {
-        // Vercel에서는 심링크 제거하고 복사로 대체
-        fs.unlinkSync(contentDest);
-      } else {
-        // 로컬: 이미 심링크 있으면 OK
-        const currentTarget = fs.readlinkSync(contentDest);
-        if (currentTarget === relativeTarget) {
-          console.log('✅ Symlink already exists: public/content → src/content');
-          return;
-        }
-        fs.unlinkSync(contentDest);
-      }
-    } else if (stats.isDirectory()) {
-      if (isVercel) {
-        console.log('✅ Content directory already exists');
-        return;
-      } else {
-        // 로컬에서 실제 폴더면 에러 (심링크여야 함)
-        console.error('❌ public/content exists but is not a symlink. Please remove it manually.');
-        process.exit(1);
-      }
-    }
-  }
-
-  if (isVercel) {
-    // Vercel: 실제 복사 (심링크 대신)
-    fs.cpSync(contentSrc, contentDest, { recursive: true });
-    console.log('✅ Copied src/content → public/content (Vercel build)');
-  } else {
-    // 로컬: 심링크 생성
-    fs.symlinkSync(relativeTarget, contentDest, 'dir');
-    console.log('✅ Created symlink: public/content → src/content');
-  }
-}
 
 const CONTENT_DIR = path.join(__dirname, '../src/content');
 
@@ -263,11 +207,6 @@ function updateCareerMetas(graph: RelationGraph): number {
 async function main() {
   console.log('🔧 Prebuild starting...\n');
 
-  // 1. 콘텐츠 연결 (로컬: 심링크 / Vercel: 복사)
-  ensureContentLink();
-  console.log('');
-
-  // 2. 관계 그래프 빌드
   console.log('🔗 Building relation graph...');
 
   // 1. 모든 프로젝트 로드

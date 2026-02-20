@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Serverless Function 번들에서 assets 폴더 제외 (이미지/미디어)
+  outputFileTracingExcludes: {
+    '*': [
+      './src/content/**/assets/**',
+    ],
+  },
   // Next.js 16: Turbopack configuration
   turbopack: {
     rules: {
