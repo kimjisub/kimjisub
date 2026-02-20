@@ -53,9 +53,9 @@ const expandVariants = {
 // ────────────────────────────────────────────
 
 const PulseDot = () => (
-  <span className="relative flex h-4 w-4">
+  <span className="relative flex h-3 w-3">
     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-60" />
-    <span className="relative inline-flex h-4 w-4 rounded-full bg-accent" />
+    <span className="relative inline-flex h-3 w-3 rounded-full bg-accent" />
   </span>
 );
 
@@ -105,10 +105,10 @@ const TimelineItem = ({ career }: TimelineItemProps) => {
       variants={itemVariants}
       initial="hidden"
       animate={isInView ? 'visible' : 'hidden'}
-      className="relative flex gap-6 pb-10 last:pb-0"
+      className="relative flex gap-4 pb-6 last:pb-0"
     >
       {/* ── Node column ── */}
-      <div className="flex flex-col items-center shrink-0" style={{ width: 20 }}>
+      <div className="flex flex-col items-center shrink-0 pt-5" style={{ width: 16 }}>
         {/* Node */}
         <motion.button
           aria-label={`${career.title} 상세 보기`}
@@ -123,7 +123,7 @@ const TimelineItem = ({ career }: TimelineItemProps) => {
             <PulseDot />
           ) : (
             <motion.span
-              className={`block h-4 w-4 rounded-full border-2 transition-colors duration-200 ${
+              className={`block h-3 w-3 rounded-full border-2 transition-colors duration-200 ${
                 hovered
                   ? 'bg-accent border-accent shadow-lg shadow-accent/40'
                   : 'bg-background border-border dark:bg-card dark:border-border'
@@ -131,13 +131,13 @@ const TimelineItem = ({ career }: TimelineItemProps) => {
             />
           )}
         </motion.button>
-        {/* Connector line (skip for last item) */}
-        <div className="flex-1 w-px bg-border mt-1" />
+        {/* Connector line */}
+        <div className="flex-1 w-px bg-border mt-2" />
       </div>
 
       {/* ── Content column ── */}
       <motion.div
-        className="flex-1 min-w-0 -mt-1"
+        className="flex-1 min-w-0"
         onHoverStart={() => setHovered(true)}
         onHoverEnd={() => setHovered(false)}
       >
@@ -287,13 +287,13 @@ export const InteractiveTimeline = ({ careers }: InteractiveTimelineProps) => {
   });
 
   return (
-    <div ref={containerRef} className="relative pl-5">
+    <div ref={containerRef} className="relative pl-3">
       {/* ── Vertical line (left) ── */}
       {/* Background track */}
-      <div className="absolute left-[9px] top-0 bottom-0 w-px bg-border" />
+      <div className="absolute left-[5px] top-0 bottom-0 w-px bg-border" />
       {/* Scroll-driven fill */}
       <motion.div
-        className="absolute left-[9px] top-0 w-px origin-top bg-gradient-to-b from-accent via-accent to-accent/30"
+        className="absolute left-[5px] top-0 w-px origin-top bg-gradient-to-b from-accent via-accent to-accent/30"
         style={{ height: lineHeight }}
       />
 
