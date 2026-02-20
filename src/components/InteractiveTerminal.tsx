@@ -2,7 +2,9 @@
 
 import { KeyboardEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowUp, Sparkles } from 'lucide-react';
+import { ArrowUp, Minimize2, Sparkles, X } from 'lucide-react';
+
+import { useTerminal } from '@/context/TerminalContext';
 
 // 간단한 브라우저 fingerprint 생성
 function generateFingerprint(): string {
@@ -24,7 +26,6 @@ function generateFingerprint(): string {
     new Date().getTimezoneOffset(),
     canvasData.slice(-50),
   ].join('|');
-  // Simple hash
   let hash = 0;
   for (let i = 0; i < data.length; i++) {
     const char = data.charCodeAt(i);
@@ -32,18 +33,6 @@ function generateFingerprint(): string {
     hash = hash & hash;
   }
   return Math.abs(hash).toString(36);
-}
-
-interface TerminalLine {
-  id: number;
-  type: 'user' | 'assistant' | 'system' | 'ascii';
-  content: string;
-  isTyping?: boolean;
-}
-
-interface ChatMessage {
-  role: 'user' | 'assistant';
-  content: string;
 }
 
 const NEOFETCH_ASCII = `
@@ -155,18 +144,37 @@ const COMMANDS: Record<string, () => { lines: string[]; isAscii?: boolean }> = {
   }),
 };
 
-export const InteractiveTerminal = () => {
-  const [lines, setLines] = useState<TerminalLine[]>([
-    { id: 0, type: 'system', content: '안녕하세요! 저에 대해 궁금한 거 편하게 물어보세요 :)' },
-  ]);
-  const [input, setInput] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [isTyping, setIsTyping] = useState(false);
-  const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
-  const [remaining, setRemaining] = useState<number | null>(null);
-  const [rateLimited, setRateLimited] = useState(false);
-  const lineIdRef = useRef(1);
+interface InteractiveTerminalProps {
+  mode?: 'inline' | 'floating';
+  onClose?: () => void;
+  onMinimize?: () => void;
+  className?: string;
+}
+
+export const InteractiveTerminal = ({ 
+  mode = 'inline', 
+  onClose, 
+  onMinimize,
+  className = '' 
+}: InteractiveTerminalProps) => {
+  const {
+    lines,
+    setLines,
+    chatHistory,
+    setChatHistory,
+    remaining,
+    setRemaining,
+    rateLimited,
+    setRateLimited,
+    isLoading,
+    setIsLoading,
+    isTyping,
+    setIsTyping,
+    getNextId,
+    resetTerminal,
+  } = useTerminal();
   
+  const [input, setInput] = useState('');
   const fingerprint = useMemo(() => generateFingerprint(), []);
   
   const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -184,12 +192,10 @@ export const InteractiveTerminal = () => {
 
   useEffect(() => {
     if (!isLoading && !isTyping) {
-      // preventScroll: 페이지 로드 시 터미널로 자동 스크롤 방지
       inputRef.current?.focus({ preventScroll: true });
     }
   }, [isLoading, isTyping]);
 
-  // Auto-resize textarea
   useEffect(() => {
     if (inputRef.current) {
       inputRef.current.style.height = 'auto';
@@ -197,19 +203,13 @@ export const InteractiveTerminal = () => {
     }
   }, [input]);
 
-  const getNextId = useCallback(() => {
-    const id = lineIdRef.current;
-    lineIdRef.current += 1;
-    return id;
-  }, []);
-
-  const addLine = useCallback((type: TerminalLine['type'], content: string) => {
+  const addLine = useCallback((type: 'user' | 'assistant' | 'system' | 'ascii', content: string) => {
     const newId = getNextId();
     setLines(prev => [...prev, { id: newId, type, content }]);
     return newId;
-  }, [getNextId]);
+  }, [getNextId, setLines]);
 
-  const typeLines = useCallback(async (outputLines: string[], type: TerminalLine['type'] = 'assistant', isAscii?: boolean) => {
+  const typeLines = useCallback(async (outputLines: string[], type: 'user' | 'assistant' | 'system' | 'ascii' = 'assistant', isAscii?: boolean) => {
     setIsTyping(true);
     
     for (const line of outputLines) {
@@ -238,17 +238,13 @@ export const InteractiveTerminal = () => {
     }
     
     setIsTyping(false);
-  }, [getNextId]);
+  }, [getNextId, setLines, setIsTyping]);
 
   const handleCommand = useCallback(async (cmd: string) => {
     const cmdName = cmd.slice(1).toLowerCase().trim();
     
     if (cmdName === 'clear') {
-      lineIdRef.current = 1;
-      setLines([
-        { id: 0, type: 'system', content: '터미널이 초기화되었습니다.' },
-      ]);
-      setChatHistory([]);
+      resetTerminal();
       return;
     }
     
@@ -259,7 +255,7 @@ export const InteractiveTerminal = () => {
     } else {
       addLine('system', `알 수 없는 명령어: ${cmd}. /help로 확인하세요.`);
     }
-  }, [addLine, typeLines]);
+  }, [addLine, typeLines, resetTerminal]);
 
   const sendToAI = useCallback(async (message: string) => {
     if (rateLimited) {
@@ -269,11 +265,10 @@ export const InteractiveTerminal = () => {
     
     setIsLoading(true);
     
-    // Add thinking indicator
     const thinkingId = getNextId();
     setLines(prev => [...prev, { id: thinkingId, type: 'system', content: '생각 중...' }]);
     
-    const newChatHistory: ChatMessage[] = [...chatHistory, { role: 'user', content: message }];
+    const newChatHistory = [...chatHistory, { role: 'user' as const, content: message }];
     
     try {
       const response = await fetch('/api/chat', {
@@ -284,7 +279,6 @@ export const InteractiveTerminal = () => {
       
       const data = await response.json();
       
-      // Rate limit exceeded
       if (response.status === 429) {
         setRateLimited(true);
         setRemaining(0);
@@ -295,23 +289,18 @@ export const InteractiveTerminal = () => {
       }
       
       if (!response.ok) {
-        const errorData = data;
-        throw new Error(errorData?.error || `API error: ${response.status}`);
+        throw new Error(data?.error || `API error: ${response.status}`);
       }
       
       const aiResponse = data.response || '응답을 생성하지 못했어요.';
       
-      // Update remaining count
       if (typeof data.remaining === 'number') {
         setRemaining(data.remaining);
       }
       
-      // Remove thinking indicator
       setLines(prev => prev.filter(l => l.id !== thinkingId));
-      
       setChatHistory([...newChatHistory, { role: 'assistant', content: aiResponse }]);
       
-      // Type AI response
       const responseLines = aiResponse.split('\n');
       await typeLines(responseLines, 'assistant');
       
@@ -323,7 +312,7 @@ export const InteractiveTerminal = () => {
     }
     
     setIsLoading(false);
-  }, [chatHistory, fingerprint, rateLimited, getNextId, addLine, typeLines]);
+  }, [chatHistory, fingerprint, rateLimited, getNextId, addLine, typeLines, setLines, setChatHistory, setRemaining, setRateLimited, setIsLoading]);
 
   const handleSubmit = useCallback(async () => {
     const trimmed = input.trim();
@@ -347,7 +336,7 @@ export const InteractiveTerminal = () => {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-border bg-card">
+    <div className={`w-full max-w-3xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-border bg-card ${className}`}>
       {/* Terminal Header */}
       <div className="flex items-center gap-2 px-4 py-3 bg-secondary border-b border-border">
         <div className="flex gap-1.5">
@@ -359,7 +348,27 @@ export const InteractiveTerminal = () => {
           <Sparkles className="w-3.5 h-3.5 text-accent" />
           <span className="text-xs text-muted-foreground font-mono">jisub — AI Terminal</span>
         </div>
-        <div className="w-[52px]" /> {/* Spacer for centering */}
+        {mode === 'floating' && (
+          <div className="flex items-center gap-1">
+            {onMinimize && (
+              <button
+                onClick={onMinimize}
+                className="p-1.5 rounded-md hover:bg-foreground/10 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Minimize2 className="w-3.5 h-3.5" />
+              </button>
+            )}
+            {onClose && (
+              <button
+                onClick={onClose}
+                className="p-1.5 rounded-md hover:bg-foreground/10 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            )}
+          </div>
+        )}
+        {mode === 'inline' && <div className="w-[52px]" />}
       </div>
       
       {/* Terminal Body */}

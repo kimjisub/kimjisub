@@ -12,6 +12,7 @@ import { CommandPaletteWrapper } from '@/components/CommandPaletteWrapper';
 // CustomCursor disabled - 기본 커서 사용
 // import CustomCursor from '@/components/CustomCursor';
 import FloatingSocialSidebar from '@/components/FloatingSocialSidebar';
+import { FloatingTerminal } from '@/components/FloatingTerminal';
 import Footer from '@/components/Footer';
 import GrainOverlay from '@/components/GrainOverlay';
 import JsonLd from '@/components/JsonLd';
@@ -22,10 +23,12 @@ import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration';
 import { SectionNavigation } from '@/components/SectionNavigation';
 import { SkipToContent } from '@/components/SkipToContent';
 import SpotlightEffect from '@/components/SpotlightEffect';
+import { TerminalFAB } from '@/components/TerminalFAB';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import TopBar from '@/components/TopBar';
 import Preloader from '@/components/ui/Preloader';
 import { AppInfoProvider } from '@/contexts/AppInfoContext';
+import { TerminalProvider } from '@/context/TerminalContext';
 
 const inter = Inter({ 
 	subsets: ['latin'],
@@ -112,27 +115,31 @@ export default function RootLayout({
 			<AppInfoProvider>
 				<body className="font-sans bg-background text-foreground antialiased">
 					<ThemeProvider>
-						<SkipToContent />
-						<SectionNavigation />
-						<ServiceWorkerRegistration />
-						<CommandPaletteWrapper />
-						<KeyboardShortcutsWrapper />
-						<Preloader />
-						<GrainOverlay />
-						<SpotlightEffect />
-						<ScrollProgressIndicator />
-						<BackToTop />
-						{/* <CustomCursor /> */}
-						<FloatingSocialSidebar />
-						<div className="min-h-screen flex flex-col">
-							<TopBar />
-							<main id="main-content" className="flex-grow pt-14" tabIndex={-1}>
-								<AnimatePresenceWrapper>
-									{children}
-								</AnimatePresenceWrapper>
-							</main>
-							<Footer />
-						</div>
+						<TerminalProvider>
+							<SkipToContent />
+							<SectionNavigation />
+							<ServiceWorkerRegistration />
+							<CommandPaletteWrapper />
+							<KeyboardShortcutsWrapper />
+							<Preloader />
+							<GrainOverlay />
+							<SpotlightEffect />
+							<ScrollProgressIndicator />
+							<BackToTop />
+							{/* <CustomCursor /> */}
+							<FloatingSocialSidebar />
+							<FloatingTerminal />
+							<TerminalFAB />
+							<div className="min-h-screen flex flex-col">
+								<TopBar />
+								<main id="main-content" className="flex-grow pt-14" tabIndex={-1}>
+									<AnimatePresenceWrapper>
+										{children}
+									</AnimatePresenceWrapper>
+								</main>
+								<Footer />
+							</div>
+						</TerminalProvider>
 					</ThemeProvider>
 				</body>
 			</AppInfoProvider>
