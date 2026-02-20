@@ -16,11 +16,13 @@ const CONTENT_DIR = path.join(__dirname, '../src/content');
 const PUBLIC_CONTENT_DIR = path.join(__dirname, '../public/content');
 
 // ============================================
-// Assets 복사 (src/content/**/assets → public/content/**/assets)
+// 미디어 파일 복사 (assets 폴더 + cover.* + icon.*)
 // ============================================
-function copyAssetsToPublic(): { copied: number; totalFiles: number } {
-  let copied = 0;
-  let totalFiles = 0;
+const MEDIA_EXTENSIONS = ['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg', '.mp4', '.mov', '.webm'];
+
+function copyMediaToPublic(): { folders: number; files: number } {
+  let folders = 0;
+  let files = 0;
 
   // 기존 public/content 정리 (clean build)
   if (fs.existsSync(PUBLIC_CONTENT_DIR)) {
@@ -39,22 +41,38 @@ function copyAssetsToPublic(): { copied: number; totalFiles: number } {
       .map(d => d.name);
 
     for (const slug of slugs) {
-      const assetsDir = path.join(categoryDir, slug, 'assets');
-      if (!fs.existsSync(assetsDir)) continue;
+      const slugDir = path.join(categoryDir, slug);
+      const destSlugDir = path.join(PUBLIC_CONTENT_DIR, category, slug);
+      let slugFileCount = 0;
 
-      const destDir = path.join(PUBLIC_CONTENT_DIR, category, slug, 'assets');
-      fs.mkdirSync(destDir, { recursive: true });
+      // 1. 루트 레벨 미디어 파일 복사 (cover.*, icon.* 등)
+      const rootFiles = fs.readdirSync(slugDir, { withFileTypes: true })
+        .filter(f => f.isFile() && MEDIA_EXTENSIONS.includes(path.extname(f.name).toLowerCase()));
+      
+      if (rootFiles.length > 0) {
+        fs.mkdirSync(destSlugDir, { recursive: true });
+        for (const file of rootFiles) {
+          fs.copyFileSync(path.join(slugDir, file.name), path.join(destSlugDir, file.name));
+          slugFileCount++;
+        }
+      }
 
-      // assets 폴더 내 모든 파일 복사 (재귀)
-      const fileCount = copyDirRecursive(assetsDir, destDir);
-      if (fileCount > 0) {
-        copied++;
-        totalFiles += fileCount;
+      // 2. assets 폴더 복사
+      const assetsDir = path.join(slugDir, 'assets');
+      if (fs.existsSync(assetsDir)) {
+        const destAssetsDir = path.join(destSlugDir, 'assets');
+        fs.mkdirSync(destAssetsDir, { recursive: true });
+        slugFileCount += copyDirRecursive(assetsDir, destAssetsDir);
+      }
+
+      if (slugFileCount > 0) {
+        folders++;
+        files += slugFileCount;
       }
     }
   }
 
-  return { copied, totalFiles };
+  return { folders, files };
 }
 
 function copyDirRecursive(src: string, dest: string): number {
@@ -272,8 +290,8 @@ async function main() {
 
   // 1. Assets 복사 (정적 서빙용)
   console.log('📁 Copying assets to public/content...');
-  const { copied, totalFiles } = copyAssetsToPublic();
-  console.log(`   ✅ Copied ${totalFiles} files from ${copied} asset folders\n`);
+  const { folders, files } = copyMediaToPublic();
+  console.log(`   ✅ Copied ${files} media files from ${folders} content folders\n`);
 
   // 2. 관계 그래프 빌드
   console.log('🔗 Building relation graph...');
