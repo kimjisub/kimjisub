@@ -131,8 +131,11 @@ async function downloadImage(
         response.pipe(file);
         file.on('finish', () => {
           file.close();
+          
+          // 파일 타입 감지 후 확장자 수정
+          const correctedPath = correctFileExtension(destPath);
           downloadSuccess++;
-          resolve(true);
+          resolve(correctedPath !== null);
         });
       }).on('error', () => {
         downloadFail++;
@@ -142,6 +145,32 @@ async function downloadImage(
 
     request(url);
   });
+}
+
+// 실제 파일 매직 바이트로 타입 감지 후 확장자 수정
+function correctFileExtension(filePath: string): string | null {
+  try {
+    const buffer = Buffer.alloc(8);
+    const fd = fs.openSync(filePath, 'r');
+    fs.readSync(fd, buffer, 0, 8, 0);
+    fs.closeSync(fd);
+    
+    const hex = buffer.toString('hex').toUpperCase();
+    
+    // PDF: %PDF (25 50 44 46)
+    if (hex.startsWith('25504446')) {
+      const newPath = filePath.replace(/\.[^.]+$/, '.pdf');
+      if (newPath !== filePath) {
+        fs.renameSync(filePath, newPath);
+        console.log(`    📄 PDF 감지: ${path.basename(filePath)} → ${path.basename(newPath)}`);
+        return newPath;
+      }
+    }
+    
+    return filePath;
+  } catch {
+    return filePath;
+  }
 }
 
 // ─── Notion Data Extraction ──────────────────────────────────────────────────
@@ -460,23 +489,41 @@ function generateMetaTs(
 
 // ─── MDX Generation ──────────────────────────────────────────────────────────
 
-function generateMdx(markdown: string, images: ImageInfo[]): string {
+function generateMdx(markdown: string, images: ImageInfo[], assetsDir: string): string {
   const imports: string[] = [];
   let content = markdown;
+  let hasImages = false;
 
-  if (images.length > 0) {
-    imports.push(`import Image from 'next/image';`);
+  // 이미지/파일 처리
+  for (const img of images) {
+    // 실제 파일 확장자 확인 (PDF로 변환됐을 수 있음)
+    let actualFilename = img.filename;
+    const baseName = img.filename.replace(/\.[^.]+$/, '');
+    
+    // PDF로 변환됐는지 확인
+    const pdfPath = path.join(assetsDir, baseName + '.pdf');
+    if (fs.existsSync(pdfPath)) {
+      actualFilename = baseName + '.pdf';
+    }
+    
+    const placeholder = `{/* IMAGE: ${img.filename} */}`;
+    
+    if (actualFilename.endsWith('.pdf')) {
+      // PDF는 다운로드 링크로
+      const linkMd = `[📄 Download PDF](./assets/${actualFilename})`;
+      content = content.replace(placeholder, linkMd);
+    } else {
+      // 이미지는 Image 컴포넌트로
+      hasImages = true;
+      const varName = `img_${actualFilename.replace(/[^a-z0-9]/gi, '_')}`;
+      imports.push(`import ${varName} from './assets/${actualFilename}';`);
+      const jsxImage = `<Image src={${varName}} alt="" />`;
+      content = content.replace(placeholder, jsxImage);
+    }
   }
 
-  // 이미지 import 생성
-  for (const img of images) {
-    const varName = `img_${img.filename.replace(/[^a-z0-9]/gi, '_')}`;
-    imports.push(`import ${varName} from './assets/${img.filename}';`);
-    
-    // 플레이스홀더를 JSX로 변환
-    const placeholder = `{/* IMAGE: ${img.filename} */}`;
-    const jsxImage = `<Image src={${varName}} alt="" />`;
-    content = content.replace(placeholder, jsxImage);
+  if (hasImages) {
+    imports.unshift(`import Image from 'next/image';`);
   }
 
   if (imports.length === 0) {
@@ -603,7 +650,7 @@ async function migrateCategory(
     fs.writeFileSync(path.join(itemDir, 'meta.tsx'), metaTsContent);
 
     // MDX 생성
-    const mdxContent = generateMdx(markdown, downloadedImages);
+    const mdxContent = generateMdx(markdown, downloadedImages, assetsDir);
     fs.writeFileSync(path.join(itemDir, 'index.mdx'), mdxContent);
 
     // 인덱스에 추가 (기본 정보만)

@@ -1,7 +1,7 @@
 {
-  "id": "hello-new-world",
+  "id": "hello-new-world-19",
   "notionId": "deda62c8-0d3d-4805-bf5f-b156f179ef68",
-  "title": "Hello New() World",
+  "title": "Hello New() World 19",
   "기관": [
     "신세계아이엔씨",
     "함께일하는재단"
@@ -15,7 +15,7 @@
   ],
   "날짜": "2019-07-19",
   "설명": "신세계 주최 해커톤",
-  "이름": "Hello New() World",
+  "이름": "Hello New() World 19",
   "iconUrl": "./assets/icon.png",
   "coverUrl": "./assets/cover.jpg"
 }

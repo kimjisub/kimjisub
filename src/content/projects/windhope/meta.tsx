@@ -21,7 +21,7 @@ export const meta = {
   ],
   '갤러리에서 보기': false,
   '대회 및 수료': [
-    'hello-new-world',
+    'hello-new-world-19',
   ],
   '이름': 'WindHope',
 };

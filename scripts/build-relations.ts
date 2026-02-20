@@ -99,9 +99,9 @@ interface ProjectMeta {
   id: string;
   slug: string;
   title: string;
-  techSkills?: string[];
-  languages?: string[];
-  relatedCareers?: string[];
+  '주요 기술'?: string[];
+  '프로그래밍 언어'?: string[];
+  '대회 및 수료'?: string[];
   [key: string]: unknown;
 }
 
@@ -177,39 +177,36 @@ function buildRelationGraph(projects: ProjectMeta[]): RelationGraph {
   for (const project of projects) {
     const projectSlug = project.slug;
 
-    // techSkills → skillToProjects
-    if (project.techSkills) {
-      for (const skillSlug of project.techSkills) {
-        if (!skillToProjects[skillSlug]) {
-          skillToProjects[skillSlug] = [];
-        }
-        if (!skillToProjects[skillSlug].includes(projectSlug)) {
-          skillToProjects[skillSlug].push(projectSlug);
-        }
+    // 주요 기술 → skillToProjects
+    const techSkills = project['주요 기술'] || [];
+    for (const skillSlug of techSkills) {
+      if (!skillToProjects[skillSlug]) {
+        skillToProjects[skillSlug] = [];
+      }
+      if (!skillToProjects[skillSlug].includes(projectSlug)) {
+        skillToProjects[skillSlug].push(projectSlug);
       }
     }
 
-    // languages → languageToProjects
-    if (project.languages) {
-      for (const langSlug of project.languages) {
-        if (!languageToProjects[langSlug]) {
-          languageToProjects[langSlug] = [];
-        }
-        if (!languageToProjects[langSlug].includes(projectSlug)) {
-          languageToProjects[langSlug].push(projectSlug);
-        }
+    // 프로그래밍 언어 → languageToProjects
+    const languages = project['프로그래밍 언어'] || [];
+    for (const langSlug of languages) {
+      if (!languageToProjects[langSlug]) {
+        languageToProjects[langSlug] = [];
+      }
+      if (!languageToProjects[langSlug].includes(projectSlug)) {
+        languageToProjects[langSlug].push(projectSlug);
       }
     }
 
-    // relatedCareers → careerToProjects
-    if (project.relatedCareers) {
-      for (const careerSlug of project.relatedCareers) {
-        if (!careerToProjects[careerSlug]) {
-          careerToProjects[careerSlug] = [];
-        }
-        if (!careerToProjects[careerSlug].includes(projectSlug)) {
-          careerToProjects[careerSlug].push(projectSlug);
-        }
+    // 대회 및 수료 → careerToProjects
+    const relatedCareers = project['대회 및 수료'] || [];
+    for (const careerSlug of relatedCareers) {
+      if (!careerToProjects[careerSlug]) {
+        careerToProjects[careerSlug] = [];
+      }
+      if (!careerToProjects[careerSlug].includes(projectSlug)) {
+        careerToProjects[careerSlug].push(projectSlug);
       }
     }
   }

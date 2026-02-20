@@ -2,9 +2,9 @@ import icon from './assets/icon.png';
 import cover from './assets/cover.jpg';
 
 export const meta = {
-  id: 'hello-new-world',
+  id: 'hello-new-world-19',
   notionId: 'deda62c8-0d3d-4805-bf5f-b156f179ef68',
-  title: 'Hello New() World',
+  title: 'Hello New() World 19',
   '관련된 프로젝트': [
     'windhope',
   ],
@@ -23,7 +23,7 @@ export const meta = {
   '날짜': '2019-07-19',
   '설명': '신세계 주최 해커톤',
   '수상 순위': '2위',
-  '이름': 'Hello New() World',
+  '이름': 'Hello New() World 19',
   '맡은 업무': [
     '개발',
     '기획',
