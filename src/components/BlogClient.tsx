@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import type { BlogPost } from '@/types/blog';
@@ -202,7 +203,20 @@ export default function BlogClient({ posts }: BlogClientProps) {
                 transition={{ duration: 0.25, ease: 'easeOut' }}
               >
                 <Link href={`/blog/${slug}`} className="block group">
-                  <article className="p-6 rounded-xl card-hover">
+                  <article className="rounded-xl card-hover overflow-hidden">
+                    {/* Cover Image */}
+                    {meta.image && (
+                      <div className="relative aspect-[1200/630] overflow-hidden">
+                        <Image
+                          src={meta.image}
+                          alt={meta.title}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 768px) 100vw, 800px"
+                        />
+                      </div>
+                    )}
+                    <div className="p-6">
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
                         <h2 className="font-heading text-lg font-semibold text-foreground mb-2 group-hover:text-accent transition-colors duration-300">
@@ -247,6 +261,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
                           {meta.date}
                         </time>
                       )}
+                    </div>
                     </div>
                   </article>
                 </Link>
