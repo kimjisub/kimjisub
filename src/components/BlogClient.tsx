@@ -203,65 +203,52 @@ export default function BlogClient({ posts }: BlogClientProps) {
                 transition={{ duration: 0.25, ease: 'easeOut' }}
               >
                 <Link href={`/blog/${slug}`} className="block group">
-                  <article className="rounded-xl card-hover overflow-hidden">
+                  <article className="rounded-xl card-hover overflow-hidden flex flex-col sm:flex-row">
                     {/* Cover Image */}
                     {meta.image && (
-                      <div className="relative aspect-[1200/630] overflow-hidden">
+                      <div className="relative w-full sm:w-48 md:w-56 shrink-0 aspect-[1200/630] sm:aspect-auto sm:h-32 md:h-36 overflow-hidden">
                         <Image
                           src={meta.image}
                           alt={meta.title}
                           fill
                           className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          sizes="(max-width: 768px) 100vw, 800px"
+                          sizes="(max-width: 640px) 100vw, 224px"
                         />
                       </div>
                     )}
-                    <div className="p-6">
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <h2 className="font-heading text-lg font-semibold text-foreground mb-2 group-hover:text-accent transition-colors duration-300">
-                          {meta.title}
-                        </h2>
-                        {meta.description && (
-                          <p className="text-muted-foreground text-sm line-clamp-2 mb-3">
-                            {meta.description}
-                          </p>
-                        )}
-                        {meta.tags && meta.tags.length > 0 && (
-                          <div className="flex flex-wrap gap-2">
-                            {meta.tags.slice(0, 3).map((tag) => (
-                              <span
-                                key={tag}
-                                role="button"
-                                tabIndex={0}
-                                onClick={(e) => {
-                                  e.preventDefault();
-                                  setSelectedTag(selectedTag === tag ? null : tag);
-                                }}
-                                onKeyDown={(e) => {
-                                  if (e.key === 'Enter' || e.key === ' ') {
-                                    e.preventDefault();
-                                    setSelectedTag(selectedTag === tag ? null : tag);
-                                  }
-                                }}
-                                className={`px-2 py-0.5 text-xs rounded-full cursor-pointer transition-all duration-200 ${
-                                  selectedTag === tag
-                                    ? 'bg-accent text-accent-foreground'
-                                    : 'bg-accent/10 text-accent hover:bg-accent/20'
-                                }`}
-                              >
-                                #{tag}
-                              </span>
-                            ))}
+                    <div className="flex-1 p-4 sm:p-5 flex flex-col justify-center">
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="flex-1">
+                          <h2 className="font-heading text-base sm:text-lg font-semibold text-foreground mb-1 group-hover:text-accent transition-colors duration-300 line-clamp-1">
+                            {meta.title}
+                          </h2>
+                          {meta.description && (
+                            <p className="text-muted-foreground text-sm line-clamp-2 mb-2">
+                              {meta.description}
+                            </p>
+                          )}
+                          <div className="flex items-center gap-2 flex-wrap">
+                            {meta.date && (
+                              <time className="text-xs text-muted-foreground">
+                                {meta.date}
+                              </time>
+                            )}
+                            {meta.tags && meta.tags.length > 0 && (
+                              <>
+                                <span className="text-muted-foreground/40">·</span>
+                                {meta.tags.slice(0, 2).map((tag) => (
+                                  <span
+                                    key={tag}
+                                    className="text-xs text-muted-foreground"
+                                  >
+                                    #{tag}
+                                  </span>
+                                ))}
+                              </>
+                            )}
                           </div>
-                        )}
+                        </div>
                       </div>
-                      {meta.date && (
-                        <time className="text-sm text-muted-foreground whitespace-nowrap">
-                          {meta.date}
-                        </time>
-                      )}
-                    </div>
                     </div>
                   </article>
                 </Link>
