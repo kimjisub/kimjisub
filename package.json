@@ -10,7 +10,7 @@
     "prebuild": "npx tsx scripts/codegen",
     "build": "next build",
     "start": "next start",
-    "build-and-start": "yarn build && yarn start",
+    "build-and-start": "pnpm build && pnpm start",
     "lint": "next lint",
     "icons": "node scripts/simple-icon-badge.js | pbcopy",
     "postinstall": "prisma generate"
