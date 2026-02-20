@@ -9,7 +9,7 @@ url: ""
 
 유튜브 댓글을 이용한 확장 프로그램
 
-![image](./assets/KakaoTalk_Photo_2023-11-22-08-03-37.png)
+![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/13df2a02-8164-4615-9a32-32a6776d759a/KakaoTalk_Photo_2023-11-22-08-03-37.png)
 
 ## 기능
 

@@ -9,13 +9,13 @@ url: "https://www.eyevacs.com"
 
 아파트 통합 관리 솔루션
 
-![image](./assets/Untitled.png)
+![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/8e545173-caef-4621-8508-be31395770c2/Untitled.png)
 
-![image](./assets/Untitled.png)
+![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/0b96d999-1044-40af-9ac6-66a5beb52e77/Untitled.png)
 
-![image](./assets/Untitled.png)
+![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/23dc8135-6e45-4310-a314-d34b08184de3/Untitled.png)
 
-![image](./assets/Untitled.png)
+![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/174731af-8043-40ef-8cc9-7d1f36c6760e/Untitled.png)
 
 - React Native Codepush 적용을 통해 배포 시간 1000%가량 단축
 - Gitflow 적용을 통한 개발 흐름에 중단되지 않는 hotfix 등의 전략 적용

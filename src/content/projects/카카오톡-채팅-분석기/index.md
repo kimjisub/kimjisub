@@ -26,4 +26,4 @@ url: ""
 ### 실적
 
 - 영재교육원 개인주제탐구발표대회 금상 수상
-![image](./assets/20151116_151950.jpg)
+![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/7a67de04-b2f2-4aa6-b7f7-25ad77ec6540/20151116_151950.jpg)

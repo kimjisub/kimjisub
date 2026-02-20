@@ -9,7 +9,7 @@ url: ""
 
 디미고 학생을 위한 전산 서비스
 
-![image](./assets/SE-2b613e31-19bd-4540-a5d3-edc525c385e3.png)
+![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/ea46c83d-ecd6-4e01-aff6-d1c056df514d/SE-2b613e31-19bd-4540-a5d3-edc525c385e3.png)
 
 - 600여명의 한국디지털미디어고등학교 학생들을 위한 전산 서비스 제공
 - 주말 잔류, 지도일지, 급식 신청 등 학교 생활에 필요한 기능 포함
