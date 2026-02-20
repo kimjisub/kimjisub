@@ -13,6 +13,69 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 const CONTENT_DIR = path.join(__dirname, '../src/content');
+const PUBLIC_CONTENT_DIR = path.join(__dirname, '../public/content');
+
+// ============================================
+// Assets 복사 (src/content/**/assets → public/content/**/assets)
+// ============================================
+function copyAssetsToPublic(): { copied: number; totalFiles: number } {
+  let copied = 0;
+  let totalFiles = 0;
+
+  // 기존 public/content 정리 (clean build)
+  if (fs.existsSync(PUBLIC_CONTENT_DIR)) {
+    fs.rmSync(PUBLIC_CONTENT_DIR, { recursive: true });
+  }
+  fs.mkdirSync(PUBLIC_CONTENT_DIR, { recursive: true });
+
+  const categories = ['careers', 'projects', 'skills'];
+
+  for (const category of categories) {
+    const categoryDir = path.join(CONTENT_DIR, category);
+    if (!fs.existsSync(categoryDir)) continue;
+
+    const slugs = fs.readdirSync(categoryDir, { withFileTypes: true })
+      .filter(d => d.isDirectory() && !d.name.startsWith('_'))
+      .map(d => d.name);
+
+    for (const slug of slugs) {
+      const assetsDir = path.join(categoryDir, slug, 'assets');
+      if (!fs.existsSync(assetsDir)) continue;
+
+      const destDir = path.join(PUBLIC_CONTENT_DIR, category, slug, 'assets');
+      fs.mkdirSync(destDir, { recursive: true });
+
+      // assets 폴더 내 모든 파일 복사 (재귀)
+      const fileCount = copyDirRecursive(assetsDir, destDir);
+      if (fileCount > 0) {
+        copied++;
+        totalFiles += fileCount;
+      }
+    }
+  }
+
+  return { copied, totalFiles };
+}
+
+function copyDirRecursive(src: string, dest: string): number {
+  let count = 0;
+  const entries = fs.readdirSync(src, { withFileTypes: true });
+
+  for (const entry of entries) {
+    const srcPath = path.join(src, entry.name);
+    const destPath = path.join(dest, entry.name);
+
+    if (entry.isDirectory()) {
+      fs.mkdirSync(destPath, { recursive: true });
+      count += copyDirRecursive(srcPath, destPath);
+    } else {
+      fs.copyFileSync(srcPath, destPath);
+      count++;
+    }
+  }
+
+  return count;
+}
 
 interface ProjectMeta {
   id: string;
@@ -207,6 +270,12 @@ function updateCareerMetas(graph: RelationGraph): number {
 async function main() {
   console.log('🔧 Prebuild starting...\n');
 
+  // 1. Assets 복사 (정적 서빙용)
+  console.log('📁 Copying assets to public/content...');
+  const { copied, totalFiles } = copyAssetsToPublic();
+  console.log(`   ✅ Copied ${totalFiles} files from ${copied} asset folders\n`);
+
+  // 2. 관계 그래프 빌드
   console.log('🔗 Building relation graph...');
 
   // 1. 모든 프로젝트 로드

@@ -32,6 +32,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# generated assets (copied from src/content)
+/public/content
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
