@@ -1,11 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Serverless Function 번들에서 assets 폴더 제외 (이미지/미디어)
+  // Serverless Function 번들에서 불필요한 파일 제외
   outputFileTracingExcludes: {
     '*': [
-      './src/content/**/assets/**',
+      // 콘텐츠 assets (이미지/미디어)
+      './src/content/**/*.{png,jpg,jpeg,gif,webp,mp4,mov,svg}',
+      './public/content/**/*',
+      // 무거운 native 모듈
+      './node_modules/canvas/**/*',
+      './node_modules/sharp/**/*',
+      // 기타
+      './.git/**/*',
     ],
   },
+  // canvas를 서버 번들에서 제외 (react-pdf용, 클라이언트만 사용)
+  serverExternalPackages: ['canvas'],
   // Next.js 16: Turbopack configuration
   turbopack: {
     rules: {

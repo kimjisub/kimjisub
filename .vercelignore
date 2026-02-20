@@ -1,0 +1,10 @@
+# Git
+.git
+
+# Development
+.env.local
+.env.development
+
+# Large/unnecessary files
+*.log
+*.tsbuildinfo
