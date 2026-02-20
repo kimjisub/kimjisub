@@ -3,6 +3,10 @@ const nextConfig = {
   // Serverless Function 번들에서 불필요한 파일 제외
   outputFileTracingExcludes: {
     '*': [
+      // pnpm store (Vercel 빌드 시 생성됨 - 절대 포함되면 안 됨!)
+      './.pnpm-store/**/*',
+      '.pnpm-store/**/*',
+      './node_modules/.pnpm-store/**/*',
       // 콘텐츠 assets (이미지/미디어)
       './src/content/**/*.{png,jpg,jpeg,gif,webp,mp4,mov,svg}',
       './public/content/**/*',
