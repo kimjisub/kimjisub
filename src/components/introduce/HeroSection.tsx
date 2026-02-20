@@ -2,6 +2,7 @@
 
 import { useCallback,useState } from 'react';
 import { AnimatePresence, motion, type Variants } from 'framer-motion';
+import Link from 'next/link';
 
 import EasterEggs from '@/components/EasterEggs';
 import { GradientText } from '@/components/GradientText';
@@ -10,7 +11,6 @@ import { MeshGradientBackground } from '@/components/MeshGradientBackground';
 import { ParallaxBackground } from '@/components/ParallaxBackground';
 import { ParticleBackground } from '@/components/ParticleBackground';
 import { RoughHighlight } from '@/components/RoughHighlight';
-import { TextScramble } from '@/components/TextScramble';
 import { TiltImage } from '@/components/TiltImage';
 import { TypewriterEffect } from '@/components/TypewriterEffect';
 
@@ -64,12 +64,6 @@ export const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-transparent" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 py-24">
-        {/*
-         * Grid layout:
-         *   mobile  → single column (image → name → role → desc → links)
-         *   desktop → 2 columns ([image | text items stacked])
-         * staggerChildren animates each item sequentially on viewport entry.
-         */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-[auto_1fr] items-start gap-6 md:gap-x-12 md:gap-y-0"
           variants={heroContainerVariants}
@@ -134,7 +128,7 @@ export const HeroSection = () => {
           <motion.div variants={heroItemVariants}>
             <h1 className="text-4xl md:text-5xl font-medium mb-4 tracking-tight">
               <GradientText duration={5}>
-                <TextScramble text="김지섭" />
+                김지섭
               </GradientText>
             </h1>
           </motion.div>
@@ -160,15 +154,19 @@ export const HeroSection = () => {
           {/* ── Description ── */}
           <motion.div variants={heroItemVariants}>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed max-w-xl">
-              <RoughHighlight type="underline" delay={600} animationDuration={600}>
-                Alpaon
-              </RoughHighlight>{' '}
+              <Link href="https://alpaon.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                <RoughHighlight type="box" delay={600} animationDuration={600} strokeWidth={1.5} padding={3}>
+                  Alpaon
+                </RoughHighlight>
+              </Link>{' '}
               CTO.{' '}
-              <RoughHighlight type="underline" delay={800} animationDuration={600}>
-                Candid
-              </RoughHighlight>{' '}
+              <Link href="https://teamcandid.kr" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                <RoughHighlight type="underline" delay={800} animationDuration={600}>
+                  Candid
+                </RoughHighlight>
+              </Link>{' '}
               <RoughHighlight type="highlight" delay={1000} animationDuration={800}>
-                <TextScramble text="Product Engineer" frameDelay={2} />
+                Product Engineer
               </RoughHighlight>.<br />
               소프트웨어부터 펌웨어, 인프라까지 직접 만들고 운영합니다.
             </p>

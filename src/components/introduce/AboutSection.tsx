@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import Link from 'next/link';
 
 import { RoughHighlight } from '@/components/RoughHighlight';
 
@@ -33,19 +34,25 @@ export const AboutSection = () => {
                 500만 다운로드
               </RoughHighlight>를 넘기면서 개발을 시작했습니다. 
               중학교 때였고, 그게{' '}
-              <RoughHighlight type="box" delay={400} strokeWidth={1.5} padding={3}>
-                UniPad
-              </RoughHighlight>입니다.
+              <Link href="/projects/unipad" className="hover:text-accent transition-colors">
+                <RoughHighlight type="box" delay={400} strokeWidth={1.5} padding={3}>
+                  UniPad
+                </RoughHighlight>
+              </Link>입니다.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
               지금은 두 회사에서 일합니다.{' '}
-              <RoughHighlight type="underline" delay={600}>
-                Alpaon
-              </RoughHighlight>에서는 공동창업자이자 CTO로 
+              <Link href="https://alpaon.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                <RoughHighlight type="underline" delay={600}>
+                  Alpaon
+                </RoughHighlight>
+              </Link>에서는 공동창업자이자 CTO로 
               산업용 IoT 제품을 만들고,{' '}
-              <RoughHighlight type="underline" delay={800}>
-                Candid
-              </RoughHighlight>에서는 유일한 엔지니어로 
+              <Link href="https://teamcandid.kr" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                <RoughHighlight type="underline" delay={800}>
+                  Candid
+                </RoughHighlight>
+              </Link>에서는 유일한 엔지니어로 
               채용 시스템을 개발합니다.
             </p>
             <p className="text-muted-foreground leading-relaxed">
@@ -60,7 +67,10 @@ export const AboutSection = () => {
             transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             <p className="text-muted-foreground leading-relaxed mb-6">
-              한국외대 컴퓨터공학과 재학 중입니다. 2026년 2월에 졸업 예정.
+              <RoughHighlight type="circle" delay={100} strokeWidth={1.5} padding={5}>
+                한국외대
+              </RoughHighlight>{' '}
+              컴퓨터공학과 재학 중입니다. 2026년 2월에 졸업 예정.
               학교 다니면서 계속 일했습니다.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">

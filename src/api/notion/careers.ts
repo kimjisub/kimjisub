@@ -18,6 +18,7 @@ export type CareerT = {
   cover: StaticImageData | null;
   relatedProjects: string[];
   awardsAndCertifications: string;
+  awardRank: string;
   institutions: { name: string; color: NotionColor }[];
   importance: string;
   url: string;
@@ -47,7 +48,8 @@ function loadCareers(): CareerT[] {
       iconEmoji: m.iconEmoji || '',
       cover: m.cover || null,
       relatedProjects: m.relatedProjects || [],
-      awardsAndCertifications: m['수상 및 자격증'] || '',
+      awardsAndCertifications: m['수상 및 자격증'] || m['수상 및 수료'] || '',
+      awardRank: m['수상 순위'] || '',
       institutions: (m['기관'] || []).map((name: string) => ({
         name,
         color: 'default' as NotionColor,
@@ -60,7 +62,7 @@ function loadCareers(): CareerT[] {
       })),
       date: {
         start: m['날짜'] ? parseISO(m['날짜']) : undefined,
-        end: undefined,
+        end: m['종료일'] ? parseISO(m['종료일']) : undefined,
       },
       assignedTasks: (m['맡은 업무'] || []).map((name: string) => ({
         name,
@@ -69,8 +71,16 @@ function loadCareers(): CareerT[] {
     });
   }
   
-  // 날짜 기준 내림차순 정렬
+  // 정렬: 진행 중(end 없음) 먼저, 그 다음 시작일 내림차순
   careers.sort((a, b) => {
+    const aOngoing = !a.date.end;
+    const bOngoing = !b.date.end;
+    
+    // 진행 중인 것 먼저
+    if (aOngoing && !bOngoing) return -1;
+    if (!aOngoing && bOngoing) return 1;
+    
+    // 둘 다 진행 중이거나 둘 다 완료면 시작일 내림차순
     const aDate = a.date.start?.getTime() || 0;
     const bDate = b.date.start?.getTime() || 0;
     return bDate - aDate;

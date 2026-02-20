@@ -10,6 +10,7 @@ export const meta: CareerMeta = {
   ],
   visible: true,
   '날짜': '2017-03-02',
+  '종료일': '2017-03-02',
   '이름': '한국디지털미디어고등학교 장학',
   cover,
 };

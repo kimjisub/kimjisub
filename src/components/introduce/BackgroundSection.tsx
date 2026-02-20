@@ -1,5 +1,8 @@
 'use client';
 
+import Link from 'next/link';
+
+import { RoughHighlight } from '@/components/RoughHighlight';
 import { SectionReveal, SectionRevealItem } from '@/components/SectionReveal';
 
 export const BackgroundSection = () => {
@@ -17,11 +20,21 @@ export const BackgroundSection = () => {
             <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-6">Education</h3>
             <ul className="space-y-4 text-sm">
               <li>
-                <p className="text-foreground">한국외국어대학교 컴퓨터공학과</p>
+                <p className="text-foreground">
+                  <RoughHighlight type="circle" delay={0} strokeWidth={1.5} padding={4}>
+                    한국외국어대학교
+                  </RoughHighlight>{' '}
+                  컴퓨터공학과
+                </p>
                 <p className="text-muted-foreground">2020 — 2026 (졸업 예정)</p>
               </li>
               <li>
-                <p className="text-foreground">한국디지털미디어고등학교 해킹방어과</p>
+                <p className="text-foreground">
+                  <RoughHighlight type="circle" delay={200} strokeWidth={1.5} padding={4}>
+                    한국디지털미디어고등학교
+                  </RoughHighlight>{' '}
+                  해킹방어과
+                </p>
                 <p className="text-muted-foreground">2017 — 2019</p>
               </li>
             </ul>
@@ -31,11 +44,21 @@ export const BackgroundSection = () => {
             <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-6">Recognition</h3>
             <ul className="space-y-4 text-sm">
               <li>
-                <p className="text-foreground">정보올림피아드 금상</p>
+                <p className="text-foreground">
+                  <RoughHighlight type="highlight" delay={100}>
+                    정보올림피아드 금상
+                  </RoughHighlight>
+                </p>
                 <p className="text-muted-foreground">2017</p>
               </li>
               <li>
-                <p className="text-foreground">해커톤 및 창업 대회 18회+ 수상</p>
+                <p className="text-foreground">
+                  <Link href="/careers" className="hover:text-accent transition-colors">
+                    <RoughHighlight type="box" delay={300} strokeWidth={1.5} padding={3}>
+                      해커톤 및 창업 대회 18회+ 수상
+                    </RoughHighlight>
+                  </Link>
+                </p>
                 <p className="text-muted-foreground">2017 — 2023</p>
               </li>
             </ul>

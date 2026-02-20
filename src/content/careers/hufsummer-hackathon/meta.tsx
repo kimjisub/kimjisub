@@ -21,6 +21,7 @@ export const meta: CareerMeta = {
     '해커톤',
   ],
   '날짜': '2023-06-23',
+  '종료일': '2023-06-23',
   '수상 순위': '1위',
   '이름': 'HUFSummer Hackathon',
   '맡은 업무': [

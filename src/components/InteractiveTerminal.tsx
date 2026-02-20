@@ -347,17 +347,17 @@ export const InteractiveTerminal = () => {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-border">
+    <div className="w-full max-w-3xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-border bg-card">
       {/* Terminal Header */}
-      <div className="flex items-center gap-2 px-4 py-3 bg-zinc-900 border-b border-zinc-800">
+      <div className="flex items-center gap-2 px-4 py-3 bg-secondary border-b border-border">
         <div className="flex gap-1.5">
           <div className="w-3 h-3 rounded-full bg-red-500/80" />
           <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
           <div className="w-3 h-3 rounded-full bg-green-500/80" />
         </div>
         <div className="flex-1 flex items-center justify-center gap-2">
-          <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
-          <span className="text-xs text-zinc-400 font-mono">jisub — AI Terminal</span>
+          <Sparkles className="w-3.5 h-3.5 text-accent" />
+          <span className="text-xs text-muted-foreground font-mono">jisub — AI Terminal</span>
         </div>
         <div className="w-[52px]" /> {/* Spacer for centering */}
       </div>
@@ -365,7 +365,7 @@ export const InteractiveTerminal = () => {
       {/* Terminal Body */}
       <div 
         ref={terminalRef}
-        className="bg-zinc-950 p-4 h-[400px] overflow-y-auto font-mono text-sm"
+        className="bg-background p-4 h-[400px] overflow-y-auto font-mono text-sm"
         style={{ scrollBehavior: 'smooth' }}
         onClick={() => inputRef.current?.focus()}
       >
@@ -380,28 +380,28 @@ export const InteractiveTerminal = () => {
             >
               {line.type === 'user' && (
                 <div className="flex items-start gap-2">
-                  <span className="text-blue-400 shrink-0">❯</span>
-                  <span className="text-zinc-100">{line.content}</span>
+                  <span className="text-blue-500 dark:text-blue-400 shrink-0">❯</span>
+                  <span className="text-foreground">{line.content}</span>
                 </div>
               )}
               {line.type === 'assistant' && (
                 <div className="flex items-start gap-2">
-                  <span className="text-emerald-400 shrink-0">◆</span>
-                  <span className="text-zinc-300 whitespace-pre-wrap">
+                  <span className="text-accent shrink-0">◆</span>
+                  <span className="text-foreground/80 whitespace-pre-wrap">
                     {line.content}
                     {line.isTyping && (
-                      <span className="inline-block w-1.5 h-4 bg-emerald-400 ml-0.5 animate-pulse" />
+                      <span className="inline-block w-1.5 h-4 bg-accent ml-0.5 animate-pulse" />
                     )}
                   </span>
                 </div>
               )}
               {line.type === 'system' && (
-                <div className="text-zinc-500 italic">
+                <div className="text-muted-foreground italic">
                   {line.content}
                 </div>
               )}
               {line.type === 'ascii' && (
-                <div className="text-emerald-400 whitespace-pre font-bold">
+                <div className="text-accent whitespace-pre font-bold">
                   {line.content}
                 </div>
               )}
@@ -413,9 +413,9 @@ export const InteractiveTerminal = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="flex items-center gap-2 text-zinc-500"
+            className="flex items-center gap-2 text-muted-foreground"
           >
-            <span className="text-emerald-400">◆</span>
+            <span className="text-accent">◆</span>
             <span className="flex gap-1">
               <span className="animate-pulse">●</span>
               <span className="animate-pulse" style={{ animationDelay: '150ms' }}>●</span>
@@ -425,10 +425,10 @@ export const InteractiveTerminal = () => {
         )}
       </div>
 
-      {/* Input Area - Claude Code Style */}
-      <div className="bg-zinc-900 border-t border-zinc-800 p-3">
+      {/* Input Area */}
+      <div className="bg-secondary border-t border-border p-3">
         <div className="flex items-end gap-2">
-          <span className="text-blue-400 font-mono text-sm pb-2.5 shrink-0">❯</span>
+          <span className="text-blue-500 dark:text-blue-400 font-mono text-sm pb-2.5 shrink-0">❯</span>
           <textarea
             ref={inputRef}
             value={input}
@@ -437,7 +437,7 @@ export const InteractiveTerminal = () => {
             placeholder="메시지를 입력하세요..."
             disabled={isLoading || isTyping}
             rows={1}
-            className="flex-1 bg-transparent text-zinc-100 font-mono text-sm resize-none placeholder:text-zinc-600 focus:outline-none disabled:opacity-50"
+            className="flex-1 bg-transparent text-foreground font-mono text-sm resize-none placeholder:text-muted-foreground focus:outline-none disabled:opacity-50"
             style={{ minHeight: '24px', maxHeight: '80px' }}
           />
           <motion.button
@@ -445,21 +445,21 @@ export const InteractiveTerminal = () => {
             disabled={!input.trim() || isLoading || isTyping}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="shrink-0 w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed transition-opacity hover:bg-emerald-500/30"
+            className="shrink-0 w-8 h-8 rounded-lg bg-accent/20 text-accent flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed transition-opacity hover:bg-accent/30"
           >
             <ArrowUp className="w-4 h-4" />
           </motion.button>
         </div>
         <div className="flex items-center justify-between mt-2 px-5">
-          <span className="text-[10px] text-zinc-600">
+          <span className="text-[10px] text-muted-foreground">
             /help · 명령어 보기
           </span>
           {remaining !== null && (
-            <span className={`text-[10px] ${remaining <= 10 ? 'text-amber-500' : 'text-zinc-600'}`}>
+            <span className={`text-[10px] ${remaining <= 10 ? 'text-amber-500' : 'text-muted-foreground'}`}>
               오늘 {remaining}회 남음
             </span>
           )}
-          <span className="text-[10px] text-zinc-600">
+          <span className="text-[10px] text-muted-foreground">
             Shift+Enter · 줄바꿈
           </span>
         </div>

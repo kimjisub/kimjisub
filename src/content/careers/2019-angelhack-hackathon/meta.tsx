@@ -18,6 +18,7 @@ export const meta: CareerMeta = {
     '해커톤',
   ],
   '날짜': '2019-06-01',
+  '종료일': '2019-06-01',
   '수상 순위': '1위',
   '이름': '2019 AngelHack Hackathon',
   '맡은 업무': [

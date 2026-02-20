@@ -51,6 +51,7 @@ export interface CareerMeta {
   // 필드 (한글)
   '설명'?: string;
   '날짜'?: string;
+  '종료일'?: string;
   '중요도'?: number;
   '분류'?: string[];
   '맡은 업무'?: string[];

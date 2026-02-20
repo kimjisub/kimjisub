@@ -90,7 +90,10 @@ const TimelineItem = ({ career }: TimelineItemProps) => {
   const formatDateRange = () => {
     const start = career.date.start ? format(career.date.start, 'yyyy.MM') : '';
     const end = career.date.end ? format(career.date.end, 'yyyy.MM') : '현재';
-    return start ? `${start} — ${end}` : '';
+    if (!start) return '';
+    // 시작일과 종료일이 같은 년월이면 하나만 표시
+    if (start === end) return start;
+    return `${start} — ${end}`;
   };
 
   // Extra detail tags
@@ -108,7 +111,7 @@ const TimelineItem = ({ career }: TimelineItemProps) => {
       className="relative flex gap-4 pb-6 last:pb-0"
     >
       {/* ── Node column ── */}
-      <div className="flex flex-col items-center shrink-0 pt-5" style={{ width: 16 }}>
+      <div className="flex items-start shrink-0 pt-5" style={{ width: 16 }}>
         {/* Node */}
         <motion.button
           aria-label={`${career.title} 상세 보기`}
@@ -131,8 +134,6 @@ const TimelineItem = ({ career }: TimelineItemProps) => {
             />
           )}
         </motion.button>
-        {/* Connector line */}
-        <div className="flex-1 w-px bg-border mt-2" />
       </div>
 
       {/* ── Content column ── */}
@@ -168,11 +169,18 @@ const TimelineItem = ({ career }: TimelineItemProps) => {
                 >
                   {icon}
                   <span className="line-clamp-1">{career.title}</span>
-                  {isOngoing && (
-                    <span className="ml-auto shrink-0 px-2 py-0.5 bg-accent text-accent-foreground text-xs font-medium rounded-full">
-                      진행 중
-                    </span>
-                  )}
+                  <span className="ml-auto shrink-0 flex items-center gap-1.5">
+                    {career.awardRank && career.awardRank !== '비수상' && (
+                      <span className="px-2 py-0.5 bg-yellow-500/20 text-yellow-600 dark:text-yellow-400 text-xs font-medium rounded-full">
+                        🏆 {career.awardRank}
+                      </span>
+                    )}
+                    {isOngoing && (
+                      <span className="px-2 py-0.5 bg-accent text-accent-foreground text-xs font-medium rounded-full">
+                        진행 중
+                      </span>
+                    )}
+                  </span>
                 </h3>
 
                 {/* Description */}
@@ -279,21 +287,16 @@ export const InteractiveTimeline = ({ careers }: InteractiveTimelineProps) => {
   // Scroll-driven line fill
   const lineHeight = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
 
-  // Sort newest first
-  const sortedCareers = [...careers].sort((a, b) => {
-    const dateA = a.date.start?.getTime() ?? 0;
-    const dateB = b.date.start?.getTime() ?? 0;
-    return dateB - dateA;
-  });
+  // API에서 이미 정렬됨 (진행 중 먼저, 시작일 내림차순)
 
   return (
     <div ref={containerRef} className="relative pl-3">
       {/* ── Vertical line (left) ── */}
       {/* Background track */}
-      <div className="absolute left-[5px] top-0 bottom-0 w-px bg-border" />
+      <div className="absolute left-[18px] top-0 bottom-0 w-px bg-border" />
       {/* Scroll-driven fill */}
       <motion.div
-        className="absolute left-[5px] top-0 w-px origin-top bg-gradient-to-b from-accent via-accent to-accent/30"
+        className="absolute left-[18px] top-0 w-px origin-top bg-gradient-to-b from-accent via-accent to-accent/30"
         style={{ height: lineHeight }}
       />
 
@@ -304,7 +307,7 @@ export const InteractiveTimeline = ({ careers }: InteractiveTimelineProps) => {
         animate={isInView ? 'visible' : 'hidden'}
         className="relative"
       >
-        {sortedCareers.map((career) => (
+        {careers.map((career) => (
           <TimelineItem key={career.id} career={career} />
         ))}
       </motion.div>
