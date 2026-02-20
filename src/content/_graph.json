@@ -1,6 +1,550 @@
 {
-  "skillToProjects": {},
-  "languageToProjects": {},
-  "careerToProjects": {},
-  "generatedAt": "2026-02-20T06:59:49.370Z"
+  "skillToProjects": {
+    "firebase": [
+      "alpaconnect",
+      "arai",
+      "canetis",
+      "chain-post",
+      "dutchpay-웹",
+      "eventify",
+      "eyevacs4",
+      "mopl",
+      "smart-home-with-google-home",
+      "smart-pot",
+      "sospitas",
+      "stella",
+      "top-body-balance",
+      "unipad",
+      "windhope",
+      "youtogether"
+    ],
+    "postgres": [
+      "alpaconnect",
+      "eyevacs4"
+    ],
+    "nodejs": [
+      "alpaconnect",
+      "canetis",
+      "eventify",
+      "eyevacs4",
+      "hana",
+      "mopl",
+      "silent-cutter",
+      "smart-home-with-google-home",
+      "sospitas",
+      "unipad",
+      "video-skipper",
+      "디미고라이프",
+      "아이박스-주차"
+    ],
+    "raspberrypi": [
+      "alpaconnect",
+      "diy-drone",
+      "smart-pot",
+      "sospitas"
+    ],
+    "figma": [
+      "alpaconnect",
+      "eyevacs4",
+      "wrtn-magic"
+    ],
+    "react": [
+      "alpaconnect",
+      "crossfire",
+      "diy-drone",
+      "dutchpay-웹",
+      "eventify",
+      "eyevacs4",
+      "hana",
+      "hufs-스터디룸-예약-시스템",
+      "midi-video-generator",
+      "디미고라이프",
+      "비탈길-vitalgheal",
+      "아이박스-주차"
+    ],
+    "docker": [
+      "alpaconnect",
+      "eyevacs4",
+      "smart-home-with-google-home",
+      "아이박스-주차"
+    ],
+    "c-c": [
+      "alpaconnect"
+    ],
+    "autodesk-fusion": [
+      "alpaconnect",
+      "toothpaste-roll",
+      "utlilty-blade-slider-case",
+      "windhope"
+    ],
+    "react-native": [
+      "alpaconnect",
+      "careero",
+      "eyevacs4",
+      "mopl",
+      "아이박스-주차"
+    ],
+    "nest-js": [
+      "alpaconnect",
+      "eyevacs4"
+    ],
+    "vmware-esxi": [
+      "alpaconnect"
+    ],
+    "linear-app": [
+      "alpaconnect",
+      "eyevacs4",
+      "unipad",
+      "아이박스-주차"
+    ],
+    "easyeda": [
+      "alpaconnect",
+      "diy-drone"
+    ],
+    "arm": [
+      "alpaconnect"
+    ],
+    "fastlane": [
+      "alpaconnect",
+      "아이박스-주차"
+    ],
+    "argo-cd": [
+      "alpaconnect"
+    ],
+    "rtos": [
+      "alpaconnect"
+    ],
+    "esp32": [
+      "alpaconnect",
+      "diy-drone"
+    ],
+    "ai": [
+      "arai",
+      "숫자-인식-ai"
+    ],
+    "arduino": [
+      "arai",
+      "canetis",
+      "smart-home-with-google-home",
+      "smart-pot",
+      "sospitas",
+      "stella",
+      "took",
+      "windhope",
+      "산울림",
+      "열람실-관리-자동화"
+    ],
+    "ar": [
+      "arai"
+    ],
+    "pwa": [
+      "arai",
+      "아이박스-주차"
+    ],
+    "android": [
+      "canetis",
+      "chain-post",
+      "dutchpay-안드로이드",
+      "hana",
+      "mopl",
+      "smart-pot",
+      "sospitas",
+      "stella",
+      "top-body-balance",
+      "unipad",
+      "비탈길-vitalgheal",
+      "출결관리-시스템",
+      "카카오톡-채팅-분석기"
+    ],
+    "vue": [
+      "canetis",
+      "chain-post",
+      "hana",
+      "luna-coding",
+      "sospitas",
+      "포문"
+    ],
+    "gcp-assistant-api": [
+      "canetis",
+      "smart-home-with-google-home",
+      "smart-pot",
+      "stella",
+      "비탈길-vitalgheal"
+    ],
+    "gcp": [
+      "canetis",
+      "smart-home-with-google-home",
+      "smart-pot",
+      "stella",
+      "비탈길-vitalgheal"
+    ],
+    "block-chain": [
+      "chain-post"
+    ],
+    "chrome-extention": [
+      "crossfire",
+      "hana",
+      "youtogether"
+    ],
+    "typescript": [
+      "diy-drone",
+      "mopl"
+    ],
+    "html": [
+      "diy-drone",
+      "mopl",
+      "youtogether"
+    ],
+    "python": [
+      "diy-drone",
+      "리틱-점자모션그래픽프로젝트"
+    ],
+    "github": [
+      "eyevacs4"
+    ],
+    "prometheus": [
+      "eyevacs4"
+    ],
+    "aws-rds": [
+      "eyevacs4"
+    ],
+    "reactquery": [
+      "eyevacs4"
+    ],
+    "aws-ecs": [
+      "eyevacs4"
+    ],
+    "i18next": [
+      "eyevacs4"
+    ],
+    "mongodb": [
+      "eyevacs4",
+      "unipad",
+      "vplate",
+      "아이박스-주차"
+    ],
+    "haproxy": [
+      "eyevacs4"
+    ],
+    "grafana": [
+      "eyevacs4"
+    ],
+    "redis": [
+      "eyevacs4"
+    ],
+    "aws-ec2": [
+      "eyevacs4"
+    ],
+    "aws-s3": [
+      "eyevacs4",
+      "아이박스-주차"
+    ],
+    "prisma": [
+      "eyevacs4"
+    ],
+    "google-admob": [
+      "eyevacs4"
+    ],
+    "git": [
+      "eyevacs4"
+    ],
+    "github-actions": [
+      "eyevacs4",
+      "아이박스-주차"
+    ],
+    "uwp": [
+      "hana"
+    ],
+    "kubernetes": [
+      "hufs-cs-cloud"
+    ],
+    "spring-boot": [
+      "hufs-스터디룸-예약-시스템"
+    ],
+    "shell": [
+      "midi-to-arduino-buzzer",
+      "the-block",
+      "아이박스-주차",
+      "카카오톡-채팅-분석기"
+    ],
+    "midi": [
+      "midi-to-arduino-buzzer",
+      "midi-video-generator"
+    ],
+    "ios": [
+      "mopl"
+    ],
+    "kotlin": [
+      "mopl",
+      "top-body-balance",
+      "출결관리-시스템"
+    ],
+    "swift": [
+      "mopl"
+    ],
+    "electron": [
+      "notion-desktop-app"
+    ],
+    "discord-bot": [
+      "pubg-디스코드-봇"
+    ],
+    "socket-io": [
+      "pubg-디스코드-봇",
+      "smart-home-with-google-home",
+      "youtogether",
+      "디미고라이프"
+    ],
+    "ffmpeg": [
+      "silent-cutter",
+      "video-skipper"
+    ],
+    "gcp-app-engine": [
+      "smart-home-with-google-home"
+    ],
+    "ifttt": [
+      "smart-home-with-google-home"
+    ],
+    "flutter": [
+      "took",
+      "windhope"
+    ],
+    "wasm": [
+      "video-skipper"
+    ],
+    "mariadb": [
+      "디미고라이프"
+    ],
+    "flask": [
+      "비탈길-vitalgheal"
+    ],
+    "tensorflow": [
+      "비탈길-vitalgheal"
+    ]
+  },
+  "languageToProjects": {
+    "typescript": [
+      "alpaconnect",
+      "careero",
+      "crossfire",
+      "diy-drone",
+      "eventify",
+      "eyevacs4",
+      "mopl",
+      "video-skipper",
+      "아이박스-주차"
+    ],
+    "html": [
+      "arai",
+      "canetis",
+      "chain-post",
+      "diy-drone",
+      "dutchpay-웹",
+      "luna-coding",
+      "midi-video-generator",
+      "mopl",
+      "notion-desktop-app",
+      "smart-home-with-google-home",
+      "sospitas",
+      "stella",
+      "took",
+      "youtogether",
+      "디미고라이프",
+      "비탈길-vitalgheal",
+      "산울림",
+      "아이박스-주차",
+      "잔그림",
+      "포문"
+    ],
+    "css3": [
+      "arai",
+      "canetis",
+      "chain-post",
+      "diy-drone",
+      "dutchpay-웹",
+      "luna-coding",
+      "midi-video-generator",
+      "mopl",
+      "notion-desktop-app",
+      "smart-home-with-google-home",
+      "sospitas",
+      "stella",
+      "took",
+      "youtogether",
+      "디미고라이프",
+      "비탈길-vitalgheal",
+      "산울림",
+      "아이박스-주차",
+      "잔그림",
+      "포문"
+    ],
+    "javascript": [
+      "arai",
+      "canetis",
+      "chain-post",
+      "dutchpay-웹",
+      "eyevacs4",
+      "hana",
+      "hufs-스터디룸-예약-시스템",
+      "luna-coding",
+      "midi-video-generator",
+      "notion-desktop-app",
+      "pubg-디스코드-봇",
+      "smart-home-with-google-home",
+      "sospitas",
+      "stella",
+      "took",
+      "unipad",
+      "youtogether",
+      "디미고라이프",
+      "비탈길-vitalgheal",
+      "산울림",
+      "아이박스-주차",
+      "잔그림",
+      "포문"
+    ],
+    "c-c": [
+      "arai",
+      "canetis",
+      "smart-home-with-google-home",
+      "smart-pot",
+      "sospitas",
+      "stella",
+      "the-block",
+      "took",
+      "windhope",
+      "산울림",
+      "열람실-관리-자동화",
+      "카카오톡-채팅-분석기"
+    ],
+    "java": [
+      "canetis",
+      "chain-post",
+      "dutchpay-안드로이드",
+      "hufs-스터디룸-예약-시스템",
+      "midi-to-arduino-buzzer",
+      "powder-physics",
+      "smart-pot",
+      "sospitas",
+      "stella",
+      "unipad",
+      "비탈길-vitalgheal",
+      "숫자-인식-ai",
+      "카카오톡-채팅-분석기"
+    ],
+    "python": [
+      "chain-post",
+      "diy-drone",
+      "smart-pot",
+      "sospitas",
+      "리틱-점자모션그래픽프로젝트",
+      "비탈길-vitalgheal"
+    ],
+    "kotlin": [
+      "hana",
+      "mopl",
+      "top-body-balance",
+      "unipad",
+      "출결관리-시스템"
+    ],
+    "shell": [
+      "hufs-cs-cloud"
+    ],
+    "swift": [
+      "mopl"
+    ],
+    "dart": [
+      "took",
+      "windhope"
+    ]
+  },
+  "careerToProjects": {
+    "ir피칭-경진대회": [
+      "alpaconnect"
+    ],
+    "hufs-창업아이디어경진대회": [
+      "alpaconnect"
+    ],
+    "2019-angelhack-hackathon": [
+      "arai"
+    ],
+    "제-15회-앱잼": [
+      "canetis"
+    ],
+    "학생창업유망팀-300-우수-동아리": [
+      "canetis",
+      "luna-coding",
+      "unipad"
+    ],
+    "stac-스마틴앱챌린지": [
+      "canetis"
+    ],
+    "청소년-비즈쿨-페스티벌": [
+      "canetis",
+      "luna-coding",
+      "unipad"
+    ],
+    "2018-대한민국-청소년-창업경진대회": [
+      "canetis",
+      "luna-coding",
+      "unipad"
+    ],
+    "hufsummer-hackathon": [
+      "careero"
+    ],
+    "대한민국-sw-융합-해커톤": [
+      "chain-post"
+    ],
+    "벤처-스타트업-아카데미-해커톤": [
+      "eventify"
+    ],
+    "inapse-hackathon": [
+      "hana"
+    ],
+    "hello-new-world-18": [
+      "luna-coding"
+    ],
+    "if-해커톤": [
+      "nasuel"
+    ],
+    "남양주-해커톤": [
+      "smart-pot"
+    ],
+    "제-16회-앱잼": [
+      "sorok"
+    ],
+    "산업-현장-안전-메이커톤": [
+      "sospitas"
+    ],
+    "디미고-해커톤": [
+      "stella"
+    ],
+    "제-33회-정보올림피아드-공모-부문": [
+      "unipad"
+    ],
+    "the-vplanet-inc": [
+      "vplate"
+    ],
+    "hello-new-world-19": [
+      "windhope"
+    ],
+    "1st-generative-ai-ideathon": [
+      "wrtn-magic"
+    ],
+    "제-14회-앱잼": [
+      "산울림"
+    ],
+    "ict-메이커톤": [
+      "열람실-관리-자동화"
+    ],
+    "dmz-해커톤": [
+      "잔그림"
+    ],
+    "영재교육원-개인주제탐구발표대회": [
+      "카카오톡-채팅-분석기"
+    ],
+    "불법-스포츠-도박-근절-해커톤": [
+      "포문"
+    ]
+  },
+  "generatedAt": "2026-02-20T07:05:49.056Z"
 }

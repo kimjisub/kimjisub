@@ -1,5 +1,7 @@
 /**
  * 엔티티간의 역방향 관계를 계산해서 content/_graph.json을 만들어주는 스크립트
+ * 
+ * rebuild-index.ts가 먼저 실행되어야 함 (_index.ts 필요)
  */
 
 import * as fs from 'fs';
@@ -8,7 +10,7 @@ import * as path from 'path';
 const CONTENT_DIR = path.join(process.cwd(), 'src/content');
 
 interface ProjectMeta {
-  slug: string;
+  id?: string;
   title: string;
   '주요 기술'?: string[];
   '프로그래밍 언어'?: string[];
@@ -26,10 +28,45 @@ interface RelationGraph {
   generatedAt: string;
 }
 
-function readJsonFile<T>(filePath: string): T | null {
+// meta.tsx 파일에서 meta 객체 파싱 (간단한 방식)
+function parseMetaTsx(filePath: string): ProjectMeta | null {
   try {
     const content = fs.readFileSync(filePath, 'utf-8');
-    return JSON.parse(content) as T;
+    
+    // export const meta = { ... } 추출
+    const match = content.match(/export const meta = \{([\s\S]*)\};?\s*$/);
+    if (!match) return null;
+    
+    const objectContent = match[1];
+    const result: Record<string, unknown> = {};
+    
+    // 배열 속성 추출 ('주요 기술', '프로그래밍 언어', '대회 및 수료')
+    const arrayRegex = /'([^']+)':\s*\[([\s\S]*?)\]/g;
+    let arrayMatch;
+    
+    while ((arrayMatch = arrayRegex.exec(objectContent)) !== null) {
+      const key = arrayMatch[1];
+      const arrayContent = arrayMatch[2];
+      
+      // 배열 내 문자열 추출
+      const items: string[] = [];
+      const itemRegex = /'([^']+)'/g;
+      let itemMatch;
+      while ((itemMatch = itemRegex.exec(arrayContent)) !== null) {
+        items.push(itemMatch[1]);
+      }
+      
+      result[key] = items;
+    }
+    
+    // id, title 추출
+    const idMatch = objectContent.match(/id:\s*'([^']+)'/);
+    if (idMatch) result.id = idMatch[1];
+    
+    const titleMatch = objectContent.match(/title:\s*'([^']+)'/);
+    if (titleMatch) result.title = titleMatch[1];
+    
+    return result as ProjectMeta;
   } catch {
     return null;
   }
@@ -43,14 +80,14 @@ function getDirectories(dirPath: string): string[] {
     .map((d) => d.name);
 }
 
-function loadAllProjects(): ProjectMeta[] {
+function loadAllProjects(): Array<ProjectMeta & { slug: string }> {
   const projectsDir = path.join(CONTENT_DIR, 'projects');
   const slugs = getDirectories(projectsDir);
 
-  const projects: ProjectMeta[] = [];
+  const projects: Array<ProjectMeta & { slug: string }> = [];
   for (const slug of slugs) {
-    const metaPath = path.join(projectsDir, slug, 'meta.json');
-    const meta = readJsonFile<ProjectMeta>(metaPath);
+    const metaPath = path.join(projectsDir, slug, 'meta.tsx');
+    const meta = parseMetaTsx(metaPath);
     if (meta) {
       projects.push({ ...meta, slug });
     }
