@@ -34,7 +34,6 @@ function watchMode(): void {
   // meta.tsx 변경 감지
   const watcher = chokidar.watch([
     path.join(CONTENT_DIR, '*/*/meta.tsx'),
-    path.join(CONTENT_DIR, '*/*/meta.json'),
   ], {
     ignoreInitial: true,
     awaitWriteFinish: {
