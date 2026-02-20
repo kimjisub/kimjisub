@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react';
 import { Award, Briefcase, Code, Download, GraduationCap, Lightbulb, MapPin, Rocket, Sparkles, Trophy } from 'lucide-react';
 import { AnimatePresence, motion, useInView, type Variants } from 'framer-motion';
 
-import { AnimatedCounter } from '@/components/AnimatedCounter';
 import { BentoCard, BentoGrid } from '@/components/BentoGrid';
 
 // ── Tech stack ────────────────────────────────────────────────────────────

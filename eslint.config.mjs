@@ -106,6 +106,14 @@ export default [
         Document: 'readonly',
         Node: 'readonly',
         getComputedStyle: 'readonly',
+        confirm: 'readonly',
+        alert: 'readonly',
+        prompt: 'readonly',
+        screen: 'readonly',
+        HTMLImageElement: 'readonly',
+        HTMLAnchorElement: 'readonly',
+        HTMLVideoElement: 'readonly',
+        HTMLAudioElement: 'readonly',
       },
     },
     plugins: {
@@ -130,7 +138,6 @@ export default [
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
       'no-useless-assignment': 'off',
-      '@next/next/no-img-element': 'off',
     },
     settings: {
       react: {

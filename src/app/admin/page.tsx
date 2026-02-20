@@ -138,6 +138,7 @@ export default function AdminPage() {
     if (authenticated) {
       fetchData();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authenticated, activeTab]);
 
   const checkAuth = async () => {

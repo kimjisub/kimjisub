@@ -5,7 +5,7 @@
 import * as path from 'path';
 
 import { CareerT, getCareers } from './careers';
-import { getProjects, ProjectT } from './projects';
+import { getProjects } from './projects';
 import { getSkills, SkillT } from './skills';
 import { CONTENT_DIR, readMdFile } from '.';
 

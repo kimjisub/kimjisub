@@ -46,7 +46,6 @@ export function MarkdownRenderer({ content, className = '', contentPath }: Markd
             
             // 외부 이미지는 일반 img 태그 사용
             if (transformedSrc.startsWith('http')) {
-              // eslint-disable-next-line @next/next/no-img-element
               return <img src={transformedSrc} alt={alt || ''} />;
             }
             

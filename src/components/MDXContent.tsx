@@ -8,7 +8,6 @@ import { ComponentType, ReactNode } from 'react';
 const components = {
   // 기본 이미지는 Next.js Image로 대체 (이미 import된 이미지는 자동 처리됨)
   img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
-    // eslint-disable-next-line @next/next/no-img-element
     <img {...props} className="rounded-lg" alt={props.alt || ''} />
   ),
   // Image 컴포넌트 (MDX에서 직접 사용)

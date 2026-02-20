@@ -430,7 +430,7 @@ const AUTO_SLIDE_INTERVAL = 5000;
 
 export function TestimonialsSection() {
   const ref = useRef<HTMLElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-120px' });
+  const _isInView = useInView(ref, { once: true, margin: '-120px' });
 
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [loading, setLoading] = useState(true);

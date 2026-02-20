@@ -4,7 +4,6 @@ import { motion, type Variants } from 'framer-motion';
 import Link from 'next/link';
 
 import { type SkillT } from '@/api/notion/skills';
-import { IconSlugView } from '@/components/IconSlugView';
 import { SkillIconWrapper } from '@/components/introduce/SkillIconWrapper';
 import { SafeSkillIcon } from '@/components/SafeSkillIcon';
 
