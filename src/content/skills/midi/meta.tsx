@@ -9,8 +9,8 @@ export const meta = {
   visible: true,
   '숙련도': '3. 상급',
   '기술로써 사용된 프로젝트': [
-    'cdee7253-d5de-4cdc-930a-3255d57a0c4c',
-    'b0ad0c42-bd9c-45a9-8ff9-33ed9dd82dad',
+    'midi-to-arduino-buzzer',
+    'midi-video-generator',
   ],
   '환경 및 기술': 'Midi',
 };

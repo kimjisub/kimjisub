@@ -7,17 +7,17 @@ export const meta = {
   Github: 'https://github.com/kimjisub/Midi-Video-Generator',
   Youtube: 'https://www.youtube.com/watch?v=vkOKSzTwUYY',
   '프로그래밍 언어': [
-    '03904233-518c-42f4-a179-0711a29d5dca',
-    'a572a292-56a1-442b-a6c8-51c899c8e48d',
-    '5118e5a2-987a-4bf9-ac1f-c1c55c138b23',
+    'html',
+    'css3',
+    'javascript',
   ],
   '태그': [
     '오픈소스',
   ],
   '중요도': '높음',
   '주요 기술': [
-    'c13a7131-0a16-4749-abc5-a48f31ddb9c7',
-    'b2279da0-e41c-47e8-be1c-3aded36b1e36',
+    'react',
+    'midi',
   ],
   visible: true,
   '설명': '.mid 형태의 음악을 영상으로 변환',

@@ -4,11 +4,11 @@ export const meta = {
   title: 'DutchPay 안드로이드',
   Youtube: 'https://www.youtube.com/watch?v=Io0mNxaNJnw',
   '프로그래밍 언어': [
-    '681343ff-92ca-42c7-a073-7f72ef77e7ef',
+    'java',
   ],
   '중요도': '낮음',
   '주요 기술': [
-    'a18fd511-b9f4-42d1-b529-2423c75bb8f4',
+    'android',
   ],
   visible: false,
   '설명': '친구들과의 여행에서 복잡한 더치페이 계산',

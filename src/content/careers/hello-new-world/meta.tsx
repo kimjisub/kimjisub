@@ -6,7 +6,7 @@ export const meta = {
   notionId: 'deda62c8-0d3d-4805-bf5f-b156f179ef68',
   title: 'Hello New() World',
   '관련된 프로젝트': [
-    '8633e484-74fb-484f-931b-af6286fc7418',
+    'windhope',
   ],
   '수상 및 수료': '최우수상',
   '기관': [

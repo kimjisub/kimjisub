@@ -5,7 +5,7 @@ export const meta = {
   notionId: '41d72e17-deb7-4d1b-8cdb-860a3d008187',
   title: '디미고 해커톤',
   '관련된 프로젝트': [
-    'f0499ae1-e215-4aaf-8066-fcd9428be8c8',
+    'stella',
   ],
   '수상 및 수료': '동상(취소됨)',
   '기관': [

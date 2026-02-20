@@ -7,9 +7,9 @@ export const meta = {
     '개발',
   ],
   '프로그래밍 언어': [
-    '03904233-518c-42f4-a179-0711a29d5dca',
-    'a572a292-56a1-442b-a6c8-51c899c8e48d',
-    '5118e5a2-987a-4bf9-ac1f-c1c55c138b23',
+    'html',
+    'css3',
+    'javascript',
   ],
   '중요도': '중간',
   visible: false,
@@ -20,7 +20,7 @@ export const meta = {
   ],
   '갤러리에서 보기': false,
   '대회 및 수료': [
-    'de7e634c-720e-447a-8b29-3452f2683b5f',
+    'dmz-해커톤',
   ],
   '이름': '잔그림',
 };

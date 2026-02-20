@@ -9,11 +9,11 @@ export const meta = {
   visible: true,
   '숙련도': '2. 중급',
   '기술로써 사용된 프로젝트': [
-    '4b1c905e-56cf-4bc8-915d-c768337edf4e',
+    'eyevacs4',
   ],
   '관련 기술': [
-    '5118e5a2-987a-4bf9-ac1f-c1c55c138b23',
-    '6f19d4e2-daef-466d-8616-4dc553efdd0f',
+    'javascript',
+    'typescript',
   ],
   '환경 및 기술': 'i18next',
 };

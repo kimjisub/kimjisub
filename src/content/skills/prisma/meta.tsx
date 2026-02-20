@@ -11,10 +11,10 @@ export const meta = {
   visible: true,
   '숙련도': '2. 중급',
   '기술로써 사용된 프로젝트': [
-    '4b1c905e-56cf-4bc8-915d-c768337edf4e',
+    'eyevacs4',
   ],
   '관련 기술': [
-    '9b184a99-0538-4f90-b2a7-ca94b4e5127c',
+    'nest-js',
   ],
   '환경 및 기술': 'Prisma',
   icon,

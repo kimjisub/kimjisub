@@ -6,7 +6,7 @@ export const meta = {
   title: 'Utlilty Blade Slider Case',
   '중요도': '낮음',
   '주요 기술': [
-    'de6dfd76-8a78-4265-a9aa-4bdc1ed431ff',
+    'autodesk-fusion',
   ],
   visible: true,
   URL: 'https://www.thingiverse.com/thing:4441240',

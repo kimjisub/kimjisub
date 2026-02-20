@@ -8,8 +8,8 @@ export const meta = {
   ],
   '중요도': '높음',
   '주요 기술': [
-    '700730c6-c043-4286-acf4-73a62c118491',
-    'd27ccae4-aa64-4d1d-8244-f8f95839bd53',
+    'nodejs',
+    'ffmpeg',
   ],
   visible: false,
   '설명': '영상의 공백 부분을 지워주는 오픈소스',

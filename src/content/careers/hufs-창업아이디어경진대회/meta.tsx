@@ -5,7 +5,7 @@ export const meta = {
   notionId: '41fbb53e-a2b0-46fe-a425-48f33db6b632',
   title: 'HUFS 창업아이디어경진대회',
   '관련된 프로젝트': [
-    'f8408212-01e1-4ca5-ae9b-0aff52122cff',
+    'alpaconnect',
   ],
   '수상 및 수료': '대상',
   '기관': [

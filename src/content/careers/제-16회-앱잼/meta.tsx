@@ -5,7 +5,7 @@ export const meta = {
   notionId: '61aef909-0211-456a-ae3f-0a279a1e2f87',
   title: '제 16회 앱잼',
   '관련된 프로젝트': [
-    '1991cd92-201b-4909-871c-fba3d19d366b',
+    'sorok',
   ],
   '기관': [
     'SK techx',

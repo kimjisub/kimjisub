@@ -5,7 +5,7 @@ export const meta = {
   notionId: '87bd18af-8515-4c14-a7df-40dcb2dae553',
   title: '산업 현장 안전 메이커톤',
   '관련된 프로젝트': [
-    '86bf901d-caa9-424a-90f0-02da3d8f1bea',
+    'sospitas',
   ],
   '수상 및 수료': '대상',
   '기관': [

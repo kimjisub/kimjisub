@@ -8,7 +8,7 @@ export const meta = {
   iconSlug: 'curl',
   visible: false,
   '관련 기술': [
-    'e1dd526d-97da-424a-b1dc-e7ffd5fbc26d',
+    'shell',
   ],
   '환경 및 기술': 'curl',
 };

@@ -7,15 +7,15 @@ export const meta = {
   Github: 'https://github.com/kimjisub/Midi-to-Arduino-buzzer',
   Youtube: 'https://www.youtube.com/watch?v=1i9ZNHit6MA',
   '프로그래밍 언어': [
-    '681343ff-92ca-42c7-a073-7f72ef77e7ef',
+    'java',
   ],
   '태그': [
     '오픈소스',
   ],
   '중요도': '낮음',
   '주요 기술': [
-    'e1dd526d-97da-424a-b1dc-e7ffd5fbc26d',
-    'b2279da0-e41c-47e8-be1c-3aded36b1e36',
+    'shell',
+    'midi',
   ],
   visible: true,
   '설명': '.mid 파일을 이용하여 아두이노 부저 코드 생성',

@@ -11,11 +11,11 @@ export const meta = {
   visible: false,
   '숙련도': '1. 초보',
   '기술로써 사용된 프로젝트': [
-    '8633e484-74fb-484f-931b-af6286fc7418',
-    '5b112096-4e06-4cc5-a2bb-689245d8f9ff',
+    'windhope',
+    'took',
   ],
   '관련 기술': [
-    '93b5f8e9-1b2e-49c9-b8cb-3582c47bad1a',
+    'dart',
   ],
   '환경 및 기술': 'Flutter',
   icon,

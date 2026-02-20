@@ -3,7 +3,7 @@ export const meta = {
   notionId: 'de7e634c-720e-447a-8b29-3452f2683b5f',
   title: 'DMZ 해커톤',
   '관련된 프로젝트': [
-    'ad7b67e5-f69e-4177-b130-afa16eadd5be',
+    '잔그림',
   ],
   '수상 및 수료': '우수상',
   '기관': [

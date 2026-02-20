@@ -6,7 +6,7 @@ export const meta = {
   notionId: 'ca75ef79-2c62-4926-af1a-7b5608e36d12',
   title: 'HUFSummer Hackathon',
   '관련된 프로젝트': [
-    '6a12c934-4914-47fe-99ca-faaebc1a04d8',
+    'careero',
   ],
   '수상 및 수료': '한국외국어대학교총장상 (대상)',
   '기관': [

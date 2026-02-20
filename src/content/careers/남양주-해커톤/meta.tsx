@@ -3,7 +3,7 @@ export const meta = {
   notionId: 'fde68f8d-e2d5-4e93-8821-a25b3af556b4',
   title: '남양주 해커톤',
   '관련된 프로젝트': [
-    '8fda43a6-b6cb-495f-8256-898cd2e66b03',
+    'smart-pot',
   ],
   '기관': [
     '남양주',

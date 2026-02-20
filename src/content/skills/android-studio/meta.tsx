@@ -11,7 +11,7 @@ export const meta = {
   visible: true,
   '숙련도': '3. 상급',
   '관련 기술': [
-    '08bcbabe-1cc1-4254-8cf8-32604eefed49',
+    'kotlin',
   ],
   '환경 및 기술': 'Android Studio',
   icon,

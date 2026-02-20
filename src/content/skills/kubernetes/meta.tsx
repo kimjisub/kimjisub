@@ -11,7 +11,7 @@ export const meta = {
   visible: true,
   '숙련도': '2. 중급',
   '기술로써 사용된 프로젝트': [
-    '9533de9d-1230-4c07-8cf9-57e3547469c5',
+    'hufs-cs-cloud',
   ],
   '환경 및 기술': 'kubernetes',
   icon,

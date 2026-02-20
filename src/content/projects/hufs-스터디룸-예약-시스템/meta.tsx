@@ -3,13 +3,13 @@ export const meta = {
   notionId: '156b6809-90c7-4a83-9751-6f82331c3030',
   title: 'HUFS  스터디룸 예약 시스템',
   '프로그래밍 언어': [
-    '681343ff-92ca-42c7-a073-7f72ef77e7ef',
-    '5118e5a2-987a-4bf9-ac1f-c1c55c138b23',
+    'java',
+    'javascript',
   ],
   '중요도': '중간',
   '주요 기술': [
-    'c13a7131-0a16-4749-abc5-a48f31ddb9c7',
-    'e459a3b2-3cec-4934-82a4-a668416f6a6b',
+    'react',
+    'spring-boot',
   ],
   visible: true,
   '날짜': '2024-02-01',

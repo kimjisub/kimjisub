@@ -3,7 +3,7 @@ export const meta = {
   notionId: '14161dfd-8efd-4ba9-a52a-cfea0275d55e',
   title: '벤처·스타트업 아카데미 해커톤',
   '관련된 프로젝트': [
-    '4921b020-aaf8-4482-bfef-4976499dde2e',
+    'eventify',
   ],
   '기관': [
     '중소벤처기업부',

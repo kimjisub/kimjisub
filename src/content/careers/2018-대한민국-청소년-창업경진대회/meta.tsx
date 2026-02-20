@@ -5,9 +5,9 @@ export const meta = {
   notionId: 'c65f40a3-12fb-438a-8afb-4ab60ac814f6',
   title: '2018 대한민국 청소년 창업경진대회',
   '관련된 프로젝트': [
-    '72fff05b-7e1a-47ae-a3df-543ae5e8a57a',
-    '10722f86-9794-4ec2-bb11-5b92a16970e5',
-    'f9cda467-4e16-4a41-b99a-7e915db4c181',
+    'unipad',
+    'canetis',
+    'luna-coding',
   ],
   '수상 및 수료': '기업가정신상',
   '기관': [

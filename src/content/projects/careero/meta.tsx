@@ -12,11 +12,11 @@ export const meta = {
     '디자인',
   ],
   '프로그래밍 언어': [
-    '6f19d4e2-daef-466d-8616-4dc553efdd0f',
+    'typescript',
   ],
   '중요도': '낮음',
   '주요 기술': [
-    'a635019c-e58a-4d88-a7c7-f0a2052af687',
+    'react-native',
   ],
   visible: true,
   '설명': '인생 목표를 위한 네비게이션',
@@ -26,7 +26,7 @@ export const meta = {
   ],
   '갤러리에서 보기': true,
   '대회 및 수료': [
-    'ca75ef79-2c62-4926-af1a-7b5608e36d12',
+    'hufsummer-hackathon',
   ],
   '이름': 'Careero',
   cover,

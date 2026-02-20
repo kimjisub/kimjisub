@@ -11,7 +11,7 @@ export const meta = {
   visible: false,
   '숙련도': '1. 초보',
   '관련 기술': [
-    'a18fd511-b9f4-42d1-b529-2423c75bb8f4',
+    'android',
   ],
   '환경 및 기술': 'Compose',
   icon,

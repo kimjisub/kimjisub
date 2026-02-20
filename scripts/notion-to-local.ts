@@ -301,7 +301,10 @@ function extractRichText(richText: any): string {
   }).join('');
 }
 
-// Notion 프로퍼티 추출
+// notionId → slug 맵 (전역, main에서 초기화)
+let idToSlugMap: Map<string, string> = new Map();
+
+// Notion 프로퍼티 추출 (relation은 slug로 변환)
 function extractProperty(prop: any): any {
   if (!prop) return null;
   
@@ -329,10 +332,48 @@ function extractProperty(prop: any): any {
     case 'files':
       return prop.files?.[0]?.file?.url || prop.files?.[0]?.external?.url || null;
     case 'relation':
-      return prop.relation?.map((r: any) => r.id) || [];
+      // UUID를 slug로 변환
+      const ids = prop.relation?.map((r: any) => r.id) || [];
+      return ids.map((id: string) => idToSlugMap.get(id) || id).filter(Boolean);
     default:
       return null;
   }
+}
+
+// 모든 DB에서 페이지 ID → slug 맵 구축
+async function buildIdToSlugMap(): Promise<void> {
+  console.log('🔗 ID → Slug 맵 구축 중...');
+  
+  for (const [category, databaseId] of Object.entries(DATABASE_IDS)) {
+    let cursor: string | undefined;
+    let count = 0;
+    
+    do {
+      const response = await notion.databases.query({
+        database_id: databaseId,
+        start_cursor: cursor,
+        page_size: 100,
+      });
+      
+      for (const page of response.results) {
+        const props = (page as any).properties;
+        const titleProp = Object.values(props).find((p: any) => p.type === 'title') as any;
+        const title = titleProp?.title?.map((t: any) => t.plain_text).join('') || 'Untitled';
+        const slug = slugify(title);
+        
+        if (slug) {
+          idToSlugMap.set(page.id, slug);
+          count++;
+        }
+      }
+      
+      cursor = response.has_more ? response.next_cursor ?? undefined : undefined;
+    } while (cursor);
+    
+    console.log(`   ${category}: ${count}개`);
+  }
+  
+  console.log(`   총 ${idToSlugMap.size}개 매핑 완료\n`);
 }
 
 // ─── meta.ts Generation ──────────────────────────────────────────────────────
@@ -649,7 +690,10 @@ function mergeAssetsToCache() {
 async function main() {
   console.log('🚀 Notion → Local 마이그레이션 시작 (Option A: meta.ts 방식)\n');
 
-  // 1. content의 assets를 content_prev로 복사 (캐시 보존)
+  // 1. ID → Slug 맵 먼저 구축 (relation 변환용)
+  await buildIdToSlugMap();
+
+  // 2. content의 assets를 content_prev로 복사 (캐시 보존)
   if (fs.existsSync(CONTENT_DIR)) {
     console.log('📦 현재 content assets를 캐시로 복사...');
     mergeAssetsToCache();
@@ -658,10 +702,10 @@ async function main() {
     fs.rmSync(CONTENT_DIR, { recursive: true });
   }
 
-  // 2. 새 content 폴더 생성
+  // 3. 새 content 폴더 생성
   ensureDir(CONTENT_DIR);
 
-  // 3. 각 카테고리 마이그레이션
+  // 4. 각 카테고리 마이그레이션
   for (const [category, databaseId] of Object.entries(DATABASE_IDS)) {
     await migrateCategory(category as any, databaseId);
   }

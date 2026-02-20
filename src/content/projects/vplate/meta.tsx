@@ -10,7 +10,7 @@ export const meta = {
   ],
   '중요도': '6',
   '주요 기술': [
-    'b89cdcad-a70e-451d-80ba-a7d4dcce22de',
+    'mongodb',
   ],
   visible: true,
   '설명': '마케팅 영상 제작 플랫폼',
@@ -20,7 +20,7 @@ export const meta = {
   ],
   '갤러리에서 보기': false,
   '대회 및 수료': [
-    '0efa438c-617f-46b4-bd48-18903013d80f',
+    'the-vplanet-inc',
   ],
   '이름': 'Vplate',
   icon,

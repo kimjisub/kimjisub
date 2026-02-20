@@ -9,8 +9,8 @@ export const meta = {
   visible: false,
   '숙련도': '0. 입문',
   '관련 기술': [
-    '5118e5a2-987a-4bf9-ac1f-c1c55c138b23',
-    '03904233-518c-42f4-a179-0711a29d5dca',
+    'javascript',
+    'html',
   ],
   '환경 및 기술': 'Svelte',
 };

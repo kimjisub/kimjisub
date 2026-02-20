@@ -9,16 +9,16 @@ export const meta = {
     '개발',
   ],
   '프로그래밍 언어': [
-    '6f19d4e2-daef-466d-8616-4dc553efdd0f',
+    'typescript',
   ],
   '태그': [
     '오픈소스',
   ],
   '중요도': '높음',
   '주요 기술': [
-    '700730c6-c043-4286-acf4-73a62c118491',
-    'd27ccae4-aa64-4d1d-8244-f8f95839bd53',
-    'bc414082-79bf-46a2-ad38-46e180329b47',
+    'nodejs',
+    'ffmpeg',
+    'wasm',
   ],
   visible: true,
   URL: 'https://www.npmjs.com/package/video-skipper',

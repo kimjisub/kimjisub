@@ -5,9 +5,9 @@ export const meta = {
   notionId: '56ae8dd3-74ef-4b6d-b63e-03535d3a271b',
   title: '청소년 비즈쿨 페스티벌',
   '관련된 프로젝트': [
-    '72fff05b-7e1a-47ae-a3df-543ae5e8a57a',
-    '10722f86-9794-4ec2-bb11-5b92a16970e5',
-    'f9cda467-4e16-4a41-b99a-7e915db4c181',
+    'unipad',
+    'canetis',
+    'luna-coding',
   ],
   '수상 및 수료': '우수상',
   '기관': [

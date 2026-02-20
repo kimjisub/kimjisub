@@ -11,7 +11,7 @@ export const meta = {
   visible: true,
   '숙련도': '2. 중급',
   '기술로써 사용된 프로젝트': [
-    'f8408212-01e1-4ca5-ae9b-0aff52122cff',
+    'alpaconnect',
   ],
   '환경 및 기술': 'Vmware ESXI',
   icon,

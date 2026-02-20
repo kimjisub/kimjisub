@@ -11,7 +11,7 @@ export const meta = {
   visible: false,
   '숙련도': '2. 중급',
   '기술로써 사용된 프로젝트': [
-    'e893af80-0b86-4c5c-99b5-52cb8f51a78f',
+    '디미고라이프',
   ],
   '환경 및 기술': 'MariaDB',
   icon,

@@ -11,7 +11,7 @@ export const meta = {
   visible: false,
   '숙련도': '1. 초보',
   '관련 기술': [
-    'bf3f3cf8-cbdb-4e03-b59b-adb57f2c301b',
+    'uwp',
   ],
   '환경 및 기술': 'C#',
   icon,

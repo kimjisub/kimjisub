@@ -5,7 +5,7 @@ export const meta = {
   notionId: 'cf1cc337-b1f9-464c-803a-8cbd7d56567f',
   title: '제 33회 정보올림피아드 공모 부문',
   '관련된 프로젝트': [
-    '72fff05b-7e1a-47ae-a3df-543ae5e8a57a',
+    'unipad',
   ],
   '수상 및 수료': '전국 금상',
   '기관': [

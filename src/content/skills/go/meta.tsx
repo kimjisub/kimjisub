@@ -11,7 +11,7 @@ export const meta = {
   visible: false,
   '숙련도': '1. 초보',
   '관련 기술': [
-    'e1dd526d-97da-424a-b1dc-e7ffd5fbc26d',
+    'shell',
   ],
   '환경 및 기술': 'Go',
   icon,

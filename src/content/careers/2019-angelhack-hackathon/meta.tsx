@@ -5,7 +5,7 @@ export const meta = {
   notionId: 'e7fbf93d-f2e3-4a60-92b5-246790eabab5',
   title: '2019 AngelHack Hackathon',
   '관련된 프로젝트': [
-    'dd3d53cf-94ce-41c5-bf38-309a4da791bf',
+    'arai',
   ],
   '수상 및 수료': 'LG U+ Track Winner',
   '기관': [

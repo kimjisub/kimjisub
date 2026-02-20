@@ -8,7 +8,7 @@ export const meta = {
   iconSlug: 'babel',
   visible: false,
   '관련 기술': [
-    'c13a7131-0a16-4749-abc5-a48f31ddb9c7',
+    'react',
   ],
   '환경 및 기술': 'babel',
 };

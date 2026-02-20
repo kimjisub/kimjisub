@@ -4,7 +4,7 @@ export const meta = {
   title: 'Toothpaste Roll',
   '중요도': '낮음',
   '주요 기술': [
-    'de6dfd76-8a78-4265-a9aa-4bdc1ed431ff',
+    'autodesk-fusion',
   ],
   visible: false,
   URL: 'https://www.thingiverse.com/thing:4547503',

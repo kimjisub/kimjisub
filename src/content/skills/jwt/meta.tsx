@@ -8,7 +8,7 @@ export const meta = {
   iconSlug: 'jsonwebtokens',
   visible: false,
   '관련 기술': [
-    'f748de77-df24-4e13-8b22-cdaf497b4493',
+    'json',
   ],
   '환경 및 기술': 'JWT',
 };

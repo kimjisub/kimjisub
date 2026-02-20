@@ -9,13 +9,13 @@ export const meta = {
     '디자인',
   ],
   '프로그래밍 언어': [
-    '6f19d4e2-daef-466d-8616-4dc553efdd0f',
+    'typescript',
   ],
   '중요도': '낮음',
   '주요 기술': [
-    '700730c6-c043-4286-acf4-73a62c118491',
-    '65180841-fa86-49b6-9602-679c23536fb8',
-    'c13a7131-0a16-4749-abc5-a48f31ddb9c7',
+    'nodejs',
+    'firebase',
+    'react',
   ],
   visible: false,
   '설명': '트래픽이 몰리는 티켓팅 전용 SAAS 서비스',
@@ -25,7 +25,7 @@ export const meta = {
   ],
   '갤러리에서 보기': false,
   '대회 및 수료': [
-    '14161dfd-8efd-4ba9-a52a-cfea0275d55e',
+    '벤처-스타트업-아카데미-해커톤',
   ],
   '이름': 'EVENTIFY',
 };

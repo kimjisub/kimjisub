@@ -6,13 +6,13 @@ export const meta = {
     '개발',
   ],
   '프로그래밍 언어': [
-    '08bcbabe-1cc1-4254-8cf8-32604eefed49',
+    'kotlin',
   ],
   '중요도': '낮음',
   '주요 기술': [
-    'a18fd511-b9f4-42d1-b529-2423c75bb8f4',
-    '65180841-fa86-49b6-9602-679c23536fb8',
-    '08bcbabe-1cc1-4254-8cf8-32604eefed49',
+    'android',
+    'firebase',
+    'kotlin',
   ],
   visible: false,
   '설명': '노안 방지를 위한 눈 스트레칭',

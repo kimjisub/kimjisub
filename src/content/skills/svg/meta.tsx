@@ -8,7 +8,7 @@ export const meta = {
   iconSlug: 'svg',
   visible: false,
   '관련 기술': [
-    '03904233-518c-42f4-a179-0711a29d5dca',
+    'html',
   ],
   '환경 및 기술': 'SVG',
 };

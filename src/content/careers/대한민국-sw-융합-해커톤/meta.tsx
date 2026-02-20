@@ -3,7 +3,7 @@ export const meta = {
   notionId: '29055678-f315-4668-940b-973aff964c4b',
   title: '대한민국 SW 융합 해커톤',
   '관련된 프로젝트': [
-    'd041a673-7348-4dd0-aa72-2e56065036f1',
+    'chain-post',
   ],
   visible: false,
   '중요도': '낮음',

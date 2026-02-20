@@ -5,7 +5,7 @@ export const meta = {
   notionId: '0efa438c-617f-46b4-bd48-18903013d80f',
   title: 'The Vplanet Inc.',
   '관련된 프로젝트': [
-    '8abeb85b-6efe-464c-a035-8f69b4bcf282',
+    'vplate',
   ],
   visible: true,
   '분류': [

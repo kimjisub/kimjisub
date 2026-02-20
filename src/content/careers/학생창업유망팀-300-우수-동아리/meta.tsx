@@ -3,9 +3,9 @@ export const meta = {
   notionId: '479e58ac-c767-4790-afc6-dd224bd77d9b',
   title: '학생창업유망팀 300+ 우수 동아리',
   '관련된 프로젝트': [
-    '72fff05b-7e1a-47ae-a3df-543ae5e8a57a',
-    '10722f86-9794-4ec2-bb11-5b92a16970e5',
-    'f9cda467-4e16-4a41-b99a-7e915db4c181',
+    'unipad',
+    'canetis',
+    'luna-coding',
   ],
   '수상 및 수료': '우수동아리 선정',
   '기관': [

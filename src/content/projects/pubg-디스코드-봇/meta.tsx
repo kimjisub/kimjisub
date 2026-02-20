@@ -4,12 +4,12 @@ export const meta = {
   title: 'PUBG 디스코드 봇',
   Youtube: 'https://www.youtube.com/watch?v=Gf20Sz-uLm8',
   '프로그래밍 언어': [
-    '5118e5a2-987a-4bf9-ac1f-c1c55c138b23',
+    'javascript',
   ],
   '중요도': '낮음',
   '주요 기술': [
-    'f9536c16-371c-4bb4-977e-eeaee441404b',
-    'aa1b2bf8-2e8a-4eb7-92fb-fc6bb627e8a8',
+    'discord-bot',
+    'socket-io',
   ],
   visible: false,
   '설명': '배틀그라운드 팀원 모집을 위한 디스코드 봇',

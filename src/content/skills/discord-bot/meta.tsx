@@ -11,10 +11,10 @@ export const meta = {
   visible: true,
   '숙련도': '2. 중급',
   '기술로써 사용된 프로젝트': [
-    'a49029e3-a8a4-4995-9df1-adc9a2fe9ec8',
+    'pubg-디스코드-봇',
   ],
   '관련 기술': [
-    '5118e5a2-987a-4bf9-ac1f-c1c55c138b23',
+    'javascript',
   ],
   '환경 및 기술': 'Discord Bot',
   icon,

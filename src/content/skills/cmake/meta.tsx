@@ -8,7 +8,7 @@ export const meta = {
   iconSlug: 'cmake',
   visible: false,
   '관련 기술': [
-    '028fe87c-0f11-4c18-9b28-0ca21f4226eb',
+    'c-c',
   ],
   '환경 및 기술': 'cmake',
 };

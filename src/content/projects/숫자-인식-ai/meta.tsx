@@ -6,11 +6,11 @@ export const meta = {
   title: '숫자 인식 AI',
   Github: 'https://github.com/kimjisub/Number-Awareness-AI',
   '프로그래밍 언어': [
-    '681343ff-92ca-42c7-a073-7f72ef77e7ef',
+    'java',
   ],
   '중요도': '중간',
   '주요 기술': [
-    '8b900878-f3da-4c38-81d8-c473cdb8e30c',
+    'ai',
   ],
   visible: true,
   '설명': '라이브러리 없이 신경망 직접 구축',

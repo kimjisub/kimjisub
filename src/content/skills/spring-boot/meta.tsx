@@ -8,7 +8,7 @@ export const meta = {
   iconSlug: 'springboot',
   visible: false,
   '기술로써 사용된 프로젝트': [
-    '156b6809-90c7-4a83-9751-6f82331c3030',
+    'hufs-스터디룸-예약-시스템',
   ],
   '환경 및 기술': 'Spring Boot',
 };

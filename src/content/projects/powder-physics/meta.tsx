@@ -4,7 +4,7 @@ export const meta = {
   title: 'Powder Physics',
   Github: 'https://github.com/kimjisub/Powder-Physics',
   '프로그래밍 언어': [
-    '681343ff-92ca-42c7-a073-7f72ef77e7ef',
+    'java',
   ],
   '중요도': '낮음',
   visible: false,

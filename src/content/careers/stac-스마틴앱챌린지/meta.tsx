@@ -5,7 +5,7 @@ export const meta = {
   notionId: 'e5b7b55a-a297-4283-9a2d-5fda94ce569d',
   title: 'STAC 스마틴앱챌린지',
   '관련된 프로젝트': [
-    '10722f86-9794-4ec2-bb11-5b92a16970e5',
+    'canetis',
   ],
   '수상 및 수료': '우수상',
   '기관': [

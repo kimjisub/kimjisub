@@ -9,7 +9,7 @@ export const meta = {
   visible: true,
   '숙련도': '2. 중급',
   '관련 기술': [
-    '9b184a99-0538-4f90-b2a7-ca94b4e5127c',
+    'nest-js',
   ],
   '환경 및 기술': 'Kafka',
 };

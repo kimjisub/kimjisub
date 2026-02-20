@@ -11,7 +11,7 @@ export const meta = {
   visible: false,
   '숙련도': '1. 초보',
   '관련 기술': [
-    '4a111b87-b88d-482b-89da-960d66b51a00',
+    'python',
   ],
   '환경 및 기술': 'R',
   icon,
