@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { SideBySide } from '@/components/ImageGrid';
 import img_content_1_png from './assets/content-1.png';
 import img_content_2_png from './assets/content-2.png';
 
@@ -10,9 +11,10 @@ import img_content_2_png from './assets/content-2.png';
 
 시각 장애우는 앞을 보지 못하기 때문에 집에서 물건이 제자리에 놓여 있지 않다면 물건을 평생 찾지 못할지도 모릅니다. 이에 소리를 통해 물건의 위치를 알리고자 CANETIS를 개발하게 되었습니다.
 
-<Image src={img_content_1_png} alt="" />
-
-<Image src={img_content_2_png} alt="" />
+<SideBySide>
+  <Image src={img_content_1_png} alt="" />
+  <Image src={img_content_2_png} alt="" />
+</SideBySide>
 
 - 시각 장애우를 위한 실내 전용 위치 알림 IoT 서비스
 - Firebase의 Firestore, Functions, Messaging 활용하여 서버리스 환경 구현

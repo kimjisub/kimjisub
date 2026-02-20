@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { ImageGrid } from '@/components/ImageGrid';
 import imgDebate from './assets/screenshot-debate.png';
 import imgCrossDebate from './assets/screenshot-cross-debate.png';
 import imgRanking from './assets/screenshot-ranking.png';
@@ -9,11 +10,13 @@ import imgSettings from './assets/screenshot-settings.png';
 
 ## Screenshots
 
-<Image src={imgDebate} alt="Debate" />
-<Image src={imgCrossDebate} alt="Cross-Debate" />
-<Image src={imgRanking} alt="Ranking" />
-<Image src={imgConclusion} alt="Conclusion" />
-<Image src={imgSettings} alt="Settings" />
+<ImageGrid cols={2}>
+  <Image src={imgDebate} alt="Debate" />
+  <Image src={imgCrossDebate} alt="Cross-Debate" />
+  <Image src={imgRanking} alt="Ranking" />
+  <Image src={imgConclusion} alt="Conclusion" />
+  <Image src={imgSettings} alt="Settings" />
+</ImageGrid>
 
 ## 왜 만들었나?
 

@@ -60,12 +60,12 @@ const SkillListRow = ({
       }}
       className="group flex items-center gap-3 py-2 px-3 rounded-xl hover:bg-muted/50 transition-colors duration-200"
     >
-      {/* Icon */}
+      {/* Icon (아이콘 없으면 색상 박스만) */}
       <div
         className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-110"
         style={{ background: `#${slugData.hex}` }}
       >
-        <IconSlugSvg slugData={slugData} />
+        {slugData.type !== 'unknown' && <IconSlugSvg slugData={slugData} />}
       </div>
 
       {/* Name */}

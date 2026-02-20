@@ -3,7 +3,7 @@ import { Text } from '@radix-ui/themes';
 import { SimpleIcon } from 'simple-icons';
 import * as simpleIcons from 'simple-icons';
 
-import { Icons } from '@/icon';
+import { Icons, IconType } from '@/icon';
 
 const icons = simpleIcons as unknown as { [key: string]: SimpleIcon };
 
@@ -22,7 +22,7 @@ export type SlugData =
   | {
       type: 'custom';
       slug: string;
-      component: React.FC<React.SVGProps<SVGElement>>;
+      svgCode: string;
       hex: string;
     }
   | {
@@ -44,7 +44,7 @@ export const slugToData = (slug: string): SlugData => {
     return {
       type: 'custom' as const,
       slug,
-      component: customIcon.component,
+      svgCode: customIcon.svgCode,
       hex: customIcon.hex,
     };
   }
@@ -73,34 +73,19 @@ export interface IconSlugSvgProps {
 
 export const IconSlugSvg: React.FC<IconSlugSvgProps> = ({ slugData }) => {
   if (slugData.type === 'custom') {
-    try {
-      const Component = slugData.component;
-      // Check if it's a valid React component (function or class)
-      if (typeof Component === 'function') {
-        return (
-          <Component
-            color="#fff"
-            width={32}
-            height={32}
-            viewBox="0 0 24 24"
-          />
-        );
-      }
-      // If it's an object (Next.js Image-like import), render fallback
-      console.warn(`IconSlugSvg: Invalid component for slug "${slugData.slug}"`);
-      return (
-        <span className="w-8 h-8 flex items-center justify-center text-white text-xs">
-          {slugData.slug.slice(0, 2).toUpperCase()}
-        </span>
-      );
-    } catch (e) {
-      console.error(`IconSlugSvg error for "${slugData.slug}":`, e);
-      return (
-        <span className="w-8 h-8 flex items-center justify-center text-white text-xs">
-          {slugData.slug.slice(0, 2).toUpperCase()}
-        </span>
-      );
-    }
+    // SVG raw code를 사용하여 렌더링 (fill을 흰색으로 변경)
+    const svgWithWhiteFill = slugData.svgCode
+      .replace(/fill="[^"]*"/g, 'fill="#fff"')
+      .replace(/fill='[^']*'/g, "fill='#fff'")
+      .replace(/width="[^"]*"/, 'width="32"')
+      .replace(/height="[^"]*"/, 'height="32"');
+    
+    return (
+      <span
+        className="w-8 h-8 flex items-center justify-center [&>svg]:w-8 [&>svg]:h-8"
+        dangerouslySetInnerHTML={{ __html: svgWithWhiteFill }}
+      />
+    );
   }
 
   if (slugData.type === 'simpleIcon') {
@@ -116,11 +101,8 @@ export const IconSlugSvg: React.FC<IconSlugSvgProps> = ({ slugData }) => {
     );
   }
 
-  return (
-    <span className="w-8 h-8 flex items-center justify-center text-white text-xs">
-      {slugData.slug.slice(0, 2).toUpperCase()}
-    </span>
-  );
+  // unknown: 아이콘 없음
+  return null;
 };
 
 export const IconSlugView: React.FC<IconSlugViewProps> = ({
@@ -132,8 +114,10 @@ export const IconSlugView: React.FC<IconSlugViewProps> = ({
   variant = 'default',
 }) => {
   const slugData = slugToData(slug);
+  const hasIcon = slugData.type !== 'unknown';
 
-  if (variant === 'default')
+  if (variant === 'default') {
+    // 아이콘 유무와 관계없이 레이아웃 동일, 아이콘 영역만 비움
     return (
       <div className={` ${className}`} style={style} id={id}>
         <div
@@ -141,11 +125,12 @@ export const IconSlugView: React.FC<IconSlugViewProps> = ({
           style={{
             background: `#${slugData?.hex ?? 'fff'}`,
           }}>
-          <IconSlugSvg slugData={slugData} />
+          {hasIcon && <IconSlugSvg slugData={slugData} />}
         </div>
       </div>
     );
-  else
+  } else {
+    // inline variant: 레이아웃 유지, 아이콘 영역만 비움
     return (
       <span
         className={`inline-flex items-center rounded-xl p-2 space-x-2 ${className}`}
@@ -154,10 +139,11 @@ export const IconSlugView: React.FC<IconSlugViewProps> = ({
           background: `#${slugData?.hex ?? 'fff'}`,
         }}
         id={id}>
-        <IconSlugSvg slugData={slugData} />
+        {hasIcon && <IconSlugSvg slugData={slugData} />}
         <Text className="text-white">{title}</Text>
       </span>
     );
+  }
 
   // if (customIcon) {
   //   if (variant === 'default')
@@ -283,10 +269,8 @@ function getSimpleIconBySlug(slug: string): {
   return icon;
 }
 
-function getCustomIconBySlug(slug: string) {
-  const Icon = Icons[slug as keyof typeof Icons];
-
-  return Icon;
+function getCustomIconBySlug(slug: string): IconType | undefined {
+  return Icons[slug];
 }
 
 IconSlugView.displayName = 'IconView';

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { ImageGrid } from '@/components/ImageGrid';
 import img_content_1_png from './assets/content-1.png';
 import img_content_2_png from './assets/content-2.png';
 import img_content_3_png from './assets/content-3.png';
@@ -11,16 +12,15 @@ import img_content_5_png from './assets/content-5.png';
 - 정액할인권
 - 정률할인권
 - 결제 바코드를 이용한 정액/정률 할인권
+
 ### 성능 개선
 
 CloudWatch 로그 개선
 
-<Image src={img_content_1_png} alt="" />
-
-<Image src={img_content_2_png} alt="" />
-
-<Image src={img_content_3_png} alt="" />
-
-<Image src={img_content_4_png} alt="" />
-
-<Image src={img_content_5_png} alt="" />
+<ImageGrid cols={2}>
+  <Image src={img_content_1_png} alt="" />
+  <Image src={img_content_2_png} alt="" />
+  <Image src={img_content_3_png} alt="" />
+  <Image src={img_content_4_png} alt="" />
+  <Image src={img_content_5_png} alt="" />
+</ImageGrid>

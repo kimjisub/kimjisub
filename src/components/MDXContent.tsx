@@ -3,6 +3,7 @@
 import { MDXProvider } from '@mdx-js/react';
 import Image from 'next/image';
 import { ComponentType, ReactNode } from 'react';
+import { ImageGrid, PhoneScreens, SideBySide } from './ImageGrid';
 
 // MDX에서 사용할 커스텀 컴포넌트들
 const components = {
@@ -12,6 +13,10 @@ const components = {
   ),
   // Image 컴포넌트 (MDX에서 직접 사용)
   Image: Image,
+  // 이미지 그리드 컴포넌트들
+  ImageGrid,
+  PhoneScreens,
+  SideBySide,
 };
 
 interface MDXContentProps {

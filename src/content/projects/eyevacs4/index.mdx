@@ -1,17 +1,17 @@
 import Image from 'next/image';
+import { ImageGrid } from '@/components/ImageGrid';
 import img_content_1_png from './assets/content-1.png';
 import img_content_2_png from './assets/content-2.png';
 import img_content_3_png from './assets/content-3.png';
 import img_content_4_png from './assets/content-4.png';
 import img_content_5_png from './assets/content-5.png';
 
-<Image src={img_content_1_png} alt="" />
-
-<Image src={img_content_2_png} alt="" />
-
-<Image src={img_content_3_png} alt="" />
-
-<Image src={img_content_4_png} alt="" />
+<ImageGrid cols={2}>
+  <Image src={img_content_1_png} alt="" />
+  <Image src={img_content_2_png} alt="" />
+  <Image src={img_content_3_png} alt="" />
+  <Image src={img_content_4_png} alt="" />
+</ImageGrid>
 
 - React Native Codepush 적용을 통해 배포 시간 1000%가량 단축
 - Gitflow 적용을 통한 개발 흐름에 중단되지 않는 hotfix 등의 전략 적용

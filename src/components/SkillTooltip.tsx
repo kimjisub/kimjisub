@@ -80,7 +80,7 @@ export const SkillTooltip = ({ skill, children }: SkillTooltipProps) => {
                   className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
                   style={{ background: `#${slugData.hex}` }}
                 >
-                  <IconSlugSvg slugData={slugData} />
+                  {slugData.type !== 'unknown' && <IconSlugSvg slugData={slugData} />}
                 </div>
                 <span className="font-semibold text-sm text-foreground leading-tight">
                   {skill.title}
