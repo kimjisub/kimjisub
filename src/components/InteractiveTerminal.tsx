@@ -294,7 +294,10 @@ export const InteractiveTerminal = () => {
         return;
       }
       
-      if (!response.ok) throw new Error('API request failed');
+      if (!response.ok) {
+        const errorData = data;
+        throw new Error(errorData?.error || `API error: ${response.status}`);
+      }
       
       const aiResponse = data.response || '응답을 생성하지 못했어요.';
       
@@ -313,9 +316,10 @@ export const InteractiveTerminal = () => {
       await typeLines(responseLines, 'assistant');
       
     } catch (error) {
-      console.error('AI chat error:', error);
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      console.error('AI chat error:', errorMessage);
       setLines(prev => prev.filter(l => l.id !== thinkingId));
-      addLine('system', '⚠ 응답을 가져오는 데 실패했어요.');
+      addLine('system', `⚠ 응답을 가져오는 데 실패했어요. (${errorMessage})`);
     }
     
     setIsLoading(false);
