@@ -92,7 +92,7 @@ const SkillPage = async (props: { params: Params }) => {
 					
 					<ContentEngagement slug={skillId} contentType="skill" className="mb-8" />
 
-					<MarkdownRenderer content={markdown} className="w-full" />
+					<MarkdownRenderer content={markdown} className="w-full" contentPath={`skills/${skillId}`} />
 					<DebugView>
 						<Text>{format(pageFetchedAt, 'yyyy-MM-dd HH:mm:ss')}</Text>
 					</DebugView>

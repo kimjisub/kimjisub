@@ -94,7 +94,7 @@ const CareerPage = async (props: { params: Params }) => {
 					
 					<ContentEngagement slug={careerId} contentType="career" className="mb-8" />
 
-					<MarkdownRenderer content={markdown} className="w-full" />
+					<MarkdownRenderer content={markdown} className="w-full" contentPath={`careers/${careerId}`} />
 
 					<DebugView>
 						<Text>{format(pageFetchedAt, 'yyyy-MM-dd HH:mm:ss')}</Text>

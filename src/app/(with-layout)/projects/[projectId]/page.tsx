@@ -144,7 +144,7 @@ const ProjectPage = async (props: { params: Params }) => {
 					
 					<ContentEngagement slug={projectId} contentType="project" className="mb-8" />
 
-					<MarkdownRenderer content={markdown} className="w-full" />
+					<MarkdownRenderer content={markdown} className="w-full" contentPath={`projects/${projectId}`} />
 
 					<DebugView>
 						<Text>{format(pageFetchedAt, 'yyyy-MM-dd HH:mm:ss')}</Text>
