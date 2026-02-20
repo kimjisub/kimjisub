@@ -147,22 +147,44 @@ async function downloadImage(
   });
 }
 
+// 이미지 확장자 목록
+const IMAGE_EXTENSIONS = ['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg', '.ico', '.bmp', '.tiff'];
+
+// 파일이 이미지인지 확인
+function isImageFile(filePath: string): boolean {
+  const ext = path.extname(filePath).toLowerCase();
+  return IMAGE_EXTENSIONS.includes(ext);
+}
+
 // 실제 파일 매직 바이트로 타입 감지 후 확장자 수정
-function correctFileExtension(filePath: string): string | null {
+function correctFileExtension(filePath: string): string {
   try {
-    const buffer = Buffer.alloc(8);
+    const buffer = Buffer.alloc(16);
     const fd = fs.openSync(filePath, 'r');
-    fs.readSync(fd, buffer, 0, 8, 0);
+    fs.readSync(fd, buffer, 0, 16, 0);
     fs.closeSync(fd);
     
     const hex = buffer.toString('hex').toUpperCase();
+    const currentExt = path.extname(filePath).toLowerCase();
+    let detectedExt: string | null = null;
     
-    // PDF: %PDF (25 50 44 46)
+    // 매직 바이트로 실제 파일 타입 감지
     if (hex.startsWith('25504446')) {
-      const newPath = filePath.replace(/\.[^.]+$/, '.pdf');
+      detectedExt = '.pdf';
+    } else if (hex.startsWith('504B0304')) {
+      // ZIP 기반 (docx, xlsx, pptx, hwpx 등)
+      detectedExt = '.zip'; // 일단 zip으로, 나중에 내부 구조로 더 세분화 가능
+    } else if (hex.startsWith('D0CF11E0')) {
+      // OLE2 (doc, xls, ppt, hwp 등)
+      detectedExt = '.doc'; // 레거시 MS Office / HWP
+    }
+    
+    // 이미지로 표시됐지만 실제로는 문서인 경우 수정
+    if (detectedExt && IMAGE_EXTENSIONS.includes(currentExt)) {
+      const newPath = filePath.replace(/\.[^.]+$/, detectedExt);
       if (newPath !== filePath) {
         fs.renameSync(filePath, newPath);
-        console.log(`    📄 PDF 감지: ${path.basename(filePath)} → ${path.basename(newPath)}`);
+        console.log(`    📄 파일 타입 수정: ${path.basename(filePath)} → ${path.basename(newPath)}`);
         return newPath;
       }
     }
@@ -493,37 +515,48 @@ function generateMdx(markdown: string, images: ImageInfo[], assetsDir: string): 
   const imports: string[] = [];
   let content = markdown;
   let hasImages = false;
+  let hasAttachments = false;
 
   // 이미지/파일 처리
   for (const img of images) {
-    // 실제 파일 확장자 확인 (PDF로 변환됐을 수 있음)
+    // 실제 파일 확장자 확인 (파일 타입 수정됐을 수 있음)
     let actualFilename = img.filename;
     const baseName = img.filename.replace(/\.[^.]+$/, '');
     
-    // PDF로 변환됐는지 확인
-    const pdfPath = path.join(assetsDir, baseName + '.pdf');
-    if (fs.existsSync(pdfPath)) {
-      actualFilename = baseName + '.pdf';
+    // 수정된 파일 찾기 (pdf, doc, zip 등)
+    const possibleExts = ['.pdf', '.doc', '.zip', '.docx', '.xlsx', '.pptx', '.hwp', '.hwpx'];
+    for (const ext of possibleExts) {
+      const testPath = path.join(assetsDir, baseName + ext);
+      if (fs.existsSync(testPath)) {
+        actualFilename = baseName + ext;
+        break;
+      }
     }
     
     const placeholder = `{/* IMAGE: ${img.filename} */}`;
+    const actualPath = path.join(assetsDir, actualFilename);
     
-    if (actualFilename.endsWith('.pdf')) {
-      // PDF는 다운로드 링크로
-      const linkMd = `[📄 Download PDF](./assets/${actualFilename})`;
-      content = content.replace(placeholder, linkMd);
-    } else {
+    if (fs.existsSync(actualPath) && isImageFile(actualPath)) {
       // 이미지는 Image 컴포넌트로
       hasImages = true;
       const varName = `img_${actualFilename.replace(/[^a-z0-9]/gi, '_')}`;
       imports.push(`import ${varName} from './assets/${actualFilename}';`);
       const jsxImage = `<Image src={${varName}} alt="" />`;
       content = content.replace(placeholder, jsxImage);
+    } else {
+      // 첨부파일은 FileDownload 컴포넌트로
+      hasAttachments = true;
+      const ext = path.extname(actualFilename).slice(1).toUpperCase();
+      const jsx = `<FileDownload href="./assets/${actualFilename}" filename="${actualFilename}" type="${ext}" />`;
+      content = content.replace(placeholder, jsx);
     }
   }
 
   if (hasImages) {
     imports.unshift(`import Image from 'next/image';`);
+  }
+  if (hasAttachments) {
+    imports.unshift(`import { FileDownload } from '@/components/FileDownload';`);
   }
 
   if (imports.length === 0) {
