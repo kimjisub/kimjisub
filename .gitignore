@@ -43,3 +43,6 @@ next-env.d.ts
 /src/generated/prisma
 
 /src/content_prev
+# Lock files (pnpm only)
+yarn.lock
+package-lock.json
