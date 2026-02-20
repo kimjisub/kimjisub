@@ -9,7 +9,7 @@ url: ""
 
  불법 스포츠 도박 근절
 
-![image](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5319373e-7b98-4d90-8f44-432ab45be0ef/Untitled.png)
+![image](./assets/content-1.png)
 
 ## 포문(砲門)
 
@@ -19,6 +19,6 @@ url: ""
 
 청소년 들의 불법 스포츠 도박을 근절하고자 기획한 프로젝트입니다. 승부를 예측하며 돈을 베팅하는 대신 경험치를 베팅하고 다양한 커뮤니티를 운영합니다.
 
-![image](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ee2066a9-81a5-46e3-b776-5ec1fd2b6d14/INTRO2x.png)
+![image](./assets/content-2.png)
 
-![image](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/44c9ef4c-bff8-4282-8c31-cc0ea5533d2c/MAIN2x.png)
+![image](./assets/content-3.png)

@@ -7,4 +7,4 @@ date: "2019-03"
 
 
 
-![image](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/74118aba-314d-4340-ba7f-e2b26dd8929d/EB0E54FC-03CC-479D-9CD4-A0D930B64587_1_105_c.jpeg)
+![image](./assets/content-1.jpeg)

@@ -9,7 +9,7 @@ url: "https://play.google.com/store/apps/details?id=com.kimjisub.launchpad&hl=ko
 
 500+만 다운로드를 달성한 런치패드 기반의 연주형 리듬게임
 
-![image](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/20ebab5d-17df-41dd-9a8e-bdcba091096d/unipad-A4.jpg)
+![image](./assets/content-1.jpg)
 
 1131만 다운로드를 기록한 글로벌 앱
 

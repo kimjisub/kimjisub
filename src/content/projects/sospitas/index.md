@@ -9,7 +9,7 @@ url: ""
 
 근무 환경 개선 모니터링 솔루션
 
-![image](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6c4b020b-0046-4060-98a4-23a11e3b2603/ic_launcher-web.png)
+![image](./assets/content-1.png)
 
 ## Sospitas
 

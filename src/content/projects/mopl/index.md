@@ -9,7 +9,7 @@ url: "https://play.google.com/store/apps/details?id=com.hanwha.mopl"
 
 한화비전에서  운영하는 아파트 관리 솔루션
 
-![image](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/06505dd8-bd16-459f-9542-1df09cfb1d6d/Frame_10138.png)
+![image](./assets/content-1.png)
 
 - 한화 비전에서 진행중인 아파트 커뮤니티 및 주차 관리 솔루션 외주 형태 계약
 - 82개의 페이지, 120개의 API를 가진 React Native 기반의 모바일 앱 개발

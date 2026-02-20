@@ -1103,6 +1103,1109 @@
     "usageCount": 0
   },
   {
+    "id": "028fe87c-0f11-4c18-9b28-0ca21f4226eb",
+    "slug": "c-c",
+    "title": "C/C++",
+    "category": [
+      "언어"
+    ],
+    "proficiency": "2. 중급",
+    "visible": true,
+    "usageCount": 1
+  },
+  {
+    "id": "02f9cfd1-cef8-4d9e-8d64-bba6bed2f669",
+    "slug": "mariadb",
+    "title": "MariaDB",
+    "category": [
+      "DB"
+    ],
+    "proficiency": "2. 중급",
+    "visible": false,
+    "usageCount": 1
+  },
+  {
+    "id": "03904233-518c-42f4-a179-0711a29d5dca",
+    "slug": "html",
+    "title": "HTML",
+    "category": [
+      "언어"
+    ],
+    "proficiency": "3. 상급",
+    "visible": true,
+    "usageCount": 3
+  },
+  {
+    "id": "042d40b6-9d15-43f4-9b6d-7f370dc83d0d",
+    "slug": "visualstudioappcenter",
+    "title": "visualstudioappcenter",
+    "category": [
+      "CI/CD"
+    ],
+    "proficiency": "1. 초보",
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "08bcbabe-1cc1-4254-8cf8-32604eefed49",
+    "slug": "kotlin",
+    "title": "Kotlin",
+    "category": [
+      "언어"
+    ],
+    "proficiency": "3. 상급",
+    "visible": true,
+    "usageCount": 3
+  },
+  {
+    "id": "0964ed17-2859-4b92-a8d6-7bc4693b37bf",
+    "slug": "r",
+    "title": "R",
+    "category": [
+      "언어"
+    ],
+    "proficiency": "1. 초보",
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "0d28c23a-e390-49a6-838f-596754894ace",
+    "slug": "go",
+    "title": "Go",
+    "category": [
+      "언어"
+    ],
+    "proficiency": "1. 초보",
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "0ddb4259-f5e7-4d6f-b290-b15e7ecdddde",
+    "slug": "cisco",
+    "title": "cisco",
+    "category": [
+      "Infra"
+    ],
+    "proficiency": "0. 입문",
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "0e32cdb3-71e3-4e3a-8791-dfe1630a9e66",
+    "slug": "argo-cd",
+    "title": "Argo CD",
+    "category": [
+      "CI/CD"
+    ],
+    "proficiency": "1. 초보",
+    "visible": true,
+    "usageCount": 1
+  },
+  {
+    "id": "0eb49cd6-c892-4878-b48e-12cc78452f04",
+    "slug": "numpy",
+    "title": "Numpy",
+    "category": [
+      "기술"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "0f8f5936-2444-4b7b-b501-85686ea70e1b",
+    "slug": "ableton-live",
+    "title": "Ableton Live",
+    "category": [
+      "음악"
+    ],
+    "proficiency": "1. 초보",
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "12d82f91-638d-42c0-bc1e-325dc0a66979",
+    "slug": "github-actions",
+    "title": "Github Actions",
+    "category": [
+      "CI/CD"
+    ],
+    "proficiency": "2. 중급",
+    "visible": true,
+    "usageCount": 2
+  },
+  {
+    "id": "1343b1b1-c9dc-80d8-acb0-ed49e9425019",
+    "slug": "hapi",
+    "title": "hapi",
+    "category": [
+      "기술"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "1353b1b1-c9dc-8026-9688-ea676ad0941f",
+    "slug": "platformio",
+    "title": "platformIO",
+    "category": [
+      "IDE"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "151d913c-f9c5-4bf4-903f-8b5c98805165",
+    "slug": "mongoose",
+    "title": "Mongoose",
+    "category": [
+      "DB"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "1a63ee6e-8da8-4a21-bc16-c5c416f2d3f7",
+    "slug": "esp32",
+    "title": "ESP32",
+    "category": [
+      "하드웨어"
+    ],
+    "proficiency": "1. 초보",
+    "visible": false,
+    "usageCount": 2
+  },
+  {
+    "id": "1cc358d2-004a-475b-bbc7-a3a7edec57ae",
+    "slug": "mdx",
+    "title": "MDX",
+    "category": [
+      "기술",
+      "협업/문서"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "1e78e66b-0c89-413c-a6e8-fc37c9ff3a16",
+    "slug": "cmake",
+    "title": "cmake",
+    "category": [
+      "기술"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "1f16a325-bf45-4fcd-a9e6-0037dda9f3f2",
+    "slug": "jest",
+    "title": "jest",
+    "category": [
+      "CI/CD"
+    ],
+    "proficiency": "2. 중급",
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "2004680c-5385-4744-87cd-b724ac2ae4ff",
+    "slug": "mailgun",
+    "title": "Mailgun",
+    "category": [
+      "기술"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "21324644-fb22-4d10-9b97-ded3c984b401",
+    "slug": "kubernetes",
+    "title": "kubernetes",
+    "category": [
+      "Infra"
+    ],
+    "proficiency": "2. 중급",
+    "visible": true,
+    "usageCount": 1
+  },
+  {
+    "id": "25f88206-8412-453a-898a-e42911d19554",
+    "slug": "nfc",
+    "title": "nfc",
+    "category": [
+      "프로토콜"
+    ],
+    "proficiency": null,
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "265e2b61-418f-48b0-8aa9-b24cb1fe57b8",
+    "slug": "prisma",
+    "title": "Prisma",
+    "category": [
+      "DB"
+    ],
+    "proficiency": "2. 중급",
+    "visible": true,
+    "usageCount": 1
+  },
+  {
+    "id": "28bc9939-6d4e-4883-8e34-5509feabb9ec",
+    "slug": "marp",
+    "title": "Marp",
+    "category": [
+      "협업/문서"
+    ],
+    "proficiency": "3. 상급",
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "2bfa8a4f-34bc-4cf3-aef6-163ac392b1c9",
+    "slug": "googleanalytics",
+    "title": "googleanalytics",
+    "category": [
+      "기술"
+    ],
+    "proficiency": null,
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "2d2f638d-af48-488b-98a9-b4c57c8fb5f1",
+    "slug": "blender",
+    "title": "blender",
+    "category": [
+      "디자인"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "2dd0e6a2-2c7a-4f05-8a03-41ee871d41a1",
+    "slug": "aws-ec2",
+    "title": "AWS EC2",
+    "category": [
+      "Infra"
+    ],
+    "proficiency": "2. 중급",
+    "visible": true,
+    "usageCount": 1
+  },
+  {
+    "id": "2de77312-a4f7-4b9a-b839-58bf25763f45",
+    "slug": "pwa",
+    "title": "PWA",
+    "category": [
+      "기술"
+    ],
+    "proficiency": "1. 초보",
+    "visible": false,
+    "usageCount": 2
+  },
+  {
+    "id": "2e8c0860-715e-4d73-a21f-71c9a1b73e2d",
+    "slug": "adobe-xd",
+    "title": "Adobe Xd",
+    "category": [
+      "협업/문서"
+    ],
+    "proficiency": "1. 초보",
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "2f5d49b9-9ad9-4284-9b6b-a3f9d9ceca56",
+    "slug": "kibana",
+    "title": "kibana",
+    "category": [
+      "기술"
+    ],
+    "proficiency": null,
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "2ff1f17c-1317-4434-88ac-87e698f787dc",
+    "slug": "swagger",
+    "title": "swagger",
+    "category": [
+      "협업/문서",
+      "기술"
+    ],
+    "proficiency": null,
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "2ff585f7-8ed6-43e3-922b-36b7dd7e8c1a",
+    "slug": "github-pages",
+    "title": "Github Pages",
+    "category": [
+      "협업/문서"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "3296beb3-60fa-4d54-ac44-607f1b29090a",
+    "slug": "adobe-ps-ai-pr-ae-xd",
+    "title": "Adobe (Ps, Ai, Pr, Ae, Xd)",
+    "category": [
+      "디자인"
+    ],
+    "proficiency": "1. 초보",
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "3461be36-c2c3-47f5-9663-71778f065cff",
+    "slug": "gitkaraken",
+    "title": "GitKaraken",
+    "category": [
+      "개발 도구"
+    ],
+    "proficiency": "3. 상급",
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "347fea26-3482-4acd-9171-7b3fd3d61701",
+    "slug": "ubuntu",
+    "title": "Ubuntu",
+    "category": [
+      "OS"
+    ],
+    "proficiency": "3. 상급",
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "34903a44-fc8c-4c2c-bd36-e546ed918aed",
+    "slug": "electron",
+    "title": "Electron",
+    "category": [
+      "기술"
+    ],
+    "proficiency": "1. 초보",
+    "visible": true,
+    "usageCount": 1
+  },
+  {
+    "id": "34b307a0-5ef9-46dd-8ef3-b3b83de63890",
+    "slug": "gcp",
+    "title": "GCP",
+    "category": [
+      "Infra"
+    ],
+    "proficiency": "2. 중급",
+    "visible": false,
+    "usageCount": 5
+  },
+  {
+    "id": "34d64729-958c-44ae-a1da-bb5240f72549",
+    "slug": "mermaid",
+    "title": "mermaid",
+    "category": [
+      "협업/문서"
+    ],
+    "proficiency": null,
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "35707124-2941-4d52-96fc-b5d9ab789dfc",
+    "slug": "vultr",
+    "title": "vultr",
+    "category": [
+      "Infra"
+    ],
+    "proficiency": null,
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "35995e50-34db-42b0-acf4-8bd428806806",
+    "slug": "xcode",
+    "title": "Xcode",
+    "category": [
+      "IDE"
+    ],
+    "proficiency": "2. 중급",
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "370671ad-9f09-412d-a01f-9097c5867439",
+    "slug": "spring",
+    "title": "Spring",
+    "category": [
+      "기술"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "37385876-9c26-44ef-97fa-831ffe0076db",
+    "slug": "gitbook",
+    "title": "GitBook",
+    "category": [
+      "협업/문서"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "3a93b9ed-5408-4976-b937-dd52d238d3b7",
+    "slug": "windows",
+    "title": "Windows",
+    "category": [
+      "OS"
+    ],
+    "proficiency": "3. 상급",
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "3c4bf054-ffac-4473-8b0e-b7912d5e956d",
+    "slug": "influxdb",
+    "title": "influxdb",
+    "category": [
+      "DB"
+    ],
+    "proficiency": "2. 중급",
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "3f5fee99-5206-4938-9171-5d53b30f4846",
+    "slug": "aws-s3",
+    "title": "AWS S3",
+    "category": [
+      "Infra"
+    ],
+    "proficiency": "1. 초보",
+    "visible": true,
+    "usageCount": 2
+  },
+  {
+    "id": "3fb1154e-6de9-4dd6-a331-89a3b934bf1b",
+    "slug": "terraform",
+    "title": "Terraform",
+    "category": [
+      "Infra"
+    ],
+    "proficiency": "0. 입문",
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "4198e027-f132-46b4-a6ef-bd5f2ae73d1b",
+    "slug": "axios",
+    "title": "axios",
+    "category": [
+      "기술"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "437011ba-21fc-4c7c-874e-ebd2b695aa9f",
+    "slug": "docusaurus",
+    "title": "docusaurus",
+    "category": [
+      "협업/문서"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "43e30745-c837-4b31-bc5b-09f4295a51ba",
+    "slug": "aws-eks",
+    "title": "AWS EKS",
+    "category": [
+      "Infra"
+    ],
+    "proficiency": "1. 초보",
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "49e8d14a-b851-484b-9483-b2d78559aa10",
+    "slug": "mysql",
+    "title": "mysql",
+    "category": [
+      "DB"
+    ],
+    "proficiency": "2. 중급",
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "4a111b87-b88d-482b-89da-960d66b51a00",
+    "slug": "python",
+    "title": "Python",
+    "category": [
+      "언어"
+    ],
+    "proficiency": "2. 중급",
+    "visible": true,
+    "usageCount": 2
+  },
+  {
+    "id": "4a4c9239-b285-48f3-a4c6-6192aba4cffe",
+    "slug": "curl",
+    "title": "curl",
+    "category": [
+      "기술"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "4b865f0f-1d4b-4322-b315-5ae93684908e",
+    "slug": "datefns",
+    "title": "datefns",
+    "category": [
+      "기술"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "4b9ff3d7-24a0-4ed1-8b34-7ab9c34c1843",
+    "slug": "android-studio",
+    "title": "Android Studio",
+    "category": [
+      "IDE"
+    ],
+    "proficiency": "3. 상급",
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "4cbdce83-6420-457c-9054-1606c6159738",
+    "slug": "minio",
+    "title": "Minio",
+    "category": [
+      "Infra"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "4fd0bd92-f82d-49b1-a0c5-3012a571f14e",
+    "slug": "nginx",
+    "title": "nginx",
+    "category": [
+      "Infra"
+    ],
+    "proficiency": "2. 중급",
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "5118e5a2-987a-4bf9-ac1f-c1c55c138b23",
+    "slug": "javascript",
+    "title": "Javascript",
+    "category": [
+      "언어"
+    ],
+    "proficiency": "3. 상급",
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "51d42d09-1be8-4191-b06b-6a8271599e47",
+    "slug": "jwt",
+    "title": "JWT",
+    "category": [
+      "기술"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "532e4039-9329-4249-8149-505a3e8c2a83",
+    "slug": "elasticstack",
+    "title": "elasticstack",
+    "category": [
+      "기술"
+    ],
+    "proficiency": null,
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "53974902-39e4-4980-a7ea-80fcf4c546ce",
+    "slug": "adobe-ae-script",
+    "title": "Adobe Ae Script",
+    "category": [
+      "기술"
+    ],
+    "proficiency": "2. 중급",
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "55d86e86-df3c-42fd-9ea0-883123716a4e",
+    "slug": "tensorflow",
+    "title": "Tensorflow",
+    "category": [
+      "기술"
+    ],
+    "proficiency": "0. 입문",
+    "visible": false,
+    "usageCount": 1
+  },
+  {
+    "id": "5813de25-25ec-4fff-b974-e5c5a52a8fca",
+    "slug": "ios",
+    "title": "iOS",
+    "category": [
+      "OS"
+    ],
+    "proficiency": "1. 초보",
+    "visible": true,
+    "usageCount": 1
+  },
+  {
+    "id": "594494ff-73a6-49e6-a1a2-dfcd3ef89241",
+    "slug": "duckdb",
+    "title": "DuckDB",
+    "category": [
+      "DB"
+    ],
+    "proficiency": "2. 중급",
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "59d00089-4e4a-473a-8cba-63e5d047b45a",
+    "slug": "flask",
+    "title": "Flask",
+    "category": [
+      "기술"
+    ],
+    "proficiency": "1. 초보",
+    "visible": false,
+    "usageCount": 1
+  },
+  {
+    "id": "5a5dbb41-800d-420e-8135-656fe474adba",
+    "slug": "eslint",
+    "title": "Eslint",
+    "category": [
+      "기술"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "5ba0537e-3327-4f6f-b3cb-4f5feb34750f",
+    "slug": "vs-code",
+    "title": "VS Code",
+    "category": [
+      "IDE"
+    ],
+    "proficiency": "3. 상급",
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "5cd5e1fc-de49-4453-b45d-ebde1bc3b2b4",
+    "slug": "studio-3t",
+    "title": "Studio 3T",
+    "category": [
+      "개발 도구"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "5fe5e0f6-c112-49f6-92d2-03c3905931c1",
+    "slug": "haproxy",
+    "title": "HAProxy",
+    "category": [
+      "Infra"
+    ],
+    "proficiency": "2. 중급",
+    "visible": true,
+    "usageCount": 1
+  },
+  {
+    "id": "6253ef00-8fa2-4058-8310-a2d425f54eee",
+    "slug": "aws-ecr",
+    "title": "AWS ECR",
+    "category": [
+      "Infra"
+    ],
+    "proficiency": "2. 중급",
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "634778b1-470e-4100-a163-b1b738a80e26",
+    "slug": "grafana",
+    "title": "grafana",
+    "category": [
+      "기술"
+    ],
+    "proficiency": "2. 중급",
+    "visible": true,
+    "usageCount": 1
+  },
+  {
+    "id": "65180841-fa86-49b6-9602-679c23536fb8",
+    "slug": "firebase",
+    "title": "Firebase",
+    "category": [
+      "기술"
+    ],
+    "proficiency": "3. 상급",
+    "visible": true,
+    "usageCount": 16
+  },
+  {
+    "id": "67d8795c-a6d3-4967-8da0-504dacb0f185",
+    "slug": "rabbitmq",
+    "title": "rabbitmq",
+    "category": [
+      "프로토콜"
+    ],
+    "proficiency": null,
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "681343ff-92ca-42c7-a073-7f72ef77e7ef",
+    "slug": "java",
+    "title": "Java",
+    "category": [
+      "언어"
+    ],
+    "proficiency": "3. 상급",
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "6cf05c3b-e50a-47e7-b7ba-864f4495e493",
+    "slug": "dell",
+    "title": "dell",
+    "category": [
+      "Infra"
+    ],
+    "proficiency": "1. 초보",
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "6e2861a5-3c7a-4d0b-a49f-b74ef1417b44",
+    "slug": "npm",
+    "title": "NPM",
+    "category": [
+      "기술"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "6e37099c-e0da-4e26-be09-ea71f156b550",
+    "slug": "aws-ecs",
+    "title": "AWS ECS",
+    "category": [
+      "Infra"
+    ],
+    "proficiency": "2. 중급",
+    "visible": true,
+    "usageCount": 1
+  },
+  {
+    "id": "6f19d4e2-daef-466d-8616-4dc553efdd0f",
+    "slug": "typescript",
+    "title": "Typescript",
+    "category": [
+      "언어"
+    ],
+    "proficiency": "3. 상급",
+    "visible": true,
+    "usageCount": 2
+  },
+  {
+    "id": "700730c6-c043-4286-acf4-73a62c118491",
+    "slug": "nodejs",
+    "title": "NodeJS",
+    "category": [
+      "기술"
+    ],
+    "proficiency": "3. 상급",
+    "visible": true,
+    "usageCount": 13
+  },
+  {
+    "id": "724b929b-8356-4ce1-a7a7-120f8ab33da0",
+    "slug": "macos",
+    "title": "MacOS",
+    "category": [
+      "OS"
+    ],
+    "proficiency": "3. 상급",
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "72622f6f-f57e-4d19-9d3e-069438247565",
+    "slug": "intellij",
+    "title": "IntelliJ",
+    "category": [
+      "IDE"
+    ],
+    "proficiency": "2. 중급",
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "72c087b5-c383-4cd9-900e-170eb5435525",
+    "slug": "jira",
+    "title": "Jira",
+    "category": [
+      "협업/문서"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "734db84a-70f6-458e-8c5c-19b0d09c2682",
+    "slug": "grpc",
+    "title": "gRPC",
+    "category": [
+      "프로토콜"
+    ],
+    "proficiency": null,
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "73a52b90-fa25-4d57-9a6c-1a8dc7b9ff37",
+    "slug": "git",
+    "title": "Git",
+    "category": [
+      "협업/문서"
+    ],
+    "proficiency": "3. 상급",
+    "visible": true,
+    "usageCount": 1
+  },
+  {
+    "id": "741f7847-5e09-4e00-a67c-36d748f908c4",
+    "slug": "linear-app",
+    "title": "Linear.app",
+    "category": [
+      "협업/문서"
+    ],
+    "proficiency": "3. 상급",
+    "visible": true,
+    "usageCount": 4
+  },
+  {
+    "id": "74468ca3-8f01-4fad-b156-2f350aa0baec",
+    "slug": "chatgpt-4-0",
+    "title": "ChatGPT 4.0",
+    "category": [
+      "개발 도구"
+    ],
+    "proficiency": "3. 상급",
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "750dfb35-dc64-4947-9c37-59a2e6dfc84f",
+    "slug": "alpine-linux",
+    "title": "Alpine Linux",
+    "category": [
+      "OS"
+    ],
+    "proficiency": "2. 중급",
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "77e9a085-bd34-4338-9867-10b36324747c",
+    "slug": "swift",
+    "title": "Swift",
+    "category": [
+      "언어"
+    ],
+    "proficiency": "0. 입문",
+    "visible": false,
+    "usageCount": 1
+  },
+  {
+    "id": "79ce5ae3-16cf-47a5-96c4-0c54792df264",
+    "slug": "flutter",
+    "title": "Flutter",
+    "category": [
+      "기술"
+    ],
+    "proficiency": "1. 초보",
+    "visible": false,
+    "usageCount": 2
+  },
+  {
+    "id": "7b876528-6abb-4c3d-bdd3-9126ad84ee1e",
+    "slug": "vue",
+    "title": "Vue",
+    "category": [
+      "기술"
+    ],
+    "proficiency": "0. 입문",
+    "visible": false,
+    "usageCount": 6
+  },
+  {
+    "id": "7bbd1a07-86fd-4f02-a707-77e2dfe79a34",
+    "slug": "zigbee",
+    "title": "zigbee",
+    "category": [
+      "프로토콜"
+    ],
+    "proficiency": null,
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "7d7f997c-4d0d-43df-93cb-cbc98445ab6c",
+    "slug": "redis",
+    "title": "redis",
+    "category": [
+      "DB"
+    ],
+    "proficiency": "2. 중급",
+    "visible": true,
+    "usageCount": 1
+  },
+  {
+    "id": "7ec0d0fe-35e0-4a2d-9092-56aef0832ab8",
+    "slug": "figma",
+    "title": "Figma",
+    "category": [
+      "협업/문서",
+      "디자인"
+    ],
+    "proficiency": "2. 중급",
+    "visible": true,
+    "usageCount": 3
+  },
+  {
+    "id": "810de648-10c2-4ed1-b888-c2fe77fe6b67",
+    "slug": "elasticsearch",
+    "title": "elasticsearch",
+    "category": [
+      "기술"
+    ],
+    "proficiency": null,
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "81c0187b-0751-4eaf-9fb2-e3a68acc70b2",
+    "slug": "opencv",
+    "title": "OpenCV",
+    "category": [
+      "기술"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "81f8616a-716f-4ca5-8d25-fb7812bb245b",
+    "slug": "circleci",
+    "title": "circleci",
+    "category": [
+      "CI/CD"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "84ffcc42-883a-48ee-9d0e-099da0fda4eb",
+    "slug": "aws-documentdb",
+    "title": "AWS DocumentDB",
+    "category": [
+      "Infra"
+    ],
+    "proficiency": "2. 중급",
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "85a50526-1d67-4ddb-9bac-eff36490ff2d",
+    "slug": "visual-studio",
+    "title": "Visual Studio",
+    "category": [
+      "IDE"
+    ],
+    "proficiency": "2. 중급",
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "8727405e-9650-436f-8628-601b24bd12bc",
+    "slug": "kafka",
+    "title": "Kafka",
+    "category": [
+      "프로토콜"
+    ],
+    "proficiency": "2. 중급",
+    "visible": true,
+    "usageCount": 0
+  },
+  {
+    "id": "87fc7d85-1422-4748-a5bf-ddc64ff9dccd",
+    "slug": "recoil",
+    "title": "Recoil",
+    "category": [
+      "기술"
+    ],
+    "proficiency": null,
+    "visible": false,
+    "usageCount": 0
+  },
+  {
+    "id": "8b76e911-93c0-4f42-b56f-4cb55702f334",
+    "slug": "compose",
+    "title": "Compose",
+    "category": [
+      "기술"
+    ],
+    "proficiency": "1. 초보",
+    "visible": false,
+    "usageCount": 0
+  },
+  {
     "id": "8b900878-f3da-4c38-81d8-c473cdb8e30c",
     "slug": "ai",
     "title": "AI",

@@ -9,7 +9,7 @@ url: "https://luna.codes"
 
 정기구독형 코딩교육 플랫폼
 
-![image](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/58645c81-ab22-417c-b82f-e71afde25cd4/lunacoding_logo.png)
+![image](./assets/content-1.png)
 
 ## LUNA Coding
 

@@ -7,4 +7,4 @@ date: "2017-12"
 
 
 
-![image](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/59cc127b-9320-4ff5-a7f6-d53d397f829d/1179_43201_0_2BhM7p.jpg)
+![image](./assets/content-1.jpg)

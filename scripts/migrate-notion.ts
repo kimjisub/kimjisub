@@ -71,12 +71,19 @@ function getFileExtension(url: string): string {
 
 // ─── Extract Notion Page Content ─────────────────────────────────────────────
 
-async function extractPageContent(pageId: string): Promise<string> {
+interface ExtractResult {
+  content: string;
+  images: { url: string; filename: string }[];
+}
+
+async function extractPageContent(pageId: string): Promise<ExtractResult> {
+  const result: ExtractResult = { content: '', images: [] };
+  
   try {
     const recordMap = await notionX.getPage(pageId);
     const blocks = recordMap.block || {};
     
-    let content = '';
+    let imageIndex = 0;
     
     for (const blockId of Object.keys(blocks)) {
       const block = blocks[blockId]?.value;
@@ -86,38 +93,45 @@ async function extractPageContent(pageId: string): Promise<string> {
       
       if (type === 'text' || type === 'paragraph') {
         const text = block.properties?.title?.map((t: any) => t[0]).join('') || '';
-        if (text) content += text + '\n\n';
+        if (text) result.content += text + '\n\n';
       } else if (type === 'header' || type === 'sub_header' || type === 'sub_sub_header') {
         const text = block.properties?.title?.map((t: any) => t[0]).join('') || '';
         const level = type === 'header' ? '## ' : type === 'sub_header' ? '### ' : '#### ';
-        if (text) content += level + text + '\n\n';
+        if (text) result.content += level + text + '\n\n';
       } else if (type === 'bulleted_list' || type === 'numbered_list') {
         const text = block.properties?.title?.map((t: any) => t[0]).join('') || '';
         const prefix = type === 'bulleted_list' ? '- ' : '1. ';
-        if (text) content += prefix + text + '\n';
+        if (text) result.content += prefix + text + '\n';
       } else if (type === 'code') {
         const text = block.properties?.title?.map((t: any) => t[0]).join('') || '';
         const lang = block.properties?.language?.[0]?.[0] || '';
-        if (text) content += '```' + lang + '\n' + text + '\n```\n\n';
+        if (text) result.content += '```' + lang + '\n' + text + '\n```\n\n';
       } else if (type === 'quote') {
         const text = block.properties?.title?.map((t: any) => t[0]).join('') || '';
-        if (text) content += '> ' + text + '\n\n';
+        if (text) result.content += '> ' + text + '\n\n';
       } else if (type === 'callout') {
         const text = block.properties?.title?.map((t: any) => t[0]).join('') || '';
         const emoji = block.format?.page_icon || '💡';
-        if (text) content += `> ${emoji} ${text}\n\n`;
+        if (text) result.content += `> ${emoji} ${text}\n\n`;
       } else if (type === 'divider') {
-        content += '---\n\n';
+        result.content += '---\n\n';
       } else if (type === 'image') {
         const src = block.properties?.source?.[0]?.[0] || block.format?.display_source;
-        if (src) content += `![image](${src})\n\n`;
+        if (src) {
+          imageIndex++;
+          const ext = getFileExtension(src);
+          const filename = `content-${imageIndex}.${ext}`;
+          result.images.push({ url: src, filename });
+          result.content += `![image](./assets/${filename})\n\n`;
+        }
       }
     }
     
-    return content.trim();
+    result.content = result.content.trim();
+    return result;
   } catch (error) {
     console.log(`  ⚠ Could not extract page content for ${pageId}`);
-    return '';
+    return result;
   }
 }
 
@@ -312,7 +326,17 @@ async function migrateCareers(skillsMap: Record<string, any>) {
     }
     
     // Extract page content
-    const content = await extractPageContent(id);
+    const { content, images } = await extractPageContent(id);
+    
+    // Download content images
+    if (images.length > 0) {
+      const assetsDir = path.join(careerDir, 'assets');
+      ensureDir(assetsDir);
+      for (const img of images) {
+        await downloadImage(img.url, path.join(assetsDir, img.filename));
+      }
+    }
+    
     if (content) {
       const dateStr = data.date.start ? format(parseISO(data.date.start), 'yyyy-MM') : '';
       const mdContent = `---
@@ -444,7 +468,17 @@ async function migrateProjects(skillsMap: Record<string, any>, careersMap: Recor
     }
     
     // Extract page content
-    const content = await extractPageContent(id);
+    const { content, images } = await extractPageContent(id);
+    
+    // Download content images
+    if (images.length > 0) {
+      const assetsDir = path.join(projectDir, 'assets');
+      ensureDir(assetsDir);
+      for (const img of images) {
+        await downloadImage(img.url, path.join(assetsDir, img.filename));
+      }
+    }
+    
     if (content) {
       const dateStr = data.date.start ? format(parseISO(data.date.start), 'yyyy-MM') : '';
       const mdContent = `---

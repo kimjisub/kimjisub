@@ -15,7 +15,7 @@ url: ""
 
 ---
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/0f1fd3be-aed6-42cf-9935-8f2e96ad640b/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-10_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_8.34.30.png)
+![image](./assets/content-1.png)
 
 예약 현황을 조회할 수 있는 세미나실 예약 시스템 루트 페이지 
 
@@ -47,53 +47,53 @@ MVP 개발 : 2024.02 ~ 2024.05
 
 > /icons/arrow-northeast_gray.svg GitHub
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/b4372cb5-f9e8-4ebc-9177-deea756cffde/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-09_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.54.07.png)
+![image](./assets/content-2.png)
 
 컴퓨터 학부 학과 홈페이지 
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/ddb1a5fa-bc79-459e-8109-56a031d79a82/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-09_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.56.09.png)
+![image](./assets/content-3.png)
 
 로그인 페이지
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/9f775d67-ad4d-45a0-ac63-6a1f1b1149af/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-09_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.58.52.png)
+![image](./assets/content-4.png)
 
 로그인한 사용자 QR 코드 
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/7bbca676-9409-491f-9e1c-9c4eaae7506a/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-09_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.59.37.png)
+![image](./assets/content-5.png)
 
 로그인한 사용자 본인의 예약 현황 조회
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/b35d525e-0161-4888-af14-fd948e2a0c5b/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-09_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.03.53.png)
+![image](./assets/content-6.png)
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/b7bb54b6-b92e-42fc-a750-c0e38bbf2335/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-10_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.04.23.png)
+![image](./assets/content-7.png)
 
 로그인 하지않은 사용자 비밀번호 재설정시 본인 확인을 위한 인증 코드 발송 
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/64b75e3c-ee2a-49a4-a040-20ecb6893116/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-10_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.07.18.png)
+![image](./assets/content-8.png)
 
 로그인 하지않은 사용자 비밀번호 재설정
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/2e3c648a-8def-4b33-b782-3e43ff26c145/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-09_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.00.54.png)
+![image](./assets/content-9.png)
 
 로그인한 사용자 비밀번호 재설정 
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/e36831cb-a08f-49ec-bf4e-ad847e6877fa/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-09_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.03.13.png)
+![image](./assets/content-10.png)
 
 관리자의 스케줄 설정 
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/daba14e5-33c2-4720-9c8f-567a23273ae3/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-09_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.02.12.png)
+![image](./assets/content-11.png)
 
 관리자의 일반 사용자 현황 관리 
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/3c699e3b-9ecd-45e9-bb80-eeaac39f921d/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-10_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.09.06.png)
+![image](./assets/content-12.png)
 
 관리자의 파티션별 예약 조회(1)
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/68714278-c3f8-4814-ad4b-0695b9cc4b8c/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-10_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.10.48.png)
+![image](./assets/content-13.png)
 
 관리자의 파티션별 예약 조회(2)
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/0ec0228b-84af-40a2-8973-d5874b738c9e/IMG_3273.heic)
+![image](./assets/content-14.png)
 
 이서연
 
@@ -109,7 +109,7 @@ API 연동 및 데이터 처리 : 백엔드에서 제공한 RESTful API와의 �
 
 서비스 유지보수: 프론트엔드 기능의 완성도를 높이기 위해 지속적인 테스트를 진행하였으며, 시스템 운영 중 발생하는 오류를 수정하고 새로운 요구 사항에 맞춰 기능을 업데이트했습니다.
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/e133c21b-db31-4762-9b91-f1184d82e9bc/%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB.jpg)
+![image](./assets/content-15.jpg)
 
 황병훈
 
@@ -125,7 +125,7 @@ CI(Continuous Integration) 환경 구축: 자동화된 빌드를 위한 CI 환�
 
 서비스 유지보수: 운영 중 발생하는 문제를 해결하고, 사용자 피드백을 반영하여 지속적인 기능 개선과 성능 최적화를 진행하고 있습니다.
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/1c9e332d-971a-42ed-8cdd-b59d83c68715/%E1%84%80%E1%85%B5%E1%86%B7%E1%84%8C%E1%85%B5%E1%84%89%E1%85%A5%E1%86%B8_%E1%84%8C%E1%85%B3%E1%86%BC%E1%84%86%E1%85%A7%E1%86%BC.jpeg)
+![image](./assets/content-16.jpeg)
 
 김지섭 
 

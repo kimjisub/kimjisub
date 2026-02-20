@@ -27,7 +27,7 @@ url: "https://alpaconnect.com"
 데이터 수집 및 분석 강화: 고급 데이터 수집 및 분석 도구를 사용하여 장비에서 생성되는 데이터를 실시간으로 수집하고 분석합니다. 이를 통해 데이터를 의사결정에 효과적으로 활용할 수 있습니다.
 
 1. 제품/서비스 소개
-![image](https://lh7-us.googleusercontent.com/FQQldVq9hQd0wcJmRMQIYK5cre8IjaRokLnPilR3_zPdex30_pMc9Y3jIK2iT_YBUl3SYvH0dRvHiByeUljQ4rQrYzNUK0WkJVr77GuqN82vJgAqC0ktCtruru8L0MWMDGXS9ociXs7ZfeHm10qIrQ)
+![image](./assets/content-1.png)
 
 [자체 개발 PCB “APC”]
 

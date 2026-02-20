@@ -9,4 +9,4 @@ url: "https://dutchpay.jisub.kim"
 
 더치페이 계산기
 
-![image](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a3d7045c-320f-49f2-b102-73c3d5d0e1bc/Untitled.png)
+![image](./assets/content-1.png)

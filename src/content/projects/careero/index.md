@@ -11,22 +11,22 @@ url: ""
 
 ## 프로젝트명 :  CareeRo
 
-![image](https://github.com/kimjisub/careero/assets/96881651/53a22da2-55ee-4f6f-94fc-2ac9e497b257)
+![image](./assets/content-1.png)
 
 ### 팀명 : 국밥과 깍두기
 
 ### 1. 문제 정의
 
-![image](https://user-images.githubusercontent.com/96881651/248442404-7de701ff-73b3-47fa-bb85-1589bcf4120a.png)
+![image](./assets/content-2.png)
 
 - 대학생의 50% 가 세부적인 진로 및 목표를 정하지 못하였다.
-![image](https://user-images.githubusercontent.com/96881651/248442827-07eb763e-b526-46da-9b2b-506b3e3644b7.png)
+![image](./assets/content-3.png)
 
 - 대학생의 64.9% 가 진로 및 취업 관련에 만족하지 못하고 있고, 대학생의 19.3% 가 관련 사항에 불편함을 느끼고 있다.
-![image](https://user-images.githubusercontent.com/96881651/248443021-dde14d34-da55-4de2-bd30-e2b7125f735f.png)
+![image](./assets/content-4.png)
 
 - 참여자 중 진로 및 목표를 정하는데 영향이 주는 인물이 없음이 가장 많은 것으로 나타난다.
-![image](https://user-images.githubusercontent.com/96881651/248443726-a1b126e8-1c52-4f4a-b939-f5842610e039.png)
+![image](./assets/content-5.png)
 
 - 설문 참여자 중 다수가 대외 활동의 관한 정보를 진로 관련 플랫품으로 얻고 있다.
 ### 2. 문제 해결 방법
@@ -41,31 +41,31 @@ Careero App 을 통해 사용자에게 필요한 로드맵을 제시한다.
 
 #### 앱 초기화면
 
-![image](https://github.com/kimjisub/careero/raw/main/docs/todo_0.PNG)
+![image](./assets/content-6.png)
 
-![image](https://github.com/kimjisub/careero/raw/main/docs/roadMap_0.PNG)
+![image](./assets/content-7.png)
 
-![image](https://github.com/kimjisub/careero/raw/main/docs/job_0.PNG)
+![image](./assets/content-8.png)
 
-![image](https://github.com/kimjisub/careero/raw/main/docs/class_0.PNG)
+![image](./assets/content-9.png)
 
 #### 관심 기술 리스트에 담기
 
-![image](https://github.com/kimjisub/careero/raw/main/docs/skill_0.PNG)
+![image](./assets/content-10.png)
 
-![image](https://github.com/kimjisub/careero/raw/main/docs/skill_1.PNG)
+![image](./assets/content-11.png)
 
 #### 관련 기술에 대한 로드맵 제시
 
-![image](https://github.com/kimjisub/careero/raw/main/docs/class_1.PNG)
+![image](./assets/content-12.png)
 
-![image](https://github.com/kimjisub/careero/raw/main/docs/job_1.PNG)
+![image](./assets/content-13.png)
 
-![image](https://github.com/kimjisub/careero/raw/main/docs/todo_1.PNG)
+![image](./assets/content-14.png)
 
 #### Data_Graph
 
-![image](https://github.com/kimjisub/careero/raw/main/docs/data_graph.gif)
+![image](./assets/content-15.gif)
 
 ### 4. 사용 시나리오
 
@@ -82,7 +82,7 @@ Careero App 을 통해 사용자에게 필요한 로드맵을 제시한다.
 - B2B + B2C 비즈니스 모델
 ### 6. 마케팅 전략
 
-![image](https://user-images.githubusercontent.com/96881651/248444071-42374bd6-95f1-4672-a9fa-189b530ab0ce.png)
+![image](./assets/content-16.png)
 
 - 설문을 통해 진로 관련 플랫폼의 수요가 높다는 것을 알 수 있다.
 - 기존 플랫폼과 차별을 둔 서비스를 제공하여 경쟁력을 갖출 수 있다.

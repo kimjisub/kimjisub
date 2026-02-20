@@ -80,12 +80,12 @@ Github:
 - 쉽고 빠르게 다양한 단기간 이벤트 상품 조회 가능
 - API 제공을 통해 구매 과정 내 기업의 서버 부하 축소
 - 데이터 수집, 분석을 통한 대시보드 제공, 빅데이터 및 AI 구성
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/c7800fa9-f353-48ac-800c-6bc4b8b0d382/Untitled.png)
+![image](./assets/content-1.png)
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/384b80fd-67b8-446c-adc9-e2a75bffaba0/Untitled.png)
+![image](./assets/content-2.png)
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/f1fbee4e-654f-4fb6-89e7-8f6e3f7daa45/Untitled.png)
+![image](./assets/content-3.png)
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/f2e454bd-6b0d-458e-a38e-6fcded0de75c/Untitled.png)
+![image](./assets/content-4.png)
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a4a3f1ab-c3ba-4b20-958a-5c6f33136e58/80d0a1fc-33ea-413f-b3a9-59773b6ded9e/Untitled.png)
+![image](./assets/content-5.png)
