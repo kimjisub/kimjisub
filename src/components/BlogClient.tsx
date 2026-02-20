@@ -203,7 +203,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
                 transition={{ duration: 0.25, ease: 'easeOut' }}
               >
                 <Link href={`/blog/${slug}`} className="block group">
-                  <article className="rounded-xl card-hover overflow-hidden flex flex-col sm:flex-row">
+                  <article className="rounded-xl bg-card border border-border hover:border-accent/30 transition-colors overflow-hidden flex flex-col sm:flex-row">
                     {/* Cover Image */}
                     {meta.image && (
                       <div className="relative w-full sm:w-48 md:w-56 shrink-0 aspect-[1200/630] sm:aspect-auto sm:h-32 md:h-36 overflow-hidden">
