@@ -33,8 +33,8 @@ function parseMetaTsx(filePath: string): ProjectMeta | null {
   try {
     const content = fs.readFileSync(filePath, 'utf-8');
     
-    // export const meta = { ... } 추출
-    const match = content.match(/export const meta = \{([\s\S]*)\};?\s*$/);
+    // export const meta = { ... } 또는 export const meta: Type = { ... } 추출
+    const match = content.match(/export const meta(?::\s*\w+)?\s*=\s*\{([\s\S]*)\};?\s*$/);
     if (!match) return null;
     
     const objectContent = match[1];
