@@ -133,13 +133,15 @@ export const IconSlugView: React.FC<IconSlugViewProps> = ({
     // inline variant: 레이아웃 유지, 아이콘 영역만 비움
     return (
       <span
-        className={`inline-flex items-center rounded-xl p-2 space-x-2 ${className}`}
+        className={`inline-flex items-center rounded-xl p-2 gap-2 ${className}`}
         style={{
           ...style,
           background: `#${slugData?.hex ?? 'fff'}`,
         }}
         id={id}>
-        {hasIcon && <IconSlugSvg slugData={slugData} />}
+        <span className="w-4 h-4 flex items-center justify-center flex-shrink-0">
+          {hasIcon && <IconSlugSvg slugData={slugData} />}
+        </span>
         <Text className="text-white">{title}</Text>
       </span>
     );
