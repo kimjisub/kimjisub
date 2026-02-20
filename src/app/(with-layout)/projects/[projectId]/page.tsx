@@ -10,6 +10,7 @@ import { ContentEngagement } from '@/components/ContentEngagement';
 import DebugView from '@/components/DebugView';
 import { JsonView } from '@/components/JsonView';
 import { MarkdownRenderer } from '@/components/MarkdownRenderer';
+import { MDXContent } from '@/components/MDXContent';
 import { SkillItem } from '@/components/SkillItem';
 
 // Projects with known Notion formula issues that cause build failures
@@ -86,6 +87,15 @@ const ProjectPage = async (props: { params: Params }) => {
 	const { project, fetchedAt } = projectRes;
 	const { markdown, fetchedAt: pageFetchedAt } = pageRes;
 
+	// MDX 컴포넌트 동적 로드 시도
+	let MDXComponent: React.ComponentType | null = null;
+	try {
+		const mdxModule = await import(`@/content/projects/${projectId}/index.mdx`);
+		MDXComponent = mdxModule.default;
+	} catch {
+		// MDX 없으면 기존 마크다운 사용
+	}
+
 	if (!project) {
 		return <div>Project not found</div>;
 	}
@@ -144,7 +154,13 @@ const ProjectPage = async (props: { params: Params }) => {
 					
 					<ContentEngagement slug={projectId} contentType="project" className="mb-8" />
 
-					<MarkdownRenderer content={markdown} className="w-full" contentPath={`projects/${projectId}`} />
+					{MDXComponent ? (
+						<MDXContent>
+							<MDXComponent />
+						</MDXContent>
+					) : (
+						<MarkdownRenderer content={markdown} className="w-full" contentPath={`projects/${projectId}`} />
+					)}
 
 					<DebugView>
 						<Text>{format(pageFetchedAt, 'yyyy-MM-dd HH:mm:ss')}</Text>
