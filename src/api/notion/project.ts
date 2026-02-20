@@ -37,6 +37,15 @@ export const getProjectsWithRelated = async () => {
   };
 };
 
+// 상대경로 ./assets/... 를 절대경로 /content/...로 변환
+const transformAssetUrl = (url: string | null | undefined, category: string, slug: string): string | null => {
+  if (!url) return null;
+  if (url.startsWith('./')) {
+    return `/content/${category}/${encodeURIComponent(slug)}/${url.slice(2)}`;
+  }
+  return url;
+};
+
 export const getProject = async (projectId: string) => {
   const decodedId = decodeURIComponent(projectId);
   const projectsRes = await getProjectsWithRelated();
@@ -44,8 +53,19 @@ export const getProject = async (projectId: string) => {
     project => project.id === decodedId,
   );
 
+  if (!project) {
+    return { project: undefined, fetchedAt: projectsRes.fetchedAt };
+  }
+
+  // iconUrl, coverUrl 경로 변환
+  const transformedProject = {
+    ...project,
+    iconUrl: transformAssetUrl(project.iconUrl, 'projects', decodedId),
+    coverUrl: transformAssetUrl(project.coverUrl, 'projects', decodedId),
+  };
+
   return {
-    project,
+    project: transformedProject,
     fetchedAt: projectsRes.fetchedAt,
   };
 };

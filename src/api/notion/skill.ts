@@ -43,12 +43,31 @@ export const getSkillsWithRelated = async () => {
   };
 };
 
+// 상대경로 ./assets/... 를 절대경로 /content/...로 변환
+const transformAssetUrl = (url: string | null | undefined, category: string, slug: string): string | null => {
+  if (!url) return null;
+  if (url.startsWith('./')) {
+    return `/content/${category}/${encodeURIComponent(slug)}/${url.slice(2)}`;
+  }
+  return url;
+};
+
 export const getSkill = async (skillId: string) => {
   const skillsRes = await getSkillsWithRelated();
   const skill = skillsRes.skills.find(skill => skill.id === skillId);
 
+  if (!skill) {
+    return { skill: undefined, fetchedAt: skillsRes.fetchedAt };
+  }
+
+  // iconUrl 경로 변환
+  const transformedSkill = {
+    ...skill,
+    iconUrl: transformAssetUrl(skill.iconUrl, 'skills', skillId),
+  };
+
   return {
-    skill,
+    skill: transformedSkill,
     fetchedAt: skillsRes.fetchedAt,
   };
 };

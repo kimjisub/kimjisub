@@ -31,13 +31,33 @@ export const getCareersWithRelated = async () => {
   };
 };
 
+// 상대경로 ./assets/... 를 절대경로 /content/...로 변환
+const transformAssetUrl = (url: string | null | undefined, category: string, slug: string): string | null => {
+  if (!url) return null;
+  if (url.startsWith('./')) {
+    return `/content/${category}/${encodeURIComponent(slug)}/${url.slice(2)}`;
+  }
+  return url;
+};
+
 export const getCareer = async (careerId: string) => {
   const decodedId = decodeURIComponent(careerId);
   const careersRes = await getCareersWithRelated();
   const career = careersRes.careers.find(career => career.id === decodedId);
 
+  if (!career) {
+    return { career: undefined, fetchedAt: careersRes.fetchedAt };
+  }
+
+  // iconUrl, coverUrl 경로 변환
+  const transformedCareer = {
+    ...career,
+    iconUrl: transformAssetUrl(career.iconUrl, 'careers', decodedId),
+    coverUrl: transformAssetUrl(career.coverUrl, 'careers', decodedId),
+  };
+
   return {
-    career,
+    career: transformedCareer,
     fetchedAt: careersRes.fetchedAt,
   };
 };
