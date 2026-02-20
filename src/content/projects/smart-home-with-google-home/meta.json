@@ -1,0 +1,14 @@
+{
+  "id": "smart-home-with-google-home",
+  "notionId": "1341a9fd-f7bb-43ed-81c3-07ae0ff07d07",
+  "title": "Smart Home With Google Home",
+  "중요도": "높음",
+  "visible": true,
+  "설명": "Google Home 활용 IoT 개발",
+  "날짜": "2020-04-12",
+  "분류": [
+    "개인 프로젝트"
+  ],
+  "이름": "Smart Home With Google Home",
+  "coverUrl": "./assets/cover.png"
+}

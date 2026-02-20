@@ -1,0 +1,12 @@
+{
+  "id": "firebase",
+  "notionId": "65180841-fa86-49b6-9602-679c23536fb8",
+  "title": "Firebase",
+  "분류": [
+    "기술"
+  ],
+  "iconSlug": "firebase",
+  "visible": true,
+  "숙련도": "3. 상급",
+  "iconUrl": "./assets/icon.svg"
+}

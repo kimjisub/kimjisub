@@ -1,0 +1,12 @@
+{
+  "id": "flask",
+  "notionId": "59d00089-4e4a-473a-8cba-63e5d047b45a",
+  "title": "Flask",
+  "분류": [
+    "기술"
+  ],
+  "iconSlug": "webassembly",
+  "visible": false,
+  "숙련도": "1. 초보",
+  "iconUrl": "./assets/icon.png"
+}

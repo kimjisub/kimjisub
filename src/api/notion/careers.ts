@@ -29,22 +29,23 @@ export type CareerT = {
   assignedTasks: { name: string; color: NotionColor }[];
 };
 
-// 로컬 meta.json 타입
+// 로컬 meta.json 타입 (새 형식 - 한글 키)
 interface CareerMeta {
   id: string;
-  slug: string;
   title: string;
-  description: string | null;
-  date: { start: string | null; end: string | null };
-  institutions: { name: string; color: string }[];
-  categories: { name: string; color: string }[];
-  assignedTasks: { name: string; color: string }[];
-  importance: string | null;
-  url: string | null;
-  awardsAndCertifications: string | null;
-  iconUrl: string | null;
-  iconEmoji: string | null;
-  coverUrl: string | null;
+  '이름'?: string;
+  '설명'?: string;
+  '날짜'?: string;
+  '기관'?: string[];
+  '분류'?: string[];
+  '맡은 업무'?: string[];
+  '중요도'?: string;
+  URL?: string;
+  '수상 및 자격증'?: string;
+  visible?: boolean;
+  iconUrl?: string;
+  coverUrl?: string;
+  iconEmoji?: string;
   // 빌드 시점에 추가되는 역방향 관계
   relatedProjects?: string[];
 }
@@ -62,37 +63,41 @@ function loadCareers(): CareerT[] {
     
     if (!meta) continue;
     
+    // visible이 false면 스킵
+    if (meta.visible === false) continue;
+    
     // 로컬 이미지 파일 찾기
-    const localIcon = findImageFile(careerDir, 'icon');
-    const localCover = findImageFile(careerDir, 'cover');
+    const assetsDir = path.join(careerDir, 'assets');
+    const localIcon = findImageFile(assetsDir, 'icon');
+    const localCover = findImageFile(assetsDir, 'cover');
     
     careers.push({
-      id: slug,  // slug를 ID로 사용
+      id: slug,
       slug,
-      title: meta.title || '',
-      description: meta.description || '',
+      title: meta.title || meta['이름'] || '',
+      description: meta['설명'] || '',
       iconUrl: localIcon || meta.iconUrl || '',
       iconEmoji: meta.iconEmoji || '',
       coverImageUrl: localCover || meta.coverUrl || '',
       relatedProjects: meta.relatedProjects || [],
-      awardsAndCertifications: meta.awardsAndCertifications || '',
-      institutions: (meta.institutions || []).map(i => ({
-        name: i.name,
-        color: i.color as NotionColor,
+      awardsAndCertifications: meta['수상 및 자격증'] || '',
+      institutions: (meta['기관'] || []).map(name => ({
+        name,
+        color: 'default' as NotionColor,
       })),
-      importance: meta.importance || '',
-      url: meta.url || '',
-      categories: (meta.categories || []).map(c => ({
-        name: c.name,
-        color: c.color as NotionColor,
+      importance: meta['중요도'] || '',
+      url: meta.URL || '',
+      categories: (meta['분류'] || []).map(name => ({
+        name,
+        color: 'default' as NotionColor,
       })),
       date: {
-        start: meta.date?.start ? parseISO(meta.date.start) : undefined,
-        end: meta.date?.end ? parseISO(meta.date.end) : undefined,
+        start: meta['날짜'] ? parseISO(meta['날짜']) : undefined,
+        end: undefined,
       },
-      assignedTasks: (meta.assignedTasks || []).map(t => ({
-        name: t.name,
-        color: t.color as NotionColor,
+      assignedTasks: (meta['맡은 업무'] || []).map(name => ({
+        name,
+        color: 'default' as NotionColor,
       })),
     });
   }

@@ -1,0 +1,12 @@
+{
+  "id": "android-studio",
+  "notionId": "4b9ff3d7-24a0-4ed1-8b34-7ab9c34c1843",
+  "title": "Android Studio",
+  "분류": [
+    "IDE"
+  ],
+  "iconSlug": "androidstudio",
+  "visible": true,
+  "숙련도": "3. 상급",
+  "iconUrl": "./assets/icon.svg"
+}

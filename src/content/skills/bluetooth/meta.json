@@ -1,0 +1,11 @@
+{
+  "id": "bluetooth",
+  "notionId": "d20ef04d-967a-43da-892b-36a0f5cfea04",
+  "title": "Bluetooth",
+  "분류": [
+    "프로토콜"
+  ],
+  "iconSlug": "bluetooth",
+  "visible": true,
+  "숙련도": "2. 중급"
+}

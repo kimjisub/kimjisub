@@ -1,0 +1,12 @@
+{
+  "id": "tensorflow",
+  "notionId": "55d86e86-df3c-42fd-9ea0-883123716a4e",
+  "title": "Tensorflow",
+  "분류": [
+    "기술"
+  ],
+  "iconSlug": "tensorflow",
+  "visible": false,
+  "숙련도": "0. 입문",
+  "iconUrl": "./assets/icon.svg"
+}

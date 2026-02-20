@@ -1,0 +1,12 @@
+{
+  "id": "python",
+  "notionId": "4a111b87-b88d-482b-89da-960d66b51a00",
+  "title": "Python",
+  "분류": [
+    "언어"
+  ],
+  "iconSlug": "python",
+  "visible": true,
+  "숙련도": "2. 중급",
+  "iconUrl": "./assets/icon.svg"
+}

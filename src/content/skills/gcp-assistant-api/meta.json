@@ -1,0 +1,12 @@
+{
+  "id": "gcp-assistant-api",
+  "notionId": "f20a2be3-f642-44bf-82f0-205b3a8463cf",
+  "title": "GCP Assistant API",
+  "분류": [
+    "Infra"
+  ],
+  "iconSlug": "googleassistant",
+  "visible": false,
+  "숙련도": "2. 중급",
+  "iconUrl": "./assets/icon.svg"
+}

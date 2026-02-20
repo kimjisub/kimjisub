@@ -1,0 +1,12 @@
+{
+  "id": "vue",
+  "notionId": "7b876528-6abb-4c3d-bdd3-9126ad84ee1e",
+  "title": "Vue",
+  "분류": [
+    "기술"
+  ],
+  "iconSlug": "vuedotjs",
+  "visible": false,
+  "숙련도": "0. 입문",
+  "iconUrl": "./assets/icon.svg"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "adobe-ae-script",
+  "notionId": "53974902-39e4-4980-a7ea-80fcf4c546ce",
+  "title": "Adobe Ae Script",
+  "분류": [
+    "기술"
+  ],
+  "iconSlug": "adobeaftereffects",
+  "visible": true,
+  "숙련도": "2. 중급",
+  "iconUrl": "./assets/icon.svg"
+}

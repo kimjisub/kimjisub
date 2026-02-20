@@ -1,0 +1,15 @@
+{
+  "id": "stella",
+  "notionId": "f0499ae1-e215-4aaf-8066-fcd9428be8c8",
+  "title": "STELLA",
+  "중요도": "낮음",
+  "visible": false,
+  "설명": "모두를 위한 인공지능 비서",
+  "날짜": "2018-10-26",
+  "분류": [
+    "팀 프로젝트"
+  ],
+  "이름": "STELLA",
+  "iconUrl": "./assets/icon.png",
+  "coverUrl": "./assets/cover.png"
+}

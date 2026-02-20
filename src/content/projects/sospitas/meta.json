@@ -1,0 +1,14 @@
+{
+  "id": "sospitas",
+  "notionId": "86bf901d-caa9-424a-90f0-02da3d8f1bea",
+  "title": "Sospitas",
+  "중요도": "낮음",
+  "visible": false,
+  "설명": "근무 환경 개선 모니터링 솔루션",
+  "날짜": "2018-05-11",
+  "분류": [
+    "팀 프로젝트"
+  ],
+  "이름": "Sospitas",
+  "iconUrl": "./assets/icon.png"
+}

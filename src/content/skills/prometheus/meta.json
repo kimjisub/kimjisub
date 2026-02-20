@@ -1,0 +1,12 @@
+{
+  "id": "prometheus",
+  "notionId": "e7132cda-295f-4c1a-b02f-b4d91361a353",
+  "title": "prometheus",
+  "분류": [
+    "Infra"
+  ],
+  "iconSlug": "prometheus",
+  "visible": true,
+  "숙련도": "2. 중급",
+  "iconUrl": "./assets/icon.png"
+}

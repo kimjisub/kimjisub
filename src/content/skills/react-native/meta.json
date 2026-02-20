@@ -1,0 +1,12 @@
+{
+  "id": "react-native",
+  "notionId": "a635019c-e58a-4d88-a7c7-f0a2052af687",
+  "title": "React Native",
+  "분류": [
+    "기술"
+  ],
+  "iconSlug": "react",
+  "visible": true,
+  "숙련도": "3. 상급",
+  "iconUrl": "./assets/icon.svg"
+}

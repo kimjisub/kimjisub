@@ -1,0 +1,12 @@
+{
+  "id": "chrome-extention",
+  "notionId": "94773cac-d11e-48fa-a7c2-e847c601b434",
+  "title": "Chrome Extention",
+  "분류": [
+    "기술"
+  ],
+  "iconSlug": "googlechrome",
+  "visible": true,
+  "숙련도": "2. 중급",
+  "iconUrl": "./assets/icon.svg"
+}

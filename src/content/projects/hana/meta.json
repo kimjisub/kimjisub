@@ -1,0 +1,15 @@
+{
+  "id": "hana",
+  "notionId": "94abf410-d23e-4253-8e66-d6fe06d07fd0",
+  "title": "HANA",
+  "중요도": "중간",
+  "visible": false,
+  "설명": "일상에 지친 현대인을 위해 위로와 힘을 전하는 글귀 플랫폼",
+  "날짜": "2018-10-13",
+  "분류": [
+    "팀 프로젝트"
+  ],
+  "이름": "HANA",
+  "iconUrl": "./assets/icon.png",
+  "coverUrl": "./assets/cover.png"
+}

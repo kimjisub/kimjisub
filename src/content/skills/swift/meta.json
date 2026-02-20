@@ -1,0 +1,12 @@
+{
+  "id": "swift",
+  "notionId": "77e9a085-bd34-4338-9867-10b36324747c",
+  "title": "Swift",
+  "분류": [
+    "언어"
+  ],
+  "iconSlug": "swift",
+  "visible": false,
+  "숙련도": "0. 입문",
+  "iconUrl": "./assets/icon.svg"
+}

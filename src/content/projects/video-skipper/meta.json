@@ -1,0 +1,19 @@
+{
+  "id": "video-skipper",
+  "notionId": "60eb508d-c631-45b0-a580-225873bedb7c",
+  "title": "Video Skipper",
+  "Github": "https://github.com/kimjisub/video-skipper",
+  "태그": [
+    "오픈소스"
+  ],
+  "중요도": "높음",
+  "visible": true,
+  "URL": "https://www.npmjs.com/package/video-skipper",
+  "설명": "영상의 공백 부분을 지워주는 오픈소스",
+  "날짜": "2023-04-28",
+  "분류": [
+    "오픈소스",
+    "팀 프로젝트"
+  ],
+  "이름": "Video Skipper"
+}

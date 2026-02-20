@@ -1,0 +1,12 @@
+{
+  "id": "ar",
+  "notionId": "f4a5ee7e-1868-46a9-ac1b-73b3ab14d5b5",
+  "title": "AR",
+  "분류": [
+    "개념"
+  ],
+  "iconSlug": "ar",
+  "visible": false,
+  "숙련도": "1. 초보",
+  "iconUrl": "./assets/icon.svg"
+}

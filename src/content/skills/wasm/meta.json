@@ -1,0 +1,12 @@
+{
+  "id": "wasm",
+  "notionId": "bc414082-79bf-46a2-ad38-46e180329b47",
+  "title": "wasm",
+  "분류": [
+    "기술"
+  ],
+  "iconSlug": "webassembly",
+  "visible": false,
+  "숙련도": "0. 입문",
+  "iconUrl": "./assets/icon.png"
+}

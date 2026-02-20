@@ -1,0 +1,12 @@
+{
+  "id": "github-actions",
+  "notionId": "12d82f91-638d-42c0-bc1e-325dc0a66979",
+  "title": "Github Actions",
+  "분류": [
+    "CI/CD"
+  ],
+  "iconSlug": "githubactions",
+  "visible": true,
+  "숙련도": "2. 중급",
+  "iconUrl": "./assets/icon.png"
+}

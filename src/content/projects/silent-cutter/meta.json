@@ -1,0 +1,18 @@
+{
+  "id": "silent-cutter",
+  "notionId": "10aae47d-992a-44f0-85ff-50a30aba8cc5",
+  "title": "Silent Cutter",
+  "Github": "https://github.com/kimjisub/Silent-Cutter",
+  "태그": [
+    "오픈소스"
+  ],
+  "중요도": "높음",
+  "visible": false,
+  "설명": "영상의 공백 부분을 지워주는 오픈소스",
+  "날짜": "2019-09-24",
+  "분류": [
+    "개인 프로젝트",
+    "오픈소스"
+  ],
+  "이름": "Silent Cutter"
+}

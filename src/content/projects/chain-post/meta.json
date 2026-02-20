@@ -1,0 +1,15 @@
+{
+  "id": "chain-post",
+  "notionId": "d041a673-7348-4dd0-aa72-2e56065036f1",
+  "title": "Chain Post",
+  "중요도": "낮음",
+  "visible": false,
+  "설명": "블록체인 기술 기반의 택배 서비스",
+  "날짜": "2018-08-30",
+  "분류": [
+    "팀 프로젝트"
+  ],
+  "이름": "Chain Post",
+  "iconUrl": "./assets/icon.png",
+  "coverUrl": "./assets/cover.png"
+}

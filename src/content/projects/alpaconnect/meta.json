@@ -1,0 +1,20 @@
+{
+  "id": "alpaconnect",
+  "notionId": "f8408212-01e1-4ca5-ae9b-0aff52122cff",
+  "title": "AlpaConnect",
+  "태그": [
+    "출시됨",
+    "창업"
+  ],
+  "중요도": "2",
+  "visible": true,
+  "URL": "https://alpaconnect.com",
+  "설명": "산업용 Cloud IoT",
+  "날짜": "2023-06-01",
+  "분류": [
+    "사업"
+  ],
+  "이름": "AlpaConnect",
+  "iconUrl": "./assets/icon.png",
+  "coverUrl": "./assets/cover.jpg"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "kotlin",
+  "notionId": "08bcbabe-1cc1-4254-8cf8-32604eefed49",
+  "title": "Kotlin",
+  "분류": [
+    "언어"
+  ],
+  "iconSlug": "kotlin",
+  "visible": true,
+  "숙련도": "3. 상급",
+  "iconUrl": "./assets/icon.svg"
+}

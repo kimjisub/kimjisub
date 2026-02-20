@@ -1,0 +1,12 @@
+{
+  "id": "gcp",
+  "notionId": "34b307a0-5ef9-46dd-8ef3-b3b83de63890",
+  "title": "GCP",
+  "분류": [
+    "Infra"
+  ],
+  "iconSlug": "googlecloud",
+  "visible": false,
+  "숙련도": "2. 중급",
+  "iconUrl": "./assets/icon.svg"
+}
