@@ -14,8 +14,10 @@ export const TerminalSection = () => {
   const { setInlineMode } = useTerminal();
   
   // viewport에 들어오면 inline mode, 벗어나면 해제
+  // 컴포넌트 언마운트 시에도 해제 (다른 페이지로 이동 시)
   useEffect(() => {
     setInlineMode(isInView);
+    return () => setInlineMode(false);
   }, [isInView, setInlineMode]);
 
   return (
