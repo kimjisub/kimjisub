@@ -48,7 +48,7 @@ export const ProjectItem = ({ className, project }: ProjectItemProps) => {
         className={`cursor-pointer rounded-2xl border border-border bg-card overflow-hidden shadow-md hover:shadow-xl ${className}`}
       >
         <div className="relative overflow-hidden">
-          <div className="aspect-video">{coverImage}</div>
+          <div className="aspect-[1200/630]">{coverImage}</div>
           <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-colors duration-300" />
           <div className="absolute top-3 left-3 px-3 py-1.5 rounded-full bg-background/90 backdrop-blur-sm border border-border">
             <p className="text-sm font-medium text-foreground flex items-center">

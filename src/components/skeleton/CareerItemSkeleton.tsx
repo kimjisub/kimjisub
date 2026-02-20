@@ -18,7 +18,7 @@ export const CareerItemSkeleton: React.FC<CareerItemSkeletonProps> = ({ classNam
     >
       {/* Cover Image Area */}
       <div className="relative overflow-hidden">
-        <SkeletonImage aspectRatio="aspect-video" />
+        <SkeletonImage aspectRatio="aspect-[1200/630]" />
       </div>
 
       {/* Content Area */}

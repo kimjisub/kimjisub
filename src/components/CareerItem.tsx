@@ -42,7 +42,7 @@ export const CareerItem = ({ className, career }: CareerItemProps) => {
 				className={`cursor-pointer rounded-xl border border-border bg-card overflow-hidden card-hover ${className}`}
 			>
 				<div className="relative overflow-hidden">
-					<div className="aspect-video">{coverImage}</div>
+					<div className="aspect-[1200/630]">{coverImage}</div>
 					<div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-colors duration-300" />
 				</div>
 				<div className="p-4">

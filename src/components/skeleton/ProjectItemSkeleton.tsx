@@ -18,7 +18,7 @@ export const ProjectItemSkeleton: React.FC<ProjectItemSkeletonProps> = ({ classN
     >
       {/* Cover Image Area */}
       <div className="relative overflow-hidden">
-        <SkeletonImage aspectRatio="aspect-video" />
+        <SkeletonImage aspectRatio="aspect-[1200/630]" />
         {/* Title Overlay */}
         <div className="absolute top-3 left-3 px-3 py-1.5 rounded-full bg-background/90 backdrop-blur-sm border border-border">
           <div className="flex items-center">
