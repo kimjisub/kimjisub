@@ -1,5 +1,5 @@
 // Auto-generated - DO NOT EDIT
-// Run `npx tsx scripts/notion-to-local.ts` to regenerate
+// Run `npx tsx scripts/codegen` to regenerate
 
 import { meta as meta_0 } from './1784-스쿨혁명-인공지능-캠프/meta';
 import { meta as meta_1 } from './1st-generative-ai-ideathon/meta';

@@ -1,6 +1,5 @@
-#!/usr/bin/env npx tsx
 /**
- * _index.ts 재생성 스크립트
+ * content들의 meta.tsx들을 묶어서 content/.../_index.ts로 만들어주는 스크립트
  */
 
 import * as fs from 'fs';
@@ -8,7 +7,7 @@ import * as path from 'path';
 
 const CONTENT_DIR = path.join(process.cwd(), 'src/content');
 
-function rebuildIndex(category: string) {
+export function rebuildIndex(category: string): number {
   const categoryDir = path.join(CONTENT_DIR, category);
   
   const slugs = fs.readdirSync(categoryDir, { withFileTypes: true })
@@ -17,7 +16,7 @@ function rebuildIndex(category: string) {
   
   const lines: string[] = [
     '// Auto-generated - DO NOT EDIT',
-    '// Run `npx tsx scripts/notion-to-local.ts` to regenerate',
+    '// Run `npx tsx scripts/codegen` to regenerate',
     '',
   ];
   
@@ -39,9 +38,19 @@ function rebuildIndex(category: string) {
   lines.push('');
   
   fs.writeFileSync(path.join(categoryDir, '_index.ts'), lines.join('\n'));
-  console.log(`✅ ${category}/_index.ts (${slugs.length} items)`);
+  return slugs.length;
 }
 
-for (const cat of ['projects', 'careers', 'skills']) {
-  rebuildIndex(cat);
+export function rebuildAllIndexes(): void {
+  console.log('📝 Rebuilding _index.ts files...');
+  
+  for (const cat of ['projects', 'careers', 'skills']) {
+    const count = rebuildIndex(cat);
+    console.log(`   ${cat}: ${count} items`);
+  }
+}
+
+// Direct execution
+if (require.main === module) {
+  rebuildAllIndexes();
 }

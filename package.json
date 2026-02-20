@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --port 32957",
     "dev:turbopack": "next dev --turbopack",
-    "prebuild": "npx tsx scripts/generate-meta-json.ts && npx tsx scripts/build-relations.ts",
+    "prebuild": "npx tsx scripts/generate-meta-json.ts && npx tsx scripts/codegen",
     "build": "next build",
     "start": "next start",
     "build-and-start": "yarn build && yarn start",
@@ -87,6 +87,7 @@
     "@typescript-eslint/eslint-plugin": "^8.12.2",
     "@typescript-eslint/parser": "^8.12.2",
     "autoprefixer": "^10.0.1",
+    "chokidar": "^5.0.0",
     "dotenv": "^16.3.1",
     "eslint": "^10.0.0",
     "eslint-config-next": "^16.1.6",

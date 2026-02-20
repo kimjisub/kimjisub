@@ -1,5 +1,5 @@
 // Auto-generated - DO NOT EDIT
-// Run `npx tsx scripts/notion-to-local.ts` to regenerate
+// Run `npx tsx scripts/codegen` to regenerate
 
 import { meta as meta_0 } from './alpaconnect/meta';
 import { meta as meta_1 } from './arai/meta';

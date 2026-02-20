@@ -698,39 +698,7 @@ async function migrateCategory(
     await new Promise(r => setTimeout(r, 100));
   }
 
-  // _index.ts 생성 (static import 통합)
-  const indexTsLines: string[] = [
-    '// Auto-generated - DO NOT EDIT',
-    '// Run `npx tsx scripts/notion-to-local.ts` to regenerate',
-    '',
-  ];
-  
-  // 고유 변수명 생성 (인덱스 기반)
-  const varNames = index.map((_, i) => `meta_${i}`);
-  
-  // Import 문 생성
-  for (let i = 0; i < index.length; i++) {
-    indexTsLines.push(`import { meta as ${varNames[i]} } from './${index[i].id}/meta';`);
-  }
-  
-  indexTsLines.push('');
-  indexTsLines.push(`export const ${category}Metas = {`);
-  
-  for (let i = 0; i < index.length; i++) {
-    indexTsLines.push(`  '${index[i].id}': ${varNames[i]},`);
-  }
-  
-  indexTsLines.push('};');
-  indexTsLines.push('');
-  indexTsLines.push(`export type ${category.charAt(0).toUpperCase() + category.slice(1)}Meta = typeof ${category}Metas[keyof typeof ${category}Metas];`);
-  indexTsLines.push('');
-  
-  fs.writeFileSync(
-    path.join(categoryDir, '_index.ts'),
-    indexTsLines.join('\n')
-  );
-
-  console.log(`  ✅ ${pages.length}개 완료 (_index.ts 생성됨)`);
+  console.log(`  ✅ ${pages.length}개 완료`);
 }
 
 // content의 assets를 content_prev로 복사 (캐시 보존)

@@ -45,8 +45,6 @@
   ],
   "exclude": [
     "node_modules",
-    "scripts/migrate-notion.ts",
-    "scripts/build-relations.ts",
-    "scripts/download-notion-images.ts"
+    "scripts"
   ]
 }
