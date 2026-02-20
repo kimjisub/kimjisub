@@ -167,8 +167,6 @@ const categories: UseCategory[] = [
   },
 ];
 
-// ─── sub-components ──────────────────────────────────────────────────────────
-
 function ItemCard({ item, index }: { item: UseItem; index: number }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-40px' });
@@ -185,12 +183,9 @@ function ItemCard({ item, index }: { item: UseItem; index: number }) {
       }}
       className="group flex items-start gap-4 p-4 rounded-xl border border-border bg-card hover:bg-muted/50 transition-colors duration-200 cursor-default"
     >
-      {/* Icon badge */}
       <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-base font-mono font-bold text-foreground group-hover:bg-accent/10 group-hover:text-accent transition-colors duration-200">
         {item.icon}
       </div>
-
-      {/* Text */}
       <div className="min-w-0">
         <div className="flex items-center gap-1.5">
           <span className="text-sm font-semibold text-foreground">{item.name}</span>
@@ -249,20 +244,17 @@ function CategorySection({
         delay: categoryIndex * 0.05,
         ease: [0.25, 0.46, 0.45, 0.94],
       }}
-      className="mb-14"
+      className="mb-10"
     >
-      {/* Category header */}
-      <div className="flex items-center gap-3 mb-6">
+      <div className="flex items-center gap-3 mb-4">
         <span className="text-2xl" role="img" aria-label={category.title}>
           {category.emoji}
         </span>
         <div>
-          <h2 className="text-base font-bold text-foreground">{category.title}</h2>
+          <h3 className="text-base font-bold text-foreground">{category.title}</h3>
           <p className="text-xs text-muted-foreground">{category.subtitle}</p>
         </div>
       </div>
-
-      {/* Item grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {category.items.map((item, i) => (
           <ItemCard key={item.name} item={item} index={i} />
@@ -272,27 +264,14 @@ function CategorySection({
   );
 }
 
-// ─── page ────────────────────────────────────────────────────────────────────
-
-export default function UsesPage() {
+export function UsesSection() {
   return (
-    <section className="py-24 px-6 max-w-4xl mx-auto">
-      {/* Header */}
-      <header className="mb-16">
-        <motion.h1
-          className="font-serif text-3xl md:text-4xl text-foreground mb-4 italic"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-        >
+    <div className="mt-16 pt-16 border-t border-border">
+      <div className="mb-8">
+        <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-2 italic">
           Uses
-        </motion.h1>
-        <motion.p
-          className="text-muted-foreground leading-relaxed max-w-xl"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-        >
+        </h2>
+        <p className="text-muted-foreground text-sm leading-relaxed max-w-xl">
           평소에 즐겨 쓰는 도구와 장비들입니다.{' '}
           <a
             href="https://uses.tech"
@@ -303,15 +282,13 @@ export default function UsesPage() {
             uses.tech
           </a>{' '}
           에서 영감을 받았습니다.
-        </motion.p>
-      </header>
-
-      {/* Categories */}
+        </p>
+      </div>
       <div>
         {categories.map((cat, i) => (
           <CategorySection key={cat.title} category={cat} categoryIndex={i} />
         ))}
       </div>
-    </section>
+    </div>
   );
 }

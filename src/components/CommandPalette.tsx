@@ -225,7 +225,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
       group: 'Pages',
       icon: <UsesIcon />,
       kind: 'navigate',
-      href: '/uses',
+      href: '/skills#uses',
       keywords: ['uses', '사용', '도구', 'tool', 'setup', 'gear', 'equipment'],
     },
 

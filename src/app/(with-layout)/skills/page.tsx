@@ -8,6 +8,7 @@ import DebugView from '@/components/DebugView';
 import { AnimatedSection, AnimatedTitle } from '@/components/motion/AnimatedSection';
 import { SkillsRadarChart } from '@/components/SkillsRadarChart';
 import { SkillsVisualization } from '@/components/SkillsVisualization';
+import { UsesSection } from '@/components/UsesSection';
 
 export const metadata: Metadata = {
 	title: 'Skills',
@@ -86,6 +87,9 @@ export default async function SkillsPage() {
 
       {/* Skills grid / list with proficiency bars */}
       <SkillsVisualization skills={skills} categories={categories} />
+
+      {/* Uses section */}
+      <UsesSection />
 
       <DebugView>
         <Text className="text-muted-foreground text-sm">
