@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import type { BlogPostMeta } from '@/types/blog';
 
 interface BlogPostHeaderProps {
@@ -16,6 +18,19 @@ export default function BlogPostHeader({ meta }: BlogPostHeaderProps) {
 
   return (
     <header className="mb-12 pb-8 border-b border-border">
+      {/* Cover Image */}
+      {meta.image && (
+        <div className="relative w-full aspect-[1200/630] mb-8 rounded-xl overflow-hidden">
+          <Image
+            src={meta.image}
+            alt={meta.title}
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+      )}
+
       <h1 className="font-serif text-3xl md:text-4xl text-foreground mb-4 italic">
         {meta.title}
       </h1>

@@ -72,7 +72,7 @@ export default async function Page({
           </article>
           
           {/* Comments */}
-          <div className="mt-16 pt-8 border-t border-white/10">
+          <div className="mt-16 pt-8 border-t border-border">
             <CommentSection postSlug={slug} />
           </div>
         </div>

@@ -94,16 +94,16 @@ export function CommentSection({ postSlug, className }: CommentSectionProps) {
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-          className="flex-1 px-4 py-2 bg-white/5 border border-white/10 rounded-lg 
-                     text-white placeholder-gray-500 focus:outline-none focus:border-green-500/50"
+          className="flex-1 px-4 py-2 bg-secondary border border-border rounded-lg 
+                     text-foreground placeholder-muted-foreground focus:outline-none focus:border-accent/50"
         />
         <input
           type="email"
           placeholder="이메일 (선택)"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="flex-1 px-4 py-2 bg-white/5 border border-white/10 rounded-lg 
-                     text-white placeholder-gray-500 focus:outline-none focus:border-green-500/50"
+          className="flex-1 px-4 py-2 bg-secondary border border-border rounded-lg 
+                     text-foreground placeholder-muted-foreground focus:outline-none focus:border-accent/50"
         />
       </div>
       <textarea
@@ -112,15 +112,15 @@ export function CommentSection({ postSlug, className }: CommentSectionProps) {
         onChange={(e) => setContent(e.target.value)}
         required
         rows={3}
-        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg 
-                   text-white placeholder-gray-500 focus:outline-none focus:border-green-500/50 resize-none"
+        className="w-full px-4 py-3 bg-secondary border border-border rounded-lg 
+                   text-foreground placeholder-muted-foreground focus:outline-none focus:border-accent/50 resize-none"
       />
       <div className="flex gap-2 justify-end">
         {onCancel && (
           <button
             type="button"
             onClick={onCancel}
-            className="px-4 py-2 text-gray-400 hover:text-white transition-colors"
+            className="px-4 py-2 text-muted-foreground hover:text-foreground transition-colors"
           >
             취소
           </button>
@@ -128,9 +128,9 @@ export function CommentSection({ postSlug, className }: CommentSectionProps) {
         <button
           type="submit"
           disabled={submitting || !name.trim() || !content.trim()}
-          className="flex items-center gap-2 px-4 py-2 bg-green-500 hover:bg-green-600 
+          className="flex items-center gap-2 px-4 py-2 bg-accent hover:bg-accent/80 
                      disabled:opacity-50 disabled:cursor-not-allowed rounded-lg 
-                     text-white font-medium transition-colors"
+                     text-accent-foreground font-medium transition-colors"
         >
           <Send className="w-4 h-4" />
           {submitting ? "등록 중..." : "등록"}
@@ -140,21 +140,21 @@ export function CommentSection({ postSlug, className }: CommentSectionProps) {
   );
 
   const CommentItem = ({ comment, isReply = false }: { comment: Comment; isReply?: boolean }) => (
-    <div className={cn("space-y-3", isReply && "ml-8 pl-4 border-l border-white/10")}>
+    <div className={cn("space-y-3", isReply && "ml-8 pl-4 border-l border-border")}>
       <div className="flex items-start gap-3">
-        <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-          <User className="w-5 h-5 text-gray-400" />
+        <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+          <User className="w-5 h-5 text-muted-foreground" />
         </div>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="font-medium text-white">{comment.authorName}</span>
-            <span className="text-sm text-gray-500">{formatDate(comment.createdAt)}</span>
+            <span className="font-medium text-foreground">{comment.authorName}</span>
+            <span className="text-sm text-muted-foreground">{formatDate(comment.createdAt)}</span>
           </div>
-          <p className="mt-1 text-gray-300 whitespace-pre-wrap">{comment.content}</p>
+          <p className="mt-1 text-foreground/80 whitespace-pre-wrap">{comment.content}</p>
           {!isReply && (
             <button
               onClick={() => setReplyingTo(replyingTo === comment.id ? null : comment.id)}
-              className="flex items-center gap-1 mt-2 text-sm text-gray-500 hover:text-green-400 transition-colors"
+              className="flex items-center gap-1 mt-2 text-sm text-muted-foreground hover:text-accent transition-colors"
             >
               <Reply className="w-4 h-4" />
               답글
@@ -182,23 +182,23 @@ export function CommentSection({ postSlug, className }: CommentSectionProps) {
   return (
     <section className={cn("space-y-8", className)}>
       <div className="flex items-center gap-3">
-        <MessageCircle className="w-6 h-6 text-green-400" />
-        <h2 className="text-2xl font-bold text-white">
+        <MessageCircle className="w-6 h-6 text-accent" />
+        <h2 className="text-2xl font-bold text-foreground">
           댓글 {!loading && `(${comments.reduce((acc, c) => acc + 1 + (c.replies?.length || 0), 0)})`}
         </h2>
       </div>
 
       {/* Comment Form */}
-      <div className="p-6 bg-white/5 rounded-xl border border-white/10">
+      <div className="p-6 bg-secondary/50 rounded-xl border border-border">
         <CommentForm />
       </div>
 
       {/* Comments List */}
       <div className="space-y-6">
         {loading ? (
-          <div className="text-center py-8 text-gray-500">댓글을 불러오는 중...</div>
+          <div className="text-center py-8 text-muted-foreground">댓글을 불러오는 중...</div>
         ) : comments.length === 0 ? (
-          <div className="text-center py-8 text-gray-500">
+          <div className="text-center py-8 text-muted-foreground">
             아직 댓글이 없습니다. 첫 댓글을 남겨보세요!
           </div>
         ) : (
