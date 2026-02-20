@@ -15,7 +15,7 @@ export const meta: ProjectMeta = {
     'css3',
     'python',
   ],
-  '중요도': '높음',
+  '중요도': 10,
   '주요 기술': [
     'esp32',
     'raspberrypi',

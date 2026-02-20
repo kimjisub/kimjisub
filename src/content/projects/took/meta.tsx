@@ -10,7 +10,7 @@ export const meta: ProjectMeta = {
     'css3',
     'javascript',
   ],
-  '중요도': '낮음',
+  '중요도': 90,
   '주요 기술': [
     'flutter',
     'arduino',

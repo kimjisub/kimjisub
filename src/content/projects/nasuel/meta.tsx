@@ -3,7 +3,7 @@ export const meta: ProjectMeta = {
   id: 'nasuel',
   notionId: '8186aec8-ed5a-44b7-b17a-4ba595a16fe3',
   title: 'Nasuel',
-  '중요도': '낮음',
+  '중요도': 90,
   visible: false,
   '설명': '사회적 약자분들을 위한 인공지능 비서 IoT 서비스',
   '날짜': '2018-11-10',

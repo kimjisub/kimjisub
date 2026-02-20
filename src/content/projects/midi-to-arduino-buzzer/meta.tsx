@@ -13,7 +13,7 @@ export const meta: ProjectMeta = {
   '태그': [
     '오픈소스',
   ],
-  '중요도': '낮음',
+  '중요도': 90,
   '주요 기술': [
     'shell',
     'midi',

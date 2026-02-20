@@ -14,7 +14,7 @@ export const meta: ProjectMeta = {
     'html',
     'css3',
   ],
-  '중요도': '높음',
+  '중요도': 10,
   '주요 기술': [
     'android',
     'arduino',

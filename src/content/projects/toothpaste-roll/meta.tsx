@@ -3,7 +3,7 @@ export const meta: ProjectMeta = {
   id: 'toothpaste-roll',
   notionId: 'e4c2a9e0-424c-4d4f-9f5f-9efd2e05c957',
   title: 'Toothpaste Roll',
-  '중요도': '낮음',
+  '중요도': 90,
   '주요 기술': [
     'autodesk-fusion',
   ],

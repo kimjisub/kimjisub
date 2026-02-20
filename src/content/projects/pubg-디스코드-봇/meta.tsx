@@ -7,7 +7,7 @@ export const meta: ProjectMeta = {
   '프로그래밍 언어': [
     'javascript',
   ],
-  '중요도': '낮음',
+  '중요도': 90,
   '주요 기술': [
     'discord-bot',
     'socket-io',

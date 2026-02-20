@@ -12,7 +12,7 @@ export const meta: ProjectMeta = {
     'css3',
     'javascript',
   ],
-  '중요도': '중간',
+  '중요도': 50,
   visible: false,
   '설명': '점점 벌어지는 북한과의 문화 차이를 극복하기 위한 그림 맞추기 형태의 게임',
   '날짜': '2019-01-24',

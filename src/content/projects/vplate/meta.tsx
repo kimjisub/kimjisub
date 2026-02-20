@@ -9,7 +9,7 @@ export const meta: ProjectMeta = {
     '출시됨',
     '회사',
   ],
-  '중요도': '6',
+  '중요도': 6,
   '주요 기술': [
     'mongodb',
   ],

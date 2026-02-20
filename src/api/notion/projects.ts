@@ -81,11 +81,11 @@ function loadProjects(): ProjectT[] {
     });
   }
   
-  // 중요도 기준 정렬
+  // 중요도 기준 정렬 (숫자, 낮을수록 우선)
   projects.sort((a, b) => {
-    const aVal = a.중요도.value || '999';
-    const bVal = b.중요도.value || '999';
-    return aVal.localeCompare(bVal);
+    const aVal = Number(a.중요도.value) || 999;
+    const bVal = Number(b.중요도.value) || 999;
+    return aVal - bVal;
   });
   
   return projects;

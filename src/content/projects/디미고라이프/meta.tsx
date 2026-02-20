@@ -19,7 +19,7 @@ export const meta: ProjectMeta = {
   '태그': [
     '출시됨',
   ],
-  '중요도': '5',
+  '중요도': 5,
   '주요 기술': [
     'nodejs',
     'react',

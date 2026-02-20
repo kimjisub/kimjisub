@@ -18,7 +18,7 @@ export const meta: ProjectMeta = {
     '회사',
     '출시됨',
   ],
-  '중요도': '4',
+  '중요도': 4,
   '주요 기술': [
     'aws-s3',
     'pwa',

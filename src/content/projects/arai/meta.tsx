@@ -12,7 +12,7 @@ export const meta: ProjectMeta = {
     'javascript',
     'c-c',
   ],
-  '중요도': '중간',
+  '중요도': 50,
   '주요 기술': [
     'ai',
     'arduino',

@@ -13,7 +13,7 @@ export const meta: ProjectMeta = {
     'javascript',
     'python',
   ],
-  '중요도': '낮음',
+  '중요도': 90,
   '주요 기술': [
     'android',
     'firebase',

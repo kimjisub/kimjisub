@@ -23,7 +23,7 @@ export const meta: ProjectMeta = {
     '오픈소스',
     '출시됨',
   ],
-  '중요도': '1',
+  '중요도': 1,
   '주요 기술': [
     'android',
     'nodejs',

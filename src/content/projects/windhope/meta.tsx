@@ -7,7 +7,7 @@ export const meta: ProjectMeta = {
     'dart',
     'c-c',
   ],
-  '중요도': '중간',
+  '중요도': 50,
   '주요 기술': [
     'flutter',
     'arduino',

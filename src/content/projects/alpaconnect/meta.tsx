@@ -20,7 +20,7 @@ export const meta: ProjectMeta = {
     '출시됨',
     '창업',
   ],
-  '중요도': '2',
+  '중요도': 2,
   '주요 기술': [
     'firebase',
     'postgres',

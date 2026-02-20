@@ -3,7 +3,7 @@ export const meta: ProjectMeta = {
   id: 'sorok',
   notionId: '1991cd92-201b-4909-871c-fba3d19d366b',
   title: 'Sorok',
-  '중요도': '낮음',
+  '중요도': 90,
   visible: false,
   '설명': '모듈형 IoT 통합 플랫폼',
   '날짜': '2018-08-18',

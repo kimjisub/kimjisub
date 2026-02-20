@@ -6,7 +6,7 @@ export const meta: ProjectMeta = {
   '프로그래밍 언어': [
     'shell',
   ],
-  '중요도': '중간',
+  '중요도': 50,
   '주요 기술': [
     'kubernetes',
   ],

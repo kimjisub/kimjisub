@@ -11,7 +11,7 @@ export const meta: ProjectMeta = {
     'c-c',
     'javascript',
   ],
-  '중요도': '높음',
+  '중요도': 10,
   '주요 기술': [
     'firebase',
     'gcp-assistant-api',

@@ -15,7 +15,7 @@ export const meta: ProjectMeta = {
   '태그': [
     '오픈소스',
   ],
-  '중요도': '높음',
+  '중요도': 10,
   '주요 기술': [
     'nodejs',
     'ffmpeg',

@@ -5,7 +5,7 @@ export const meta: ProjectMeta = {
   id: 'utlilty-blade-slider-case',
   notionId: 'e967da7b-3dd1-401b-b8d3-e6bacdaf00d2',
   title: 'Utlilty Blade Slider Case',
-  '중요도': '낮음',
+  '중요도': 90,
   '주요 기술': [
     'autodesk-fusion',
   ],

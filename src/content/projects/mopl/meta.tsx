@@ -20,7 +20,7 @@ export const meta: ProjectMeta = {
     '출시됨',
     '회사',
   ],
-  '중요도': '3',
+  '중요도': 3,
   '주요 기술': [
     'react-native',
     'nodejs',

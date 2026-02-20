@@ -15,7 +15,7 @@ export const meta: ProjectMeta = {
     'css3',
     'javascript',
   ],
-  '중요도': '중간',
+  '중요도': 50,
   '주요 기술': [
     'vue',
   ],

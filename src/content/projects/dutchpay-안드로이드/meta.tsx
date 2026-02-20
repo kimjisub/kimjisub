@@ -7,7 +7,7 @@ export const meta: ProjectMeta = {
   '프로그래밍 언어': [
     'java',
   ],
-  '중요도': '낮음',
+  '중요도': 90,
   '주요 기술': [
     'android',
   ],

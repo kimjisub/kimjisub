@@ -7,7 +7,7 @@ export const meta: ProjectMeta = {
   '설명': 'Multi-LLM Debate Orchestrator — ChatGPT, Gemini, Claude 간 토론을 오케스트레이션하는 Chrome Extension',
   '날짜': '2026-02-19',
   Github: 'https://github.com/kimjisub/crossfire',
-  '중요도': '1',
+  '중요도': 1,
   '태그': [
     'AI',
     'LLM',
