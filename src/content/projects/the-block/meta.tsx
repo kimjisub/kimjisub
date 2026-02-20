@@ -12,6 +12,7 @@ export const meta: ProjectMeta = {
     'shell',
   ],
   visible: false,
+  type: 'toy',
   '설명': 'C언어를 공부하며 만든 첫 프로젝트',
   '날짜': '2015-02-08',
   '분류': [

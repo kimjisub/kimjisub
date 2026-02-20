@@ -33,6 +33,7 @@ export const meta: ProjectMeta = {
     'swift',
   ],
   visible: true,
+  type: 'project',
   URL: 'https://play.google.com/store/apps/details?id=com.hanwha.mopl',
   '설명': '한화비전에서  운영하는 아파트 관리 솔루션',
   '날짜': '2022-09-01',

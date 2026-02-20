@@ -24,6 +24,7 @@ export const meta: ProjectMeta = {
     'uwp',
   ],
   visible: false,
+  type: 'toy',
   '설명': '일상에 지친 현대인을 위해 위로와 힘을 전하는 글귀 플랫폼',
   '날짜': '2018-10-13',
   '분류': [

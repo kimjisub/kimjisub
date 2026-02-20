@@ -13,6 +13,7 @@ export const meta: ProjectMeta = {
     'spring-boot',
   ],
   visible: true,
+  type: 'project',
   '날짜': '2024-02-01',
   '분류': [
     '팀 프로젝트',

@@ -20,6 +20,7 @@ export const meta: ProjectMeta = {
     'socket-io',
   ],
   visible: false,
+  type: 'toy',
   '설명': '멀리 있는 친구와 유튜브 같이보기',
   '날짜': '2020-03-07',
   '분류': [

@@ -18,6 +18,7 @@ export const meta: ProjectMeta = {
     'arduino',
   ],
   visible: false,
+  type: 'toy',
   '설명': '불법 벌목 방지를 위한 3D 사운드 매핑 솔루션',
   '날짜': '2017-12-17',
   '분류': [

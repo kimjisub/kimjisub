@@ -9,6 +9,7 @@ export const meta: ProjectMeta = {
     '디자인',
   ],
   visible: true,
+  type: 'toy',
   '날짜': '2024-11-01',
   '분류': [
     '개인 프로젝트',

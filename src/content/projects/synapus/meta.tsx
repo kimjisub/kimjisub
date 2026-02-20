@@ -4,6 +4,7 @@ export const meta: ProjectMeta = {
   notionId: '1383b1b1-c9dc-8041-bc56-dd7daa051238',
   title: 'Synapus',
   visible: false,
+  type: 'toy',
   URL: 'https://synap.us',
   '설명': 'IDC 서버 사업',
   '날짜': '2024-11-01',

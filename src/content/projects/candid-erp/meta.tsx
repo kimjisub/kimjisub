@@ -10,6 +10,7 @@ export const meta: ProjectMeta = {
     '디자인',
   ],
   visible: false,
+  type: 'toy',
   '날짜': '2025-08-13',
   '갤러리에서 보기': false,
   '이름': 'Candid ERP',

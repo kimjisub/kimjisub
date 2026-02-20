@@ -11,6 +11,7 @@ export const meta: ProjectMeta = {
     'kubernetes',
   ],
   visible: true,
+  type: 'toy',
   '설명': '컴퓨터공학과 학생들을 위해서 ubuntu 인스턴스를 제공하는 교내 Cloud 서비스',
   '날짜': '2024-03-07',
   '분류': [

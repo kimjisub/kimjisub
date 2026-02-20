@@ -15,6 +15,7 @@ export const meta: ProjectMeta = {
     'firebase',
   ],
   visible: false,
+  type: 'toy',
   '설명': '공기질 분석을 통한 자동 환기 시스템',
   '날짜': '2019-10-21',
   '분류': [

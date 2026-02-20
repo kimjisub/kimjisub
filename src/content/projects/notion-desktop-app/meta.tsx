@@ -17,6 +17,7 @@ export const meta: ProjectMeta = {
     'electron',
   ],
   visible: false,
+  type: 'toy',
   '설명': 'Windows를 위한 Notion 앱',
   '날짜': '2021-10-08',
   '분류': [

@@ -24,6 +24,7 @@ export const meta: ProjectMeta = {
     'ifttt',
   ],
   visible: true,
+  type: 'toy',
   '설명': 'Google Home 활용 IoT 개발',
   '날짜': '2020-04-12',
   '분류': [

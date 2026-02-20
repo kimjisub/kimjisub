@@ -27,6 +27,7 @@ export const meta: ProjectMeta = {
     'socket-io',
   ],
   visible: true,
+  type: 'project',
   '설명': '디미고 학생을 위한 전산 서비스',
   '날짜': '2018-04-23',
   '분류': [

@@ -14,6 +14,7 @@ export const meta: ProjectMeta = {
     'ai',
   ],
   visible: true,
+  type: 'toy',
   '설명': '라이브러리 없이 신경망 직접 구축',
   '날짜': '2017-06-26',
   '분류': [

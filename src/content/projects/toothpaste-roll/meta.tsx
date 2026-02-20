@@ -8,6 +8,7 @@ export const meta: ProjectMeta = {
     'autodesk-fusion',
   ],
   visible: false,
+  type: 'toy',
   URL: 'https://www.thingiverse.com/thing:4547503',
   '설명': '남은 치약까지 짜주는 장치',
   '날짜': '2020-07-20',

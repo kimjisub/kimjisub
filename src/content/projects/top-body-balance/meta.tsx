@@ -16,6 +16,7 @@ export const meta: ProjectMeta = {
     'kotlin',
   ],
   visible: false,
+  type: 'toy',
   '설명': '노안 방지를 위한 눈 스트레칭',
   '날짜': '2022-01-20',
   '분류': [

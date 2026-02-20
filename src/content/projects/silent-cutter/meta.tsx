@@ -13,6 +13,7 @@ export const meta: ProjectMeta = {
     'ffmpeg',
   ],
   visible: false,
+  type: 'toy',
   '설명': '영상의 공백 부분을 지워주는 오픈소스',
   '날짜': '2019-09-24',
   '분류': [

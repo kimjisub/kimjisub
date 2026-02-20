@@ -21,6 +21,7 @@ export const meta: ProjectMeta = {
     'vue',
   ],
   visible: false,
+  type: 'toy',
   '설명': '블록체인 기술 기반의 택배 서비스',
   '날짜': '2018-08-30',
   '분류': [

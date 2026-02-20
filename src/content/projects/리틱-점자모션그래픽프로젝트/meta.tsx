@@ -15,6 +15,7 @@ export const meta: ProjectMeta = {
     'python',
   ],
   visible: false,
+  type: 'toy',
   '설명': '점자로 모션그래픽 구현',
   '날짜': '2022-09-17',
   '분류': [

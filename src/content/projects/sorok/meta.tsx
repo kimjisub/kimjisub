@@ -5,6 +5,7 @@ export const meta: ProjectMeta = {
   title: 'Sorok',
   '중요도': 90,
   visible: false,
+  type: 'toy',
   '설명': '모듈형 IoT 통합 플랫폼',
   '날짜': '2018-08-18',
   '분류': [

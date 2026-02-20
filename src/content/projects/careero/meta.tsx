@@ -20,6 +20,7 @@ export const meta: ProjectMeta = {
     'react-native',
   ],
   visible: true,
+  type: 'toy',
   '설명': '인생 목표를 위한 네비게이션',
   '날짜': '2023-06-23',
   '분류': [

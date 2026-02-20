@@ -4,6 +4,7 @@ export const meta: ProjectMeta = {
   id: 'crossfire',
   title: 'Crossfire',
   visible: true,
+  type: 'toy',
   '설명': 'Multi-LLM Debate Orchestrator — ChatGPT, Gemini, Claude 간 토론을 오케스트레이션하는 Chrome Extension',
   '날짜': '2026-02-19',
   Github: 'https://github.com/kimjisub/crossfire',

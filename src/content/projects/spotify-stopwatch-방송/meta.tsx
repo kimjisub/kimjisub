@@ -6,6 +6,7 @@ export const meta: ProjectMeta = {
   Youtube: 'https://youtu.be/HAH4q6Aib40?si=kOFa9SU5iWu1_Agv&t=83',
   '중요도': 90,
   visible: false,
+  type: 'toy',
   '날짜': '2025-10-19',
   '갤러리에서 보기': false,
   '이름': 'Spotify Stopwatch (방송)',

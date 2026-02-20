@@ -13,6 +13,7 @@ export const meta: ProjectMeta = {
     'socket-io',
   ],
   visible: false,
+  type: 'toy',
   '설명': '배틀그라운드 팀원 모집을 위한 디스코드 봇',
   '날짜': '2018-01-28',
   '분류': [

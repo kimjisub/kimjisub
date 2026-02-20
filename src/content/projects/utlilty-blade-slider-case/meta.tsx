@@ -10,6 +10,7 @@ export const meta: ProjectMeta = {
     'autodesk-fusion',
   ],
   visible: true,
+  type: 'toy',
   URL: 'https://www.thingiverse.com/thing:4441240',
   '설명': '슬라이드 구조의 칼집',
   '날짜': '2020-06-10',

@@ -19,6 +19,7 @@ export const meta: ProjectMeta = {
     'midi',
   ],
   visible: true,
+  type: 'toy',
   '설명': '.mid 파일을 이용하여 아두이노 부저 코드 생성',
   '날짜': '2015-07-31',
   '분류': [

@@ -20,6 +20,7 @@ export const meta: ProjectMeta = {
     'vue',
   ],
   visible: false,
+  type: 'toy',
   URL: 'https://luna.codes',
   '설명': '정기구독형 코딩교육 플랫폼',
   '날짜': '2018-07-13',

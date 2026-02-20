@@ -22,6 +22,7 @@ export const meta: ProjectMeta = {
     'gcp',
   ],
   visible: false,
+  type: 'toy',
   '설명': '기숙 학생들을 위한 증상에 따른 보건 가이드라인 마련 프로젝트',
   '날짜': '2019-05-17',
   '분류': [

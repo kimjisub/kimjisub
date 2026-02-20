@@ -42,6 +42,7 @@ export const meta: ProjectMeta = {
     'github-actions',
   ],
   visible: true,
+  type: 'project',
   URL: 'https://www.eyevacs.com',
   '설명': '아파트 통합 관리 솔루션',
   '날짜': '2023-08-01',

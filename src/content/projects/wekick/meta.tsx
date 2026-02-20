@@ -8,6 +8,7 @@ export const meta: ProjectMeta = {
     '자문위원',
   ],
   visible: true,
+  type: 'toy',
   '날짜': '2024-07-09',
   '분류': [
     '팀 프로젝트',

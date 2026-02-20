@@ -8,11 +8,14 @@ import { parseISO } from 'date-fns';
 import { NotionColor } from '../type/color';
 import { projectsMetas } from '@/content/projects/_index';
 
+export type ProjectType = 'project' | 'research' | 'toy';
+
 export type ProjectT = {
   id: string;
   slug: string;
   title: string;
   description: string;
+  type: ProjectType;
   icon: StaticImageData | null;
   iconEmoji: string;
   cover: StaticImageData | null;
@@ -49,6 +52,7 @@ function loadProjects(): ProjectT[] {
       slug,
       title: m.title || m['이름'] || '',
       description: m['설명'] || '',
+      type: m.type || 'toy',
       icon: m.icon || null,
       iconEmoji: m.iconEmoji || '',
       cover: m.cover || null,

@@ -12,6 +12,7 @@ export const meta: ProjectMeta = {
     'android',
   ],
   visible: false,
+  type: 'toy',
   '설명': '친구들과의 여행에서 복잡한 더치페이 계산',
   '날짜': '2015-07-19',
   '분류': [

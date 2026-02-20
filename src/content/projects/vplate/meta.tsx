@@ -14,6 +14,7 @@ export const meta: ProjectMeta = {
     'mongodb',
   ],
   visible: true,
+  type: 'project',
   '설명': '마케팅 영상 제작 플랫폼',
   '날짜': '2019-01-09',
   '분류': [

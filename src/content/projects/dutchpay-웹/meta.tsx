@@ -21,6 +21,7 @@ export const meta: ProjectMeta = {
     'firebase',
   ],
   visible: true,
+  type: 'toy',
   URL: 'https://dutchpay.jisub.kim',
   '설명': '더치페이 계산기',
   '날짜': '2020-02-05',

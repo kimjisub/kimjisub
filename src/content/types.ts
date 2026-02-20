@@ -6,11 +6,14 @@ type IconType = StaticImageData | FunctionComponent<SVGProps<SVGElement>> | null
 // ============================================
 // Project Meta
 // ============================================
+export type ProjectType = 'project' | 'research' | 'toy';
+
 export interface ProjectMeta {
   id: string;
   notionId?: string;
   title: string;
   visible: boolean;
+  type?: ProjectType;
   
   // 필드 (한글)
   '설명'?: string;

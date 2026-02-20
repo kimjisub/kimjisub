@@ -6,6 +6,7 @@ export const meta: ProjectMeta = {
   Github: 'https://github.com/kimjisub/text-to-video',
   '중요도': 90,
   visible: false,
+  type: 'toy',
   '설명': '스크립트를 영상으로 자동 변환',
   '날짜': '2020-10-10',
   '분류': [

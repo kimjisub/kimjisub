@@ -16,6 +16,7 @@ export const meta: ProjectMeta = {
     'vue',
   ],
   visible: false,
+  type: 'toy',
   '설명': ' 불법 스포츠 도박 근절',
   '날짜': '2018-11-03',
   '분류': [

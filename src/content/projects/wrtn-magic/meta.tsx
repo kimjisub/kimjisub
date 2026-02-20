@@ -10,6 +10,7 @@ export const meta: ProjectMeta = {
     'figma',
   ],
   visible: false,
+  type: 'toy',
   '날짜': '2023-12-02',
   '분류': [
     '팀 프로젝트',

@@ -9,6 +9,7 @@ export const meta: ProjectMeta = {
   ],
   '중요도': 90,
   visible: false,
+  type: 'toy',
   '설명': '물, 불, 나무, 식물, 수증기, 벽 등 다양한 물체 시뮬레이션',
   '날짜': '2017-06-29',
   '분류': [

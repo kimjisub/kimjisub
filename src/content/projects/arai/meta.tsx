@@ -21,6 +21,7 @@ export const meta: ProjectMeta = {
     'pwa',
   ],
   visible: false,
+  type: 'toy',
   '설명': 'AR 기반으로 제어가 가능한 IoT',
   '날짜': '2019-06-01',
   '분류': [

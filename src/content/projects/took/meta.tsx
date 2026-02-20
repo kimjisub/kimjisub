@@ -16,6 +16,7 @@ export const meta: ProjectMeta = {
     'arduino',
   ],
   visible: false,
+  type: 'toy',
   '설명': '종이 번호표의 환경 문제 개선을 위한 온라인 영수증',
   '날짜': '2019-08-31',
   '분류': [

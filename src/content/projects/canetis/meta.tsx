@@ -25,6 +25,7 @@ export const meta: ProjectMeta = {
     'gcp',
   ],
   visible: true,
+  type: 'toy',
   '설명': '시각 장애우를 위한 실내 전용 위치 알림 IoT 서비스',
   '날짜': '2018-03-31',
   '분류': [

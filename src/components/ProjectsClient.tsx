@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useMemo, useRef,useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion, useInView, type Variants } from 'framer-motion';
 
-import { type ProjectT } from '@/api/notion/projects';
+import { type ProjectT, type ProjectType } from '@/api/notion/projects';
 import { ProjectItem } from '@/components/ProjectItem';
 
 interface ProjectsClientProps {
@@ -12,8 +12,8 @@ interface ProjectsClientProps {
 
 type FilterKey = string; // 'all' | '분류:xxx' | '태그:xxx'
 
-// ── Mobile stagger variants ────────────────────────────────
-const mobileListVariants: Variants = {
+// ── Animation variants ────────────────────────────────
+const listVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -23,7 +23,7 @@ const mobileListVariants: Variants = {
   },
 };
 
-const mobileItemVariants: Variants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, scale: 0.95, y: 16 },
   visible: {
     opacity: 1,
@@ -74,14 +74,52 @@ const FilterPill = ({ label, count, isActive, onClick }: FilterPillProps) => (
 );
 
 /* ─────────────────────────────────────────────────────── */
+/* ProjectSection                                          */
+/* ─────────────────────────────────────────────────────── */
+interface ProjectSectionProps {
+  title: string;
+  description?: string;
+  projects: ProjectT[];
+}
+
+const ProjectSection = ({ title, description, projects }: ProjectSectionProps) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  if (projects.length === 0) return null;
+
+  return (
+    <section className="mb-16">
+      <div className="mb-6">
+        <h2 className="text-2xl font-semibold text-foreground">{title}</h2>
+        {description && (
+          <p className="mt-1 text-sm text-muted-foreground">{description}</p>
+        )}
+      </div>
+      
+      <div ref={ref}>
+        <motion.div
+          variants={listVariants}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          {projects.map((project) => (
+            <motion.div key={project.id} variants={itemVariants}>
+              <ProjectItem project={project} />
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+/* ─────────────────────────────────────────────────────── */
 /* ProjectsClient                                          */
 /* ─────────────────────────────────────────────────────── */
 export const ProjectsClient = ({ projects }: ProjectsClientProps) => {
   const [activeFilter, setActiveFilter] = useState<FilterKey>('all');
-
-  // whileInView trigger for mobile stagger list
-  const mobileListRef = useRef<HTMLDivElement>(null);
-  const isMobileInView = useInView(mobileListRef, { once: true, margin: '-100px' });
 
   /* ── 필터 옵션 수집 ── */
   const categories = useMemo(() => {
@@ -118,6 +156,22 @@ export const ProjectsClient = ({ projects }: ProjectsClientProps) => {
     return projects;
   }, [projects, activeFilter]);
 
+  /* ── 타입별 분류 ── */
+  const projectsByType = useMemo(() => {
+    const result: Record<ProjectType, ProjectT[]> = {
+      project: [],
+      research: [],
+      toy: [],
+    };
+    
+    filteredProjects.forEach((p) => {
+      const type = p.type || 'toy';
+      result[type].push(p);
+    });
+    
+    return result;
+  }, [filteredProjects]);
+
   /* ── 각 필터별 카운트 ── */
   const countFor = (key: FilterKey) => {
     if (key === 'all') return projects.length;
@@ -136,7 +190,6 @@ export const ProjectsClient = ({ projects }: ProjectsClientProps) => {
     <div>
       {/* ── 필터 바 ── */}
       <div className="mb-8 px-6">
-        {/* 카테고리 + 태그 그룹 */}
         <div className="flex flex-wrap gap-2">
           <FilterPill
             label="All"
@@ -147,7 +200,6 @@ export const ProjectsClient = ({ projects }: ProjectsClientProps) => {
 
           {categories.length > 0 && (
             <>
-              {/* 구분선 */}
               <span className="self-center w-px h-5 bg-border mx-0.5" aria-hidden />
               {categories.map((cat) => {
                 const key = `분류:${cat.name}`;
@@ -183,7 +235,6 @@ export const ProjectsClient = ({ projects }: ProjectsClientProps) => {
           )}
         </div>
 
-        {/* 필터 결과 카운트 */}
         <motion.p
           key={filteredProjects.length}
           initial={{ opacity: 0, y: -4 }}
@@ -196,26 +247,34 @@ export const ProjectsClient = ({ projects }: ProjectsClientProps) => {
         </motion.p>
       </div>
 
-      {/* ── 프로젝트 그리드 (데스크탑 + 모바일 통합) ── */}
-      <div ref={mobileListRef} className="px-6">
+      {/* ── 프로젝트 섹션들 ── */}
+      <div className="px-6">
         <AnimatePresence mode="wait">
           {filteredProjects.length > 0 ? (
             <motion.div
               key={activeFilter}
-              variants={mobileListVariants}
-              initial="hidden"
-              animate={isMobileInView ? 'visible' : 'hidden'}
-              exit={{ opacity: 0, transition: { duration: 0.15 } }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
             >
-              {filteredProjects.map((project) => (
-                <motion.div
-                  key={project.id}
-                  variants={mobileItemVariants}
-                >
-                  <ProjectItem project={project} />
-                </motion.div>
-              ))}
+              <ProjectSection
+                title="Projects"
+                description="실제 사용자를 위해 만들어진 프로젝트"
+                projects={projectsByType.project}
+              />
+              
+              <ProjectSection
+                title="Research"
+                description="연구 및 논문 관련 프로젝트"
+                projects={projectsByType.research}
+              />
+              
+              <ProjectSection
+                title="Toy Projects"
+                description="학습 및 실험 목적의 프로젝트"
+                projects={projectsByType.toy}
+              />
             </motion.div>
           ) : (
             <motion.div

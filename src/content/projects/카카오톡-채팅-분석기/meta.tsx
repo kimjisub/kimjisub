@@ -14,6 +14,7 @@ export const meta: ProjectMeta = {
     'shell',
   ],
   visible: true,
+  type: 'toy',
   '설명': '대화 시간대, 점유도, 자주 말한 단어 분서거',
   '날짜': '2015-04-10',
   '분류': [

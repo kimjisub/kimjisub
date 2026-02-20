@@ -5,6 +5,7 @@ export const meta: ProjectMeta = {
   title: '행명서',
   '중요도': 50,
   visible: true,
+  type: 'toy',
   '설명': '근무표 자동 작성기',
   '날짜': '2021-08-21',
   '분류': [

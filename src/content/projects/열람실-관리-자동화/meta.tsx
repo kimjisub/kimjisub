@@ -15,6 +15,7 @@ export const meta: ProjectMeta = {
     'arduino',
   ],
   visible: false,
+  type: 'toy',
   '날짜': '2018-10-20',
   '분류': [
     '팀 프로젝트',

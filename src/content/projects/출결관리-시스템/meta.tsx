@@ -15,6 +15,7 @@ export const meta: ProjectMeta = {
     'kotlin',
   ],
   visible: false,
+  type: 'toy',
   '설명': '회사/학원 출결 관리 시스템',
   '날짜': '2020-09-28',
   '분류': [

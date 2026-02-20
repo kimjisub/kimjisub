@@ -5,6 +5,7 @@ export const meta: ProjectMeta = {
   title: 'NaiClova',
   '중요도': 90,
   visible: false,
+  type: 'toy',
   '날짜': '2018-10-26',
   '분류': [
     '팀 프로젝트',

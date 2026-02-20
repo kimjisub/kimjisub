@@ -21,6 +21,7 @@ export const meta: ProjectMeta = {
     'midi',
   ],
   visible: true,
+  type: 'toy',
   '설명': '.mid 형태의 음악을 영상으로 변환',
   '날짜': '2020-01-01',
   '분류': [

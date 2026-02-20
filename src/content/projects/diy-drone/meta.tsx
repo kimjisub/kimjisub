@@ -26,6 +26,7 @@ export const meta: ProjectMeta = {
     'easyeda',
   ],
   visible: false,
+  type: 'toy',
   '설명': '0부터 시작하는 드론 DIY',
   '날짜': '2022-08-01',
   '분류': [

@@ -19,6 +19,7 @@ export const meta: ProjectMeta = {
     'react',
   ],
   visible: false,
+  type: 'toy',
   '설명': '트래픽이 몰리는 티켓팅 전용 SAAS 서비스',
   '날짜': '2023-08-29',
   '분류': [

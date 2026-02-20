@@ -9,6 +9,7 @@ export const meta: ProjectMeta = {
     'Dev-ops',
   ],
   visible: false,
+  type: 'toy',
   '설명': 'Graph Mining 팀 프로젝트',
   '날짜': '2025-05-28',
   '갤러리에서 보기': false,

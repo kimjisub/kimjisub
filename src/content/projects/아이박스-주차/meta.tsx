@@ -33,6 +33,7 @@ export const meta: ProjectMeta = {
     'linear-app',
   ],
   visible: true,
+  type: 'project',
   '설명': '주차장 통합 전산 시스템',
   '날짜': '2020-07-01',
   '분류': [

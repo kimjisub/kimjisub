@@ -27,6 +27,7 @@ export const meta: ProjectMeta = {
     'raspberrypi',
   ],
   visible: false,
+  type: 'toy',
   '설명': '근무 환경 개선 모니터링 솔루션',
   '날짜': '2018-05-11',
   '분류': [

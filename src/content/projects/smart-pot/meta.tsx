@@ -22,6 +22,7 @@ export const meta: ProjectMeta = {
     'gcp',
   ],
   visible: false,
+  type: 'toy',
   '설명': '화분 형태의 AI 비서',
   '날짜': '2018-08-11',
   '분류': [

@@ -22,6 +22,7 @@ export const meta: ProjectMeta = {
     'gcp',
   ],
   visible: false,
+  type: 'toy',
   '설명': '모두를 위한 인공지능 비서',
   '날짜': '2018-10-26',
   '분류': [

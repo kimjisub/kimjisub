@@ -43,6 +43,7 @@ export const meta: ProjectMeta = {
     'esp32',
   ],
   visible: true,
+  type: 'project',
   URL: 'https://alpaconnect.com',
   '설명': '산업용 Cloud IoT',
   '날짜': '2023-06-01',

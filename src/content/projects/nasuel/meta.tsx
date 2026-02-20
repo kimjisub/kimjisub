@@ -5,6 +5,7 @@ export const meta: ProjectMeta = {
   title: 'Nasuel',
   '중요도': 90,
   visible: false,
+  type: 'toy',
   '설명': '사회적 약자분들을 위한 인공지능 비서 IoT 서비스',
   '날짜': '2018-11-10',
   '분류': [
