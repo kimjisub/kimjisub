@@ -39,13 +39,15 @@ export function MarkdownRenderer({ content, className = '', contentPath }: Markd
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
-          img: ({ src, alt, ...props }) => {
-            const transformedSrc = transformImageSrc(src);
+          img: ({ src, alt }) => {
+            // src가 Blob일 수 있으므로 string만 처리
+            const srcString = typeof src === 'string' ? src : undefined;
+            const transformedSrc = transformImageSrc(srcString);
             
             // 외부 이미지는 일반 img 태그 사용
             if (transformedSrc.startsWith('http')) {
               // eslint-disable-next-line @next/next/no-img-element
-              return <img src={transformedSrc} alt={alt || ''} {...props} />;
+              return <img src={transformedSrc} alt={alt || ''} />;
             }
             
             // 내부 이미지는 Next.js Image 사용 (최적화)
