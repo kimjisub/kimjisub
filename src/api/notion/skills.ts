@@ -5,6 +5,7 @@
 import { StaticImageData } from 'next/image';
 
 import { skillsMetas } from '@/content/skills/_index';
+import relationGraph from '@/content/_graph.json';
 
 export type SkillT = {
   id: string;
@@ -35,9 +36,9 @@ function loadSkills(): SkillT[] {
     // visible이 false면 스킵
     if (m.visible === false) continue;
     
-    // 사용 횟수 계산
-    const usedAsSkill = m.projectsUsingAsSkill?.length || 0;
-    const usedAsLanguage = m.projectsUsingAsLanguage?.length || 0;
+    // _graph.json에서 관계 가져오기
+    const projectsUsingAsSkill = relationGraph.skillToProjects[slug] || [];
+    const projectsUsingAsLanguage = relationGraph.languageToProjects[slug] || [];
     
     skills.push({
       id: slug,
@@ -49,9 +50,9 @@ function loadSkills(): SkillT[] {
       visible: m.visible ?? true,
       하위_항목: m['하위_항목'] || [],
       숙련도: m['숙련도'] || '',
-      사용한_횟수: usedAsSkill + usedAsLanguage,
-      projectUsedBySkill: m.projectsUsingAsSkill || [],
-      projectUsedByLanguage: m.projectsUsingAsLanguage || [],
+      사용한_횟수: projectsUsingAsSkill.length + projectsUsingAsLanguage.length,
+      projectUsedBySkill: projectsUsingAsSkill,
+      projectUsedByLanguage: projectsUsingAsLanguage,
       관련_기술: m['관련_기술'] || [],
       description: m['설명'] || '',
       icon: m.icon || null,
