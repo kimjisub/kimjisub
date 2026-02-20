@@ -11,24 +11,24 @@ export interface CareerItemProps {
 }
 
 export const CareerItem = ({ className, career }: CareerItemProps) => {
-	const icon = career.iconUrl ? (
+	const icon = career.icon ? (
 		<Image
 			className="mr-2 w-6 h-6"
 			width={24}
 			height={24}
-			src={career.iconUrl}
+			src={career.icon}
 			alt={`${career.title} 아이콘`}
 		/>
 	) : career.iconEmoji ? (
 		<span className="mr-2">{career.iconEmoji}</span>
 	) : null;
 
-	const coverImage = career.coverImageUrl ? (
+	const coverImage = career.cover ? (
 		<BlurImage
 			className="w-full h-full transition-transform duration-500 group-hover:scale-110"
 			width={300}
 			height={150}
-			src={career.coverImageUrl}
+			src={career.cover}
 			alt={`${career.title} 커버 이미지`}
 			sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 256px"
 		/>

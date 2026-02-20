@@ -37,15 +37,6 @@ export const getProjectsWithRelated = async () => {
   };
 };
 
-// 상대경로 ./assets/... 를 절대경로 /content/...로 변환
-const transformAssetUrl = (url: string | null | undefined, category: string, slug: string): string | null => {
-  if (!url) return null;
-  if (url.startsWith('./')) {
-    return `/content/${category}/${encodeURIComponent(slug)}/${url.slice(2)}`;
-  }
-  return url;
-};
-
 export const getProject = async (projectId: string) => {
   const decodedId = decodeURIComponent(projectId);
   const projectsRes = await getProjectsWithRelated();
@@ -57,15 +48,8 @@ export const getProject = async (projectId: string) => {
     return { project: undefined, fetchedAt: projectsRes.fetchedAt };
   }
 
-  // iconUrl, coverUrl 경로 변환
-  const transformedProject = {
-    ...project,
-    iconUrl: transformAssetUrl(project.iconUrl, 'projects', decodedId) || '',
-    coverUrl: transformAssetUrl(project.coverImageUrl, 'projects', decodedId) || '',
-  };
-
   return {
-    project: transformedProject,
+    project,
     fetchedAt: projectsRes.fetchedAt,
   };
 };
@@ -85,9 +69,7 @@ export const getProjectPage = async (projectId: string) => {
   }
   
   return {
-    // 마크다운 콘텐츠
     markdown: mdContent || '',
-    // 빈 ExtendedRecordMap (기존 코드 호환용)
     extendedRecordMap: {
       block: {},
       collection: {},

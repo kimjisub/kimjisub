@@ -1,13 +1,13 @@
 /**
- * Skills API - 로컬 파일 기반
+ * Skills API - meta.tsx static import 방식
  */
 
-import * as path from 'path';
+import { StaticImageData } from 'next/image';
 
-import { CONTENT_DIR, getDirectories, readJsonFile, findImageFile } from '.';
+import { skillsMetas } from '@/content/skills/_index';
 
 export type SkillT = {
-  id: string;        // slug를 ID로 사용
+  id: string;
   slug: string;
   title: string;
   iconColor: string;
@@ -17,80 +17,46 @@ export type SkillT = {
   하위_항목: string[];
   숙련도: string;
   사용한_횟수: number;
-  projectUsedBySkill: string[];    // project slugs
-  projectUsedByLanguage: string[]; // project slugs
-  관련_기술: string[];             // skill slugs
+  projectUsedBySkill: string[];
+  projectUsedByLanguage: string[];
+  관련_기술: string[];
   description: string;
-  iconUrl: string;
+  icon: StaticImageData | null;
   iconEmoji: string;
-  coverImageUrl: string;
+  cover: StaticImageData | null;
 };
 
-// 로컬 meta.json 타입 (새 형식 - 한글 키)
-interface SkillMeta {
-  id: string;
-  title: string;
-  '이름'?: string;
-  iconSlug?: string;
-  iconColor?: string;
-  '설명'?: string;
-  '분류'?: string[];
-  '숙련도'?: string;
-  visible?: boolean | undefined;
-  '상위_항목'?: string[];
-  '하위_항목'?: string[];
-  '관련_기술'?: string[];
-  iconUrl?: string;
-  iconEmoji?: string;
-  coverUrl?: string;
-  // 빌드 시점에 추가되는 역방향 관계
-  projectsUsingAsSkill?: string[];
-  projectsUsingAsLanguage?: string[];
-}
-
 function loadSkills(): SkillT[] {
-  const skillsDir = path.join(CONTENT_DIR, 'skills');
-  const slugs = getDirectories(skillsDir);
-  
   const skills: SkillT[] = [];
   
-  for (const slug of slugs) {
-    const skillDir = path.join(skillsDir, slug);
-    const metaPath = path.join(skillDir, 'meta.json');
-    const meta = readJsonFile<SkillMeta>(metaPath);
-    
-    if (!meta) continue;
+  for (const [slug, meta] of Object.entries(skillsMetas)) {
+    const m = meta as any;
     
     // visible이 false면 스킵
-    if (meta.visible === false) continue;
+    if (m.visible === false) continue;
     
-    // 로컬 이미지 파일 찾기
-    const assetsDir = path.join(skillDir, 'assets');
-    const localIcon = findImageFile(assetsDir, 'icon');
-    const localCover = findImageFile(assetsDir, 'cover');
-    
-    // 사용 횟수 계산 (skill + language로 사용된 프로젝트 수)
-    const usedAsSkill = meta.projectsUsingAsSkill?.length || 0;
-    const usedAsLanguage = meta.projectsUsingAsLanguage?.length || 0;
+    // 사용 횟수 계산
+    const usedAsSkill = m.projectsUsingAsSkill?.length || 0;
+    const usedAsLanguage = m.projectsUsingAsLanguage?.length || 0;
     
     skills.push({
       id: slug,
       slug,
-      title: meta.title || meta['이름'] || '',
-      iconColor: meta.iconColor || '',
-      분류: meta['분류'] || [],
-      상위_항목: meta['상위_항목'] || [],
-      visible: meta.visible ?? true,
-      하위_항목: meta['하위_항목'] || [],
-      숙련도: meta['숙련도'] || '',
+      title: m.title || m['이름'] || '',
+      iconColor: m.iconColor || '',
+      분류: m['분류'] || [],
+      상위_항목: m['상위_항목'] || [],
+      visible: m.visible ?? true,
+      하위_항목: m['하위_항목'] || [],
+      숙련도: m['숙련도'] || '',
       사용한_횟수: usedAsSkill + usedAsLanguage,
-      projectUsedBySkill: meta.projectsUsingAsSkill || [],
-      projectUsedByLanguage: meta.projectsUsingAsLanguage || [],
-      관련_기술: meta['관련_기술'] || [],
-      description: meta['설명'] || '',
-      iconUrl: localIcon || meta.iconUrl || '',
-      iconEmoji: meta.iconEmoji || '',
-      coverImageUrl: localCover || meta.coverUrl || '',
+      projectUsedBySkill: m.projectsUsingAsSkill || [],
+      projectUsedByLanguage: m.projectsUsingAsLanguage || [],
+      관련_기술: m['관련_기술'] || [],
+      description: m['설명'] || '',
+      icon: m.icon || null,
+      iconEmoji: m.iconEmoji || '',
+      cover: m.cover || null,
     });
   }
   

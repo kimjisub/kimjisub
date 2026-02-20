@@ -16,24 +16,24 @@ export interface ProjectItemProps {
 }
 
 export const ProjectItem = ({ className, project }: ProjectItemProps) => {
-  const icon = project.iconUrl ? (
+  const icon = project.icon ? (
     <Image
       className="mr-2 w-6 h-6"
       width={24}
       height={24}
-      src={project.iconUrl}
+      src={project.icon}
       alt={`${project.title} 아이콘`}
     />
   ) : project.iconEmoji ? (
     <span className="mr-2">{project.iconEmoji}</span>
   ) : null;
 
-  const coverImage = project.coverImageUrl ? (
+  const coverImage = project.cover ? (
     <BlurImage
       className="w-full h-full transition-transform duration-500 group-hover:scale-110"
       width={400}
       height={200}
-      src={project.coverImageUrl}
+      src={project.cover}
       alt={`${project.title} 프로젝트 커버 이미지`}
       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
     />

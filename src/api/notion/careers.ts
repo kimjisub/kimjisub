@@ -1,22 +1,22 @@
 /**
- * Careers API - 로컬 파일 기반
+ * Careers API - meta.tsx static import 방식
  */
 
-import * as path from 'path';
+import { StaticImageData } from 'next/image';
 import { parseISO } from 'date-fns';
 
 import { NotionColor } from '../type/color';
-import { CONTENT_DIR, getDirectories, readJsonFile, findImageFile } from '.';
+import { careersMetas } from '@/content/careers/_index';
 
 export type CareerT = {
-  id: string;        // slug를 ID로 사용
+  id: string;
   slug: string;
   title: string;
   description: string;
-  iconUrl: string;
+  icon: StaticImageData | null;
   iconEmoji: string;
-  coverImageUrl: string;
-  relatedProjects: string[];  // project slugs
+  cover: StaticImageData | null;
+  relatedProjects: string[];
   awardsAndCertifications: string;
   institutions: { name: string; color: NotionColor }[];
   importance: string;
@@ -29,73 +29,40 @@ export type CareerT = {
   assignedTasks: { name: string; color: NotionColor }[];
 };
 
-// 로컬 meta.json 타입 (새 형식 - 한글 키)
-interface CareerMeta {
-  id: string;
-  title: string;
-  '이름'?: string;
-  '설명'?: string;
-  '날짜'?: string;
-  '기관'?: string[];
-  '분류'?: string[];
-  '맡은 업무'?: string[];
-  '중요도'?: string;
-  URL?: string;
-  '수상 및 자격증'?: string;
-  visible?: boolean;
-  iconUrl?: string;
-  coverUrl?: string;
-  iconEmoji?: string;
-  // 빌드 시점에 추가되는 역방향 관계
-  relatedProjects?: string[];
-}
-
 function loadCareers(): CareerT[] {
-  const careersDir = path.join(CONTENT_DIR, 'careers');
-  const slugs = getDirectories(careersDir);
-  
   const careers: CareerT[] = [];
   
-  for (const slug of slugs) {
-    const careerDir = path.join(careersDir, slug);
-    const metaPath = path.join(careerDir, 'meta.json');
-    const meta = readJsonFile<CareerMeta>(metaPath);
-    
-    if (!meta) continue;
+  for (const [slug, meta] of Object.entries(careersMetas)) {
+    const m = meta as any;
     
     // visible이 false면 스킵
-    if (meta.visible === false) continue;
-    
-    // 로컬 이미지 파일 찾기
-    const assetsDir = path.join(careerDir, 'assets');
-    const localIcon = findImageFile(assetsDir, 'icon');
-    const localCover = findImageFile(assetsDir, 'cover');
+    if (m.visible === false) continue;
     
     careers.push({
       id: slug,
       slug,
-      title: meta.title || meta['이름'] || '',
-      description: meta['설명'] || '',
-      iconUrl: localIcon || meta.iconUrl || '',
-      iconEmoji: meta.iconEmoji || '',
-      coverImageUrl: localCover || meta.coverUrl || '',
-      relatedProjects: meta.relatedProjects || [],
-      awardsAndCertifications: meta['수상 및 자격증'] || '',
-      institutions: (meta['기관'] || []).map(name => ({
+      title: m.title || m['이름'] || '',
+      description: m['설명'] || '',
+      icon: m.icon || null,
+      iconEmoji: m.iconEmoji || '',
+      cover: m.cover || null,
+      relatedProjects: m.relatedProjects || [],
+      awardsAndCertifications: m['수상 및 자격증'] || '',
+      institutions: (m['기관'] || []).map((name: string) => ({
         name,
         color: 'default' as NotionColor,
       })),
-      importance: meta['중요도'] || '',
-      url: meta.URL || '',
-      categories: (meta['분류'] || []).map(name => ({
+      importance: m['중요도'] || '',
+      url: m.URL || '',
+      categories: (m['분류'] || []).map((name: string) => ({
         name,
         color: 'default' as NotionColor,
       })),
       date: {
-        start: meta['날짜'] ? parseISO(meta['날짜']) : undefined,
+        start: m['날짜'] ? parseISO(m['날짜']) : undefined,
         end: undefined,
       },
-      assignedTasks: (meta['맡은 업무'] || []).map(name => ({
+      assignedTasks: (m['맡은 업무'] || []).map((name: string) => ({
         name,
         color: 'default' as NotionColor,
       })),

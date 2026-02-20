@@ -73,14 +73,14 @@ const TimelineItem = ({ career }: TimelineItemProps) => {
   const [hovered, setHovered] = useState(false);
 
   const isOngoing = !career.date.end;
-  const hasCoverImage = !!career.coverImageUrl;
+  const hasCoverImage = !!career.cover;
 
-  const icon = career.iconUrl ? (
+  const icon = career.icon ? (
     <Image
       className="w-5 h-5 rounded-sm shrink-0"
       width={20}
       height={20}
-      src={career.iconUrl}
+      src={career.icon}
       alt={`${career.title} 아이콘`}
     />
   ) : career.iconEmoji ? (
@@ -243,7 +243,7 @@ const TimelineItem = ({ career }: TimelineItemProps) => {
                       }`}
                       width={200}
                       height={150}
-                      src={career.coverImageUrl!}
+                      src={career.cover!}
                       alt={`${career.title} 커버 이미지`}
                       sizes="200px"
                     />

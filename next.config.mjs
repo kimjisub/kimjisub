@@ -26,10 +26,8 @@ const nextConfig = {
         loaders: ['@mdx-js/loader'],
         as: '*.js',
       },
-      '*.svg': {
-        loaders: ['@svgr/webpack'],
-        as: '*.js',
-      },
+      // SVG를 asset으로 처리 (컴포넌트 변환 X)
+      // '*.svg': { loaders: ['@svgr/webpack'], as: '*.js' },
     },
   },
   // Next.js 16: Allow dev origins for Tailscale

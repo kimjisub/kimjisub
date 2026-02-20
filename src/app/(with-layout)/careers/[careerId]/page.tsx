@@ -46,13 +46,13 @@ export async function generateMetadata(props: { params: Params }) {
 			title: `${career.title} | Jisub Kim Career`,
 			description: description,
 			type: 'article',
-			images: career.coverImageUrl ? [{ url: career.coverImageUrl }] : ['/logo512.png'],
+			images: career.cover ? [{ url: career.cover.src }] : ['/logo512.png'],
 		},
 		twitter: {
 			card: 'summary_large_image',
 			title: `${career.title} | Jisub Kim`,
 			description: description,
-			images: career.coverImageUrl ? [career.coverImageUrl] : ['/logo512.png'],
+			images: career.cover ? [career.cover.src] : ['/logo512.png'],
 		},
 	};
 }
@@ -69,12 +69,12 @@ const CareerPage = async (props: { params: Params }) => {
 		return <div>Career not found</div>;
 	}
 
-	const icon = career.iconUrl ? (
+	const icon = career.icon ? (
 		<Image
 			className="mr-2 w-8 h-8"
 			width={32}
 			height={32}
-			src={career.iconUrl}
+			src={career.icon}
 			alt={`${career.title} 아이콘`}
 		/>
 	) : career.iconEmoji ? (

@@ -100,12 +100,12 @@ const ProjectPage = async (props: { params: Params }) => {
 		return <div>Project not found</div>;
 	}
 
-	const icon = project.iconUrl ? (
+	const icon = project.icon ? (
 		<Image
 			className="mr-2 w-8 h-8"
 			width={32}
 			height={32}
-			src={project.iconUrl}
+			src={project.icon}
 			alt={`${project.title} 아이콘`}
 		/>
 	) : project.iconEmoji ? (
@@ -121,7 +121,7 @@ const ProjectPage = async (props: { params: Params }) => {
 		name: project.title,
 		description: project.description || `${project.title} - 김지섭의 프로젝트`,
 		url: `https://kimjisub.com/projects/${projectId}`,
-		image: project.coverImageUrl || 'https://kimjisub.com/logo512.png',
+		image: project.cover?.src || 'https://kimjisub.com/logo512.png',
 		dateCreated: project.date.start ? format(project.date.start, 'yyyy-MM-dd') : undefined,
 		dateModified: project.date.end ? format(project.date.end, 'yyyy-MM-dd') : undefined,
 		author: {
