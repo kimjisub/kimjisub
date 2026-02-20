@@ -1,7 +1,8 @@
 import icon from './assets/icon.png';
 import cover from './assets/cover.jpg';
+import type { ProjectMeta } from '@/content/types';
 
-export const meta = {
+export const meta: ProjectMeta = {
   id: 'arai',
   notionId: 'dd3d53cf-94ce-41c5-bf38-309a4da791bf',
   title: 'ARAI',

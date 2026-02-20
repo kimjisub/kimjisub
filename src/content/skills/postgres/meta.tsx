@@ -1,6 +1,7 @@
 import icon from './assets/icon.png';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'postgres',
   notionId: 'dfadbc59-f753-42ce-a75c-4b067efe79e2',
   title: 'Postgres',

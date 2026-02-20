@@ -1,4 +1,5 @@
-export const meta = {
+import type { SkillMeta } from '@/content/types';
+export const meta: SkillMeta = {
   id: 'nest-js',
   notionId: '9b184a99-0538-4f90-b2a7-ca94b4e5127c',
   title: 'Nest.js',

@@ -1,6 +1,7 @@
 import icon from './assets/icon.svg';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'arduino',
   notionId: 'f2dfcf79-cbc9-4b88-a637-ed19629af49f',
   title: 'Arduino',

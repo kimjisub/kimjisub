@@ -1,6 +1,7 @@
 import icon from './assets/icon.png';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'github-actions',
   notionId: '12d82f91-638d-42c0-bc1e-325dc0a66979',
   title: 'Github Actions',

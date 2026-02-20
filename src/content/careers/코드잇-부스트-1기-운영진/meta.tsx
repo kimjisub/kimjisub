@@ -1,4 +1,5 @@
-export const meta = {
+import type { CareerMeta } from '@/content/types';
+export const meta: CareerMeta = {
   id: '코드잇-부스트-1기-운영진',
   notionId: '1383b1b1-c9dc-8088-8d22-c276097b71c9',
   title: '코드잇 부스트 1기 운영진',

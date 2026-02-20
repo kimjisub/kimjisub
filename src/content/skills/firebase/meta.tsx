@@ -1,6 +1,7 @@
 import icon from './assets/icon.svg';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'firebase',
   notionId: '65180841-fa86-49b6-9602-679c23536fb8',
   title: 'Firebase',

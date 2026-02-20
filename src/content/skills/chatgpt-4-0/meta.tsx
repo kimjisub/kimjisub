@@ -1,4 +1,5 @@
-export const meta = {
+import type { SkillMeta } from '@/content/types';
+export const meta: SkillMeta = {
   id: 'chatgpt-4-0',
   notionId: '74468ca3-8f01-4fad-b156-2f350aa0baec',
   title: 'ChatGPT 4.0',

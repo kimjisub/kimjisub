@@ -1,6 +1,7 @@
 import icon from './assets/icon.png';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'influxdb',
   notionId: '3c4bf054-ffac-4473-8b0e-b7912d5e956d',
   title: 'influxdb',

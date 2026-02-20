@@ -1,7 +1,8 @@
 import icon from './assets/icon.png';
 import cover from './assets/cover.jpg';
+import type { CareerMeta } from '@/content/types';
 
-export const meta = {
+export const meta: CareerMeta = {
   id: '제-14회-앱잼',
   notionId: 'e1f0fc05-8023-4141-9469-64b5a78d7db8',
   title: '제 14회 앱잼',

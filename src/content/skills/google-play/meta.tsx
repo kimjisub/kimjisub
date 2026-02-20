@@ -1,4 +1,5 @@
-export const meta = {
+import type { SkillMeta } from '@/content/types';
+export const meta: SkillMeta = {
   id: 'google-play',
   notionId: 'd57c0a36-260c-4617-ba97-fbc5d4c3a188',
   title: 'Google Play',

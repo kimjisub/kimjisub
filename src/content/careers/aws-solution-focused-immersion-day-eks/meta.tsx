@@ -1,4 +1,5 @@
-export const meta = {
+import type { CareerMeta } from '@/content/types';
+export const meta: CareerMeta = {
   id: 'aws-solution-focused-immersion-day-eks',
   notionId: 'cd184eb4-9748-4402-b83c-518b1ccc8f7b',
   title: 'AWS Solution Focused Immersion Day - EKS',

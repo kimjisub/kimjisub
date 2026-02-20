@@ -1,4 +1,5 @@
-export const meta = {
+import type { CareerMeta } from '@/content/types';
+export const meta: CareerMeta = {
   id: '한국디지털미디어고등학교-졸업생-세미나',
   notionId: '1373b1b1-c9dc-804b-83c4-db0aab219aba',
   title: '한국디지털미디어고등학교 졸업생 세미나',

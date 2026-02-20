@@ -1,4 +1,5 @@
-export const meta = {
+import type { ProjectMeta } from '@/content/types';
+export const meta: ProjectMeta = {
   id: 'top-body-balance',
   notionId: 'fc27ac72-fb10-462c-865a-bc3ce55513f2',
   title: 'Top Body Balance',

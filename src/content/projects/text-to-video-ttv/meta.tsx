@@ -1,4 +1,5 @@
-export const meta = {
+import type { ProjectMeta } from '@/content/types';
+export const meta: ProjectMeta = {
   id: 'text-to-video-ttv',
   notionId: '848853fe-256a-45ed-9272-2a25d8f80854',
   title: 'Text to Video : TTV',

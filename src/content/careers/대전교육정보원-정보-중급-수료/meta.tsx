@@ -1,4 +1,5 @@
-export const meta = {
+import type { CareerMeta } from '@/content/types';
+export const meta: CareerMeta = {
   id: '대전교육정보원-정보-중급-수료',
   notionId: 'babf869c-f6a3-4b1c-9d5f-00d61470fa30',
   title: '대전교육정보원 정보 중급 수료',

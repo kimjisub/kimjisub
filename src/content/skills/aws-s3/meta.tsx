@@ -1,6 +1,7 @@
 import icon from './assets/icon.webp';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'aws-s3',
   notionId: '3f5fee99-5206-4938-9171-5d53b30f4846',
   title: 'AWS S3',

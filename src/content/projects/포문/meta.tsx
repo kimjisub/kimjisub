@@ -1,7 +1,8 @@
 import icon from './assets/icon.png';
 import cover from './assets/cover.png';
+import type { ProjectMeta } from '@/content/types';
 
-export const meta = {
+export const meta: ProjectMeta = {
   id: '포문',
   notionId: '31fcdff2-b969-47bc-b2f6-681122fe2215',
   title: '포문(砲門)',

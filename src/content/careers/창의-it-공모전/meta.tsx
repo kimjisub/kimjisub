@@ -1,4 +1,5 @@
-export const meta = {
+import type { CareerMeta } from '@/content/types';
+export const meta: CareerMeta = {
   id: '창의-it-공모전',
   notionId: 'f94d52d8-d31b-4040-a0ef-3378e73cc1da',
   title: '창의 IT 공모전',

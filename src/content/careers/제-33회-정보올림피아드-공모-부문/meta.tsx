@@ -1,6 +1,7 @@
 import cover from './assets/cover.jpeg';
+import type { CareerMeta } from '@/content/types';
 
-export const meta = {
+export const meta: CareerMeta = {
   id: '제-33회-정보올림피아드-공모-부문',
   notionId: 'cf1cc337-b1f9-464c-803a-8cbd7d56567f',
   title: '제 33회 정보올림피아드 공모 부문',

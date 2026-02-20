@@ -1,4 +1,5 @@
-export const meta = {
+import type { SkillMeta } from '@/content/types';
+export const meta: SkillMeta = {
   id: 'terraform',
   notionId: '3fb1154e-6de9-4dd6-a331-89a3b934bf1b',
   title: 'Terraform',

@@ -1,7 +1,8 @@
 import icon from './assets/icon.png';
 import cover from './assets/cover.png';
+import type { ProjectMeta } from '@/content/types';
 
-export const meta = {
+export const meta: ProjectMeta = {
   id: 'chain-post',
   notionId: 'd041a673-7348-4dd0-aa72-2e56065036f1',
   title: 'Chain Post',

@@ -1,6 +1,7 @@
 import icon from './assets/icon.png';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'mysql',
   notionId: '49e8d14a-b851-484b-9483-b2d78559aa10',
   title: 'mysql',

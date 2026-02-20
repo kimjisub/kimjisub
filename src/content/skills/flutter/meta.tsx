@@ -1,6 +1,7 @@
 import icon from './assets/icon.svg';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'flutter',
   notionId: '79ce5ae3-16cf-47a5-96c4-0c54792df264',
   title: 'Flutter',

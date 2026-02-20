@@ -1,6 +1,7 @@
 import icon from './assets/icon.png';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'macos',
   notionId: '724b929b-8356-4ce1-a7a7-120f8ab33da0',
   title: 'MacOS',

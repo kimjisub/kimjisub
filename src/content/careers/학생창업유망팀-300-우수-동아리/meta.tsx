@@ -1,4 +1,5 @@
-export const meta = {
+import type { CareerMeta } from '@/content/types';
+export const meta: CareerMeta = {
   id: '학생창업유망팀-300-우수-동아리',
   notionId: '479e58ac-c767-4790-afc6-dd224bd77d9b',
   title: '학생창업유망팀 300+ 우수 동아리',

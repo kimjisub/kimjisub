@@ -1,6 +1,7 @@
 import icon from './assets/icon.svg';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'tensorflow',
   notionId: '55d86e86-df3c-42fd-9ea0-883123716a4e',
   title: 'Tensorflow',

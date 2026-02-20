@@ -1,4 +1,5 @@
-export const meta = {
+import type { SkillMeta } from '@/content/types';
+export const meta: SkillMeta = {
   id: 'microsoft-teams',
   notionId: 'f051963a-63e3-44d9-a9a4-6d7caa6710c2',
   title: 'Microsoft Teams',

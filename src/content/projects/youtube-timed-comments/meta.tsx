@@ -1,6 +1,7 @@
 import cover from './assets/cover.png';
+import type { ProjectMeta } from '@/content/types';
 
-export const meta = {
+export const meta: ProjectMeta = {
   id: 'youtube-timed-comments',
   notionId: '917a67d4-dae7-4a04-a756-c0f96f562a32',
   title: 'Youtube Timed Comments',

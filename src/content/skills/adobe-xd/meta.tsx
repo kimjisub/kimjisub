@@ -1,4 +1,5 @@
-export const meta = {
+import type { SkillMeta } from '@/content/types';
+export const meta: SkillMeta = {
   id: 'adobe-xd',
   notionId: '2e8c0860-715e-4d73-a21f-71c9a1b73e2d',
   title: 'Adobe Xd',

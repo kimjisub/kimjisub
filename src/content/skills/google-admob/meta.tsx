@@ -1,4 +1,5 @@
-export const meta = {
+import type { SkillMeta } from '@/content/types';
+export const meta: SkillMeta = {
   id: 'google-admob',
   notionId: 'd6a13ecc-8f10-4826-af78-4cf126c2d463',
   title: 'Google AdMob',

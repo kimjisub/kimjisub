@@ -1,6 +1,7 @@
 import icon from './assets/icon.png';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'typescript',
   notionId: '6f19d4e2-daef-466d-8616-4dc553efdd0f',
   title: 'Typescript',

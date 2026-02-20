@@ -1,6 +1,7 @@
 import icon from './assets/icon.svg';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'adobe-ae-script',
   notionId: '53974902-39e4-4980-a7ea-80fcf4c546ce',
   title: 'Adobe Ae Script',

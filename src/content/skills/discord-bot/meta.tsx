@@ -1,6 +1,7 @@
 import icon from './assets/icon.svg';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'discord-bot',
   notionId: 'f9536c16-371c-4bb4-977e-eeaee441404b',
   title: 'Discord Bot',

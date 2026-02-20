@@ -1,6 +1,7 @@
 import icon from './assets/icon.jpg';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'cloudflare',
   notionId: '9284c4b8-6efa-4ff0-86ae-e4f80a3df936',
   title: 'cloudflare',

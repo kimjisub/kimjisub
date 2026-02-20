@@ -1,4 +1,5 @@
-export const meta = {
+import type { SkillMeta } from '@/content/types';
+export const meta: SkillMeta = {
   id: 'cmake',
   notionId: '1e78e66b-0c89-413c-a6e8-fc37c9ff3a16',
   title: 'cmake',

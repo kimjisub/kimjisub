@@ -1,4 +1,5 @@
-export const meta = {
+import type { ProjectMeta } from '@/content/types';
+export const meta: ProjectMeta = {
   id: 'spotify-stopwatch-방송',
   notionId: '2913b1b1-c9dc-80b1-b66b-cb00b03c8b70',
   title: 'Spotify Stopwatch (방송)',

@@ -1,6 +1,7 @@
 import cover from './assets/cover.jpg';
+import type { CareerMeta } from '@/content/types';
 
-export const meta = {
+export const meta: CareerMeta = {
   id: '대전교육정보원-정보-고급-수료',
   notionId: 'ed734136-883f-4c76-9df7-0cb71bb05991',
   title: '대전교육정보원 정보 고급 수료',

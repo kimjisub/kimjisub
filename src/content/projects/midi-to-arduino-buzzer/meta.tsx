@@ -1,6 +1,7 @@
 import cover from './assets/cover.png';
+import type { ProjectMeta } from '@/content/types';
 
-export const meta = {
+export const meta: ProjectMeta = {
   id: 'midi-to-arduino-buzzer',
   notionId: 'cdee7253-d5de-4cdc-930a-3255d57a0c4c',
   title: 'Midi to Arduino buzzer',

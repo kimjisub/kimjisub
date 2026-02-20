@@ -1,4 +1,5 @@
-export const meta = {
+import type { SkillMeta } from '@/content/types';
+export const meta: SkillMeta = {
   id: 'ableton-live',
   notionId: '0f8f5936-2444-4b7b-b501-85686ea70e1b',
   title: 'Ableton Live',

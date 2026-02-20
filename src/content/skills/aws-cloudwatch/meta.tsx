@@ -1,6 +1,7 @@
 import icon from './assets/icon.webp';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'aws-cloudwatch',
   notionId: 'baa81584-154a-48bf-954e-912ede663751',
   title: 'AWS CloudWatch',

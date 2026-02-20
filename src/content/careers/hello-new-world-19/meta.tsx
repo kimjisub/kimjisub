@@ -1,7 +1,8 @@
 import icon from './assets/icon.png';
 import cover from './assets/cover.jpg';
+import type { CareerMeta } from '@/content/types';
 
-export const meta = {
+export const meta: CareerMeta = {
   id: 'hello-new-world-19',
   notionId: 'deda62c8-0d3d-4805-bf5f-b156f179ef68',
   title: 'Hello New() World 19',

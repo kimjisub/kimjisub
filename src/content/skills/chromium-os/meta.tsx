@@ -1,6 +1,7 @@
 import icon from './assets/icon.svg';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'chromium-os',
   notionId: 'e43641d7-3834-410d-a045-9cde7e0d891c',
   title: 'Chromium OS',

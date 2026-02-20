@@ -1,4 +1,5 @@
-export const meta = {
+import type { CareerMeta } from '@/content/types';
+export const meta: CareerMeta = {
   id: '파이썬-교육',
   notionId: '07a7bf84-45bc-4669-b836-7ca8790bebd3',
   title: '파이썬 교육',

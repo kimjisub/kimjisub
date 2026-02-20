@@ -1,6 +1,7 @@
 import icon from './assets/icon.svg';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'raspberrypi',
   notionId: '9f78c850-f958-496d-9309-48860da1fa1b',
   title: 'Raspberrypi',

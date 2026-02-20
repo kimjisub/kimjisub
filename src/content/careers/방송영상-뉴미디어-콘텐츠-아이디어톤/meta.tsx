@@ -1,6 +1,7 @@
 import cover from './assets/cover.jpeg';
+import type { CareerMeta } from '@/content/types';
 
-export const meta = {
+export const meta: CareerMeta = {
   id: '방송영상-뉴미디어-콘텐츠-아이디어톤',
   notionId: 'da2074ac-3656-4592-8a73-d0dd3e5fd1b7',
   title: '방송영상 뉴미디어 콘텐츠 아이디어톤',

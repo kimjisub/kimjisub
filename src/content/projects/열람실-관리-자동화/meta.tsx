@@ -1,4 +1,5 @@
-export const meta = {
+import type { ProjectMeta } from '@/content/types';
+export const meta: ProjectMeta = {
   id: '열람실-관리-자동화',
   notionId: '3488f0b9-da37-4809-8d14-1d573d663fac',
   title: '열람실 관리 자동화',

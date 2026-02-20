@@ -1,4 +1,5 @@
-export const meta = {
+import type { ProjectMeta } from '@/content/types';
+export const meta: ProjectMeta = {
   id: 'dutchpay-안드로이드',
   notionId: '9f2e48ba-d4b3-40e6-8a22-61ddbcd1b590',
   title: 'DutchPay 안드로이드',

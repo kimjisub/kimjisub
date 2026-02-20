@@ -1,4 +1,5 @@
-export const meta = {
+import type { ProjectMeta } from '@/content/types';
+export const meta: ProjectMeta = {
   id: 'pubg-디스코드-봇',
   notionId: 'a49029e3-a8a4-4995-9df1-adc9a2fe9ec8',
   title: 'PUBG 디스코드 봇',

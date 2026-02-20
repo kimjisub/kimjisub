@@ -1,6 +1,7 @@
 import icon from './assets/icon.svg';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'chrome-extention',
   notionId: '94773cac-d11e-48fa-a7c2-e847c601b434',
   title: 'Chrome Extention',

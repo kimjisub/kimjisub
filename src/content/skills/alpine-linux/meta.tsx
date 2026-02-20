@@ -1,4 +1,5 @@
-export const meta = {
+import type { SkillMeta } from '@/content/types';
+export const meta: SkillMeta = {
   id: 'alpine-linux',
   notionId: '750dfb35-dc64-4947-9c37-59a2e6dfc84f',
   title: 'Alpine Linux',

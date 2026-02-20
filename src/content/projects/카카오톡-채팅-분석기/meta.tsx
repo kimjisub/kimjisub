@@ -1,4 +1,5 @@
-export const meta = {
+import type { ProjectMeta } from '@/content/types';
+export const meta: ProjectMeta = {
   id: '카카오톡-채팅-분석기',
   notionId: 'f8eaf004-c9ef-40d0-8512-fb0e49f06a88',
   title: '카카오톡 채팅 분석기',

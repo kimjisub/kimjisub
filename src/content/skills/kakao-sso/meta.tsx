@@ -1,4 +1,5 @@
-export const meta = {
+import type { SkillMeta } from '@/content/types';
+export const meta: SkillMeta = {
   id: 'kakao-sso',
   notionId: 'c69ebe85-3dfb-4d58-b766-d3a1dd4b33bc',
   title: 'Kakao SSO',

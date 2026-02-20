@@ -1,6 +1,7 @@
 import icon from './assets/icon.png';
+import type { CareerMeta } from '@/content/types';
 
-export const meta = {
+export const meta: CareerMeta = {
   id: '설리번-오빠-rc카-뽑았다',
   notionId: '25a7c61f-887c-47ae-ad63-a68e5759489b',
   title: '설리번 \'오빠 RC카 뽑았다\'',

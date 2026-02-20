@@ -1,6 +1,7 @@
 import icon from './assets/icon.jpg';
+import type { ProjectMeta } from '@/content/types';
 
-export const meta = {
+export const meta: ProjectMeta = {
   id: 'vplate',
   notionId: '8abeb85b-6efe-464c-a035-8f69b4bcf282',
   title: 'Vplate',

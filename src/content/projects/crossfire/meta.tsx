@@ -1,28 +1,25 @@
-export const meta = {
+import type { ProjectMeta } from '@/content/types';
+
+export const meta: ProjectMeta = {
   id: 'crossfire',
   title: 'Crossfire',
-  description: 'Multi-LLM Debate Orchestrator — ChatGPT, Gemini, Claude 간 토론을 오케스트레이션하는 Chrome Extension',
-  date: {
-    start: '2026-02-19',
-    end: null,
-  },
-  github: 'https://github.com/kimjisub/crossfire',
-  youtube: null,
-  url: null,
-  importance: '1',
   visible: true,
-  tags: [
-    { name: 'AI', color: 'purple' },
-    { name: 'LLM', color: 'blue' },
-    { name: 'Chrome Extension', color: 'green' },
+  '설명': 'Multi-LLM Debate Orchestrator — ChatGPT, Gemini, Claude 간 토론을 오케스트레이션하는 Chrome Extension',
+  '날짜': '2026-02-19',
+  Github: 'https://github.com/kimjisub/crossfire',
+  '중요도': '1',
+  '태그': [
+    'AI',
+    'LLM',
+    'Chrome Extension',
   ],
-  categories: [
-    { name: '사이드 프로젝트', color: 'gray' },
+  '분류': [
+    '사이드 프로젝트',
   ],
-  assignedTasks: [
-    { name: '책임자', color: 'red' },
-    { name: '기획', color: 'yellow' },
-    { name: '개발', color: 'blue' },
+  '맡은 업무': [
+    '책임자',
+    '기획',
+    '개발',
   ],
   '주요 기술': ['react', 'chrome-extention'],
   '프로그래밍 언어': ['typescript'],

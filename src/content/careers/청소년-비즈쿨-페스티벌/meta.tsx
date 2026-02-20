@@ -1,6 +1,7 @@
 import cover from './assets/cover.jpg';
+import type { CareerMeta } from '@/content/types';
 
-export const meta = {
+export const meta: CareerMeta = {
   id: '청소년-비즈쿨-페스티벌',
   notionId: '56ae8dd3-74ef-4b6d-b63e-03535d3a271b',
   title: '청소년 비즈쿨 페스티벌',

@@ -1,6 +1,7 @@
 import icon from './assets/icon.webp';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'awsfargate',
   notionId: 'ffd2dee7-f361-4514-a38d-b6cddbe419a9',
   title: 'awsfargate',

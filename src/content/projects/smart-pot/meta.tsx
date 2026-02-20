@@ -1,4 +1,5 @@
-export const meta = {
+import type { ProjectMeta } from '@/content/types';
+export const meta: ProjectMeta = {
   id: 'smart-pot',
   notionId: '8fda43a6-b6cb-495f-8256-898cd2e66b03',
   title: 'Smart Pot',

@@ -1,6 +1,7 @@
 import icon from './assets/icon.svg';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'android-studio',
   notionId: '4b9ff3d7-24a0-4ed1-8b34-7ab9c34c1843',
   title: 'Android Studio',

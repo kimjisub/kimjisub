@@ -1,4 +1,5 @@
-export const meta = {
+import type { CareerMeta } from '@/content/types';
+export const meta: CareerMeta = {
   id: '1st-generative-ai-ideathon',
   notionId: '32e22a34-d0b0-4b9d-a411-5a6b0c2437f3',
   title: '1st Generative AI Ideathon',

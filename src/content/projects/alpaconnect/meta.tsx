@@ -1,7 +1,8 @@
 import icon from './assets/icon.png';
 import cover from './assets/cover.jpg';
+import type { ProjectMeta } from '@/content/types';
 
-export const meta = {
+export const meta: ProjectMeta = {
   id: 'alpaconnect',
   notionId: 'f8408212-01e1-4ca5-ae9b-0aff52122cff',
   title: 'AlpaConnect',

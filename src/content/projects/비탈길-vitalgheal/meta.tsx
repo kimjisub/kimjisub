@@ -1,6 +1,7 @@
 import icon from './assets/icon.png';
+import type { ProjectMeta } from '@/content/types';
 
-export const meta = {
+export const meta: ProjectMeta = {
   id: '비탈길-vitalgheal',
   notionId: '0371c463-7d0e-4c0b-8b61-f546160c9982',
   title: '비탈길: VitalGHeal',

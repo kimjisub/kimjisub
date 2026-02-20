@@ -1,4 +1,5 @@
-export const meta = {
+import type { CareerMeta } from '@/content/types';
+export const meta: CareerMeta = {
   id: 'dmz-해커톤',
   notionId: 'de7e634c-720e-447a-8b29-3452f2683b5f',
   title: 'DMZ 해커톤',

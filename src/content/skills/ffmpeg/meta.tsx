@@ -1,6 +1,7 @@
 import icon from './assets/icon.png';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'ffmpeg',
   notionId: 'd27ccae4-aa64-4d1d-8244-f8f95839bd53',
   title: 'FFMPEG',

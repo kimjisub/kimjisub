@@ -1,4 +1,5 @@
-export const meta = {
+import type { CareerMeta } from '@/content/types';
+export const meta: CareerMeta = {
   id: 'alpaon-llc',
   notionId: '1383b1b1-c9dc-80a7-87c2-c15eb9f3f13f',
   title: 'Alpaon LLC.',

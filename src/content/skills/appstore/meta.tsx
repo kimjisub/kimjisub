@@ -1,4 +1,5 @@
-export const meta = {
+import type { SkillMeta } from '@/content/types';
+export const meta: SkillMeta = {
   id: 'appstore',
   notionId: 'cd0c3e10-abca-48f0-9392-78df945616b4',
   title: 'Appstore',

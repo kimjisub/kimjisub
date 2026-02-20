@@ -1,4 +1,5 @@
-export const meta = {
+import type { CareerMeta } from '@/content/types';
+export const meta: CareerMeta = {
   id: '대한민국-sw-융합-해커톤',
   notionId: '29055678-f315-4668-940b-973aff964c4b',
   title: '대한민국 SW 융합 해커톤',

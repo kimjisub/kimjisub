@@ -1,6 +1,7 @@
 import cover from './assets/cover.jpg';
+import type { ProjectMeta } from '@/content/types';
 
-export const meta = {
+export const meta: ProjectMeta = {
   id: '숫자-인식-ai',
   notionId: '38f4b86f-c53f-4712-b095-f879da6c831b',
   title: '숫자 인식 AI',

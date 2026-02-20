@@ -1,7 +1,8 @@
 import icon from './assets/icon.png';
 import cover from './assets/cover.png';
+import type { ProjectMeta } from '@/content/types';
 
-export const meta = {
+export const meta: ProjectMeta = {
   id: '디미고라이프',
   notionId: 'e893af80-0b86-4c5c-99b5-52cb8f51a78f',
   title: '디미고라이프',

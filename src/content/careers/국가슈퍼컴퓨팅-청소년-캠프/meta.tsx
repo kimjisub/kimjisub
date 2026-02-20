@@ -1,6 +1,7 @@
 import cover from './assets/cover.png';
+import type { CareerMeta } from '@/content/types';
 
-export const meta = {
+export const meta: CareerMeta = {
   id: '국가슈퍼컴퓨팅-청소년-캠프',
   notionId: '89469a5f-20fa-496a-9504-32a037875528',
   title: '국가슈퍼컴퓨팅 청소년 캠프',

@@ -1,7 +1,8 @@
 import icon from './assets/icon.png';
 import cover from './assets/cover.jpg';
+import type { ProjectMeta } from '@/content/types';
 
-export const meta = {
+export const meta: ProjectMeta = {
   id: 'luna-coding',
   notionId: 'f9cda467-4e16-4a41-b99a-7e915db4c181',
   title: 'LUNA Coding',

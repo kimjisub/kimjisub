@@ -1,7 +1,8 @@
 import icon from './assets/icon.webp';
 import cover from './assets/cover.png';
+import type { ProjectMeta } from '@/content/types';
 
-export const meta = {
+export const meta: ProjectMeta = {
   id: 'mopl',
   notionId: 'feb5779b-9e0d-4b8f-9aa1-e7a7a393c0cf',
   title: 'Mopl',

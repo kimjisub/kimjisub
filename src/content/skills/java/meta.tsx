@@ -1,6 +1,7 @@
 import icon from './assets/icon.svg';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'java',
   notionId: '681343ff-92ca-42c7-a073-7f72ef77e7ef',
   title: 'Java',

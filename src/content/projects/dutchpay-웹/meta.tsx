@@ -1,6 +1,7 @@
 import cover from './assets/cover.png';
+import type { ProjectMeta } from '@/content/types';
 
-export const meta = {
+export const meta: ProjectMeta = {
   id: 'dutchpay-웹',
   notionId: '07b08690-a37c-421f-8a80-b13d3824549a',
   title: 'DutchPay 웹',

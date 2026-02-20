@@ -1,4 +1,5 @@
-export const meta = {
+import type { CareerMeta } from '@/content/types';
+export const meta: CareerMeta = {
   id: 'inapse-hackathon',
   notionId: '43d36b20-c680-4663-b9ac-d36b24a94f13',
   title: 'INAPSE HACKATHON',

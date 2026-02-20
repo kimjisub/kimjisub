@@ -1,6 +1,7 @@
 import icon from './assets/icon.png';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'mongodb',
   notionId: 'b89cdcad-a70e-451d-80ba-a7d4dcce22de',
   title: 'MongoDB',

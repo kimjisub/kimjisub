@@ -1,6 +1,7 @@
 import icon from './assets/icon.svg';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'autodesk-fusion',
   notionId: 'de6dfd76-8a78-4265-a9aa-4bdc1ed431ff',
   title: 'Autodesk Fusion',

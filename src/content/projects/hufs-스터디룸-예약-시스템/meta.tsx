@@ -1,4 +1,5 @@
-export const meta = {
+import type { ProjectMeta } from '@/content/types';
+export const meta: ProjectMeta = {
   id: 'hufs-스터디룸-예약-시스템',
   notionId: '156b6809-90c7-4a83-9751-6f82331c3030',
   title: 'HUFS  스터디룸 예약 시스템',

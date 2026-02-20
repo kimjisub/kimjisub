@@ -1,4 +1,5 @@
-export const meta = {
+import type { CareerMeta } from '@/content/types';
+export const meta: CareerMeta = {
   id: '한국지도자육성장학재단-54기',
   notionId: '9ee7bba9-a4c5-41f2-82ed-b5a27ca1cc90',
   title: '한국지도자육성장학재단 54기',

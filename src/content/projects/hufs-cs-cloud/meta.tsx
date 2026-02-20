@@ -1,4 +1,5 @@
-export const meta = {
+import type { ProjectMeta } from '@/content/types';
+export const meta: ProjectMeta = {
   id: 'hufs-cs-cloud',
   notionId: '9533de9d-1230-4c07-8cf9-57e3547469c5',
   title: 'HUFS CS Cloud',

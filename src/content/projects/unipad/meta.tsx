@@ -1,7 +1,8 @@
 import icon from './assets/icon.png';
 import cover from './assets/cover.webp';
+import type { ProjectMeta } from '@/content/types';
 
-export const meta = {
+export const meta: ProjectMeta = {
   id: 'unipad',
   notionId: '72fff05b-7e1a-47ae-a3df-543ae5e8a57a',
   title: 'UniPad',

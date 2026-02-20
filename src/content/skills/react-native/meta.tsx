@@ -1,6 +1,7 @@
 import icon from './assets/icon.svg';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'react-native',
   notionId: 'a635019c-e58a-4d88-a7c7-f0a2052af687',
   title: 'React Native',

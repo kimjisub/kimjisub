@@ -1,6 +1,7 @@
 import cover from './assets/cover.jpg';
+import type { CareerMeta } from '@/content/types';
 
-export const meta = {
+export const meta: CareerMeta = {
   id: '산업-현장-안전-메이커톤',
   notionId: '87bd18af-8515-4c14-a7df-40dcb2dae553',
   title: '산업 현장 안전 메이커톤',

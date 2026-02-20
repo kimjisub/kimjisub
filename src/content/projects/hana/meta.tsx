@@ -1,7 +1,8 @@
 import icon from './assets/icon.png';
 import cover from './assets/cover.png';
+import type { ProjectMeta } from '@/content/types';
 
-export const meta = {
+export const meta: ProjectMeta = {
   id: 'hana',
   notionId: '94abf410-d23e-4253-8e66-d6fe06d07fd0',
   title: 'HANA',

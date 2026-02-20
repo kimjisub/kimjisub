@@ -1,6 +1,7 @@
 import icon from './assets/icon.svg';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'vue',
   notionId: '7b876528-6abb-4c3d-bdd3-9126ad84ee1e',
   title: 'Vue',

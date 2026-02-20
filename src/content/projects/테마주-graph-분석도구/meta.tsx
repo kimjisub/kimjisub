@@ -1,4 +1,5 @@
-export const meta = {
+import type { ProjectMeta } from '@/content/types';
+export const meta: ProjectMeta = {
   id: '테마주-graph-분석도구',
   notionId: '2013b1b1-c9dc-8063-8540-f260066d1be3',
   title: '테마주 Graph 분석도구',

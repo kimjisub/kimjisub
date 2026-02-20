@@ -1,4 +1,5 @@
-export const meta = {
+import type { ProjectMeta } from '@/content/types';
+export const meta: ProjectMeta = {
   id: 'notion-desktop-app',
   notionId: 'ed9a0f96-eb1a-42e8-9ffd-74c9ebfe093e',
   title: 'Notion Desktop App',

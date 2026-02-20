@@ -1,6 +1,7 @@
 import icon from './assets/icon.svg';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'visual-studio',
   notionId: '85a50526-1d67-4ddb-9bac-eff36490ff2d',
   title: 'Visual Studio',

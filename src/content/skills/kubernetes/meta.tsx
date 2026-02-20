@@ -1,6 +1,7 @@
 import icon from './assets/icon.png';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'kubernetes',
   notionId: '21324644-fb22-4d10-9b97-ded3c984b401',
   title: 'kubernetes',

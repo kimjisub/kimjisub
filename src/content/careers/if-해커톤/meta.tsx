@@ -1,6 +1,7 @@
 import cover from './assets/cover.jpg';
+import type { CareerMeta } from '@/content/types';
 
-export const meta = {
+export const meta: CareerMeta = {
   id: 'if-해커톤',
   notionId: '1e449861-3743-43ee-b5a6-21b3e32e77df',
   title: 'IF 해커톤',

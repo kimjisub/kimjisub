@@ -1,6 +1,7 @@
 import icon from './assets/icon.jpg';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'vmware-esxi',
   notionId: 'af6ab47f-4987-45d3-9f20-95026ad6988b',
   title: 'Vmware ESXI',

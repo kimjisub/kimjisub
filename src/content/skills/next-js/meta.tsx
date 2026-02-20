@@ -1,4 +1,5 @@
-export const meta = {
+import type { SkillMeta } from '@/content/types';
+export const meta: SkillMeta = {
   id: 'next-js',
   notionId: 'a0facdd0-5249-4dc4-ab4f-433109ed215a',
   title: 'Next.js',

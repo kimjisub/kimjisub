@@ -1,6 +1,7 @@
 import cover from './assets/cover.jpeg';
+import type { CareerMeta } from '@/content/types';
 
-export const meta = {
+export const meta: CareerMeta = {
   id: 'ir피칭-경진대회',
   notionId: 'b0d62388-6d2d-4c27-b481-e23d898b86ad',
   title: 'IR피칭 경진대회',

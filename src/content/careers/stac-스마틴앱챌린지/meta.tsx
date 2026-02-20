@@ -1,6 +1,7 @@
 import cover from './assets/cover.jpg';
+import type { CareerMeta } from '@/content/types';
 
-export const meta = {
+export const meta: CareerMeta = {
   id: 'stac-스마틴앱챌린지',
   notionId: 'e5b7b55a-a297-4283-9a2d-5fda94ce569d',
   title: 'STAC 스마틴앱챌린지',

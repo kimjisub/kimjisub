@@ -1,6 +1,7 @@
 import cover from './assets/cover.jpg';
+import type { ProjectMeta } from '@/content/types';
 
-export const meta = {
+export const meta: ProjectMeta = {
   id: 'midi-video-generator',
   notionId: 'b0ad0c42-bd9c-45a9-8ff9-33ed9dd82dad',
   title: 'Midi Video Generator',

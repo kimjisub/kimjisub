@@ -1,6 +1,7 @@
 import cover from './assets/cover.jpg';
+import type { CareerMeta } from '@/content/types';
 
-export const meta = {
+export const meta: CareerMeta = {
   id: 'ict-메이커톤',
   notionId: 'b8a6bf29-d61a-457b-941a-170a99b0a29a',
   title: 'ICT 메이커톤',

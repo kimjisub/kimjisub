@@ -1,4 +1,5 @@
-export const meta = {
+import type { CareerMeta } from '@/content/types';
+export const meta: CareerMeta = {
   id: '2016-it-교육지원-컨퍼런스',
   notionId: '1373b1b1-c9dc-8033-b47c-e0632d7b68d1',
   title: '2016 IT 교육지원 컨퍼런스',

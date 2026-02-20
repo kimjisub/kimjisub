@@ -1,4 +1,5 @@
-export const meta = {
+import type { SkillMeta } from '@/content/types';
+export const meta: SkillMeta = {
   id: 'argo-cd',
   notionId: '0e32cdb3-71e3-4e3a-8791-dfe1630a9e66',
   title: 'Argo CD',

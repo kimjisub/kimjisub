@@ -1,4 +1,5 @@
-export const meta = {
+import type { ProjectMeta } from '@/content/types';
+export const meta: ProjectMeta = {
   id: '리틱-점자모션그래픽프로젝트',
   notionId: '0d3ef853-bbab-4075-a890-8e416b9aaea6',
   title: '리틱 점자모션그래픽프로젝트',

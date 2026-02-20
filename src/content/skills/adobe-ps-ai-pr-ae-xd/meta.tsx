@@ -1,6 +1,7 @@
 import icon from './assets/icon.svg';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'adobe-ps-ai-pr-ae-xd',
   notionId: '3296beb3-60fa-4d54-ac44-607f1b29090a',
   title: 'Adobe (Ps, Ai, Pr, Ae, Xd)',

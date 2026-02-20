@@ -1,6 +1,7 @@
 import icon from './assets/icon.svg';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'gcp-app-engine',
   notionId: 'd2b5a442-267c-4781-8f6c-e85c26fec00a',
   title: 'GCP App Engine',

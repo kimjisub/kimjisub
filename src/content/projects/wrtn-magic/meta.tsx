@@ -1,4 +1,5 @@
-export const meta = {
+import type { ProjectMeta } from '@/content/types';
+export const meta: ProjectMeta = {
   id: 'wrtn-magic',
   notionId: 'be36aef1-f29e-4071-bfd4-fa64bbb6f453',
   title: 'Wrtn Magic',

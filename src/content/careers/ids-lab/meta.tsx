@@ -1,4 +1,5 @@
-export const meta = {
+import type { CareerMeta } from '@/content/types';
+export const meta: CareerMeta = {
   id: 'ids-lab',
   notionId: '1383b1b1-c9dc-8053-9783-d2945bf7abfd',
   title: 'IDS Lab',

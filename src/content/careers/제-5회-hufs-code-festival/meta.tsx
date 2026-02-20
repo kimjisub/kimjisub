@@ -1,4 +1,5 @@
-export const meta = {
+import type { CareerMeta } from '@/content/types';
+export const meta: CareerMeta = {
   id: '제-5회-hufs-code-festival',
   notionId: 'afc8beac-5991-4152-954b-a2d5c24e5ddc',
   title: '제 5회 HUFS Code Festival',

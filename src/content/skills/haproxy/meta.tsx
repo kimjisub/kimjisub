@@ -1,6 +1,7 @@
 import icon from './assets/icon.png';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'haproxy',
   notionId: '5fe5e0f6-c112-49f6-92d2-03c3905931c1',
   title: 'HAProxy',

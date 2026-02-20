@@ -1,6 +1,7 @@
 import icon from './assets/icon.png';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'neo4j',
   notionId: 'f32ce8a8-6504-4dea-b077-7c1bb2a5fdb8',
   title: 'neo4j',

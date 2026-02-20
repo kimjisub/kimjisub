@@ -1,6 +1,7 @@
 import icon from './assets/icon.png';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'flask',
   notionId: '59d00089-4e4a-473a-8cba-63e5d047b45a',
   title: 'Flask',

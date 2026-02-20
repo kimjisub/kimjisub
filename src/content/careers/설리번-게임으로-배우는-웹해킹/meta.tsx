@@ -1,6 +1,7 @@
 import icon from './assets/icon.png';
+import type { CareerMeta } from '@/content/types';
 
-export const meta = {
+export const meta: CareerMeta = {
   id: '설리번-게임으로-배우는-웹해킹',
   notionId: '80c918f4-8ead-4409-ba3d-a3d54fbd41de',
   title: '설리번 \'게임으로 배우는 웹해킹\'',

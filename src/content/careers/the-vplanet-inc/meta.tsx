@@ -1,6 +1,7 @@
 import icon from './assets/icon.jpg';
+import type { CareerMeta } from '@/content/types';
 
-export const meta = {
+export const meta: CareerMeta = {
   id: 'the-vplanet-inc',
   notionId: '0efa438c-617f-46b4-bd48-18903013d80f',
   title: 'The Vplanet Inc.',

@@ -1,6 +1,7 @@
 import cover from './assets/cover.jpg';
+import type { CareerMeta } from '@/content/types';
 
-export const meta = {
+export const meta: CareerMeta = {
   id: '2019-angelhack-hackathon',
   notionId: 'e7fbf93d-f2e3-4a60-92b5-246790eabab5',
   title: '2019 AngelHack Hackathon',

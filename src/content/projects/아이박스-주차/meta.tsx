@@ -1,6 +1,7 @@
 import icon from './assets/icon.png';
+import type { ProjectMeta } from '@/content/types';
 
-export const meta = {
+export const meta: ProjectMeta = {
   id: '아이박스-주차',
   notionId: '3c9f2d34-a501-46a5-b644-43a316904b1e',
   title: '아이박스 주차',

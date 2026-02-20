@@ -1,6 +1,7 @@
 import icon from './assets/icon.png';
+import type { ProjectMeta } from '@/content/types';
 
-export const meta = {
+export const meta: ProjectMeta = {
   id: 'eyevacs4',
   notionId: '4b1c905e-56cf-4bc8-915d-c768337edf4e',
   title: 'Eyevacs4',

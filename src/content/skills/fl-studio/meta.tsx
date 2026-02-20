@@ -1,6 +1,7 @@
 import icon from './assets/icon.png';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'fl-studio',
   notionId: 'b4f1dcf8-0067-4ffa-86ca-7390c8936c35',
   title: 'FL Studio',

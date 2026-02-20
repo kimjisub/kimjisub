@@ -1,7 +1,8 @@
 import icon from './assets/icon.webp';
 import cover from './assets/cover.jpeg';
+import type { CareerMeta } from '@/content/types';
 
-export const meta = {
+export const meta: CareerMeta = {
   id: 'hufsummer-hackathon',
   notionId: 'ca75ef79-2c62-4926-af1a-7b5608e36d12',
   title: 'HUFSummer Hackathon',

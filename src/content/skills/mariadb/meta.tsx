@@ -1,6 +1,7 @@
 import icon from './assets/icon.png';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'mariadb',
   notionId: '02f9cfd1-cef8-4d9e-8d64-bba6bed2f669',
   title: 'MariaDB',

@@ -1,6 +1,7 @@
 import cover from './assets/cover.jpg';
+import type { CareerMeta } from '@/content/types';
 
-export const meta = {
+export const meta: CareerMeta = {
   id: '2018-대한민국-청소년-창업경진대회',
   notionId: 'c65f40a3-12fb-438a-8afb-4ab60ac814f6',
   title: '2018 대한민국 청소년 창업경진대회',

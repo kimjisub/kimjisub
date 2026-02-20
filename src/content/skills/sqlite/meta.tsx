@@ -1,6 +1,7 @@
 import icon from './assets/icon.png';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'sqlite',
   notionId: 'e452e82e-c68f-4fc7-9cb4-d8ea1e3d67c7',
   title: 'SQLite',

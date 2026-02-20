@@ -1,6 +1,7 @@
 import cover from './assets/cover.png';
+import type { ProjectMeta } from '@/content/types';
 
-export const meta = {
+export const meta: ProjectMeta = {
   id: 'smart-home-with-google-home',
   notionId: '1341a9fd-f7bb-43ed-81c3-07ae0ff07d07',
   title: 'Smart Home With Google Home',

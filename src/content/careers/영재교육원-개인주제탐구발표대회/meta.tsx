@@ -1,4 +1,5 @@
-export const meta = {
+import type { CareerMeta } from '@/content/types';
+export const meta: CareerMeta = {
   id: '영재교육원-개인주제탐구발표대회',
   notionId: '0e492ad6-4b98-4292-9900-8e92f35596c0',
   title: '영재교육원 개인주제탐구발표대회',

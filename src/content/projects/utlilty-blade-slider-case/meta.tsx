@@ -1,6 +1,7 @@
 import cover from './assets/cover.jpg';
+import type { ProjectMeta } from '@/content/types';
 
-export const meta = {
+export const meta: ProjectMeta = {
   id: 'utlilty-blade-slider-case',
   notionId: 'e967da7b-3dd1-401b-b8d3-e6bacdaf00d2',
   title: 'Utlilty Blade Slider Case',

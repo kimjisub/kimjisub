@@ -1,6 +1,7 @@
 import icon from './assets/icon.webp';
+import type { SkillMeta } from '@/content/types';
 
-export const meta = {
+export const meta: SkillMeta = {
   id: 'aws-documentdb',
   notionId: '84ffcc42-883a-48ee-9d0e-099da0fda4eb',
   title: 'AWS DocumentDB',

@@ -1,4 +1,5 @@
-export const meta = {
+import type { CareerMeta } from '@/content/types';
+export const meta: CareerMeta = {
   id: '대전-영재-페스티벌',
   notionId: '63e9ec4b-3368-41ef-8e54-50b0a55640a2',
   title: '대전 영재 페스티벌',

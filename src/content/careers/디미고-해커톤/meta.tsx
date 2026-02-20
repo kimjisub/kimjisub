@@ -1,6 +1,7 @@
 import icon from './assets/icon.jpg';
+import type { CareerMeta } from '@/content/types';
 
-export const meta = {
+export const meta: CareerMeta = {
   id: '디미고-해커톤',
   notionId: '41d72e17-deb7-4d1b-8cdb-860a3d008187',
   title: '디미고 해커톤',
