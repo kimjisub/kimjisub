@@ -13,7 +13,7 @@ export const meta: CareerMeta = {
     'AngelHack',
   ],
   visible: true,
-  '중요도': '중간',
+  '중요도': 50,
   '분류': [
     '해커톤',
   ],

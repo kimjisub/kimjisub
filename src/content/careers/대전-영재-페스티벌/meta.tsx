@@ -8,7 +8,7 @@ export const meta: CareerMeta = {
     '대전광역시',
   ],
   visible: true,
-  '중요도': '낮음',
+  '중요도': 90,
   '분류': [
     '부스운영',
   ],

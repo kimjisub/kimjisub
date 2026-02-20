@@ -11,7 +11,7 @@ export const meta: CareerMeta = {
     'DMZ Hackathon',
   ],
   visible: true,
-  '중요도': '낮음',
+  '중요도': 90,
   '분류': [
     '해커톤',
   ],

@@ -10,7 +10,7 @@ export const meta: CareerMeta = {
     'UNIST',
   ],
   visible: true,
-  '중요도': '높음',
+  '중요도': 10,
   '분류': [
     '캠프',
   ],

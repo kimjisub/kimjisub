@@ -15,7 +15,7 @@ export const meta: CareerMeta = {
     'YEEP',
   ],
   visible: true,
-  '중요도': '중간',
+  '중요도': 50,
   '분류': [
     '부스운영',
   ],

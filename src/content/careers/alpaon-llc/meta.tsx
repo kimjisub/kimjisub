@@ -4,7 +4,7 @@ export const meta: CareerMeta = {
   notionId: '1383b1b1-c9dc-80a7-87c2-c15eb9f3f13f',
   title: 'Alpaon LLC.',
   visible: false,
-  '중요도': '매우 높음',
+  '중요도': 5,
   '분류': [
     '사업',
   ],

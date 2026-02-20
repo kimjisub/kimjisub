@@ -15,7 +15,7 @@ export const meta: CareerMeta = {
     '함께일하는재단',
   ],
   visible: true,
-  '중요도': '높음',
+  '중요도': 10,
   URL: 'http://hellonewworld.co.kr/bbs/board.php?bo_table=34&wr_id=4',
   '분류': [
     '해커톤',

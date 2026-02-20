@@ -16,7 +16,7 @@ export const meta: CareerMeta = {
     '아산나눔재단',
   ],
   visible: true,
-  '중요도': '중간',
+  '중요도': 50,
   '분류': [
     '해커톤',
   ],

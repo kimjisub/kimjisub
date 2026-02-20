@@ -7,7 +7,7 @@ export const meta: CareerMeta = {
   title: '방송영상 뉴미디어 콘텐츠 아이디어톤',
   '수상 및 수료': '최우수상',
   visible: true,
-  '중요도': '중간',
+  '중요도': 50,
   '분류': [
     '해커톤',
   ],

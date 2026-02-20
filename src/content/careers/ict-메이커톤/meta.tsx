@@ -13,7 +13,7 @@ export const meta: CareerMeta = {
     '동탄중앙이음터',
   ],
   visible: true,
-  '중요도': '낮음',
+  '중요도': 90,
   '분류': [
     '해커톤',
   ],

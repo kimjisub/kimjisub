@@ -14,7 +14,7 @@ export const meta: CareerMeta = {
     '슘페터',
   ],
   visible: true,
-  '중요도': '중간',
+  '중요도': 50,
   '분류': [
     '캠프',
   ],

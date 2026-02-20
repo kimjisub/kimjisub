@@ -7,7 +7,7 @@ export const meta: CareerMeta = {
     '한국디지털미디어고등학교',
   ],
   visible: true,
-  '중요도': '낮음',
+  '중요도': 90,
   '분류': [
     '세미나',
   ],

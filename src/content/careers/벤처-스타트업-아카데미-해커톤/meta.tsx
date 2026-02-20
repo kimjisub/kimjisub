@@ -11,7 +11,7 @@ export const meta: CareerMeta = {
     '한국 스타트업 포럼',
   ],
   visible: false,
-  '중요도': '낮음',
+  '중요도': 90,
   '분류': [
     '해커톤',
   ],

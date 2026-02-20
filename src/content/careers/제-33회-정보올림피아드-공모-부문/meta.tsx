@@ -13,7 +13,7 @@ export const meta: CareerMeta = {
     'KOI',
   ],
   visible: true,
-  '중요도': '중간',
+  '중요도': 50,
   '분류': [
     '공모전',
   ],

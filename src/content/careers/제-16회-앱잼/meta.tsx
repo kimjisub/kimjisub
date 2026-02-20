@@ -13,7 +13,7 @@ export const meta: CareerMeta = {
     '서울디지털재단',
   ],
   visible: false,
-  '중요도': '낮음',
+  '중요도': 90,
   '분류': [
     '해커톤',
   ],

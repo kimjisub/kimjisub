@@ -13,7 +13,7 @@ export const meta: CareerMeta = {
     '경기지방중소벤처기업청',
   ],
   visible: true,
-  '중요도': '중간',
+  '중요도': 50,
   '분류': [
     '해커톤',
   ],

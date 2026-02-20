@@ -8,7 +8,7 @@ export const meta: CareerMeta = {
     '대전교육정보원 영재교육원',
   ],
   visible: true,
-  '중요도': '중간',
+  '중요도': 50,
   '분류': [
     '수료',
   ],

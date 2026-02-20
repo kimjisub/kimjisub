@@ -17,7 +17,7 @@ export const meta: CareerMeta = {
     '교육부',
   ],
   visible: true,
-  '중요도': '높음',
+  '중요도': 10,
   '분류': [
     '부스운영',
   ],

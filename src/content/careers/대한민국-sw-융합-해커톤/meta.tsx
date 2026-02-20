@@ -7,7 +7,7 @@ export const meta: CareerMeta = {
     'chain-post',
   ],
   visible: false,
-  '중요도': '낮음',
+  '중요도': 90,
   '분류': [
     '해커톤',
   ],

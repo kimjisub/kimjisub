@@ -11,7 +11,7 @@ export const meta: CareerMeta = {
     '대전교육정보원 영재교육원',
   ],
   visible: true,
-  '중요도': '낮음',
+  '중요도': 90,
   '분류': [
     '공모전',
   ],

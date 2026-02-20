@@ -13,7 +13,7 @@ export const meta: CareerMeta = {
     'SK 플래닛',
   ],
   visible: true,
-  '중요도': '높음',
+  '중요도': 10,
   '분류': [
     '공모전',
   ],

@@ -8,7 +8,7 @@ export const meta: CareerMeta = {
     '한국디지털미디어고등학교',
   ],
   visible: true,
-  '중요도': '중간',
+  '중요도': 50,
   '분류': [
     '부스운영',
   ],
