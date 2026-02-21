@@ -37,8 +37,8 @@ function loadSkills(): SkillT[] {
     if (m.visible === false) continue;
     
     // _graph.json에서 관계 가져오기
-    const projectsUsingAsSkill = relationGraph.skillToProjects[slug] || [];
-    const projectsUsingAsLanguage = relationGraph.languageToProjects[slug] || [];
+    const projectsUsingAsSkill = (relationGraph.skillToProjects as Record<string, string[]>)[slug] || [];
+    const projectsUsingAsLanguage = (relationGraph.languageToProjects as Record<string, string[]>)[slug] || [];
     
     skills.push({
       id: slug,
