@@ -17,18 +17,20 @@ interface ChatMessage {
 interface TerminalContextType {
   // 상태
   isOpen: boolean;
-  isInlineMode: boolean; // 메인 페이지에서 inline 표시 중인지
+  isAnchored: boolean; // 메인 페이지 스크롤로 열린 상태
+  anchorEl: HTMLDivElement | null; // placeholder DOM 요소
   lines: TerminalLine[];
   chatHistory: ChatMessage[];
   remaining: number | null;
   rateLimited: boolean;
   isLoading: boolean;
   isTyping: boolean;
-  
+
   // 액션
   openTerminal: () => void;
   closeTerminal: () => void;
-  setInlineMode: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsAnchored: React.Dispatch<React.SetStateAction<boolean>>;
+  setAnchorEl: React.Dispatch<React.SetStateAction<HTMLDivElement | null>>;
   setLines: React.Dispatch<React.SetStateAction<TerminalLine[]>>;
   setChatHistory: React.Dispatch<React.SetStateAction<ChatMessage[]>>;
   setRemaining: React.Dispatch<React.SetStateAction<number | null>>;
@@ -43,27 +45,28 @@ const TerminalContext = createContext<TerminalContextType | null>(null);
 
 export function TerminalProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [isInlineMode, setIsInlineMode] = useState(false);
+  const [isAnchored, setIsAnchored] = useState(false);
+  const [anchorEl, setAnchorEl] = useState<HTMLDivElement | null>(null);
   const [lines, setLines] = useState<TerminalLine[]>([
-    { id: 0, type: 'system', content: '안녕하세요! 저에 대해 궁금한 거 편하게 물어보세요 :)' },
+    { id: 0, type: 'assistant', content: '와주셨네요 ㅎㅎ 김지섭입니다. 제가 어떤 경험을 해왔는지, 어떤 생각으로 개발하는지 궁금한 거 있으면 편하게 물어봐주세요' },
   ]);
   const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
   const [remaining, setRemaining] = useState<number | null>(null);
   const [rateLimited, setRateLimited] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
-  
+
   const lineIdRef = useRef(1);
-  
+
   const getNextId = useCallback(() => {
     const id = lineIdRef.current;
     lineIdRef.current += 1;
     return id;
   }, []);
-  
+
   const openTerminal = useCallback(() => setIsOpen(true), []);
   const closeTerminal = useCallback(() => setIsOpen(false), []);
-  
+
   const resetTerminal = useCallback(() => {
     lineIdRef.current = 1;
     setLines([
@@ -71,12 +74,13 @@ export function TerminalProvider({ children }: { children: ReactNode }) {
     ]);
     setChatHistory([]);
   }, []);
-  
+
   return (
     <TerminalContext.Provider
       value={{
         isOpen,
-        isInlineMode,
+        isAnchored,
+        anchorEl,
         lines,
         chatHistory,
         remaining,
@@ -85,7 +89,8 @@ export function TerminalProvider({ children }: { children: ReactNode }) {
         isTyping,
         openTerminal,
         closeTerminal,
-        setInlineMode: setIsInlineMode,
+        setIsAnchored,
+        setAnchorEl,
         setLines,
         setChatHistory,
         setRemaining,

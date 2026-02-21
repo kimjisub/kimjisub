@@ -2,7 +2,7 @@
 
 import { KeyboardEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowUp, Minimize2, Sparkles, X } from 'lucide-react';
+import { ArrowUp, ChevronRight, MessageCircle, Minimize2, X } from 'lucide-react';
 
 import { useTerminal } from '@/context/TerminalContext';
 
@@ -196,11 +196,9 @@ export const InteractiveTerminal = ({
     }
   }, [isLoading, isTyping]);
 
-  useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.style.height = 'auto';
-      inputRef.current.style.height = `${Math.min(inputRef.current.scrollHeight, 80)}px`;
-    }
+  const textareaHeight = useMemo(() => {
+    const lineCount = Math.max(1, (input.match(/\n/g) || []).length + 1);
+    return Math.max(24, Math.min(lineCount * 20, 80));
   }, [input]);
 
   const addLine = useCallback((type: 'user' | 'assistant' | 'system' | 'ascii', content: string) => {
@@ -265,9 +263,6 @@ export const InteractiveTerminal = ({
     
     setIsLoading(true);
     
-    const thinkingId = getNextId();
-    setLines(prev => [...prev, { id: thinkingId, type: 'system', content: '생각 중...' }]);
-    
     const newChatHistory = [...chatHistory, { role: 'user' as const, content: message }];
     
     try {
@@ -282,7 +277,7 @@ export const InteractiveTerminal = ({
       if (response.status === 429) {
         setRateLimited(true);
         setRemaining(0);
-        setLines(prev => prev.filter(l => l.id !== thinkingId));
+
         addLine('system', `⚠ ${data.message || '오늘 대화 횟수를 모두 사용했어요.'}`);
         setIsLoading(false);
         return;
@@ -298,7 +293,6 @@ export const InteractiveTerminal = ({
         setRemaining(data.remaining);
       }
       
-      setLines(prev => prev.filter(l => l.id !== thinkingId));
       setChatHistory([...newChatHistory, { role: 'assistant', content: aiResponse }]);
       
       const responseLines = aiResponse.split('\n');
@@ -307,12 +301,11 @@ export const InteractiveTerminal = ({
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
       console.error('AI chat error:', errorMessage);
-      setLines(prev => prev.filter(l => l.id !== thinkingId));
-      addLine('system', `⚠ 응답을 가져오는 데 실패했어요. (${errorMessage})`);
+      addLine('system', `응답을 가져오지 못했어요.`);
     }
     
     setIsLoading(false);
-  }, [chatHistory, fingerprint, rateLimited, getNextId, addLine, typeLines, setLines, setChatHistory, setRemaining, setRateLimited, setIsLoading]);
+  }, [chatHistory, fingerprint, rateLimited, addLine, typeLines, setChatHistory, setRemaining, setRateLimited, setIsLoading]);
 
   const handleSubmit = useCallback(async () => {
     const trimmed = input.trim();
@@ -336,7 +329,7 @@ export const InteractiveTerminal = ({
   };
 
   return (
-    <div className={`w-full max-w-3xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-border bg-card ${className}`}>
+    <div className={`w-full max-w-3xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-border bg-card flex flex-col ${className}`}>
       {/* Terminal Header */}
       <div className="flex items-center gap-2 px-4 py-3 bg-secondary border-b border-border">
         <div className="flex gap-1.5">
@@ -345,8 +338,8 @@ export const InteractiveTerminal = ({
           <div className="w-3 h-3 rounded-full bg-green-500/80" />
         </div>
         <div className="flex-1 flex items-center justify-center gap-2">
-          <Sparkles className="w-3.5 h-3.5 text-accent" />
-          <span className="text-xs text-muted-foreground font-mono">jisub — AI Terminal</span>
+          <MessageCircle className="w-3.5 h-3.5 text-muted-foreground" />
+          <span className="text-xs text-muted-foreground font-mono">김지섭</span>
         </div>
         {mode === 'floating' && (
           <div className="flex items-center gap-1">
@@ -374,48 +367,57 @@ export const InteractiveTerminal = ({
       {/* Terminal Body */}
       <div 
         ref={terminalRef}
-        className="bg-background p-4 h-[400px] overflow-y-auto font-mono text-sm"
+        className="bg-background p-4 flex-1 min-h-0 overflow-y-auto font-mono text-sm"
         style={{ scrollBehavior: 'smooth' }}
         onClick={() => inputRef.current?.focus()}
       >
         <AnimatePresence mode="popLayout">
-          {lines.map((line) => (
-            <motion.div
-              key={line.id}
-              initial={{ opacity: 0, y: 4 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.15 }}
-              className="mb-1"
-            >
-              {line.type === 'user' && (
-                <div className="flex items-start gap-2">
-                  <span className="text-blue-500 dark:text-blue-400 shrink-0">❯</span>
-                  <span className="text-foreground">{line.content}</span>
-                </div>
-              )}
-              {line.type === 'assistant' && (
-                <div className="flex items-start gap-2">
-                  <span className="text-accent shrink-0">◆</span>
-                  <span className="text-foreground/80 whitespace-pre-wrap">
-                    {line.content}
-                    {line.isTyping && (
-                      <span className="inline-block w-1.5 h-4 bg-accent ml-0.5 animate-pulse" />
+          {lines.map((line, index) => {
+            const isFirstAssistant = line.type === 'assistant' &&
+              (index === 0 || lines[index - 1].type !== 'assistant');
+
+            return (
+              <motion.div
+                key={line.id}
+                initial={{ opacity: 0, y: 4 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.15 }}
+                className="mb-1"
+              >
+                {line.type === 'user' && (
+                  <div className="flex items-start gap-2">
+                    <ChevronRight className="w-4 h-4 text-blue-500 dark:text-blue-400 shrink-0 mt-0.5" />
+                    <span className="text-foreground">{line.content}</span>
+                  </div>
+                )}
+                {line.type === 'assistant' && (
+                  <div className="flex items-start gap-2">
+                    {isFirstAssistant ? (
+                      <MessageCircle className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                    ) : (
+                      <span className="w-4 shrink-0" />
                     )}
-                  </span>
-                </div>
-              )}
-              {line.type === 'system' && (
-                <div className="text-muted-foreground italic">
-                  {line.content}
-                </div>
-              )}
-              {line.type === 'ascii' && (
-                <div className="text-accent whitespace-pre font-bold">
-                  {line.content}
-                </div>
-              )}
-            </motion.div>
-          ))}
+                    <span className="text-foreground/80 whitespace-pre-wrap">
+                      {line.content}
+                      {line.isTyping && (
+                        <span className="inline-block w-1.5 h-4 bg-accent ml-0.5 animate-pulse" />
+                      )}
+                    </span>
+                  </div>
+                )}
+                {line.type === 'system' && (
+                  <div className="text-muted-foreground italic">
+                    {line.content}
+                  </div>
+                )}
+                {line.type === 'ascii' && (
+                  <div className="text-accent whitespace-pre font-bold">
+                    {line.content}
+                  </div>
+                )}
+              </motion.div>
+            );
+          })}
         </AnimatePresence>
         
         {isLoading && (
@@ -424,7 +426,7 @@ export const InteractiveTerminal = ({
             animate={{ opacity: 1 }}
             className="flex items-center gap-2 text-muted-foreground"
           >
-            <span className="text-accent">◆</span>
+            <MessageCircle className="w-4 h-4 text-accent shrink-0" />
             <span className="flex gap-1">
               <span className="animate-pulse">●</span>
               <span className="animate-pulse" style={{ animationDelay: '150ms' }}>●</span>
@@ -437,7 +439,7 @@ export const InteractiveTerminal = ({
       {/* Input Area */}
       <div className="bg-secondary border-t border-border p-3">
         <div className="flex items-end gap-2">
-          <span className="text-blue-500 dark:text-blue-400 font-mono text-sm pb-2.5 shrink-0">❯</span>
+          <ChevronRight className="w-4 h-4 text-blue-500 dark:text-blue-400 shrink-0 mb-2.5" />
           <textarea
             ref={inputRef}
             value={input}
@@ -446,8 +448,8 @@ export const InteractiveTerminal = ({
             placeholder="메시지를 입력하세요..."
             disabled={isLoading || isTyping}
             rows={1}
-            className="flex-1 bg-transparent text-foreground font-mono text-sm resize-none placeholder:text-muted-foreground focus:outline-none disabled:opacity-50"
-            style={{ minHeight: '24px', maxHeight: '80px' }}
+            className="flex-1 bg-transparent text-foreground font-mono text-sm resize-none overflow-hidden placeholder:text-muted-foreground focus:outline-none disabled:opacity-50"
+            style={{ height: textareaHeight }}
           />
           <motion.button
             onClick={() => void handleSubmit()}

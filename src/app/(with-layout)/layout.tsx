@@ -7,7 +7,6 @@ import 'react-notion-x/src/styles.css';
 import '@/styles/prism-theme.css';
 import '../globals.css';
 
-import BackToTop from '@/components/BackToTop';
 import { CommandPaletteWrapper } from '@/components/CommandPaletteWrapper';
 // CustomCursor disabled - 기본 커서 사용
 // import CustomCursor from '@/components/CustomCursor';
@@ -23,7 +22,6 @@ import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration';
 import { SectionNavigation } from '@/components/SectionNavigation';
 import { SkipToContent } from '@/components/SkipToContent';
 import SpotlightEffect from '@/components/SpotlightEffect';
-import { TerminalFAB } from '@/components/TerminalFAB';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import TopBar from '@/components/TopBar';
 import Preloader from '@/components/ui/Preloader';
@@ -125,11 +123,9 @@ export default function RootLayout({
 							<GrainOverlay />
 							<SpotlightEffect />
 							<ScrollProgressIndicator />
-							<BackToTop />
 							{/* <CustomCursor /> */}
 							<FloatingSocialSidebar />
 							<FloatingTerminal />
-							<TerminalFAB />
 							<div className="min-h-screen flex flex-col">
 								<TopBar />
 								<main id="main-content" className="flex-grow pt-14" tabIndex={-1}>
