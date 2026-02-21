@@ -14,6 +14,12 @@ interface ChatMessage {
   content: string;
 }
 
+const DEFAULT_SUGGESTIONS = [
+  '어떤 프로젝트를 만들었어요?',
+  '지금 어떤 일을 하고 있어요?',
+  '기술 스택이 궁금해요',
+];
+
 interface TerminalContextType {
   // 상태
   isOpen: boolean;
@@ -25,6 +31,7 @@ interface TerminalContextType {
   rateLimited: boolean;
   isLoading: boolean;
   isTyping: boolean;
+  suggestions: string[];
 
   // 액션
   openTerminal: () => void;
@@ -37,6 +44,7 @@ interface TerminalContextType {
   setRateLimited: React.Dispatch<React.SetStateAction<boolean>>;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
   setIsTyping: React.Dispatch<React.SetStateAction<boolean>>;
+  setSuggestions: React.Dispatch<React.SetStateAction<string[]>>;
   getNextId: () => number;
   resetTerminal: () => void;
 }
@@ -55,6 +63,7 @@ export function TerminalProvider({ children }: { children: ReactNode }) {
   const [rateLimited, setRateLimited] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
+  const [suggestions, setSuggestions] = useState<string[]>(DEFAULT_SUGGESTIONS);
 
   const lineIdRef = useRef(1);
 
@@ -73,6 +82,7 @@ export function TerminalProvider({ children }: { children: ReactNode }) {
       { id: 0, type: 'system', content: '터미널이 초기화되었습니다.' },
     ]);
     setChatHistory([]);
+    setSuggestions(DEFAULT_SUGGESTIONS);
   }, []);
 
   return (
@@ -87,6 +97,7 @@ export function TerminalProvider({ children }: { children: ReactNode }) {
         rateLimited,
         isLoading,
         isTyping,
+        suggestions,
         openTerminal,
         closeTerminal,
         setIsAnchored,
@@ -97,6 +108,7 @@ export function TerminalProvider({ children }: { children: ReactNode }) {
         setRateLimited,
         setIsLoading,
         setIsTyping,
+        setSuggestions,
         getNextId,
         resetTerminal,
       }}

@@ -170,6 +170,8 @@ export const InteractiveTerminal = ({
     setIsLoading,
     isTyping,
     setIsTyping,
+    suggestions,
+    setSuggestions,
     getNextId,
     resetTerminal,
   } = useTerminal();
@@ -260,20 +262,21 @@ export const InteractiveTerminal = ({
       addLine('system', '⚠ 오늘 대화 횟수를 모두 사용했어요. 내일 다시 만나요!');
       return;
     }
-    
+
     setIsLoading(true);
-    
+    setSuggestions([]);
+
     const newChatHistory = [...chatHistory, { role: 'user' as const, content: message }];
-    
+
     try {
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: newChatHistory, fingerprint }),
       });
-      
+
       const data = await response.json();
-      
+
       if (response.status === 429) {
         setRateLimited(true);
         setRemaining(0);
@@ -282,30 +285,34 @@ export const InteractiveTerminal = ({
         setIsLoading(false);
         return;
       }
-      
+
       if (!response.ok) {
         throw new Error(data?.error || `API error: ${response.status}`);
       }
-      
+
       const aiResponse = data.response || '응답을 생성하지 못했어요.';
-      
+
       if (typeof data.remaining === 'number') {
         setRemaining(data.remaining);
       }
-      
+
       setChatHistory([...newChatHistory, { role: 'assistant', content: aiResponse }]);
-      
+
       const responseLines = aiResponse.split('\n');
       await typeLines(responseLines, 'assistant');
-      
+
+      if (Array.isArray(data.suggestions) && data.suggestions.length > 0) {
+        setSuggestions(data.suggestions);
+      }
+
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
       console.error('AI chat error:', errorMessage);
       addLine('system', `응답을 가져오지 못했어요.`);
     }
-    
+
     setIsLoading(false);
-  }, [chatHistory, fingerprint, rateLimited, addLine, typeLines, setChatHistory, setRemaining, setRateLimited, setIsLoading]);
+  }, [chatHistory, fingerprint, rateLimited, addLine, typeLines, setChatHistory, setRemaining, setRateLimited, setIsLoading, setSuggestions]);
 
   const handleSubmit = useCallback(async () => {
     const trimmed = input.trim();
@@ -327,6 +334,12 @@ export const InteractiveTerminal = ({
       void handleSubmit();
     }
   };
+
+  const handleSuggestionClick = useCallback((suggestion: string) => {
+    if (isLoading || isTyping) return;
+    addLine('user', suggestion);
+    void sendToAI(suggestion);
+  }, [isLoading, isTyping, addLine, sendToAI]);
 
   return (
     <div className={`w-full max-w-3xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-border bg-card flex flex-col ${className}`}>
@@ -461,6 +474,20 @@ export const InteractiveTerminal = ({
             <ArrowUp className="w-4 h-4" />
           </motion.button>
         </div>
+        {suggestions.length > 0 && (
+          <div className="flex gap-2 mt-2 px-5 overflow-x-auto scrollbar-none">
+            {suggestions.map((s) => (
+              <button
+                key={s}
+                onClick={() => handleSuggestionClick(s)}
+                disabled={isLoading || isTyping}
+                className="shrink-0 px-3 py-1.5 text-xs font-mono rounded-full border border-border bg-background text-muted-foreground hover:text-foreground hover:border-accent/50 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+              >
+                {s}
+              </button>
+            ))}
+          </div>
+        )}
         <div className="flex items-center justify-between mt-2 px-5">
           <span className="text-[10px] text-muted-foreground">
             /help · 명령어 보기

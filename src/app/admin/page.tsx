@@ -36,10 +36,13 @@ import {
   Newspaper,
   UserMinus,
   UserCheck,
+  Bot,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type Tab = "dashboard" | "testimonials" | "contacts" | "comments" | "newsletter";
+type Tab = "dashboard" | "testimonials" | "contacts" | "comments" | "newsletter" | "chat-sessions";
 type TestimonialFilter = "all" | "PENDING" | "APPROVED" | "REJECTED";
 
 interface Stats {
@@ -48,6 +51,7 @@ interface Stats {
   totalComments: number;
   pendingTestimonials: number;
   newContacts: number;
+  totalChatSessions: number;
   topPages: { slug: string; count: number }[];
   recentComments: {
     id: string;
@@ -103,6 +107,16 @@ interface NewsletterSubscriber {
   unsubscribedAt?: string;
 }
 
+interface ChatSession {
+  id: string;
+  sessionId: string;
+  messages: { role: string; content: string }[];
+  userAgent?: string;
+  messageCount: number;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export default function AdminPage() {
   const [authenticated, setAuthenticated] = useState<boolean | null>(null);
   const [password, setPassword] = useState("");
@@ -115,7 +129,11 @@ export default function AdminPage() {
   const [contacts, setContacts] = useState<Contact[]>([]);
   const [comments, setComments] = useState<Comment[]>([]);
   const [subscribers, setSubscribers] = useState<NewsletterSubscriber[]>([]);
-  
+  const [chatSessions, setChatSessions] = useState<ChatSession[]>([]);
+
+  // Expanded chat session
+  const [expandedSession, setExpandedSession] = useState<string | null>(null);
+
   // Testimonial filter
   const [testimonialFilter, setTestimonialFilter] = useState<TestimonialFilter>("all");
   
@@ -207,6 +225,9 @@ export default function AdminPage() {
     } else if (activeTab === "newsletter") {
       const res = await fetch("/api/admin/newsletter");
       if (res.ok) setSubscribers(await res.json());
+    } else if (activeTab === "chat-sessions") {
+      const res = await fetch("/api/admin/chat-sessions");
+      if (res.ok) setChatSessions(await res.json());
     }
   };
 
@@ -330,6 +351,16 @@ export default function AdminPage() {
     fetchData();
   };
 
+  const deleteChatSession = async (id: string) => {
+    if (!confirm("정말 삭제하시겠습니까?")) return;
+    await fetch("/api/admin/chat-sessions", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id }),
+    });
+    fetchData();
+  };
+
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString("ko-KR", {
       year: "numeric",
@@ -413,11 +444,16 @@ export default function AdminPage() {
       badge: stats?.newContacts,
     },
     { id: "comments", label: "댓글", icon: <MessageCircle className="w-5 h-5" /> },
-    { 
-      id: "newsletter", 
-      label: "뉴스레터", 
+    {
+      id: "newsletter",
+      label: "뉴스레터",
       icon: <Newspaper className="w-5 h-5" />,
       badge: activeSubscribers > 0 ? activeSubscribers : undefined,
+    },
+    {
+      id: "chat-sessions",
+      label: "채팅",
+      icon: <Bot className="w-5 h-5" />,
     },
   ];
 
@@ -466,7 +502,7 @@ export default function AdminPage() {
         {activeTab === "dashboard" && stats && (
           <div className="space-y-8">
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               <StatCard icon={<Eye />} label="총 조회수" value={stats.totalViews} />
               <StatCard icon={<Heart />} label="총 좋아요" value={stats.totalReactions} />
               <StatCard icon={<MessageCircle />} label="총 댓글" value={stats.totalComments} />
@@ -476,6 +512,7 @@ export default function AdminPage() {
                 value={stats.pendingTestimonials}
                 highlight={stats.pendingTestimonials > 0}
               />
+              <StatCard icon={<Bot />} label="채팅 세션" value={stats.totalChatSessions} />
             </div>
 
             {/* Top Pages */}
@@ -783,6 +820,110 @@ export default function AdminPage() {
                   </tbody>
                 </table>
               </div>
+            )}
+          </div>
+        )}
+
+        {/* Chat Sessions */}
+        {activeTab === "chat-sessions" && (
+          <div className="space-y-4">
+            {chatSessions.length === 0 ? (
+              <div className="text-center py-12 text-gray-500">채팅 세션이 없습니다</div>
+            ) : (
+              chatSessions.map((session) => {
+                const isExpanded = expandedSession === session.id;
+                const messages = Array.isArray(session.messages) ? session.messages : [];
+                const firstUserMsg = messages.find((m) => m.role === "user");
+                const preview = firstUserMsg?.content?.slice(0, 100) || "(빈 대화)";
+
+                return (
+                  <div
+                    key={session.id}
+                    className="rounded-xl border bg-white/5 border-white/10 overflow-hidden"
+                  >
+                    {/* Session header */}
+                    <div
+                      className="flex items-center justify-between gap-4 p-5 cursor-pointer hover:bg-white/5 transition-colors"
+                      onClick={() => setExpandedSession(isExpanded ? null : session.id)}
+                    >
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-3 mb-2">
+                          <span className="text-xs text-gray-500">ID</span>
+                          <span className="text-sm font-mono text-gray-300">
+                            {session.sessionId.slice(0, 16)}...
+                          </span>
+                          <span className="text-xs text-gray-500 ml-2">메시지</span>
+                          <span className="px-2 py-0.5 text-xs bg-white/10 text-gray-300 rounded">
+                            {session.messageCount}개
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs text-gray-500">첫 메시지</span>
+                          <p className="text-gray-300 text-sm truncate">{preview}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3 shrink-0">
+                        <div className="text-right">
+                          <div className="text-xs text-gray-500 mb-0.5">마지막 활동</div>
+                          <div className="text-xs text-gray-400">
+                            {formatDate(session.updatedAt)}
+                          </div>
+                        </div>
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            deleteChatSession(session.id);
+                          }}
+                          className="p-1.5 text-gray-400 hover:text-red-400 transition-colors"
+                          title="삭제"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </button>
+                        {isExpanded ? (
+                          <ChevronUp className="w-5 h-5 text-gray-400" />
+                        ) : (
+                          <ChevronDown className="w-5 h-5 text-gray-400" />
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Expanded messages */}
+                    {isExpanded && (
+                      <div className="border-t border-white/10 p-4 space-y-3 max-h-[500px] overflow-y-auto">
+                        {session.userAgent && (
+                          <div className="flex items-center gap-2 mb-2 text-xs text-gray-500">
+                            <span className="font-medium text-gray-400">User-Agent</span>
+                            <span className="truncate">{session.userAgent}</span>
+                          </div>
+                        )}
+                        {messages.map((msg, i) => (
+                          <div
+                            key={i}
+                            className={cn(
+                              "flex gap-3",
+                              msg.role === "assistant" ? "justify-start" : "justify-end"
+                            )}
+                          >
+                            <div
+                              className={cn(
+                                "max-w-[80%] px-4 py-2.5 rounded-lg text-sm whitespace-pre-wrap",
+                                msg.role === "assistant"
+                                  ? "bg-green-500/10 text-green-200 border border-green-500/20"
+                                  : "bg-blue-500/10 text-blue-200 border border-blue-500/20"
+                              )}
+                            >
+                              <div className="text-xs font-medium mb-1 opacity-60">
+                                {msg.role === "assistant" ? "김지섭 (AI)" : "방문자"}
+                              </div>
+                              {msg.content}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              })
             )}
           </div>
         )}

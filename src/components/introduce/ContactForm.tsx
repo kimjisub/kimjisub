@@ -85,11 +85,11 @@ export function ContactForm() {
      }`;
 
   const labelClasses = (field: keyof FormData) =>
-    `absolute left-4 transition-all duration-200 pointer-events-none
+    `block mb-1.5 text-sm font-medium transition-colors duration-200
      ${
-       focusedField === field || formData[field]
-         ? '-top-2.5 text-xs bg-background px-1 text-accent'
-         : 'top-3 text-sm text-muted-foreground'
+       focusedField === field
+         ? 'text-accent'
+         : 'text-muted-foreground'
      }`;
 
   return (

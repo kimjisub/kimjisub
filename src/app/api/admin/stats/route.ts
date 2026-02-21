@@ -15,6 +15,7 @@ export async function GET() {
       totalComments,
       pendingTestimonials,
       newContacts,
+      totalChatSessions,
       topPages,
       recentComments,
     ] = await Promise.all([
@@ -23,6 +24,7 @@ export async function GET() {
       prisma.comment.count(),
       prisma.testimonial.count({ where: { status: "PENDING" } }),
       prisma.contact.count({ where: { status: "NEW" } }),
+      prisma.agentSession.count(),
       prisma.$queryRaw<{ slug: string; count: bigint }[]>`
         SELECT slug, COUNT(*) as count 
         FROM page_views 
@@ -49,6 +51,7 @@ export async function GET() {
       totalComments,
       pendingTestimonials,
       newContacts,
+      totalChatSessions,
       topPages: topPages.map((p: { slug: string; count: bigint }) => ({
         slug: p.slug,
         count: Number(p.count),

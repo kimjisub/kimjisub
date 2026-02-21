@@ -403,9 +403,70 @@ export async function POST(request: NextRequest) {
     const textContent = response.content.find((block) => block.type === 'text');
     const text = textContent?.type === 'text' ? textContent.text : '';
 
+    // Generate follow-up suggestions (non-blocking, failure doesn't affect response)
+    let suggestions: string[] = [];
+    try {
+      const suggestionMessages = [
+        ...messages.map((m: { role: string; content: string }) => ({
+          role: m.role as 'user' | 'assistant',
+          content: m.content,
+        })),
+        { role: 'assistant' as const, content: text },
+      ];
+
+      const suggestionResponse = await client.messages.create({
+        model: 'claude-haiku-4-5',
+        max_tokens: 256,
+        system: `지금까지의 대화를 보고, 방문자가 다음에 물어볼 만한 자연스러운 후속 질문 3개를 JSON 배열로만 반환해.
+- 짧고 자연스러운 구어체
+- 이전에 이미 한 질문과 겹치지 않게
+- JSON 배열만 반환 (다른 텍스트 없이)`,
+        messages: suggestionMessages,
+      });
+
+      const suggestionText = suggestionResponse.content.find((b) => b.type === 'text');
+      if (suggestionText?.type === 'text') {
+        const parsed = JSON.parse(suggestionText.text);
+        if (Array.isArray(parsed)) {
+          suggestions = parsed.filter((s): s is string => typeof s === 'string').slice(0, 3);
+        }
+      }
+    } catch {
+      // Suggestion generation failure is non-critical
+    }
+
+    // Save conversation to DB (non-blocking, failure doesn't affect response)
+    try {
+      const allMessages = [
+        ...messages.map((m: { role: string; content: string }) => ({
+          role: m.role,
+          content: m.content,
+        })),
+        { role: 'assistant', content: text },
+      ];
+
+      await prisma.agentSession.upsert({
+        where: { sessionId: identifier },
+        update: {
+          messages: allMessages,
+          messageCount: allMessages.length,
+          userAgent: request.headers.get('user-agent') || undefined,
+        },
+        create: {
+          sessionId: identifier,
+          messages: allMessages,
+          messageCount: allMessages.length,
+          userAgent: request.headers.get('user-agent') || undefined,
+        },
+      });
+    } catch (saveError) {
+      console.error('Failed to save chat session:', saveError);
+    }
+
     return NextResponse.json({
       response: text,
       remaining: DAILY_LIMIT - updatedLimit.count,
+      suggestions,
     });
   } catch (error) {
     console.error('Chat API error:', error);
