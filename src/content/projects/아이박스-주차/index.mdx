@@ -6,16 +6,20 @@ import img_content_3_png from './assets/content-3.png';
 import img_content_4_png from './assets/content-4.png';
 import img_content_5_png from './assets/content-5.png';
 
-주차정산로직
+주차장 운영에 필요한 입출차 관리, 정산, 할인, 모니터링을 하나로 통합하는 전산 시스템. 외주 계약으로 참여하여 모바일 앱과 웹 관리자 페이지, 백엔드를 개발했다.
 
-- 내부주차장
-- 정액할인권
-- 정률할인권
-- 결제 바코드를 이용한 정액/정률 할인권
+## 주차 정산 로직
 
-### 성능 개선
+다양한 주차 정산 시나리오를 지원하도록 설계했다.
 
-CloudWatch 로그 개선
+- 내부 주차장 시간 기반 과금
+- 정액 할인권 (고정 금액 차감)
+- 정률 할인권 (비율 기반 차감)
+- 결제 바코드를 이용한 정액/정률 할인권 연동
+
+## 성능 개선
+
+AWS CloudWatch 로그를 분석하여 병목 구간을 파악하고, 쿼리 최적화 및 인프라 튜닝을 통해 응답 시간을 개선했다.
 
 <ImageGrid cols={2}>
   <Image src={img_content_1_png} alt="" />
@@ -24,3 +28,10 @@ CloudWatch 로그 개선
   <Image src={img_content_4_png} alt="" />
   <Image src={img_content_5_png} alt="" />
 </ImageGrid>
+
+## 기술 스택
+
+- 모바일: React Native 기반 크로스플랫폼 앱 (Fastlane으로 배포 자동화)
+- 웹: React PWA로 관리자 페이지
+- 백엔드: Node.js + MongoDB
+- 인프라: Docker, AWS S3, GitHub Actions CI/CD

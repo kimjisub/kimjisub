@@ -1,7 +1,17 @@
 import Image from 'next/image';
+import { SideBySide } from '@/components/ImageGrid';
 import img_content_1_jpg from './assets/content-1.jpg';
 import img_content_2_jpg from './assets/content-2.jpg';
 
-<Image src={img_content_1_jpg} alt="" />
+커터칼 날을 안전하게 보관할 수 있는 슬라이드 구조의 칼집. Autodesk Fusion 360으로 3D 모델링 후 3D 프린터로 출력했다. Thingiverse에 공개하여 누구나 다운받아 출력할 수 있다.
 
-<Image src={img_content_2_jpg} alt="" />
+<SideBySide>
+  <Image src={img_content_1_jpg} alt="" />
+  <Image src={img_content_2_jpg} alt="" />
+</SideBySide>
+
+## 설계 포인트
+
+- 슬라이드 방식으로 칼날을 꺼내고 넣을 수 있어 사용이 편리하면서도 안전
+- 3D 프린터의 적층 방향을 고려한 구조 설계로 별도 서포트 없이 출력 가능
+- Autodesk Fusion 360으로 파라메트릭 설계하여 다양한 날 규격에 대응
