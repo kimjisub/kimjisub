@@ -46,3 +46,5 @@ next-env.d.ts
 # Lock files (pnpm only)
 yarn.lock
 package-lock.json
+.mcp.json
+.playwright-mcp/
