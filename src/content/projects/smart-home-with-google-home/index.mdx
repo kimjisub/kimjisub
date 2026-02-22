@@ -1,17 +1,17 @@
-Google Home(Google Assistant)과 다양한 IoT 장비를 연동하여 음성으로 집안을 제어하는 스마트홈 시스템. 대회나 프로젝트에서 만든 IoT 장비들을 실제로 일상에서 쓸 수 있게 통합하고 싶어서 만들었다.
+Google Home(Google Assistant)과 다양한 IoT 장비를 연동하여 음성으로 집안을 제어하는 스마트홈 시스템입니다. 대회나 프로젝트에서 만든 IoT 장비들을 실제로 일상에서 쓸 수 있게 통합하고 싶어서 만들었습니다.
 
 ## 배경
 
-그동안 다양한 대회와 프로젝트를 통해 인공지능 스피커와 IoT 장비를 만들어봤지만, 각각 따로 놀아서 실생활에서 쓰기엔 불편했다. Google Home을 허브로 삼아 모든 장비를 하나의 음성 명령 체계로 통합하고자 했다.
+그동안 다양한 대회와 프로젝트를 통해 인공지능 스피커와 IoT 장비를 만들어봤지만, 각각 따로 놀아서 실생활에서 쓰기엔 불편했습니다. Google Home을 허브로 삼아 모든 장비를 하나의 음성 명령 체계로 통합하고자 했습니다.
 
-## 구현
+## 주요 작업
 
-- Google Assistant API와 GCP App Engine을 활용하여 음성 명령을 처리하는 서버 구축
-- Arduino/ESP 기반 IoT 장비와 Firebase Realtime Database를 통해 실시간 양방향 통신
-- IFTTT를 활용한 자동화 트리거 연동
-- Socket.io로 웹 대시보드에서도 실시간 상태 모니터링 및 제어
-- Docker로 서버 환경 컨테이너화
+- Google Assistant API와 GCP App Engine을 활용하여 음성 명령을 처리하는 서버를 구축했습니다.
+- Arduino/ESP 기반 IoT 장비와 Firebase Realtime Database를 통해 실시간 양방향 통신을 구현했습니다.
+- IFTTT를 활용한 자동화 트리거를 연동했습니다.
+- Socket.io로 웹 대시보드에서도 실시간 상태 모니터링 및 제어가 가능하도록 했습니다.
+- Docker로 서버 환경을 컨테이너화했습니다.
 
-## 기술 포인트
+## 성과
 
-"OK Google, 방 불 꺼줘" 같은 음성 명령이 Google Assistant를 거쳐 GCP 서버로 전달되고, Firebase를 통해 Arduino에 연결된 릴레이가 동작하는 전체 파이프라인을 구축했다.
+"OK Google, 방 불 꺼줘" 같은 음성 명령이 Google Assistant를 거쳐 GCP 서버로 전달되고, Firebase를 통해 Arduino에 연결된 릴레이가 동작하는 전체 파이프라인을 구축했습니다.

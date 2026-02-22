@@ -6,7 +6,7 @@ import img_content_3_png from './assets/content-3.png';
 import img_content_4_png from './assets/content-4.png';
 import img_content_5_png from './assets/content-5.png';
 
-아파트 차량 관제, 커뮤니티, 시설 관리를 하나로 통합하는 솔루션. Silicon Bridge에서 풀스택 개발자로 참여하여 모바일 앱부터 백엔드, 인프라까지 전반적인 개발을 담당했다.
+아파트 차량 관제, 커뮤니티, 시설 관리를 하나로 통합하는 솔루션입니다. Silicon Bridge에서 풀스택 개발자로 참여하여 모바일 앱부터 백엔드, 인프라까지 전반적인 개발을 담당했습니다.
 
 <ImageGrid cols={2}>
   <Image src={img_content_1_png} alt="" />
@@ -17,28 +17,28 @@ import img_content_5_png from './assets/content-5.png';
 
 ## 규모
 
-82개의 페이지와 120개의 API로 구성된 대규모 애플리케이션. React Native 기반 모바일 앱과 NestJS 백엔드, AWS 인프라를 운영했다.
+82개의 페이지와 120개의 API로 구성된 대규모 애플리케이션입니다. React Native 기반 모바일 앱과 NestJS 백엔드, AWS 인프라를 운영했습니다.
 
 ## 맡은 업무
 
-**모바일 앱 개발**
-- React Native 기반 모바일 앱 개발 (82 pages, 120 APIs)
-- 36개의 디자인 시스템 컴포넌트 구현, 자체 컴포넌트 라이브러리 구축
-- CodePush 적용으로 배포 시간 대폭 단축
-- 미국 현장 납품을 위한 다국어(i18n) 및 타임존 시스템 구축
+모바일 앱 개발
+- React Native 기반 모바일 앱을 개발했습니다. (82 pages, 120 APIs)
+- 36개의 디자인 시스템 컴포넌트를 구현하고 자체 컴포넌트 라이브러리를 구축했습니다.
+- CodePush를 적용하여 배포 시간을 대폭 단축했습니다.
+- 미국 현장 납품을 위한 다국어(i18n) 및 타임존 시스템을 구축했습니다.
 
-**백엔드 및 인프라**
-- Open API Spec 기반 API 변경사항 트래킹 및 타입 자동 생성으로 프론트-백엔드 간 실수 방지
-- Gitflow 적용으로 개발 흐름에 중단되지 않는 hotfix 전략 구현
-- 결제 관련 마이크로서비스를 Replica 가능하도록 아키텍처 구축
-- 클라우드(AWS ECS) 환경에서 동작하던 인프라를 고객사 요구에 맞게 Bare Metal에 직접 구축
-- MSA 환경에서의 권한 인증 시스템 설계
-- AWS CloudWatch, ECS 비용 최적화
+백엔드 및 인프라
+- Open API Spec 기반으로 API 변경사항을 트래킹하고 타입을 자동 생성하여 프론트-백엔드 간 실수를 방지했습니다.
+- Gitflow를 적용하여 개발 흐름에 중단되지 않는 hotfix 전략을 구현했습니다.
+- 결제 관련 마이크로서비스를 Replica 가능하도록 아키텍처를 구축했습니다.
+- 클라우드(AWS ECS) 환경에서 동작하던 인프라를 고객사 요구에 맞게 Bare Metal에 직접 구축했습니다.
+- MSA 환경에서의 권한 인증 시스템을 설계했습니다.
+- AWS CloudWatch, ECS 비용을 최적화했습니다.
 
 <Image src={img_content_5_png} alt="" />
 
 ## IoT 인증서 만료 대응 전략
 
-IoT 장비(Arduino, ESP32 등)는 TLS 통신을 위해 CA 인증서를 펌웨어에 포함하는데, 인증서 만료 시 TLS 연결이 실패하면 OTA 펌웨어 업데이트조차 불가능해지는 순환 참조 문제가 발생한다.
+IoT 장비(Arduino, ESP32 등)는 TLS 통신을 위해 CA 인증서를 펌웨어에 포함하는데, 인증서 만료 시 TLS 연결이 실패하면 OTA 펌웨어 업데이트조차 불가능해지는 순환 참조 문제가 발생합니다.
 
-이를 해결하기 위해 서버에서 동시에 여러 인증서 체인을 제공하는 크로스서명(chain switching) 방식을 적용했다. Nginx에서 fullchain.pem으로 구성하고, AWS ACM의 제약이 있는 경우 프록시 서버를 통해 대응하는 구조를 설계했다.
+이를 해결하기 위해 서버에서 동시에 여러 인증서 체인을 제공하는 크로스서명(chain switching) 방식을 적용했습니다. Nginx에서 fullchain.pem으로 구성하고, AWS ACM의 제약이 있는 경우 프록시 서버를 통해 대응하는 구조를 설계했습니다.

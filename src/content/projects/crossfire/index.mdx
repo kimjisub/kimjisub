@@ -6,9 +6,7 @@ import imgRanking from './assets/screenshot-ranking.png';
 import imgConclusion from './assets/screenshot-conclusion.png';
 import imgSettings from './assets/screenshot-settings.png';
 
-여러 LLM(ChatGPT, Gemini, Claude)에게 동시에 질문하고, 서로의 답변을 교차 검토하며 토론하게 하는 Chrome Extension.
-
-## Screenshots
+여러 LLM(ChatGPT, Gemini, Claude)에게 동시에 질문하고, 서로의 답변을 교차 검토하며 토론하게 하는 Chrome Extension입니다.
 
 <ImageGrid cols={2}>
   <Image src={imgDebate} alt="Debate" />
@@ -18,17 +16,17 @@ import imgSettings from './assets/screenshot-settings.png';
   <Image src={imgSettings} alt="Settings" />
 </ImageGrid>
 
-## 왜 만들었나?
+## 배경
 
-하나의 LLM만 사용하면 그 모델의 편향이나 한계에 갇히기 쉽다. 같은 질문에 대해 여러 모델의 관점을 비교하고, 서로를 비판하게 하면 더 균형 잡힌 인사이트를 얻을 수 있다.
+하나의 LLM만 사용하면 그 모델의 편향이나 한계에 갇히기 쉽습니다. 같은 질문에 대해 여러 모델의 관점을 비교하고, 서로를 비판하게 하면 더 균형 잡힌 인사이트를 얻을 수 있다고 생각하여 개발했습니다.
 
 ## 주요 기능
 
-- **Multi-Model Debate**: 동일한 질문을 여러 AI 모델에 동시에 전송하고 응답을 나란히 비교
-- **Cross-Examination**: 각 모델의 응답을 다른 모델에게 피드백으로 전달해서 진정한 다관점 토론 진행
-- **Peer Ranking**: 각 참가자가 다른 모델들의 기여도를 평가하고 순위를 매김
-- **Custom Roles**: 시스템 프롬프트로 커스텀 페르소나 정의 — 각 모델이 특정 관점에서 주장하도록 설정
-- **No API Keys Required**: 이미 로그인한 브라우저 탭을 통해 동작 — 별도 API 키 불필요
+- Multi-Model Debate: 동일한 질문을 여러 AI 모델에 동시에 전송하고 응답을 나란히 비교합니다.
+- Cross-Examination: 각 모델의 응답을 다른 모델에게 피드백으로 전달하여 진정한 다관점 토론을 진행합니다.
+- Peer Ranking: 각 참가자가 다른 모델들의 기여도를 평가하고 순위를 매깁니다.
+- Custom Roles: 시스템 프롬프트로 커스텀 페르소나를 정의하여 각 모델이 특정 관점에서 주장하도록 설정할 수 있습니다.
+- No API Keys Required: 이미 로그인한 브라우저 탭을 통해 동작하므로 별도 API 키가 불필요합니다.
 
 ## 지원 Provider
 
@@ -38,7 +36,4 @@ import imgSettings from './assets/screenshot-settings.png';
 
 ## 기술 스택
 
-- **UI**: React 19, Zustand
-- **Build**: Vite, @crxjs/vite-plugin
-- **Language**: TypeScript
-- **Platform**: Chrome Extension Manifest V3 (Side Panel API)
+React 19와 Zustand로 UI를 구현하고, Vite + @crxjs/vite-plugin으로 빌드했습니다. Chrome Extension Manifest V3의 Side Panel API를 활용하여 브라우저 사이드 패널에서 동작합니다.

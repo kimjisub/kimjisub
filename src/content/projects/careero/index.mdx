@@ -1,10 +1,6 @@
 import Image from 'next/image';
 import { PhoneScreens } from '@/components/ImageGrid';
 import img_content_1_png from './assets/content-1.png';
-import img_content_2_png from './assets/content-2.png';
-import img_content_3_png from './assets/content-3.png';
-import img_content_4_png from './assets/content-4.png';
-import img_content_5_png from './assets/content-5.png';
 import img_content_6_png from './assets/content-6.png';
 import img_content_7_png from './assets/content-7.png';
 import img_content_8_png from './assets/content-8.png';
@@ -15,39 +11,18 @@ import img_content_12_png from './assets/content-12.png';
 import img_content_13_png from './assets/content-13.png';
 import img_content_14_png from './assets/content-14.png';
 import img_content_15_gif from './assets/content-15.gif';
-import img_content_16_png from './assets/content-16.png';
-
-## 프로젝트명 :  CareeRo
 
 <Image src={img_content_1_png} alt="" />
 
-### 팀명 : 국밥과 깍두기
+## 배경
 
-### 1. 문제 정의
+대학생의 50%가 세부적인 진로 및 목표를 정하지 못하고 있고, 진로 결정에 영향을 주는 멘토가 없다는 응답이 가장 많았습니다. 기존 진로 플랫폼은 대외활동 정보 위주로, 개인 맞춤형 로드맵을 제시하는 서비스가 부족했습니다. 이를 해결하기 위해 팀 프로젝트로 CareeRo를 개발했습니다.
 
-<Image src={img_content_2_png} alt="" />
+## 주요 기능
 
-- 대학생의 50% 가 세부적인 진로 및 목표를 정하지 못하였다.
-<Image src={img_content_3_png} alt="" />
-
-- 대학생의 64.9% 가 진로 및 취업 관련에 만족하지 못하고 있고, 대학생의 19.3% 가 관련 사항에 불편함을 느끼고 있다.
-<Image src={img_content_4_png} alt="" />
-
-- 참여자 중 진로 및 목표를 정하는데 영향이 주는 인물이 없음이 가장 많은 것으로 나타난다.
-<Image src={img_content_5_png} alt="" />
-
-- 설문 참여자 중 다수가 대외 활동의 관한 정보를 진로 관련 플랫품으로 얻고 있다.
-### 2. 문제 해결 방법
-
-Careero App 을 통해 사용자에게 필요한 로드맵을 제시한다.
-
-사용자는 자신이 필요한 기술, 공모전, 대외활동 등을 제시받을 수 있다.
-
-기술과 관련된 Class에 대한 관계도 또한 가시적으로 보여줌으로써 사용자에게 요구되는 과목 정보를 한 눈에 확인 할 수 있다.
-
-### 3. 주요 기능
-
-#### **앱 초기화면**
+- 사용자가 관심 기술을 선택하면 필요한 기술, 공모전, 대외활동 등을 추천했습니다.
+- 기술 간 관계도를 그래프로 시각화하여 요구되는 과목 정보를 한눈에 확인할 수 있도록 했습니다.
+- 현업 종사자, 학과 선배 등이 참여하여 작성한 체크리스트를 제공했습니다.
 
 <PhoneScreens>
   <Image src={img_content_6_png} alt="" />
@@ -56,14 +31,10 @@ Careero App 을 통해 사용자에게 필요한 로드맵을 제시한다.
   <Image src={img_content_9_png} alt="" />
 </PhoneScreens>
 
-#### **관심 기술 리스트에 담기**
-
 <PhoneScreens>
   <Image src={img_content_10_png} alt="" />
   <Image src={img_content_11_png} alt="" />
 </PhoneScreens>
-
-#### **관련 기술에 대한 로드맵 제시**
 
 <PhoneScreens>
   <Image src={img_content_12_png} alt="" />
@@ -71,27 +42,8 @@ Careero App 을 통해 사용자에게 필요한 로드맵을 제시한다.
   <Image src={img_content_14_png} alt="" />
 </PhoneScreens>
 
-#### Data_Graph
-
 <Image src={img_content_15_gif} alt="" />
 
-### 4. 사용 시나리오
+## 성과
 
-- 실제 사용자가 서비스를 이용하는 상황에 대한 설명 및 예시
-#### 질 높은 체크리스트
-
-- 현업 종사자 ,학과 선배, 취업 센터 담당자, 기업 채용 담당자들이 참여
-#### 타 플랫폼 대비 **Careero**의 차별점
-
-### 5. 비지니스 모델
-
-- B2B 비즈니스 모델
-- B2C 비즈니스 모델
-- B2B + B2C 비즈니스 모델
-### 6. 마케팅 전략
-
-<Image src={img_content_16_png} alt="" />
-
-- 설문을 통해 진로 관련 플랫폼의 수요가 높다는 것을 알 수 있다.
-- 기존 플랫폼과 차별을 둔 서비스를 제공하여 경쟁력을 갖출 수 있다.
-### 7. 발전 가능성
+- HUFSummer 해커톤에서 팀 프로젝트로 발표했습니다.
