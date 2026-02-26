@@ -55,6 +55,15 @@ const activities: Activity[] = [
       'https://static.ebs.co.kr/images/public/2019/12/16/13/15/11/290bd60d-3787-43e8-8896-3ac1d576e9f5.jpg',
   },
   {
+    date: '2019.10',
+    type: 'Video/Talk',
+    title: '청소년 CEO에 도전하다',
+    description: 'KTV 국민방송 · 4:50부터 출연',
+    url: 'https://www.ktv.go.kr/program/home/PG2180041D/content/565035',
+    source: 'KTV',
+    thumbnail: 'https://www.ktv.go.kr/media/unit/unit/fixed_image/zk3FyQhryD.jpg',
+  },
+  {
     date: '2019.06',
     type: 'Press',
     title: '10대 소년의 유의미한 성공스토리',
