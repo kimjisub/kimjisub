@@ -12,7 +12,6 @@ interface Activity {
   url: string;
   source: string;
   thumbnail: string;
-  featured?: boolean;
 }
 
 const activities: Activity[] = [
@@ -25,7 +24,6 @@ const activities: Activity[] = [
     source: 'Candid Blog',
     thumbnail:
       'https://source.inblog.dev/featured_image/2025-12-15T09:17:36.135Z-68222d71-4903-4512-accc-6b4463a8b2e0',
-    featured: true,
   },
   {
     date: '2025.08',
@@ -35,7 +33,6 @@ const activities: Activity[] = [
     url: 'https://www.youtube.com/watch?v=kWjI-JJnI-4',
     source: 'YouTube',
     thumbnail: 'https://i.ytimg.com/vi/kWjI-JJnI-4/maxresdefault.jpg',
-    featured: true,
   },
   {
     date: '2024',
@@ -73,21 +70,25 @@ const typeColor: Record<Activity['type'], string> = {
   Post: 'bg-sky-500/10 text-sky-400 border-sky-500/20',
 };
 
-/* ─── Featured Card (large, hero-style) ─── */
-function FeaturedCard({ activity, index }: { activity: Activity; index: number }) {
+/* ─── Activity Card (unified design, all 4 same treatment) ─── */
+function ActivityCard({ activity, index }: { activity: Activity; index: number }) {
   return (
     <motion.a
       href={activity.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative block overflow-hidden rounded-2xl border border-border bg-card"
+      className="group relative block overflow-hidden rounded-2xl border border-border bg-card hover:border-border/80 transition-all duration-500 hover:shadow-xl hover:shadow-black/10"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.1,
+        ease: [0.25, 0.46, 0.45, 0.94],
+      }}
     >
       {/* Image */}
-      <div className="relative aspect-[16/9] overflow-hidden">
+      <div className="relative aspect-[16/10] overflow-hidden">
         <Image
           src={activity.thumbnail}
           alt={activity.title}
@@ -96,14 +97,15 @@ function FeaturedCard({ activity, index }: { activity: Activity; index: number }
           sizes="(max-width: 768px) 100vw, 50vw"
           unoptimized
         />
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-        {/* Play button overlay for video */}
+        {/* Gradient overlay — bottom heavy for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/5" />
+
+        {/* Play button for video */}
         {activity.type === 'Video/Talk' && (
           <div className="absolute inset-0 flex items-center justify-center">
             <motion.div
-              className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 shadow-2xl"
+              className="w-14 h-14 rounded-full bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/25 shadow-2xl group-hover:bg-white/25 transition-colors duration-300"
               whileHover={{ scale: 1.1 }}
               transition={{ type: 'spring', stiffness: 400, damping: 25 }}
             >
@@ -112,32 +114,32 @@ function FeaturedCard({ activity, index }: { activity: Activity; index: number }
           </div>
         )}
 
-        {/* Type badge */}
-        <div className="absolute top-4 left-4">
+        {/* Type badge — top left */}
+        <div className="absolute top-3 left-3">
           <span
-            className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium border backdrop-blur-sm ${typeColor[activity.type]}`}
+            className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium border backdrop-blur-sm ${typeColor[activity.type]}`}
           >
             {typeIcon[activity.type]}
             {activity.source}
           </span>
         </div>
 
-        {/* External link indicator */}
-        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20">
-            <ExternalLink className="w-3.5 h-3.5 text-white" />
+        {/* External link — top right, on hover */}
+        <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="w-7 h-7 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20">
+            <ExternalLink className="w-3 h-3 text-white" />
           </div>
         </div>
 
-        {/* Bottom content overlay */}
-        <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-          <p className="text-xs text-white/60 font-medium tracking-wider uppercase mb-2">
+        {/* Text content — bottom */}
+        <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
+          <p className="text-[11px] text-white/50 font-medium tracking-wider uppercase mb-1.5">
             {activity.date}
           </p>
-          <h3 className="text-lg md:text-xl font-semibold text-white leading-snug mb-1 group-hover:text-white/90 transition-colors">
+          <h3 className="text-base md:text-lg font-semibold text-white leading-snug group-hover:text-white/90 transition-colors">
             {activity.title}
           </h3>
-          <p className="text-sm text-white/60">
+          <p className="text-sm text-white/50 mt-0.5">
             {activity.description}
           </p>
         </div>
@@ -146,63 +148,10 @@ function FeaturedCard({ activity, index }: { activity: Activity; index: number }
   );
 }
 
-/* ─── Compact Card (smaller, side items) ─── */
-function CompactCard({ activity, index }: { activity: Activity; index: number }) {
-  return (
-    <motion.a
-      href={activity.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group relative flex gap-4 p-4 rounded-xl border border-border bg-card hover:bg-card/80 transition-all duration-300 hover:border-border/80 hover:shadow-lg hover:shadow-black/5"
-      initial={{ opacity: 0, x: 20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.5, delay: 0.2 + index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-    >
-      {/* Thumbnail */}
-      <div className="relative w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden bg-muted">
-        <Image
-          src={activity.thumbnail}
-          alt={activity.title}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-110"
-          sizes="80px"
-          unoptimized
-        />
-        <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
-      </div>
-
-      {/* Content */}
-      <div className="flex-1 min-w-0 flex flex-col justify-center">
-        <div className="flex items-center gap-2 mb-1.5">
-          <span
-            className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium border ${typeColor[activity.type]}`}
-          >
-            {typeIcon[activity.type]}
-            {activity.source}
-          </span>
-          <span className="text-[11px] text-muted-foreground">
-            {activity.date}
-          </span>
-        </div>
-        <p className="text-sm font-medium text-foreground group-hover:text-accent transition-colors leading-snug line-clamp-2">
-          {activity.title}
-        </p>
-      </div>
-
-      {/* Arrow */}
-      <ExternalLink className="w-4 h-4 flex-shrink-0 text-muted-foreground/40 group-hover:text-accent self-center transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-    </motion.a>
-  );
-}
-
 /* ─── Main Section ─── */
 export const ActivitiesSection = () => {
-  const featured = activities.filter((a) => a.featured);
-  const compact = activities.filter((a) => !a.featured);
-
   return (
-    <section className="py-12 md:py-24 border-t border-border">
+    <div className="py-12 md:py-24 border-t border-border">
       <div className="max-w-4xl mx-auto px-4 md:px-6">
         {/* Header */}
         <motion.div
@@ -219,23 +168,13 @@ export const ActivitiesSection = () => {
           </p>
         </motion.div>
 
-        {/* Bento Grid Layout */}
+        {/* 2×2 Bento Grid — all cards equal */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Featured items — large cards */}
-          {featured.map((activity, i) => (
-            <FeaturedCard key={activity.url} activity={activity} index={i} />
+          {activities.map((activity, i) => (
+            <ActivityCard key={activity.url} activity={activity} index={i} />
           ))}
         </div>
-
-        {/* Compact items */}
-        {compact.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
-            {compact.map((activity, i) => (
-              <CompactCard key={activity.url} activity={activity} index={i} />
-            ))}
-          </div>
-        )}
       </div>
-    </section>
+    </div>
   );
 };
