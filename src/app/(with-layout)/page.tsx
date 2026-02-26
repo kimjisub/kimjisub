@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 
 import { AboutBentoSection } from '@/components/introduce/AboutBentoSection';
 import { AboutSection } from '@/components/introduce/AboutSection';
+import { ActivitiesSection } from '@/components/introduce/ActivitiesSection';
 import { BackgroundSection } from '@/components/introduce/BackgroundSection';
 import BlogPreviewSection from '@/components/introduce/BlogPreviewSection';
 import { BlogPreviewSectionSkeleton } from '@/components/introduce/BlogPreviewSectionSkeleton';
@@ -50,6 +51,10 @@ export default function Home() {
         <Suspense fallback={<SkillsSectionSkeleton />}>
           <SkillsSection />
         </Suspense>
+      </section>
+
+      <section id="activities">
+        <ActivitiesSection />
       </section>
 
       <section id="blog">
