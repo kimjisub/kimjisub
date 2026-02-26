@@ -48,7 +48,7 @@ const activities: Activity[] = [
     date: '2019.12',
     type: 'Video/Talk',
     title: 'SW교육 이야기 — 학교, 미래를 품다',
-    description: 'EBS 2TV 방영',
+    description: 'EBS 2TV 방영 · 0:42부터 출연',
     url: 'https://www.ebs.co.kr/tv/show?prodId=132230&lectId=20200544',
     source: 'EBS',
     thumbnail:
