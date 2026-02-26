@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect,useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
 interface Section {
@@ -23,35 +23,44 @@ const sections: Section[] = [
 export default function ScrollSpyNav() {
   const [activeSection, setActiveSection] = useState<string>('hero');
   const [isHoveringNav, setIsHoveringNav] = useState(false);
+  const rafRef = useRef<number>(0);
+
+  const updateActive = useCallback(() => {
+    const scrollY = window.scrollY;
+    const viewportH = window.innerHeight;
+    const docH = document.documentElement.scrollHeight;
+
+    // At bottom of page → last section
+    if (scrollY + viewportH >= docH - 50) {
+      setActiveSection(sections[sections.length - 1].id);
+      return;
+    }
+
+    // Find the section whose top is closest to 40% of viewport from top
+    const target = scrollY + viewportH * 0.4;
+    let best = sections[0].id;
+    for (const { id } of sections) {
+      const el = document.getElementById(id);
+      if (!el) continue;
+      if (el.offsetTop <= target) {
+        best = id;
+      }
+    }
+    setActiveSection(best);
+  }, []);
 
   useEffect(() => {
-    const observers: IntersectionObserver[] = [];
-
-    sections.forEach(({ id }) => {
-      const el = document.getElementById(id);
-      if (!el) return;
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setActiveSection(id);
-            }
-          });
-        },
-        {
-          // Trigger when section crosses the vertical center of viewport
-          rootMargin: '-50% 0px -50% 0px',
-          threshold: 0,
-        }
-      );
-
-      observer.observe(el);
-      observers.push(observer);
-    });
-
-    return () => observers.forEach((o) => o.disconnect());
-  }, []);
+    const onScroll = () => {
+      cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(updateActive);
+    };
+    updateActive();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      cancelAnimationFrame(rafRef.current);
+    };
+  }, [updateActive]);
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -77,11 +86,11 @@ export default function ScrollSpyNav() {
             aria-label={`${label} 섹션으로 이동`}
             className="relative flex items-center gap-2 group cursor-pointer"
           >
-            {/* Label - 항상 보이지만 hover 시 더 진해짐 */}
+            {/* Label */}
             <motion.span
               className="text-xs whitespace-nowrap select-none transition-colors duration-200"
               animate={{
-                opacity: isHoveringNav ? 1 : (isActive ? 0.7 : 0),
+                opacity: isHoveringNav ? 1 : isActive ? 0.7 : 0,
                 x: isHoveringNav ? 0 : 8,
               }}
               style={{
@@ -94,7 +103,6 @@ export default function ScrollSpyNav() {
 
             {/* Dot */}
             <div className="relative flex items-center justify-center w-5 h-5">
-              {/* Active ring indicator */}
               {isActive && (
                 <motion.div
                   layoutId="scroll-spy-ring"
@@ -103,8 +111,6 @@ export default function ScrollSpyNav() {
                   transition={{ type: 'spring', stiffness: 350, damping: 30 }}
                 />
               )}
-
-              {/* Dot - 비활성화도 보이도록 opacity 높임 */}
               <motion.div
                 className={`rounded-full transition-colors duration-300 ${
                   isActive
