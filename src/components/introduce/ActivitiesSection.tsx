@@ -45,6 +45,16 @@ const activities: Activity[] = [
       'https://media.licdn.com/dms/image/v2/D5622AQEBMQ769zk-aA/feedshare-shrink_800/feedshare-shrink_800/0/1700408346046?e=2147483647&v=beta&t=bxAgXb4yOrro09Fi1Baa3pbW2H1GGKck7Biu6EEaKLc',
   },
   {
+    date: '2019.12',
+    type: 'Video/Talk',
+    title: 'SW교육 이야기 — 학교, 미래를 품다',
+    description: 'EBS 2TV 방영',
+    url: 'https://www.ebs.co.kr/tv/show?prodId=132230&lectId=20200544',
+    source: 'EBS',
+    thumbnail:
+      'https://static.ebs.co.kr/images/public/2019/12/16/13/15/11/290bd60d-3787-43e8-8896-3ac1d576e9f5.jpg',
+  },
+  {
     date: '2019.06',
     type: 'Press',
     title: '10대 소년의 유의미한 성공스토리',
@@ -168,11 +178,17 @@ export const ActivitiesSection = () => {
           </p>
         </motion.div>
 
-        {/* 2×2 Bento Grid — all cards equal */}
+        {/* Bento Grid — last odd item spans full width */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {activities.map((activity, i) => (
-            <ActivityCard key={activity.url} activity={activity} index={i} />
-          ))}
+          {activities.map((activity, i) => {
+            const isLastOdd =
+              activities.length % 2 === 1 && i === activities.length - 1;
+            return (
+              <div key={activity.url} className={isLastOdd ? 'md:col-span-2' : ''}>
+                <ActivityCard activity={activity} index={i} />
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
