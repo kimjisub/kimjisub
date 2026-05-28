@@ -4,7 +4,7 @@ import React, { useCallback,useEffect, useRef, useState } from 'react';
 import { motion, type PanInfo,useAnimation, useMotionValue } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-import { type ProjectT } from '@/api/notion/projects';
+import { type ProjectT } from '@/api/content/projects';
 import { ProjectItem } from '@/components/ProjectItem';
 
 interface ProjectCarouselProps {

@@ -3,7 +3,7 @@ import { Text } from '@radix-ui/themes';
 import { format } from 'date-fns';
 import type { Metadata } from 'next';
 
-import { getSkills } from '@/api/notion/skills';
+import { getSkills } from '@/api/content/skills';
 import DebugView from '@/components/DebugView';
 import { AnimatedSection, AnimatedTitle } from '@/components/motion/AnimatedSection';
 import { SkillsRadarChart } from '@/components/SkillsRadarChart';

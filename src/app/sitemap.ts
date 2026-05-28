@@ -2,9 +2,9 @@ import fs from 'fs';
 import type { MetadataRoute } from 'next';
 import path from 'path';
 
-import { getCareers } from '@/api/notion/careers';
-import { getProjects } from '@/api/notion/projects';
-import { getSkills } from '@/api/notion/skills';
+import { getCareers } from '@/api/content/careers';
+import { getProjects } from '@/api/content/projects';
+import { getSkills } from '@/api/content/skills';
 
 const siteUrl = 'https://kimjisub.com';
 

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-import { SkillT } from '@/api/notion/skills';
+import { SkillT } from '@/api/content/skills';
 import { SkillItem } from '@/components/SkillItem';
 
 interface SkillCategoryAnimatedProps {

@@ -3,7 +3,7 @@
 import { useCallback,useMemo, useRef, useState } from 'react';
 import { AnimatePresence,motion, useInView } from 'framer-motion';
 
-import { SkillT } from '@/api/notion/skills';
+import { SkillT } from '@/api/content/skills';
 
 // ─────────────────────────────────────────────────────────
 // Constants

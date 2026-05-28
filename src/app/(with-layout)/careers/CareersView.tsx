@@ -5,7 +5,7 @@ import { faClock, faGripVertical } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import { CareerT } from '@/api/notion/careers';
+import { CareerT } from '@/api/content/careers';
 import { CareerItem } from '@/components/CareerItem';
 import { InteractiveTimeline } from '@/components/InteractiveTimeline';
 import { AnimatedGridItem, AnimatedSection, AnimatedTitle } from '@/components/motion/AnimatedSection';

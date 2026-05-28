@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { getSkills } from '@/api/notion/skills';
+import { getSkills } from '@/api/content/skills';
 import { SkillsProgressSection } from '@/components/introduce/SkillsProgressSection';
 import { AnimatedSection } from '@/components/motion/AnimatedSection';
 import { SectionReveal } from '@/components/SectionReveal';

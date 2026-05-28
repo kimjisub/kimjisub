@@ -3,7 +3,7 @@
 import { useRef,useState } from 'react';
 import { AnimatePresence,motion } from 'framer-motion';
 
-import { SkillT } from '@/api/notion/skills';
+import { SkillT } from '@/api/content/skills';
 import { IconSlugSvg, slugToData } from '@/components/IconSlugView';
 
 export const proficiencyConfig: Record<string, { label: string; percent: number; color: string }> = {

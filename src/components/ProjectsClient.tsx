@@ -3,7 +3,7 @@
 import React, { useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion, useInView, type Variants } from 'framer-motion';
 
-import { type ProjectT, type ProjectType } from '@/api/notion/projects';
+import { type ProjectT, type ProjectType } from '@/api/content/projects';
 import { ProjectItem } from '@/components/ProjectItem';
 
 interface ProjectsClientProps {

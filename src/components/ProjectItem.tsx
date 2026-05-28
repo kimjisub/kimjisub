@@ -6,7 +6,7 @@ import { format } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { ProjectT } from '@/api/notion/projects';
+import { ProjectT } from '@/api/content/projects';
 import { BlurImage } from '@/components/BlurImage';
 import { TiltCard } from '@/components/TiltCard';
 

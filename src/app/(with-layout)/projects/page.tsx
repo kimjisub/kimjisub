@@ -3,7 +3,7 @@ import { Text } from '@radix-ui/themes';
 import { format } from 'date-fns';
 import type { Metadata } from 'next';
 
-import { getProjects } from '@/api/notion/projects';
+import { getProjects } from '@/api/content/projects';
 import DebugView from '@/components/DebugView';
 import { AnimatedSection, AnimatedTitle } from '@/components/motion/AnimatedSection';
 import { ProjectsClient } from '@/components/ProjectsClient';

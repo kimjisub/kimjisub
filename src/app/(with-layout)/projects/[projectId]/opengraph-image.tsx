@@ -1,7 +1,7 @@
 import { format } from 'date-fns';
 import { ImageResponse } from 'next/og';
 
-import { getProject } from '@/api/notion/project';
+import { getProject } from '@/api/content/project';
 
 // Node.js runtime — needed for Notion API
 export const runtime = 'nodejs';

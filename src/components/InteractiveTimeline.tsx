@@ -13,7 +13,7 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { CareerT } from '@/api/notion/careers';
+import { CareerT } from '@/api/content/careers';
 import { BlurImage } from '@/components/BlurImage';
 
 // ────────────────────────────────────────────

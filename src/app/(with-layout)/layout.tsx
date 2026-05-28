@@ -3,7 +3,6 @@ import { Inter, Newsreader } from 'next/font/google';
 
 import '@radix-ui/themes/styles.css';
 import 'katex/dist/katex.min.css';
-import 'react-notion-x/src/styles.css';
 import '@/styles/prism-theme.css';
 import '../globals.css';
 

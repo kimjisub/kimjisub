@@ -3,7 +3,7 @@
 import { motion, type Variants } from 'framer-motion';
 import Link from 'next/link';
 
-import { type SkillT } from '@/api/notion/skills';
+import { type SkillT } from '@/api/content/skills';
 import { SkillIconWrapper } from '@/components/introduce/SkillIconWrapper';
 import { SafeSkillIcon } from '@/components/SafeSkillIcon';
 

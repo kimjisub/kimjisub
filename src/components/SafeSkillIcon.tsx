@@ -2,7 +2,7 @@
 
 import React, { Component, ReactNode } from 'react';
 
-import { SkillT } from '@/api/notion/skills';
+import { SkillT } from '@/api/content/skills';
 import { IconSlugView } from '@/components/IconSlugView';
 
 interface Props {

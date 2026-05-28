@@ -4,8 +4,8 @@ import { Text } from '@radix-ui/themes';
 import { format } from 'date-fns';
 import Image from 'next/image';
 
-import { getCareer, getCareerPage } from '@/api/notion/career';
-import { getCareers } from '@/api/notion/careers';
+import { getCareer, getCareerPage } from '@/api/content/career';
+import { getCareers } from '@/api/content/careers';
 import { ContentEngagement } from '@/components/ContentEngagement';
 import DebugView from '@/components/DebugView';
 import { JsonView } from '@/components/JsonView';

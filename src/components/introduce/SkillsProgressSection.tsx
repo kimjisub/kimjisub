@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
-import { type SkillT } from '@/api/notion/skills';
+import { type SkillT } from '@/api/content/skills';
 import { proficiencyConfig } from '@/components/SkillTooltip';
 
 // ─────────────────────────────────────────────────────────

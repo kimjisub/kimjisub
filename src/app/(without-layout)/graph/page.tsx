@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { getSkillsWithRelated } from '@/api/notion/skill';
+import { getSkillsWithRelated } from '@/api/content/skill';
 import ForceGraph from '@/components/ForceGraph';
 import { IconSlugView } from '@/components/IconSlugView';
 

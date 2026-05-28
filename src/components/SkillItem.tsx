@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { SkillT } from '@/api/notion/skills';
+import { SkillT } from '@/api/content/skills';
 import { IconSlugView } from '@/components/IconSlugView';
 
 export interface SkillItemProps {

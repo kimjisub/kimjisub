@@ -2,8 +2,8 @@ import React from 'react';
 import { Text } from '@radix-ui/themes';
 import { format } from 'date-fns';
 
-import { getSkill, getSkillPage } from '@/api/notion/skill';
-import { getSkills } from '@/api/notion/skills';
+import { getSkill, getSkillPage } from '@/api/content/skill';
+import { getSkills } from '@/api/content/skills';
 import { ContentEngagement } from '@/components/ContentEngagement';
 import DebugView from '@/components/DebugView';
 import { JsonView } from '@/components/JsonView';

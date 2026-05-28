@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 
 import { CareersView } from './CareersView';
 
-import { getCareers } from '@/api/notion/careers';
+import { getCareers } from '@/api/content/careers';
 import DebugView from '@/components/DebugView';
 
 export const metadata: Metadata = {
