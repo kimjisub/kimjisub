@@ -163,7 +163,7 @@ export const meta = {
 
 - **PM2**로 프로세스 관리 (`ecosystem.config.cjs`)
 - 현재 dev 모드로 운영: `next dev --port 32957 --hostname 127.0.0.1`
-- **Tailscale**을 통해 접근: `kimjisub-openclaw.tail07a0c6.ts.net`
+- **Tailscale**을 통해 접근. 호스트명/도메인을 문서에 박아두지 않는다 — 변경되면 outdated 위험. 사용자에게 주소를 알릴 때는 항상 `tailscale status --json`로 Self의 `DNSName`을 실시간 리졸빙해서 보여준다 (짧게는 MagicDNS로 `<hostname>` 단독도 가능)
 - 별도 CI/CD 없음 — 서버에서 직접 실행
 
 ```bash
