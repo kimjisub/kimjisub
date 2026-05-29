@@ -64,7 +64,7 @@ export default async function Page({
       <ReadingProgress />
     <div className="max-w-7xl mx-auto px-6 py-24">
       <div className="flex gap-12">
-        <div className="flex-1 max-w-4xl">
+        <div className="flex-1 max-w-4xl min-w-0">
           <BlogPostHeader meta={meta} />
           <ContentEngagement slug={slug} contentType="blog" className="mb-8" />
           <article className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-sans prose-headings:font-medium prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-p:text-foreground prose-li:text-foreground prose-strong:text-foreground">

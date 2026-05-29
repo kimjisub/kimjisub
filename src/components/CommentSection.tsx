@@ -87,7 +87,7 @@ export function CommentSection({ postSlug, className }: CommentSectionProps) {
 
   const CommentForm = ({ parentId, onCancel }: { parentId?: string; onCancel?: () => void }) => (
     <form onSubmit={(e) => handleSubmit(e, parentId)} className="space-y-4">
-      <div className="flex gap-4">
+      <div className="flex flex-col sm:flex-row gap-4">
         <input
           type="text"
           placeholder="이름 *"
