@@ -1,0 +1,48 @@
+{
+  "skill_name": "blog-post-writer",
+  "evals": [
+    {
+      "id": 1,
+      "name": "rag-is-dead-argument",
+      "prompt": "요즘 'RAG는 죽었다'는 얘기가 많던데, 내 블로그에 이거에 대한 글을 쓰고 싶어. 내 입장은 RAG가 죽은 게 아니라 long-context 시대에 맞게 형태가 바뀐 거라는 거야. 필요한 세부 결정은 합리적으로 가정하고 초안까지 완성해줘.",
+      "expected_output": "src/blog 형식의 index.mdx 초안. 'RAG는 죽었다' 담론이 실제로 존재하는지 웹 리서치로 검증하고, 선행 논의(prior art)를 인용하며, published:false로 시작. 차별점이 드러남.",
+      "files": [],
+      "assertions": [
+        "웹 검색/리서치로 'RAG는 죽었다' 담론과 선행 논의를 조사했다",
+        "src/blog/{YYYY-MM-DD-slug}/index.mdx 경로 구조로 파일을 만들었다",
+        "meta export에 title, date, description, tags, published 필드가 있다",
+        "published: false로 시작했다",
+        "선행 논의나 출처를 인용했다",
+        "근거 없는 수치나 사실을 지어내지 않았다"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "nextjs-isr-tutorial",
+      "prompt": "Next.js App Router의 ISR(revalidate)이 실제로 어떻게 동작하는지 블로그 글로 정리해줘. 내가 직접 삽질하면서 배운 걸 공유하는 톤으로. 세부는 알아서 가정하고 초안까지 써줘.",
+      "expected_output": "src/blog 형식의 index.mdx 초안. 기존 블로그 글 톤을 참고하고, 메타 형식이 올바르며, published:false로 시작. 튜토리얼이므로 리서치는 가벼워도 됨.",
+      "files": [],
+      "assertions": [
+        "기존 src/blog 글을 읽어 톤/문체를 참고했다",
+        "src/blog/{YYYY-MM-DD-slug}/index.mdx 경로 구조로 파일을 만들었다",
+        "meta export에 title, date, description, tags, published 필드가 있다",
+        "published: false로 시작했다",
+        "ISR/revalidate 동작에 대해 부정확하거나 지어낸 기술 설명이 없다"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "monorepo-experience",
+      "prompt": "사내에서 모노레포 도입했던 경험을 블로그로 정리하고 싶어. 핵심 주장은 '모노레포는 만능이 아니라 팀 규모에 따라 다르다'야. 세부 결정은 가정하고 초안까지 완성해줘.",
+      "expected_output": "src/blog 형식의 index.mdx 초안. 저자가 실제로 무엇을 했는지 모르는 경험 부분을 지어내지 않고, 추측한 부분을 플래그하거나 추상적으로 처리. 모노레포 담론 리서치 + 차별점.",
+      "files": [],
+      "assertions": [
+        "웹 검색/리서치로 모노레포 담론과 선행 논의를 조사했다",
+        "src/blog/{YYYY-MM-DD-slug}/index.mdx 경로 구조로 파일을 만들었다",
+        "published: false로 시작했다",
+        "저자의 구체적 경험(회사명, 팀 규모, 수치, 도입 결과)을 근거 없이 지어내지 않았다 — 추측 부분을 플래그하거나 추상적으로 처리했다",
+        "선행 논의나 출처를 인용했다"
+      ]
+    }
+  ]
+}
