@@ -348,8 +348,9 @@ const { project } = await getProject("unipad");
 
 ```
 src/blog/
-├── 2025-06-17-nextjs-blog.mdx
-└── 2026-02-18-second-brain.mdx
+├── 2025-06-17-ai-era-writing/index.mdx
+├── 2026-05-15-harness-engineering/index.mdx
+└── 2026-05-29-precision-vs-recall/index.mdx
 ```
 
 ### 프론트매터
