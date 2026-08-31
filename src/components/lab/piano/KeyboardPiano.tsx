@@ -16,6 +16,7 @@ import {
 } from './engine/keymap';
 import type { Layout } from './engine/keymap';
 import { PRESETS } from './engine/presets';
+import type { SampledProgress } from './engine/sampledGrand';
 
 const NOTE_CODES = new Set([...WHITE_CODES, ...BLACK_SLOT_CODES]);
 
@@ -30,6 +31,7 @@ export default function KeyboardPiano() {
 	const [pedalHeld, setPedalHeld] = useState(false);
 	const [pedalLatched, setPedalLatched] = useState(false);
 	const [started, setStarted] = useState(false);
+	const [samples, setSamples] = useState<SampledProgress>({ state: 'idle', loaded: 0, total: 0 });
 
 	const mountRef = useRef<HTMLDivElement>(null);
 	const meterRef = useRef<HTMLDivElement>(null);
@@ -58,6 +60,9 @@ export default function KeyboardPiano() {
 		keyboard.applyLayout(layoutRef.current);
 		setStarted(engine.running);
 
+		// 샘플은 뒤에서 받는다. 받는 동안에도 합성으로 소리가 나므로 화면이 막히지 않는다.
+		engine.loadSamples(setSamples);
+
 		// 좁은 화면에서는 자판의 두 줄과 같은 자리로 접는다. 한 줄로 23개를 두면
 		// 폰에서 건반 하나가 17px 이라 칠 수가 없다.
 		const narrow = window.matchMedia('(max-width: 720px)');
@@ -76,6 +81,10 @@ export default function KeyboardPiano() {
 
 	useEffect(() => {
 		keyboardRef.current?.applyLayout(layout);
+		// 지금 건반에 올라온 음역만 샘플로 받는다. 옥타브나 조옮김으로 벗어나면
+		// 그때 넓혀서 받고, 받는 동안 그 음들은 합성으로 난다.
+		const midis = [...layout.white, ...layout.black].filter(k => k.exists).map(k => k.midi);
+		engineRef.current?.coverRange(Math.min(...midis), Math.max(...midis));
 	}, [layout]);
 
 	useEffect(() => {
@@ -223,6 +232,12 @@ export default function KeyboardPiano() {
 								e.currentTarget.blur();
 							}}>
 							{preset.name}
+							{preset.id === 'grand' && samples.state === 'loading' && (
+								<span
+									className="loading"
+									style={{ width: `${samples.total ? (samples.loaded / samples.total) * 100 : 0}%` }}
+								/>
+							)}
 						</button>
 					))}
 				</div>

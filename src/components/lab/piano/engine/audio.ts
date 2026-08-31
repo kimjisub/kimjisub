@@ -10,6 +10,8 @@
 import { midiToFreq } from './keymap';
 import { PRESETS, warmup } from './presets';
 import type { Preset, Voice } from './presets';
+import { SampledGrand } from './sampledGrand';
+import type { SampledProgress } from './sampledGrand';
 
 const MAX_VOICES = 32;
 
@@ -65,6 +67,8 @@ export class AudioEngine {
 
   preset: Preset;
   sustain: boolean;
+  /** Grand Piano 만 샘플로 대체한다. 나머지 톤은 합성이 더 자연스럽고 용량이 0 이다. */
+  sampled: SampledGrand | null = null;
   /** 입력 id -> 보이스 */
   held: Map<string, HeldVoice>;
   /** 페달이 붙잡고 있는 보이스 */
@@ -130,6 +134,48 @@ export class AudioEngine {
     this.preset = preset;
   }
 
+  /**
+   * 샘플 음원을 뒤에서 받기 시작한다. 받는 동안에도 합성으로 소리가 나고,
+   * 다 받으면 Grand Piano 만 조용히 갈아탄다.
+   */
+  loadSamples(onProgress?: (p: SampledProgress) => void): void {
+    if (this.sampled) return;
+    this.sampled = new SampledGrand(this.ctx, this.bus, onProgress);
+  }
+
+  /**
+   * 건반에 올라온 음역을 알린다. 아직 안 받은 범위면 뒤에서 받기 시작한다.
+   * 배치가 바뀔 때만 부르므로 타건 경로에는 없다.
+   */
+  coverRange(lo: number, hi: number): void {
+    this.sampled?.ensure(lo, hi);
+  }
+
+  /** 지금 이 음을 샘플로 낼 수 있는가. 아직 안 받은 음은 합성으로 낸다. */
+  private useSampled(midi: number): boolean {
+    return this.preset.id === 'grand'
+      && this.sampled?.ready === true
+      && this.sampled.covers(midi);
+  }
+
+  /** 샘플 한 음을 보이스 모양으로 감싼다. 페달·스틸링 로직을 그대로 쓰려는 것이다. */
+  private buildSampledVoice(midi: number, vel: number, t: number): Voice {
+    const stop = this.sampled!.start(midi, vel, t);
+    let dead = false;
+    return {
+      // 샘플은 스스로 끝나지만, 다 사그라든 보이스가 자리를 차지하지 않게 상한을 둔다.
+      naturalEnd: t + 14,
+      get dead() { return dead; },
+      release(rt: number, fast?: boolean): number {
+        if (dead) return rt;
+        dead = true;
+        stop(rt);
+        return rt + (fast ? 0.05 : 0.7);
+      },
+      dispose(): void { dead = true; },
+    };
+  }
+
   setVolume(v: number): void {
     this.master.gain.setTargetAtTime(v, this.ctx.currentTime, 0.01);
   }
@@ -148,7 +194,9 @@ export class AudioEngine {
     this.prune(t);
     while (this.active.length >= MAX_VOICES) this.retire(this.active[0], t, true);
 
-    const voice: HeldVoice = this.preset.build(this.ctx, this.bus, midiToFreq(midi), midi, vel, t);
+    const voice: HeldVoice = this.useSampled(midi)
+      ? this.buildSampledVoice(midi, vel, t)
+      : this.preset.build(this.ctx, this.bus, midiToFreq(midi), midi, vel, t);
     voice.id = id;
     this.held.set(id, voice);
     this.active.push(voice);
@@ -199,6 +247,8 @@ export class AudioEngine {
   // 장치를 붙잡고 있고, 뒤로 갔다 다시 들어오면 컨텍스트가 하나 더 생긴다.
   destroy(): void {
     this.releaseAll();
+    this.sampled?.dispose();
+    this.sampled = null;
     void this.ctx.close().catch(() => { /* 이미 닫힘 */ });
   }
 

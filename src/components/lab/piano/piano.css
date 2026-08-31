@@ -80,6 +80,18 @@
 
 .kb-piano .tones { gap: 5px; }
 .kb-piano .tone { padding: 6px 9px; font-size: 12px; }
+/* 샘플을 받는 동안 Grand Piano 버튼 아래에 진행률만 얇게 깐다. */
+.kb-piano .tone { position: relative; overflow: hidden; }
+
+.kb-piano .tone .loading {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 200ms linear;
+}
+
 .kb-piano .tone.on {
   background: var(--accent);
   border-color: var(--accent);
