@@ -4,12 +4,15 @@
 // (사생활 보호 모드, 용량 초과) 그냥 기본값으로 간다. 피아노가 안 열리는 것보다
 // 설정이 안 남는 편이 낫다.
 
+import { ANCHOR_MAX } from './keymap';
+
 const KEY = 'kb-piano/settings';
 
 export interface Settings {
   presetIndex: number;
   gmName: string;
-  octave: number;
+  octaveTop: number;
+  octaveBottom: number;
   transpose: number;
   anchorIndex: number;
   volume: number;
@@ -20,7 +23,8 @@ export interface Settings {
 export const DEFAULTS: Settings = {
   presetIndex: 0,
   gmName: '',
-  octave: 0,
+  octaveTop: 0,
+  octaveBottom: 2,
   transpose: 0,
   anchorIndex: 0,
   volume: 80,
@@ -45,9 +49,11 @@ export function load(): Settings {
     return {
       presetIndex: num(v.presetIndex, DEFAULTS.presetIndex, 0, 5),
       gmName: typeof v.gmName === 'string' ? v.gmName : DEFAULTS.gmName,
-      octave: num(v.octave, DEFAULTS.octave, -3, 3),
+      // 예전에는 옥타브가 하나였다. 그 값이 남아 있으면 두 줄에 같이 적용한다.
+      octaveTop: num(v.octaveTop ?? (v as { octave?: number }).octave, DEFAULTS.octaveTop, -3, 3),
+      octaveBottom: num(v.octaveBottom ?? (v as { octave?: number }).octave, DEFAULTS.octaveBottom, -3, 3),
       transpose: num(v.transpose, DEFAULTS.transpose, -12, 12),
-      anchorIndex: num(v.anchorIndex, DEFAULTS.anchorIndex, 0, 22),
+      anchorIndex: num(v.anchorIndex, DEFAULTS.anchorIndex, 0, ANCHOR_MAX),
       volume: num(v.volume, DEFAULTS.volume, 0, 100),
       space: num(v.space, DEFAULTS.space, 0, 70),
       pedalLatched: v.pedalLatched === true,

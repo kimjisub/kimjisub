@@ -58,8 +58,14 @@ function degreeToSemitone(d: number): number {
   return MAJOR[mod(d, 7)] + 12 * Math.floor(d / 7);
 }
 
-// 흰건반 23개가 3옥타브를 조금 넘게 덮는다. 기본 도를 C3 에 두면 가온다가
-// 가운데쯤(`i`)에 오고 위아래가 고르게 남는다.
+// 자판의 두 줄을 각각 독립된 건반으로 쓴다. 윗줄 q…\ 13개, 아랫줄 z…/ 10개다.
+// 두 줄 모두 첫 키가 도라서 같은 손모양으로 다른 옥타브를 칠 수 있다.
+export const ROW_SPLIT = 13;
+
+/** 도 위치는 두 줄이 같이 쓴다. 짧은 줄이 10개라 그 안에서만 고른다. */
+export const ANCHOR_MAX = WHITE_CODES.length - ROW_SPLIT - 1;
+
+// 기준 도. 윗줄 옥타브 0 이면 q 가 여기다.
 export const TONIC_MIDI = 48;
 
 export interface PianoKey {
@@ -75,12 +81,14 @@ export interface PianoKey {
 }
 
 export interface LayoutOptions {
-  /** 흰건반 23개 중 도가 놓일 자리 (0 이면 q) */
+  /** 각 줄에서 도가 놓일 자리 (0 이면 윗줄 q, 아랫줄 z) */
   anchorIndex: number;
-  /** 반음 단위 조옮김 */
+  /** 반음 단위 조옮김. 두 줄이 같이 쓴다. */
   transpose: number;
-  /** 옥타브 시프트 */
-  octave: number;
+  /** 윗줄(q…\) 옥타브 */
+  octaveTop: number;
+  /** 아랫줄(z…/) 옥타브 */
+  octaveBottom: number;
 }
 
 export interface Layout {
@@ -90,17 +98,22 @@ export interface Layout {
   tonicMidi: number;
 }
 
-export function buildLayout({ anchorIndex, transpose, octave }: LayoutOptions): Layout {
-  const base = TONIC_MIDI + transpose + 12 * octave;
+export function buildLayout(
+  { anchorIndex, transpose, octaveTop, octaveBottom }: LayoutOptions,
+): Layout {
+  const baseOf = (slot: number) =>
+    TONIC_MIDI + transpose + 12 * (slot < ROW_SPLIT ? octaveTop : octaveBottom);
+  const degreeOf = (slot: number) =>
+    (slot < ROW_SPLIT ? slot : slot - ROW_SPLIT) - anchorIndex;
 
   const white: PianoKey[] = WHITE_CODES.map((code, slot) => {
-    const degree = slot - anchorIndex;
+    const degree = degreeOf(slot);
     return {
       code,
       slot,
       kind: 'white',
       exists: true,
-      midi: base + degreeToSemitone(degree),
+      midi: baseOf(slot) + degreeToSemitone(degree),
       cap: capOf(code),
       solfege: SOLFEGE[mod(degree, 7)],
       isTonic: mod(degree, 7) === 0,
@@ -108,20 +121,30 @@ export function buildLayout({ anchorIndex, transpose, octave }: LayoutOptions): 
   });
 
   // 이웃한 흰건반이 온음 간격일 때만 그 사이에 검은건반이 있다.
-  const black: PianoKey[] = BLACK_SLOT_CODES.map((code, slot) => ({
-    code,
-    slot,
-    kind: 'black',
-    exists: white[slot + 1].midi - white[slot].midi === 2,
-    midi: white[slot].midi + 1,
-    cap: capOf(code),
-    solfege: white[slot].solfege + '♯',
-    isTonic: false,
-  }));
+  const black: PianoKey[] = BLACK_SLOT_CODES.map((code, slot) => {
+    const upper = white[slot + 1];
+    // 줄이 갈리는 자리(`a`)는 위아래 줄의 옥타브가 달라 그냥 이을 수 없다.
+    // 아랫줄 첫 흰건반의 한 계단 아래 음을 기준으로 잡는다.
+    const split = slot === ROW_SPLIT - 1;
+    const lowerDegree = split ? -anchorIndex - 1 : degreeOf(slot);
+    const lowerMidi = split
+      ? baseOf(ROW_SPLIT) + degreeToSemitone(lowerDegree)
+      : white[slot].midi;
+    return {
+      code,
+      slot,
+      kind: 'black',
+      exists: upper.midi - lowerMidi === 2,
+      midi: upper.midi - 1,
+      cap: capOf(code),
+      solfege: SOLFEGE[mod(lowerDegree, 7)] + '♯',
+      isTonic: false,
+    };
+  });
 
   const map = new Map<string, PianoKey>();
   for (const k of white) map.set(k.code, k);
   for (const k of black) if (k.exists) map.set(k.code, k);
 
-  return { white, black, map, tonicMidi: base };
+  return { white, black, map, tonicMidi: baseOf(0) };
 }

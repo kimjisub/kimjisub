@@ -10,10 +10,12 @@ import { gmLabel, gmNames } from './engine/gmInstrument';
 import type { GmProgress } from './engine/gmInstrument';
 import { Keyboard } from './engine/keyboardView';
 import {
+	ANCHOR_MAX,
 	BLACK_SLOT_CODES,
 	buildLayout,
 	capOf,
 	pitchClass,
+	ROW_SPLIT,
 	TONIC_MIDI,
 	WHITE_CODES,
 } from './engine/keymap';
@@ -32,9 +34,39 @@ const signed = (v: number) => (v > 0 ? `+${v}` : String(v));
 const momentaryOf = (e: KeyboardEvent) =>
 	(e.shiftKey ? 12 : 0) + (e.ctrlKey || e.altKey ? -12 : 0);
 
+type SetNum = (fn: (v: number) => number) => void;
+
+/** 옥타브 스테퍼. 윗줄과 아랫줄이 같은 모양이라 한 곳에 둔다. */
+function octaveStepper(value: number, set: SetNum, momentary: number) {
+	return (
+		<div className="stepper">
+			<button
+				type="button"
+				onClick={e => {
+					set(v => clamp(v - 1, -3, 3));
+					e.currentTarget.blur();
+				}}>
+				−
+			</button>
+			<output className={momentary ? 'shifted' : undefined}>
+				{signed(value + momentary / 12)}
+			</output>
+			<button
+				type="button"
+				onClick={e => {
+					set(v => clamp(v + 1, -3, 3));
+					e.currentTarget.blur();
+				}}>
+				+
+			</button>
+		</div>
+	);
+}
+
 export default function KeyboardPiano() {
 	const [presetIndex, setPresetIndex] = useState(0);
-	const [octave, setOctave] = useState(0);
+	const [octaveTop, setOctaveTop] = useState(DEFAULTS.octaveTop);
+	const [octaveBottom, setOctaveBottom] = useState(DEFAULTS.octaveBottom);
 	const [transpose, setTranspose] = useState(0);
 	const [anchorIndex, setAnchorIndex] = useState(0);
 	const [pedalHeld, setPedalHeld] = useState(false);
@@ -60,8 +92,8 @@ export default function KeyboardPiano() {
 	const keyboardRef = useRef<Keyboard | null>(null);
 
 	const layout = useMemo(
-		() => buildLayout({ anchorIndex, transpose, octave }),
-		[anchorIndex, transpose, octave],
+		() => buildLayout({ anchorIndex, transpose, octaveTop, octaveBottom }),
+		[anchorIndex, transpose, octaveTop, octaveBottom],
 	);
 
 	// 타건 경로에서 React 를 거치지 않으려고 현재 배치를 ref 로도 들고 있는다.
@@ -135,7 +167,8 @@ export default function KeyboardPiano() {
 		const saved = load();
 		setPresetIndex(saved.presetIndex);
 		setGmName(saved.gmName);
-		setOctave(saved.octave);
+		setOctaveTop(saved.octaveTop);
+		setOctaveBottom(saved.octaveBottom);
 		setTranspose(saved.transpose);
 		setAnchorIndex(saved.anchorIndex);
 		setVolume(saved.volume);
@@ -146,8 +179,12 @@ export default function KeyboardPiano() {
 
 	useEffect(() => {
 		if (!restoredRef.current) return;
-		save({ presetIndex, gmName, octave, transpose, anchorIndex, volume, space, pedalLatched });
-	}, [presetIndex, gmName, octave, transpose, anchorIndex, volume, space, pedalLatched]);
+		save({
+			presetIndex, gmName, octaveTop, octaveBottom, transpose,
+			anchorIndex, volume, space, pedalLatched,
+		});
+	}, [presetIndex, gmName, octaveTop, octaveBottom, transpose,
+		anchorIndex, volume, space, pedalLatched]);
 
 	useEffect(() => {
 		engineRef.current?.setSustain(pedalHeld || pedalLatched);
@@ -230,11 +267,13 @@ export default function KeyboardPiano() {
 					return;
 				case 'ArrowDown':
 					e.preventDefault();
-					setOctave(v => clamp(v - 1, -3, 3));
+					setOctaveTop(v => clamp(v - 1, -3, 3));
+					setOctaveBottom(v => clamp(v - 1, -3, 3));
 					return;
 				case 'ArrowUp':
 					e.preventDefault();
-					setOctave(v => clamp(v + 1, -3, 3));
+					setOctaveTop(v => clamp(v + 1, -3, 3));
+					setOctaveBottom(v => clamp(v + 1, -3, 3));
 					return;
 				case 'Backquote':
 					e.preventDefault();
@@ -362,29 +401,10 @@ export default function KeyboardPiano() {
 
 				<div className="group">
 					<span className="glabel">옥타브</span>
-					<div className="stepper">
-						<button
-							type="button"
-							title="↓"
-							onClick={e => {
-								setOctave(v => clamp(v - 1, -3, 3));
-								e.currentTarget.blur();
-							}}>
-							−
-						</button>
-						<output className={momentary ? 'shifted' : undefined}>
-							{signed(octave + momentary / 12)}
-						</output>
-						<button
-							type="button"
-							title="↑"
-							onClick={e => {
-								setOctave(v => clamp(v + 1, -3, 3));
-								e.currentTarget.blur();
-							}}>
-							+
-						</button>
-					</div>
+					<span className="rowtag">윗</span>
+					{octaveStepper(octaveTop, setOctaveTop, momentary)}
+					<span className="rowtag">아랫</span>
+					{octaveStepper(octaveBottom, setOctaveBottom, momentary)}
 				</div>
 
 				<div className="group">
@@ -420,9 +440,9 @@ export default function KeyboardPiano() {
 							setAnchorIndex(Number(e.target.value));
 							e.target.blur();
 						}}>
-						{WHITE_CODES.map((code, i) => (
+						{WHITE_CODES.slice(0, ANCHOR_MAX + 1).map((code, i) => (
 							<option key={code} value={i}>
-								{capOf(code).toUpperCase()}
+								{`${capOf(code).toUpperCase()} / ${capOf(WHITE_CODES[i + ROW_SPLIT]).toUpperCase()}`}
 							</option>
 						))}
 					</select>

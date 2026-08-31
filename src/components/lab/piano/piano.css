@@ -105,6 +105,13 @@
   color: var(--accent);
 }
 
+/* 옥타브 스테퍼 둘을 한 묶음에 두고 어느 줄인지만 짧게 붙인다. */
+.kb-piano .rowtag {
+  color: var(--dim);
+  font-size: 11px;
+  margin-left: 2px;
+}
+
 .kb-piano .stepper {
   display: flex;
   align-items: center;
@@ -121,7 +128,7 @@
   line-height: 1;
 }
 .kb-piano .stepper output {
-  min-width: 48px;
+  min-width: 40px;
   text-align: center;
   font-variant-numeric: tabular-nums;
   font-size: 12px;

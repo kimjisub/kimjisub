@@ -1,15 +1,18 @@
 // 화면 건반. DOM 은 처음 한 번만 만들고, 조옮김·옥타브·도 위치가 바뀌면
 // 만들어 둔 요소의 값만 갈아끼운다. 타건 경로에 DOM 생성이 끼지 않게 한다.
 
-import { BLACK_SLOT_CODES, capOf, noteName, WHITE_CODES } from './keymap';
+import { BLACK_SLOT_CODES, capOf, noteName, ROW_SPLIT, WHITE_CODES } from './keymap';
 import type { Layout } from './keymap';
 
-// 자판의 두 줄을 그대로 나눈다. 윗줄 q…\ 13개, 아랫줄 z…/ 10개.
-const SPLIT = 13;
+const SPLIT = ROW_SPLIT;
+
+// 한 줄로 펼칠 때도 두 줄 사이를 조금 벌린다. 줄마다 옥타브가 따로라 음이
+// 이어지지 않는데, 붙여 놓으면 건반 하나가 깨진 것처럼 보인다.
+const GAP_KEYS = 0.5;
 
 // 좁은 화면에서 두 줄로 접을 때도 건반 폭은 그대로 둔다. 두 줄 모두 13분할
 // 폭을 쓰고 아랫줄이 10개에서 끝나 오른쪽이 남는다.
-const WHITE_W_WIDE = 100 / WHITE_CODES.length;
+const WHITE_W_WIDE = 100 / (WHITE_CODES.length + GAP_KEYS);
 const WHITE_W_SPLIT = 100 / SPLIT;
 const BLACK_RATIO = 0.64;
 
@@ -101,10 +104,12 @@ export class Keyboard {
       const whiteIndex = node.kind === 'white' ? node.slot : node.slot + 1;
       const rowIndex = split && whiteIndex >= SPLIT ? 1 : 0;
       const local = whiteIndex - (rowIndex === 1 ? SPLIT : 0);
+      // 한 줄로 펼쳤을 때만 아랫줄 자리를 오른쪽으로 밀어 사이를 벌린다.
+      const gap = !split && whiteIndex >= SPLIT ? GAP_KEYS * whiteW : 0;
 
       const left = node.kind === 'white'
-        ? local * whiteW
-        : Math.max(0, local * whiteW - blackW / 2);
+        ? local * whiteW + gap
+        : Math.max(0, local * whiteW - blackW / 2 + gap);
 
       node.el.style.left = `${left}%`;
       node.el.style.width = `${node.kind === 'white' ? whiteW : blackW}%`;
