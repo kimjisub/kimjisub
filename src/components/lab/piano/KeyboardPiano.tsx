@@ -5,6 +5,9 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import './piano.css';
 
 import { AudioEngine } from './engine/audio';
+import { describe } from './engine/chord';
+import { gmLabel, gmNames } from './engine/gmInstrument';
+import type { GmProgress } from './engine/gmInstrument';
 import { Keyboard } from './engine/keyboardView';
 import {
 	BLACK_SLOT_CODES,
@@ -32,10 +35,16 @@ export default function KeyboardPiano() {
 	const [pedalLatched, setPedalLatched] = useState(false);
 	const [started, setStarted] = useState(false);
 	const [samples, setSamples] = useState<SampledProgress>({ state: 'idle', loaded: 0, total: 0 });
+	const [chord, setChord] = useState('');
+	const [gmName, setGmName] = useState('');
+	const [gm, setGm] = useState<GmProgress>({ name: '', state: 'idle', loaded: 0, total: 0 });
 
 	const mountRef = useRef<HTMLDivElement>(null);
 	const meterRef = useRef<HTMLDivElement>(null);
 	const engineRef = useRef<AudioEngine | null>(null);
+	// 지금 손가락이 눌러 놓은 음. 코드 이름을 뽑는 데만 쓴다.
+	const soundingRef = useRef(new Map<string, number>());
+	const chordPendingRef = useRef(false);
 	const keyboardRef = useRef<Keyboard | null>(null);
 
 	const layout = useMemo(
@@ -53,8 +62,8 @@ export default function KeyboardPiano() {
 		engineRef.current = engine;
 
 		const keyboard = new Keyboard(mountRef.current as HTMLElement, {
-			onNoteOn: (id, midi) => engine.noteOn(id, midi),
-			onNoteOff: id => engine.noteOff(id),
+			onNoteOn: (id, midi) => noteOnRef.current(id, midi),
+			onNoteOff: id => noteOffRef.current(id),
 		});
 		keyboardRef.current = keyboard;
 		keyboard.applyLayout(layoutRef.current);
@@ -62,6 +71,7 @@ export default function KeyboardPiano() {
 
 		// 샘플은 뒤에서 받는다. 받는 동안에도 합성으로 소리가 나므로 화면이 막히지 않는다.
 		engine.loadSamples(setSamples);
+		engine.prepareGm(setGm);
 
 		// 좁은 화면에서는 자판의 두 줄과 같은 자리로 접는다. 한 줄로 23개를 두면
 		// 폰에서 건반 하나가 17px 이라 칠 수가 없다.
@@ -92,15 +102,54 @@ export default function KeyboardPiano() {
 	}, [presetIndex]);
 
 	useEffect(() => {
+		engineRef.current?.selectGm(gmName);
+	}, [gmName]);
+
+	// 악기 목록은 한 번만 만든다. 125개를 매 렌더마다 정렬하지 않는다.
+	const gmList = useMemo(() => gmNames(), []);
+
+	useEffect(() => {
 		engineRef.current?.setSustain(pedalHeld || pedalLatched);
 	}, [pedalHeld, pedalLatched]);
+
+	// 코드 표시는 화면용이라 오디오 뒤로 미룬다. 한 프레임에 한 번만 계산한다.
+	const refreshChord = useCallback(() => {
+		if (chordPendingRef.current) return;
+		chordPendingRef.current = true;
+		requestAnimationFrame(() => {
+			chordPendingRef.current = false;
+			const midis: number[] = [];
+			soundingRef.current.forEach(m => midis.push(m));
+			setChord(describe(midis));
+		});
+	}, []);
+
+	const noteOn = useCallback((id: string, midi: number) => {
+		engineRef.current?.noteOn(id, midi);
+		soundingRef.current.set(id, midi);
+		refreshChord();
+	}, [refreshChord]);
+
+	const noteOff = useCallback((id: string) => {
+		engineRef.current?.noteOff(id);
+		soundingRef.current.delete(id);
+		refreshChord();
+	}, [refreshChord]);
+
+	// 마운트 이펙트는 한 번만 돌기 때문에 최신 콜백을 ref 로 건네준다.
+	const noteOnRef = useRef(noteOn);
+	const noteOffRef = useRef(noteOff);
+	noteOnRef.current = noteOn;
+	noteOffRef.current = noteOff;
 
 	const panic = useCallback(() => {
 		keyboardRef.current?.releasePointers();
 		engineRef.current?.releaseAll();
 		setPedalHeld(false);
 		NOTE_CODES.forEach(code => keyboardRef.current?.release(code));
-	}, []);
+		soundingRef.current.clear();
+		refreshChord();
+	}, [refreshChord]);
 
 	// ── 키보드 입력 ───────────────────────────────────────────────────────
 	// 노트 키는 오디오를 먼저 스케줄하고 화면 갱신은 그 뒤에 둔다. 화면 갱신은
@@ -113,7 +162,7 @@ export default function KeyboardPiano() {
 			if (key) {
 				e.preventDefault();
 				if (e.repeat) return; // OS 자동 반복은 새 타건이 아니다
-				engineRef.current?.noteOn(e.code, key.midi);
+				noteOn(e.code, key.midi);
 				keyboardRef.current?.press(e.code);
 				return;
 			}
@@ -162,7 +211,7 @@ export default function KeyboardPiano() {
 		// 배치가 바뀌어 지금은 소리가 없는 자리가 되었어도, 누르고 있던 음은 놓아야 한다.
 		const onKeyUp = (e: KeyboardEvent) => {
 			if (NOTE_CODES.has(e.code)) {
-				engineRef.current?.noteOff(e.code);
+				noteOff(e.code);
 				keyboardRef.current?.release(e.code);
 				return;
 			}
@@ -177,7 +226,7 @@ export default function KeyboardPiano() {
 			window.removeEventListener('keyup', onKeyUp);
 			window.removeEventListener('blur', panic);
 		};
-	}, [panic]);
+	}, [panic, noteOn, noteOff]);
 
 	// ── 오디오 시동 ───────────────────────────────────────────────────────
 	// 컨텍스트는 이미 만들어져 있고 여기서는 resume 만 한다. 타건 경로에는 없다.
@@ -226,13 +275,14 @@ export default function KeyboardPiano() {
 						<button
 							key={preset.id}
 							type="button"
-							className={i === presetIndex ? 'tone on' : 'tone'}
+							className={!gmName && i === presetIndex ? 'tone on' : 'tone'}
 							onClick={e => {
 								setPresetIndex(i);
+								setGmName('');
 								e.currentTarget.blur();
 							}}>
 							{preset.name}
-							{preset.id === 'grand' && samples.state === 'loading' && (
+							{!gmName && preset.id === 'grand' && samples.state === 'loading' && (
 								<span
 									className="loading"
 									style={{ width: `${samples.total ? (samples.loaded / samples.total) * 100 : 0}%` }}
@@ -240,6 +290,29 @@ export default function KeyboardPiano() {
 							)}
 						</button>
 					))}
+				</div>
+
+				<div className="group">
+					<span className="glabel">General MIDI</span>
+					<select
+						className={gmName ? 'gm on' : 'gm'}
+						value={gmName}
+						onChange={e => {
+							setGmName(e.target.value);
+							e.target.blur();
+						}}>
+						<option value="">합성 톤 쓰기</option>
+						{gmList.map(name => (
+							<option key={name} value={name}>
+								{gmLabel(name)}
+							</option>
+						))}
+					</select>
+					{gmName && gm.state === 'loading' && (
+						<span className="glabel">
+							{gm.total ? `${Math.round((gm.loaded / gm.total) * 100)}%` : '받는 중'}
+						</span>
+					)}
 				</div>
 
 				<div className="group">
@@ -344,6 +417,7 @@ export default function KeyboardPiano() {
 			</header>
 
 			<div className="stage">
+				<div className="chord" aria-live="off">{chord}</div>
 				<div className="keyboard" ref={mountRef} />
 			</div>
 

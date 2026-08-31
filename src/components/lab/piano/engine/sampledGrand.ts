@@ -10,6 +10,9 @@
 
 import { CacheStorage, SplendidGrandPiano } from 'smplr';
 
+import { midiToFreq } from './keymap';
+import { hammer } from './presets';
+
 /** 넓힐 때는 요청 범위보다 조금 더 받아 둔다. 한 칸 옮길 때마다 다시 받지 않으려고. */
 const MARGIN = 6;
 
@@ -20,6 +23,13 @@ const VEL_RANGE: [number, number] = [68, 100];
 /** 메조포르테. 포르티시모로 고정하면 모든 음이 때리는 소리가 된다. */
 const VEL_CENTER = 88;
 const VEL_JITTER = 8;
+
+// 녹음은 최대 진폭까지 20ms 가 걸린다(50% 도달에 7~8ms). 실제 피아노가 원래
+// 그렇지만, 그만큼 타건이 늦게 느껴진다. 두 가지로 앞을 당긴다.
+// 0.8ms 에 최대인 해머 소리를 샘플 위에 깐다. 몸통은 샘플 그대로 두고 첫
+// 순간의 반응만 되살린다. smplr 은 노트 단위 offset 을 안 받아서 샘플 앞을
+// 잘라내는 방법은 쓸 수 없다.
+const HAMMER_LEVEL = 0.055;
 const LOWEST = 21;  // A0
 const HIGHEST = 108; // C8
 
@@ -131,6 +141,7 @@ export class SampledGrand {
       velocity: Math.max(VEL_RANGE[0] + 2, Math.min(VEL_RANGE[1] - 2, v)),
       time: t,
     });
+    hammer(this.ctx, this.out, midiToFreq(midi), HAMMER_LEVEL * velocity, t);
     return (at: number) => stop(at);
   }
 

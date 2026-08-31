@@ -10,6 +10,8 @@
 import { midiToFreq } from './keymap';
 import { PRESETS, warmup } from './presets';
 import type { Preset, Voice } from './presets';
+import { GmBank } from './gmInstrument';
+import type { GmProgress } from './gmInstrument';
 import { SampledGrand } from './sampledGrand';
 import type { SampledProgress } from './sampledGrand';
 
@@ -67,8 +69,12 @@ export class AudioEngine {
 
   preset: Preset;
   sustain: boolean;
-  /** Grand Piano 만 샘플로 대체한다. 나머지 톤은 합성이 더 자연스럽고 용량이 0 이다. */
+  /** Grand Piano 만 샘플로 대체한다. 나머지 합성 톤은 용량이 0 이라 그대로 둔다. */
   sampled: SampledGrand | null = null;
+  /** General MIDI 악기. 고른 뒤에 받으므로 첫 방문 용량은 안 늘어난다. */
+  gm: GmBank | null = null;
+  /** 비어 있지 않으면 합성 프리셋 대신 이 GM 악기를 쓴다. */
+  gmName = '';
   /** 입력 id -> 보이스 */
   held: Map<string, HeldVoice>;
   /** 페달이 붙잡고 있는 보이스 */
@@ -143,6 +149,17 @@ export class AudioEngine {
     this.sampled = new SampledGrand(this.ctx, this.bus, onProgress);
   }
 
+  prepareGm(onProgress?: (p: GmProgress) => void): void {
+    if (this.gm) return;
+    this.gm = new GmBank(this.ctx, this.bus, onProgress);
+  }
+
+  /** 빈 문자열이면 합성 프리셋으로 돌아간다. */
+  selectGm(name: string): void {
+    this.gmName = name;
+    if (name) this.gm?.select(name);
+  }
+
   /**
    * 건반에 올라온 음역을 알린다. 아직 안 받은 범위면 뒤에서 받기 시작한다.
    * 배치가 바뀔 때만 부르므로 타건 경로에는 없다.
@@ -153,28 +170,33 @@ export class AudioEngine {
 
   /** 지금 이 음을 샘플로 낼 수 있는가. 아직 안 받은 음은 합성으로 낸다. */
   private useSampled(midi: number): boolean {
-    return this.preset.id === 'grand'
+    return !this.gmName
+      && this.preset.id === 'grand'
       && this.sampled?.ready === true
       && this.sampled.covers(midi);
   }
 
-  /** 샘플 한 음을 보이스 모양으로 감싼다. 페달·스틸링 로직을 그대로 쓰려는 것이다. */
-  private buildSampledVoice(midi: number, vel: number, t: number): Voice {
-    const stop = this.sampled!.start(midi, vel, t);
+  private useGm(): boolean {
+    return this.gmName !== '' && this.gm?.ready === true && this.gm.current === this.gmName;
+  }
+
+  /** 샘플러가 낸 음을 보이스 모양으로 감싼다. 페달·스틸링 로직을 그대로 쓰려는 것이다. */
+  private wrapSampled(stop: (at: number) => void, t: number, tail: number): Voice {
     let dead = false;
     return {
-      // 샘플은 스스로 끝나지만, 다 사그라든 보이스가 자리를 차지하지 않게 상한을 둔다.
       naturalEnd: t + 14,
       get dead() { return dead; },
       release(rt: number, fast?: boolean): number {
         if (dead) return rt;
         dead = true;
         stop(rt);
-        return rt + (fast ? 0.05 : 0.7);
+        return rt + (fast ? 0.05 : tail);
       },
       dispose(): void { dead = true; },
     };
   }
+
+
 
   setVolume(v: number): void {
     this.master.gain.setTargetAtTime(v, this.ctx.currentTime, 0.01);
@@ -194,9 +216,14 @@ export class AudioEngine {
     this.prune(t);
     while (this.active.length >= MAX_VOICES) this.retire(this.active[0], t, true);
 
-    const voice: HeldVoice = this.useSampled(midi)
-      ? this.buildSampledVoice(midi, vel, t)
-      : this.preset.build(this.ctx, this.bus, midiToFreq(midi), midi, vel, t);
+    let voice: HeldVoice;
+    if (this.useGm()) {
+      voice = this.wrapSampled(this.gm!.start(midi, vel, t), t, 0.25);
+    } else if (this.useSampled(midi)) {
+      voice = this.wrapSampled(this.sampled!.start(midi, vel, t), t, 0.7);
+    } else {
+      voice = this.preset.build(this.ctx, this.bus, midiToFreq(midi), midi, vel, t);
+    }
     voice.id = id;
     this.held.set(id, voice);
     this.active.push(voice);
@@ -249,6 +276,8 @@ export class AudioEngine {
     this.releaseAll();
     this.sampled?.dispose();
     this.sampled = null;
+    this.gm?.dispose();
+    this.gm = null;
     void this.ctx.close().catch(() => { /* 이미 닫힘 */ });
   }
 

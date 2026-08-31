@@ -99,6 +99,12 @@
   font-weight: 600;
 }
 
+.kb-piano select.gm { max-width: 190px; }
+.kb-piano select.gm.on {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .kb-piano .stepper {
   display: flex;
   align-items: center;
@@ -169,11 +175,26 @@
 }
 
 /* ── 건반 ──────────────────────────────────────────────────────────────── */
+/* 지금 눌린 음의 코드 이름. 건반 바로 위에 뜬다. */
+.kb-piano .chord {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 600 22px/1 -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif;
+  letter-spacing: -0.01em;
+  color: var(--accent);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .kb-piano .stage {
   flex: 1;
   display: flex;
-  align-items: center;
-  padding: 22px 18px 30px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 18px 26px;
   min-height: 0;
 }
 

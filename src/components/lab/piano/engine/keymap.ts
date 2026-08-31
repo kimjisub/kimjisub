@@ -44,6 +44,11 @@ export function noteName(midi: number): string {
   return NOTE[mod(midi, 12)] + (Math.floor(midi / 12) - 1);
 }
 
+/** 옥타브를 뗀 음이름. 코드 인식에 넣을 때 쓴다. */
+export function pitchClassOf(midi: number): string {
+  return NOTE[mod(midi, 12)].replace('♯', '#');
+}
+
 export function midiToFreq(midi: number): number {
   return 440 * Math.pow(2, (midi - 69) / 12);
 }

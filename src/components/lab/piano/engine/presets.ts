@@ -162,6 +162,33 @@ function bus(ctx: BaseAudioContext, out: AudioNode): GainNode {
   return g;
 }
 
+/**
+ * 해머가 현을 때리는 소리. 짧고 넓게 퍼져야 "톡" 하고 들린다.
+ * 0.8ms 만에 최대에 닿으므로 타건 순간의 반응을 만드는 것이 이 소리다.
+ * 녹음 샘플은 최대 진폭까지 20ms 가 걸려서, 샘플 쪽에서도 이걸 얹는다.
+ */
+export function hammer(
+  ctx: BaseAudioContext, out: AudioNode, freq: number, level: number, t: number,
+): AudioBufferSourceNode {
+  const nyq = ctx.sampleRate / 2;
+  const node = noise(ctx);
+  const hp = ctx.createBiquadFilter();
+  hp.type = 'highpass';
+  hp.frequency.value = Math.min(freq * 1.2, 900);
+  const lp = ctx.createBiquadFilter();
+  lp.type = 'lowpass';
+  lp.frequency.value = Math.min(freq * 18, nyq * 0.6);
+  lp.Q.value = 0.5;
+  const g = envGain(ctx);
+  g.gain.setValueAtTime(0.0001, t);
+  g.gain.linearRampToValueAtTime(Math.max(0.0002, level), t + 0.0008);
+  g.gain.exponentialRampToValueAtTime(0.0001, t + 0.028);
+  node.connect(hp); hp.connect(lp); lp.connect(g); g.connect(out);
+  node.start(t, Math.random() * 0.4);
+  node.stop(t + 0.04);
+  return node;
+}
+
 // setTargetAtTime 의 시상수. T60(60dB 감쇠) 기준 대략 decay / 6.9 다.
 const tau = (decay: number) => decay / 6.9;
 
@@ -242,23 +269,8 @@ function grand(
     }
   }
 
-  // 해머가 현을 때리는 소리. 짧고 넓게 퍼져야 "톡" 하고 들린다.
-  const hammer = noise(ctx);
-  const hp = ctx.createBiquadFilter();
-  hp.type = 'highpass';
-  hp.frequency.value = Math.min(freq * 1.2, 900);
-  const lp = ctx.createBiquadFilter();
-  lp.type = 'lowpass';
-  lp.frequency.value = Math.min(freq * 18, nyq * 0.6);
-  lp.Q.value = 0.5;
-  const hg = envGain(ctx);
-  hg.gain.setValueAtTime(0.0001, t);
-  hg.gain.linearRampToValueAtTime(v * 0.10, t + 0.0008);
-  hg.gain.exponentialRampToValueAtTime(0.0001, t + 0.028);
-  hammer.connect(hp); hp.connect(lp); lp.connect(hg); hg.connect(master);
-  hammer.start(t, Math.random() * 0.4);
-  hammer.stop(t + 0.04);
-  sources.push(src(hammer, t + 0.04));
+  const hammerSrc = hammer(ctx, master, freq, v * 0.10, t);
+  sources.push(src(hammerSrc, t + 0.04));
 
   // 댐퍼는 저음일수록 느리게 닿는다.
   const releaseTime = midi < 45 ? 0.24 : midi < 72 ? 0.13 : 0.07;
