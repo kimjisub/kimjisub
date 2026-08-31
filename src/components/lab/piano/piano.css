@@ -173,7 +173,20 @@
   max-height: 440px;
   touch-action: none;
   user-select: none;
+  display: flex;
+  flex-direction: column;
 }
+
+.kb-piano .keyboard.split { gap: 14px; }
+
+/* 건반은 줄 안에서 절대 위치를 잡는다. 한 줄이면 둘째 줄이 비어 사라진다. */
+.kb-piano .row {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
+.kb-piano .row.hidden { display: none; }
 
 .kb-piano .key {
   position: absolute;
@@ -262,6 +275,10 @@
 .kb-piano .gate.hidden { opacity: 0; }
 
 @media (max-width: 720px) {
-  .kb-piano .bar { gap: 12px; padding: 10px 12px; }
+  .kb-piano .bar { gap: 10px; padding: 8px 10px; }
+  .kb-piano .stage { padding: 10px 8px 14px; }
+  .kb-piano .keyboard { max-height: none; }
   .kb-piano .key .name { display: none; }
+  /* 물리 키보드가 없는 화면이라 단축키 안내는 자리만 차지한다. */
+  .kb-piano .help { display: none; }
 }

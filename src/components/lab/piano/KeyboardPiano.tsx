@@ -58,7 +58,15 @@ export default function KeyboardPiano() {
 		keyboard.applyLayout(layoutRef.current);
 		setStarted(engine.running);
 
+		// 좁은 화면에서는 자판의 두 줄과 같은 자리로 접는다. 한 줄로 23개를 두면
+		// 폰에서 건반 하나가 17px 이라 칠 수가 없다.
+		const narrow = window.matchMedia('(max-width: 720px)');
+		const applySplit = () => keyboard.setSplit(narrow.matches);
+		applySplit();
+		narrow.addEventListener('change', applySplit);
+
 		return () => {
+			narrow.removeEventListener('change', applySplit);
 			keyboard.destroy();
 			engine.destroy();
 			engineRef.current = null;
@@ -79,6 +87,7 @@ export default function KeyboardPiano() {
 	}, [pedalHeld, pedalLatched]);
 
 	const panic = useCallback(() => {
+		keyboardRef.current?.releasePointers();
 		engineRef.current?.releaseAll();
 		setPedalHeld(false);
 		NOTE_CODES.forEach(code => keyboardRef.current?.release(code));

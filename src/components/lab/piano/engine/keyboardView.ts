@@ -4,13 +4,22 @@
 import { BLACK_SLOT_CODES, capOf, noteName, WHITE_CODES } from './keymap';
 import type { Layout } from './keymap';
 
-const WHITE_W = 100 / WHITE_CODES.length;
-const BLACK_W = WHITE_W * 0.64;
+// 자판의 두 줄을 그대로 나눈다. 윗줄 q…\ 13개, 아랫줄 z…/ 10개.
+const SPLIT = 13;
+
+// 좁은 화면에서 두 줄로 접을 때도 건반 폭은 그대로 둔다. 두 줄 모두 13분할
+// 폭을 쓰고 아랫줄이 10개에서 끝나 오른쪽이 남는다.
+const WHITE_W_WIDE = 100 / WHITE_CODES.length;
+const WHITE_W_SPLIT = 100 / SPLIT;
+const BLACK_RATIO = 0.64;
 
 interface KeyNodes {
   el: HTMLDivElement;
   sol: HTMLSpanElement;
   name: HTMLSpanElement;
+  kind: 'white' | 'black';
+  /** 흰건반은 자기 자리, 검은건반은 왼쪽 흰건반의 자리 */
+  slot: number;
 }
 
 export interface KeyboardHandlers {
@@ -22,12 +31,14 @@ export class Keyboard {
   private el: HTMLElement;
   private onNoteOn: KeyboardHandlers['onNoteOn'];
   private onNoteOff: KeyboardHandlers['onNoteOff'];
+  private rows: HTMLDivElement[] = [];
   private nodes = new Map<string, KeyNodes>();
-  private layout: Layout | null = null;
   private pending = new Map<string, boolean>();
   private flushing = false;
-  private pointerCode: string | null = null;
+  /** 손가락 하나마다 지금 누르고 있는 건반. 여러 개가 동시에 눌린다. */
+  private pointers = new Map<number, string>();
   private cleanups: (() => void)[] = [];
+  private split = false;
 
   constructor(el: HTMLElement, { onNoteOn, onNoteOff }: KeyboardHandlers) {
     this.el = el;
@@ -35,33 +46,29 @@ export class Keyboard {
     this.onNoteOff = onNoteOff;
 
     this.buildDom();
+    this.setSplit(false);
     this.bindPointer();
   }
 
   private buildDom() {
-    const frag = document.createDocumentFragment();
-
+    for (let r = 0; r < 2; r++) {
+      const row = document.createElement('div');
+      row.className = 'row';
+      this.rows.push(row);
+      this.el.appendChild(row);
+    }
     for (let i = 0; i < WHITE_CODES.length; i++) {
-      frag.appendChild(this.makeKey(WHITE_CODES[i], 'white', {
-        left: `${i * WHITE_W}%`,
-        width: `${WHITE_W}%`,
-      }));
+      this.makeKey(WHITE_CODES[i], 'white', i);
     }
     for (let i = 0; i < BLACK_SLOT_CODES.length; i++) {
-      frag.appendChild(this.makeKey(BLACK_SLOT_CODES[i], 'black', {
-        left: `${(i + 1) * WHITE_W - BLACK_W / 2}%`,
-        width: `${BLACK_W}%`,
-      }));
+      this.makeKey(BLACK_SLOT_CODES[i], 'black', i);
     }
-    this.el.appendChild(frag);
   }
 
-  private makeKey(code: string, kind: 'white' | 'black', style: { left: string; width: string }): HTMLDivElement {
+  private makeKey(code: string, kind: 'white' | 'black', slot: number): void {
     const el = document.createElement('div');
     el.className = `key ${kind}`;
     el.dataset.code = code;
-    el.style.left = style.left;
-    el.style.width = style.width;
 
     const cap = document.createElement('span');
     cap.className = 'cap';
@@ -74,12 +81,40 @@ export class Keyboard {
     name.className = 'name';
 
     el.append(cap, sol, name);
-    this.nodes.set(code, { el, sol, name });
-    return el;
+    this.nodes.set(code, { el, sol, name, kind, slot });
+  }
+
+  /**
+   * 한 줄로 펼칠지 두 줄로 접을지 정한다. 접으면 자판의 두 줄과 같은 자리로
+   * 나뉜다. 줄이 갈리는 자리의 검은건반(`a`)은 아랫줄 맨 왼쪽에 붙인다.
+   */
+  setSplit(split: boolean): void {
+    this.split = split;
+    const whiteW = split ? WHITE_W_SPLIT : WHITE_W_WIDE;
+    const blackW = whiteW * BLACK_RATIO;
+
+    this.rows[1].classList.toggle('hidden', !split);
+    this.el.classList.toggle('split', split);
+
+    this.nodes.forEach(node => {
+      // 검은건반은 왼쪽 흰건반 다음 자리에 걸친다.
+      const whiteIndex = node.kind === 'white' ? node.slot : node.slot + 1;
+      const rowIndex = split && whiteIndex >= SPLIT ? 1 : 0;
+      const local = whiteIndex - (rowIndex === 1 ? SPLIT : 0);
+
+      const left = node.kind === 'white'
+        ? local * whiteW
+        : Math.max(0, local * whiteW - blackW / 2);
+
+      node.el.style.left = `${left}%`;
+      node.el.style.width = `${node.kind === 'white' ? whiteW : blackW}%`;
+
+      const row = this.rows[rowIndex];
+      if (node.el.parentElement !== row) row.appendChild(node.el);
+    });
   }
 
   applyLayout(layout: Layout): void {
-    this.layout = layout;
     for (const key of [...layout.white, ...layout.black]) {
       const node = this.nodes.get(key.code);
       if (!node) continue;
@@ -117,45 +152,58 @@ export class Keyboard {
   }
 
   private bindPointer(): void {
-    const start = (el: HTMLElement) => {
+    const start = (pointerId: number, el: HTMLElement) => {
       const code = el.dataset.code as string;
-      this.pointerCode = code;
+      this.pointers.set(pointerId, code);
       this.onNoteOn(`m:${code}`, Number(el.dataset.midi));
       this.press(code);
     };
-    const stop = () => {
-      if (this.pointerCode == null) return;
-      this.onNoteOff(`m:${this.pointerCode}`);
-      this.release(this.pointerCode);
-      this.pointerCode = null;
+    const stop = (pointerId: number) => {
+      const code = this.pointers.get(pointerId);
+      if (code == null) return;
+      this.pointers.delete(pointerId);
+      this.onNoteOff(`m:${code}`);
+      this.release(code);
     };
 
     const onDown = (e: PointerEvent) => {
       e.preventDefault();
       const el = this.keyAt(e.clientX, e.clientY);
-      if (el) start(el);
+      if (el) start(e.pointerId, el);
     };
 
-    // 누른 채로 끌면 글리산도가 된다.
+    // 누른 채로 끌면 글리산도가 된다. 손가락마다 따로 따라간다.
     const onMove = (e: PointerEvent) => {
-      if (this.pointerCode == null) return;
+      const code = this.pointers.get(e.pointerId);
+      if (code == null) return;
       const el = this.keyAt(e.clientX, e.clientY);
-      if (!el || el.dataset.code === this.pointerCode) return;
-      stop();
-      start(el);
+      if (!el || el.dataset.code === code) return;
+      stop(e.pointerId);
+      start(e.pointerId, el);
     };
+
+    const onUp = (e: PointerEvent) => stop(e.pointerId);
 
     this.el.addEventListener('pointerdown', onDown);
     window.addEventListener('pointermove', onMove);
-    window.addEventListener('pointerup', stop);
-    window.addEventListener('pointercancel', stop);
+    window.addEventListener('pointerup', onUp);
+    window.addEventListener('pointercancel', onUp);
 
     this.cleanups.push(() => {
       this.el.removeEventListener('pointerdown', onDown);
       window.removeEventListener('pointermove', onMove);
-      window.removeEventListener('pointerup', stop);
-      window.removeEventListener('pointercancel', stop);
+      window.removeEventListener('pointerup', onUp);
+      window.removeEventListener('pointercancel', onUp);
     });
+  }
+
+  /** 손가락이 다 떨어진 것으로 치고 울리던 음을 놓는다. */
+  releasePointers(): void {
+    this.pointers.forEach(code => {
+      this.onNoteOff(`m:${code}`);
+      this.release(code);
+    });
+    this.pointers.clear();
   }
 
   // 페이지를 떠날 때 창에 걸어 둔 리스너와 만들어 둔 건반을 걷어낸다.
@@ -163,6 +211,7 @@ export class Keyboard {
     for (const off of this.cleanups) off();
     this.cleanups = [];
     this.nodes.clear();
+    this.rows = [];
     this.el.replaceChildren();
   }
 }
