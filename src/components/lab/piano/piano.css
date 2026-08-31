@@ -1,0 +1,267 @@
+.kb-piano {
+  --bg: #0d0f13;
+  --panel: #161a21;
+  --line: #262c36;
+  --text: #e6e9ef;
+  --dim: #8b93a1;
+  --accent: #ffb454;
+  --accent-dim: #7a5320;
+}
+
+.kb-piano *,
+.kb-piano *::before,
+.kb-piano *::after { box-sizing: border-box; }
+
+/* 사이트 안에 얹히므로 body 를 건드리지 않고 이 컨테이너만 화면을 채운다. */
+.kb-piano {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+  font: 13px/1.4 -apple-system, BlinkMacSystemFont, 'Pretendard', 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+/* ── 컨트롤 바 ─────────────────────────────────────────────────────────── */
+.kb-piano .bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+}
+
+.kb-piano .foot {
+  border-bottom: 0;
+  border-top: 1px solid var(--line);
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--dim);
+}
+
+.kb-piano .brand {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: 15px;
+}
+.kb-piano .brand span { color: var(--accent); }
+
+.kb-piano .group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.kb-piano .glabel {
+  color: var(--dim);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.kb-piano button,
+.kb-piano select {
+  font: inherit;
+  color: var(--text);
+  background: #1f242d;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 6px 11px;
+  cursor: pointer;
+  transition: background 90ms, border-color 90ms, color 90ms;
+}
+.kb-piano button:hover, .kb-piano select:hover { background: #272e39; }
+.kb-piano button:active { background: #313a47; }
+
+.kb-piano .tones { gap: 5px; }
+.kb-piano .tone { padding: 6px 9px; font-size: 12px; }
+.kb-piano .tone.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #191100;
+  font-weight: 600;
+}
+
+.kb-piano .stepper {
+  display: flex;
+  align-items: center;
+  background: #1f242d;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  overflow: hidden;
+}
+.kb-piano .stepper button {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 6px 10px;
+  line-height: 1;
+}
+.kb-piano .stepper output {
+  min-width: 48px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+  color: var(--accent);
+  padding: 0 2px;
+}
+
+.kb-piano .sustain.on {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.kb-piano .sustain.latched::after {
+  content: ' 고정';
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.kb-piano input[type=range] {
+  width: 76px;
+  accent-color: var(--accent);
+}
+
+.kb-piano kbd {
+  display: inline-block;
+  padding: 1px 5px;
+  margin: 0 1px;
+  border: 1px solid var(--line);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  background: #1f242d;
+  color: var(--text);
+  font: 11px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.kb-piano .help {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.kb-piano .help span + span {
+  padding-left: 12px;
+  border-left: 1px solid var(--line);
+}
+
+.kb-piano .meter {
+  font: 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ── 건반 ──────────────────────────────────────────────────────────────── */
+.kb-piano .stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 22px 18px 30px;
+  min-height: 0;
+}
+
+.kb-piano .keyboard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 190px;
+  max-height: 440px;
+  touch-action: none;
+  user-select: none;
+}
+
+.kb-piano .key {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3px;
+  padding-bottom: 12px;
+  cursor: pointer;
+  will-change: transform;
+}
+
+.kb-piano .key .cap {
+  font: 600 15px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.kb-piano .key .sol { font-size: 11px; }
+.kb-piano .key .name {
+  font: 10px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  opacity: 0.55;
+}
+
+.kb-piano .white {
+  height: 100%;
+  border: 1px solid #0d0f13;
+  border-radius: 0 0 7px 7px;
+  background: linear-gradient(#fbfcfe 0%, #e6e9ef 78%, #cfd4dd 100%);
+  color: #2a3140;
+  box-shadow: 0 3px 0 #9aa2b1, 0 6px 14px rgba(0, 0, 0, 0.45);
+  transition: transform 60ms ease-out, background 60ms;
+}
+.kb-piano .white .sol { color: #5b6474; }
+
+.kb-piano .black {
+  height: 62%;
+  z-index: 2;
+  border-radius: 0 0 6px 6px;
+  background: linear-gradient(#3b434f 0%, #1b2029 72%, #12161c 100%);
+  color: #dfe4ec;
+  box-shadow: 0 3px 0 #05070a, 0 6px 12px rgba(0, 0, 0, 0.6);
+  transition: transform 60ms ease-out, background 60ms;
+}
+.kb-piano .black .cap { font-size: 13px; }
+.kb-piano .black .sol { display: none; }
+.kb-piano .black .name { opacity: 0.4; }
+
+/* 음계상 검은건반이 없는 자리 */
+.kb-piano .key.mute {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* 도 자리 표시 */
+.kb-piano .white.tonic {
+  background: linear-gradient(#fff6e6 0%, #f6e4c4 78%, #e6cfa8 100%);
+}
+.kb-piano .white.tonic .sol {
+  color: #8a5c12;
+  font-weight: 700;
+}
+
+.kb-piano .white.down {
+  background: linear-gradient(#ffd79a 0%, #ffbe63 78%, #f0a63f 100%);
+  transform: translateY(3px);
+  box-shadow: 0 0 0 #9aa2b1, 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+.kb-piano .black.down {
+  background: linear-gradient(#c98a2d 0%, #8a5a17 72%, #6b450f 100%);
+  transform: translateY(3px);
+  box-shadow: 0 0 0 #05070a, 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* ── 시동 안내 ─────────────────────────────────────────────────────────── */
+.kb-piano .gate {
+  position: fixed;
+  inset: auto 0 0 0;
+  display: flex;
+  justify-content: center;
+  padding: 0 0 74px;
+  pointer-events: none;
+  font-size: 12px;
+  color: var(--accent);
+  transition: opacity 220ms;
+}
+.kb-piano .gate.hidden { opacity: 0; }
+
+@media (max-width: 720px) {
+  .kb-piano .bar { gap: 12px; padding: 10px 12px; }
+  .kb-piano .key .name { display: none; }
+}
