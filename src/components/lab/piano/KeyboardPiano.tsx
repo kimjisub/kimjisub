@@ -27,6 +27,11 @@ const NOTE_CODES = new Set([...WHITE_CODES, ...BLACK_SLOT_CODES]);
 const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v));
 const signed = (v: number) => (v > 0 ? `+${v}` : String(v));
 
+// 누르고 있는 동안만 옥타브를 옮긴다. 이벤트에서 바로 읽으므로 타건 경로에
+// React 상태를 들여다보는 일이 없다. 둘 다 누르면 서로 지운다.
+const momentaryOf = (e: KeyboardEvent) =>
+	(e.shiftKey ? 12 : 0) + (e.ctrlKey || e.altKey ? -12 : 0);
+
 export default function KeyboardPiano() {
 	const [presetIndex, setPresetIndex] = useState(0);
 	const [octave, setOctave] = useState(0);
@@ -37,6 +42,8 @@ export default function KeyboardPiano() {
 	const [started, setStarted] = useState(false);
 	const [samples, setSamples] = useState<SampledProgress>({ state: 'idle', loaded: 0, total: 0 });
 	const [chord, setChord] = useState('');
+	// 화면에 지금 옥타브가 옮겨져 있다고 알리는 용도. 소리에는 안 쓴다.
+	const [momentary, setMomentary] = useState(0);
 	const [gmName, setGmName] = useState('');
 	const [gm, setGm] = useState<GmProgress>({ name: '', state: 'idle', loaded: 0, total: 0 });
 	const [volume, setVolume] = useState(DEFAULTS.volume);
@@ -96,10 +103,11 @@ export default function KeyboardPiano() {
 
 	useEffect(() => {
 		keyboardRef.current?.applyLayout(layout);
-		// 지금 건반에 올라온 음역만 샘플로 받는다. 옥타브나 조옮김으로 벗어나면
-		// 그때 넓혀서 받고, 받는 동안 그 음들은 합성으로 난다.
+		// 지금 건반에 올라온 음역을 샘플로 받는다. Shift·Ctrl 로 한 옥타브씩
+		// 순간 이동할 수 있으므로 위아래로 그만큼 더 받아 둔다. 안 그러면 수식키를
+		// 누른 음만 합성으로 나서 소리가 달라진다.
 		const midis = [...layout.white, ...layout.black].filter(k => k.exists).map(k => k.midi);
-		engineRef.current?.coverRange(Math.min(...midis), Math.max(...midis));
+		engineRef.current?.coverRange(Math.min(...midis) - 12, Math.max(...midis) + 12);
 	}, [layout]);
 
 	useEffect(() => {
@@ -180,6 +188,7 @@ export default function KeyboardPiano() {
 		engineRef.current?.releaseAll();
 		setPedalHeld(false);
 		NOTE_CODES.forEach(code => keyboardRef.current?.release(code));
+		setMomentary(0);
 		soundingRef.current.clear();
 		refreshChord();
 	}, [refreshChord]);
@@ -189,13 +198,15 @@ export default function KeyboardPiano() {
 	// 다시 requestAnimationFrame 으로 미뤄지므로 타건 경로에 남지 않는다.
 	useEffect(() => {
 		const onKeyDown = (e: KeyboardEvent) => {
-			if (e.metaKey || e.ctrlKey) return;
+			// Cmd 는 브라우저 단축키라 그대로 흘려보낸다. Ctrl 은 옥타브를 내리는 키다.
+			if (e.metaKey) return;
+			setMomentary(momentaryOf(e));
 
 			const key = layoutRef.current.map.get(e.code);
 			if (key) {
 				e.preventDefault();
 				if (e.repeat) return; // OS 자동 반복은 새 타건이 아니다
-				noteOn(e.code, key.midi);
+				noteOn(e.code, key.midi + momentaryOf(e));
 				keyboardRef.current?.press(e.code);
 				return;
 			}
@@ -243,6 +254,7 @@ export default function KeyboardPiano() {
 
 		// 배치가 바뀌어 지금은 소리가 없는 자리가 되었어도, 누르고 있던 음은 놓아야 한다.
 		const onKeyUp = (e: KeyboardEvent) => {
+			setMomentary(momentaryOf(e));
 			if (NOTE_CODES.has(e.code)) {
 				noteOff(e.code);
 				keyboardRef.current?.release(e.code);
@@ -360,7 +372,9 @@ export default function KeyboardPiano() {
 							}}>
 							−
 						</button>
-						<output>{signed(octave)}</output>
+						<output className={momentary ? 'shifted' : undefined}>
+							{signed(octave + momentary / 12)}
+						</output>
 						<button
 							type="button"
 							title="↑"
@@ -473,6 +487,13 @@ export default function KeyboardPiano() {
 					<span>
 						<kbd>`</kbd>
 						<kbd>1</kbd> 톤
+					</span>
+					<span>
+						<kbd>Shift</kbd> 옥타브 위
+					</span>
+					<span>
+						<kbd>Ctrl</kbd>
+						<kbd>Alt</kbd> 옥타브 아래
 					</span>
 					<span>
 						<kbd>Esc</kbd> 전부 끄기

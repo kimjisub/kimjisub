@@ -129,6 +129,12 @@
   padding: 0 2px;
 }
 
+/* 누르고 있는 동안만 옥타브가 옮겨졌다는 표시. */
+.kb-piano .stepper output.shifted {
+  color: #ffd79a;
+  font-weight: 700;
+}
+
 .kb-piano .sustain.on {
   background: var(--accent-dim);
   border-color: var(--accent);
