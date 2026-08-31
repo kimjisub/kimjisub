@@ -8,6 +8,9 @@ import { CacheStorage, getSoundfontNames, Soundfont } from 'smplr';
 
 type Instrument = ReturnType<typeof Soundfont>;
 
+/** 손을 뗐을 때 잦아드는 시간. 지속음 악기까지 있어 피아노보다 조금 길게 둔다. */
+export const GM_RELEASE_SEC = 0.14;
+
 export type GmState = 'idle' | 'loading' | 'ready' | 'failed';
 
 export interface GmProgress {
@@ -103,6 +106,8 @@ export class GmBank {
       note: midi,
       velocity: Math.max(1, Math.min(127, Math.round(velocity * 110))),
       time: t,
+      // 기본값 0.3 초는 짧게 친 음도 길게 울려 스타카토가 안 된다.
+      ampRelease: GM_RELEASE_SEC,
     });
     return (at: number) => stop(at);
   }

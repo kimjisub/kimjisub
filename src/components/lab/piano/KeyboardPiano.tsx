@@ -19,6 +19,7 @@ import {
 } from './engine/keymap';
 import type { Layout } from './engine/keymap';
 import { PRESETS } from './engine/presets';
+import { DEFAULTS, load, save } from './engine/settings';
 import type { SampledProgress } from './engine/sampledGrand';
 
 const NOTE_CODES = new Set([...WHITE_CODES, ...BLACK_SLOT_CODES]);
@@ -38,6 +39,10 @@ export default function KeyboardPiano() {
 	const [chord, setChord] = useState('');
 	const [gmName, setGmName] = useState('');
 	const [gm, setGm] = useState<GmProgress>({ name: '', state: 'idle', loaded: 0, total: 0 });
+	const [volume, setVolume] = useState(DEFAULTS.volume);
+	const [space, setSpace] = useState(DEFAULTS.space);
+	// 저장된 값을 읽기 전에 기본값으로 덮어쓰지 않으려는 표시.
+	const restoredRef = useRef(false);
 
 	const mountRef = useRef<HTMLDivElement>(null);
 	const meterRef = useRef<HTMLDivElement>(null);
@@ -107,6 +112,34 @@ export default function KeyboardPiano() {
 
 	// 악기 목록은 한 번만 만든다. 125개를 매 렌더마다 정렬하지 않는다.
 	const gmList = useMemo(() => gmNames(), []);
+
+	useEffect(() => {
+		engineRef.current?.setVolume(volume / 100);
+	}, [volume]);
+
+	useEffect(() => {
+		engineRef.current?.setSpace(space / 100);
+	}, [space]);
+
+	// 저장된 설정은 마운트 뒤에 읽는다. 서버 렌더에는 localStorage 가 없어서
+	// 렌더 중에 읽으면 하이드레이션이 어긋난다.
+	useEffect(() => {
+		const saved = load();
+		setPresetIndex(saved.presetIndex);
+		setGmName(saved.gmName);
+		setOctave(saved.octave);
+		setTranspose(saved.transpose);
+		setAnchorIndex(saved.anchorIndex);
+		setVolume(saved.volume);
+		setSpace(saved.space);
+		setPedalLatched(saved.pedalLatched);
+		restoredRef.current = true;
+	}, []);
+
+	useEffect(() => {
+		if (!restoredRef.current) return;
+		save({ presetIndex, gmName, octave, transpose, anchorIndex, volume, space, pedalLatched });
+	}, [presetIndex, gmName, octave, transpose, anchorIndex, volume, space, pedalLatched]);
 
 	useEffect(() => {
 		engineRef.current?.setSustain(pedalHeld || pedalLatched);
@@ -387,8 +420,8 @@ export default function KeyboardPiano() {
 						type="range"
 						min="0"
 						max="100"
-						defaultValue="80"
-						onInput={e => engineRef.current?.setVolume(Number(e.currentTarget.value) / 100)}
+						value={volume}
+						onChange={e => setVolume(Number(e.target.value))}
 					/>
 				</div>
 
@@ -398,8 +431,8 @@ export default function KeyboardPiano() {
 						type="range"
 						min="0"
 						max="70"
-						defaultValue="30"
-						onInput={e => engineRef.current?.setSpace(Number(e.currentTarget.value) / 100)}
+						value={space}
+						onChange={e => setSpace(Number(e.target.value))}
 					/>
 				</div>
 

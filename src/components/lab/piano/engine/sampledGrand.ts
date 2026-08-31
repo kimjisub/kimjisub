@@ -30,6 +30,15 @@ const VEL_JITTER = 8;
 // 순간의 반응만 되살린다. smplr 은 노트 단위 offset 을 안 받아서 샘플 앞을
 // 잘라내는 방법은 쓸 수 없다.
 const HAMMER_LEVEL = 0.055;
+
+// 손을 뗐을 때 소리가 잦아드는 시간. smplr 은 이 값만큼 선형으로 줄인다.
+// 실제 피아노 댐퍼는 저음일수록 느리게 닿는다. 여기를 길게 잡으면 짧게 친
+// 음도 길게 울려서 스타카토가 안 된다.
+function damperSec(midi: number): number {
+  if (midi < 45) return 0.28;
+  if (midi < 72) return 0.16;
+  return 0.09;
+}
 const LOWEST = 21;  // A0
 const HIGHEST = 108; // C8
 
@@ -93,7 +102,7 @@ export class SampledGrand {
           // 재방문 때 다시 받지 않는다. GitHub Pages 는 초당 요청도 제한한다.
           storage: this.storage,
           volume: 110,
-          decayTime: 0.6,
+          decayTime: 0.16, // 음마다 ampRelease 로 덮어쓰지만 기본값도 맞춰 둔다
           notesToLoad: { notes: range(nextLow, nextHigh), velocityRange: VEL_RANGE },
           onLoadProgress: ({ loaded, total }) => {
             this.loaded = loaded;
@@ -133,6 +142,11 @@ export class SampledGrand {
    * 음 하나를 t 에 울리고 멈추는 함수를 돌려준다. 세기는 받아 둔 레이어 안에서만
    * 흔든다. 밖으로 나가면 해당 샘플이 없어 소리가 안 난다.
    */
+  /** 이 음의 댐퍼 시간. 보이스 정리 시점을 맞추는 데 쓴다. */
+  releaseSec(midi: number): number {
+    return damperSec(midi);
+  }
+
   start(midi: number, velocity: number, t: number): (at: number) => void {
     const jitter = (Math.random() * 2 - 1) * VEL_JITTER;
     const v = Math.round(VEL_CENTER * (0.6 + 0.4 * velocity / 0.85) + jitter);
@@ -140,6 +154,7 @@ export class SampledGrand {
       note: midi,
       velocity: Math.max(VEL_RANGE[0] + 2, Math.min(VEL_RANGE[1] - 2, v)),
       time: t,
+      ampRelease: damperSec(midi),
     });
     hammer(this.ctx, this.out, midiToFreq(midi), HAMMER_LEVEL * velocity, t);
     return (at: number) => stop(at);

@@ -10,12 +10,15 @@
 import { midiToFreq } from './keymap';
 import { PRESETS, warmup } from './presets';
 import type { Preset, Voice } from './presets';
-import { GmBank } from './gmInstrument';
+import { GmBank, GM_RELEASE_SEC } from './gmInstrument';
 import type { GmProgress } from './gmInstrument';
 import { SampledGrand } from './sampledGrand';
 import type { SampledProgress } from './sampledGrand';
 
 const MAX_VOICES = 32;
+
+/** 아무리 짧게 쳐도 이만큼은 울린다. 이보다 짧으면 소리가 아니라 잡음이 된다. */
+const MIN_SOUND_SEC = 0.035;
 
 // 임펄스 응답을 파일로 받지 않고 그 자리에서 만든다. 잡음을 지수적으로 줄이면서
 // 갈수록 어둡게 깎으면 작은 홀 비슷한 잔향이 된다.
@@ -189,8 +192,11 @@ export class AudioEngine {
       release(rt: number, fast?: boolean): number {
         if (dead) return rt;
         dead = true;
-        stop(rt);
-        return rt + (fast ? 0.05 : tail);
+        // 시작하자마자 떼면 smplr 이 램프 없이 끊어 딸깍거린다. 아주 짧게라도
+        // 울리게 해서 스타카토가 소리로 남게 한다.
+        const at = Math.max(rt, t + MIN_SOUND_SEC);
+        stop(at);
+        return at + (fast ? 0.05 : tail);
       },
       dispose(): void { dead = true; },
     };
@@ -218,9 +224,10 @@ export class AudioEngine {
 
     let voice: HeldVoice;
     if (this.useGm()) {
-      voice = this.wrapSampled(this.gm!.start(midi, vel, t), t, 0.25);
+      voice = this.wrapSampled(this.gm!.start(midi, vel, t), t, GM_RELEASE_SEC + 0.05);
     } else if (this.useSampled(midi)) {
-      voice = this.wrapSampled(this.sampled!.start(midi, vel, t), t, 0.7);
+      const tail = this.sampled!.releaseSec(midi) + 0.05;
+      voice = this.wrapSampled(this.sampled!.start(midi, vel, t), t, tail);
     } else {
       voice = this.preset.build(this.ctx, this.bus, midiToFreq(midi), midi, vel, t);
     }
