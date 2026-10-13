@@ -35,8 +35,13 @@ export const meta = {
 
 메타 export 아래에 마크다운으로 본문을 쓴다. 최상위 제목(`#`)은 보통 쓰지 않고 `##`부터 시작한다 (title이 메타에 있으므로).
 
+메타 export와 첫 섹션 사이에 맨 위 요약(canonical summary)을 blockquote로 둔다. blockquote(`>`)로 감싸 본문과 시각적으로 구분한다. 요약을 왜 두는지(외부 AI 요약의 평균화 방어), 누가 쓰는지, 형식 조건은 SKILL.md "맨 위 요약 — 압축을 외주 주지 않는다" 참조.
+
 ```mdx
 export const meta = { /* ... */ }
+
+> 이 글의 입장을 2~4문장으로. 정보 나열이 아니라 "나는 X라고 본다"는 결론.
+> meta.description과 토씨까지 같지 않게. 매끄러운 명언 3연발이 아니라 담백하게.
 
 ## 첫 섹션
 
@@ -83,7 +88,19 @@ import img1 from './assets/content-1.png';
 
 **예외**: 코드 그 자체가 글의 의도와 분리될 수 없을 때(특정 시그니처가 논점인 경우, 짧은 한 토막이 글의 펀치라인인 경우)는 코드 블록을 써도 된다. 단, "코드를 보여줘야겠다"는 충동이 들면 먼저 산문으로 바꿔본 뒤에도 정말 필요한지 한 번 더 묻는다.
 
+## 마크다운 표(GFM)는 지원된다
+
+표(`| ... |`), 취소선, 자동 링크 같은 GitHub Flavored Markdown 문법은 이 프로젝트에서 정상 렌더된다. `next.config.mjs`가 `@next/mdx`의 `createMDX`로 MDX를 처리하고 `remark-gfm` 플러그인을 연결해 두었기 때문이다(turbopack/webpack 양쪽 적용). 표 스타일(테두리/패딩)은 본문 article의 Tailwind Typography(`prose`)가 담당한다.
+
+그러니 데이터/구조를 보여줄 때 표를 자유롭게 쓴다. 다만:
+
+- 표를 썼다면 작성 후 dev 서버에서 실제로 셀 구조로 렌더되는지 한 번 눈으로 확인한다(검증 습관).
+- 혹시 표가 날것 텍스트(`| 역할 | 정의 |` 그대로)로 깨져 보이면, `next.config.mjs`의 `createMDX` + `remark-gfm` 연결이 풀린 것이다. 그때는 설정을 복구한다(빌드 설정 변경은 시스템 변경이므로 사용자에게 알리고 진행).
+
+배경: MDX 기본값(CommonMark)에는 GFM 표가 없어서 `remark-gfm` 연결이 반드시 필요하다. 과거 이 프로젝트는 turbopack rules에 `@mdx-js/loader`를 직접 꽂는 구조라 플러그인이 함수로 resolve되지 않아 표가 깨졌고, `createMDX` 방식으로 전환해 해결했다. 같은 함정을 다시 만들지 않도록 수동 loader 등록으로 되돌리지 않는다.
+
 ## 검증
 
 - MDX는 JSX이므로 import한 컴포넌트/이미지 경로가 실제로 존재해야 빌드된다.
 - 작성 후 dev 서버(`pnpm dev`)에서 `/blog/{slug}`로 직접 접근해 렌더를 확인한다 (published: false여도 직접 URL은 열린다).
+- 표를 썼다면 표가 깨지지 않고 셀 구조로 렌더되는지 특히 확인한다 (위 GFM 설정 항목 참조).
