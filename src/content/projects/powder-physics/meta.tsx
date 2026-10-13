@@ -3,7 +3,6 @@ export const meta: ProjectMeta = {
   id: 'powder-physics',
   notionId: '276499ec-3d2a-4016-8de8-d353e21f51c1',
   title: 'Powder Physics',
-  Github: 'https://github.com/kimjisub/Powder-Physics',
   '프로그래밍 언어': [
     'java',
   ],

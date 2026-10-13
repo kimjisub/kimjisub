@@ -5,7 +5,6 @@ export const meta: ProjectMeta = {
   id: 'midi-video-generator',
   notionId: 'b0ad0c42-bd9c-45a9-8ff9-33ed9dd82dad',
   title: 'Midi Video Generator',
-  Github: 'https://github.com/kimjisub/Midi-Video-Generator',
   Youtube: 'https://www.youtube.com/watch?v=vkOKSzTwUYY',
   '프로그래밍 언어': [
     'html',
@@ -13,7 +12,6 @@ export const meta: ProjectMeta = {
     'javascript',
   ],
   '태그': [
-    '오픈소스',
   ],
   '중요도': 10,
   '주요 기술': [
@@ -26,7 +24,6 @@ export const meta: ProjectMeta = {
   '날짜': '2020-01-01',
   '분류': [
     '개인 프로젝트',
-    '오픈소스',
   ],
   '갤러리에서 보기': false,
   '이름': 'Midi Video Generator',

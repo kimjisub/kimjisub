@@ -5,7 +5,6 @@ export const meta: ProjectMeta = {
   id: '숫자-인식-ai',
   notionId: '38f4b86f-c53f-4712-b095-f879da6c831b',
   title: '숫자 인식 AI',
-  Github: 'https://github.com/kimjisub/Number-Awareness-AI',
   '프로그래밍 언어': [
     'java',
   ],

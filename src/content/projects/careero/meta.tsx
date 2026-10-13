@@ -5,7 +5,6 @@ export const meta: ProjectMeta = {
   id: 'careero',
   notionId: '6a12c934-4914-47fe-99ca-faaebc1a04d8',
   title: 'Careero',
-  Github: 'https://github.com/kimjisub/careero',
   '맡은 업무': [
     '책임자',
     '기획',
