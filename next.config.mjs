@@ -1,3 +1,5 @@
+import createMDX from '@next/mdx';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Serverless Function 번들에서 불필요한 파일 제외
@@ -20,16 +22,10 @@ const nextConfig = {
   // canvas를 서버 번들에서 제외 (react-pdf용, 클라이언트만 사용)
   serverExternalPackages: ['canvas'],
   // Next.js 16: Turbopack configuration
+  // MDX 처리는 아래 createMDX(withMDX)가 turbopack/webpack 양쪽에 자동 등록한다.
+  // (수동 @mdx-js/loader 등록은 remark/rehype 플러그인을 함수로 받지 못해 제거함)
   turbopack: {
     rules: {
-      '*.mdx': {
-        loaders: ['@mdx-js/loader'],
-        as: '*.js',
-      },
-      '*.md': {
-        loaders: ['@mdx-js/loader'],
-        as: '*.js',
-      },
       // SVG를 asset으로 처리 (컴포넌트 변환 X)
       // '*.svg': { loaders: ['@svgr/webpack'], as: '*.js' },
     },
@@ -114,6 +110,32 @@ const nextConfig = {
     return config;
   },
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  // 글 폴더 이름을 바꾼 뒤에도 옛 주소로 들어온 사람이 새 글로 가게 한다
+  async redirects() {
+    return [
+      {
+        source: '/blog/2025-06-17-nextjs-blog',
+        destination: '/blog/2025-06-17-ai-era-writing',
+        permanent: true,
+      },
+    ];
+  },
 };
 
-export default nextConfig;
+// MDX 로더를 turbopack/webpack에 등록하고 remark/rehype 플러그인을 연결한다.
+// turbopack은 직렬화 가능한 옵션만 받으므로 플러그인을 [이름, 옵션] 문자열 형태로 전달한다.
+// - remark-gfm: GFM 표/취소선/자동링크
+// - remark-math + rehype-katex: $...$ / $$...$$ 수식 렌더링 (CSS는 layout에서 katex.min.css import)
+// - rehype-prism-plus: 코드 블록 신택스 하이라이팅 (CSS는 layout에서 prism-theme.css import)
+const withMDX = createMDX({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [['remark-gfm'], ['remark-math']],
+    rehypePlugins: [
+      ['rehype-prism-plus', { ignoreMissing: true }],
+      ['rehype-katex'],
+    ],
+  },
+});
+
+export default withMDX(nextConfig);
