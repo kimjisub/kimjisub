@@ -48,3 +48,11 @@ yarn.lock
 package-lock.json
 .mcp.json
 .playwright-mcp/
+
+# 에이전트 도구가 만드는 상태와 작업물
+.omc/
+.claude/skill-stats.json
+.claude/skills/*-workspace/
+
+# 루트에 떨어진 디버그 스크린샷
+/*.png
