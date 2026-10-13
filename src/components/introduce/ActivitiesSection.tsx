@@ -2,11 +2,11 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ExternalLink, Linkedin, Newspaper, Play, UserRound } from 'lucide-react';
+import { BookOpen, ExternalLink, Linkedin, Newspaper, Play, UserRound } from 'lucide-react';
 
 interface Activity {
   date: string;
-  type: 'Video/Talk' | 'Interview' | 'Press' | 'Post';
+  type: 'Video/Talk' | 'Interview' | 'Press' | 'Post' | 'Publication';
   title: string;
   description: string;
   url: string;
@@ -15,6 +15,15 @@ interface Activity {
 }
 
 const activities: Activity[] = [
+  {
+    date: '2026',
+    type: 'Publication',
+    title: 'An AIoT Framework for Real-Time HVAC Optimization Using Multimodal Sensing and Vision-Based Clothing-Skin Analysis',
+    description: 'AIoT 기반 실시간 HVAC 최적화 프레임워크 논문',
+    url: 'https://ieeexplore.ieee.org/abstract/document/11416246',
+    source: 'IEEE Xplore',
+    thumbnail: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
+  },
   {
     date: '2025.12',
     type: 'Interview',
@@ -61,6 +70,7 @@ const typeIcon: Record<Activity['type'], React.ReactNode> = {
   Interview: <UserRound className="w-3.5 h-3.5" />,
   Press: <Newspaper className="w-3.5 h-3.5" />,
   Post: <Linkedin className="w-3.5 h-3.5" />,
+  Publication: <BookOpen className="w-3.5 h-3.5" />,
 };
 
 const typeColor: Record<Activity['type'], string> = {
@@ -68,6 +78,7 @@ const typeColor: Record<Activity['type'], string> = {
   Interview: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
   Press: 'bg-amber-500/10 text-amber-400 border-amber-500/20',
   Post: 'bg-sky-500/10 text-sky-400 border-sky-500/20',
+  Publication: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
 };
 
 /* ─── Activity Card (unified design, all 4 same treatment) ─── */
@@ -164,7 +175,7 @@ export const ActivitiesSection = () => {
             Activities
           </h2>
           <p className="text-muted-foreground text-sm mb-10">
-            미디어 출연 · 인터뷰 · 발표
+            논문 · 미디어 출연 · 인터뷰 · 발표
           </p>
         </motion.div>
 

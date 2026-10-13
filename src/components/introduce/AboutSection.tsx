@@ -87,8 +87,14 @@ export const AboutSection = () => {
               요즘은{' '}
               <RoughHighlight type="highlight" delay={700}>
                 LLM
-              </RoughHighlight>을 제품에 어떻게 넣을지 고민하고 있습니다. 
+              </RoughHighlight>을 제품에 어떻게 넣을지 고민하고 있습니다.
               Candid에서는 추천 시스템에, Alpaon에서는 산업 설비 제어에 쓰고 있습니다.
+              최근에는 AIoT 기반 HVAC 최적화 연구로{' '}
+              <Link href="https://ieeexplore.ieee.org/abstract/document/11416246" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                <RoughHighlight type="underline" delay={900}>
+                  IEEE 논문
+                </RoughHighlight>
+              </Link>도 게재했습니다.
             </p>
           </motion.div>
         </div>
