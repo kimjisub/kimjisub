@@ -6,7 +6,7 @@
 <a href="mailto:0226daniel@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Email-0226daniel%40gmail.com-blue?logo=gmail&logoColor=white" alt="Email"></a>
 <img src="https://komarev.com/ghpvc/?username=kimjisub" alt="Profile Views">
 
-사람이 하던 일을 사람 손 없이 돌아가는 제품으로 바꿔 왔습니다. 장비부터 클라우드와 AI까지, 첫 버전을 만들고 운영까지 혼자 맡습니다.
+사람이 하던 일을 사람 손 없이 돌아가는 제품으로 바꿔 왔습니다. 장비부터 클라우드와 AI까지, 첫 버전부터 운영까지 맡습니다.
 
 ## Tech Stack
 
@@ -55,7 +55,7 @@
     - 반려견 유치원 단체 사진에서 개별 강아지를 분류하는 AI 파이프라인 및 서빙 구조 설계
 
 - **Candid** AX & Product Engineer (2025.08 - 2026.10)
-    - 기획부터 프론트엔드, 백엔드, 인프라, AI까지 혼자 맡아 채용 컨설팅 회사의 Core ERP 구축
+    - 기획부터 프론트엔드, 백엔드, 인프라, AI까지 맡아 채용 컨설팅 회사의 Core ERP 구축
     - AI 에이전트 기반 후보자 서치 도구 개발로 작업 시간 단축 (포지션당 3~5시간 -> 70분)
     - 해당 도구로 진행한 포지션에서 첫 달 계약 2건 달성
 
