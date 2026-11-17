@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 		default: 'Jisub Kim | Founding Engineer',
 		template: '%s | Jisub Kim',
 	},
-	description: 'Founding Engineer. 초기 제품의 기술 전부를 맡아, 사람 손 없이 돌아가는 제품으로 만듭니다. Co-founder and CTO (part-time) at Alpaon. Portfolio of projects, skills, and career experiences.',
+	description: 'Founding Engineer. 초기 제품의 기술 전부를 맡아, 사람 손 없이 돌아가는 제품으로 만듭니다. Co-founder and CTO at Alpaon. Portfolio of projects, skills, and career experiences.',
 	keywords: ['김지섭', 'Jisub Kim', 'Founding Engineer', 'Full Stack Developer', 'Alpaon', 'UniPad', '포트폴리오', 'Portfolio'],
 	authors: [{ name: 'Jisub Kim', url: siteUrl }],
 	creator: 'Jisub Kim',

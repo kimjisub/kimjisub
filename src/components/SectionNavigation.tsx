@@ -5,11 +5,12 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 
 // 메인 페이지 섹션 IDs (순서 중요)
-const SECTION_IDS = ['hero', 'about', 'work', 'projects', 'background', 'activities', 'blog', 'contact'];
+const SECTION_IDS = ['hero', 'path', 'about', 'work', 'projects', 'background', 'activities', 'blog', 'contact'];
 
 // 섹션 이름 매핑
 const SECTION_NAMES: Record<string, string> = {
   hero: 'Hero',
+  path: 'Path',
   about: 'About',
   work: 'Work',
   projects: 'Projects',

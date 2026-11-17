@@ -69,7 +69,7 @@ const COMMANDS: Record<string, () => { lines: string[]; isAscii?: boolean }> = {
       '  ━━━ 김지섭 (Jisub Kim) ━━━',
       '',
       '  Founding Engineer',
-      '  - Alpaon 공동창업자, CTO (파트타임)',
+      '  - Alpaon 공동창업자, CTO',
       '  - 댕로그 기술 자문',
       '  - 한국외대 컴퓨터전자시스템공학부 졸업 (2026.08)',
       '',

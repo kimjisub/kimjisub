@@ -13,8 +13,7 @@ export const meta: CareerMeta = {
   '설명': '산업 현장의 설비와 데이터를 클라우드와 AI에 연결하는 회사. AlpaConnect와 Synapus 합산 고객사 약 10곳.',
   '이름': 'Alpaon',
   '맡은 업무': [
-    '공동창업자',
-    'CTO (파트타임)',
+    '공동창업자, CTO',
   ],
   URL: 'https://alpaon.com',
 };

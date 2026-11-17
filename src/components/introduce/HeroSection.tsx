@@ -33,12 +33,11 @@ export const HeroSection = () => {
             Founding Engineer
           </p>
 
-          <p className="mt-10 max-w-[28ch] text-[1.5rem] font-semibold leading-[1.45] tracking-[-0.025em] text-foreground md:max-w-none md:text-[1.75rem]">
-            사람이 손으로 하던 일을,
-            <br className="md:hidden" /> 알아서 돌아가는 제품으로 만듭니다.
+          <p className="mt-10 max-w-[30ch] text-[1.375rem] font-semibold leading-[1.5] tracking-[-0.025em] text-foreground md:max-w-none md:text-[1.625rem]">
+            스타트업의 첫 엔지니어로, 사람이 손으로 하던 일을 알아서 돌아가는 제품으로 만듭니다.
           </p>
           <p className="prose-ko mt-5 text-muted-foreground">
-            공장 장비의 회로 기판부터 서버, 앱, AI 에이전트까지. 초기 제품에 필요한 기술을 처음부터 만들고 운영해
+            회로 기판과 펌웨어부터 서버, 앱, AI 에이전트까지. 첫 버전을 만들고, 고객이 쓰는 동안 운영까지 맡아
             왔습니다.
           </p>
 

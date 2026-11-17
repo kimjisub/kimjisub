@@ -10,6 +10,7 @@ interface Section {
 
 const sections: Section[] = [
   { id: 'hero', label: 'Hero' },
+  { id: 'path', label: 'Path' },
   { id: 'about', label: 'About' },
   { id: 'work', label: 'Work' },
   { id: 'projects', label: 'Projects' },

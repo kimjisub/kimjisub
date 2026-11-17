@@ -33,7 +33,7 @@ const personSchema = {
 		'TypeScript',
 		'Node.js',
 	],
-	description: 'Founding Engineer building products that run without hands-on work, from firmware to cloud and AI. Co-founder and CTO (part-time) at Alpaon.',
+	description: 'Founding Engineer building products that run without hands-on work, from firmware to cloud and AI. Co-founder and CTO at Alpaon.',
 };
 
 const websiteSchema = {

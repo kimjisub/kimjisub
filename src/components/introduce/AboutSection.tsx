@@ -1,16 +1,13 @@
-import Link from 'next/link';
-
 import { ExternalIcon } from './ExternalIcon';
 import { Section } from './Section';
 
 const external = { target: '_blank', rel: 'noopener noreferrer' } as const;
 
 /**
- * 지금 하는 일. 홈의 사이드 정보는 이 두 줄만 둔다.
- * Values, Interests, Core stack, Milestones, Location 은 About 본문과 겹치거나 처음 읽는 사람에게 필요 없어 홈에서 뺐다.
+ * 지금 하는 일. About 아래에 작게 두 줄만 둔다.
  */
 const nowRoles = [
-  { org: 'Alpaon', href: 'https://alpaon.com', role: '공동창업자, CTO (파트타임)', period: '2022 –' },
+  { org: 'Alpaon', href: 'https://alpaon.com', role: '공동창업자, CTO', period: '2022 –' },
   { org: '댕로그', role: '기술 자문', period: '2026 –' },
 ];
 
@@ -19,25 +16,16 @@ export const AboutSection = () => {
     <Section id="about" title="About">
       <div className="prose-ko space-y-6 text-foreground">
         <p>
-          리듬게임{' '}
-          <Link href="/projects/unipad" className="link">
-            UniPad
-          </Link>
-          는 1,000만 번 넘게 다운로드됐습니다. 곡을 혼자 다 만들 수 없어서, 사용자가 직접 곡을 만들어 올리게 바꾼
-          덕분입니다.
+          한 제품에 필요한 기술을 끝까지 맡습니다. 설비에 붙는 장치의 회로와 펌웨어, 데이터를 모으는 서버와 클라우드,
+          사람이 쓰는 앱과 웹, 일을 대신하는 AI 에이전트까지 직접 만들고 운영합니다.
         </p>
         <p>
-          그 뒤로도 비슷한 일을 해 왔습니다. 직원이 한 시간씩 만들던 광고 영상을 사용자가 휴대폰에서 직접 만들게
-          했고(VPLATE), 주차장마다 개발이 필요하던 요금 계산을 설정만 바꾸면 되게 했고(Silicon Bridge), 사람이
-          계약마다 처리하던 서버 임대를 결제하면 바로 서버가 생기는 서비스로 바꿨습니다(Alpaon).
+          사용자 옆에서 문제를 고르고, 첫 버전을 빨리 내고, 실제로 쓰이는지 숫자로 확인합니다. Candid에서는 한
+          컨설턴트의 사용 기록 57개를 전부 읽고 화면을 바꿨고, 컨설턴트 20명 중 9명이 매주 쓰는 도구가 됐습니다.
         </p>
         <p>
-          최근에는 채용 컨설팅 회사 Candid에서, 컨설턴트가 3~5시간씩 하던 후보자 찾기를 AI 에이전트에게 맡겨 70분으로
-          줄였습니다. 반복 작업을 넘어 사람이 판단하던 일까지 AI에게 맡기는 쪽으로 일하고 있습니다.
-        </p>
-        <p>
-          지금은 공동창업한 Alpaon에서 공장과 매장의 설비를 인터넷과 AI에 연결하는 제품을 파트타임으로 만들고, 반려견
-          유치원 서비스 댕로그의 사진 AI를 자문하고 있습니다.
+          지금은 공동창업한 Alpaon에서 CTO로 일하고, 반려견 유치원 서비스 댕로그의 사진 AI를 자문합니다.
+          한국외국어대학교를 2026년 8월에 졸업했습니다.
         </p>
       </div>
 
