@@ -55,7 +55,7 @@ const workItems: WorkItemData[] = [
     href: 'https://teamcandid.kr',
     external: true,
     period: '2025.08 – 2026.10',
-    role: 'AX & Product Engineer',
+    role: 'AX(AI 전환) & Product Engineer',
     description: '스타트업의 채용을 도와주는 컨설팅 회사입니다. 기획부터 개발, 운영까지 제품 전체를 맡았습니다.',
     details: [
       '엑셀과 Slack에 흩어져 있던 업무를 사내 시스템 하나로 모았습니다.',
@@ -87,7 +87,7 @@ const workItems: WorkItemData[] = [
     role: 'Software Engineer',
     description: '광고 영상을 자동으로 만들어 주는 서비스입니다. 고등학교 3학년 때 합류했습니다.',
     details: [
-      '영상 편집 프로그램을 코드로 움직이는 엔진과 모바일 앱을 만들어, 직원이 한 시간씩 손으로 만들던 광고 영상을 사용자가 휴대폰에서 직접 만들게 했습니다.',
+      '영상 편집 프로그램을 자동으로 조작해 광고 영상을 만들어 내는 엔진과 모바일 앱을 만들어, 직원이 한 시간씩 손으로 만들던 광고 영상을 사용자가 휴대폰에서 직접 만들게 했습니다.',
     ],
   },
   {
@@ -98,7 +98,7 @@ const workItems: WorkItemData[] = [
     description: '화면의 8x8 버튼을 눌러 곡을 연주하는 리듬게임입니다.',
     details: [
       '사용자가 직접 곡을 만들어 올리게 해, 누적 1,000만 다운로드, 최대 월 사용자 80만, Google Play 음악 게임 인기 1위를 기록했습니다.',
-      '실제 런치패드 기기와 연결돼 EDM 공연과 초등학교 수업에도 쓰였습니다.',
+      '음악 연주용 버튼 기기인 런치패드와 연결돼 EDM 공연과 초등학교 수업에도 쓰였습니다.',
     ],
   },
 ];
