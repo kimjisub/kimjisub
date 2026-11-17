@@ -1,96 +1,19 @@
-'use client';
+import { ReactNode } from 'react';
 
-import { ReactNode, useRef } from 'react';
-import { motion, useInView, useReducedMotion } from 'framer-motion';
-
-interface AnimatedSectionProps {
+interface WrapperProps {
   children: ReactNode;
   className?: string;
+  /** 예전 스크롤 등장 효과의 순서 값. 지금은 쓰지 않지만 호출부 호환을 위해 받는다 */
   delay?: number;
-}
-
-export const AnimatedSection = ({ children, className, delay = 0 }: AnimatedSectionProps) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-  const prefersReduced = useReducedMotion();
-
-  if (prefersReduced) {
-    return <div ref={ref} className={className}>{children}</div>;
-  }
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-      transition={{ 
-        duration: 0.6, 
-        delay,
-        ease: [0.25, 0.46, 0.45, 0.94] 
-      }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
-};
-
-interface AnimatedTitleProps {
-  children: ReactNode;
-  className?: string;
-  isInView?: boolean;
-}
-
-export const AnimatedTitle = ({ children, className }: AnimatedTitleProps) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-  const prefersReduced = useReducedMotion();
-
-  if (prefersReduced) {
-    return <h2 ref={ref} className={className}>{children}</h2>;
-  }
-
-  return (
-    <motion.h2
-      ref={ref}
-      className={className}
-      initial={{ opacity: 0, y: 20 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-      transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-    >
-      {children}
-    </motion.h2>
-  );
-};
-
-interface AnimatedGridItemProps {
-  children: ReactNode;
-  className?: string;
   index?: number;
 }
 
-export const AnimatedGridItem = ({ children, className, index = 0 }: AnimatedGridItemProps) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-50px' });
-  const prefersReduced = useReducedMotion();
+/*
+ * 스크롤할 때마다 요소가 떠오르던 효과를 없애고, 내용이 처음부터 보이는 평범한 래퍼로 남겼다.
+ * 하위 페이지 여러 곳이 이 세 이름을 쓰고 있어 이름과 props 는 그대로 둔다.
+ */
+export const AnimatedSection = ({ children, className }: WrapperProps) => <div className={className}>{children}</div>;
 
-  if (prefersReduced) {
-    return <div ref={ref} className={className}>{children}</div>;
-  }
+export const AnimatedTitle = ({ children, className }: WrapperProps) => <h2 className={className}>{children}</h2>;
 
-  return (
-    <motion.div
-      ref={ref}
-      className={className}
-      initial={{ opacity: 0, y: 20 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-      transition={{ 
-        duration: 0.4, 
-        delay: Math.min(index * 0.03, 0.3), // cap delay at 0.3s
-        ease: [0.25, 0.46, 0.45, 0.94] 
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-};
+export const AnimatedGridItem = ({ children, className }: WrapperProps) => <div className={className}>{children}</div>;

@@ -1,74 +1,26 @@
 'use client';
 
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode } from 'react';
 import { Theme } from '@radix-ui/themes';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
-
-import { ACCENT_COLORS,AccentColorKey } from '@/hooks/useAccentColor';
 
 interface ThemeProviderProps {
   children: ReactNode;
 }
 
+/**
+ * next-themes 가 html 의 class 로 밝기를 정하고, Radix Theme 은 그 class 를 그대로 따른다.
+ * 테마가 바뀌는 순간에는 색 transition 을 꺼서 화면 전체가 번지듯 바뀌지 않게 한다.
+ */
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    // Restore accent color before first paint to avoid flash
-    try {
-      const stored = localStorage.getItem('accent-color') as AccentColorKey | null;
-      if (stored && stored in ACCENT_COLORS) {
-        document.documentElement.setAttribute('data-accent', stored);
-      } else {
-        document.documentElement.setAttribute('data-accent', 'green');
-      }
-    } catch {
-      document.documentElement.setAttribute('data-accent', 'green');
-    }
-    setMounted(true);
-  }, []);
-
-  // Prevent flash by not rendering until mounted
-  if (!mounted) {
-    return (
-      <Theme appearance="dark">
-        <div style={{ visibility: 'hidden' }}>{children}</div>
-      </Theme>
-    );
-  }
-
   return (
     <NextThemesProvider
       attribute="class"
       defaultTheme="system"
       enableSystem
-      disableTransitionOnChange={false}
+      disableTransitionOnChange
     >
-      <ThemeWrapper>{children}</ThemeWrapper>
+      <Theme hasBackground={false}>{children}</Theme>
     </NextThemesProvider>
   );
-}
-
-function ThemeWrapper({ children }: { children: ReactNode }) {
-  const [appearance, setAppearance] = useState<'light' | 'dark'>('dark');
-
-  useEffect(() => {
-    // Watch for theme changes via class on html element
-    const updateAppearance = () => {
-      const isDark = document.documentElement.classList.contains('dark');
-      setAppearance(isDark ? 'dark' : 'light');
-    };
-
-    updateAppearance();
-
-    const observer = new MutationObserver(updateAppearance);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class'],
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  return <Theme appearance={appearance}>{children}</Theme>;
 }

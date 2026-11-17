@@ -2,7 +2,7 @@ import fs from 'fs';
 import Link from 'next/link';
 import path from 'path';
 
-import { AnimatedGridItem, AnimatedSection, AnimatedTitle } from '@/components/motion/AnimatedSection';
+import { Section } from '@/components/introduce/Section';
 import type { BlogPostMeta } from '@/types/blog';
 
 async function getLatestPosts(count = 3) {
@@ -54,93 +54,43 @@ export default async function BlogPreviewSection() {
   if (posts.length === 0) return null;
 
   return (
-    <section className="py-12 md:py-24 border-t border-border">
-      <div className="max-w-4xl mx-auto px-4 md:px-6">
-        {/* 헤더 */}
-        <div className="flex items-end justify-between mb-12">
-          <AnimatedTitle className="font-serif text-2xl md:text-3xl text-foreground italic">
-            Blog
-          </AnimatedTitle>
-          <AnimatedSection delay={0.1}>
-            <Link
-              href="/blog"
-              className="text-sm text-muted-foreground hover:text-accent transition-colors duration-200 flex items-center gap-1 group"
-            >
-              더 보기
-              <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
-                →
-              </span>
+    <Section
+      id="blog"
+      title="Blog"
+      action={
+        <Link href="/blog" className="link text-muted-foreground">
+          전체 글
+        </Link>
+      }
+    >
+      <ul className="divide-y divide-border border-y border-border">
+        {posts.map(({ slug, meta }) => (
+          <li key={slug}>
+            <Link href={`/blog/${slug}`} className="group grid gap-x-6 gap-y-1 py-5 sm:grid-cols-[5.5rem_minmax(0,1fr)]">
+              {meta.date && (
+                <time dateTime={meta.date} className="text-sm tabular-nums text-muted-foreground sm:pt-0.5">
+                  {meta.date.slice(0, 7).replace('-', '.')}
+                </time>
+              )}
+              <div className="min-w-0">
+                <h3 className="font-medium leading-snug text-foreground underline decoration-transparent underline-offset-4 transition-[text-decoration-color] duration-150 group-hover:decoration-border-strong">
+                  {meta.title}
+                </h3>
+                {meta.description && (
+                  <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-muted-foreground">
+                    {meta.description}
+                  </p>
+                )}
+                {(meta.tags?.length || meta.readingTime) && (
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    {[...(meta.tags ?? []).slice(0, 2).map((tag) => `#${tag}`), meta.readingTime].filter(Boolean).join(' · ')}
+                  </p>
+                )}
+              </div>
             </Link>
-          </AnimatedSection>
-        </div>
-
-        {/* 카드 그리드 */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {posts.map(({ slug, meta }, index) => (
-            <AnimatedGridItem key={slug} index={index}>
-              <Link href={`/blog/${slug}`} className="group block h-full">
-                <article className="h-full flex flex-col rounded-xl border border-border bg-card overflow-hidden transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-xl hover:shadow-black/10 dark:hover:shadow-black/40 hover:border-accent/30">
-                  {/* 썸네일 */}
-                  {meta.image && (
-                    <div className="relative w-full aspect-video overflow-hidden bg-muted">
-                      {/* Next.js Image 대신 img 사용 (외부 URL 허용 범위 불확실) */}
-                      
-                      <img
-                        src={meta.image}
-                        alt={meta.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
-                  )}
-
-                  {/* 콘텐츠 */}
-                  <div className="flex flex-col flex-1 p-5 gap-3">
-                    {/* 태그 */}
-                    {meta.tags && meta.tags.length > 0 && (
-                      <div className="flex flex-wrap gap-1.5">
-                        {meta.tags.slice(0, 2).map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-2 py-0.5 text-xs bg-accent/10 text-accent rounded-full"
-                          >
-                            #{tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-
-                    {/* 제목 */}
-                    <h3 className="font-heading text-base font-semibold text-foreground line-clamp-2 group-hover:text-accent transition-colors duration-200 leading-snug">
-                      {meta.title}
-                    </h3>
-
-                    {/* 발췌문 */}
-                    {meta.description && (
-                      <p className="text-sm text-muted-foreground line-clamp-2 leading-relaxed flex-1">
-                        {meta.description}
-                      </p>
-                    )}
-
-                    {/* 날짜 + 읽기 시간 */}
-                    <div className="flex items-center justify-between mt-auto pt-2 border-t border-border">
-                      {meta.date && (
-                        <time className="text-xs text-muted-foreground tabular-nums">
-                          {meta.date}
-                        </time>
-                      )}
-                      {meta.readingTime && (
-                        <span className="text-xs text-muted-foreground">
-                          {meta.readingTime}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </article>
-              </Link>
-            </AnimatedGridItem>
-          ))}
-        </div>
-      </div>
-    </section>
+          </li>
+        ))}
+      </ul>
+    </Section>
   );
 }

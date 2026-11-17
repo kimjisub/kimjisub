@@ -7,16 +7,6 @@ import { useTheme } from 'next-themes';
 
 import { ACCENT_COLORS, AccentColorKey, useAccentColor } from '@/hooks/useAccentColor';
 
-/* ── View Transition helper type ──────────────────────────────────────── */
-
-type DocumentWithViewTransition = Document & {
-  startViewTransition?: (_callback: () => void | Promise<void>) => {
-    ready: Promise<void>;
-    finished: Promise<void>;
-    updateCallbackDone: Promise<void>;
-  };
-};
-
 /* ── Component ────────────────────────────────────────────────────────── */
 
 export function ThemeToggle() {
@@ -64,41 +54,7 @@ export function ThemeToggle() {
   const isDark = resolvedTheme === 'dark';
   const currentColor = ACCENT_COLORS[accentColor];
 
-  /* ── Circular reveal on theme toggle ─────────────────────────────── */
-  const handleThemeToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const nextTheme = isDark ? 'light' : 'dark';
-
-    const doc = document as DocumentWithViewTransition;
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    // Use View Transitions API if available and user hasn't requested reduced motion
-    if (!prefersReduced && typeof doc.startViewTransition === 'function') {
-      const { clientX: x, clientY: y } = e;
-      const radius = Math.hypot(
-        Math.max(x, window.innerWidth - x),
-        Math.max(y, window.innerHeight - y),
-      );
-      const clipFrom = `circle(0px at ${x}px ${y}px)`;
-      const clipTo   = `circle(${radius}px at ${x}px ${y}px)`;
-
-      const vt = doc.startViewTransition(() => {
-        setTheme(nextTheme);
-      });
-
-      void vt.ready.then(() => {
-        document.documentElement.animate(
-          { clipPath: [clipFrom, clipTo] },
-          {
-            duration: 500,
-            easing: 'ease-in-out',
-            pseudoElement: '::view-transition-new(root)',
-          },
-        );
-      });
-    } else {
-      setTheme(nextTheme);
-    }
-  };
+  const handleThemeToggle = () => setTheme(isDark ? 'light' : 'dark');
 
   return (
     <div ref={containerRef} className="relative flex items-center gap-1">

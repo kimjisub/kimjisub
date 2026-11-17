@@ -6,202 +6,104 @@
   :root {
     --background: #fafafa;
     --foreground: #09090b;
-    
+
     --card: #ffffff;
     --card-foreground: #09090b;
-    
+
     --primary: #fafafa;
     --primary-foreground: #18181b;
-    
+
     --secondary: #f4f4f5;
     --secondary-foreground: #18181b;
-    
+
     --muted: #f4f4f5;
-    --muted-foreground: #71717a;
-    
-    --accent: #16a34a;
+    --muted-foreground: #63636b;
+
+    /* 밝은 배경 위 본문 크기 글자에서 4.5:1 을 넘기는 녹색 */
+    --accent: #15803d;
     --accent-foreground: #fafafa;
-    
+
     --border: #e4e4e7;
-    --ring: #16a34a;
-
-    /* Gradient blob colors - Light mode */
-    --blob-color-1: #22c55e;
-    --blob-color-2: #3b82f6;
-    --blob-color-3: #8b5cf6;
-
-    /* Mesh gradient colors - Light mode */
-    --mesh-color-1: #22c55e;
-    --mesh-color-2: #3b82f6;
-    --mesh-color-3: #8b5cf6;
-    --mesh-color-4: #06b6d4;
+    --border-strong: #c4c4cc;
+    --ring: #15803d;
   }
 
   .dark {
-    --background: #09090b;
-    --foreground: #fafafa;
-    
-    --card: #18181b;
-    --card-foreground: #fafafa;
-    
+    --background: #0b0b0d;
+    --foreground: #f4f4f5;
+
+    --card: #131316;
+    --card-foreground: #f4f4f5;
+
     --primary: #18181b;
     --primary-foreground: #fafafa;
-    
-    --secondary: #27272a;
+
+    --secondary: #1f1f23;
     --secondary-foreground: #fafafa;
-    
-    --muted: #27272a;
+
+    --muted: #1f1f23;
     --muted-foreground: #a1a1aa;
-    
-    --accent: #22c55e;
-    --accent-foreground: #09090b;
-    
-    --border: #27272a;
-    --ring: #22c55e;
 
-    /* Gradient blob colors - Dark mode */
-    --blob-color-1: #16a34a;
-    --blob-color-2: #2563eb;
-    --blob-color-3: #7c3aed;
+    --accent: #4ade80;
+    --accent-foreground: #0b0b0d;
 
-    /* Mesh gradient colors - Dark mode */
-    --mesh-color-1: #16a34a;
-    --mesh-color-2: #2563eb;
-    --mesh-color-3: #7c3aed;
-    --mesh-color-4: #0891b2;
+    --border: #26262b;
+    --border-strong: #4a4a52;
+    --ring: #4ade80;
   }
 
-  /* ── Accent: Green (default, no override needed but explicit for clarity) ── */
+  /* 사용자가 고르는 강조색. html 의 data-accent 로 바뀐다 */
   [data-accent="green"] {
-    --accent: #16a34a;
+    --accent: #15803d;
     --accent-foreground: #fafafa;
-    --ring: #16a34a;
-    --blob-color-1: #22c55e;
-    --blob-color-2: #3b82f6;
-    --blob-color-3: #8b5cf6;
-    --mesh-color-1: #22c55e;
-    --mesh-color-2: #3b82f6;
-    --mesh-color-3: #8b5cf6;
-    --mesh-color-4: #06b6d4;
+    --ring: #15803d;
   }
   .dark[data-accent="green"] {
-    --accent: #22c55e;
-    --accent-foreground: #09090b;
-    --ring: #22c55e;
-    --blob-color-1: #16a34a;
-    --blob-color-2: #2563eb;
-    --blob-color-3: #7c3aed;
-    --mesh-color-1: #16a34a;
-    --mesh-color-2: #2563eb;
-    --mesh-color-3: #7c3aed;
-    --mesh-color-4: #0891b2;
+    --accent: #4ade80;
+    --accent-foreground: #0b0b0d;
+    --ring: #4ade80;
   }
-
-  /* ── Accent: Blue ── */
   [data-accent="blue"] {
     --accent: #2563eb;
     --accent-foreground: #fafafa;
     --ring: #2563eb;
-    --blob-color-1: #3b82f6;
-    --blob-color-2: #0ea5e9;
-    --blob-color-3: #6366f1;
-    --mesh-color-1: #3b82f6;
-    --mesh-color-2: #0ea5e9;
-    --mesh-color-3: #6366f1;
-    --mesh-color-4: #8b5cf6;
   }
   .dark[data-accent="blue"] {
-    --accent: #3b82f6;
-    --accent-foreground: #fafafa;
-    --ring: #3b82f6;
-    --blob-color-1: #2563eb;
-    --blob-color-2: #0284c7;
-    --blob-color-3: #4f46e5;
-    --mesh-color-1: #2563eb;
-    --mesh-color-2: #0284c7;
-    --mesh-color-3: #4f46e5;
-    --mesh-color-4: #7c3aed;
+    --accent: #60a5fa;
+    --accent-foreground: #0b0b0d;
+    --ring: #60a5fa;
   }
-
-  /* ── Accent: Purple ── */
   [data-accent="purple"] {
     --accent: #7c3aed;
     --accent-foreground: #fafafa;
     --ring: #7c3aed;
-    --blob-color-1: #8b5cf6;
-    --blob-color-2: #a855f7;
-    --blob-color-3: #6366f1;
-    --mesh-color-1: #8b5cf6;
-    --mesh-color-2: #a855f7;
-    --mesh-color-3: #6366f1;
-    --mesh-color-4: #ec4899;
   }
   .dark[data-accent="purple"] {
     --accent: #a78bfa;
-    --accent-foreground: #09090b;
+    --accent-foreground: #0b0b0d;
     --ring: #a78bfa;
-    --blob-color-1: #7c3aed;
-    --blob-color-2: #9333ea;
-    --blob-color-3: #4f46e5;
-    --mesh-color-1: #7c3aed;
-    --mesh-color-2: #9333ea;
-    --mesh-color-3: #4f46e5;
-    --mesh-color-4: #db2777;
   }
-
-  /* ── Accent: Orange ── */
   [data-accent="orange"] {
-    --accent: #ea580c;
+    --accent: #c2410c;
     --accent-foreground: #fafafa;
-    --ring: #ea580c;
-    --blob-color-1: #f97316;
-    --blob-color-2: #eab308;
-    --blob-color-3: #ef4444;
-    --mesh-color-1: #f97316;
-    --mesh-color-2: #eab308;
-    --mesh-color-3: #ef4444;
-    --mesh-color-4: #f43f5e;
+    --ring: #c2410c;
   }
   .dark[data-accent="orange"] {
     --accent: #fb923c;
-    --accent-foreground: #09090b;
+    --accent-foreground: #0b0b0d;
     --ring: #fb923c;
-    --blob-color-1: #ea580c;
-    --blob-color-2: #ca8a04;
-    --blob-color-3: #dc2626;
-    --mesh-color-1: #ea580c;
-    --mesh-color-2: #ca8a04;
-    --mesh-color-3: #dc2626;
-    --mesh-color-4: #f43f5e;
   }
-
-  /* ── Accent: Rose ── */
   [data-accent="rose"] {
-    --accent: #e11d48;
+    --accent: #be123c;
     --accent-foreground: #fafafa;
-    --ring: #e11d48;
-    --blob-color-1: #f43f5e;
-    --blob-color-2: #ec4899;
-    --blob-color-3: #f97316;
-    --mesh-color-1: #f43f5e;
-    --mesh-color-2: #ec4899;
-    --mesh-color-3: #f97316;
-    --mesh-color-4: #8b5cf6;
+    --ring: #be123c;
   }
   .dark[data-accent="rose"] {
     --accent: #fb7185;
-    --accent-foreground: #09090b;
+    --accent-foreground: #0b0b0d;
     --ring: #fb7185;
-    --blob-color-1: #e11d48;
-    --blob-color-2: #db2777;
-    --blob-color-3: #ea580c;
-    --mesh-color-1: #e11d48;
-    --mesh-color-2: #db2777;
-    --mesh-color-3: #ea580c;
-    --mesh-color-4: #7c3aed;
   }
 
-  /* ── Global focus-visible styles ─────────────────────────────────── */
   *:focus {
     outline: none;
   }
@@ -215,97 +117,62 @@
   html {
     background-color: var(--background);
     color: var(--foreground);
+    /* 고정 상단 바 아래로 앵커와 포커스 대상이 숨지 않게 한다 */
+    scroll-padding-block-start: 4.5rem;
   }
 
   body {
-    font-size: 15px;
+    font-size: 1rem;
     line-height: 1.6;
     background-color: var(--background);
     color: var(--foreground);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    /* 한글은 어절 단위로 줄바꿈하고, 긴 URL·식별자만 강제로 끊는다 */
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
 
-  @media (min-width: 640px) {
-    body {
-      font-size: 16px;
-    }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
   }
-}
 
-/* ─── Theme Transition ────────────────────────────────────────────────── */
-
-/* Smooth color transitions for browsers without View Transitions API */
-@supports not (selector(::view-transition)) {
-  *,
-  *::before,
-  *::after {
-    transition-property: background-color, border-color, color, fill, stroke;
-    transition-duration: 300ms;
-    transition-timing-function: ease;
-    /* Preserve existing transform/opacity transitions */
-    transition-behavior: allow-discrete;
-  }
-}
-
-/* View Transitions API: disable default cross-fade so we control it */
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
-}
-
-/* Respect reduced-motion preference */
-@media (prefers-reduced-motion: reduce) {
-  ::view-transition-group(*),
-  ::view-transition-image-pair(*),
-  ::view-transition-old(*),
-  ::view-transition-new(*) {
-    animation-duration: 0.01ms !important;
+  p,
+  li {
+    text-wrap: pretty;
   }
 }
 
 @layer components {
+  /* 본문 속 링크: 밑줄로 링크임을 알리고, 색은 hover 가능한 포인터에서만 바꾼다 */
+  .link {
+    text-decoration-line: underline;
+    text-decoration-color: var(--border-strong);
+    text-decoration-thickness: from-font;
+    text-underline-offset: 0.22em;
+    transition-property: text-decoration-color, color;
+    transition-duration: 150ms;
+  }
+
+  @media (hover: hover) {
+    .link:hover {
+      color: var(--foreground);
+      text-decoration-color: currentColor;
+    }
+  }
+
+  /* 홈 화면 공통 2열 격자: 왼쪽 제목 열 + 오른쪽 내용 열 */
+  .home-grid {
+    @apply mx-auto grid max-w-5xl gap-y-6 px-5 md:grid-cols-[11rem_minmax(0,1fr)] md:gap-x-12 md:px-6;
+  }
+
   .glass-card {
     background-color: var(--card);
     @apply border border-border rounded-xl;
   }
 }
 
-/* ── Animated Gradient Text ─────────────────────────────── */
-@keyframes gradient-flow {
-  0%   { background-position: 0%   50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0%   50%; }
-}
-
-.animated-gradient-text {
-  background: linear-gradient(
-    270deg,
-    var(--accent),
-    var(--mesh-color-2),
-    var(--mesh-color-3),
-    var(--mesh-color-4),
-    var(--mesh-color-2),
-    var(--accent)
-  );
-  background-size: 400% 400%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  animation: gradient-flow 6s ease infinite;
-}
-
-/* ── prefers-reduced-motion: disable CSS animations ─────────────── */
 @media (prefers-reduced-motion: reduce) {
-  .animated-gradient-text {
-    animation: none;
-    background-size: 100% 100%;
-    background-position: 0% 50%;
-  }
-
-  /* Disable blob/shimmer keyframe animations */
   *,
   *::before,
   *::after {

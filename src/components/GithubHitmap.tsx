@@ -6,15 +6,15 @@ interface GitHubHitmapProps {
 }
 
 const GitHubHitmap: React.FC<GitHubHitmapProps> = ({ data, fromDate }) => {
-  // 커밋 수에 따라 색상의 밝기를 결정하는 함수
+  // 기여 단계가 높을수록 배경과 대비가 커지도록, 밝은 테마와 어두운 테마의 색 순서를 반대로 둔다
   const getColor = (level: number | null): string => {
     if (level === null || level === undefined) return '';
     const colorMap: Record<number, string> = {
       0: 'bg-secondary',
-      1: 'bg-[#9be9a8]',
-      2: 'bg-[#40c463]',
-      3: 'bg-[#30a14e]',
-      4: 'bg-[#216e39]',
+      1: 'bg-[#9be9a8] dark:bg-[#0e4429]',
+      2: 'bg-[#40c463] dark:bg-[#006d32]',
+      3: 'bg-[#30a14e] dark:bg-[#26a641]',
+      4: 'bg-[#216e39] dark:bg-[#39d353]',
     };
     return colorMap[level] ?? '';
   };
@@ -46,7 +46,7 @@ const GitHubHitmap: React.FC<GitHubHitmapProps> = ({ data, fromDate }) => {
             <div
               key={formattedDate}
               title={`${formattedDate}`}
-              className={`w-2.5 h-2.5 m-[2px] rounded-sm ${isFuture ? 'bg-transparent' : getColor(level)} text-[4px]`}
+              className={`w-2.5 h-2.5 m-[1.5px] rounded-sm ${isFuture ? 'bg-transparent' : getColor(level)} text-[4px]`}
             />
           );
         })}

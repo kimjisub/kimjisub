@@ -8,7 +8,6 @@ import Link from 'next/link';
 
 import { ProjectT } from '@/api/content/projects';
 import { BlurImage } from '@/components/BlurImage';
-import { TiltCard } from '@/components/TiltCard';
 
 export interface ProjectItemProps {
   className?: string;
@@ -30,7 +29,7 @@ export const ProjectItem = ({ className, project }: ProjectItemProps) => {
 
   const coverImage = project.cover ? (
     <BlurImage
-      className="w-full h-full transition-transform duration-500 group-hover:scale-110"
+      className="w-full h-full"
       width={400}
       height={200}
       src={project.cover}
@@ -42,14 +41,12 @@ export const ProjectItem = ({ className, project }: ProjectItemProps) => {
   );
 
   return (
-    <Link href={`/projects/${encodeURIComponent(project.id)}`} prefetch className="group">
-      <TiltCard className="w-full">
+    <Link href={`/projects/${encodeURIComponent(project.id)}`} prefetch className="group block h-full">
       <article
-        className={`cursor-pointer rounded-2xl border border-border bg-card overflow-hidden shadow-md hover:shadow-xl ${className}`}
+        className={`h-full rounded-2xl border border-border bg-card overflow-hidden transition-colors group-hover:border-border-strong ${className ?? ''}`}
       >
         <div className="relative overflow-hidden">
           <div className="aspect-[1200/630]">{coverImage}</div>
-          <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-colors duration-300" />
           <div className="absolute top-3 left-3 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-sm border border-white/10">
             <p className="text-sm font-medium text-white flex items-center">
               {icon}
@@ -80,7 +77,6 @@ export const ProjectItem = ({ className, project }: ProjectItemProps) => {
           )}
         </div>
       </article>
-      </TiltCard>
     </Link>
   );
 };

@@ -7,25 +7,17 @@ import '@/styles/prism-theme.css';
 import '../globals.css';
 
 import { CommandPaletteWrapper } from '@/components/CommandPaletteWrapper';
-// CustomCursor disabled - 기본 커서 사용
-// import CustomCursor from '@/components/CustomCursor';
-import FloatingSocialSidebar from '@/components/FloatingSocialSidebar';
 import { FloatingTerminal } from '@/components/FloatingTerminal';
 import Footer from '@/components/Footer';
-import GrainOverlay from '@/components/GrainOverlay';
 import JsonLd from '@/components/JsonLd';
 import { KeyboardShortcutsWrapper } from '@/components/KeyboardShortcutsWrapper';
-import { AnimatePresenceWrapper } from '@/components/motion/AnimatePresenceWrapper';
-import ScrollProgressIndicator from '@/components/ScrollProgressIndicator';
-import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration';
 import { SectionNavigation } from '@/components/SectionNavigation';
+import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration';
 import { SkipToContent } from '@/components/SkipToContent';
-import SpotlightEffect from '@/components/SpotlightEffect';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import TopBar from '@/components/TopBar';
-import Preloader from '@/components/ui/Preloader';
-import { AppInfoProvider } from '@/contexts/AppInfoContext';
 import { TerminalProvider } from '@/context/TerminalContext';
+import { AppInfoProvider } from '@/contexts/AppInfoContext';
 
 const inter = Inter({ 
 	subsets: ['latin'],
@@ -103,34 +95,27 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html className={`${inter.variable} ${newsreader.variable}`} suppressHydrationWarning>
+		<html lang="ko" className={`${inter.variable} ${newsreader.variable}`} suppressHydrationWarning>
 			<head>
 				<JsonLd />
-				<meta name="theme-color" content="#09090b" />
+				<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa" />
+				<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0b0d" />
 				<link rel="apple-touch-icon" href="/logo192.png" />
 			</head>
 			<AppInfoProvider>
 				<body className="font-sans bg-background text-foreground antialiased">
 					<ThemeProvider>
+						<SkipToContent />
+						<ServiceWorkerRegistration />
+						<CommandPaletteWrapper />
+						<KeyboardShortcutsWrapper />
 						<TerminalProvider>
-							<SkipToContent />
 							<SectionNavigation />
-							<ServiceWorkerRegistration />
-							<CommandPaletteWrapper />
-							<KeyboardShortcutsWrapper />
-							<Preloader />
-							<GrainOverlay />
-							<SpotlightEffect />
-							<ScrollProgressIndicator />
-							{/* <CustomCursor /> */}
-							<FloatingSocialSidebar />
 							<FloatingTerminal />
 							<div className="min-h-screen flex flex-col">
 								<TopBar />
 								<main id="main-content" className="flex-grow pt-14" tabIndex={-1}>
-									<AnimatePresenceWrapper>
-										{children}
-									</AnimatePresenceWrapper>
+									{children}
 								</main>
 								<Footer />
 							</div>

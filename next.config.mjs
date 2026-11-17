@@ -25,6 +25,7 @@ const nextConfig = {
   // MDX 처리는 아래 createMDX(withMDX)가 turbopack/webpack 양쪽에 자동 등록한다.
   // (수동 @mdx-js/loader 등록은 remark/rehype 플러그인을 함수로 받지 못해 제거함)
   turbopack: {
+    root: import.meta.dirname,
     rules: {
       // SVG를 asset으로 처리 (컴포넌트 변환 X)
       // '*.svg': { loaders: ['@svgr/webpack'], as: '*.js' },
@@ -33,6 +34,7 @@ const nextConfig = {
   // Next.js 16: Allow dev origins for Tailscale
   allowedDevOrigins: [
     'kimjisub-openclaw.tail07a0c6.ts.net',
+    'agent.tail07a0c6.ts.net',
   ],
   async headers() {
     return [

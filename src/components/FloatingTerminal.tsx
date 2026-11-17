@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { animate, AnimatePresence, motion, type MotionValue, useMotionValue } from 'framer-motion';
 import { MessageSquare } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 import { InteractiveTerminal } from '@/components/InteractiveTerminal';
 import { useTerminal } from '@/context/TerminalContext';
@@ -86,6 +87,8 @@ function startPositionChase(
 export const FloatingTerminal = () => {
   const { isOpen, isAnchored, openTerminal, closeTerminal, anchorEl } = useTerminal();
   const [mounted, setMounted] = useState(false);
+  // 홈에는 같은 대화창이 본문에 들어 있어 떠 있는 버튼을 겹쳐 띄우지 않는다
+  const isHome = usePathname() === '/';
 
   const mvX = useMotionValue(0);
   const mvY = useMotionValue(0);
@@ -194,7 +197,7 @@ export const FloatingTerminal = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (!mounted) return null;
+  if (!mounted || isHome) return null;
 
   return (
     <>
@@ -233,11 +236,9 @@ export const FloatingTerminal = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.15 }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
               onClick={openTerminal}
               className="absolute inset-0 flex items-center justify-center text-accent-foreground cursor-pointer"
-              aria-label="터미널 열기"
+              aria-label="AI 채팅 열기"
             >
               <MessageSquare className="w-6 h-6" />
             </motion.button>

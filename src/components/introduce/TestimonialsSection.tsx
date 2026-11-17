@@ -504,8 +504,8 @@ export function TestimonialsSection() {
 
   if (loading) {
     return (
-      <section className="py-12 md:py-24 border-t border-border">
-        <div className="max-w-4xl mx-auto px-4 md:px-6">
+      <section id="testimonials" className="py-14 md:py-20 border-t border-border">
+        <div className="max-w-5xl mx-auto px-5 md:px-6">
           <div className="animate-pulse">
             <div className="h-8 bg-foreground/10 rounded w-48 mb-10" />
             <div className="h-48 bg-foreground/5 rounded-2xl" />
@@ -519,9 +519,9 @@ export function TestimonialsSection() {
   if (isEmpty) {
     return (
       <>
-        <section className="py-12 md:py-24 border-t border-border">
-          <div className="max-w-4xl mx-auto px-4 md:px-6">
-            <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-2 italic">
+        <section id="testimonials" className="py-14 md:py-20 border-t border-border">
+          <div className="max-w-5xl mx-auto px-5 md:px-6">
+            <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-2">
               Testimonials
             </h2>
             <p className="text-muted-foreground text-sm mb-10">
@@ -566,10 +566,10 @@ export function TestimonialsSection() {
         onTouchStart={() => setPaused(true)}
         onTouchEnd={() => setPaused(false)}
       >
-        <div className="max-w-4xl mx-auto px-4 md:px-6">
+        <div className="max-w-5xl mx-auto px-5 md:px-6">
           {/* Heading */}
           <motion.h2
-            className="font-serif text-2xl md:text-3xl text-foreground mb-2 italic"
+            className="font-serif text-2xl md:text-3xl text-foreground mb-2"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}

@@ -1,14 +1,6 @@
 'use client';
 
-import { FormEvent, useCallback, useRef, useState } from 'react';
-import {
-  faCheck,
-  faExclamationCircle,
-  faPaperPlane,
-  faSpinner,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { AnimatePresence, motion, useInView } from 'framer-motion';
+import { FormEvent, useCallback, useState } from 'react';
 
 type FormState = 'idle' | 'sending' | 'success' | 'error';
 
@@ -26,22 +18,56 @@ const initialFormData: FormData = {
   message: '',
 };
 
-export function ContactForm() {
-  const formRef = useRef<HTMLFormElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: true, margin: '-100px' });
+const statusMessage: Record<Exclude<FormState, 'idle' | 'sending'>, string> = {
+  success: '메시지를 보냈습니다. 확인하는 대로 답장드리겠습니다.',
+  error: '보내지 못했습니다. 잠시 뒤 다시 시도하거나 이메일로 보내 주세요.',
+};
 
+const labelClass = 'block mb-1.5 text-sm text-muted-foreground';
+
+// 글자 크기 16px: iOS Safari 가 입력칸에 포커스할 때 화면을 확대하지 않게 한다
+const inputClass =
+  'w-full rounded-lg border border-border-strong bg-card px-3.5 py-2.5 text-base text-foreground ' +
+  'transition-colors focus:border-ring disabled:opacity-60';
+
+interface FieldProps {
+  name: keyof FormData;
+  label: string;
+  type?: string;
+  autoComplete?: string;
+  required?: boolean;
+  value: string;
+  disabled: boolean;
+  onChange: (_e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const Field = ({ name, label, type = 'text', autoComplete, required, value, disabled, onChange }: FieldProps) => (
+  <div>
+    <label htmlFor={`contact-${name}`} className={labelClass}>
+      {label}
+    </label>
+    <input
+      id={`contact-${name}`}
+      type={type}
+      name={name}
+      autoComplete={autoComplete}
+      required={required}
+      value={value}
+      onChange={onChange}
+      className={inputClass}
+      disabled={disabled}
+    />
+  </div>
+);
+
+export function ContactForm() {
   const [formState, setFormState] = useState<FormState>('idle');
   const [formData, setFormData] = useState<FormData>(initialFormData);
-  const [focusedField, setFocusedField] = useState<keyof FormData | null>(null);
 
-  const handleChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      const { name, value } = e.target;
-      setFormData((prev) => ({ ...prev, [name]: value }));
-    },
-    []
-  );
+  const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  }, []);
 
   const handleSubmit = useCallback(
     async (e: FormEvent<HTMLFormElement>) => {
@@ -56,222 +82,59 @@ export function ContactForm() {
         });
 
         if (res.ok) {
+          setFormData(initialFormData);
           setFormState('success');
-          // 3초 후 폼 리셋
-          setTimeout(() => {
-            setFormData(initialFormData);
-            setFormState('idle');
-          }, 3000);
         } else {
           setFormState('error');
-          setTimeout(() => setFormState('idle'), 3000);
         }
       } catch {
         setFormState('error');
-        setTimeout(() => setFormState('idle'), 3000);
       }
     },
-    [formData]
+    [formData],
   );
 
-  const inputClasses = (field: keyof FormData) =>
-    `w-full px-4 py-3 rounded-xl border bg-background/50 backdrop-blur-sm
-     text-foreground placeholder:text-muted-foreground/60
-     transition-all duration-300 outline-none
-     ${
-       focusedField === field
-         ? 'border-accent ring-2 ring-accent/20 shadow-lg shadow-accent/5'
-         : 'border-border hover:border-accent/50'
-     }`;
-
-  const labelClasses = (field: keyof FormData) =>
-    `block mb-1.5 text-sm font-medium transition-colors duration-200
-     ${
-       focusedField === field
-         ? 'text-accent'
-         : 'text-muted-foreground'
-     }`;
+  const isSending = formState === 'sending';
 
   return (
-    <motion.div
-      ref={containerRef}
-      initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-      transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="mt-12"
-    >
-      <div className="max-w-2xl mx-auto">
-        <motion.div
-          className="p-8 rounded-2xl border border-border bg-card/30 backdrop-blur-md shadow-xl"
-          whileHover={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15)' }}
-        >
-          <h3 className="text-lg font-semibold text-foreground mb-6 flex items-center gap-2">
-            <FontAwesomeIcon icon={faPaperPlane} className="text-accent" />
-            메시지 보내기
-          </h3>
-
-          <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Name */}
-              <div className="relative">
-                <label htmlFor="contact-name" className={labelClasses('name')}>
-                  이름
-                </label>
-                <input
-                  id="contact-name"
-                  type="text"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  onFocus={() => setFocusedField('name')}
-                  onBlur={() => setFocusedField(null)}
-                  className={inputClasses('name')}
-                  aria-label="이름"
-                  disabled={formState === 'sending'}
-                />
-              </div>
-
-              {/* Email */}
-              <div className="relative">
-                <label htmlFor="contact-email" className={labelClasses('email')}>
-                  이메일
-                </label>
-                <input
-                  id="contact-email"
-                  type="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  onFocus={() => setFocusedField('email')}
-                  onBlur={() => setFocusedField(null)}
-                  className={inputClasses('email')}
-                  aria-label="이메일"
-                  disabled={formState === 'sending'}
-                />
-              </div>
-            </div>
-
-            {/* Subject */}
-            <div className="relative">
-              <label htmlFor="contact-subject" className={labelClasses('subject')}>
-                제목 (선택)
-              </label>
-              <input
-                id="contact-subject"
-                type="text"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                onFocus={() => setFocusedField('subject')}
-                onBlur={() => setFocusedField(null)}
-                className={inputClasses('subject')}
-                aria-label="제목"
-                disabled={formState === 'sending'}
-              />
-            </div>
-
-            {/* Message */}
-            <div className="relative">
-              <label htmlFor="contact-message" className={labelClasses('message')}>
-                메시지
-              </label>
-              <textarea
-                id="contact-message"
-                name="message"
-                required
-                rows={5}
-                value={formData.message}
-                onChange={handleChange}
-                onFocus={() => setFocusedField('message')}
-                onBlur={() => setFocusedField(null)}
-                className={`${inputClasses('message')} resize-none`}
-                aria-label="메시지"
-                disabled={formState === 'sending'}
-              />
-            </div>
-
-            {/* Submit Button */}
-            <motion.button
-              type="submit"
-              disabled={formState === 'sending' || formState === 'success'}
-              className={`
-                w-full py-4 px-6 rounded-xl font-medium text-sm
-                flex items-center justify-center gap-2
-                transition-all duration-300
-                focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:outline-none
-                ${
-                  formState === 'success'
-                    ? 'bg-green-500 text-white'
-                    : formState === 'error'
-                    ? 'bg-red-500 text-white'
-                    : 'bg-accent text-accent-foreground hover:bg-accent/90'
-                }
-                disabled:cursor-not-allowed
-              `}
-              whileHover={formState === 'idle' ? { scale: 1.02 } : {}}
-              whileTap={formState === 'idle' ? { scale: 0.98 } : {}}
-            >
-              <AnimatePresence mode="wait">
-                {formState === 'idle' && (
-                  <motion.span
-                    key="idle"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="flex items-center gap-2"
-                  >
-                    <FontAwesomeIcon icon={faPaperPlane} />
-                    보내기
-                  </motion.span>
-                )}
-                {formState === 'sending' && (
-                  <motion.span
-                    key="sending"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="flex items-center gap-2"
-                  >
-                    <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
-                    준비 중...
-                  </motion.span>
-                )}
-                {formState === 'success' && (
-                  <motion.span
-                    key="success"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="flex items-center gap-2"
-                  >
-                    <FontAwesomeIcon icon={faCheck} />
-                    메시지가 전송되었습니다!
-                  </motion.span>
-                )}
-                {formState === 'error' && (
-                  <motion.span
-                    key="error"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="flex items-center gap-2"
-                  >
-                    <FontAwesomeIcon icon={faExclamationCircle} />
-                    오류가 발생했습니다
-                  </motion.span>
-                )}
-              </AnimatePresence>
-            </motion.button>
-          </form>
-
-          {/* Privacy note */}
-          <p className="mt-4 text-xs text-muted-foreground text-center">
-            메시지는 안전하게 저장되며, 빠른 시일 내에 답변드리겠습니다.
-          </p>
-        </motion.div>
+    <form onSubmit={handleSubmit} className="max-w-[40rem] space-y-5">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+        <Field name="name" label="이름" autoComplete="name" required value={formData.name} disabled={isSending} onChange={handleChange} />
+        <Field name="email" label="이메일" type="email" autoComplete="email" required value={formData.email} disabled={isSending} onChange={handleChange} />
       </div>
-    </motion.div>
+
+      <Field name="subject" label="제목 (선택)" value={formData.subject} disabled={isSending} onChange={handleChange} />
+
+      <div>
+        <label htmlFor="contact-message" className={labelClass}>
+          메시지
+        </label>
+        <textarea
+          id="contact-message"
+          name="message"
+          required
+          rows={5}
+          value={formData.message}
+          onChange={handleChange}
+          className={`${inputClass} resize-y`}
+          disabled={isSending}
+        />
+      </div>
+
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+        <button
+          type="submit"
+          disabled={isSending}
+          className="rounded-lg bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-[scale,opacity] duration-150 ease-out enabled:active:scale-[0.96] disabled:opacity-60"
+        >
+          {isSending ? '보내는 중…' : '보내기'}
+        </button>
+
+        {/* 빈 상태로 먼저 렌더해 두어야 화면 낭독기가 뒤에 채워지는 문구를 읽는다 */}
+        <p role="status" className={`text-sm ${formState === 'error' ? 'text-red-600 dark:text-red-400' : 'text-muted-foreground'}`}>
+          {formState === 'success' || formState === 'error' ? statusMessage[formState] : ''}
+        </p>
+      </div>
+    </form>
   );
 }

@@ -1,24 +1,34 @@
-import React from 'react';
+import Link from 'next/link';
 
-import { Title } from '@/components/Title';
+import { Section } from './Section';
 
-export default function ProjectSection() {
+import { getProjects } from '@/api/content/projects';
+import { ProjectItem } from '@/components/ProjectItem';
+
+const FEATURED_COUNT = 4;
+
+export default async function ProjectSection() {
+  const { projects } = await getProjects();
+  // 중요도순 목록에서 커버 이미지가 있는 것만 골라, 빈 카드가 대표 자리에 오지 않게 한다
+  const featured = projects.filter((project) => project.cover).slice(0, FEATURED_COUNT);
+
+  if (featured.length === 0) return null;
+
   return (
-    <section className="justify-center items-center">
-      <div className="w-full max-w-5xl mx-auto px-4">
-        <Title
-          title="Projects"
-          subTitle="새로운 것을 만든다는 것은 언제나 짜릿합니다. 제가 진행했던 다양한 프로젝트들입니다."
-        />
-
-        <div
-          className="my-8"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, 50px)',
-            gridGap: '16px',
-          }}></div>
+    <Section
+      id="projects"
+      title="Projects"
+      action={
+        <Link href="/projects" className="link text-muted-foreground">
+          전체 {projects.length}개
+        </Link>
+      }
+    >
+      <div className="grid gap-5 sm:grid-cols-2">
+        {featured.map((project) => (
+          <ProjectItem key={project.id} project={project} />
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }
