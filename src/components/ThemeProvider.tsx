@@ -9,18 +9,22 @@ interface ThemeProviderProps {
 }
 
 /**
- * next-themes 가 html 의 class 로 밝기를 정하고, Radix Theme 은 그 class 를 그대로 따른다.
- * 테마가 바뀌는 순간에는 색 transition 을 꺼서 화면 전체가 번지듯 바뀌지 않게 한다.
+ * 사이트는 라이트 모드 하나로만 보인다.
+ * forcedTheme 은 시스템 설정(prefers-color-scheme)과 localStorage 에 남은 예전 선택('dark')을 모두 무시하고
+ * html 에 항상 light class 를 붙인다. Radix Theme 도 light 로 고정한다.
  */
 export function ThemeProvider({ children }: ThemeProviderProps) {
   return (
     <NextThemesProvider
       attribute="class"
-      defaultTheme="system"
-      enableSystem
+      defaultTheme="light"
+      forcedTheme="light"
+      enableSystem={false}
       disableTransitionOnChange
     >
-      <Theme hasBackground={false}>{children}</Theme>
+      <Theme appearance="light" hasBackground={false}>
+        {children}
+      </Theme>
     </NextThemesProvider>
   );
 }

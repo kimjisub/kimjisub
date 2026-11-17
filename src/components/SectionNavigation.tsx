@@ -5,21 +5,17 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 
 // 메인 페이지 섹션 IDs (순서 중요)
-const SECTION_IDS = ['hero', 'about', 'chat', 'work', 'projects', 'background', 'activities', 'blog', 'testimonials', 'skills', 'github', 'contact'];
+const SECTION_IDS = ['hero', 'about', 'work', 'projects', 'background', 'activities', 'blog', 'contact'];
 
 // 섹션 이름 매핑
 const SECTION_NAMES: Record<string, string> = {
   hero: 'Hero',
   about: 'About',
-  chat: 'Ask',
   work: 'Work',
   projects: 'Projects',
   background: 'Background',
   activities: 'Activities',
   blog: 'Blog',
-  testimonials: 'Testimonials',
-  skills: 'Stack',
-  github: 'GitHub',
   contact: 'Contact',
 };
 

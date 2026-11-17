@@ -3,7 +3,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import { useTheme } from 'next-themes';
 
 import type { BlogPost } from '@/types/blog';
 
@@ -84,23 +83,6 @@ function LinkedinIcon() {
   );
 }
 
-function SunIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
-    </svg>
-  );
-}
-
-function MoonIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-    </svg>
-  );
-}
-
 function ExternalLinkIcon() {
   return (
     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-40">
@@ -155,13 +137,11 @@ interface CommandPaletteProps {
 
 export function CommandPalette({ open, onClose }: CommandPaletteProps) {
   const router = useRouter();
-  const { setTheme, resolvedTheme } = useTheme();
   const [query, setQuery] = useState('');
   const [activeIndex, setActiveIndex] = useState(0);
   const [recentPosts, setRecentPosts] = useState<BlogPost[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
-  const isDark = resolvedTheme === 'dark';
 
   // Fetch recent blog posts when palette opens
   useEffect(() => {
@@ -267,16 +247,6 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
       keywords: ['linkedin', 'sns', 'social', 'connect'],
     },
 
-    // ── Actions ─────────────────────────────────────────────────────────────
-    {
-      id: 'theme',
-      label: isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode',
-      group: 'Actions',
-      icon: isDark ? <SunIcon /> : <MoonIcon />,
-      kind: 'action',
-      action: () => setTheme(isDark ? 'light' : 'dark'),
-      keywords: ['theme', 'dark', 'light', '다크', '라이트', '테마', 'mode', 'toggle'],
-    },
   ];
 
   // Filter by query

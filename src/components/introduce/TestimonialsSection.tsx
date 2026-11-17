@@ -428,7 +428,12 @@ function TestimonialFormModal({
 ───────────────────────────────────────────── */
 const AUTO_SLIDE_INTERVAL = 5000;
 
-export function TestimonialsSection() {
+interface TestimonialsSectionProps {
+  /** true 면 추천사가 하나도 없을 때(불러오는 중 포함) 섹션 자체를 그리지 않는다 */
+  hideWhenEmpty?: boolean;
+}
+
+export function TestimonialsSection({ hideWhenEmpty = false }: TestimonialsSectionProps = {}) {
   const ref = useRef<HTMLElement>(null);
   const _isInView = useInView(ref, { once: true, margin: '-120px' });
 
@@ -501,6 +506,8 @@ export function TestimonialsSection() {
       if (timerRef.current) clearInterval(timerRef.current);
     };
   }, [paused, goNext, total]);
+
+  if (hideWhenEmpty && (loading || isEmpty)) return null;
 
   if (loading) {
     return (

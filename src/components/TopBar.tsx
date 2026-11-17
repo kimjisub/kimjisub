@@ -7,7 +7,6 @@ import { usePathname } from 'next/navigation';
 
 import { CommandPalette, useCommandPalette } from './CommandPalette';
 import { MobileBottomSheet } from './MobileBottomSheet';
-import { ThemeToggle } from './ThemeToggle';
 
 const links = [
   { path: '/projects', label: 'Projects' },
@@ -81,15 +80,12 @@ const TopBar: React.FC = () => {
               <span>검색</span>
               <kbd className="font-sans text-[11px] text-muted-foreground">⌘K</kbd>
             </button>
-
-            <ThemeToggle />
           </div>
 
           <div className="md:hidden flex items-center gap-1">
             <button type="button" onClick={() => setCmdOpen(true)} className={iconButtonClass} aria-label="검색 열기">
               <SearchIcon size={16} />
             </button>
-            <ThemeToggle />
             <button
               type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}

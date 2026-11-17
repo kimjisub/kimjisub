@@ -161,9 +161,9 @@
     }
   }
 
-  /* 홈 화면 공통 2열 격자: 왼쪽 제목 열 + 오른쪽 내용 열 */
+  /* 홈 화면 공통 본문 폭: 한 칸짜리 열 하나에 제목과 내용을 위아래로 쌓는다 */
   .home-grid {
-    @apply mx-auto grid max-w-5xl gap-y-6 px-5 md:grid-cols-[11rem_minmax(0,1fr)] md:gap-x-12 md:px-6;
+    @apply mx-auto grid max-w-3xl gap-y-8 px-5 md:px-6;
   }
 
   .glass-card {
