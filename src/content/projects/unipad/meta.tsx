@@ -34,7 +34,7 @@ export const meta: ProjectMeta = {
   visible: true,
   type: 'project',
   URL: 'https://play.google.com/store/apps/details?id=com.kimjisub.launchpad&hl=ko',
-  '설명': '500+만 다운로드를 달성한 런치패드 기반의 연주형 리듬게임',
+  '설명': '1,000만 다운로드를 달성한 런치패드 기반의 연주형 리듬게임',
   '날짜': '2016-02-16',
   '분류': [
     '개인 프로젝트',

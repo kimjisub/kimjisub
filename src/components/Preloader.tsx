@@ -148,7 +148,7 @@ export default function Preloader() {
 							initial="initial"
 							animate="animate"
 						>
-							CTO &amp; Product Engineer
+							Founding Engineer
 						</motion.p>
 
 						{/* 프로그레스 바 */}

@@ -7,7 +7,7 @@ const personSchema = {
 	alternateName: 'Jisub Kim',
 	url: siteUrl,
 	image: `${siteUrl}/logo512.png`,
-	jobTitle: 'CTO & Product Engineer',
+	jobTitle: 'Founding Engineer',
 	worksFor: {
 		'@type': 'Organization',
 		name: 'Alpaon',
@@ -33,7 +33,7 @@ const personSchema = {
 		'TypeScript',
 		'Node.js',
 	],
-	description: 'CTO at Alpaon. Product Engineer who builds software, firmware, and infrastructure.',
+	description: 'Founding Engineer building products that run without hands-on work, from firmware to cloud and AI. Co-founder and CTO (part-time) at Alpaon.',
 };
 
 const websiteSchema = {
@@ -42,7 +42,7 @@ const websiteSchema = {
 	name: 'Jisub Kim Portfolio',
 	alternateName: '김지섭 포트폴리오',
 	url: siteUrl,
-	description: 'Portfolio website of Jisub Kim - CTO & Product Engineer',
+	description: 'Portfolio website of Jisub Kim, Founding Engineer',
 	author: {
 		'@type': 'Person',
 		name: 'Jisub Kim',

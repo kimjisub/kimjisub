@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'Jisub Kim | CTO & Product Engineer';
+export const alt = 'Jisub Kim | Founding Engineer';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -148,7 +148,7 @@ export default function Image() {
                   letterSpacing: '0.02em',
                 }}
               >
-                CTO &amp; Product Engineer
+                Founding Engineer
               </span>
             </div>
             <div
@@ -159,7 +159,7 @@ export default function Image() {
                 lineHeight: '1.5',
               }}
             >
-              Building software, firmware, and infrastructure. CTO at Alpaon.
+              Building products that run without hands-on work, from firmware to cloud and AI.
             </div>
           </div>
 

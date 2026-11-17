@@ -95,7 +95,7 @@ export default function Footer() {
 							Jisub Kim
 						</Link>
 						<p className="mt-2 max-w-[16rem] text-sm leading-relaxed text-muted-foreground">
-							CTO &amp; Product Engineer building software, firmware, and infrastructure.
+							Founding Engineer building products that run without hands-on work, from firmware to cloud and AI.
 						</p>
 					</div>
 					<NewsletterForm />

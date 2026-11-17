@@ -9,14 +9,14 @@ export const meta: CareerMeta = {
     '회사',
   ],
   '날짜': '2020-01-01',
-  '종료일': '2024-07-31',
-  '설명': 'eyevacs 아파트 차량 관제·커뮤니티 플랫폼 개발. (중간 휴식기 1년 7개월 포함)',
+  '종료일': '2025-07-31',
+  '설명': '아파트 단지 차량 관제, 출입, 커뮤니티, 주차 전산. Software Engineer (프리랜서 상근) -> Full Stack Engineer (정규직).',
   '이름': 'Silicon Bridge',
   '관련된 프로젝트': [
     'eyevacs4',
   ],
   '맡은 업무': [
-    'Full Stack Engineer',
     'Software Engineer',
+    'Full Stack Engineer',
   ],
 };

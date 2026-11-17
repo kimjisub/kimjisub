@@ -42,16 +42,6 @@ const activities: Activity[] = [
     thumbnail: 'https://i.ytimg.com/vi/kWjI-JJnI-4/maxresdefault.jpg',
   },
   {
-    date: '2024',
-    type: 'Post',
-    title: 'LinkedIn Activity',
-    description: 'Professional network post',
-    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7132029531871182848/',
-    source: 'LinkedIn',
-    thumbnail:
-      'https://media.licdn.com/dms/image/v2/D5622AQEBMQ769zk-aA/feedshare-shrink_800/feedshare-shrink_800/0/1700408346046?e=2147483647&v=beta&t=bxAgXb4yOrro09Fi1Baa3pbW2H1GGKck7Biu6EEaKLc',
-  },
-  {
     date: '2019.12',
     type: 'Video/Talk',
     title: 'SW교육 이야기 — 학교, 미래를 품다',

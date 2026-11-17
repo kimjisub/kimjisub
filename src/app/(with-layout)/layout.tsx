@@ -36,11 +36,11 @@ const siteUrl = 'https://kimjisub.com';
 export const metadata: Metadata = {
 	metadataBase: new URL(siteUrl),
 	title: {
-		default: 'Jisub Kim | CTO & Product Engineer',
+		default: 'Jisub Kim | Founding Engineer',
 		template: '%s | Jisub Kim',
 	},
-	description: 'CTO at Alpaon. Product Engineer who builds software, firmware, and infrastructure. Portfolio of projects, skills, and career experiences.',
-	keywords: ['김지섭', 'Jisub Kim', 'CTO', 'Product Engineer', 'Full Stack Developer', 'Alpaon', 'Candid', '포트폴리오', 'Portfolio'],
+	description: 'Founding Engineer. 초기 제품의 기술 전부를 맡아, 사람 손 없이 돌아가는 제품으로 만듭니다. Co-founder and CTO (part-time) at Alpaon. Portfolio of projects, skills, and career experiences.',
+	keywords: ['김지섭', 'Jisub Kim', 'Founding Engineer', 'Full Stack Developer', 'Alpaon', 'UniPad', '포트폴리오', 'Portfolio'],
 	authors: [{ name: 'Jisub Kim', url: siteUrl }],
 	creator: 'Jisub Kim',
 	openGraph: {
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
 		alternateLocale: 'en_US',
 		url: siteUrl,
 		siteName: 'Jisub Kim Portfolio',
-		title: 'Jisub Kim | CTO & Product Engineer',
-		description: 'CTO at Alpaon. Product Engineer who builds software, firmware, and infrastructure.',
+		title: 'Jisub Kim | Founding Engineer',
+		description: 'Founding Engineer building products that run without hands-on work, from firmware to cloud and AI.',
 		images: [
 			{
 				url: '/logo512.png',
@@ -62,8 +62,8 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: 'summary_large_image',
-		title: 'Jisub Kim | CTO & Product Engineer',
-		description: 'CTO at Alpaon. Product Engineer who builds software, firmware, and infrastructure.',
+		title: 'Jisub Kim | Founding Engineer',
+		description: 'Founding Engineer building products that run without hands-on work, from firmware to cloud and AI.',
 		images: ['/logo512.png'],
 		creator: '@kimjisub',
 	},
@@ -98,8 +98,8 @@ export default function RootLayout({
 		<html lang="ko" className={`${inter.variable} ${newsreader.variable}`} suppressHydrationWarning>
 			<head>
 				<JsonLd />
-				<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa" />
-				<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0b0d" />
+				<meta name="theme-color" content="#fafafa" />
+				<meta name="color-scheme" content="light" />
 				<link rel="apple-touch-icon" href="/logo192.png" />
 			</head>
 			<AppInfoProvider>

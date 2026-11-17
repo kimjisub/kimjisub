@@ -3,13 +3,12 @@ import Link from 'next/link';
 
 const links = [
   { href: 'https://alpaon.com', label: 'Alpaon' },
-  { href: 'https://teamcandid.kr', label: 'Candid' },
   { href: 'https://github.com/kimjisub', label: 'GitHub' },
 ];
 
 export const HeroSection = () => {
   return (
-    <section id="hero" aria-labelledby="hero-heading" className="py-20 md:py-28">
+    <section id="hero" aria-labelledby="hero-heading" className="py-20 md:py-32">
       <div className="home-grid">
         <Image
           src="/logo192.png"
@@ -28,10 +27,10 @@ export const HeroSection = () => {
             김지섭
           </h1>
           <p className="mt-5 text-xl leading-snug text-foreground md:text-2xl">
-            Alpaon CTO. Candid Product Engineer.
+            Founding Engineer
           </p>
           <p className="mt-3 max-w-[38rem] text-lg leading-relaxed text-muted-foreground">
-            소프트웨어부터 펌웨어, 인프라까지 직접 만들고 운영합니다.
+            초기 제품의 기술 전부를 맡아, 사람 손 없이 돌아가는 제품으로 만듭니다. 무엇을 만들지는 함께 정하고, 장비부터 클라우드와 AI까지 기술과 운영을 직접 맡습니다.
           </p>
 
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
