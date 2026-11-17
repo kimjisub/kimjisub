@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import Link from 'next/link';
 
+import { ArrowIcon, ExternalIcon } from './ExternalIcon';
 import { Section } from './Section';
 
 interface WorkItemData {
@@ -8,98 +9,104 @@ interface WorkItemData {
   href?: string;
   external?: boolean;
   period: string;
-  role: string;
+  role: ReactNode;
   description: ReactNode;
   details: ReactNode[];
 }
 
 const InlineLink = ({ href, external = false, children }: { href: string; external?: boolean; children: ReactNode }) => (
-  <Link href={href} className="link text-foreground" {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+  <Link href={href} className="link" {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
     {children}
+    {external && <ExternalIcon />}
   </Link>
 );
 
+/**
+ * 홈의 경력은 처음 읽는 사람 기준으로 쓴다.
+ * 회사마다 "무슨 회사인지 한 줄, 내가 만든 것, 의미가 바로 보이는 숫자" 순서로 두고, 내부 지표와 기술 이름은 /careers 상세에만 남긴다.
+ * 순서는 지금 하는 일(Alpaon)을 맨 위로, 나머지는 시간 역순.
+ */
 const workItems: WorkItemData[] = [
-  {
-    title: 'Candid',
-    href: 'https://teamcandid.kr',
-    external: true,
-    period: '2025.08 - 2026.10',
-    role: 'AX & Product Engineer',
-    description: '스타트업 채용 컨설팅 회사. 기획부터 백엔드, 프론트, 인프라, AI까지 담당.',
-    details: [
-      '엑셀과 Slack에 흩어진 운영을 ERP 하나로 모으고, 에이전트가 같은 데이터를 읽게 열어둠. 입사 석 달 만에 영업 운영을 이전.',
-      '후보 서치 3~5시간 -> 70분. 이 도구로 진행한 포지션에서 첫 달 계약 2건. 추천 상위 10명 중 적합 후보 3명 -> 7명.',
-      '서치 한 번 모델 비용 $3,148 -> $559. 에이전트 실행 79분 -> 40분.',
-      '기존 입력 칸 안에 AI를 넣어 컨설턴트의 입력 흐름을 유지. 컨설턴트 20명 중 9명이 매주 사용.',
-    ],
-  },
   {
     title: 'Alpaon',
     href: 'https://alpaon.com',
     external: true,
-    period: '2022.08 - present',
+    period: '2022.08 – 현재',
     role: '공동창업자, CTO (파트타임)',
-    description: '산업 현장의 설비와 데이터를 클라우드와 AI에 연결하는 회사. AlpaConnect와 Synapus 합산 고객사 약 10곳.',
+    description: '공장과 매장의 설비를 인터넷과 AI에 연결하는 회사입니다. 고객사는 두 제품을 합쳐 약 10곳입니다.',
     details: [
       <>
-        <InlineLink href="/projects/alpaconnect">AlpaConnect</InlineLink>: 회로 기판, 펌웨어, 서버, 모바일 앱까지 직접
-        만들어 식당 주방, 주정 공장, 진공 챔버, 녹색건축, 자동차 승차감 측정 현장에 납품. 망이 끊겨도 기록이 남고, 서명
-        검증 뒤 실패하면 이전 버전으로 돌아가는 원격 업데이트.
+        <InlineLink href="/projects/alpaconnect">AlpaConnect</InlineLink>: 설비에 붙이는 장치의 회로 기판부터, 데이터를
+        모으는 서버와 앱까지 만들었습니다. 식당 주방, 공장, 연구용 장비처럼 서로 다른 현장에 납품했고, 장비에 문제가
+        생겨도 현장에 가지 않고 원격으로 고칩니다.
       </>,
-      '서비스가 늘 함께 배포되고 CPU 사용률이 4.5%라, 마이크로서비스 9개와 Kafka, gRPC를 서비스 하나로 통합. 현장 컨테이너 31개 -> 7개. 같은 설치본을 폐쇄망 공장 서버에도 배포.',
+      '구조를 단순하게 바꿔, 인터넷이 막힌 공장에도 같은 제품을 설치할 수 있게 했습니다.',
       <>
         <InlineLink href="https://synap.us" external>
           Synapus
         </InlineLink>
-        : 결제가 확인되면 가상 서버가 만들어지는 셀프서비스 클라우드. 랙 200U 이상 IDC. 2025년 1월 개별 계약, 11월
-        플랫폼 오픈.
+        : 결제하면 바로 서버가 만들어지는 클라우드 서비스입니다. 사람이 계약마다 처리하던 서버 임대를 자동으로 팔리는
+        상품으로 바꿨습니다.
       </>,
+    ],
+  },
+  {
+    title: 'Candid',
+    href: 'https://teamcandid.kr',
+    external: true,
+    period: '2025.08 – 2026.10',
+    role: 'AX & Product Engineer',
+    description: '스타트업의 채용을 도와주는 컨설팅 회사입니다. 기획부터 개발, 운영까지 제품 전체를 맡았습니다.',
+    details: [
+      '엑셀과 Slack에 흩어져 있던 업무를 사내 시스템 하나로 모았습니다.',
+      '후보자를 찾아 평가하는 AI 에이전트를 만들어, 포지션마다 3~5시간 걸리던 서치를 70분으로 줄였습니다. 이 도구로 진행한 포지션에서 첫 달에 계약 2건이 나왔습니다.',
+      '컨설턴트 20명 중 9명이 매주 썼습니다.',
     ],
   },
   {
     title: 'Silicon Bridge',
-    period: '2020.01 - 2025.07',
-    role: 'Software Engineer (프리랜서 상근, 2020.01 - 2024.03) -> Full Stack Engineer (정규직, 2024.04 - 2025.07)',
-    description:
-      '아파트 단지 차량 관제, 출입, 커뮤니티, 주차 전산. 군 복무를 빼면 4년. 2022.08부터 알파온 파트타임과 병행. 스톡옵션을 받고 2024년에 정규직으로 전환.',
-    details: [
+    period: '2020.01 – 2025.07',
+    role: (
       <>
-        <InlineLink href="/projects/eyevacs4">eyevacs4</InlineLink>: 약 300개 단지의 운영 플랫폼. 서비스 코드는 두고
-        클라우드 부품만 오픈소스로 바꿔, 단지 서버 한 대의 설치형을 제작. 인터넷이 막힌 단지에도 같은 제품 판매.
-      </>,
-      'eyevacs parking: 요금 정책을 설정으로 바꿔 2020년 첫 버전부터 새 현장을 개발 없이 개설. 차단기, 카메라, 센서를 한 서버에서 시간당 30만 건 처리.',
+        Software Engineer
+        <ArrowIcon />
+        Full Stack Engineer
+      </>
+    ),
+    description: '아파트 단지의 차량 출입, 주차, 커뮤니티를 관리하는 서비스 회사입니다. 약 300개 단지가 씁니다.',
+    details: [
+      '인터넷이 막힌 단지에도 설치할 수 있는 버전을 만들어, 같은 제품을 더 많은 단지에 팔 수 있게 했습니다.',
+      '주차장마다 다른 요금 규칙을 설정만으로 적용하게 만들어, 새 주차장을 개발 없이 열었습니다.',
+      '차단기, 카메라, 센서 신호를 시간당 30만 건 처리하는 서버를 운영했습니다.',
     ],
   },
   {
-    title: 'VPLATE (더브이플래닛)',
+    title: 'VPLATE',
     href: '/projects/vplate',
-    period: '2019.02 - 2019.09',
-    role: 'Software Engineer, 정규직',
-    description: '광고 영상 자동 제작 플랫폼. 고등학교 3학년 때 합류.',
+    period: '2019.02 – 2019.09',
+    role: 'Software Engineer',
+    description: '광고 영상을 자동으로 만들어 주는 서비스입니다. 고등학교 3학년 때 합류했습니다.',
     details: [
-      '영상 편집 도구를 코드로 조종해, 템플릿의 영상, 이미지, 글자를 바꿔 렌더링하는 엔진과 모바일 제작 앱을 처음부터 개발. 백엔드 구조와 API는 설계 후 담당 개발자에게 인계.',
-      '직원이 템플릿마다 한 시간씩 손으로 하던 제작을, 사용자가 휴대폰에서 끝내는 제품으로 변경.',
+      '영상 편집 프로그램을 코드로 움직이는 엔진과 모바일 앱을 만들어, 직원이 한 시간씩 손으로 만들던 광고 영상을 사용자가 휴대폰에서 직접 만들게 했습니다.',
     ],
   },
   {
     title: 'UniPad',
     href: '/projects/unipad',
-    period: '2016.02 - present',
+    period: '2016.02 – 현재',
     role: '개인 프로젝트',
-    description: '8x8 패드를 눌러 곡을 연주하는 리듬게임. 2026년부터 다시 개발해 운영 중.',
+    description: '화면의 8x8 버튼을 눌러 곡을 연주하는 리듬게임입니다.',
     details: [
-      '혼자서는 곡을 다 만들 수 없어 사용자가 곡(팩)을 만들게 함. 형식을 공개하고 예전 팩이 계속 열리게 호환을 유지.',
-      '누적 1,000만 다운로드, 최대 월 사용자 80만, Google Play 음악 게임 인기 1위.',
-      '실제 Launchpad 기기와 연결. EDM 공연과 초등학교 교구로 사용.',
+      '사용자가 직접 곡을 만들어 올리게 해, 누적 1,000만 다운로드, 최대 월 사용자 80만, Google Play 음악 게임 인기 1위를 기록했습니다.',
+      '실제 런치패드 기기와 연결돼 EDM 공연과 초등학교 수업에도 쓰였습니다.',
     ],
   },
 ];
 
 const WorkItem = ({ title, href, external, period, role, description, details }: WorkItemData) => (
-  <li>
+  <li className="py-10 first:pt-0 last:pb-0">
     <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-      <h3 className="text-lg font-medium text-foreground">
+      <h3 className="text-xl font-semibold tracking-[-0.02em] text-foreground md:text-[1.375rem]">
         {href ? (
           <InlineLink href={href} external={external}>
             {title}
@@ -108,13 +115,15 @@ const WorkItem = ({ title, href, external, period, role, description, details }:
           title
         )}
       </h3>
-      <p className="text-sm tabular-nums text-muted-foreground whitespace-nowrap">{period}</p>
+      <p className="meta-num whitespace-nowrap text-sm text-muted-foreground">{period}</p>
     </div>
-    <p className="mt-1 text-sm text-muted-foreground">{role}</p>
-    <p className="mt-4 max-w-[40rem] leading-relaxed text-foreground">{description}</p>
-    <ul className="mt-3 max-w-[40rem] list-disc space-y-1.5 pl-5 text-[0.9375rem] leading-relaxed text-muted-foreground marker:text-border-strong">
+    <p className="mt-1 text-[0.9375rem] text-muted-foreground">{role}</p>
+    <p className="prose-ko mt-5 text-foreground">{description}</p>
+    <ul className="prose-ko mt-4 space-y-2.5 text-[0.9375rem] leading-[1.75] text-foreground/80 md:text-base">
       {details.map((detail, i) => (
-        <li key={i}>{detail}</li>
+        <li key={i} className="relative pl-4 before:absolute before:left-0 before:top-[0.85em] before:h-px before:w-2 before:bg-border-strong">
+          {detail}
+        </li>
       ))}
     </ul>
   </li>
@@ -131,7 +140,7 @@ export const WorkSection = () => {
         </Link>
       }
     >
-      <ol className="space-y-12">
+      <ol className="divide-y divide-border">
         {workItems.map((item) => (
           <WorkItem key={item.title} {...item} />
         ))}

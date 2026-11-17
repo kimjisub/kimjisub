@@ -1,4 +1,5 @@
 import { ContactForm } from './ContactForm';
+import { ExternalIcon } from './ExternalIcon';
 import { Section } from './Section';
 
 const contactLinks = [
@@ -10,7 +11,7 @@ const contactLinks = [
 export const ContactSection = () => {
   return (
     <Section id="contact" title="Contact">
-      <p className="max-w-[40rem] leading-relaxed text-foreground">
+      <p className="prose-ko text-foreground">
         프로젝트 협업, 커피챗, 또는 그냥 인사도 환영합니다.
       </p>
 
@@ -23,7 +24,7 @@ export const ContactSection = () => {
               {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             >
               {label}
-              {external && <span aria-hidden="true"> ↗</span>}
+              {external && <ExternalIcon />}
             </a>
           </li>
         ))}

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import { ExternalIcon } from './ExternalIcon';
 import { Section } from './Section';
 
 interface Activity {
@@ -45,7 +46,7 @@ const activities: Activity[] = [
     date: '2019.12',
     type: 'Video/Talk',
     title: 'SW교육 이야기 — 학교, 미래를 품다',
-    description: 'EBS 2TV 방영 · 0:42부터 출연',
+    description: 'EBS 2TV 방영, 0:42부터 출연',
     url: 'https://www.ebs.co.kr/tv/show?prodId=132230&lectId=20200544',
     source: 'EBS',
     thumbnail:
@@ -55,7 +56,7 @@ const activities: Activity[] = [
     date: '2019.10',
     type: 'Video/Talk',
     title: '청소년 CEO에 도전하다',
-    description: 'KTV 국민방송 · 4:50부터 출연',
+    description: 'KTV 국민방송, 4:50부터 출연',
     url: 'https://www.ktv.go.kr/program/home/PG2180041D/content/565035',
     source: 'KTV',
     thumbnail: 'https://www.ktv.go.kr/media/unit/unit/fixed_image/zk3FyQhryD.jpg',
@@ -103,8 +104,8 @@ export const ActivitiesSection = () => {
                 <p className="mt-1 text-sm text-muted-foreground">{activity.description}</p>
               </div>
               <p className="text-sm text-muted-foreground whitespace-nowrap sm:pt-0.5 sm:text-right">
-                {typeLabel[activity.type]} · {activity.source}
-                <span aria-hidden="true"> ↗</span>
+                {typeLabel[activity.type]}, {activity.source}
+                <ExternalIcon />
               </p>
             </a>
           </li>

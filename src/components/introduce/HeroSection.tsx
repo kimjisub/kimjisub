@@ -1,50 +1,58 @@
 import Image from 'next/image';
-import Link from 'next/link';
+
+import { ExternalIcon } from './ExternalIcon';
 
 const links = [
-  { href: 'https://alpaon.com', label: 'Alpaon' },
-  { href: 'https://github.com/kimjisub', label: 'GitHub' },
+  { href: 'https://alpaon.com', label: 'Alpaon', external: true },
+  { href: 'https://github.com/kimjisub', label: 'GitHub', external: true },
+  { href: 'https://www.linkedin.com/in/kimjisub', label: 'LinkedIn', external: true },
+  { href: 'mailto:0226daniel@gmail.com', label: 'Email', external: false },
 ];
 
 export const HeroSection = () => {
   return (
-    <section id="hero" aria-labelledby="hero-heading" className="py-20 md:py-32">
+    <section id="hero" aria-labelledby="hero-heading" className="pb-16 pt-16 md:pb-24 md:pt-28">
       <div className="home-grid">
         <Image
           src="/logo192.png"
           alt=""
-          width={72}
-          height={72}
+          width={64}
+          height={64}
           priority
-          className="h-16 w-16 rounded-2xl md:h-[72px] md:w-[72px]"
+          className="h-14 w-14 rounded-2xl md:h-16 md:w-16"
         />
 
         <div className="min-w-0">
           <h1
             id="hero-heading"
-            className="text-5xl font-semibold leading-[1.1] tracking-[-0.02em] text-foreground md:text-6xl"
+            className="text-[2.75rem] font-semibold leading-[1.1] tracking-[-0.03em] text-foreground md:text-[3.5rem]"
           >
             김지섭
           </h1>
-          <p className="mt-5 text-xl leading-snug text-foreground md:text-2xl">
+          <p className="mt-2 font-serif text-[1.75rem] italic leading-tight tracking-[-0.01em] text-accent md:text-[2.125rem]">
             Founding Engineer
           </p>
-          <p className="mt-3 max-w-[38rem] text-lg leading-relaxed text-muted-foreground">
-            초기 제품의 기술 전부를 맡아, 사람 손 없이 돌아가는 제품으로 만듭니다. 무엇을 만들지는 함께 정하고, 장비부터 클라우드와 AI까지 기술과 운영을 직접 맡습니다.
+
+          <p className="mt-10 max-w-[28ch] text-[1.5rem] font-semibold leading-[1.45] tracking-[-0.025em] text-foreground md:max-w-none md:text-[1.75rem]">
+            사람이 손으로 하던 일을,
+            <br className="md:hidden" /> 알아서 돌아가는 제품으로 만듭니다.
+          </p>
+          <p className="prose-ko mt-5 text-muted-foreground">
+            공장 장비의 회로 기판부터 서버, 앱, AI 에이전트까지. 초기 제품에 필요한 기술을 처음부터 만들고 운영해
+            왔습니다.
           </p>
 
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          <ul className="mt-9 flex flex-wrap gap-x-7 gap-y-2 text-[0.9375rem]">
             {links.map((link) => (
               <li key={link.href}>
-                <Link
+                <a
                   href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link text-muted-foreground"
+                  className="link font-medium text-foreground"
+                  {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 >
                   {link.label}
-                  <span aria-hidden="true"> ↗</span>
-                </Link>
+                  {link.external && <ExternalIcon />}
+                </a>
               </li>
             ))}
           </ul>

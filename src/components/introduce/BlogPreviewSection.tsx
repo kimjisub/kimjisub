@@ -82,8 +82,10 @@ export default async function BlogPreviewSection() {
                   </p>
                 )}
                 {(meta.tags?.length || meta.readingTime) && (
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    {[...(meta.tags ?? []).slice(0, 2).map((tag) => `#${tag}`), meta.readingTime].filter(Boolean).join(' · ')}
+                  <p className="mt-2 flex flex-wrap gap-x-3 text-sm text-muted-foreground">
+                    {[...(meta.tags ?? []).slice(0, 2).map((tag) => `#${tag}`), meta.readingTime].filter(Boolean).map((item) => (
+                      <span key={item}>{item}</span>
+                    ))}
                   </p>
                 )}
               </div>
