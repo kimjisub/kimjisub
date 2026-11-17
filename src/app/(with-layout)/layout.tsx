@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter, Newsreader } from 'next/font/google';
+import { Newsreader } from 'next/font/google';
 
+// 한글과 본문은 Pretendard Variable. 패키지의 동적 서브셋 CSS 를 번들에 넣어 자체 호스팅하고,
+// unicode-range 로 화면에 실제 쓰인 글자 조각만 내려받는다 (font-display: swap).
+import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
 import '@radix-ui/themes/styles.css';
 import 'katex/dist/katex.min.css';
 import '@/styles/prism-theme.css';
@@ -18,11 +21,6 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import TopBar from '@/components/TopBar';
 import { TerminalProvider } from '@/context/TerminalContext';
 import { AppInfoProvider } from '@/contexts/AppInfoContext';
-
-const inter = Inter({ 
-	subsets: ['latin'],
-	variable: '--font-sans',
-});
 
 const newsreader = Newsreader({ 
 	subsets: ['latin'],
@@ -95,7 +93,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="ko" className={`${inter.variable} ${newsreader.variable}`} suppressHydrationWarning>
+		<html lang="ko" className={newsreader.variable} suppressHydrationWarning>
 			<head>
 				<JsonLd />
 				<meta name="theme-color" content="#fafafa" />

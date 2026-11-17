@@ -19,7 +19,7 @@ export function Section({ id, title, action, children }: SectionProps) {
     <section id={id} aria-labelledby={headingId} className="scroll-mt-14 border-t border-border py-16 md:py-24">
       <div className="home-grid">
         <div className="flex items-baseline justify-between gap-4">
-          <h2 id={headingId} className="text-2xl font-semibold leading-tight tracking-[-0.015em] text-foreground md:text-3xl">
+          <h2 id={headingId} className="font-serif text-[2rem] font-normal leading-none tracking-[-0.01em] text-foreground md:text-[2.5rem]">
             {title}
           </h2>
           {action && <div className="text-sm">{action}</div>}
