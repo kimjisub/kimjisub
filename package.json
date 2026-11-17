@@ -1,6 +1,9 @@
 {
   "name": "kimjisub",
   "version": "0.0.3",
+  "engines": {
+    "node": "24.x"
+  },
   "private": true,
   "scripts": {
     "dev": "concurrently -n next,codegen -c blue,green \"next dev --port 32957\" \"npx tsx scripts/codegen --watch\"",
