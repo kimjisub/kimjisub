@@ -52,6 +52,25 @@ const activities: Activity[] = [
       'https://media.licdn.com/dms/image/v2/D5622AQEBMQ769zk-aA/feedshare-shrink_800/feedshare-shrink_800/0/1700408346046?e=2147483647&v=beta&t=bxAgXb4yOrro09Fi1Baa3pbW2H1GGKck7Biu6EEaKLc',
   },
   {
+    date: '2019.12',
+    type: 'Video/Talk',
+    title: 'SW교육 이야기 — 학교, 미래를 품다',
+    description: 'EBS 2TV 방영 · 0:42부터 출연',
+    url: 'https://www.ebs.co.kr/tv/show?prodId=132230&lectId=20200544',
+    source: 'EBS',
+    thumbnail:
+      'https://static.ebs.co.kr/images/public/2019/12/16/13/15/11/290bd60d-3787-43e8-8896-3ac1d576e9f5.jpg',
+  },
+  {
+    date: '2019.10',
+    type: 'Video/Talk',
+    title: '청소년 CEO에 도전하다',
+    description: 'KTV 국민방송 · 4:50부터 출연',
+    url: 'https://www.ktv.go.kr/program/home/PG2180041D/content/565035',
+    source: 'KTV',
+    thumbnail: 'https://www.ktv.go.kr/media/unit/unit/fixed_image/zk3FyQhryD.jpg',
+  },
+  {
     date: '2019.06',
     type: 'Press',
     title: '10대 소년의 유의미한 성공스토리',

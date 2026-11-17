@@ -1,66 +1,91 @@
-# 👋 사고의 차원을 높히는 개발자 김지섭입니다
+# 김지섭 | Founding Engineer
 
+<a href="https://jisub.kim" target="_blank"><img src="https://img.shields.io/badge/Web-jisub.kim-000000?logo=googlechrome&logoColor=white"/></a>
 <a href="https://velog.io/@kimjisub" target="_blank"><img src="https://img.shields.io/badge/Velog-@kimjisub-20C997?logo=Velog&logoColor=white"/></a>
 <a href="https://www.linkedin.com/in/kimjisub/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-kimjisub-blue?style=flat&logo=linkedin" alt="LinkedIn"></a>
 <a href="mailto:0226daniel@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Email-0226daniel%40gmail.com-blue?logo=gmail&logoColor=white" alt="Email"></a>
 <img src="https://komarev.com/ghpvc/?username=kimjisub" alt="Profile Views">
 
-## 🛠 Tech Stack
+사람이 하던 일을 사람 손 없이 돌아가는 제품으로 바꿔 왔습니다. 장비부터 클라우드와 AI까지, 첫 버전부터 운영까지 맡습니다.
 
-<img src="https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=white"/> <img src="https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/-Java-dd553a?style=flat&logo=oracle&logoColor=white"/> <img src="https://img.shields.io/badge/-Kotlin-7F52FF?style=flat&logo=kotlin&logoColor=white"/> <img src="https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/-C%2B%2B-00599C?style=flat&logo=cplusplus&logoColor=white"/> <img src="https://img.shields.io/badge/-Node.js-339933?style=flat&logo=nodedotjs&logoColor=white"/> <img src="https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/-React%20Native-61DAFB?style=flat&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/-Electron-47848F?style=flat&logo=electron&logoColor=white"/> <img src="https://img.shields.io/badge/-Next.js-000000?style=flat&logo=nextdotjs&logoColor=white"/> <img src="https://img.shields.io/badge/-Tailwind%20CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white"/> <img src="https://img.shields.io/badge/-NestJS-E0234E?style=flat&logo=nestjs&logoColor=white"/> <img src="https://img.shields.io/badge/-Firebase-FFCA28?style=flat&logo=firebase&logoColor=white"/> <img src="https://img.shields.io/badge/-FFmpeg-007808?style=flat&logo=ffmpeg&logoColor=white"/> <img src="https://img.shields.io/badge/-AE%20Script-9999FF?style=flat&logo=adobeaftereffects&logoColor=white"/> <img src="https://img.shields.io/badge/-Chrome%20Extention-4285F4?style=flat&logo=googlechrome&logoColor=white"/> <img src="https://img.shields.io/badge/-Discord%20Bot-5865F2?style=flat&logo=discord&logoColor=white"/> <img src="https://img.shields.io/badge/-i18next-26A69A?style=flat&logo=i18next&logoColor=white"/> <img src="https://img.shields.io/badge/-Elastic%20Stack-005571?style=flat&logo=elasticstack&logoColor=white"/> <img src="https://img.shields.io/badge/-Elasticsearch-005571?style=flat&logo=elasticsearch&logoColor=white"/> <img src="https://img.shields.io/badge/-Logstash-005571?style=flat&logo=logstash&logoColor=white"/> <img src="https://img.shields.io/badge/-Kibana-005571?style=flat&logo=kibana&logoColor=white"/> <img src="https://img.shields.io/badge/-Google%20AdMob-EA4335?style=flat&logo=googleadmob&logoColor=white"/> <img src="https://img.shields.io/badge/-Google%20Analytics-E37400?style=flat&logo=googleanalytics&logoColor=white"/> <img src="https://img.shields.io/badge/-Google%20Home-4285F4?style=flat&logo=googlehome&logoColor=white"/> <img src="https://img.shields.io/badge/-MySQL-4479A1?style=flat&logo=mysql&logoColor=white"/> <img src="https://img.shields.io/badge/-PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white"/> <img src="https://img.shields.io/badge/-MariaDB-003545?style=flat&logo=mariadb&logoColor=white"/> <img src="https://img.shields.io/badge/-SQLite-003B57?style=flat&logo=sqlite&logoColor=white"/> <img src="https://img.shields.io/badge/-DuckDB-FFF000?style=flat&logo=duckdb&logoColor=white"/> <img src="https://img.shields.io/badge/-MongoDB-47A248?style=flat&logo=mongodb&logoColor=white"/> <img src="https://img.shields.io/badge/-InfluxDB-22ADF6?style=flat&logo=influxdb&logoColor=white"/> <img src="https://img.shields.io/badge/-Neo4j-4581C3?style=flat&logo=neo4j&logoColor=white"/> <img src="https://img.shields.io/badge/-Redis-DC382D?style=flat&logo=redis&logoColor=white"/> <img src="https://img.shields.io/badge/-Prisma-2D3748?style=flat&logo=prisma&logoColor=white"/> <img src="https://img.shields.io/badge/-Visual%20Studio%20Code-007ACC?style=flat&logo=visualstudiocode&logoColor=white"/> <img src="https://img.shields.io/badge/-Xcode-147EFB?style=flat&logo=xcode&logoColor=white"/> <img src="https://img.shields.io/badge/-Android%20Studio-3DDC84?style=flat&logo=androidstudio&logoColor=white"/> <img src="https://img.shields.io/badge/-IntelliJ%20IDEA-000000?style=flat&logo=intellijidea&logoColor=white"/> <img src="https://img.shields.io/badge/-EasyEDA-1765F6?style=flat&logo=easyeda&logoColor=white"/> <img src="https://img.shields.io/badge/-OpenAI-412991?style=flat&logo=openai&logoColor=white"/> <img src="https://img.shields.io/badge/-Socket.io-010101?style=flat&logo=socketdotio&logoColor=white"/> <img src="https://img.shields.io/badge/-Apache%20Kafka-231F20?style=flat&logo=apachekafka&logoColor=white"/> <img src="https://img.shields.io/badge/-RabbitMQ-FF6600?style=flat&logo=rabbitmq&logoColor=white"/> <img src="https://img.shields.io/badge/-gRPC-2d4a59?style=flat&logo=grpc&logoColor=white"/> <img src="https://img.shields.io/badge/-MQTT-660066?style=flat&logo=mqtt&logoColor=white"/> <img src="https://img.shields.io/badge/-EMQX-47ac77?style=flat&logo=emqx&logoColor=white"/> <img src="https://img.shields.io/badge/-BLE-0082FC?style=flat&logo=bluetooth&logoColor=white"/> <img src="https://img.shields.io/badge/-NFC-002E5F?style=flat&logo=nfc&logoColor=white"/> <img src="https://img.shields.io/badge/-Zigbee-EB0443?style=flat&logo=zigbee&logoColor=white"/> <img src="https://img.shields.io/badge/-ModBus-000000?style=flat&logo=modbus&logoColor=white"/> <img src="https://img.shields.io/badge/-MIDI-000000?style=flat&logo=midi&logoColor=white"/> <img src="https://img.shields.io/badge/-Docker-2496ED?style=flat&logo=docker&logoColor=white"/> <img src="https://img.shields.io/badge/-Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white"/> <img src="https://img.shields.io/badge/-Amazon%20EC2-FF9900?style=flat&logo=amazonec2&logoColor=white"/> <img src="https://img.shields.io/badge/-Amazon%20S3-569A31?style=flat&logo=amazons3&logoColor=white"/> <img src="https://img.shields.io/badge/-Amazon%20ECR-FF9900?style=flat&logo=amazonecs&logoColor=white"/> <img src="https://img.shields.io/badge/-Amazon%20ECS-FF9900?style=flat&logo=amazonecs&logoColor=white"/> <img src="https://img.shields.io/badge/-Amazon%20RDS-527FFF?style=flat&logo=amazonrds&logoColor=white"/> <img src="https://img.shields.io/badge/-Google%20Cloud-4285F4?style=flat&logo=googlecloud&logoColor=white"/> <img src="https://img.shields.io/badge/-Google%20Assistant-4285F4?style=flat&logo=googleassistant&logoColor=white"/> <img src="https://img.shields.io/badge/-GCP%20App%20Engine-4285F4?style=flat&logo=googlecloud&logoColor=white"/> <img src="https://img.shields.io/badge/-Cloudflare-F38020?style=flat&logo=cloudflare&logoColor=white"/> <img src="https://img.shields.io/badge/-Prometheus-E6522C?style=flat&logo=prometheus&logoColor=white"/> <img src="https://img.shields.io/badge/-Vultr-007BFC?style=flat&logo=vultr&logoColor=white"/> <img src="https://img.shields.io/badge/-VMware%20ESXI-607078?style=flat&logo=vmware&logoColor=white"/> <img src="https://img.shields.io/badge/-NGINX-009639?style=flat&logo=nginx&logoColor=white"/> <img src="https://img.shields.io/badge/-HAProxy-173c5e?style=flat&logo=haproxy&logoColor=white"/> <img src="https://img.shields.io/badge/-Fastlane-00F200?style=flat&logo=fastlane&logoColor=white"/> <img src="https://img.shields.io/badge/-Visual%20Studio%20App%20Center-CB2E6D?style=flat&logo=visualstudioappcenter&logoColor=white"/> <img src="https://img.shields.io/badge/-GitHub%20Actions-2088FF?style=flat&logo=githubactions&logoColor=white"/> <img src="https://img.shields.io/badge/-Jenkins-D24939?style=flat&logo=jenkins&logoColor=white"/> <img src="https://img.shields.io/badge/-Jest-C21325?style=flat&logo=jest&logoColor=white"/> <img src="https://img.shields.io/badge/-macOS-000000?style=flat&logo=macos&logoColor=white"/> <img src="https://img.shields.io/badge/-Windows-0078D4?style=flat&logo=windows&logoColor=white"/> <img src="https://img.shields.io/badge/-Ubuntu-E95420?style=flat&logo=ubuntu&logoColor=white"/> <img src="https://img.shields.io/badge/-Alpine%20Linux-0D597F?style=flat&logo=alpinelinux&logoColor=white"/> <img src="https://img.shields.io/badge/-iOS-000000?style=flat&logo=ios&logoColor=white"/> <img src="https://img.shields.io/badge/-Android-34A853?style=flat&logo=android&logoColor=white"/> <img src="https://img.shields.io/badge/-Raspberry%20Pi-A22846?style=flat&logo=raspberrypi&logoColor=white"/> <img src="https://img.shields.io/badge/-Arduino-00878F?style=flat&logo=arduino&logoColor=white"/> <img src="https://img.shields.io/badge/-Git-F05032?style=flat&logo=git&logoColor=white"/> <img src="https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=white"/> <img src="https://img.shields.io/badge/-Postman-FF6C37?style=flat&logo=postman&logoColor=white"/> <img src="https://img.shields.io/badge/-Slack-4A154B?style=flat&logo=slack&logoColor=white"/> <img src="https://img.shields.io/badge/-Discord-5865F2?style=flat&logo=discord&logoColor=white"/> <img src="https://img.shields.io/badge/-Microsoft%20Teams-6264A7?style=flat&logo=microsoftteams&logoColor=white"/> <img src="https://img.shields.io/badge/-Notion-000000?style=flat&logo=notion&logoColor=white"/> <img src="https://img.shields.io/badge/-Linear-5E6AD2?style=flat&logo=linear&logoColor=white"/> <img src="https://img.shields.io/badge/-Figma-F24E1E?style=flat&logo=figma&logoColor=white"/> <img src="https://img.shields.io/badge/-Adobe%20XD-FF61F6?style=flat&logo=adobexd&logoColor=white"/> <img src="https://img.shields.io/badge/-Swagger-85EA2D?style=flat&logo=swagger&logoColor=white"/> <img src="https://img.shields.io/badge/-Obsidian-7C3AED?style=flat&logo=obsidian&logoColor=white"/> <img src="https://img.shields.io/badge/-Mermaid-FF3670?style=flat&logo=mermaid&logoColor=white"/>
+## Tech Stack
 
-## 🎓 Education
+**Language**<br>
+<img src="https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/-Kotlin-7F52FF?style=flat&logo=kotlin&logoColor=white"/> <img src="https://img.shields.io/badge/-Java-dd553a?style=flat&logo=openjdk&logoColor=white"/> <img src="https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/-C%2B%2B-00599C?style=flat&logo=cplusplus&logoColor=white"/> <img src="https://img.shields.io/badge/-Swift-F05138?style=flat&logo=swift&logoColor=white"/>
 
-- 한국외국어대학교 (2020 ~ 2025)
-    - 20학번 컴퓨터공학부 3학년 재학
+**Backend**<br>
+<img src="https://img.shields.io/badge/-Node.js-339933?style=flat&logo=nodedotjs&logoColor=white"/> <img src="https://img.shields.io/badge/-NestJS-E0234E?style=flat&logo=nestjs&logoColor=white"/> <img src="https://img.shields.io/badge/-GraphQL-E10098?style=flat&logo=graphql&logoColor=white"/> <img src="https://img.shields.io/badge/-gRPC-2d4a59?style=flat&logo=grpc&logoColor=white"/> <img src="https://img.shields.io/badge/-Kafka-231F20?style=flat&logo=apachekafka&logoColor=white"/> <img src="https://img.shields.io/badge/-MQTT-660066?style=flat&logo=mqtt&logoColor=white"/> <img src="https://img.shields.io/badge/-Socket.io-010101?style=flat&logo=socketdotio&logoColor=white"/>
 
-- 한국디지털미디어고등학교 (2017 ~ 2019)
-    - 16기 해킹방어과 졸업
+**Frontend & App**<br>
+<img src="https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/-Next.js-000000?style=flat&logo=nextdotjs&logoColor=white"/> <img src="https://img.shields.io/badge/-React%20Native-61DAFB?style=flat&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/-Android-34A853?style=flat&logo=android&logoColor=white"/> <img src="https://img.shields.io/badge/-iOS-000000?style=flat&logo=ios&logoColor=white"/> <img src="https://img.shields.io/badge/-Tailwind%20CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white"/>
 
-## 🔥 Experience
+**Database**<br>
+<img src="https://img.shields.io/badge/-PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white"/> <img src="https://img.shields.io/badge/-TimescaleDB-FDB515?style=flat&logo=timescale&logoColor=white"/> <img src="https://img.shields.io/badge/-MongoDB-47A248?style=flat&logo=mongodb&logoColor=white"/> <img src="https://img.shields.io/badge/-Redis-DC382D?style=flat&logo=redis&logoColor=white"/> <img src="https://img.shields.io/badge/-SQLite-003B57?style=flat&logo=sqlite&logoColor=white"/> <img src="https://img.shields.io/badge/-Prisma-2D3748?style=flat&logo=prisma&logoColor=white"/>
 
-- **Candid** (2025.08 ~ 현재)
-    - 채용 컨설팅 스타트업의 Core ERP 시스템 설계 및 개발
+**Infra**<br>
+<img src="https://img.shields.io/badge/-Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white"/> <img src="https://img.shields.io/badge/-Docker-2496ED?style=flat&logo=docker&logoColor=white"/> <img src="https://img.shields.io/badge/-ArgoCD-EF7B4D?style=flat&logo=argo&logoColor=white"/> <img src="https://img.shields.io/badge/-AWS-232F3E?style=flat&logo=amazonwebservices&logoColor=white"/> <img src="https://img.shields.io/badge/-Terraform-844FBA?style=flat&logo=terraform&logoColor=white"/> <img src="https://img.shields.io/badge/-Proxmox-E57000?style=flat&logo=proxmox&logoColor=white"/> <img src="https://img.shields.io/badge/-Grafana-F46800?style=flat&logo=grafana&logoColor=white"/> <img src="https://img.shields.io/badge/-GitHub%20Actions-2088FF?style=flat&logo=githubactions&logoColor=white"/>
 
-- **AlpaConnect** (2023.06 ~ 현재)
-    - 산업용 PLC 클라우드 모니터링 및 제어 IoT 플랫폼
-    - 하드웨어 보드 설계부터 클라우드 아키텍처, 모바일 앱, 대시보드까지 풀스택 개발
+**Embedded**<br>
+<img src="https://img.shields.io/badge/-ESP32-E7352C?style=flat&logo=espressif&logoColor=white"/> <img src="https://img.shields.io/badge/-Arduino-00878F?style=flat&logo=arduino&logoColor=white"/> <img src="https://img.shields.io/badge/-KiCad-314CB0?style=flat&logo=kicad&logoColor=white"/> <img src="https://img.shields.io/badge/-Modbus-000000?style=flat&logo=modbus&logoColor=white"/> <img src="https://img.shields.io/badge/-BLE-0082FC?style=flat&logo=bluetooth&logoColor=white"/>
 
-- **Synapus** (2025.02 ~ 현재)
-    - 클라우드 호스팅 서비스 (가상 서버, 전용 서버, 관리형 Kubernetes)
-    - IDC 서버실 직접 운영 및 대규모 트래픽 인프라 구축
+**AI**<br>
+<img src="https://img.shields.io/badge/-Claude%20Code-D97757?style=flat&logo=claude&logoColor=white"/> <img src="https://img.shields.io/badge/-LangGraph-1C3C3C?style=flat&logo=langgraph&logoColor=white"/> <img src="https://img.shields.io/badge/-PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white"/> <img src="https://img.shields.io/badge/-vLLM-30A2FF?style=flat&logo=vllm&logoColor=white"/> <img src="https://img.shields.io/badge/-OpenTelemetry-000000?style=flat&logo=opentelemetry&logoColor=white"/>
 
-- [**UniPad**](https://play.google.com/store/apps/details?id=com.kimjisub.launchpad) (2016.02 ~ 현재)
-    - 모바일 런치패드 앱, 1,000만+ 다운로드
-    - Google Play 음악게임 부문 1위, 전체게임 부문 50위
+## Education
+
+- 한국외국어대학교 (2020.03 - 2026.08)
+    - 컴퓨터전자시스템공학부 졸업
+
+- 한국디지털미디어고등학교 (2017.03 - 2020.01)
+    - 해킹방어과 졸업
+
+## Experience
+
+- [**Alpaon**](https://alpaon.com) 공동창업자, CTO (2022.08 - 현재, 파트타임)
+    - 산업 현장의 설비와 데이터를 클라우드와 AI에 연결하는 회사, 고객사 약 10곳 (AlpaConnect, Synapus 합산)
+    - **AlpaConnect** | 회로 기판부터 펌웨어, 서버, 모바일 앱까지 직접 개발. 통신 단절 시 로컬 저장 후 복구 전송, 서명 검증 기반 롤백 원격 업데이트 구축
+    - **Synapus** | 결제 확인 즉시 가상 서버가 자동 생성되는 셀프서비스 클라우드 구축 및 IDC 직접 운영
+
+- [**UniPad**](https://play.google.com/store/apps/details?id=com.kimjisub.launchpad) 개인 프로젝트 (2016.02 - 현재)
+    - 8x8 패드로 곡을 연주하는 리듬게임 및 사용자 제작 곡 공유 커뮤니티
+    - 누적 1,000만 다운로드, 최대 월 사용자 80만, Google Play 음악 게임 인기 1위
+    - 곡 포맷을 공개하고 하위 호환성을 유지해 사용자가 콘텐츠를 직접 만들어 나누는 구조 구축
+
+- **댕로그** 기술 자문 (2026.06 - 현재)
+    - 반려견 유치원 단체 사진에서 개별 강아지를 분류하는 AI 파이프라인 및 서빙 구조 설계
+
+- **Candid** AX & Product Engineer (2025.08 - 2026.10)
+    - 기획부터 프론트엔드, 백엔드, 인프라, AI까지 맡아 채용 컨설팅 회사의 Core ERP 구축
+    - AI 에이전트 기반 후보자 서치 도구 개발로 작업 시간 단축 (포지션당 3~5시간 -> 70분)
+    - 해당 도구로 진행한 포지션에서 첫 달 계약 2건 달성
 
 ---
 
-
-- Silicon Bridge, Inc - Eyevacs4 (2023.08 ~ 2025.07)
+- Silicon Bridge, Inc - Eyevacs (2020.01 - 2025.07)
     - <img src="https://img.shields.io/badge/-React%20Native-61DAFB?style=flat&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/-NestJS-E0234E?style=flat&logo=nestjs&logoColor=white"/>
-    - Full Stack Software Engineer, 정규직
+    - Software Engineer (프리랜서 상근) -> Full Stack Engineer (정규직)
+    - 아파트 약 300개 단지 차량 관제 및 커뮤니티 플랫폼 개발
+    - 요금 정책을 설정화하여 현장별 추가 개발 없이 개설 가능한 구조 구축, 한 서버에서 시간당 30만 건 이벤트 처리
+    - 클라우드 컴포넌트를 오픈소스로 교체해 단지 내 단일 서버에서 구동되는 폐쇄망 설치형 플랫폼 패키징
 
-- (주)한화비전 - [Mopl](https://apps.apple.com/kr/app/mopl-%EB%AA%A8%ED%94%8C-%ED%95%9C%ED%99%94%EB%B9%84%EC%A0%84/id1665024541) (2022.09 ~ 2023.05)
+- (주)한화비전 - [Mopl](https://apps.apple.com/kr/app/mopl-%EB%AA%A8%ED%94%8C-%ED%95%9C%ED%99%94%EB%B9%84%EC%A0%84/id1665024541) (2022.09 - 2023.05)
     - <img src="https://img.shields.io/badge/-React%20Native-61DAFB?style=flat&logo=react&logoColor=white"/>
     - 외주 과제
-    - 아파트 커뮤니티 및 주차 관리 솔루션
-    - React Native을 이용한 입주민 앱 개발
+    - 아파트 커뮤니티 및 주차 관리 솔루션 입주민 앱(React Native) 개발
 
-- (주)더브이플래닛 - [Vplate](https://app.vplate.io/) (2019.01 ~ 2019.09)
+- (주)더브이플래닛 - [Vplate](https://app.vplate.io/) (2019.01 - 2019.09)
     - <img src="https://img.shields.io/badge/-Android-34A853?style=flat&logo=android&logoColor=white"/> <img src="https://img.shields.io/badge/-MongoDB-47A248?style=flat&logo=mongodb&logoColor=white"/>
-    - Full Stack Software Engineer, 정규직
-    - Android, API Service, After Effect 기반 Rendering Engine 및 다중노드 병렬처리 엔진 개발
+    - Software Engineer, 정규직
+    - After Effects 기반 템플릿 렌더링 엔진 및 모바일 제작 앱 개발
+    - 직원이 수작업하던 영상 제작을 모바일에서 사용자가 직접 사진과 문구를 넣어 자동 생성하는 구조로 전환
 
-- [디미고라이프](https://www.facebook.com/ourdimigolife/photos/?paipv=0&eav=Afb9A5HQAdzbBtE6Jt9UqOB_m0pVLC8wNhiT9cdYCRfr-4DOHMZDl4gjPh23OdXGicg&_rdr) (2018.04 ~ 2019.12)
-    - 팀 프로젝트
-    - 한국디지털미디어고등학교 재학생들을 위한 인트라넷
-    - 기획, DB 설계 및 API Service 개발
+- [디미고라이프](https://www.facebook.com/ourdimigolife/photos/?paipv=0&eav=Afb9A5HQAdzbBtE6Jt9UqOB_m0pVLC8wNhiT9cdYCRfr-4DOHMZDl4gjPh23OdXGicg&_rdr) (2018.04 - 2019.12)
+    - 교내 인트라넷 서비스 기획, DB 설계 및 API 개발
 
-- 한국외국어대학교 [IDS Lab.](http://ids.hufs.ac.kr/) 학부연구생 (2023.)
-    - NVM, Flash Based Database System, In-Storage computing.
+- 한국외국어대학교 [IDS Lab.](http://ids.hufs.ac.kr/) 학부연구생 (2023)
+    - NVM, Flash 기반 데이터베이스 시스템 연구
 
-## 🏆 Prize
+## Prize
 
 - 각종 IT 및 창업 대회에서 총 **26회** 수상
 
@@ -83,11 +108,12 @@
 |  2015.11 | 대전교육정보원 개인주제탐구발표대회 | 금상 (2위) | 대전교육정보원 영재교육원 |
 | | 외 11개 | | |
 
-## 📝 Paper
+## Paper
 
-- “Analysis of DuckDB Performance Overhead for File Fragmentation” - Korean DataBase Conference 2023 · Oct 20, 2023
+- “An AIoT Framework for Real-Time HVAC Optimization Using Multimodal Sensing and Vision-Based Clothing-Skin Analysis” - IEEE AIoT 2025 | Dec 2025
+- “Analysis of DuckDB Performance Overhead for File Fragmentation” - Korean DataBase Conference 2023 | Oct 20, 2023
 
-## 🎙️ Interview
+## Interview
 
 - [Candid 블로그](https://teamcandid.kr/blog/student-developer-unipad)
 - [10대 소년의 유의미한 성공스토리 - UniPad](https://www.issuemaker.kr/news/articleView.html?idxno=26080)
