@@ -41,7 +41,7 @@
 
 ## Experience
 
-- [**Alpaon**](https://alpaon.com) 공동창업자, CTO (2022.08 - 현재, 파트타임)
+- [**Alpaon**](https://alpaon.com) 공동창업자, CTO (2022.08 - 현재)
     - 산업 현장의 설비와 데이터를 클라우드와 AI에 연결하는 회사, 고객사 약 10곳 (AlpaConnect, Synapus 합산)
     - **AlpaConnect** | 회로 기판부터 펌웨어, 서버, 모바일 앱까지 직접 개발. 통신 단절 시 로컬 저장 후 복구 전송, 서명 검증 기반 롤백 원격 업데이트 구축
     - **Synapus** | 결제 확인 즉시 가상 서버가 자동 생성되는 셀프서비스 클라우드 구축 및 IDC 직접 운영
