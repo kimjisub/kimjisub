@@ -9,6 +9,8 @@ interface WorkItemData {
   title: string;
   href?: string;
   external?: boolean;
+  /** 사이트 안의 경력 상세 페이지. 있으면 칩 아래에 '자세히' 링크를 단다 */
+  detailHref?: string;
   period: string;
   role: ReactNode;
   description: ReactNode;
@@ -62,17 +64,20 @@ const workItems: WorkItemData[] = [
     external: true,
     period: '2025.08 – 2026.10',
     role: 'AX & Product Engineer',
-    description: '스타트업의 채용을 도와주는 헤드헌팅 컨설팅 회사입니다. 기획부터 개발, 운영까지 제품 전체를 맡았습니다.',
+    detailHref: '/careers/candid',
+    description:
+      '스타트업 채용을 돕는 헤드헌팅 회사입니다(20인 내외). 컨설턴트가 10명에서 17명으로 늘던 시기에 업무 시스템과 AI 기능을 기획부터 개발, 운영까지 맡았습니다.',
     details: [
-      '컨설턴트 옆에서 일하며 풀 문제를 골랐습니다. 엑셀과 Slack에 흩어져 있던 포지션, 후보자, 고객사, 미팅 기록을 사내 시스템 하나로 모았고, 입사 석 달 만에 영업 운영을 그 시스템으로 옮겼습니다.',
-      '30분 인터뷰로 정리한 요구만 넣으면, AI 에이전트 수십 개가 후보를 찾아 읽고 점수를 매겨 후보 명단을 냅니다. 포지션마다 3~5시간 걸리던 서치가 70분이 됐습니다.',
-      '한 컨설턴트의 사용 기록 57개를 전부 읽어, 후보를 고르거나 뺀 이유를 적을 때만 검색이 좋아진다는 것을 찾고 화면을 바꿨습니다.',
+      '공유 엑셀과 임시 시스템으로 관리하던 포지션, 후보자, 고객사, 매출을 사내 ERP로 옮겼습니다. 매일 하는 일부터 범위를 잘라, 착수 약 2개월 만에 전사에 열었습니다.',
+      '결과가 아쉽던 AI 후보자 추천을 해체하고, 검증된 채점 기준만 살려 가벼운 검색 도구로 다시 만들었습니다. 포지션마다 3~5시간 걸리던 서치가 70분이 됐습니다.',
+      '미팅 원문과 이력서를 읽어 기존 입력 칸을 채우는 기능을 만들어, 미팅록 작성이 30분에서 5분으로 줄었습니다.',
+      '사람마다 달랐던 미팅록 품질은 입력 규칙으로 고쳤습니다. 값을 넣거나 못 넣은 이유를 골라야 저장되게 해, 무엇을 왜 놓치는지가 쌓이게 했습니다.',
     ],
     results: [
       '서치 3~5시간에서 70분으로',
+      '미팅록 작성 30분에서 5분으로',
+      '상위 10명 중 최종 합격자 2명에서 4명으로',
       '첫 달 계약 2건',
-      '추천 상위 10명 중 맞는 후보 3명에서 7명으로',
-      '컨설턴트 20명 중 9명 매주 사용',
     ],
   },
   {
@@ -124,7 +129,7 @@ const workItems: WorkItemData[] = [
   },
 ];
 
-const WorkItem = ({ title, href, external, period, role, description, details, results }: WorkItemData) => (
+const WorkItem = ({ title, href, external, detailHref, period, role, description, details, results }: WorkItemData) => (
   <li className="py-12 first:pt-0 last:pb-0">
     <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
       <h3 className="text-xl font-semibold tracking-[-0.02em] text-foreground md:text-[1.375rem]">
@@ -148,6 +153,13 @@ const WorkItem = ({ title, href, external, period, role, description, details, r
       ))}
     </ul>
     <ChipList items={results} className="mt-6" />
+    {detailHref && (
+      <p className="mt-5 text-sm">
+        <Link href={detailHref} className="link text-muted-foreground">
+          자세히
+        </Link>
+      </p>
+    )}
   </li>
 );
 

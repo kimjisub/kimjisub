@@ -6,6 +6,7 @@ import Image from 'next/image';
 
 import { getCareer, getCareerPage } from '@/api/content/career';
 import { getCareers } from '@/api/content/careers';
+import { CandidCaseStudy } from '@/components/careers/CandidCaseStudy';
 import { ContentEngagement } from '@/components/ContentEngagement';
 import DebugView from '@/components/DebugView';
 import { JsonView } from '@/components/JsonView';
@@ -67,6 +68,11 @@ const CareerPage = async (props: { params: Params }) => {
 
 	if (!career) {
 		return <div>Career not found</div>;
+	}
+
+	// Candid 는 프로젝트 카드 형식의 전용 상세를 쓴다. 문안 정본은 resume/_context/candid-copy.md
+	if (careerId === 'candid') {
+		return <CandidCaseStudy />;
 	}
 
 	const icon = career.icon ? (
